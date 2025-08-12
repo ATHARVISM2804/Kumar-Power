@@ -1,12 +1,36 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Header from "@/components/landing/Header";
+import Hero from "@/components/landing/Hero";
+import Trusted from "@/components/landing/Trusted";
+import About from "@/components/landing/About";
+import GeneratorRange from "@/components/landing/GeneratorRange";
+import PowerSolutions from "@/components/landing/PowerSolutions";
+import UseCases from "@/components/landing/UseCases";
+import Gallery from "@/components/landing/Gallery";
+import Testimonials from "@/components/landing/Testimonials";
+import BlogSection from "@/components/landing/BlogSection";
+import CTASection from "@/components/landing/CTASection";
+import Footer from "@/components/landing/Footer";
+import SEOJsonLD from "@/components/SEOJsonLD";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
+        <Hero />
+        <Trusted />
+        <About />
+        <GeneratorRange />
+        <CTASection />
+        <PowerSolutions />
+        <Trusted />
+        <UseCases />
+        <Gallery />
+        <Testimonials />
+        <BlogSection />
+        <CTASection />
+      </main>
+      <Footer />
     </div>
   );
 };
