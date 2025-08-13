@@ -13,8 +13,9 @@ import trust4 from "@/assets/Honeywell 1 (1).png";
 import trust5 from "@/assets/Kashyapi (2).png";
 import trust6 from "@/assets/Caritas (1).png";
 import trust7 from "@/assets/CEC (1).png";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { Link } from "react-router-dom";
 
 const PSCard = ({ title, desc, specs, img }: { title: string; desc: string; specs: string[]; img: string }) => (
   <article className="bg-white rounded-lg overflow-hidden shadow-md flex flex-col">
@@ -64,6 +65,17 @@ const FilterSection = ({ title, options }: { title: string; options: string[] })
 const PowerSolutions = () => {
   const logoRef = useRef<HTMLDivElement>(null);
   const logoContainerRef = useRef<HTMLDivElement>(null);
+  const [activeCategory, setActiveCategory] = useState<string>("Generators");
+
+  // Categories for the navigation tabs
+  const categories = [
+    "Generators",
+    "Inverters",
+    "Variable Frequency Drives (VFDs)",
+    "Electrical Panels",
+    "Servo Stabilizers",
+    "Transformers"
+  ];
 
   useEffect(() => {
     if (!logoRef.current || !logoContainerRef.current) return;
@@ -113,7 +125,7 @@ const PowerSolutions = () => {
 
   return (
     <section id="solutions" className="py-0">
-      {/* Hero Image Section - responsive height */}
+      {/* Hero Image Section moved to the top */}
       <div className="w-full flex justify-center items-center py-0">
         <img
           src={allProductsImg}
@@ -122,18 +134,50 @@ const PowerSolutions = () => {
           style={{ maxWidth: "100vw" }}
         />
       </div>
+      
+      {/* Breadcrumb Navigation */}
+      <div className="bg-gray-50 border-b">
+        <div className="container mx-auto px-4 md:px-0 py-3">
+          <div className="flex items-center text-sm">
+            <Link to="/" className="text-gray-500 hover:text-blue-600">Home</Link>
+            <span className="mx-2 text-gray-400">›</span>
+            <Link to="/products" className="text-gray-500 hover:text-blue-600">Products</Link>
+          </div>
+        </div>
+      </div>
+      
+      {/* Section Title */}
+      <div className="container mx-auto px-4 md:px-0 py-4">
+        <h1 className="text-3xl font-bold text-gray-900 mb-1">Power Solutions</h1>
+        <div className="w-16 h-1 bg-blue-600 rounded mb-6"></div>
+      </div>
+      
+      {/* Category Navigation */}
+      <div className="bg-gray-50 border-b mb-6">
+        <div className="container mx-auto px-4 md:px-0 overflow-x-auto">
+          <div className="flex space-x-6 py-3 min-w-max">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`whitespace-nowrap py-2 px-1 border-b-2 transition-colors ${
+                  activeCategory === category 
+                    ? "border-blue-600 text-blue-600 font-medium" 
+                    : "border-transparent text-gray-600 hover:text-blue-600"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      {/* Rest of the content */}
       <div className="container mx-auto grid md:grid-cols-4 gap-4 md:gap-8 px-4 md:px-0">
         {/* Left: Content */}
         <div className="md:col-span-3">
-          <div className="mb-4 md:mb-8 mt-4 md:mt-0">
-            <h2 className="text-2xl md:text-4xl font-bold flex items-end flex-wrap gap-2 mt-10">
-              <span className="relative">
-                Power
-                <span className="absolute left-0 -bottom-1 w-full h-1 bg-blue-600 rounded" />
-              </span>
-              <span>Solutions</span>
-            </h2>
-          </div>
+          
           <div className="grid md:grid-cols-2 gap-6">
             <PSCard
               title="Kirloskar CPCB4+ Diesel Genset"
