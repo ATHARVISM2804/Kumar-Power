@@ -4,53 +4,70 @@ import { Button } from "@/components/ui/button";
 
 const About = () => {
   const features = [
-    "Turnkey EPC for power back-up and prime power",
-    "Kirloskar-authorized sales & service",
-    "Nationwide support with rapid SLAs",
-  ];
-  const stats = [
-    { k: "30+", v: "Years Experience" },
-    { k: "5k+", v: "Enterprise Clients" },
-    { k: "24/7", v: "Service Anywhere" },
-    { k: "ISO", v: "9001:2015 Certified" },
+    { label: "Kirloskar Certified" },
+    { label: "24/7 Service Infrastructure" },
+    { label: "500+ Enterprise Clients" },
+    { label: "ISO 9001:2015 Accredited" },
   ];
 
   return (
-    <section id="about" className="py-16">
-      <div className="container mx-auto grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <h2 className="text-2xl md:text-3xl font-bold mb-2">About Kumar Power</h2>
-          <p className="text-muted-foreground mb-6">Engineering India's energy backbone.</p>
-          <p className="mb-6 text-sm md:text-base">
-            For over 30 years, Kumar Power has engineered dependable power across industrial, commercial, and infrastructure projects. We deliver Kirloskar-certified solutions that combine performance, reliability, and nationwide support.
-          </p>
-          <ul className="space-y-2 mb-6">
-            {features.map((f) => (
-              <li key={f} className="flex items-start gap-3 text-sm md:text-base">
-                <CheckCircle2 className="text-accent mt-0.5" />
-                <span>{f}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {stats.map((s) => (
-              <div key={s.v} className="rounded-lg border p-4 text-center">
-                <div className="text-xl font-bold text-primary">{s.k}</div>
-                <div className="text-xs text-muted-foreground">{s.v}</div>
-              </div>
-            ))}
+    <>
+      {/* Hero Section as per provided image */}
+      <div className="bg-black py-8">
+        <div className="container mx-auto text-center">
+          <div className="flex items-center justify-center mb-1">
+            <span className="block h-px w-16 bg-white mr-4" />
+            <span className="text-white text-2xl md:text-3xl font-semibold tracking-wide">
+              ABOUT KUMAR POWER
+            </span>
           </div>
-          <div className="mt-6">
-            <Button asChild>
-              <a href="#solutions">Explore Our Solutions</a>
-            </Button>
+          <div className="text-white text-lg md:text-xl font-normal">
+            Powering Progress.
           </div>
-        </div>
-        <div>
-          <img src={teamImg} alt="Kumar Power team" className="rounded-lg border w-full object-cover" loading="lazy" />
         </div>
       </div>
-    </section>
+      {/* End Hero Section */}
+      <section id="about" className="py-16">
+        <div className="container mx-auto grid md:grid-cols-2 gap-10 items-center">
+          {/* Left: Text Content */}
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Engineering India’s
+              <br /> Energy Backbone.
+            </h2>
+            <p className="mb-6 text-base md:text-lg text-muted-foreground">
+              For over 30+ years, Kumar Power has engineered uninterrupted power
+              across India’s industries, infrastructure, and institutions. With
+              Kirloskar certification and ISO 9001:2015 accreditation, we serve
+              500+ enterprise clients with unmatched reliability and scale.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-10 mb-8">
+              {features.map((f) => (
+                <div key={f.label} className="flex items-center gap-4">
+                  <span className="inline-flex items-center justify-center rounded-full bg-blue-100 h-9 w-9">
+                    <CheckCircle2 className="text-blue-600 h-5 w-5" />
+                  </span>
+                  <span className="text-base">{f.label}</span>
+                </div>
+              ))}
+            </div>
+            <Button asChild size="lg" className="mt-2">
+              <a href="#legacy">Explore Our Legacy</a>
+            </Button>
+          </div>
+          {/* Right: Team Image */}
+          <div className="flex justify-center">
+            <img
+              src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755020628/Screenshot_2025-08-12_231224_xauibh.png"
+              alt="Kumar Power team"
+              className="w-full max-w-2xl object-contain"
+              loading="lazy"
+              style={{ background: "transparent" }}
+            />
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 

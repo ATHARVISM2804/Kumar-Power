@@ -1,33 +1,102 @@
-import heroImage from "@/assets/hero-power-plant.jpg";
+// import heroVideo from "@/assets/KIRLOSKAR OIL ENGINES - OPTIPRIME - FINAL OUTPUT.mp4";
 import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
 
 const Hero = () => {
   return (
     <section id="home" className="relative">
-      <div className="relative h-[68vh] md:h-[78vh] overflow-hidden rounded-xl border shadow-[var(--shadow-glow)]">
-        <img src={heroImage} alt="Industrial power plant at night" className="absolute inset-0 w-full h-full object-cover" loading="eager"/>
-        <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/20 to-background/60" />
+      <div className="relative h-[68vh] md:h-[78vh] lg:h-[95vh] overflow-hidden rounded-xl border shadow-[var(--shadow-glow)]">
+        {/* Background video */}
+        {/* <video
+          src={heroVideo}
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+        /> */}
+        Overlay for readability
+        <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="container mx-auto px-6 md:px-10 text-center space-y-6">
-            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-primary-foreground drop-shadow-sm">
-              Unleashing Power Solutions. Built for the Nation.
-            </h1>
-            <p className="max-w-2xl mx-auto text-base md:text-lg text-primary-foreground/85">
-              Kirloskar Certified | ISO 9001:2015 | Enterprise Clients | 30+ Years of Uninterrupted Excellence
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Button variant="hero" size="lg" asChild>
-                <a href="#contact" aria-label="Enquire Power Solutions">Enquire Power Solutions</a>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <a href="#cta" aria-label="Download Company Profile">Download Company Profile</a>
-              </Button>
-            </div>
-            <div className="flex flex-wrap items-center justify-center gap-4 pt-2 text-xs md:text-sm text-primary-foreground/80">
-              <span className="px-2 py-1 rounded-md bg-background/70">Kirloskar Certified</span>
-              <span className="px-2 py-1 rounded-md bg-background/70">ISO 9001:2015</span>
-              <span className="px-2 py-1 rounded-md bg-background/70">Enterprise Clients</span>
-              <span className="px-2 py-1 rounded-md bg-background/70">30+ Years</span>
+          <div className="container mx-auto px-6 md:px-10 flex flex-col items-center">
+            <div
+              className="backdrop-blur-xl bg-white/20 border border-white/30 rounded-2xl p-6 md:p-12 shadow-2xl max-w-4xl w-full flex flex-col items-center space-y-8"
+              style={{
+                boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+                background:
+                  "linear-gradient(120deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.10) 100%)",
+                border: "1.5px solid rgba(255,255,255,0.25)",
+              }}
+            >
+              <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-lg leading-tight text-center">
+                Unleashing Power
+                <br />
+                Solutions.
+                <br />
+                Built for the Nation.
+              </h1>
+              <p className="text-sm md:text-lg text-white/90 font-medium whitespace-nowrap overflow-auto">
+                Kirloskar Certified | ISO 9001:2015 | 500+ Enterprise Clients |
+                30+ Years of Uninterrupted Excellence
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2 w-full">
+                <Button
+                  className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold"
+                  size="lg"
+                  asChild
+                >
+                  <a href="#contact" aria-label="Explore Power Solutions">
+                    Explore Power Solutions
+                  </a>
+                </Button>
+                <Button
+                  className="w-full sm:w-auto bg-transparent border border-white text-white font-semibold hover:bg-white/10"
+                  size="lg"
+                  asChild
+                >
+                  <a
+                    href="#cta"
+                    aria-label="Download Company Profile"
+                    className="flex items-center gap-2 justify-center"
+                  >
+                    <Download className="w-4 h-4" />
+                    Download Company Profile
+                  </a>
+                </Button>
+              </div>
+              {/* Trusted by logos and label - inside card */}
+              <div className="mt-6 flex flex-col items-center w-full">
+                <span className="text-white/90 font-semibold tracking-wide mb-2 text-sm md:text-base">
+                  TRUSTED BY
+                </span>
+                <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+                  <img
+                    src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755018139/Screenshot_2025-08-12_223045_zmtwsc.png"
+                    alt="Trusted 1"
+                    className="h-12 w-auto bg-white/80 rounded shadow"
+                  />
+                  <img
+                    src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755018138/Screenshot_2025-08-12_223107_gtytur.png"
+                    alt="Trusted 2"
+                    className="h-12 w-auto bg-white/80 rounded shadow"
+                  />
+                  <img
+                    src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755018138/Screenshot_2025-08-12_223123_pqjvbo.png"
+                    alt="Trusted 3"
+                    className="h-12 w-auto bg-white/80 rounded shadow"
+                  />
+                  <img
+                    src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755018139/Screenshot_2025-08-12_223139_wq8vha.png"
+                    alt="Trusted 4"
+                    className="h-12 w-auto bg-white/80 rounded shadow"
+                  />
+                  <img
+                    src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755018139/Screenshot_2025-08-12_223157_gp87k6.png"
+                    alt="Trusted 5"
+                    className="h-12 w-auto bg-white/80 rounded shadow"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -2,47 +2,58 @@ const UseCases = () => {
   const items = [
     {
       title: "Power Outages and Load Shedding",
-      text:
-        "Deploy robust DG/UPS solutions to keep your business operational during grid failures and peak demand events.",
+      text: "Despite robust infrastructure, metro areas still experience power outages caused by high demand, technical issues, maintenance work, grid failures, natural disasters, and peak-demand overload. Generators provide a reliable backup power source to maintain continuity during these interruptions. Kirloskar generators ensure an uninterrupted power supply, enabling homes, offices, and businesses to operate smoothly.",
     },
     {
       title: "High-Demand Areas",
-      text:
-        "Ensure continuous power across metros, industrial parks, hospitals, and data-driven operations.",
+      text: "Metro cities are hubs for businesses, industries, commercial buildings, hospitals, malls, data centers, and IT companies—all of which require continuous power to avoid operational disruptions. Kirloskar generators offer a dependable solution, minimizing downtime and preventing losses by maintaining essential services during power fluctuations.",
     },
     {
-      title: "Events and Functions",
-      text:
-        "Reliable temporary power for events and gatherings with on-site technicians and safety compliance.",
+      title: "Dependability for Events and Functions",
+      text: "Generators are essential for events such as weddings, concerts, public gatherings, construction projects, and outdoor activities where access to the power grid may be limited. In these situations, a stable power supply is crucial for lighting, sound systems, and equipment. Kirloskar generators ensure smooth operations, particularly for outdoor or temporary venues.",
     },
     {
-      title: "Critical Appliances",
-      text:
-        "Protect sensitive equipment with voltage conditioning and instant transfer solutions.",
+      title: "Backup for Critical Appliances",
+      text: "Households often need generators to keep essential appliances running during outages, such as refrigerators, medical equipment, air conditioners, and security systems. This helps maintain safety and convenience during unexpected power cuts.",
     },
     {
-      title: "Monsoon Season",
-      text:
-        "Engineered enclosures and drainage considerations for heavy rain and challenging climates.",
+      title: "Increased Usage During Monsoon Season",
+      text: "Heavy rains and storms frequently disrupt power lines in metro cities, resulting in power outages. Generators help reduce the impact of these disruptions on both businesses and homes, providing a stable power solution during the monsoon months.",
     },
     {
-      title: "Urbanisation & Infrastructure",
-      text:
-        "Scalable backup for infrastructure expansion with remote monitoring and SLAs.",
+      title: "Urbanization and Infrastructure Stress",
+      text: "Rapid urbanization places stress on existing power grids, occasionally leading to shortages or planned outages. Additionally, large-scale construction projects require a stable electricity supply to power tools and machinery, which may not always be accessible on-site. Generators are vital in supporting these urban growth needs, ensuring continuous development.",
     },
   ];
 
   return (
-    <section className="py-16 bg-foreground text-primary-foreground">
-      <div className="container mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold mb-8">Power in Action</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {items.map((it) => (
-            <article key={it.title} className="p-6 rounded-lg bg-background/5 border border-primary-foreground/10">
-              <h3 className="font-semibold mb-2">{it.title}</h3>
-              <p className="text-sm opacity-90">{it.text}</p>
-            </article>
-          ))}
+    <section className="py-24 bg-black text-white">
+      <div className="container mx-auto flex flex-col md:flex-row min-h-[700px]">
+        {/* Left: Vertically and horizontally centered heading */}
+        <div className="md:w-1/2 flex items-center justify-center md:justify-start">
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight md:leading-[1.1] text-left md:text-left">
+            Power Solutions
+            <br />for Metro Cities
+          </h2>
+        </div>
+        {/* Right: Use case cards in a single column */}
+        <div className="md:w-1/2 flex flex-col justify-center">
+          <div>
+            {items.map((it) => (
+              <article key={it.title} className="mb-8">
+                <h3 className="text-lg md:text-xl font-semibold mb-1">{it.title}</h3>
+                <p className="text-gray-300 text-sm leading-relaxed mb-2">{it.text}</p>
+                <button className="text-blue-400 text-sm hover:text-blue-300 p-0 m-0">
+                  LEARN MORE
+                </button>
+              </article>
+            ))}
+          </div>
+          <div className="mt-4">
+            <p className="text-gray-400 italic text-xs md:text-sm">
+              Kirloskar generators, with their reliable performance and versatility, are well-suited to meet the unique demands of metro city environments.
+            </p>
+          </div>
         </div>
       </div>
     </section>

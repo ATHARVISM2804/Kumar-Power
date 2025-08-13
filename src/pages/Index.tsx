@@ -1,6 +1,6 @@
 import Header from "@/components/landing/Header";
 import Hero from "@/components/landing/Hero";
-import Trusted from "@/components/landing/Trusted";
+
 import About from "@/components/landing/About";
 import GeneratorRange from "@/components/landing/GeneratorRange";
 import PowerSolutions from "@/components/landing/PowerSolutions";
@@ -18,17 +18,17 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <Trusted />
+      
         <About />
         <GeneratorRange />
         <CTASection />
         <PowerSolutions />
-        <Trusted />
+        
         <UseCases />
         <Gallery />
         <Testimonials />
         <BlogSection />
-        <CTASection />
+        
       </main>
       <Footer />
     </div>
