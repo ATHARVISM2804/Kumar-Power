@@ -113,25 +113,25 @@ const PowerSolutions = () => {
 
   return (
     <section id="solutions" className="py-0">
-      {/* Hero Image Section - larger, fills page width */}
+      {/* Hero Image Section - responsive height */}
       <div className="w-full flex justify-center items-center py-0">
         <img
           src={allProductsImg}
           alt="All Products"
-          className="w-full h-[320px] md:h-[250px] object-cover rounded-none"
+          className="w-full h-[180px] sm:h-[250px] md:h-[250px] object-cover rounded-none"
           style={{ maxWidth: "100vw" }}
         />
       </div>
-      <div className="container mx-auto grid md:grid-cols-4 gap-8">
+      <div className="container mx-auto grid md:grid-cols-4 gap-4 md:gap-8 px-4 md:px-0">
         {/* Left: Content */}
         <div className="md:col-span-3">
-          <div className="mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold flex items-end gap-2">
+          <div className="mb-4 md:mb-8 mt-4 md:mt-0">
+            <h2 className="text-2xl md:text-4xl font-bold flex items-end flex-wrap gap-2 mt-10">
               <span className="relative">
                 Power
                 <span className="absolute left-0 -bottom-1 w-full h-1 bg-blue-600 rounded" />
               </span>
-              Solutions
+              <span>Solutions</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
@@ -162,7 +162,7 @@ const PowerSolutions = () => {
           </div>
         </div>
         {/* Right: Filter */}
-        <div className="bg-white p-6 rounded-lg shadow-sm border h-fit">
+        <div className="bg-white mt-10 p-6 rounded-lg shadow-sm border h-fit">
           <h3 className="font-semibold text-lg mb-6">Filter Products</h3>
           
           <FilterSection
@@ -189,14 +189,14 @@ const PowerSolutions = () => {
           </Button>
         </div>
       </div>
-      {/* Trusted By Section */}
-      <div className="container mx-auto mt-20 mb-10">
+      {/* Trusted By Section - fix container height for mobile */}
+      <div className="container mx-auto mt-10 md:mt-20 mb-10 px-4 md:px-0">
         <div className="text-center mb-10">
           <h3 className="text-2xl md:text-3xl font-bold">
             Trusted Across India's Largest Enterprises
           </h3>
         </div>
-        <div ref={logoContainerRef} className="overflow-hidden relative h-12">
+        <div ref={logoContainerRef} className="overflow-hidden relative h-20">
           <div 
             ref={logoRef} 
             className="flex items-center gap-24 absolute top-0 left-0"

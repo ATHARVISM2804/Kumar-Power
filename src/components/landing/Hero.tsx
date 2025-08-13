@@ -19,9 +19,9 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black/40 z-10" />
         {/* Content above video */}
         <div className="absolute inset-0 flex items-center justify-center z-20">
-          <div className="container mx-auto px-6 md:px-10 flex flex-col items-center">
+          <div className="container mx-auto px-4 md:px-10 flex flex-col items-center">
             <div
-              className="backdrop-blur-xl bg-white/20 border border-white/30 rounded-2xl p-6 md:p-12 shadow-2xl max-w-4xl w-full flex flex-col items-center space-y-8"
+              className="backdrop-blur-xl bg-white/20 border border-white/30 rounded-2xl p-4 md:p-12 shadow-2xl w-full max-w-4xl flex flex-col items-center space-y-4 md:space-y-8"
               style={{
                 boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
                 background:
@@ -29,17 +29,33 @@ const Hero = () => {
                 border: "1.5px solid rgba(255,255,255,0.25)",
               }}
             >
-              <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-lg leading-tight text-center">
+              <h1 className="text-2xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-lg leading-tight text-center">
                 Unleashing Power
                 <br />
                 Solutions.
                 <br />
                 Built for the Nation.
               </h1>
-              <p className="text-sm md:text-lg text-white/90 font-medium whitespace-nowrap overflow-auto">
-                Kirloskar Certified | ISO 9001:2015 | 500+ Enterprise Clients |
-                30+ Years of Uninterrupted Excellence
+              
+              {/* Mobile version - stacked text */}
+              <div className="flex flex-col items-center space-y-0.5 sm:hidden">
+                <p className="text-xs text-white/90 font-medium">Kirloskar Certified</p>
+                <p className="text-xs text-white/90 font-medium">ISO 9001:2015</p>
+                <p className="text-xs text-white/90 font-medium">500+ Enterprise Clients</p>
+                <p className="text-xs text-white/90 font-medium">30+ Years of Excellence</p>
+              </div>
+              
+              {/* Medium screens - two lines */}
+              <div className="hidden sm:flex md:hidden flex-col items-center">
+                <p className="text-sm text-white/90 font-medium">Kirloskar Certified | ISO 9001:2015</p>
+                <p className="text-sm text-white/90 font-medium">500+ Enterprise Clients | 30+ Years of Excellence</p>
+              </div>
+              
+              {/* Large screens - single line */}
+              <p className="hidden md:block text-lg text-white/90 font-medium text-center">
+                Kirloskar Certified | ISO 9001:2015 | 500+ Enterprise Clients | 30+ Years of Uninterrupted Excellence
               </p>
+              
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2 w-full">
                 <Button
                   className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold"
@@ -66,11 +82,11 @@ const Hero = () => {
                 </Button>
               </div>
               {/* Trusted by logos and label - inside card */}
-              <div className="mt-6 flex flex-col items-center w-full">
-                <span className="text-white/90 font-semibold tracking-wide mb-2 text-sm md:text-base">
+              <div className="mt-6 flex flex-col items-center w-full px-2">
+                <span className="text-white/90 font-semibold tracking-wide mb-2 text-xs md:text-base">
                   TRUSTED BY
                 </span>
-                <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+                <div className="flex flex-wrap items-center justify-center gap-2 md:gap-x-8 md:gap-y-4">
                   <img
                     src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755018139/Screenshot_2025-08-12_223045_zmtwsc.png"
                     alt="Trusted 1"

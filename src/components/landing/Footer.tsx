@@ -3,10 +3,10 @@ const Footer = () => {
     <>
       {/* Call To Action Section */}
       <section className="bg-white border-t border-gray-200">
-        <div className="container mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8 py-12">
+        <div className="container mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-8 py-8 md:py-12 px-4 md:px-0">
           <div className="flex-1">
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">Call To Action</h2>
-            <p className="text-black text-base md:text-lg max-w-xl">
+            <h2 className="text-2xl md:text-4xl font-bold text-black mb-2 md:mb-4">Call To Action</h2>
+            <p className="text-black text-sm md:text-lg max-w-xl">
               Have questions or need more information? We're here to help! Click the "Enquire Now" button to get in touch with our team. Whether you're interested in learning more about our services, products, or pricing, simply send us your inquiry and we'll respond promptly. Let us help you find the right solution for your needs!
             </p>
           </div>
@@ -28,8 +28,8 @@ const Footer = () => {
       </section>
       {/* Footer */}
       <footer id="contact" className="bg-black text-white pt-0">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-10 pt-12">
+        <div className="container mx-auto px-4 md:px-0">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 pb-8 md:pb-10 pt-8 md:pt-12">
             {/* About */}
             <div>
               <h4 className="font-bold text-white text-lg mb-3">Kumar Power</h4>

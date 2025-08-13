@@ -13,11 +13,11 @@ const About = () => {
   return (
     <>
       {/* Hero Section as per provided image */}
-      <div className="bg-black py-8">
-        <div className="container mx-auto text-center">
+      <div className="bg-black py-6 md:py-8">
+        <div className="container mx-auto text-center px-4">
           <div className="flex items-center justify-center mb-1">
-            <span className="block h-px w-16 bg-white mr-4" />
-            <span className="text-white text-2xl md:text-3xl font-semibold tracking-wide">
+            <span className="block h-px w-8 md:w-16 bg-white mr-2 md:mr-4" />
+            <span className="text-white text-xl md:text-3xl font-semibold tracking-wide">
               ABOUT KUMAR POWER
             </span>
           </div>
@@ -27,8 +27,8 @@ const About = () => {
         </div>
       </div>
       {/* End Hero Section */}
-      <section id="about" className="py-16">
-        <div className="container mx-auto grid md:grid-cols-2 gap-10 items-center">
+      <section id="about" className="py-8 md:py-16">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center px-4 md:px-0">
           {/* Left: Text Content */}
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">

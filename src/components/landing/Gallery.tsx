@@ -5,7 +5,7 @@ const Gallery = () => {
     <section id="gallery" className="py-16 ">
       <div className="container mx-auto">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Photo Gallery</h2>
-        <div className="w-full min-h-[150vh]">
+        <div className="w-full">
           <img
             src={stage}
             alt="Gallery image"
