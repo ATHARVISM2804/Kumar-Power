@@ -1,4 +1,3 @@
-// import heroVideo from "@/assets/KIRLOSKAR OIL ENGINES - OPTIPRIME - FINAL OUTPUT.mp4";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 
@@ -6,18 +5,20 @@ const Hero = () => {
   return (
     <section id="home" className="relative">
       <div className="relative h-[68vh] md:h-[78vh] lg:h-[95vh] overflow-hidden rounded-xl border shadow-[var(--shadow-glow)]">
-        {/* Background video */}
-        {/* <video
-          src={heroVideo}
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          loop
-          muted
-          playsInline
-        /> */}
-        Overlay for readability
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 flex items-center justify-center">
+        {/* Background video - full width, no controls */}
+         <div className="absolute left-0 top-0 translate-x-[-5%] translate-y-[-5%] inset-0 w-[110vw] h-[110vh] pointer-events-none z-0">
+          <iframe
+            src="https://www.youtube.com/embed/FZGwh-hlDH4?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=FZGwh-hlDH4&modestbranding=1&fs=0&disablekb=1"
+            // frameBorder="0"
+            allow="autoplay; encrypted-media"
+            className="absolute inset-0 w-full h-full"
+            style={{ objectFit: "cover" }}
+          />
+        </div>
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-black/40 z-10" />
+        {/* Content above video */}
+        <div className="absolute inset-0 flex items-center justify-center z-20">
           <div className="container mx-auto px-6 md:px-10 flex flex-col items-center">
             <div
               className="backdrop-blur-xl bg-white/20 border border-white/30 rounded-2xl p-6 md:p-12 shadow-2xl max-w-4xl w-full flex flex-col items-center space-y-8"
