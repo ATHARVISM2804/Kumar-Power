@@ -1,12 +1,23 @@
-import diesel from "@/assets/product-diesel-genset.jpg";
-import gas from "@/assets/product-gas-genset.jpg";
-import portable from "@/assets/product-portable-genset.jpg";
+import diesel from "@/assets/Range1.png";
+import gas from "@/assets/Range2.png";
+import portable from "@/assets/Range3.png";
+import portable1 from "@/assets/Range4.png";
+import portable2 from "@/assets/Range5.png";
+import portable3 from "@/assets/Range6.png";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const Card = ({ title, img, caption }: { title: string; img: string; caption: string }) => (
-  <article className="  overflow-hidden flex flex-col">
-    <img src={img} alt={title} className="h-40 w-full object-cover" loading="lazy" />
+  <article className="overflow-hidden flex flex-col bg-white rounded-lg shadow">
+    <div className="w-full h-40 bg-gray-100 flex items-center justify-center overflow-hidden">
+      <img
+        src={img}
+        alt={title}
+        className="object-contain w-full h-full"
+        style={{ background: "white" }}
+        loading="lazy"
+      />
+    </div>
     <div className="p-4 flex-1 flex flex-col">
       <h3 className="font-semibold mb-1">{title}</h3>
       <p className="text-sm text-muted-foreground mb-4 flex-1">{caption}</p>
@@ -49,10 +60,10 @@ const GeneratorRange = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <Card title="Kirloskar 1010 – 1500 kVA" img={diesel} caption="High-output diesel gensets engineered for mission-critical facilities." />
           <Card title="Kirloskar Gas Genset" img={gas} caption="Cleaner power with optimized fuel efficiency and reliability." />
-          <Card title="Kirloskar 82.5–160 kVA" img={diesel} caption="Versatile DG sets for plants, campuses, and commercial towers." />
-          <Card title="Kirloskar 2.8 – 5.5 kVA" img={portable} caption="Portable power for events, remote sites, and emergency backup." />
-          <Card title="Kirloskar 200 kVA–250 kVA" img={diesel} caption="Balanced performance for medium-scale industrial needs." />
-          <Card title="Kirloskar 320–1010 kVA" img={diesel} caption="Scalable solutions with robust service network coverage." />
+          <Card title="Kirloskar 82.5–160 kVA" img={portable} caption="Versatile DG sets for plants, campuses, and commercial towers." />
+          <Card title="Kirloskar 2.8 – 5.5 kVA" img={portable1} caption="Portable power for events, remote sites, and emergency backup." />
+          <Card title="Kirloskar 200 kVA–250 kVA" img={portable2} caption="Balanced performance for medium-scale industrial needs." />
+          <Card title="Kirloskar 320–1010 kVA" img={portable3} caption="Scalable solutions with robust service network coverage." />
         </div>
       </div>
     </section>

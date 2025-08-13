@@ -74,14 +74,22 @@ const Footer = () => {
                 <li>P : +91 97738 51767,<br />011-45086389</li>
                 <li>E : kumargeneratorhouse@gmail.com</li>
                 <li className="flex gap-3 mt-2">
-                  <a href="#" aria-label="Facebook" className="hover:text-blue-400">
-                    <svg width="20" height="20" fill="currentColor"><path d="M17 1H3C1.9 1 1 1.9 1 3v14c0 1.1.9 2 2 2h7v-7H7v-3h3V7c0-2.2 1.3-3.5 3.3-3.5.9 0 1.7.1 1.7.1v3h-1.2c-1 0-1.3.6-1.3 1.2v1.7h3l-.5 3h-2.5v7h4c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2z"/></svg>
+                  <a href="#" aria-label="Facebook" className="hover:text-blue-500">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M22.675 0h-21.35C.595 0 0 .595 0 1.326v21.348C0 23.405.595 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.325-.595 1.325-1.326V1.326C24 .595 23.405 0 22.675 0"/>
+                    </svg>
                   </a>
-                  <a href="#" aria-label="Instagram" className="hover:text-pink-400">
-                    <svg width="20" height="20" fill="currentColor"><circle cx="10" cy="10" r="6"/><circle cx="15" cy="5" r="1.5"/></svg>
+                  <a href="#" aria-label="Instagram" className="hover:text-pink-500">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                      <rect x="2" y="2" width="20" height="20" rx="6" />
+                      <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" strokeWidth="2"/>
+                      <circle cx="17" cy="7" r="1.5" fill="currentColor"/>
+                    </svg>
                   </a>
-                  <a href="#" aria-label="LinkedIn" className="hover:text-blue-300">
-                    <svg width="20" height="20" fill="currentColor"><rect x="2" y="7" width="3" height="11"/><circle cx="3.5" cy="4" r="1.5"/><rect x="7" y="7" width="3" height="11"/><rect x="12" y="11" width="3" height="7"/><path d="M13.5 7A2.5 2.5 0 0 1 16 9.5V18h-3v-7.5A2.5 2.5 0 0 1 13.5 7z"/></svg>
+                  <a href="#" aria-label="LinkedIn" className="hover:text-blue-400">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.867-3.063-1.868 0-2.156 1.459-2.156 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.381-1.563 2.841-1.563 3.039 0 3.601 2.001 3.601 4.601v5.595z"/>
+                    </svg>
                   </a>
                 </li>
               </ul>

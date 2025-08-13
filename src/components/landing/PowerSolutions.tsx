@@ -1,14 +1,32 @@
 import { ArrowRight } from "lucide-react";
-import diesel from "@/assets/product-diesel-genset.jpg";
-import gas from "@/assets/product-gas-genset.jpg";
-import portable from "@/assets/product-portable-genset.jpg";
-import ups from "@/assets/product-ups.jpg";
+import diesel from "@/assets/ps1.png";
+import gas from "@/assets/ps2.png";
+import portable from "@/assets/ps3.png";
+import ups from "@/assets/ps4.png";
 import { Button } from "@/components/ui/button";
+import allProductsImg from "@/assets/ALL PRODUCTS.png";
+import trust from "@/assets/Seasons (1).png";
+import trust1 from "@/assets/SIS (1).png";
+import trust2 from "@/assets/Vistara 1 (1).png";
+import trust3 from "@/assets/GMR (1).png";
+import trust4 from "@/assets/Honeywell 1 (1).png";
+import trust5 from "@/assets/Kashyapi (2).png";
+import trust6 from "@/assets/Caritas (1).png";
+import trust7 from "@/assets/CEC (1).png";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 const PSCard = ({ title, desc, specs, img }: { title: string; desc: string; specs: string[]; img: string }) => (
-  <article className="bg-white rounded-lg overflow-hidden shadow-md">
-    <img src={img} alt={title} className="w-full h-48 object-cover" />
-    <div className="p-6">
+  <article className="bg-white rounded-lg overflow-hidden shadow-md flex flex-col">
+    <div className="w-full h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
+      <img
+        src={img}
+        alt={title}
+        className="object-contain w-full h-full"
+        style={{ background: "white" }}
+      />
+    </div>
+    <div className="p-6 flex flex-col flex-1">
       <h3 className="text-xl font-bold mb-2">{title}</h3>
       <p className="text-muted-foreground text-sm mb-4">{desc}</p>
       <div className="space-y-2 mb-6">
@@ -44,8 +62,66 @@ const FilterSection = ({ title, options }: { title: string; options: string[] })
 );
 
 const PowerSolutions = () => {
+  const logoRef = useRef<HTMLDivElement>(null);
+  const logoContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!logoRef.current || !logoContainerRef.current) return;
+    
+    // Ensure the container has proper height
+    const firstLogo = logoRef.current.children[0] as HTMLElement;
+    if (firstLogo) {
+      logoContainerRef.current.style.height = `${firstLogo.offsetHeight}px`;
+    }
+
+    // Clone logos for seamless scrolling
+    const originalLogos = logoRef.current.children;
+    const totalWidth = Array.from(originalLogos).reduce(
+      (acc, logo) => acc + (logo as HTMLElement).offsetWidth + 32, // add gap
+      0
+    );
+    
+    // Set initial position for the logos
+    logoRef.current.style.width = `${totalWidth * 2}px`;
+
+    // Clone logos and append them to create the illusion of infinite scrolling
+    Array.from(originalLogos).forEach((logo) => {
+      const clone = logo.cloneNode(true);
+      logoRef.current?.appendChild(clone);
+    });
+
+    // GSAP animation - increased speed
+    gsap.fromTo(
+      logoRef.current,
+      { x: 0 },
+      {
+        x: -totalWidth,
+        duration: 15, // Faster animation (was 30)
+        ease: "linear",
+        repeat: -1,
+        onRepeat: () => {
+          // Reset position to create seamless loop
+          gsap.set(logoRef.current, { x: 0 });
+        }
+      }
+    );
+
+    return () => {
+      gsap.killTweensOf(logoRef.current);
+    };
+  }, []);
+
   return (
-    <section id="solutions" className="py-16">
+    <section id="solutions" className="py-0">
+      {/* Hero Image Section - larger, fills page width */}
+      <div className="w-full flex justify-center items-center py-0">
+        <img
+          src={allProductsImg}
+          alt="All Products"
+          className="w-full h-[320px] md:h-[250px] object-cover rounded-none"
+          style={{ maxWidth: "100vw" }}
+        />
+      </div>
       <div className="container mx-auto grid md:grid-cols-4 gap-8">
         {/* Left: Content */}
         <div className="md:col-span-3">
@@ -114,48 +190,26 @@ const PowerSolutions = () => {
         </div>
       </div>
       {/* Trusted By Section */}
-      <div className="container mx-auto mt-20">
+      <div className="container mx-auto mt-20 mb-10">
         <div className="text-center mb-10">
           <h3 className="text-2xl md:text-3xl font-bold">
             Trusted Across India's Largest Enterprises
           </h3>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center justify-items-center">
-          <img
-            src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755018139/Screenshot_2025-08-12_223045_zmtwsc.png"
-            alt="Honeywell"
-            className="h-12 w-auto"
-          />
-          <img
-            src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755018138/Screenshot_2025-08-12_223107_gtytur.png"
-            alt="Caritas"
-            className="h-12 w-auto"
-          />
-          <img
-            src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755018138/Screenshot_2025-08-12_223123_pqjvbo.png"
-            alt="India"
-            className="h-12 w-auto"
-          />
-          <img
-            src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755018139/Screenshot_2025-08-12_223139_wq8vha.png"
-            alt="Kashyapi"
-            className="h-12 w-auto"
-          />
-          <img
-            src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755018139/Screenshot_2025-08-12_223157_gp87k6.png"
-            alt="Continental"
-            className="h-12 w-auto"
-          />
-          <img
-            src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755018139/Screenshot_2025-08-12_223157_gp87k6.png"
-            alt="STS"
-            className="h-12 w-auto"
-          />
-          <img
-            src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755018139/Screenshot_2025-08-12_223157_gp87k6.png"
-            alt="GMP"
-            className="h-12 w-auto"
-          />
+        <div ref={logoContainerRef} className="overflow-hidden relative h-12">
+          <div 
+            ref={logoRef} 
+            className="flex items-center gap-24 absolute top-0 left-0"
+          >
+            <img src={trust} alt="Honeywell" className="h-20 w-auto" />
+            <img src={trust1} alt="Caritas" className="h-20 w-auto" />
+            <img src={trust2} alt="India" className="h-20 w-auto" />
+            <img src={trust3} alt="Kashyapi" className="h-20 w-auto" />
+            <img src={trust4} alt="Continental" className="h-20 w-auto" />
+            <img src={trust5} alt="STS" className="h-20 w-auto" />
+            <img src={trust6} alt="GMP" className="h-20 w-auto" />
+            <img src={trust7} alt="GMP" className="h-20 w-auto" />
+          </div>
         </div>
       </div>
     </section>

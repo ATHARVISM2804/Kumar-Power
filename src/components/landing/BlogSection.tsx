@@ -1,6 +1,6 @@
-import weather from "@/assets/blog-extreme-weather.jpg";
-import sustainable from "@/assets/blog-sustainable.jpg";
-import maintenance from "@/assets/blog-maintenance.jpg";
+import weather from "@/assets/blog3.png";
+import sustainable from "@/assets/blog2.png";
+import maintenance from "@/assets/blog1.png";
 import { ArrowRight } from "lucide-react";
 
 const BlogCard = ({ title, img, summary }: { title: string; img: string; summary: string }) => (
