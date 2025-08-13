@@ -1,4 +1,9 @@
+import { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
+
 const Footer = () => {
+  const [showGeneratorDropdown, setShowGeneratorDropdown] = useState(false);
+
   return (
     <>
       {/* Call To Action Section */}
@@ -41,10 +46,26 @@ const Footer = () => {
             <div>
               <h4 className="font-bold text-white text-lg mb-3">Our Products</h4>
               <ul className="space-y-1 text-sm text-white/90">
-                <li>Kirloskar Generators</li>
-                <li>Kirloskar Gas Generators</li>
-                <li>Kirloskar Portable Generators</li>
-                <li>Kirloskar Diesel Generators</li>
+                <li>
+                  <button 
+                    onClick={() => setShowGeneratorDropdown(!showGeneratorDropdown)}
+                    className="flex items-center w-full hover:text-blue-300"
+                  >
+                    <span>Kirloskar Generators</span>
+                    {showGeneratorDropdown ? 
+                      <ChevronUp className="ml-1 h-4 w-4" /> : 
+                      <ChevronDown className="ml-1 h-4 w-4" />
+                    }
+                  </button>
+                  
+                  {showGeneratorDropdown && (
+                    <ul className="ml-4 mt-1 space-y-1 border-l border-white/20 pl-3">
+                      <li><a href="#gas" className="text-white/80 hover:text-white">Kirloskar Gas Generators</a></li>
+                      <li><a href="#portable" className="text-white/80 hover:text-white">Kirloskar Portable Generators</a></li>
+                      <li><a href="#diesel" className="text-white/80 hover:text-white">Kirloskar Diesel Generators</a></li>
+                    </ul>
+                  )}
+                </li>
                 <li>Electrical Panels</li>
                 <li>Servo Stabilizers</li>
                 <li>Inverters (UPS Systems)</li>

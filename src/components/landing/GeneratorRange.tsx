@@ -8,12 +8,12 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const Card = ({ title, img, caption }: { title: string; img: string; caption: string }) => (
-  <article className="overflow-hidden flex flex-col bg-white rounded-lg shadow">
-    <div className="w-full h-40 bg-gray-100 flex items-center justify-center overflow-hidden">
+  <article className="overflow-hidden flex flex-col shadow">
+    <div className="w-full h-60 flex items-center justify-center overflow-hidden">
       <img
         src={img}
         alt={title}
-        className="object-contain w-full h-full"
+        className="object-contain w-full h-60"
         style={{ background: "white" }}
         loading="lazy"
       />
@@ -32,7 +32,7 @@ const Card = ({ title, img, caption }: { title: string; img: string; caption: st
 
 const GeneratorRange = () => {
   return (
-    <section id="range" className="py-16 bg-foreground text-primary-foreground">
+    <section id="range" className="py-16 bg-black text-primary-foreground">
       <div className="container mx-auto">
         <h2 className="text-2xl md:text-3xl font-bold mb-2">Explore Our Generator Range</h2>
         <p className="text-muted-foreground mb-8">

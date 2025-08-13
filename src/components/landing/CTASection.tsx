@@ -3,7 +3,7 @@ import { Phone, Download } from "lucide-react";
 
 const CTASection = () => {
   return (
-    <section id="cta" className="py-16 bg-foreground">
+    <section id="cta" className="py-16 bg-black">
       <div className="container mx-auto flex flex-col items-center text-center">
         <div className="mb-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-2 text-white">Need Expert Assistance?</h2>

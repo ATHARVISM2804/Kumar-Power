@@ -18,11 +18,11 @@ import gsap from "gsap";
 
 const PSCard = ({ title, desc, specs, img }: { title: string; desc: string; specs: string[]; img: string }) => (
   <article className="bg-white rounded-lg overflow-hidden shadow-md flex flex-col">
-    <div className="w-full h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
+    <div className="w-full h-48  p-2 flex items-center justify-center overflow-hidden">
       <img
         src={img}
         alt={title}
-        className="object-contain w-full h-full"
+        className="object-contain w-full translate-y-1 h-full"
         style={{ background: "white" }}
       />
     </div>
