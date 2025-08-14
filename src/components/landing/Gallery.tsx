@@ -2,12 +2,12 @@ import { useState } from "react";
 
 // These should be replaced with your actual image imports
 const galleryImages = [
-  "/src/assets/gallery1.jpg",
-  "/src/assets/gallery2.jpg",
-  "/src/assets/gallery3.jpeg",
+  "/src/assets/gallery1.png",
+  "/src/assets/gallery2.png",
+  "/src/assets/gallery3.png",
   "/src/assets/gallery4.png",
-  "/src/assets/gallery5.jpg",
-  "/src/assets/gallery6.jpg",
+  "/src/assets/gallery5.png",
+  "/src/assets/gallery6.png",
 ];
 
 const Gallery = () => {
