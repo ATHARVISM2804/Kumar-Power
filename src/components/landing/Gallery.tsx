@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-// These should be replaced with your actual image imports
+// Updated with Cloudinary image links
 const galleryImages = [
-  "/src/assets/gallery1.png",
-  "/src/assets/gallery2.png",
-  "/src/assets/gallery3.png",
-  "/src/assets/gallery4.png",
-  "/src/assets/gallery5.png",
-  "/src/assets/gallery6.png",
+  "https://res.cloudinary.com/dinhcaf2c/image/upload/v1755175177/gallery1_uhk3zd.png",
+  "https://res.cloudinary.com/dinhcaf2c/image/upload/v1755175177/gallery2_ei3h9z.png",
+  "https://res.cloudinary.com/dinhcaf2c/image/upload/v1755175176/gallery3_dcqffp.png",
+  "https://res.cloudinary.com/dinhcaf2c/image/upload/v1755175202/gallery4_nwutsh.png",
+  "https://res.cloudinary.com/dinhcaf2c/image/upload/v1755175196/gallery5_zlyhc4.png",
+  "https://res.cloudinary.com/dinhcaf2c/image/upload/v1755175198/gallery6_ulastu.png",
 ];
 
 const Gallery = () => {
