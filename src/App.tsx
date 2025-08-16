@@ -7,12 +7,29 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 // About Us pages
-
 import Certifications from "./pages/about/Certifications";
 import OurProfile from "./pages/about/OurProfile";
 import PhotoGallery from "./pages/about/PhotoGallery";
 import OurClients from "./pages/about/OurClients";
 import Testimonials from "./pages/about/Testimonials";
+
+// Main Products page
+import Products from "./pages/Products";
+
+// Product pages
+import ElectricalPanels from "./pages/products/ElectricalPanels";
+import ServoStabilizers from "./pages/products/ServoStabilizers";
+import Inverters from "./pages/products/Inverters";
+import Transformers from "./pages/products/Transformers";
+import VFDs from "./pages/products/VFDs";
+
+// Kirloskar Generator pages
+import GasGenerators from "./pages/products/kirloskar/GasGenerators";
+import PortableGenerators from "./pages/products/kirloskar/PortableGenerators";
+import DieselGenerators from "./pages/products/kirloskar/DieselGenerators";
+
+// Contact page
+import Contact from "./pages/contact/Contact";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +47,23 @@ const App = () => (
           <Route path="/about/OurClients" element={<OurClients />} />
           <Route path="/about/PhotoGallery" element={<PhotoGallery />} />
           <Route path="/about/Certifications" element={<Certifications />} />
+
+          {/* Product Routes */}
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/electrical-panels" element={<ElectricalPanels />} />
+          <Route path="/products/servo-stabilizers" element={<ServoStabilizers />} />
+          <Route path="/products/inverters" element={<Inverters />} />
+          <Route path="/products/transformers" element={<Transformers />} />
+          <Route path="/products/vfds" element={<VFDs />} />
+
+          {/* Kirloskar Generator Routes */}
+          <Route path="/products/kirloskar/gas-generators" element={<GasGenerators />} />
+          <Route path="/products/kirloskar/portable-generators" element={<PortableGenerators />} />
+          <Route path="/products/kirloskar/diesel-generators" element={<DieselGenerators />} />
+          
+          {/* Contact Route */}
+          <Route path="/contact" element={<Contact />} />
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

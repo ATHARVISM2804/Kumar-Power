@@ -1,6 +1,11 @@
 import Header from "@/components/landing/Header";
 import Footer from "@/components/landing/Footer";
 import SEOJsonLD from "@/components/SEOJsonLD";
+import OurProfile from "@/assets/ourprofile1.png"
+import Welding from "@/assets/welding.png";
+import Contract from "@/assets/contract.png";
+import iso from "@/assets/iso.png";
+import Nation from "@/assets/Nation.png";
 
 const About = () => {
   return (
@@ -11,36 +16,39 @@ const About = () => {
       {/* Hero Section */}
       <div className="bg-gray-100 py-12">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
+          {/* Image on the left */}
+          <div className="rounded-lg overflow-hidden">
+            <img 
+              src={OurProfile}
+              alt="Kumar Power Facility" 
+              className="w-full h-auto object-cover shadow-lg max-h-[400px]"
+            />
+          </div>
+          
+          {/* Text on the right with smaller font size */}
           <div>
-            <h1 className="text-4xl font-bold mb-4">Know About Power</h1>
-            <h2 className="text-xl text-primary font-semibold mb-3">-Trusted Name in Power Solutions Providers.</h2>
-            <p className="text-lg">
+            <h1 className="text-3xl font-bold mb-3">Know About Power</h1>
+            <h2 className="text-lg text-primary font-semibold mb-2">-Trusted Name in Power Solutions Providers.</h2>
+            <p className="text-base">
               Kumar Generator House is a premier Kirloskar-certified power partner with over 30+ years of 
               excellence in providing comprehensive power solutions across India. Established in 1985, we have 
               grown to become one of the most trusted names in power generation equipment and services.
             </p>
-            <p className="text-lg mt-4">
+            <p className="text-base mt-3">
               Our expertise spans across sales, installation, commissioning, and maintenance of diesel generators, 
               ensuring uninterrupted power supply for critical operations, our expertise spans across SITC (Supply, 
               Installation, Testing & Commissioning) and end-to-end power solutions..
             </p>
-            <p className="text-lg mt-4">
+            <p className="text-base mt-3">
               As an authorized dealer and service provider for Kirloskar Green Gensets, we bring the reliability and 
               efficiency of world-class power solutions to our clients. Our team of certified engineers and 
               technicians ensures that every installation meets the highest standards of performance and safety.
             </p>
-            <p className="text-lg mt-4">
+            <p className="text-base mt-3">
               With a customer-first approach and commitment to excellence, Kumar Generator House has 
               successfully delivered over 10000+ power solutions across the country, building lasting relationships 
               with our clients through exceptional service and support.
             </p>
-          </div>
-          <div className="rounded-lg overflow-hidden">
-            <img 
-              src="" 
-              alt="Kumar Power Facility" 
-              className="w-full h-auto object-cover shadow-lg"
-            />
           </div>
         </div>
       </div>
@@ -67,7 +75,7 @@ const About = () => {
               </div>
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1581092921461-6484b55d8fae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=700&q=80"
+                  src={Welding}
                   alt="Welding work" 
                   className="w-full h-64 object-cover rounded-lg"
                 />
@@ -84,7 +92,7 @@ const About = () => {
               </div>
               <div className="md:order-1">
                 <img 
-                  src="https://images.unsplash.com/photo-1598479555388-c7271410875b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=700&q=80" 
+                  src={Contract} 
                   alt="Contract signing" 
                   className="w-full h-64 object-cover rounded-lg"
                 />
@@ -101,7 +109,7 @@ const About = () => {
               </div>
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1580894908361-967195033215?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=700&q=80" 
+                  src={iso}
                   alt="Person working on laptop" 
                   className="w-full h-64 object-cover rounded-lg"
                 />
@@ -118,7 +126,7 @@ const About = () => {
               </div>
               <div className="md:order-1">
                 <img 
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=700&q=80" 
+                  src={Nation}
                   alt="Skyscraper buildings" 
                   className="w-full h-64 object-cover rounded-lg"
                 />

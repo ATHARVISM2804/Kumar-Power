@@ -1,11 +1,23 @@
-const SEOJsonLD = () => {
+interface SEOJsonLDProps {
+  title?: string;
+  description?: string;
+  url?: string;
+  imageUrl?: string;
+}
+
+const SEOJsonLD = ({
+  title = 'Kumar Power',
+  description = 'Kirloskar-certified generators and turnkey power solutions across India.',
+  url = 'https://example.com/',
+  imageUrl = 'https://example.com/images/logo.png'
+}: SEOJsonLDProps) => {
   const data = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Kumar Power',
-    url: 'https://example.com/',
-    description:
-      'Kirloskar-certified generators and turnkey power solutions across India.',
+    url: url,
+    description: description,
+    image: imageUrl,
     brand: {
       '@type': 'Brand',
       name: 'Kirloskar',
@@ -20,8 +32,8 @@ const SEOJsonLD = () => {
   const website = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Kumar Power',
-    url: 'https://example.com/',
+    name: title,
+    url: url,
   } as const;
 
   return (
