@@ -1,7 +1,29 @@
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const Hero = () => {
+  const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 5) {
+        setShowContent(true);
+      }
+    };
+
+    // Initial check in case page is loaded with scroll position
+    if (window.scrollY > 5) {
+      setShowContent(true);
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <section id="home" className="relative">
       <div className="relative h-[68vh] md:h-[78vh] lg:h-[95vh] overflow-hidden rounded-xl border shadow-[var(--shadow-glow)]">
@@ -16,9 +38,9 @@ const Hero = () => {
           />
         </div>
         {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-black/40 z-10" />
+        <div className={`absolute inset-0 bg-black/40 z-10 transition-opacity duration-700 ${showContent ? 'opacity-100' : 'opacity-0'}`} />
         {/* Content above video */}
-        <div className="absolute inset-0 flex items-center justify-center z-20">
+        <div className={`absolute inset-0 flex items-center justify-center z-20 transition-opacity duration-700 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
           <div className="container mx-auto px-4 md:px-10 flex flex-col items-center">
             <div
               className="backdrop-blur-xl bg-white/20 border border-white/30 rounded-2xl p-4 md:p-12 shadow-2xl w-full max-w-4xl flex flex-col items-center space-y-4 md:space-y-8"
@@ -117,9 +139,19 @@ const Hero = () => {
             </div>
           </div>
         </div>
+        
+        {/* Instructions overlay that fades out when content appears */}
+        {!showContent && (
+          <div className="absolute inset-0 flex items-center justify-center z-30 pointer-events-none">
+            <p className="text-white text-xl md:text-2xl font-medium opacity-80 animate-pulse">
+             
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );
 };
 
 export default Hero;
+      
