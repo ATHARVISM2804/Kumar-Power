@@ -2,6 +2,20 @@ import Header from "@/components/landing/Header";
 import Footer from "@/components/landing/Footer";
 import SEOJsonLD from "@/components/SEOJsonLD";
 import { useState } from "react";
+import gallery from "@/assets/Gallery1.png";
+import gallery2 from "@/assets/gallery2.png";
+import gallery3 from "@/assets/gallery3.png";
+import gallery4 from "@/assets/gallery4.png";
+import gallery5 from "@/assets/gallery5.png";
+import gallery6 from "@/assets/gallery6.png";
+import gallery7 from "@/assets/gallery7.png";
+import gallery8 from "@/assets/gallery8.png";
+import gallery9 from "@/assets/gallery9.png";
+import gal1 from "@/assets/gal1.png";
+import gal2 from "@/assets/gal2.png";
+import gal3 from "@/assets/gal3.png";
+import gal4 from "@/assets/gal4.png";
+import gal5 from "@/assets/gal6.png";
 
 const PhotoGallery = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -33,7 +47,7 @@ const PhotoGallery = () => {
           </div>
         </div>
         <img 
-          src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1767621432/warehouse-yellow-shelving.jpg" 
+          src={gallery}
           alt="Warehouse with yellow shelving" 
           className="w-full h-[400px] object-cover"
         />
@@ -87,15 +101,15 @@ const PhotoGallery = () => {
             {/* Top row - large industrial equipment */}
             <div className="col-span-5 row-span-3 overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1596731630622-9e29999c21bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80" 
+                src={gallery2}
                 alt="Industrial machinery" 
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="col-span-3 row-span-3 overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80" 
-                alt="Generator installation" 
+                src={gallery3}
+                alt="Generator installation"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -103,14 +117,14 @@ const PhotoGallery = () => {
             {/* Middle rows */}
             <div className="col-span-3 row-span-3 overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" 
+                src={gallery4}
                 alt="Circuit board maintenance" 
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="col-span-5 row-span-3 overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1581094283338-2314dddb7ece?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
+                src={gallery5}
                 alt="Control room" 
                 className="w-full h-full object-cover"
               />
@@ -119,14 +133,14 @@ const PhotoGallery = () => {
             {/* Third row */}
             <div className="col-span-5 row-span-3 overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80" 
+                src={gallery6}
                 alt="Gas turbine installation" 
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="col-span-3 row-span-3 overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1579389083395-4507e98b5e67?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
+                src={gallery7} 
                 alt="Monitoring room" 
                 className="w-full h-full object-cover"
               />
@@ -135,14 +149,14 @@ const PhotoGallery = () => {
             {/* Bottom row */}
             <div className="col-span-3 row-span-3 overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1581094786228-b930e775c6f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
+                src={gallery8} 
                 alt="Large industrial generator" 
-                className="w-full h-full object-cover"
+                className="w-full h-[23vh] object-cover"
               />
             </div>
             <div className="col-span-2 row-span-3 overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
+                src={gallery9} 
                 alt="Tablet control interface" 
                 className="w-full h-full object-cover"
               />
@@ -151,7 +165,7 @@ const PhotoGallery = () => {
         </div>
       </section>
       
-      {/* Real Stories. Real Impact. Section - EXACTLY like in the shared image */}
+      {/* Real Stories. Real Impact. Section - Modified to remove play buttons */}
       <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <h3 className="text-2xl font-bold text-center mb-8">Real Stories. Real Impact.</h3>
@@ -160,17 +174,11 @@ const PhotoGallery = () => {
             {/* Behind the Scenes: Manufacturing Excellence */}
             <div className="relative overflow-hidden rounded-lg group">
               <img 
-                src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
+                src={gal1}
                 alt="Manufacturing facility" 
                 className="w-full h-64 object-cover"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                <button className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-6 h-6">
-                    <path fillRule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clipRule="evenodd" />
-                  </svg>
-                </button>
-              </div>
+              <div className="absolute inset-0 bg-black bg-opacity-40"></div>
               <div className="p-4 bg-white">
                 <h4 className="font-bold">Behind the Scenes: Manufacturing Excellence</h4>
                 <p className="text-sm text-gray-600 mt-1">Take a tour of our state-of-the-art manufacturing facility where precision engineering meets quality craftsmanship.</p>
@@ -181,17 +189,11 @@ const PhotoGallery = () => {
             {/* Client Success Story: NTPC Power Plant */}
             <div className="relative overflow-hidden rounded-lg group">
               <img 
-                src="https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80" 
+                src={gal2} 
                 alt="NTPC Power Plant" 
                 className="w-full h-64 object-cover"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                <button className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-6 h-6">
-                    <path fillRule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clipRule="evenodd" />
-                  </svg>
-                </button>
-              </div>
+              <div className="absolute inset-0 bg-black bg-opacity-40"></div>
               <div className="p-4 bg-white">
                 <h4 className="font-bold">Client Success Story: NTPC Power Plant</h4>
                 <p className="text-sm text-gray-600 mt-1">How our generators provided uninterrupted backup power for India's largest power generation facility.</p>
@@ -202,17 +204,11 @@ const PhotoGallery = () => {
             {/* Emergency Response: Cyclone Relief */}
             <div className="relative overflow-hidden rounded-lg group">
               <img 
-                src="https://images.unsplash.com/photo-1635181134362-88818b2ff5ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80" 
+                src={gal3} 
                 alt="Cyclone Relief" 
                 className="w-full h-64 object-cover"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                <button className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-6 h-6">
-                    <path fillRule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clipRule="evenodd" />
-                  </svg>
-                </button>
-              </div>
+              <div className="absolute inset-0 bg-black bg-opacity-40"></div>
               <div className="p-4 bg-white">
                 <h4 className="font-bold">Emergency Response: Cyclone Relief</h4>
                 <p className="text-sm text-gray-600 mt-1">Our mobile generator units deployed during natural disasters to provide critical power to emergency services.</p>
@@ -223,17 +219,11 @@ const PhotoGallery = () => {
             {/* Innovation Spotlight: Eco-Friendly Generators */}
             <div className="relative overflow-hidden rounded-lg group">
               <img 
-                src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
+                src={gal4} 
                 alt="Eco-Friendly Generators" 
                 className="w-full h-64 object-cover"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                <button className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-6 h-6">
-                    <path fillRule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clipRule="evenodd" />
-                  </svg>
-                </button>
-              </div>
+              <div className="absolute inset-0 bg-black bg-opacity-40"></div>
               <div className="p-4 bg-white">
                 <h4 className="font-bold">Innovation Spotlight: Eco-Friendly Generators</h4>
                 <p className="text-sm text-gray-600 mt-1">Introducing our new line of environmentally conscious generators with reduced emissions and noise levels.</p>
@@ -264,7 +254,7 @@ const PhotoGallery = () => {
             </div>
             <div className="h-72 overflow-hidden rounded">
               <img 
-                src="https://images.unsplash.com/photo-1566731855990-9a1a1ee61fe5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
+                src={gal5}
                 alt="Industrial generator installation" 
                 className="w-full h-full object-cover"
               />
@@ -273,15 +263,7 @@ const PhotoGallery = () => {
         </div>
       </section>
       
-      {/* Photo Gallery Grid */}
-      <section className="py-10 bg-gray-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold mb-6">Photo Gallery</h2>
-            {/* ...existing code... */}
-          </div>
-        </div>
-      </section>
+     
       
       <Footer />
     </div>
@@ -289,4 +271,5 @@ const PhotoGallery = () => {
 };
 
 export default PhotoGallery;
+                 
 
