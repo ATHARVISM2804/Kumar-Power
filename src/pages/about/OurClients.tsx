@@ -1,7 +1,32 @@
 import Header from "@/components/landing/Header";
 import Footer from "@/components/landing/Footer";
 import SEOJsonLD from "@/components/SEOJsonLD";
-
+import handshake from "@/assets/handshake.png";
+import honeywell from "@/assets/Honeywell.png";
+import  suez from "@/assets/Suez.png";
+import adani from "@/assets/Adani.png";
+import sikka from "@/assets/S&P Infra.png";
+import apollo from "@/assets/Apollo.png";
+import cec from "@/assets/CEC (1).png";
+import seasons from "@/assets/Seasons (1).png";
+import ncc from "@/assets/Ncc Limited.png";
+import gmr from "@/assets/GMR (1).png";
+import airindia from "@/assets/air-india-logo-png_seeklogo-5113 1.png";
+import british from "@/assets/BristishPaints.png";
+import nbcc from "@/assets/NBCC 1.png"
+import afcons from "@/assets/Afcons.png";
+import kec from "@/assets/KEC.png";
+import ojc from "@/assets/OJC.png"
+import mapple from "@/assets/Mapple.png";
+import comed from "@/assets/Comed.png";
+import mbd from "@/assets/Malhotra.png";
+import sp from "@/assets/S&P Infra.png";
+import rai from "@/assets/Rai Foundation.png";
+import kashyapi from "@/assets/Kashyapi (1).png";
+import pwc from "@/assets/PWC.png";
+import daiken from "@/assets/Daikin.png";
+import ignou from "@/assets/IGNOU-Preview 1.png";
+import vistara from "@/assets/Vistara.png";
 const OurClients = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -12,11 +37,11 @@ const OurClients = () => {
       <section 
         className="bg-cover bg-center py-24 text-white relative" 
         style={{ 
-          backgroundImage: "url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1984&q=80')",
+          backgroundImage: `url(${handshake})`,
           backgroundPosition: "center 20%"
         }}
       >
-        <div className="absolute inset-0 bg-black opacity-80"></div>
+        <div className="absolute inset-0 bg-black opacity-20"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Powering India's<br />Elite Enterprises</h1>
           <p className="text-lg max-w-2xl">
@@ -44,87 +69,87 @@ const OurClients = () => {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
             {/* Row 1 */}
             <div className="flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/clients/honeywell.png" alt="Honeywell" className="h-12" />
+              <img src={honeywell} alt="Honeywell" className="h-12" />
             </div>
             <div className="flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/clients/suez.png" alt="Suez" className="h-12" />
+              <img src={suez} alt="Suez" className="h-12" />
             </div>
             <div className="flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/clients/adani-wilmar.png" alt="Adani Wilmar" className="h-12" />
+              <img src={adani} alt="Adani Wilmar" className="h-12" />
             </div>
             <div className="flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/clients/sikka.png" alt="Sikka" className="h-12" />
+              <img src={sikka} alt="Sikka" className="h-12" />
             </div>
             <div className="flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/clients/apollo.png" alt="Apollo" className="h-12" />
+              <img src={apollo} alt="Apollo" className="h-12" />
             </div>
             
             {/* Row 2 */}
             <div className="flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/clients/national-small.png" alt="National Small Industries" className="h-12" />
+              <img src={cec} alt="National Small Industries" className="h-12" />
             </div>
             <div className="flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/clients/seasons.png" alt="Seasons" className="h-12" />
+              <img src={seasons} alt="Seasons" className="h-12" />
             </div>
             <div className="flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/clients/ncc.png" alt="NCC" className="h-12" />
+              <img src={ncc} alt="NCC" className="h-12" />
             </div>
             <div className="flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/clients/gmr.png" alt="GMR" className="h-12" />
+              <img src={gmr} alt="GMR" className="h-12" />
             </div>
             <div className="flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/clients/air-india.png" alt="Air India" className="h-12" />
+              <img src={airindia} alt="Air India" className="h-12" />
             </div>
             
             {/* Row 3 */}
             <div className="flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/clients/british-paints.png" alt="British Paints" className="h-12" />
+              <img src={british} alt="British Paints" className="h-12" />
             </div>
             <div className="flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/clients/nhpc.png" alt="NHPC" className="h-12" />
+              <img src={nbcc} alt="NHPC" className="h-12" />
             </div>
             <div className="flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/clients/afcons.png" alt="Afcons" className="h-12" />
+              <img src={afcons} alt="Afcons" className="h-12" />
             </div>
             <div className="flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/clients/kec.png" alt="KEC" className="h-12" />
+              <img src={kec} alt="KEC" className="h-12" />
             </div>
             <div className="flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/clients/oriental.png" alt="Oriental" className="h-12" />
+              <img src={ojc} alt="Oriental" className="h-12" />
             </div>
             
             {/* Row 4 */}
             <div className="flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/clients/mapple.png" alt="Mapple" className="h-12" />
+              <img src={mapple} alt="Mapple" className="h-12" />
             </div>
             <div className="flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/clients/coated.png" alt="Coated" className="h-12" />
+              <img src={comed} alt="Coated" className="h-12" />
             </div>
             <div className="flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/clients/mbd.png" alt="MBD Group" className="h-12" />
+              <img src={mbd} alt="MBD Group" className="h-12" />
             </div>
             <div className="flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/clients/infrastructure.png" alt="Infrastructure" className="h-12" />
+              <img src={sp} alt="Infrastructure" className="h-12" />
             </div>
             <div className="flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/clients/raj-foundation.png" alt="Raj Foundation" className="h-12" />
+              <img src={rai} alt="Raj Foundation" className="h-12" />
             </div>
             
             {/* Row 5 */}
             <div className="flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/clients/kashyapi.png" alt="Kashyapi" className="h-12" />
+              <img src={kashyapi} alt="Kashyapi" className="h-12" />
             </div>
             <div className="flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/clients/pwc.png" alt="PwC" className="h-12" />
+              <img src={pwc} alt="PwC" className="h-12" />
             </div>
             <div className="flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/clients/daikin.png" alt="Daikin" className="h-12" />
+              <img src={daiken} alt="Daikin" className="h-12" />
             </div>
             <div className="flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/clients/ignou.png" alt="IGNOU" className="h-12" />
+              <img src={ignou} alt="IGNOU" className="h-12" />
             </div>
             <div className="flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/clients/vistaar.png" alt="Vistaar" className="h-12" />
+              <img src={vistara} alt="Vistaar" className="h-12" />
             </div>
           </div>
         </div>

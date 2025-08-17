@@ -9,6 +9,8 @@ import Nation from "@/assets/Nation.png";
 import rajvinder from "@/assets/rajvinder.png";
 import manjot from "@/assets/manjot.png";
 import jagjit from "@/assets/jagjit.png";
+import isoprof from "@/assets/iso profile.png";
+import kirlo from "@/assets/kirlosksar profile.png"
 
 const About = () => {
   return (
@@ -305,14 +307,14 @@ const About = () => {
             <div className="flex flex-wrap gap-4">
               <div className="border border-gray-300 p-3 rounded flex items-center justify-center">
                 <img 
-                  src="https://res.cloudinary.com/dinhcaf2c/image/upload_v1755013519/iso-9001-2015.jpg"
+                  src={isoprof}
                   alt="ISO 9001:2015" 
                   className="h-16"
                 />
               </div>
               <div className="border border-gray-300 p-3 rounded flex items-center justify-center">
                 <img 
-                  src="https://res.cloudinary.com/dinhcaf2c/image/upload_v1755013519/kirloskar-partner.png"
+                  src={kirlo}
                   alt="Kirloskar Authorized" 
                   className="h-16"
                 />

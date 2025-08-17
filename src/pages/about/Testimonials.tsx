@@ -2,6 +2,11 @@ import Header from "@/components/landing/Header";
 import Footer from "@/components/landing/Footer";
 import SEOJsonLD from "@/components/SEOJsonLD";
 import { useState } from "react";
+import test1 from "@/assets/test1.png";
+import test2 from "@/assets/test2.png";
+import test3 from "@/assets/test3.png";
+import test4 from "@/assets/test4.png";
+import client from "@/assets/Vector (8).png"
 
 const Testimonials = () => {
   return (
@@ -46,7 +51,7 @@ const Testimonials = () => {
             <div className="border rounded-lg overflow-hidden">
               <div className="h-48 overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1530088441304-4d71357f122e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=654&q=80" 
+                  src={test1}
                   alt="Indian Railways" 
                   className="w-full h-full object-cover"
                 />
@@ -81,7 +86,7 @@ const Testimonials = () => {
             <div className="border rounded-lg overflow-hidden">
               <div className="h-48 overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1352&q=80" 
+                  src={test2}
                   alt="Apollo Hospital" 
                   className="w-full h-full object-cover"
                 />
@@ -116,7 +121,7 @@ const Testimonials = () => {
             <div className="border rounded-lg overflow-hidden">
               <div className="h-48 overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
+                  src={test3}
                   alt="Reliance Industries" 
                   className="w-full h-full object-cover"
                 />
@@ -151,7 +156,7 @@ const Testimonials = () => {
             <div className="border rounded-lg overflow-hidden">
               <div className="h-48 overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1588177046113-d8ab54ad5c6a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1136&q=80" 
+                  src={test4}
                   alt="Wipro Electronics" 
                   className="w-full h-full object-cover"
                 />
@@ -211,7 +216,7 @@ const Testimonials = () => {
               {Array.from({ length: 6 }).map((_, index) => (
                 <div key={index} className="bg-gray-800 bg-opacity-50 rounded py-2 px-4 flex items-center justify-center">
                   <img 
-                    src={`https://via.placeholder.com/120x40?text=Logo ${index + 1}`}
+                    src={client}
                     alt={`Client logo ${index + 1}`}
                     className="max-h-8"
                   />
