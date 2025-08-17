@@ -37,17 +37,18 @@ const Header = () => {
             </div>
           </li>
           
-          {/* Services dropdown - keeping existing code */}
+          {/* Services dropdown */}
           <li className="relative group">
-            <a href="#services" className="hover:text-primary transition-colors flex items-center gap-1 cursor-pointer py-4">
+            <Link to="/services" className="hover:text-primary transition-colors flex items-center gap-1 cursor-pointer py-4">
               Services <ChevronDown className="w-4 h-4" />
-            </a>
+            </Link>
             <div className="absolute left-0 top-[90%] pt-3 hidden group-hover:block hover:block">
-              <div className="bg-white shadow-lg rounded-md min-w-[240px] z-10 overflow-hidden">
-                <Link to='/services/service-1' className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Service 1</Link>
-                <Link to='/services/service-2' className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Service 2</Link>
-                <Link to='/services/service-3' className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Service 3</Link>
-
+              <div className="bg-white shadow-lg rounded-md min-w-[220px] z-10 overflow-hidden">
+                <Link to="/services/annual-maintenance" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Annual Maintenance</Link>
+                <Link to="/services/installation" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Installation & Commissioning</Link>
+                <Link to="/services/repair-overhaul" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Repair & Overhaul</Link>
+                <Link to="/services/emergency-support" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">24/7 Emergency Support</Link>
+                <Link to="/services/rental" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Generator Rental</Link>
               </div>
             </div>
           </li>
@@ -86,23 +87,17 @@ const Header = () => {
             </div>
           </li>
           
-          {/* Industries dropdown - keeping existing code */}
+          {/* Industries  */}
           <li className="relative group">
-            <a href="#industries" className="hover:text-primary transition-colors flex items-center gap-1 cursor-pointer py-4">
-              Industries <ChevronDown className="w-4 h-4" />
-            </a>
-            <div className="absolute left-0 top-[90%] pt-3 hidden group-hover:block hover:block">
-              <div className="bg-white shadow-lg rounded-md min-w-[200px] z-10 overflow-hidden">
-                <a href="#industry-1" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Industry 1</a>
-                <a href="#industry-2" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Industry 2</a>
-                <a href="#industry-3" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Industry 3</a>
-              </div>
-            </div>
+            <Link to="/industries" className="hover:text-primary transition-colors flex items-center gap-1 cursor-pointer py-4">
+              Industries 
+            </Link>
+           
           </li>
           
-          {/* Projects and Contact links - updating Contact to use Router Link */}
+          {/* Projects and Contact links */}
           <li>
-            <a href="#projects" className="hover:text-primary transition-colors py-4">Projects</a>
+            <Link to="/projects" className="hover:text-primary transition-colors py-4">Projects</Link>
           </li>
           <li>
             <Link to="/contact" className="hover:text-primary transition-colors py-4">Contact</Link>
@@ -131,7 +126,23 @@ const Header = () => {
         <div className="px-4 py-2">
           <Link to="/" className="block py-3 border-b">Home</Link>
           {/* ...existing code for About dropdown... */}
-          {/* ...existing code for Services dropdown... */}
+          
+          {/* Services dropdown for mobile */}
+          <div className="py-3 border-b">
+            <details className="group">
+              <summary className="flex justify-between items-center cursor-pointer list-none">
+                <span>Services</span>
+                <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="mt-2 ml-4 space-y-2">
+                <Link to="/services/annual-maintenance" className="block py-2">Annual Maintenance</Link>
+                <Link to="/services/installation" className="block py-2">Installation & Commissioning</Link>
+                <Link to="/services/repair-overhaul" className="block py-2">Repair & Overhaul</Link>
+                <Link to="/services/emergency-support" className="block py-2">24/7 Emergency Support</Link>
+                <Link to="/services/rental" className="block py-2">Generator Rental</Link>
+              </div>
+            </details>
+          </div>
           
           {/* Updated Products dropdown for mobile */}
           <div className="py-3 border-b">
@@ -161,23 +172,13 @@ const Header = () => {
             </details>
           </div>
           
-          {/* Industries dropdown */}
+          {/* Industries link */}
           <div className="py-3 border-b">
-            <details className="group">
-              <summary className="flex justify-between items-center cursor-pointer list-none">
-                <span>Industries</span>
-                <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
-              </summary>
-              <div className="mt-2 ml-4 space-y-2">
-                <a href="#industry-1" className="block py-2">Industry 1</a>
-                <a href="#industry-2" className="block py-2">Industry 2</a>
-                <a href="#industry-3" className="block py-2">Industry 3</a>
-              </div>
-            </details>
+            <Link to="/industries" className="block">Industries</Link>
           </div>
 
           {/* Projects link */}
-          <a href="#projects" className="block py-3 border-b">Projects</a>
+          <Link to="/projects" className="block py-3 border-b">Projects</Link>
           
           {/* Contact link */}
           <Link to="/contact" className="block py-3 border-b">Contact</Link>

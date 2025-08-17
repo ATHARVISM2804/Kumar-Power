@@ -28,6 +28,20 @@ import GasGenerators from "./pages/products/kirloskar/GasGenerators";
 import PortableGenerators from "./pages/products/kirloskar/PortableGenerators";
 import DieselGenerators from "./pages/products/kirloskar/DieselGenerators";
 
+// Services pages
+import Services from "./pages/Services";
+import AnnualMaintenance from "./pages/services/AnnualMaintenance";
+import Installation from "./pages/services/Installation";
+import RepairOverhaul from "./pages/services/RepairOverhaul";
+import EmergencySupport from "./pages/services/EmergencySupport";
+import Rental from "./pages/services/Rental";
+
+// Projects page
+import Projects from "./pages/Projects";
+
+// Industries page
+import Industries from "./pages/Industries";
+
 // Contact page
 import Contact from "./pages/contact/Contact";
 
@@ -60,6 +74,20 @@ const App = () => (
           <Route path="/products/kirloskar/gas-generators" element={<GasGenerators />} />
           <Route path="/products/kirloskar/portable-generators" element={<PortableGenerators />} />
           <Route path="/products/kirloskar/diesel-generators" element={<DieselGenerators />} />
+          
+          {/* Services Routes */}
+          <Route path="/services" element={<Services />} />
+          <Route path="/services/annual-maintenance" element={<AnnualMaintenance />} />
+          <Route path="/services/installation" element={<Installation />} />
+          <Route path="/services/repair-overhaul" element={<RepairOverhaul />} />
+          <Route path="/services/emergency-support" element={<EmergencySupport />} />
+          <Route path="/services/rental" element={<Rental />} />
+          
+          {/* Projects Route */}
+          <Route path="/projects" element={<Projects />} />
+          
+          {/* Industries Route */}
+          <Route path="/industries" element={<Industries />} />
           
           {/* Contact Route */}
           <Route path="/contact" element={<Contact />} />

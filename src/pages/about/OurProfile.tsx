@@ -6,6 +6,9 @@ import Welding from "@/assets/welding.png";
 import Contract from "@/assets/contract.png";
 import iso from "@/assets/iso.png";
 import Nation from "@/assets/Nation.png";
+import rajvinder from "@/assets/rajvinder.png";
+import manjot from "@/assets/manjot.png";
+import jagjit from "@/assets/jagjit.png";
 
 const About = () => {
   return (
@@ -148,7 +151,7 @@ const About = () => {
             <div className="text-center">
               <div className="bg-white p-4 rounded-lg shadow-md h-full">
                 <img 
-                  src="https://res.cloudinary.com/dinhcaf2c/image/upload_v1755013519/rajvinder_singh_kumar.jpg"
+                  src={rajvinder}
                   alt="Rajvinder Singh Kumar" 
                   className="w-48 h-48 object-cover mx-auto mb-4"
                 />
@@ -173,7 +176,7 @@ const About = () => {
             <div className="text-center">
               <div className="bg-white p-4 rounded-lg shadow-md h-full">
                 <img 
-                  src="https://res.cloudinary.com/dinhcaf2c/image/upload_v1755013519/jagjit_singh_kumar.jpg"
+                  src={jagjit}
                   alt="Jagjit Singh Kumar" 
                   className="w-48 h-48 object-cover mx-auto mb-4"
                 />
@@ -196,7 +199,7 @@ const About = () => {
             <div className="text-center">
               <div className="bg-white p-4 rounded-lg shadow-md h-full">
                 <img 
-                  src="https://res.cloudinary.com/dinhcaf2c/image/upload_v1755013519/manjot_singh_kumar.jpg"
+                  src={manjot}
                   alt="Manjot Singh Kumar" 
                   className="w-48 h-48 object-cover mx-auto mb-4"
                 />
