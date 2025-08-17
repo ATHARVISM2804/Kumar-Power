@@ -2,6 +2,7 @@ import Header from "@/components/landing/Header";
 import Footer from "@/components/landing/Footer";
 import SEOJsonLD from "@/components/SEOJsonLD";
 import { useState } from "react";
+import contact from "@/assets/contact.png"
 
 const Contact = () => {
   // Form state for the main contact form
@@ -79,24 +80,30 @@ const Contact = () => {
           backgroundSize: "cover",
           backgroundPosition: "center"
         }}>
-          <div className="absolute inset-0 z-0 bg-cover bg-center opacity-40" style={{
-            backgroundImage: "url('/assets/Group.png')",
-            mixBlendMode: "overlay"
+          <div className="absolute inset-0 z-0 bg-cover bg-center opacity-60" style={{
+            backgroundImage: `url(${contact})`,
+            mixBlendMode: "normal"
           }}></div>
           
           <div className="container mx-auto px-4 relative z-10 flex justify-center items-center min-h-[280px]">
             {/* Glassmorphism Card */}
-            <div className="max-w-3xl mx-auto px-10 py-12 bg-black bg-opacity-50 backdrop-blur-sm border border-gray-700 rounded-md shadow-2xl text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-2 text-white">Powering Connections That Matter</h2>
-              <p className="text-lg text-gray-200 mb-8">Let's build something extraordinary. Talk to our experts today.</p>
+            <div className="max-w-3xl mx-auto px-10 py-12 bg-black/30 backdrop-blur-md border border-white/20 rounded-lg shadow-2xl text-center relative overflow-hidden">
+              {/* Additional glass effect layer */}
+              <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-20 z-0"></div>
               
-              <div className="flex flex-wrap justify-center gap-4">
-                <a href="#contact-form" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md font-medium transition-colors">
-                  Start Your Inquiry
-                </a>
-                <a href="https://wa.me/919778431767" target="_blank" rel="noreferrer" className="bg-transparent border border-gray-300 hover:bg-blue-800 hover:bg-opacity-30 text-white px-8 py-3 rounded-md font-medium transition-colors">
-                  Connect on WhatsApp
-                </a>
+              {/* Content with improved contrast */}
+              <div className="relative z-10">
+                <h2 className="text-3xl md:text-4xl font-bold mb-2 text-white drop-shadow-md">Powering Connections That Matter</h2>
+                <p className="text-lg text-white mb-8 drop-shadow">Let's build something extraordinary. Talk to our experts today.</p>
+                
+                <div className="flex flex-wrap justify-center gap-4">
+                  <a href="#contact-form" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md font-medium transition-colors shadow-lg">
+                    Start Your Inquiry
+                  </a>
+                  <a href="https://wa.me/919778431767" target="_blank" rel="noreferrer" className="bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-blue-600/50 text-white px-8 py-3 rounded-md font-medium transition-colors shadow-lg">
+                    Connect on WhatsApp
+                  </a>
+                </div>
               </div>
             </div>
           </div>

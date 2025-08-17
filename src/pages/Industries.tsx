@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { Building2, ChevronRight, Filter, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Building2, ChevronRight, Filter, Users, CheckCircle2, Activity, Shield, Clock, MapPin, Briefcase } from 'lucide-react';
 import Header from "@/components/landing/Header";
 import Footer from "@/components/landing/Footer";
 import SEOJsonLD from "@/components/SEOJsonLD";
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from '@/components/ui/badge';
 
 const Industries = () => {
   // State for active category
@@ -758,8 +760,8 @@ const Industries = () => {
   // Helper function to render company cards
   const renderCompanyCards = (companies) => {
     return companies.map((company, index) => (
-      <Card key={index} className="overflow-hidden flex flex-col">
-        <div className="p-4 bg-gray-50 flex items-center justify-center h-36">
+      <Card key={index} className="overflow-hidden flex flex-col border border-gray-200 hover:border-blue-200 transition-all duration-300 hover:shadow-md">
+        <div className="p-6 bg-gray-50 flex items-center justify-center h-40 border-b">
           <img 
             src={company.logo} 
             alt={`${company.name} logo`} 
@@ -767,15 +769,15 @@ const Industries = () => {
           />
         </div>
         <div className="p-6 flex-grow flex flex-col">
-          <h3 className="text-xl font-bold mb-2">{company.name}</h3>
+          <h3 className="text-xl font-bold mb-2 text-gray-900">{company.name}</h3>
           <div className="flex items-center gap-2 text-sm text-blue-600 mb-3">
-            <Building2 size={16} />
-            <span>{company.location}</span>
+            <MapPin size={16} />
+            <span className="font-medium">{company.location}</span>
           </div>
-          <p className="text-muted-foreground mb-4 flex-grow">{company.description}</p>
-          <div className="mt-auto pt-4 border-t">
-            <h4 className="font-medium mb-2">Power Solution:</h4>
-            <p className="text-sm text-muted-foreground">{company.powerSolution}</p>
+          <p className="text-gray-600 mb-5 flex-grow">{company.description}</p>
+          <div className="mt-auto pt-4 border-t border-gray-100">
+            <h4 className="font-medium mb-2 text-gray-900">Power Solution:</h4>
+            <p className="text-sm text-gray-600">{company.powerSolution}</p>
           </div>
         </div>
       </Card>
@@ -817,46 +819,178 @@ const Industries = () => {
 
       <main>
         {/* Hero Banner */}
-        <div className="bg-black py-8 md:py-12">
-          <div className="container mx-auto text-center px-4">
-            <div className="flex items-center justify-center mb-1">
-              <span className="block h-px w-8 md:w-16 bg-white mr-2 md:mr-4" />
-              <span className="text-white text-xl md:text-3xl font-semibold tracking-wide">
-                INDUSTRIES WE SERVE
+        <section className="bg-black py-16 md:py-24 relative overflow-hidden">
+          <div className="absolute inset-0 opacity-20" style={{
+            backgroundImage: "url('https://res.cloudinary.com/dinhcaf2c/image/upload/v1729035001/industries_hero_pattern_vtr6hy.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }} />
+          <div className="container mx-auto text-center px-4 relative z-10">
+            <div className="flex items-center justify-center mb-4">
+              <span className="block h-px w-12 md:w-20 bg-white/70 mr-4" />
+              <span className="text-white text-xl md:text-3xl font-semibold tracking-wider uppercase">
+                INDUSTRY SOLUTIONS
               </span>
-              <span className="block h-px w-8 md:w-16 bg-white ml-2 md:ml-4" />
+              <span className="block h-px w-12 md:w-20 bg-white/70 ml-4" />
             </div>
-            <div className="text-white text-lg md:text-xl font-normal">
-              Powering success across diverse sectors
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-4xl mx-auto">
+              Powering Success Across Every Sector
+            </h1>
+            <div className="text-white/90 text-lg md:text-xl font-normal max-w-3xl mx-auto">
+              Specialized power generation solutions tailored to the unique requirements of diverse industries
             </div>
           </div>
-        </div>
+        </section>
 
         {/* Intro Section */}
-        <section className="py-12 md:py-20">
+        <section className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-3xl md:text-5xl font-bold mb-6">
-                Power Solutions For Every Industry
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8">
-                At Kumar Power, we understand that each industry has unique power requirements. 
-                For over three decades, we've delivered specialized generator solutions across diverse 
-                sectors, ensuring reliable power for critical operations, sensitive equipment, 
-                and essential services.
+            <div className="max-w-4xl mx-auto">
+              <div className="flex items-center gap-2 mb-6">
+                <div className="h-1 w-10 bg-blue-600"></div>
+                <span className="text-blue-600 font-medium">OUR APPROACH</span>
+              </div>
+              <h2 className="text-3xl md:text-5xl font-bold mb-8 text-gray-900">
+                Industry-Specific Power Expertise
+              </h2>
+              <p className="text-lg text-gray-600 mb-10">
+                At Kumar Power, we recognize that each industry faces unique challenges when it comes to 
+                power reliability and continuity. With over three decades of experience, we've developed 
+                deep expertise in understanding and addressing the specific power requirements across 
+                diverse sectors. Our solutions are engineered to provide the exact level of reliability, 
+                redundancy, and performance your operations demand.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-                <div className="p-6 border rounded-lg text-center">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
-                  <div className="text-lg">Clients Served</div>
+              
+              <div className="grid md:grid-cols-3 gap-8 mb-12">
+                <div className="flex flex-col items-start">
+                  <div className="bg-blue-100 p-3 rounded-full mb-4">
+                    <Shield className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2 text-gray-900">Sector-Specific Solutions</h3>
+                  <p className="text-gray-600">
+                    Tailored power systems designed for the unique requirements of your industry, from healthcare 
+                    to manufacturing to data centers.
+                  </p>
                 </div>
-                <div className="p-6 border rounded-lg text-center">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">20+</div>
-                  <div className="text-lg">Industries</div>
+                <div className="flex flex-col items-start">
+                  <div className="bg-blue-100 p-3 rounded-full mb-4">
+                    <Activity className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2 text-gray-900">Operational Continuity</h3>
+                  <p className="text-gray-600">
+                    Systems engineered to ensure your critical operations continue without interruption, regardless 
+                    of grid conditions.
+                  </p>
                 </div>
-                <div className="p-6 border rounded-lg text-center">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">30+</div>
-                  <div className="text-lg">Years Experience</div>
+                <div className="flex flex-col items-start">
+                  <div className="bg-blue-100 p-3 rounded-full mb-4">
+                    <Clock className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2 text-gray-900">Expert Consultation</h3>
+                  <p className="text-gray-600">
+                    Industry-specific knowledge that helps you implement the right power solution for your unique 
+                    operational demands.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-8 bg-blue-50 rounded-xl p-6">
+                <div className="p-4 text-center">
+                  <div className="text-4xl font-bold text-blue-600 mb-2">500+</div>
+                  <div className="text-gray-900">Industry Leaders Served</div>
+                </div>
+                <div className="p-4 text-center">
+                  <div className="text-4xl font-bold text-blue-600 mb-2">20+</div>
+                  <div className="text-gray-900">Diverse Sectors</div>
+                </div>
+                <div className="p-4 text-center">
+                  <div className="text-4xl font-bold text-blue-600 mb-2">30+</div>
+                  <div className="text-gray-900">Years of Industry Expertise</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Key Industry Sectors */}
+        <section className="py-16 md:py-24 bg-gray-50 relative overflow-hidden">
+          <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
+            backgroundImage: "url('https://res.cloudinary.com/dinhcaf2c/image/upload/v1729035001/blueprint_pattern_xk3f7d.svg')",
+            backgroundSize: "cover",
+          }} />
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="flex items-center gap-2 mb-4 justify-center">
+              <div className="h-1 w-10 bg-blue-600"></div>
+              <span className="text-blue-600 font-medium">KEY INDUSTRIES</span>
+              <div className="h-1 w-10 bg-blue-600"></div>
+            </div>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900">
+                Our Primary Industry Focus
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Delivering specialized power solutions to these critical sectors where reliability is non-negotiable
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center hover:shadow-lg transition-shadow">
+                <div className="bg-blue-100 p-4 rounded-full mb-4">
+                  <Building2 className="h-8 w-8 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900">Healthcare</h3>
+                <p className="text-gray-600 mb-4">
+                  Life-saving power solutions for hospitals, clinics, and medical facilities where every second counts.
+                </p>
+                <div className="mt-auto pt-4">
+                  <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200">
+                    Zero Downtime
+                  </Badge>
+                </div>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center hover:shadow-lg transition-shadow">
+                <div className="bg-blue-100 p-4 rounded-full mb-4">
+                  <Activity className="h-8 w-8 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900">Data Centers</h3>
+                <p className="text-gray-600 mb-4">
+                  N+1 redundant power for mission-critical digital infrastructure and cloud computing facilities.
+                </p>
+                <div className="mt-auto pt-4">
+                  <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200">
+                    Tier III & IV Ready
+                  </Badge>
+                </div>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center hover:shadow-lg transition-shadow">
+                <div className="bg-blue-100 p-4 rounded-full mb-4">
+                  <Briefcase className="h-8 w-8 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900">Industrial</h3>
+                <p className="text-gray-600 mb-4">
+                  Manufacturing and production facilities requiring continuous power for operational continuity.
+                </p>
+                <div className="mt-auto pt-4">
+                  <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200">
+                    Process Protection
+                  </Badge>
+                </div>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center hover:shadow-lg transition-shadow">
+                <div className="bg-blue-100 p-4 rounded-full mb-4">
+                  <Users className="h-8 w-8 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900">Commercial</h3>
+                <p className="text-gray-600 mb-4">
+                  Offices, retail, and hospitality venues requiring reliable power to protect revenue and customer experience.
+                </p>
+                <div className="mt-auto pt-4">
+                  <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200">
+                    Business Continuity
+                  </Badge>
                 </div>
               </div>
             </div>
@@ -864,137 +998,292 @@ const Industries = () => {
         </section>
 
         {/* Industry Categories */}
-        <section className="py-12 bg-gray-50">
+        <section className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">Browse By Industry</h2>
+              <div className="flex items-center gap-2 mb-6 justify-center">
+                <div className="h-1 w-10 bg-blue-600"></div>
+                <span className="text-blue-600 font-medium">BROWSE CLIENTS</span>
+                <div className="h-1 w-10 bg-blue-600"></div>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-gray-900">
+                Explore Our Industry Portfolio
+              </h2>
+              <p className="text-lg text-gray-600 mb-10 text-center max-w-3xl mx-auto">
+                Discover the diverse range of clients who trust Kumar Power for their critical power needs, 
+                from multinational corporations to vital infrastructure providers
+              </p>
               
-              <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-12">
-                {categories.slice(0, 10).map((category) => (
+              <div className="overflow-x-auto pb-4">
+                <div className="flex flex-wrap justify-center gap-3 mb-12 min-w-max">
                   <Button
-                    key={category.id}
-                    variant={activeCategory === category.id ? "default" : "outline"}
+                    variant={activeCategory === "all" ? "default" : "outline"}
                     size="sm"
-                    onClick={() => setActiveCategory(category.id)}
+                    onClick={() => setActiveCategory("all")}
                     className="mb-2"
                   >
-                    {category.name}
+                    All Industries
                   </Button>
-                ))}
+                  
+                  <Button
+                    variant={activeCategory === "industrial" ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setActiveCategory("industrial")}
+                    className="mb-2"
+                  >
+                    <Building2 size={16} className="mr-1" /> Industrial
+                  </Button>
+                  
+                  <Button
+                    variant={activeCategory === "medical" ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setActiveCategory("medical")}
+                    className="mb-2"
+                  >
+                    Healthcare
+                  </Button>
+                  
+                  <Button
+                    variant={activeCategory === "embassy" ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setActiveCategory("embassy")}
+                    className="mb-2"
+                  >
+                    Embassy
+                  </Button>
+                  
+                  <Button
+                    variant={activeCategory === "banks" ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setActiveCategory("banks")}
+                    className="mb-2"
+                  >
+                    Financial
+                  </Button>
+                  
+                  <Button
+                    variant={activeCategory === "retail" ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setActiveCategory("retail")}
+                    className="mb-2"
+                  >
+                    Retail
+                  </Button>
+                  
+                  <Button
+                    variant={activeCategory === "hospitality" ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setActiveCategory("hospitality")}
+                    className="mb-2"
+                  >
+                    Hospitality
+                  </Button>
+                  
+                  <Button
+                    variant={activeCategory === "infrastructure" ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setActiveCategory("infrastructure")}
+                    className="mb-2"
+                  >
+                    Infrastructure
+                  </Button>
+                  
+                  <Button
+                    variant={activeCategory === "society" ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setActiveCategory("society")}
+                    className="mb-2"
+                  >
+                    Residential
+                  </Button>
+                </div>
               </div>
               
-              {categories.length > 10 && (
-                <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-12">
-                  {categories.slice(10).map((category) => (
-                    <Button
-                      key={category.id}
-                      variant={activeCategory === category.id ? "default" : "outline"}
-                      size="sm"
-                      onClick={() => setActiveCategory(category.id)}
-                      className="mb-2"
-                    >
-                      {category.name}
-                    </Button>
-                  ))}
+              <div className="overflow-x-auto pb-4">
+                <div className="flex flex-wrap justify-center gap-3 mb-12 min-w-max">
+                  <Button
+                    variant={activeCategory === "petrol" ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setActiveCategory("petrol")}
+                    className="mb-2"
+                  >
+                    Petrol Pumps
+                  </Button>
+                  
+                  <Button
+                    variant={activeCategory === "exporter" ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setActiveCategory("exporter")}
+                    className="mb-2"
+                  >
+                    Exporters
+                  </Button>
+                  
+                  <Button
+                    variant={activeCategory === "cpwd" ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setActiveCategory("cpwd")}
+                    className="mb-2"
+                  >
+                    Government Projects
+                  </Button>
+                  
+                  <Button
+                    variant={activeCategory === "construction" ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setActiveCategory("construction")}
+                    className="mb-2"
+                  >
+                    Construction
+                  </Button>
+                  
+                  <Button
+                    variant={activeCategory === "spiritual" ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setActiveCategory("spiritual")}
+                    className="mb-2"
+                  >
+                    NGOs & Spiritual
+                  </Button>
+                  
+                  <Button
+                    variant={activeCategory === "fitness" ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setActiveCategory("fitness")}
+                    className="mb-2"
+                  >
+                    Fitness
+                  </Button>
                 </div>
-              )}
+              </div>
             </div>
           </div>
         </section>
 
         {/* Client Cards */}
-        <section className="py-12 md:py-16">
+        <section className="py-16 md:py-24 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="mb-12 text-center">
-              <h2 className="text-2xl md:text-4xl font-bold mb-4">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
                 {categories.find(c => c.id === activeCategory)?.name || "All Industries"}
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Discover how Kumar Power has provided tailored power solutions to these clients
+              </h3>
+              <p className="text-gray-600 max-w-3xl mx-auto">
+                Discover the tailored power solutions we've implemented for these industry-leading organizations
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {renderCompanyCards(getCompaniesByCategory(activeCategory))}
             </div>
+            
+            {getCompaniesByCategory(activeCategory).length === 0 && (
+              <div className="text-center py-12">
+                <div className="inline-block p-4 rounded-full bg-gray-100 mb-4">
+                  <Filter className="h-8 w-8 text-gray-400" />
+                </div>
+                <p className="text-xl text-gray-600">No companies found in this category.</p>
+                <Button 
+                  variant="outline" 
+                  className="mt-4 border-blue-600 text-blue-600 hover:bg-blue-50"
+                  onClick={() => setActiveCategory("all")}
+                >
+                  View All Industries
+                </Button>
+              </div>
+            )}
           </div>
         </section>
 
         {/* Industry Expertise Section */}
-        <section className="py-12 md:py-20 bg-blue-600 text-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center mb-12">
-              <h2 className="text-2xl md:text-4xl font-bold mb-4">
-                Our Industry Expertise
+        <section className="py-16 md:py-24 bg-black text-white relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10 pointer-events-none" style={{
+            backgroundImage: "url('https://res.cloudinary.com/dinhcaf2c/image/upload/v1729035001/power_grid_pattern_evw2xc.svg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }} />
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="flex items-center gap-2 mb-4 justify-center">
+              <div className="h-1 w-10 bg-blue-400"></div>
+              <span className="text-blue-400 font-medium">OUR EXPERTISE</span>
+              <div className="h-1 w-10 bg-blue-400"></div>
+            </div>
+            <div className="max-w-4xl mx-auto text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                Industry-Specific Power Knowledge
               </h2>
-              <p className="text-lg opacity-90">
-                With decades of experience, we understand the unique power challenges faced by different industries
+              <p className="text-lg opacity-90 max-w-3xl mx-auto">
+                With decades of experience serving diverse industries, we've developed deep expertise in addressing 
+                the unique power challenges faced by different sectors
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-blue-700 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-3">Critical Infrastructure</h3>
-                <p className="mb-4">
+              <div className="bg-white/5 backdrop-blur-sm p-8 rounded-lg border border-white/10 hover:border-blue-500/30 transition-colors">
+                <h3 className="text-xl font-bold mb-4 text-blue-300">Critical Infrastructure</h3>
+                <p className="mb-6 text-white/80">
                   For hospitals, data centers, and emergency services where power interruptions are not an option, 
                   we provide N+1 redundant systems with instant failover capabilities.
                 </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-300 font-bold">•</span>
-                    <span>Zero-downtime solutions</span>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-blue-400 shrink-0 mt-0.5" />
+                    <span>Sub-10 second response times for life-critical systems</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-300 font-bold">•</span>
-                    <span>Multiple redundancy options</span>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-blue-400 shrink-0 mt-0.5" />
+                    <span>Multiple redundancy layers with automatic failover</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-300 font-bold">•</span>
-                    <span>Remote monitoring systems</span>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-blue-400 shrink-0 mt-0.5" />
+                    <span>24/7 remote monitoring with predictive analytics</span>
                   </li>
                 </ul>
               </div>
               
-              <div className="bg-blue-700 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-3">Commercial & Retail</h3>
-                <p className="mb-4">
+              <div className="bg-white/5 backdrop-blur-sm p-8 rounded-lg border border-white/10 hover:border-blue-500/30 transition-colors">
+                <h3 className="text-xl font-bold mb-4 text-blue-300">Commercial & Retail</h3>
+                <p className="mb-6 text-white/80">
                   Businesses rely on our generators to protect revenue, inventory, and customer experience 
                   during power outages with solutions that minimize disruption.
                 </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-300 font-bold">•</span>
-                    <span>Rapid switchover systems</span>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-blue-400 shrink-0 mt-0.5" />
+                    <span>Rapid switchover systems for seamless operation</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-300 font-bold">•</span>
-                    <span>Priority load management</span>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-blue-400 shrink-0 mt-0.5" />
+                    <span>Smart load prioritization for essential systems</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-300 font-bold">•</span>
-                    <span>Right-sized solutions</span>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-blue-400 shrink-0 mt-0.5" />
+                    <span>Right-sized solutions to balance cost and capability</span>
                   </li>
                 </ul>
               </div>
               
-              <div className="bg-blue-700 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-3">Industrial & Manufacturing</h3>
-                <p className="mb-4">
+              <div className="bg-white/5 backdrop-blur-sm p-8 rounded-lg border border-white/10 hover:border-blue-500/30 transition-colors">
+                <h3 className="text-xl font-bold mb-4 text-blue-300">Industrial & Manufacturing</h3>
+                <p className="mb-6 text-white/80">
                   Manufacturing operations need power solutions that protect sensitive equipment and 
-                  prevent production losses during outages.
+                  prevent production losses during outages with minimal disruption.
                 </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-300 font-bold">•</span>
-                    <span>Power quality management</span>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-blue-400 shrink-0 mt-0.5" />
+                    <span>Power quality management for precision equipment</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-300 font-bold">•</span>
-                    <span>Equipment protection features</span>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-blue-400 shrink-0 mt-0.5" />
+                    <span>Harmonic filtering for sensitive machinery</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-300 font-bold">•</span>
-                    <span>Production continuity planning</span>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-blue-400 shrink-0 mt-0.5" />
+                    <span>Phased load restoration for production lines</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-blue-400 shrink-0 mt-0.5" />
+                    <span>Energy efficiency optimizations for operating cost reduction</span>
                   </li>
                 </ul>
               </div>
@@ -1003,121 +1292,163 @@ const Industries = () => {
         </section>
 
         {/* Custom Solutions Section */}
-        <section className="py-12 md:py-20">
+        <section className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-2xl md:text-4xl font-bold mb-4">
+            <div className="max-w-5xl mx-auto">
+              <div className="flex items-center gap-2 mb-6">
+                <div className="h-1 w-10 bg-blue-600"></div>
+                <span className="text-blue-600 font-medium">TAILORED SOLUTIONS</span>
+              </div>
+              <div className="mb-12">
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900">
                   Industry-Specific Power Solutions
                 </h2>
-                <p className="text-lg text-muted-foreground">
-                  We tailor our generator systems to meet the unique requirements of each industry
+                <p className="text-lg text-gray-600 max-w-3xl">
+                  We engineer our power systems to address the unique challenges and requirements 
+                  of each industry, ensuring optimal performance for your specific needs
                 </p>
               </div>
               
-              <div className="space-y-12">
-                <div className="flex flex-col md:flex-row gap-8 items-center">
-                  <div className="md:w-1/2">
+              <div className="space-y-20">
+                <div className="flex flex-col lg:flex-row gap-10 items-center">
+                  <div className="lg:w-1/2">
                     <img 
                       src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1729035001/healthcare_solution_bcmtnp.jpg" 
                       alt="Healthcare Power Solutions" 
-                      className="rounded-lg w-full"
+                      className="rounded-xl shadow-lg w-full"
                     />
                   </div>
-                  <div className="md:w-1/2">
-                    <h3 className="text-2xl font-bold mb-4">Healthcare</h3>
-                    <p className="text-muted-foreground mb-4">
-                      Hospitals and medical facilities require highly reliable power systems that activate instantly 
-                      during outages to protect patient safety and critical equipment.
+                  <div className="lg:w-1/2">
+                    <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 mb-4">
+                      HEALTHCARE
+                    </Badge>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">Medical Power Solutions</h3>
+                    <p className="text-gray-600 mb-6">
+                      In healthcare environments, power interruptions can be life-threatening. Our medical-grade 
+                      power systems are engineered with the highest level of reliability to protect patient safety 
+                      and critical care equipment.
                     </p>
-                    <ul className="space-y-3">
-                      <li className="flex items-start gap-2">
-                        <span className="text-blue-600 font-bold">•</span>
-                        <span>Critical area prioritization (ORs, ICUs, emergency services)</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-blue-600 font-bold">•</span>
-                        <span>Rapid transfer switches with 10-second response</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-blue-600 font-bold">•</span>
-                        <span>Medical equipment protection features</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-blue-600 font-bold">•</span>
-                        <span>Regulatory compliance with healthcare standards</span>
-                      </li>
-                    </ul>
+                    <div className="bg-blue-50 p-6 rounded-lg mb-6">
+                      <h4 className="font-medium mb-3 text-gray-900">Key Features:</h4>
+                      <ul className="space-y-3">
+                        <li className="flex items-start gap-3">
+                          <CheckCircle2 className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" />
+                          <span className="text-gray-700">Critical area prioritization (ORs, ICUs, emergency services)</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <CheckCircle2 className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" />
+                          <span className="text-gray-700">Rapid transfer switches with 10-second response</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <CheckCircle2 className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" />
+                          <span className="text-gray-700">Medical equipment protection features</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <CheckCircle2 className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" />
+                          <span className="text-gray-700">Regulatory compliance with healthcare standards</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <Button asChild className="group">
+                      <Link to="/contact" className="flex items-center gap-2">
+                        Discuss Healthcare Power Solutions
+                        <ChevronRight size={16} className="transition-transform group-hover:translate-x-1" />
+                      </Link>
+                    </Button>
                   </div>
                 </div>
                 
-                <div className="flex flex-col md:flex-row-reverse gap-8 items-center">
-                  <div className="md:w-1/2">
+                <div className="flex flex-col lg:flex-row-reverse gap-10 items-center">
+                  <div className="lg:w-1/2">
                     <img 
                       src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1729035001/datacenter_solution_bptcmn.jpg" 
                       alt="Data Center Power Solutions" 
-                      className="rounded-lg w-full"
+                      className="rounded-xl shadow-lg w-full"
                     />
                   </div>
-                  <div className="md:w-1/2">
-                    <h3 className="text-2xl font-bold mb-4">Data Centers</h3>
-                    <p className="text-muted-foreground mb-4">
+                  <div className="lg:w-1/2">
+                    <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 mb-4">
+                      DATA CENTERS
+                    </Badge>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">Digital Infrastructure Power</h3>
+                    <p className="text-gray-600 mb-6">
                       Modern data centers require sophisticated power architectures with multiple redundancies 
-                      to ensure zero downtime for critical digital infrastructure.
+                      to ensure zero downtime for mission-critical digital infrastructure and cloud services.
                     </p>
-                    <ul className="space-y-3">
-                      <li className="flex items-start gap-2">
-                        <span className="text-blue-600 font-bold">•</span>
-                        <span>N+1, 2N and 2N+1 redundancy configurations</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-blue-600 font-bold">•</span>
-                        <span>Generator synchronization and parallel operation</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-blue-600 font-bold">•</span>
-                        <span>UPS integration and coordination</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-blue-600 font-bold">•</span>
-                        <span>Advanced monitoring and predictive maintenance</span>
-                      </li>
-                    </ul>
+                    <div className="bg-blue-50 p-6 rounded-lg mb-6">
+                      <h4 className="font-medium mb-3 text-gray-900">Key Features:</h4>
+                      <ul className="space-y-3">
+                        <li className="flex items-start gap-3">
+                          <CheckCircle2 className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" />
+                          <span className="text-gray-700">N+1, 2N and 2N+1 redundancy configurations</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <CheckCircle2 className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" />
+                          <span className="text-gray-700">Generator synchronization and parallel operation</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <CheckCircle2 className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" />
+                          <span className="text-gray-700">UPS integration and coordination</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <CheckCircle2 className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" />
+                          <span className="text-gray-700">Advanced monitoring and predictive maintenance</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <Button asChild className="group">
+                      <Link to="/contact" className="flex items-center gap-2">
+                        Discuss Data Center Power Solutions
+                        <ChevronRight size={16} className="transition-transform group-hover:translate-x-1" />
+                      </Link>
+                    </Button>
                   </div>
                 </div>
                 
-                <div className="flex flex-col md:flex-row gap-8 items-center">
-                  <div className="md:w-1/2">
+                <div className="flex flex-col lg:flex-row gap-10 items-center">
+                  <div className="lg:w-1/2">
                     <img 
-                      src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1729035001/residential_solution_cmtpnb.jpg" 
-                      alt="Residential Power Solutions" 
-                      className="rounded-lg w-full"
+                      src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1729035001/industrial_solution_rpe4xa.jpg" 
+                      alt="Industrial Power Solutions" 
+                      className="rounded-xl shadow-lg w-full"
                     />
                   </div>
-                  <div className="md:w-1/2">
-                    <h3 className="text-2xl font-bold mb-4">Residential & Societies</h3>
-                    <p className="text-muted-foreground mb-4">
-                      Housing societies and residential complexes need reliable backup power for essential services 
-                      while minimizing noise and disruption for residents.
+                  <div className="lg:w-1/2">
+                    <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 mb-4">
+                      INDUSTRIAL
+                    </Badge>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">Manufacturing Power Systems</h3>
+                    <p className="text-gray-600 mb-6">
+                      Industrial operations require power systems that can handle heavy loads while protecting 
+                      sensitive equipment and ensuring production continuity during grid interruptions.
                     </p>
-                    <ul className="space-y-3">
-                      <li className="flex items-start gap-2">
-                        <span className="text-blue-600 font-bold">•</span>
-                        <span>Ultra-quiet operation with acoustic enclosures</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-blue-600 font-bold">•</span>
-                        <span>Essential services prioritization (elevators, water pumps, security)</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-blue-600 font-bold">•</span>
-                        <span>Smart building integration capabilities</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-blue-600 font-bold">•</span>
-                        <span>Aesthetic considerations for installation locations</span>
-                      </li>
-                    </ul>
+                    <div className="bg-blue-50 p-6 rounded-lg mb-6">
+                      <h4 className="font-medium mb-3 text-gray-900">Key Features:</h4>
+                      <ul className="space-y-3">
+                        <li className="flex items-start gap-3">
+                          <CheckCircle2 className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" />
+                          <span className="text-gray-700">Power quality management for precision equipment</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <CheckCircle2 className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" />
+                          <span className="text-gray-700">Harmonic filtering for sensitive machinery</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <CheckCircle2 className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" />
+                          <span className="text-gray-700">Phased load restoration for production lines</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <CheckCircle2 className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" />
+                          <span className="text-gray-700">Energy efficiency optimizations for operating cost reduction</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <Button asChild className="group">
+                      <Link to="/contact" className="flex items-center gap-2">
+                        Discuss Industrial Power Solutions
+                        <ChevronRight size={16} className="transition-transform group-hover:translate-x-1" />
+                      </Link>
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -1125,23 +1456,132 @@ const Industries = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-12 md:py-20 bg-blue-600">
+        {/* Case Studies Teaser */}
+        <section className="py-16 md:py-24 bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center text-white">
-              <h2 className="text-2xl md:text-4xl font-bold mb-4">
-                Need a Customized Power Solution?
+            <div className="flex items-center gap-2 mb-4 justify-center">
+              <div className="h-1 w-10 bg-blue-600"></div>
+              <span className="text-blue-600 font-medium">SUCCESS STORIES</span>
+              <div className="h-1 w-10 bg-blue-600"></div>
+            </div>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900">
+                Industry Success Stories
               </h2>
-              <p className="text-lg md:text-xl mb-8">
-                Contact our team to discuss your industry-specific power requirements and get a tailored generator solution.
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Real-world examples of how our power solutions have helped organizations across different industries
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
-                  Request Consultation
-                </Button>
-                <Button variant="outline" size="lg" className="border-white text-white hover:bg-blue-700">
-                  View Our Products
-                </Button>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="h-48 overflow-hidden relative">
+                  <img 
+                    src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1729035001/hospital_case_study_fj3t7d.jpg" 
+                    alt="Hospital Case Study" 
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                  <Badge className="absolute top-3 right-3 bg-blue-600 text-white">
+                    Healthcare
+                  </Badge>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2 text-gray-900">Regional Medical Center</h3>
+                  <p className="text-gray-600 mb-4">
+                    How our N+1 redundant power system ensured zero downtime during a 3-day regional blackout.
+                  </p>
+                  <Button asChild variant="outline" size="sm" className="group w-full">
+                    <Link to="/case-studies" className="flex items-center justify-center gap-1">
+                      Read Case Study
+                      <ChevronRight size={16} className="transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </Button>
+                </div>
+              </Card>
+              
+              <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="h-48 overflow-hidden relative">
+                  <img 
+                    src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1729035001/data_center_case_study_anc4ew.jpg" 
+                    alt="Data Center Case Study" 
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                  <Badge className="absolute top-3 right-3 bg-blue-600 text-white">
+                    Data Center
+                  </Badge>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2 text-gray-900">Cloud Infrastructure Provider</h3>
+                  <p className="text-gray-600 mb-4">
+                    Implementing a Tier IV-ready generator solution with 99.999% uptime guarantee.
+                  </p>
+                  <Button asChild variant="outline" size="sm" className="group w-full">
+                    <Link to="/case-studies" className="flex items-center justify-center gap-1">
+                      Read Case Study
+                      <ChevronRight size={16} className="transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </Button>
+                </div>
+              </Card>
+              
+              <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="h-48 overflow-hidden relative">
+                  <img 
+                    src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1729035001/manufacturing_case_study_vbd7et.jpg" 
+                    alt="Manufacturing Case Study" 
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                  <Badge className="absolute top-3 right-3 bg-blue-600 text-white">
+                    Industrial
+                  </Badge>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2 text-gray-900">Precision Components Factory</h3>
+                  <p className="text-gray-600 mb-4">
+                    How our power quality management system prevented $2M in potential equipment damage.
+                  </p>
+                  <Button asChild variant="outline" size="sm" className="group w-full">
+                    <Link to="/case-studies" className="flex items-center justify-center gap-1">
+                      Read Case Study
+                      <ChevronRight size={16} className="transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </Button>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-16 md:py-24 bg-black text-white relative overflow-hidden">
+          <div className="absolute inset-0 opacity-20" style={{
+            backgroundImage: "url('https://res.cloudinary.com/dinhcaf2c/image/upload/v1729035001/cta_pattern_bg_dfj3er.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }} />
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-blue-600/20 backdrop-blur-sm p-10 md:p-16 rounded-2xl border border-blue-500/20">
+                <div className="text-center mb-8">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                    Ready for Industry-Leading Power Solutions?
+                  </h2>
+                  <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+                    Contact our team of industry specialists to discuss your specific requirements
+                    and discover how Kumar Power can support your business continuity needs.
+                  </p>
+                </div>
+                <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6">
+                  <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100 w-full md:w-auto text-base">
+                    <Link to="/contact">Request Industry Consultation</Link>
+                  </Button>
+                  <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10 w-full md:w-auto text-base">
+                    <Link to="/products">Explore Our Products</Link>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
