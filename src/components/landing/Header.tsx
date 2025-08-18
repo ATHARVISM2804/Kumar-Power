@@ -1,10 +1,22 @@
-import { Menu, ChevronDown } from "lucide-react";
+import { Menu, ChevronDown, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const Header = () => {
   // Add state for tracking expanded product categories
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
+  // Add state for mobile menu visibility
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Function to toggle mobile menu
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  // Function to close mobile menu (useful when clicking on a link)
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b">
@@ -115,17 +127,37 @@ const Header = () => {
           </a>
         </div>
         
-        {/* Mobile menu button - keeping existing code */}
-        <button className="md:hidden p-2" aria-label="Open Menu">
-          <Menu />
+        {/* Mobile menu button - updated with toggle functionality */}
+        <button 
+          className="md:hidden p-2" 
+          aria-label={isMobileMenuOpen ? "Close Menu" : "Open Menu"}
+          onClick={toggleMobileMenu}
+        >
+          {isMobileMenuOpen ? <X /> : <Menu />}
         </button>
       </nav>
       
-      {/* Mobile Menu - update the products section here as well */}
-      <div className="hidden md:hidden bg-white border-t shadow-lg">
+      {/* Mobile Menu - updated to show/hide based on state */}
+      <div className={`md:hidden bg-white border-t shadow-lg ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
         <div className="px-4 py-2">
-          <Link to="/" className="block py-3 border-b">Home</Link>
-          {/* ...existing code for About dropdown... */}
+          <Link to="/" className="block py-3 border-b" onClick={closeMobileMenu}>Home</Link>
+          
+          {/* About dropdown for mobile */}
+          <div className="py-3 border-b">
+            <details className="group">
+              <summary className="flex justify-between items-center cursor-pointer list-none">
+                <span>About Us</span>
+                <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="mt-2 ml-4 space-y-2">
+                <Link to="/about/OurProfile" className="block py-2" onClick={closeMobileMenu}>Our Profile</Link>
+                <Link to="/about/Testimonials" className="block py-2" onClick={closeMobileMenu}>Testimonials</Link>
+                <Link to="/about/OurClients" className="block py-2" onClick={closeMobileMenu}>Our Clients</Link>
+                <Link to="/about/PhotoGallery" className="block py-2" onClick={closeMobileMenu}>Photo gallery</Link>
+                <Link to="/about/Certifications" className="block py-2" onClick={closeMobileMenu}>Certifications</Link>
+              </div>
+            </details>
+          </div>
           
           {/* Services dropdown for mobile */}
           <div className="py-3 border-b">
@@ -135,11 +167,11 @@ const Header = () => {
                 <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
               </summary>
               <div className="mt-2 ml-4 space-y-2">
-                <Link to="/services/annual-maintenance" className="block py-2">Annual Maintenance</Link>
-                <Link to="/services/installation" className="block py-2">Installation & Commissioning</Link>
-                <Link to="/services/repair-overhaul" className="block py-2">Repair & Overhaul</Link>
-                <Link to="/services/emergency-support" className="block py-2">24/7 Emergency Support</Link>
-                <Link to="/services/rental" className="block py-2">Generator Rental</Link>
+                <Link to="/services/annual-maintenance" className="block py-2" onClick={closeMobileMenu}>Annual Maintenance</Link>
+                <Link to="/services/installation" className="block py-2" onClick={closeMobileMenu}>Installation & Commissioning</Link>
+                <Link to="/services/repair-overhaul" className="block py-2" onClick={closeMobileMenu}>Repair & Overhaul</Link>
+                <Link to="/services/emergency-support" className="block py-2" onClick={closeMobileMenu}>24/7 Emergency Support</Link>
+                <Link to="/services/rental" className="block py-2" onClick={closeMobileMenu}>Generator Rental</Link>
               </div>
             </details>
           </div>
@@ -158,30 +190,30 @@ const Header = () => {
                     <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
                   </summary>
                   <div className="ml-4 space-y-2 mt-1">
-                    <Link to="/products/kirloskar/gas-generators" className="block py-2">Kirloskar Gas Generators</Link>
-                    <Link to="/products/kirloskar/portable-generators" className="block py-2">Kirloskar Portable Generators</Link>
-                    <Link to="/products/kirloskar/diesel-generators" className="block py-2">Kirloskar Diesel Generators</Link>
+                    <Link to="/products/kirloskar/gas-generators" className="block py-2" onClick={closeMobileMenu}>Kirloskar Gas Generators</Link>
+                    <Link to="/products/kirloskar/portable-generators" className="block py-2" onClick={closeMobileMenu}>Kirloskar Portable Generators</Link>
+                    <Link to="/products/kirloskar/diesel-generators" className="block py-2" onClick={closeMobileMenu}>Kirloskar Diesel Generators</Link>
                   </div>
                 </details>
-                <Link to="/products/electrical-panels" className="block py-2">Electrical Panels</Link>
-                <Link to="/products/servo-stabilizers" className="block py-2">Servo Stabilizers</Link>
-                <Link to="/products/inverters" className="block py-2">Inverters (UPS Systems)</Link>
-                <Link to="/products/transformers" className="block py-2">Transformers</Link>
-                <Link to="/products/vfds" className="block py-2">VFDs</Link>
+                <Link to="/products/electrical-panels" className="block py-2" onClick={closeMobileMenu}>Electrical Panels</Link>
+                <Link to="/products/servo-stabilizers" className="block py-2" onClick={closeMobileMenu}>Servo Stabilizers</Link>
+                <Link to="/products/inverters" className="block py-2" onClick={closeMobileMenu}>Inverters (UPS Systems)</Link>
+                <Link to="/products/transformers" className="block py-2" onClick={closeMobileMenu}>Transformers</Link>
+                <Link to="/products/vfds" className="block py-2" onClick={closeMobileMenu}>VFDs</Link>
               </div>
             </details>
           </div>
           
           {/* Industries link */}
           <div className="py-3 border-b">
-            <Link to="/industries" className="block">Industries</Link>
+            <Link to="/industries" className="block" onClick={closeMobileMenu}>Industries</Link>
           </div>
 
           {/* Projects link */}
-          <Link to="/projects" className="block py-3 border-b">Projects</Link>
+          <Link to="/projects" className="block py-3 border-b" onClick={closeMobileMenu}>Projects</Link>
           
           {/* Contact link */}
-          <Link to="/contact" className="block py-3 border-b">Contact</Link>
+          <Link to="/contact" className="block py-3 border-b" onClick={closeMobileMenu}>Contact</Link>
         </div>
       </div>
     </header>
