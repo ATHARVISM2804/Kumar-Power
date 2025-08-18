@@ -3,57 +3,84 @@ import Footer from "@/components/landing/Footer";
 import SEOJsonLD from "@/components/SEOJsonLD";
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-
+import award1 from "@/assets/Award 1.png";
+import award2 from "@/assets/award 2.png";
+import award3 from "@/assets/award 3.png";
+import award4 from "@/assets/award 4.png";
+import certi1 from "@/assets/certi1.png";
+import certi2 from "@/assets/certi2.png";
+import certi3 from "@/assets/certi3.png";
+import certi4 from "@/assets/certi4.png";
+import certi5 from "@/assets/certi5.png";
+import certi6 from "@/assets/certi6.png";
+import certi7 from "@/assets/certi7.png";
+import certi8 from "@/assets/certi8.png";
 const Certifications = () => {
   // Certificate data for the page
   const certificates = [
     {
-      name: "ISO 9001:2015",
-      description: "Quality Management System certification, ensuring our processes meet international quality standards.",
-      issuer: "Bureau Veritas",
-      year: "2020",
+      name: "Authorisation Certification",
+      description: "Kumar Generator House is our authorised KOEL Green Dealer for sale of KOEL Green Diesel Generating Sets and Chhota Chilli Range of Gensets",
+      issuer: "Authorisation certificate",
+      year: "2024",
       icon: "shield-check",
-      image: "https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/logo_vptmta.png"
+      image: certi1
     },
     {
-      name: "ISO 14001:2015",
+      name: "Certificate of Excellance ",
       description: "Environmental Management System certification, demonstrating our commitment to environmental responsibility.",
-      issuer: "TÜV SÜD",
-      year: "2021",
+      issuer: "KOEL Pune",
+      year: "2012-2013",
       icon: "leaf",
-      image: "https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/logo_vptmta.png"
+      image: certi2
     },
     {
-      name: "ISO 45001:2018",
-      description: "Occupational Health and Safety Management System certification, prioritizing workplace safety.",
-      issuer: "Lloyd's Register",
-      year: "2021",
+      name: "Certification of Highest Growth",
+      description: "Presented to M/s Kumar Generator House, Delhi for highest growth & highest nos. of KIRLOSKAR GREEN DG sets sold in FY 2013.",
+      issuer: "KOEL-JAKPOWER-KGD Conference, Goa",
+      year: "2013",
       icon: "hard-hat",
-      image: "https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/logo_vptmta.png"
+      image: certi3
     },
     {
-      name: "Authorized Kirloskar Dealer",
-      description: "Official certification as an authorized dealer and service provider for Kirloskar generators.",
-      issuer: "Kirloskar Oil Engines Ltd",
-      year: "2005",
+      name: "Certificate for Highest in MHP Gensets (2014)",
+      description: "Awarded to Kumar Generator House, Delhi for highest volume in MHP Gensets in FY 14.",
+      issuer: "Kirloskar Conference Awards - Pune",
+      year: "2014",
       icon: "award",
-      image: "https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/logo_vptmta.png"
+      image: certi4
     },
     {
-      name: "Electrical Contractors License",
-      description: "Licensed electrical contractor certification for installation and maintenance of power equipment.",
-      issuer: "State Electricity Board",
-      year: "2008",
+      name: "Certificate for Highest in HHP Gensets (2014)",
+      description: "Awarded to Kumar Generator House, Delhi for highest volume in HHP Gensets in FY 14.",
+      issuer: "Kirloskar Conference Awards - Pune",
+      year: "2014",
       icon: "zap",
-      image: "https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/logo_vptmta.png"
+      image: certi5
     },
     {
-      name: "Green Business Certification",
-      description: "Recognition for implementing sustainable practices in business operations.",
-      issuer: "Green Business Bureau",
-      year: "2022",
+      name: "Certificate for Highest Sale (2015)",
+      description: "Presented to M/s Kumar Generator House, Delhi for highest nos. of KIRLOSKAR GREEN DG sets sold in FY 15.",
+      issuer: "KOEL JAKPOWER KGD & SD Conference Awards Rajasthan",
+      year: "2015",
       icon: "globe",
-      image: "https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/logo_vptmta.png"
+      image: certi6
+    },
+    {
+      name: "KOEL-JAKPOWER-KGD & SD Conference Awards Gangtok",
+      description: "Presented to M/s Kumar Generator House, Delhi for highest nos. of KIRLOSKAR GREEN DG sets sold in FY 18-19.",
+      issuer: "KOEL JAKPOWER KGD & SD Conference Awards Gangtok",
+      year: "2015",
+      icon: "globe",
+      image: certi7
+    },
+    {
+      name: "KOEL JAKPOWER KGD & SD Conference Awards Rajasthan",
+      description: "Presented to M/s Kumar Generator House, Delhi for highest nos. of KIRLOSKAR GREEN DG sets sold in FY 16-17.",
+      issuer: "KOEL JAKPOWER KGD & SD Conference Awards Rajasthan",
+      year: "2015",
+      icon: "globe",
+      image: certi8
     }
   ];
 
@@ -80,13 +107,6 @@ const Certifications = () => {
     return () => clearInterval(interval);
   }, [isAutoplay, certificateSlides.length]);
 
-  // Ceremony images with animation
-  const ceremonyImages = [
-    "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
-    "https://images.unsplash.com/photo-1560439514-4e9645039924?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    "https://images.unsplash.com/photo-1529400971008-f566de0e6dfc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-  ];
-
   // Animation variants
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -106,6 +126,14 @@ const Certifications = () => {
       }
     }
   };
+
+  // Use imported award images instead of placeholder URLs
+  const ceremonyImages = [
+    award1,
+    award2,
+    award3,
+    award4
+  ];
 
   // Improved image slider animation control
   const [sliderPosition, setSliderPosition] = useState(0);
@@ -132,6 +160,9 @@ const Certifications = () => {
 
     return () => clearInterval(slideAnimation);
   }, []);
+
+  // Update Industry Partnerships section to use certi7 and certi8
+  const partnerImages = [certi7, certi8, certi7, certi8];
 
   return (
     <div className="min-h-screen bg-background">
@@ -184,7 +215,7 @@ const Certifications = () => {
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-sm font-medium">
                   <div className="bg-black/70 px-3 py-1 rounded-full inline-block">
-                    Kumar Power Certification {index % ceremonyImages.length + 1}
+                    Kumar Power Award {index % ceremonyImages.length + 1}
                   </div>
                 </div>
               </div>
@@ -395,10 +426,10 @@ const Certifications = () => {
           <div className="mt-20">
             <h3 className="text-2xl font-bold mb-8 text-center">Industry Partnerships</h3>
             <div className="flex flex-wrap justify-center items-center gap-8">
-              {[1, 2, 3, 4].map((_, i) => (
+              {partnerImages.map((img, i) => (
                 <div key={i} className="bg-gray-900 p-5 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                   <img 
-                    src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755013519/logo_vptmta.png" 
+                    src={img} 
                     alt={`Industry partner ${i+1}`} 
                     className="h-16 w-auto"
                   />
