@@ -1,10 +1,24 @@
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  // Show overlay only after scrolling a little
+  const [showOverlay, setShowOverlay] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowOverlay(window.scrollY > 1);
+    };
+    window.addEventListener("scroll", handleScroll);
+    // Initial check
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section id="home" className="relative bg-black lg:bg-white">
-      <div className="relative h-[48vh] md:h-[78vh] lg:h-[95vh] overflow-hidden rounded-xl z-1 border shadow-[var(--shadow-glow)]">
+      <div className="relative h-[58vh] md:h-[78vh] lg:h-[95vh] overflow-hidden rounded-xl z-1 border shadow-[var(--shadow-glow)]">
         {/* Background video - full width, no controls */}
         <div className="absolute left-0 lg:top-0 translate-x-[-5%] translate-y-[-5%] inset-0 w-[110vw] h-[150vh] lg:h-[110vh] pointer-events-none z-0 top-[-45vh]  sm:block">
           <iframe
@@ -17,30 +31,32 @@ const Hero = () => {
         </div>
         {/* Overlay for readability */}
         <div className="absolute inset-0 bg-black/40 z-10" />
-        {/* Content above video - only on small screens */}
-        {/* <div className="absolute top-0 left-0 inset-0 w-screen h-screen flex flex-col items-center justify-center z-20 sm:hidden ">
-          <div className="absolute top-[5vh] backdrop-blur-xl bg-white/10 border border-white/30 rounded-2xl p-6 shadow-2xl w-full max-w-xs flex flex-col items-center space-y-6 mx-4">
-            <h1 className="text-white text-2xl font-extrabold text-center leading-tight drop-shadow-lg">
-              Unleashing Power
-              <br />Solutions.
-              <br />Built for the Nation.
-            </h1>
-            <div className="flex flex-col items-center space-y-2 w-full">
-              <span className="bg-white/20 text-white px-3 py-1 rounded-full text-xs font-semibold border border-white/30 w-full text-center">
-                Kirloskar Certified
-              </span>
-              <span className="bg-white/20 text-white px-3 py-1 rounded-full text-xs font-semibold border border-white/30 w-full text-center">
-                ISO 9001:2015
-              </span>
-              <span className="bg-white/20 text-white px-3 py-1 rounded-full text-xs font-semibold border border-white/30 w-full text-center">
-                500+ Enterprise Clients
-              </span>
-              <span className="bg-white/20 text-white px-3 py-1 rounded-full text-xs font-semibold border border-white/30 w-full text-center">
-                30+ Years of Excellence
-              </span>
+        {/* Content above video - show on scroll for all devices */}
+        {showOverlay && (
+          <div className="absolute top-20 lg:top-32 left-0 h-[45vh] inset-0 w-full flex items-center justify-center z-20">
+            <div className="backdrop-blur-xl  border border-white/30 rounded-2xl p-8 md:p-12 shadow-2xl w-full max-w-xs md:max-w-lg lg:max-w-2xl flex flex-col items-center space-y-8 mx-4">
+              <h1 className="text-white text-2xl md:text-4xl lg:text-5xl font-extrabold text-center leading-tight drop-shadow-lg">
+                Unleashing Power
+                <br />Solutions.
+                <br />Built for the Nation.
+              </h1>
+              <div className="flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-3 w-full">
+                <span className="bg-white/20 text-white px-3 py-1 rounded-full text-xs md:text-sm font-semibold border border-white/30 text-center">
+                  Kirloskar Certified
+                </span>
+                <span className="bg-white/20 text-white px-3 py-1 rounded-full text-xs md:text-sm font-semibold border border-white/30 text-center">
+                  ISO 9001:2015
+                </span>
+                <span className="bg-white/20 text-white px-3 py-1 rounded-full text-xs md:text-sm font-semibold border border-white/30 text-center">
+                  500+ Enterprise Clients
+                </span>
+                <span className="bg-white/20 text-white px-3 py-1 rounded-full text-xs md:text-sm font-semibold border border-white/30 text-center">
+                  30+ Years of Excellence
+                </span>
+              </div>
             </div>
           </div>
-        </div> */}
+        )}
       </div>
     </section>
   );
