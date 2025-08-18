@@ -4,7 +4,7 @@ import { Download } from "lucide-react";
 const Hero = () => {
   return (
     <section id="home" className="relative bg-black lg:bg-white">
-      <div className="relative h-[48vh] md:h-[78vh] lg:h-[95vh] overflow-hidden rounded-xl border shadow-[var(--shadow-glow)]">
+      <div className="relative h-[48vh] md:h-[78vh] lg:h-[95vh] overflow-hidden rounded-xl z-1 border shadow-[var(--shadow-glow)]">
         {/* Background video - full width, no controls */}
         <div className="absolute left-0 lg:top-0 translate-x-[-5%] translate-y-[-5%] inset-0 w-[110vw] h-[150vh] lg:h-[110vh] pointer-events-none z-0 top-[-45vh]  sm:block">
           <iframe
