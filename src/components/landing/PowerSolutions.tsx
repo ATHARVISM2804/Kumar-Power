@@ -76,6 +76,163 @@ const PowerSolutions = () => {
     "Servo Stabilizers",
     "Transformers"
   ];
+  
+  // Category-specific product data
+  const categoryProducts = {
+    Generators: [
+      {
+        title: "Kirloskar CPCB4+ Diesel Genset",
+        desc: "Advanced diesel generators with CPCB4+ compliance, offering superior fuel efficiency and eco-friendly operations.",
+        specs: ["2 kVA - 1000 kVA Range", "CPCB4+ Compliant", "3 Phase Output"],
+        img: diesel
+      },
+      {
+        title: "Gas Generators",
+        desc: "Eco-friendly natural gas and LPG generators with lower emissions and operational costs for sustainable power generation.",
+        specs: ["15 kVA - 500 kVA", "Low Emissions", "Quiet Operation"],
+        img: gas
+      },
+      {
+        title: "Portable Generators",
+        desc: "Compact and mobile power solutions for construction sites, events, and emergency backup with easy transport features.",
+        specs: ["2 kVA - 15 kVA", "Lightweight Design"],
+        img: portable
+      },
+      {
+        title: "Uninterruptible Power Supply (UPS)",
+        desc: "Protection against power outages with instant backup power and surge protection for critical equipment and data centers.",
+        specs: ["1 kVA - 500 kVA Range", "Online Double Conversion", "Battery Backup"],
+        img: ups
+      }
+    ],
+    Inverters: [
+      {
+        title: "Home Inverters",
+        desc: "Reliable power backup solutions for residential use with quick switchover and battery management.",
+        specs: ["600VA - 3500VA", "Pure Sine Wave", "LCD Display"],
+        img: ups
+      },
+      {
+        title: "Solar Inverters",
+        desc: "Harness solar energy with efficient conversion and battery charging capabilities for sustainable power.",
+        specs: ["1kW - 100kW", "MPPT Technology", "Grid-tie Option"],
+        img: portable
+      }
+    ],
+    "Variable Frequency Drives (VFDs)": [
+      {
+        title: "AC Drives",
+        desc: "Precise motor control solutions for industrial applications, offering energy savings and process optimization.",
+        specs: ["0.25kW - 800kW", "Vector Control", "IP54 Protection"],
+        img: gas
+      },
+      {
+        title: "HVAC Drives",
+        desc: "Specialized VFDs for HVAC applications with building automation integration capabilities.",
+        specs: ["Fan & Pump Control", "BMS Compatible", "Energy Monitoring"],
+        img: diesel
+      }
+    ],
+    "Electrical Panels": [
+      {
+        title: "Power Control Centers",
+        desc: "Centralized electrical distribution systems for industrial facilities with comprehensive protection features.",
+        specs: ["Up to 6300A", "Short Circuit Protection", "Type 2 Coordination"],
+        img: diesel
+      },
+      {
+        title: "AMF Panels",
+        desc: "Automatic Mains Failure panels for seamless power transfer between utility and generator supply.",
+        specs: ["Auto/Manual Operation", "Engine Protection", "Programmable Logic"],
+        img: gas
+      }
+    ],
+    "Servo Stabilizers": [
+      {
+        title: "Industrial Voltage Stabilizers",
+        desc: "High-precision voltage regulation systems for sensitive equipment and production lines.",
+        specs: ["5kVA - 5000kVA", "±1% Output Accuracy", "Digital Control"],
+        img: portable
+      },
+      {
+        title: "Oil Cooled Stabilizers",
+        desc: "Heavy-duty stabilizers for harsh environments with superior thermal management.",
+        specs: ["Three Phase", "IGBT Technology", "Overload Protection"],
+        img: ups
+      }
+    ],
+    Transformers: [
+      {
+        title: "Distribution Transformers",
+        desc: "Reliable power distribution transformers for commercial and industrial applications.",
+        specs: ["10kVA - 5000kVA", "Oil/Dry Type", "ONAN/ONAF Cooling"],
+        img: diesel
+      },
+      {
+        title: "Isolation Transformers",
+        desc: "Protection against electrical noise and interference for sensitive electronic equipment.",
+        specs: ["Galvanic Isolation", "Copper Windings", "K-Factor Rated"],
+        img: gas
+      }
+    ]
+  };
+
+  // Get the filter options based on active category
+  const getFilterOptionsForCategory = (category: string) => {
+    switch(category) {
+      case 'Generators':
+        return {
+          powerRange: ["0-50 kVA", "51-200 kVA", "201-500 kVA", "501+ kVA"],
+          application: ["Industrial", "Commercial", "Residential", "Construction", "Events"],
+          fuelType: ["Diesel", "Natural Gas", "Bi-Fuel", "LPG", "Petrol"],
+          certification: ["CPCB4+", "ISO 9001", "CE Certified", "UL Listed"]
+        };
+      case 'Inverters':
+        return {
+          powerRange: ["Below 1kVA", "1-3kVA", "3-10kVA", "Above 10kVA"],
+          application: ["Home", "Commercial", "Solar", "Industrial"],
+          type: ["Pure Sine Wave", "Modified Sine Wave", "Solar Hybrid"],
+          features: ["LCD Display", "Mobile App", "Battery Management", "IoT Enabled"]
+        };
+      case 'Variable Frequency Drives (VFDs)':
+        return {
+          powerRange: ["Below 5kW", "5-50kW", "50-200kW", "Above 200kW"],
+          application: ["HVAC", "Manufacturing", "Conveyors", "Pumps"],
+          controlType: ["V/F Control", "Sensorless Vector", "Closed Loop"],
+          protection: ["IP20", "IP54", "IP66", "UL Type 1"]
+        };
+      case 'Electrical Panels':
+        return {
+          currentRating: ["Up to 100A", "100-630A", "630-2000A", "Above 2000A"],
+          application: ["Power Distribution", "Motor Control", "Synchronization"],
+          features: ["Automatic Changeover", "APFC", "Energy Metering"],
+          certification: ["IEC 61439", "UL Listed", "CE Certified"]
+        };
+      case 'Servo Stabilizers':
+        return {
+          powerRange: ["Single Phase", "Three Phase", "High Voltage"],
+          application: ["Industrial", "Medical", "IT Equipment", "HVAC"],
+          features: ["Digital Display", "Auto Bypass", "Remote Monitoring"],
+          technology: ["IGBT Based", "Relay Based", "Microprocessor Control"]
+        };
+      case 'Transformers':
+        return {
+          powerRange: ["10-100kVA", "100-500kVA", "500-2000kVA", "Above 2000kVA"],
+          type: ["Oil Filled", "Dry Type", "Cast Resin", "Isolation"],
+          cooling: ["ONAN", "ONAF", "OFAF", "OFWF"],
+          application: ["Distribution", "Power", "Industrial"]
+        };
+      default:
+        return {
+          powerRange: ["0-50 kVA", "51-200 kVA", "201-500 kVA", "501+ kVA"],
+          application: ["Industrial", "Commercial", "Residential", "Construction", "Events"],
+          fuelType: ["Diesel", "Natural Gas", "Bi-Fuel", "LPG", "Petrol"],
+          certification: ["CPCB4+", "ISO 9001", "CE Certified", "UL Listed"]
+        };
+    }
+  };
+
+  const activeFilters = getFilterOptionsForCategory(activeCategory);
 
   useEffect(() => {
     if (!logoRef.current || !logoContainerRef.current) return;
@@ -177,62 +334,48 @@ const PowerSolutions = () => {
       <div className="container mx-auto grid md:grid-cols-4 gap-4 md:gap-8 px-4 md:px-0">
         {/* Left: Content */}
         <div className="md:col-span-3">
-          
           <div className="grid md:grid-cols-2 gap-6">
-            <PSCard
-              title="Kirloskar CPCB4+ Diesel Genset"
-              desc="Advanced diesel generators with CPCB4+ compliance, offering superior fuel efficiency and eco-friendly operations."
-              specs={["2 kVA - 1000 kVA Range", "CPCB4+ Compliant", "3 Phase Output"]}
-              img={diesel}
-            />
-            <PSCard
-              title="Gas Generators"
-              desc="Eco-friendly natural gas and LPG generators with lower emissions and operational costs for sustainable power generation."
-              specs={["15 kVA - 500 kVA", "Low Emissions", "Quiet Operation"]}
-              img={gas}
-            />
-            <PSCard
-              title="Portable Generators"
-              desc="Compact and mobile power solutions for construction sites, events, and emergency backup with easy transport features."
-              specs={["2 kVA - 15 kVA", "Lightweight Design"]}
-              img={portable}
-            />
-            <PSCard
-              title="Uninterruptible Power Supply (UPS)"
-              desc="Protection against power outages with instant backup power and surge protection for critical equipment and data centers."
-              specs={["1 kVA - 500 kVA Range", "Online Double Conversion", "Battery Backup"]}
-              img={ups}
-            />
+            {categoryProducts[activeCategory as keyof typeof categoryProducts].map((product, idx) => (
+              <PSCard
+                key={`${activeCategory}-${idx}`}
+                title={product.title}
+                desc={product.desc}
+                specs={product.specs}
+                img={product.img}
+              />
+            ))}
           </div>
+          
+          {/* Empty state if no products for a category */}
+          {categoryProducts[activeCategory as keyof typeof categoryProducts].length === 0 && (
+            <div className="flex flex-col items-center justify-center py-16">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-gray-300 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+              </svg>
+              <h3 className="text-xl font-medium text-gray-900 mb-2">No products available</h3>
+              <p className="text-gray-500">We're currently updating our {activeCategory} catalog.</p>
+            </div>
+          )}
         </div>
+        
         {/* Right: Filter */}
         <div className="bg-white mt-10 p-6 rounded-lg shadow-sm border h-fit">
-          <h3 className="font-semibold text-lg mb-6">Filter Products</h3>
+          <h3 className="font-semibold text-lg mb-6">Filter {activeCategory}</h3>
           
-          <FilterSection
-            title="Power Range"
-            options={["0-50 kVA", "51-200 kVA", "201-500 kVA", "501+ kVA"]}
-          />
-          
-          <FilterSection
-            title="Application"
-            options={["Industrial", "Commercial", "Residential", "Construction","Events"]}
-          />
-          
-          <FilterSection
-            title="Fuel Type"
-            options={["Diesel", "Natural Gas", "Bi-Fuel", "LPG","Petrol"]}
-          />
-          <FilterSection
-            title="Certification"
-            options={["CPCB4+", "ISO 9001", "Bi-Fuel", "CE Certified","UL Listed"]}
-          />
+          {Object.entries(activeFilters).map(([filterName, options]) => (
+            <FilterSection
+              key={`${activeCategory}-${filterName}`}
+              title={filterName.charAt(0).toUpperCase() + filterName.slice(1).replace(/([A-Z])/g, ' $1')}
+              options={options as string[]}
+            />
+          ))}
 
           <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
             Apply Filters
           </Button>
         </div>
       </div>
+      
       {/* Trusted By Section - fix container height for mobile */}
       <div className="container mx-auto mt-10 md:mt-20 mb-10 px-4 md:px-0">
         <div className="text-center mb-10">

@@ -33,7 +33,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black/40 z-10" />
         {/* Content above video - show on scroll for all devices */}
         {showOverlay && (
-          <div className="absolute top-20 lg:top-32 left-0 h-[45vh] inset-0 w-full flex items-center justify-center z-20">
+          <div className="absolute top-20 lg:top-80 left-0 h-[45vh] inset-0 w-full flex items-center justify-center z-20">
             <div className="backdrop-blur-xl  border border-white/30 rounded-2xl p-8 md:p-12 shadow-2xl w-full max-w-xs md:max-w-lg lg:max-w-2xl flex flex-col items-center space-y-8 mx-4">
               <h1 className="text-white text-2xl md:text-4xl lg:text-5xl font-extrabold text-center leading-tight drop-shadow-lg">
                 Unleashing Power
