@@ -3,12 +3,12 @@ import { Download } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const Hero = () => {
-  // Show overlay only after scrolling a little
+  // Show overlay only after scrolling more than 100px
   const [showOverlay, setShowOverlay] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setShowOverlay(window.scrollY > 1);
+      setShowOverlay(window.scrollY > 180);
     };
     window.addEventListener("scroll", handleScroll);
     // Initial check
@@ -31,10 +31,10 @@ const Hero = () => {
         </div>
         {/* Overlay for readability */}
         <div className="absolute inset-0 bg-black/40 z-10" />
-        {/* Content above video - show on scroll for all devices */}
+        {/* Content above video - show only after scrolling 100px */}
         {showOverlay && (
           <div className="absolute top-20 lg:top-80 left-0 h-[45vh] inset-0 w-full flex items-center justify-center z-20">
-            <div className="backdrop-blur-xl  border border-white/30 rounded-2xl p-8 md:p-12 shadow-2xl w-full max-w-xs md:max-w-lg lg:max-w-2xl flex flex-col items-center space-y-8 mx-4">
+            <div className="backdrop-blur-xl border border-white/30 rounded-2xl p-8 md:p-12 shadow-2xl w-full max-w-xs md:max-w-lg lg:max-w-2xl flex flex-col items-center space-y-8 mx-4">
               <h1 className="text-white text-2xl md:text-4xl lg:text-5xl font-extrabold text-center leading-tight drop-shadow-lg">
                 Unleashing Power
                 <br />Solutions.
