@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp, Facebook, Instagram, Linkedin } from "lucide-react";
+import { useSmoothScroll } from "../../hooks/useSmoothScroll";
 
 const Footer = () => {
   const [showGeneratorDropdown, setShowGeneratorDropdown] = useState(false);
+  
+  // Enable smooth scrolling for all in-page anchor links
+  useSmoothScroll();
 
   return (
     <>
@@ -23,7 +27,8 @@ const Footer = () => {
               Enquire Now
             </a>
             <a
-              href="#"
+              href="/downloads/kumar-power-company-profile.pdf"
+              download
               className="border border-black text-black rounded-lg px-8 py-3 font-semibold text-base text-center hover:bg-black hover:text-white transition w-full md:min-w-[240px]"
             >
               Download Our Company Profile
@@ -66,11 +71,11 @@ const Footer = () => {
                     </ul>
                   )}
                 </li>
-                <li>Electrical Panels</li>
-                <li>Servo Stabilizers</li>
-                <li>Inverters (UPS Systems)</li>
-                <li>Transformers</li>
-                <li>VFDs</li>
+                <li><a href="#electrical-panels" className="hover:text-blue-300">Electrical Panels</a></li>
+                <li><a href="#servo-stabilizers" className="hover:text-blue-300">Servo Stabilizers</a></li>
+                <li><a href="#inverters" className="hover:text-blue-300">Inverters (UPS Systems)</a></li>
+                <li><a href="#transformers" className="hover:text-blue-300">Transformers</a></li>
+                <li><a href="#vfds" className="hover:text-blue-300">VFDs</a></li>
               </ul>
             </div>
             {/* Useful Links */}
@@ -92,16 +97,17 @@ const Footer = () => {
               <h4 className="font-bold text-white text-lg mb-3">Contact Us</h4>
               <ul className="space-y-1 text-sm text-white/90">
                 <li>904, Westend Mall, Janakpuri,<br />New Delhi 110058</li>
-                <li>P : +91 97738 51767,<br />011-45086389</li>
-                <li>E : kumargeneratorhouse@gmail.com</li>
+                <li>P : <a href="tel:+919773851767" className="hover:text-blue-300">+91 97738 51767</a>,<br />
+                    <a href="tel:01145086389" className="hover:text-blue-300">011-45086389</a></li>
+                <li>E : <a href="mailto:kumargeneratorhouse@gmail.com" className="hover:text-blue-300">kumargeneratorhouse@gmail.com</a></li>
                 <li className="flex gap-4 mt-4">
-                  <a href="#" aria-label="Facebook" className="hover:text-blue-500 transition-colors">
+                  <a href="https://facebook.com/kumarpower" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-blue-500 transition-colors">
                     <Facebook size={20} strokeWidth={1.5} />
                   </a>
-                  <a href="#" aria-label="Instagram" className="hover:text-pink-500 transition-colors">
+                  <a href="https://instagram.com/kumarpower" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-pink-500 transition-colors">
                     <Instagram size={20} strokeWidth={1.5} />
                   </a>
-                  <a href="#" aria-label="LinkedIn" className="hover:text-blue-400 transition-colors">
+                  <a href="https://linkedin.com/company/kumarpower" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-blue-400 transition-colors">
                     <Linkedin size={20} strokeWidth={1.5} />
                   </a>
                 </li>

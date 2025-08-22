@@ -1,7 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { useEffect, useState } from "react";
-
+import trust1 from "@/assets/trust1.png"
+import trust2 from "@/assets/trust2.png"
+import trust3 from "@/assets/trust3.png"
+import trust4 from "@/assets/trust4.png"
+import trust5 from "@/assets/trust5.png"
 const Hero = () => {
   // Show overlay only after scrolling more than 100px
   const [showOverlay, setShowOverlay] = useState(false);
@@ -30,29 +34,64 @@ const Hero = () => {
           />
         </div>
         {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-black/40 z-10" />
-        {/* Content above video - show only after scrolling 100px */}
         {showOverlay && (
-          <div className="absolute top-20 lg:top-80 left-0 h-[45vh] inset-0 w-full flex items-center justify-center z-20">
+          <div className="absolute top-0 left-0 h-full w-full flex flex-col items-center justify-center z-20">
             <div className="backdrop-blur-xl border border-white/30 rounded-2xl p-8 md:p-12 shadow-2xl w-full max-w-xs md:max-w-lg lg:max-w-2xl flex flex-col items-center space-y-8 mx-4">
-              <h1 className="text-white text-2xl md:text-4xl lg:text-5xl font-extrabold text-center leading-tight drop-shadow-lg">
+              <h1 className="text-white text-3xl md:text-5xl lg:text-6xl font-extrabold text-center leading-tight drop-shadow-lg">
                 Unleashing Power
-                <br />Solutions.
+                <br />
+                Solutions.
                 <br />Built for the Nation.
               </h1>
-              <div className="flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-3 w-full">
-                <span className="bg-white/20 text-white px-3 py-1 rounded-full text-xs md:text-sm font-semibold border border-white/30 text-center">
-                  Kirloskar Certified
+              <p className="text-white/90 text-center text-base md:text-lg font-medium">
+                Kirloskar Certified | ISO 9001:2015 | 500+ Enterprise Clients | 30+
+                Years of Uninterrupted Excellence
+              </p>
+              <div className="flex flex-col md:flex-row gap-4 w-full justify-center mt-2">
+                <Button className="bg-blue-700 hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded-lg shadow-lg w-full md:w-auto">
+                  Explore Power Solutions&nbsp;{" "}
+                  <span className="ml-2">→</span>
+                </Button>
+                <Button
+                  variant="outline"
+                  className="border border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white font-semibold px-6 py-3 rounded-lg shadow-lg w-full md:w-auto flex items-center backdrop-blur"
+                >
+                  Download Company Profile&nbsp;
+                  <Download size={18} className="ml-2" />
+                </Button>
+              </div>
+              {/* Trusted By Logos - moved inside the box and reduced size */}
+              <div className="mt-6 flex flex-col items-center w-full">
+                <span className="text-white text-base font-semibold mb-2 tracking-wide">
+                  TRUSTED BY
                 </span>
-                <span className="bg-white/20 text-white px-3 py-1 rounded-full text-xs md:text-sm font-semibold border border-white/30 text-center">
-                  ISO 9001:2015
-                </span>
-                <span className="bg-white/20 text-white px-3 py-1 rounded-full text-xs md:text-sm font-semibold border border-white/30 text-center">
-                  500+ Enterprise Clients
-                </span>
-                <span className="bg-white/20 text-white px-3 py-1 rounded-full text-xs md:text-sm font-semibold border border-white/30 text-center">
-                  30+ Years of Excellence
-                </span>
+                <div className="flex flex-row flex-wrap justify-center gap-4 w-full max-w-2xl">
+                  <img
+                    src={trust1}
+                    alt="Tech Innovators"
+                    className="h-14 w-auto object-contain bg-white rounded shadow"
+                  />
+                  <img
+                    src={trust2}
+                    alt="EcoPower Solutions"
+                    className="h-14 w-auto object-contain bg-white rounded shadow"
+                  />
+                  <img
+                    src={trust3}
+                    alt="ManufacturePro"
+                    className="h-14 w-auto object-contain bg-white rounded shadow"
+                  />
+                  <img
+                    src={trust4}
+                    alt="LogiTrans"
+                    className="h-14 w-auto object-contain bg-white rounded shadow"
+                  />
+                  <img
+                    src={trust5}
+                    alt="BuildMaster"
+                    className="h-14 w-auto object-contain bg-white rounded shadow"
+                  />
+                </div>
               </div>
             </div>
           </div>
