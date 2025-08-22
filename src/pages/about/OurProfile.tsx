@@ -329,9 +329,9 @@ const About = () => {
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to Power Your Business?</h2>
           <p className="text-lg mb-8">Contact our power solutions experts today to discover how Kumar Generator House can provide reliable power solutions tailored to your needs.</p>
-          <button className="bg-black hover:bg-black/90 text-white px-6 py-3 rounded-md font-medium">
+          <a href="/contact" className="inline-block bg-black hover:bg-black/90 text-white px-6 py-3 rounded-md font-medium">
             Get in Touch →
-          </button>
+          </a>
         </div>
       </div>
       

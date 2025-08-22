@@ -11,11 +11,10 @@ import { Badge } from '@/components/ui/badge';
 
 const Industries = () => {
   // State for active category
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState("industrial");
 
   // Categories for the tabs
   const categories = [
-    { id: "all", name: "All Industries" },
     { id: "industrial", name: "Industrial Companies" },
     { id: "embassy", name: "Embassy" },
     { id: "petrol", name: "Petrol Pump" },
@@ -787,8 +786,6 @@ const Industries = () => {
   // Function to get companies based on active category
   const getCompaniesByCategory = (category) => {
     switch(category) {
-      case "all": 
-        return [...industrialCompanies, ...embassies, ...petrolPumps, ...retailOutlets, ...banks, ...societyApartments, ...exporters, ...cpwdProjects, ...hospitality, ...fitness, ...infrastructure, ...medical, ...construction, ...spiritual];
       case "industrial": return industrialCompanies;
       case "embassy": return embassies;
       case "petrol": return petrolPumps;
@@ -803,7 +800,7 @@ const Industries = () => {
       case "medical": return medical;
       case "construction": return construction;
       case "spiritual": return spiritual;
-      default: return [];
+      default: return industrialCompanies; // Default to industrial companies instead of empty array
     }
   };
 
