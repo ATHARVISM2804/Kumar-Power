@@ -6,10 +6,12 @@ import trust2 from "@/assets/trust2.png"
 import trust3 from "@/assets/trust3.png"
 import trust4 from "@/assets/trust4.png"
 import trust5 from "@/assets/trust5.png"
+
 const Hero = () => {
   // Show overlay after scrolling more than 180px and keep it visible
   const [showOverlay, setShowOverlay] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
     // Check if it's a mobile device
@@ -44,19 +46,36 @@ const Hero = () => {
   return (
     <section id="home" className="relative bg-black lg:bg-white">
       <div className="relative h-[58vh] md:h-[78vh] lg:h-[95vh] overflow-hidden rounded-xl z-1 border shadow-[var(--shadow-glow)]">
-        {/* Background video - full width, no controls */}
+        {/* Background video with improved configuration to hide controls */}
         <div className="absolute left-0 lg:top-0 inset-0 w-full h-full md:w-[110vw] md:h-[150vh] lg:h-[110vh] pointer-events-none z-0 md:top-[-45vh] md:translate-x-[-5%] md:translate-y-[-5%]">
-          <iframe
-            src="https://www.youtube.com/embed/FZGwh-hlDH4?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=FZGwh-hlDH4&modestbranding=1&fs=0&disablekb=1"
-            allow="autoplay; encrypted-media"
-            className="absolute inset-0 w-full h-full"
-            style={{ objectFit: "cover" }}
-          />
+          <div className="absolute inset-0 w-full h-full overflow-hidden">
+            {/* Enhanced YouTube embed with better scaling to preserve content while hiding UI */}
+            <iframe
+              src="https://www.youtube.com/embed/FZGwh-hlDH4?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=FZGwh-hlDH4&modestbranding=1&fs=0&disablekb=1&iv_load_policy=3&playsinline=1&enablejsapi=1"
+              allow="autoplay; encrypted-media"
+              className="absolute inset-0 w-[105%] md:w-[105%] lg:w-[105%] h-[110%] md:h-[110%] lg:h-[110%] translate-x-[-2.5%] md:translate-x-[-2.5%] lg:translate-x-[-2.5%] translate-y-[-5%] md:translate-y-[-5%] lg:translate-y-[-5%]"
+              style={{ 
+                objectFit: "cover", 
+                opacity: videoLoaded ? 1 : 0,
+                transition: "opacity 0.5s ease-in-out"
+              }}
+              onLoad={() => setVideoLoaded(true)}
+              frameBorder="0"
+            />
+            
+            {/* Strategic overlays to specifically target YouTube UI elements */}
+            <div className="absolute top-0 left-0 w-full h-[40px] bg-black z-10"></div>
+            <div className="absolute bottom-0 left-0 w-full h-[55px] bg-black z-10"></div>
+            <div className="absolute top-[40px] right-0 w-[100px] h-[40px] bg-black z-10"></div>
+          </div>
         </div>
+        
+        {/* Reduced overlay opacity for mobile to maintain video visibility */}
+        <div className={`absolute inset-0 ${isMobile ? 'bg-black/40' : 'bg-black/10'} z-5`}></div>
         
         {/* Semi-transparent base overlay to ensure text readability on video (shows with scroll) */}
         {showOverlay && (
-          <div className="absolute inset-0 bg-black/50 md:bg-black/30 z-10"></div>
+          <div className="absolute inset-0 bg-black/40 md:bg-black/20 z-10"></div>
         )}
         
         {/* Main Content Overlay */}
@@ -128,6 +147,8 @@ const Hero = () => {
             </div>
           </div>
         )}
+
+        
       </div>
     </section>
   );
