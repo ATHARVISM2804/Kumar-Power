@@ -20,9 +20,9 @@ import Products from "./pages/Products";
 // Product pages
 import ElectricalPanels from "./pages/products/ElectricalPanels";
 import ServoStabilizers from "./pages/products/ServoStabilizers";
-import Inverters from "./pages/products/Inverters";
+
 import Transformers from "./pages/products/Transformers";
-import VFDs from "./pages/products/VFDs";
+
 
 // Kirloskar Generator pages
 import GasGenerators from "./pages/products/kirloskar/GasGenerators";
@@ -30,18 +30,15 @@ import PortableGenerators from "./pages/products/kirloskar/PortableGenerators";
 import DieselGenerators from "./pages/products/kirloskar/DieselGenerators";
 
 // Services pages
-import Services from "./pages/Services";
+
 import AnnualMaintenance from "./pages/services/AnnualMaintenance";
 import Installation from "./pages/services/Installation";
 import RepairOverhaul from "./pages/services/RepairOverhaul";
 import EmergencySupport from "./pages/services/EmergencySupport";
 import Rental from "./pages/services/Rental";
 
-// Projects page
-import Projects from "./pages/Projects";
-
-// Industries page
-import Industries from "./pages/Industries";
+// Our Clients page (formerly Industries)
+import Industries from "./pages/ValueClient";
 
 // Contact page
 import Contact from "./pages/contact/Contact";
@@ -77,9 +74,9 @@ const App = () => (
           <Route path="/products" element={<Products />} />
           <Route path="/products/electrical-panels" element={<ElectricalPanels />} />
           <Route path="/products/servo-stabilizers" element={<ServoStabilizers />} />
-          <Route path="/products/inverters" element={<Inverters />} />
+          
           <Route path="/products/transformers" element={<Transformers />} />
-          <Route path="/products/vfds" element={<VFDs />} />
+          
 
           {/* Kirloskar Generator Routes */}
           <Route path="/products/kirloskar/gas-generators" element={<GasGenerators />} />
@@ -87,18 +84,18 @@ const App = () => (
           <Route path="/products/kirloskar/diesel-generators" element={<DieselGenerators />} />
           
           {/* Services Routes */}
-          <Route path="/services" element={<Services />} />
+          
           <Route path="/services/annual-maintenance" element={<AnnualMaintenance />} />
           <Route path="/services/installation" element={<Installation />} />
           <Route path="/services/repair-overhaul" element={<RepairOverhaul />} />
           <Route path="/services/emergency-support" element={<EmergencySupport />} />
           <Route path="/services/rental" element={<Rental />} />
           
-          {/* Projects Route */}
-          <Route path="/projects" element={<Projects />} />
+          {/* Installation Route */}
+          <Route path="/installation" element={<Installation />} />
           
-          {/* Industries Route */}
-          <Route path="/industries" element={<Industries />} />
+          {/* Our Clients Route */}
+          <Route path="/our-clients" element={<Industries />} />
           
           {/* Contact Route */}
           <Route path="/contact" element={<Contact />} />

@@ -126,7 +126,7 @@ const InstallationService = () => {
                   <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
                     <Link to="/contact">Schedule Installation</Link>
                   </Button>
-                  <Button asChild size="lg" variant="outline" className='hover:bg-black'>
+                  <Button asChild size="lg" variant="outline">
                     <Link to="/services">View All Services</Link>
                   </Button>
                 </div>
@@ -386,4 +386,3 @@ const InstallationService = () => {
 };
 
 export default InstallationService;
-                  

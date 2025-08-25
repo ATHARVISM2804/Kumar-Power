@@ -33,11 +33,11 @@ const Header = () => {
             <Link to="/" className="hover:text-primary transition-colors">Home</Link>
           </li>
           
-          {/* About Us dropdown - keeping existing code */}
+          {/* About Us dropdown - updated: no link, only dropdown */}
           <li className="relative group">
-            <Link to="/about/About" className="hover:text-primary transition-colors flex items-center gap-1 cursor-pointer py-4">
+            <span className="hover:text-primary transition-colors flex items-center gap-1 cursor-pointer py-4">
               About Us <ChevronDown className="w-4 h-4" />
-            </Link>
+            </span>
             <div className="absolute left-0 top-[90%] pt-3 hidden group-hover:block hover:block">
               <div className="bg-white shadow-lg rounded-md min-w-[200px] z-10 overflow-hidden">
                 <Link to="/about/OurProfile" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Our Profile</Link>
@@ -51,9 +51,9 @@ const Header = () => {
           
           {/* Services dropdown */}
           <li className="relative group">
-            <Link to="/services" className="hover:text-primary transition-colors flex items-center gap-1 cursor-pointer py-4">
+             <span className="hover:text-primary transition-colors flex items-center gap-1 cursor-pointer py-4">
               Services <ChevronDown className="w-4 h-4" />
-            </Link>
+            </span>
             <div className="absolute left-0 top-[90%] pt-3 hidden group-hover:block hover:block">
               <div className="bg-white shadow-lg rounded-md min-w-[220px] z-10 overflow-hidden">
                 <Link to="/services/annual-maintenance" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Annual Maintenance</Link>
@@ -68,48 +68,22 @@ const Header = () => {
           {/* Products dropdown - updated to match the hierarchical structure in the image */}
           <li className="relative group">
             <Link to="/products" className="hover:text-primary transition-colors flex items-center gap-1 cursor-pointer py-4">
-              Products <ChevronDown className="w-4 h-4" />
+              Products 
             </Link>
-            <div className="absolute left-0 top-[90%] pt-3 hidden group-hover:block hover:block">
-              <div className="bg-white shadow-lg rounded-md min-w-[240px] z-10 overflow-hidden">
-                {/* Kirloskar Generators with sub-menu */}
-                <div 
-                  className="relative"
-                  onMouseEnter={() => setExpandedCategory('kirloskar')}
-                  onMouseLeave={() => setExpandedCategory(null)}
-                >
-                  <a className="flex justify-between items-center px-4 py-3 hover:bg-gray-100 cursor-pointer">
-                    Kirloskar Generators
-                    <ChevronDown className="w-4 h-4" />
-                  </a>
-                  {expandedCategory === 'kirloskar' && (
-                    <div className="pl-4 bg-white">
-                      <Link to="/products/kirloskar/gas-generators" className="block px-4 py-2 hover:bg-gray-100 cursor-pointer">Kirloskar Gas Generators</Link>
-                      <Link to="/products/kirloskar/portable-generators" className="block px-4 py-2 hover:bg-gray-100 cursor-pointer">Kirloskar Portable Generators</Link>
-                      <Link to="/products/kirloskar/diesel-generators" className="block px-4 py-2 hover:bg-gray-100 cursor-pointer">Kirloskar Diesel Generators</Link>
-                    </div>
-                  )}
-                </div>
-                <Link to="/products/electrical-panels" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Electrical Panels</Link>
-                <Link to="/products/servo-stabilizers" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Servo Stabilizers</Link>
-                <Link to="/products/inverters" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Inverters (UPS Systems)</Link>
-                <Link to="/products/transformers" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Transformers</Link>
-                <Link to="/products/vfds" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">VFDs</Link>
-              </div>
-            </div>
+            
           </li>
           
-          {/* Industries  */}
+          {/* Our Clients  */}
           <li className="relative group">
-            <Link to="/industries" className="hover:text-primary transition-colors flex items-center gap-1 cursor-pointer py-4">
-              Industries 
+            <Link to="/our-clients" className="hover:text-primary transition-colors flex items-center gap-1 cursor-pointer py-4">
+              Our Clients 
             </Link>
            
           </li>
           
-          {/* Projects and Contact links */}
+          {/* Installation and Contact links */}
           <li>
-            <Link to="/projects" className="hover:text-primary transition-colors py-4">Projects</Link>
+            <Link to="/installation" className="hover:text-primary transition-colors py-4">Installation</Link>
           </li>
           <li>
             <Link to="/contact" className="hover:text-primary transition-colors py-4">Contact</Link>
@@ -204,13 +178,13 @@ const Header = () => {
             </details>
           </div>
           
-          {/* Industries link */}
+          {/* Our Clients link */}
           <div className="py-3 border-b">
-            <Link to="/industries" className="block" onClick={closeMobileMenu}>Industries</Link>
+            <Link to="/our-clients" className="block" onClick={closeMobileMenu}>Our Clients</Link>
           </div>
 
-          {/* Projects link */}
-          <Link to="/projects" className="block py-3 border-b" onClick={closeMobileMenu}>Projects</Link>
+          {/* Installation link */}
+          <Link to="/installation" className="block py-3 border-b" onClick={closeMobileMenu}>Installation</Link>
           
           {/* Contact link */}
           <Link to="/contact" className="block py-3 border-b" onClick={closeMobileMenu}>Contact</Link>

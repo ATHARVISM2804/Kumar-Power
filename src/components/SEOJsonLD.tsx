@@ -34,6 +34,7 @@ const SEOJsonLD = ({
     '@type': 'WebSite',
     name: title,
     url: url,
+    
   } as const;
 
   return (

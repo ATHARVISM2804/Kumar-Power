@@ -73,9 +73,9 @@ const Footer = () => {
                 </li>
                 <li><a href="#electrical-panels" className="hover:text-blue-300">Electrical Panels</a></li>
                 <li><a href="#servo-stabilizers" className="hover:text-blue-300">Servo Stabilizers</a></li>
-                <li><a href="#inverters" className="hover:text-blue-300">Inverters (UPS Systems)</a></li>
+               
                 <li><a href="#transformers" className="hover:text-blue-300">Transformers</a></li>
-                <li><a href="#vfds" className="hover:text-blue-300">VFDs</a></li>
+                
               </ul>
             </div>
             {/* Useful Links */}
