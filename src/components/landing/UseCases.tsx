@@ -30,8 +30,8 @@ const UseCases = () => {
     <section className="py-24 bg-black text-white">
       <div className="container mx-auto flex flex-col md:flex-row min-h-[700px]">
         {/* Left: Vertically and horizontally centered heading */}
-        <div className="md:w-1/2 flex items-center justify-center md:justify-start">
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight md:leading-[1.1] text-left md:text-left">
+        <div className="md:w-1/2 flex items-start md:items-center justify-center md:justify-start pt-0 md:pt-0 md:-mt-16  ">
+          <h2 className="text-5xl md:text-6xl font-bold leading-tight md:leading-[1.1] text-left md:text-left">
             Power Solutions
             <br />for Metro Cities
           </h2>

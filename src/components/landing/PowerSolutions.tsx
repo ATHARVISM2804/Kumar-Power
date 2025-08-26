@@ -70,8 +70,7 @@ const PowerSolutions = () => {
   // Categories for the navigation tabs
   const categories = [
     "Generators",
-    "Inverters",
-    "Variable Frequency Drives (VFDs)",
+    
     "Electrical Panels",
     "Servo Stabilizers",
     "Transformers"

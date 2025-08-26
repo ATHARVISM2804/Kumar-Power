@@ -31,7 +31,7 @@ const Gallery = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
             {/* First image - wider */}
             <div
-              className="sm:col-span-2 aspect-[16/9] overflow-hidden rounded-lg shadow-md cursor-pointer transition-transform hover:scale-[1.02]"
+              className="sm:col-span-2 aspect-[16/9] overflow-hidden shadow-md cursor-pointer transition-transform hover:scale-[1.02]"
               onClick={() => setSelectedImage(galleryImages[0])}
             >
               <img
@@ -43,7 +43,7 @@ const Gallery = () => {
             </div>
             {/* Second image - adjusted to fill space properly */}
             <div
-              className="h-full overflow-hidden rounded-lg shadow-md cursor-pointer transition-transform hover:scale-[1.02]"
+              className="h-full overflow-hidden shadow-md cursor-pointer transition-transform hover:scale-[1.02]"
               onClick={() => setSelectedImage(galleryImages[1])}
             >
               <img
@@ -61,7 +61,7 @@ const Gallery = () => {
             {[2, 3, 4].map((index) => (
               <div
                 key={index}
-                className="aspect-square overflow-hidden rounded-lg shadow-md cursor-pointer transition-transform hover:scale-[1.02]"
+                className="aspect-square overflow-hidden shadow-md cursor-pointer transition-transform hover:scale-[1.02]"
                 onClick={() => setSelectedImage(galleryImages[index])}
               >
                 <img
@@ -76,7 +76,7 @@ const Gallery = () => {
 
           {/* Third row - 1 wide image */}
           <div
-            className="overflow-hidden rounded-lg shadow-md cursor-pointer transition-transform hover:scale-[1.02] aspect-[3/1]"
+            className="overflow-hidden shadow-md cursor-pointer transition-transform hover:scale-[1.02] aspect-[3/1]"
             onClick={() => setSelectedImage(galleryImages[5])}
           >
             <img
