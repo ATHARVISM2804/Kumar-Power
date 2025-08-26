@@ -9,6 +9,7 @@ import { Card } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
 
+import asset3 from "@/assets/Kumar Assets/20240820_left side 2.8 with 5.5 kVA.png"
 const EmergencySupportService = () => {
   // Emergency service benefits
   const serviceBenefits = [
@@ -178,7 +179,7 @@ const EmergencySupportService = () => {
               </div>
               <div className="rounded-lg overflow-hidden shadow-xl">
                 <img 
-                  src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755014000/emergency_service_detailed_dh6fsg.jpg" 
+                  src={asset3} 
                   alt="Emergency generator service technician" 
                   className="w-full h-auto"
                 />
@@ -429,159 +430,21 @@ const EmergencySupportService = () => {
           </div>
         </section>
 
-        {/* Priority Service Plans */}
+        {/* FAQ Section */}
         <section className="py-16 md:py-24 bg-black text-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <div className="inline-block mb-4">
                 <div className="flex items-center justify-center">
                   <span className="block h-1 w-10 bg-blue-600 mr-3"></span>
-                  <span className="text-blue-400 font-semibold tracking-wider">PRIORITY COVERAGE</span>
-                  <span className="block h-1 w-10 bg-blue-600 ml-3"></span>
-                </div>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Priority Emergency Service Plans
-              </h2>
-              <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-                For businesses where power is mission-critical, our priority service plans provide enhanced emergency coverage and guaranteed response times
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="overflow-hidden flex flex-col bg-gray-900 border-gray-800 text-white">
-                <div className="p-6 bg-gray-800 border-b border-gray-700">
-                  <h3 className="text-xl font-bold mb-2 text-white">Silver Priority</h3>
-                  <div className="text-3xl font-bold text-white">₹30,000<span className="text-lg text-gray-400 font-normal">/year</span></div>
-                </div>
-                <div className="p-6 flex-grow flex flex-col">
-                  <ul className="mb-6 flex-grow">
-                    <li className="flex items-center gap-3 mb-3 text-gray-200">
-                      <CheckCircle2 className="h-5 w-5 text-blue-400 flex-shrink-0" />
-                      <span>4-hour response guarantee</span>
-                    </li>
-                    <li className="flex items-center gap-3 mb-3 text-gray-200">
-                      <CheckCircle2 className="h-5 w-5 text-blue-400 flex-shrink-0" />
-                      <span>Priority dispatch status</span>
-                    </li>
-                    <li className="flex items-center gap-3 mb-3 text-gray-200">
-                      <CheckCircle2 className="h-5 w-5 text-blue-400 flex-shrink-0" />
-                      <span>10% discount on emergency rates</span>
-                    </li>
-                    <li className="flex items-center gap-3 mb-3 text-gray-200">
-                      <CheckCircle2 className="h-5 w-5 text-blue-400 flex-shrink-0" />
-                      <span>Quarterly system health checks</span>
-                    </li>
-                  </ul>
-                  <Button asChild className="w-full mt-auto bg-blue-600 hover:bg-blue-700">
-                    <Link to="/contact">Select Plan</Link>
-                  </Button>
-                </div>
-              </Card>
-              
-              <Card className="overflow-hidden flex flex-col bg-gray-900 border-gray-800 text-white border-2 border-blue-600 relative">
-                <div className="bg-blue-600 text-white text-center py-2">
-                  <span className="font-medium">Most Popular</span>
-                </div>
-                <div className="p-6 bg-gray-800 border-b border-gray-700">
-                  <h3 className="text-xl font-bold mb-2 text-white">Gold Priority</h3>
-                  <div className="text-3xl font-bold text-white">₹50,000<span className="text-lg text-gray-400 font-normal">/year</span></div>
-                </div>
-                <div className="p-6 flex-grow flex flex-col">
-                  <ul className="mb-6 flex-grow">
-                    <li className="flex items-center gap-3 mb-3 text-gray-200">
-                      <CheckCircle2 className="h-5 w-5 text-blue-400 flex-shrink-0" />
-                      <span>2-hour response guarantee</span>
-                    </li>
-                    <li className="flex items-center gap-3 mb-3 text-gray-200">
-                      <CheckCircle2 className="h-5 w-5 text-blue-400 flex-shrink-0" />
-                      <span>High priority dispatch status</span>
-                    </li>
-                    <li className="flex items-center gap-3 mb-3 text-gray-200">
-                      <CheckCircle2 className="h-5 w-5 text-blue-400 flex-shrink-0" />
-                      <span>20% discount on emergency rates</span>
-                    </li>
-                    <li className="flex items-center gap-3 mb-3 text-gray-200">
-                      <CheckCircle2 className="h-5 w-5 text-blue-400 flex-shrink-0" />
-                      <span>Bi-monthly system health checks</span>
-                    </li>
-                    <li className="flex items-center gap-3 mb-3 text-gray-200">
-                      <CheckCircle2 className="h-5 w-5 text-blue-400 flex-shrink-0" />
-                      <span>4-hour temporary generator delivery</span>
-                    </li>
-                  </ul>
-                  <Button asChild className="w-full mt-auto bg-blue-600 hover:bg-blue-700">
-                    <Link to="/contact">Select Plan</Link>
-                  </Button>
-                </div>
-              </Card>
-              
-              <Card className="overflow-hidden flex flex-col bg-gray-900 border-gray-800 text-white">
-                <div className="p-6 bg-gray-800 border-b border-gray-700">
-                  <h3 className="text-xl font-bold mb-2 text-white">Platinum Priority</h3>
-                  <div className="text-3xl font-bold text-white">₹80,000<span className="text-lg text-gray-400 font-normal">/year</span></div>
-                </div>
-                <div className="p-6 flex-grow flex flex-col">
-                  <ul className="mb-6 flex-grow">
-                    <li className="flex items-center gap-3 mb-3 text-gray-200">
-                      <CheckCircle2 className="h-5 w-5 text-blue-400 flex-shrink-0" />
-                      <span>90-minute response guarantee</span>
-                    </li>
-                    <li className="flex items-center gap-3 mb-3 text-gray-200">
-                      <CheckCircle2 className="h-5 w-5 text-blue-400 flex-shrink-0" />
-                      <span>Highest priority dispatch</span>
-                    </li>
-                    <li className="flex items-center gap-3 mb-3 text-gray-200">
-                      <CheckCircle2 className="h-5 w-5 text-blue-400 flex-shrink-0" />
-                      <span>30% discount on emergency rates</span>
-                    </li>
-                    <li className="flex items-center gap-3 mb-3 text-gray-200">
-                      <CheckCircle2 className="h-5 w-5 text-blue-400 flex-shrink-0" />
-                      <span>Monthly system health checks</span>
-                    </li>
-                    <li className="flex items-center gap-3 mb-3 text-gray-200">
-                      <CheckCircle2 className="h-5 w-5 text-blue-400 flex-shrink-0" />
-                      <span>2-hour temporary generator delivery</span>
-                    </li>
-                    <li className="flex items-center gap-3 mb-3 text-gray-200">
-                      <CheckCircle2 className="h-5 w-5 text-blue-400 flex-shrink-0" />
-                      <span>Dedicated emergency contact</span>
-                    </li>
-                  </ul>
-                  <Button asChild className="w-full mt-auto bg-blue-600 hover:bg-blue-700">
-                    <Link to="/contact">Select Plan</Link>
-                  </Button>
-                </div>
-              </Card>
-            </div>
-            <div className="text-center mt-8 text-gray-400">
-              <p>* Response times vary by location. Priority plans available for multiple sites.</p>
-              <p>* Customized emergency response plans available for enterprise clients.</p>
-            </div>
-            
-            <div className="mt-12 text-center">
-              <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
-                <Link to="/contact">Inquire About Priority Plans</Link>
-              </Button>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="py-16 md:py-24 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <div className="inline-block mb-4">
-                <div className="flex items-center justify-center">
-                  <span className="block h-1 w-10 bg-blue-600 mr-3"></span>
-                  <span className="text-blue-600 font-semibold tracking-wider">FREQUENTLY ASKED QUESTIONS</span>
+                  <span className="text-blue-400 font-semibold tracking-wider">FREQUENTLY ASKED QUESTIONS</span>
                   <span className="block h-1 w-10 bg-blue-600 ml-3"></span>
                 </div>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 Emergency Support FAQ
               </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-lg text-gray-300 max-w-3xl mx-auto">
                 Common questions about our emergency support services
               </p>
             </div>
@@ -590,10 +453,10 @@ const EmergencySupportService = () => {
               <Accordion type="single" collapsible className="w-full">
                 {faqItems.map((item, index) => (
                   <AccordionItem key={index} value={`item-${index}`}>
-                    <AccordionTrigger className="text-left text-lg font-medium">
+                    <AccordionTrigger className="text-left text-lg font-medium text-white hover:text-blue-400">
                       {item.question}
                     </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground">
+                    <AccordionContent className="text-gray-300">
                       {item.answer}
                     </AccordionContent>
                   </AccordionItem>
@@ -603,30 +466,7 @@ const EmergencySupportService = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-16 md:py-24 bg-blue-600">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center text-white">
-              <Badge className="mb-6 bg-white text-blue-600">Save This Number</Badge>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                Emergency Power Support When You Need It Most
-              </h2>
-              <p className="text-xl md:text-2xl mb-10">
-                Don't wait until disaster strikes. Save our emergency hotline number and consider a priority service plan for critical facilities.
-              </p>
-              <div className="flex flex-wrap justify-center gap-6">
-                <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-6 h-auto">
-                  <a href="tel:+918888888888" className="flex items-center gap-2">
-                    <PhoneCall size={20} /> Emergency Hotline
-                  </a>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-blue-700 text-lg px-8 py-6 h-auto">
-                  <Link to="/contact">Inquire About Priority Plans</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
+       
       </main>
       <Footer />
     </div>

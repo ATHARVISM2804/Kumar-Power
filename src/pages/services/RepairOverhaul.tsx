@@ -10,6 +10,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from '@/components/ui/badge';
 
+import asset2 from "@/assets/Kumar Assets/kirloskar _320-1010 kVA-.png"
+
 const RepairOverhaulService = () => {
   // Repair services
   const repairServices = [
@@ -178,7 +180,12 @@ const RepairOverhaulService = () => {
                   <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
                     <Link to="/contact">Request Repair Service</Link>
                   </Button>
-                  <Button asChild size="lg" variant="outline">
+                  <Button
+                    asChild
+                    size="lg"
+                    variant="outline"
+                    className="border-blue-600 text-blue-600 bg-white hover:bg-blue-600 hover:text-white hover:border-blue-700 transition-colors duration-200"
+                  >
                     <a href="tel:+918888888888" className="flex items-center gap-2">
                       <Zap size={18} /> Emergency Repair Hotline
                     </a>
@@ -187,7 +194,7 @@ const RepairOverhaulService = () => {
               </div>
               <div className="rounded-lg overflow-hidden shadow-xl">
                 <img 
-                  src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755014000/repair_service_detailed_sc7hfw.jpg" 
+                  src={asset2} 
                   alt="Technician repairing generator" 
                   className="w-full h-auto"
                 />
@@ -562,22 +569,30 @@ const RepairOverhaulService = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 md:py-24 bg-blue-600">
+        <section className="py-16 md:py-24 bg-gradient-to-br from-black to-blue-900">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center text-white">
-              <Badge className="mb-6 bg-white text-blue-600">Get Expert Help Today</Badge>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Need Generator Repair or Overhaul Services?
               </h2>
-              <p className="text-xl md:text-2xl mb-10">
+              <p className="text-lg md:text-xl mb-10 text-gray-200">
                 Contact our expert technicians today for fast, reliable repair services that get your power systems back to peak performance.
               </p>
-              <div className="flex flex-wrap justify-center gap-6">
-                <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-6 h-auto">
+              <div className="flex flex-row justify-center gap-6">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-white border border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white hover:border-blue-900 px-35 py-8 text-lg min-w-[240px] transition-colors duration-200"
+                >
                   <Link to="/contact">Request Repair Service</Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-blue-700 text-lg px-8 py-6 h-auto">
-                  <a href="tel:+918888888888" className="flex items-center gap-2">
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="bg-transparent border border-white text-white hover:bg-white hover:text-blue-900 hover:border-blue-900 px-8 py-4 text-lg min-w-[240px] transition-colors duration-200"
+                >
+                  <a href="tel:+918888888888" className="flex items-center justify-center gap-2 w-full h-full">
                     <Zap size={20} /> Emergency Repair Hotline
                   </a>
                 </Button>

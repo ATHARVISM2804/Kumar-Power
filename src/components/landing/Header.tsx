@@ -60,7 +60,7 @@ const Header = () => {
                 <Link to="/services/installation" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Installation & Commissioning</Link>
                 <Link to="/services/repair-overhaul" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Repair & Overhaul</Link>
                 <Link to="/services/emergency-support" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">24/7 Emergency Support</Link>
-                <Link to="/services/rental" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Generator Rental</Link>
+                
               </div>
             </div>
           </li>

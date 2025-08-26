@@ -3,27 +3,36 @@ import { Link } from 'react-router-dom';
 import Header from "@/components/landing/Header";
 import Footer from "@/components/landing/Footer";
 import SEOJsonLD from "@/components/SEOJsonLD";
-import { ChevronRight, Filter, SlidersHorizontal } from 'lucide-react';
+import { ChevronRight, Filter, SlidersHorizontal, X, CheckCircle2, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Products = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>("kirloskar");
+  const [selectedCategory, setSelectedCategory] = useState<string>("diesel");
   const [sortBy, setSortBy] = useState<string>("popularity");
   const [powerRange, setPowerRange] = useState<string>("all");
   const [showMobileFilters, setShowMobileFilters] = useState(false);
-  
+  const [showKirloskarDropdown, setShowKirloskarDropdown] = useState(true);
+
+  // State for product specs modal
+  const [showSpecsModal, setShowSpecsModal] = useState(false);
+  const [selectedProductForSpecs, setSelectedProductForSpecs] = useState<any>(null);
+
   // Define product categories
   const categories = [
-    { id: "kirloskar", name: "Kirloskar Generators", active: true },
-    { id: "diesel", name: "Diesel Generators" },
-    { id: "gas", name: "Gas Generators" },
-    { id: "portable", name: "Portable Generators" },
+    { id: "kirloskar", name: "Kirloskar Generators", hasDropdown: true }, 
     { id: "electrical", name: "Electrical Panels" },
     { id: "servo", name: "Servo Stabilizers" },
     { id: "transformers", name: "Transformers" },
-    { id: "inverters", name: "Inverters (UPS Systems)" },
-    { id: "vfds", name: "VFDs" },
+  ];
+
+  // Subcategories for Kirloskar Generators
+  const kirloskarSubcategories = [
+    { id: "diesel", name: "Diesel Generators" },
+    { id: "gas", name: "Gas Generators" },
+    { id: "portable", name: "Portable Generators" },
   ];
   
   // Define generator products based on the images
@@ -39,6 +48,7 @@ const Products = () => {
       ratingCount: 178,
       rating: 4.7,
       range: "7.5 - 20 kVA",
+      category: "diesel"
     },
     {
       id: "25-62_5kva",
@@ -51,6 +61,7 @@ const Products = () => {
       ratingCount: 153,
       rating: 4.8,
       range: "25 - 62.5 kVA",
+      category: "diesel"
     },
     {
       id: "62_5-160kva",
@@ -63,6 +74,7 @@ const Products = () => {
       ratingCount: 132,
       rating: 4.9,
       range: "62.5 - 160 kVA",
+      category: "diesel"
     },
     {
       id: "200-250kva",
@@ -75,6 +87,7 @@ const Products = () => {
       ratingCount: 118,
       rating: 4.8,
       range: "200 - 250 kVA",
+      category: "diesel"
     },
     {
       id: "320-750kva",
@@ -87,6 +100,7 @@ const Products = () => {
       ratingCount: 96,
       rating: 4.9,
       range: "320 - 750 kVA",
+      category: "diesel"
     },
     {
       id: "750-1500kva",
@@ -99,11 +113,265 @@ const Products = () => {
       ratingCount: 86,
       rating: 4.9,
       range: "750 - 1500 kVA",
+      category: "diesel"
     },
   ];
 
-  // Choose product display based on selected category or default to diesel generators
-  const displayProducts = dieselGenerators;
+  // Define gas generators
+  const gasGenerators = [
+    {
+      id: "10-25kva-gas",
+      name: "10 kVA - 25 kVA Gas Generators",
+      image: "/src/assets/Range2.png",
+      fuelType: "Natural Gas/CNG",
+      cpcbNorm: "CPCB-IV+",
+      cooling: "Liquid",
+      phase: "Single/Three Phase",
+      ratingCount: 145,
+      rating: 4.6,
+      range: "10 - 25 kVA",
+      category: "gas"
+    },
+    {
+      id: "30-62kva-gas",
+      name: "30 kVA - 62 kVA Gas Generators",
+      image: "/src/assets/Range3.png",
+      fuelType: "Natural Gas/CNG",
+      cpcbNorm: "CPCB-IV+",
+      cooling: "Liquid",
+      phase: "Three Phase",
+      ratingCount: 124,
+      rating: 4.7,
+      range: "30 - 62 kVA",
+      category: "gas"
+    },
+    {
+      id: "75-125kva-gas",
+      name: "75 kVA - 125 kVA Gas Generators",
+      image: "/src/assets/Range4.png",
+      fuelType: "Natural Gas/CNG",
+      cpcbNorm: "CPCB-IV+",
+      cooling: "Liquid",
+      phase: "Three Phase",
+      ratingCount: 98,
+      rating: 4.8,
+      range: "75 - 125 kVA",
+      category: "gas"
+    }
+  ];
+
+  // Define portable generators
+  const portableGenerators = [
+    {
+      id: "1-3kva-portable",
+      name: "1 kVA - 3 kVA Portable Generators",
+      image: "/src/assets/Range1.png",
+      fuelType: "Gasoline",
+      cpcbNorm: "CPCB-IV+",
+      cooling: "Air",
+      phase: "Single Phase",
+      ratingCount: 210,
+      rating: 4.5,
+      range: "1 - 3 kVA",
+      category: "portable"
+    },
+    {
+      id: "3-5kva-portable",
+      name: "3 kVA - 5 kVA Portable Generators",
+      image: "/src/assets/Range1.png",
+      fuelType: "Gasoline/Diesel",
+      cpcbNorm: "CPCB-IV+",
+      cooling: "Air",
+      phase: "Single Phase",
+      ratingCount: 185,
+      rating: 4.6,
+      range: "3 - 5 kVA",
+      category: "portable"
+    }
+  ];
+
+  // Define electrical panels
+  const electricalPanels = [
+    {
+      id: "auto-transfer",
+      name: "Automatic Transfer Switch Panels",
+      image: "/src/assets/Range2.png",
+      fuelType: "N/A",
+      cpcbNorm: "N/A",
+      cooling: "Fan/Natural",
+      phase: "Three Phase",
+      ratingCount: 112,
+      rating: 4.7,
+      range: "Various",
+      category: "electrical"
+    },
+    {
+      id: "distribution-panels",
+      name: "Power Distribution Panels",
+      image: "/src/assets/Range3.png",
+      fuelType: "N/A",
+      cpcbNorm: "N/A",
+      cooling: "Fan/Natural",
+      phase: "Three Phase",
+      ratingCount: 98,
+      rating: 4.6,
+      range: "Various",
+      category: "electrical"
+    }
+  ];
+
+  // Define servo stabilizers
+  const servoStabilizers = [
+    {
+      id: "single-phase-servo",
+      name: "Single Phase Servo Stabilizers",
+      image: "/src/assets/Range4.png",
+      fuelType: "N/A",
+      cpcbNorm: "N/A",
+      cooling: "Air/Oil",
+      phase: "Single Phase",
+      ratingCount: 134,
+      rating: 4.5,
+      range: "5-100 kVA",
+      category: "servo"
+    },
+    {
+      id: "three-phase-servo",
+      name: "Three Phase Servo Stabilizers",
+      image: "/src/assets/Range5.png",
+      fuelType: "N/A",
+      cpcbNorm: "N/A",
+      cooling: "Air/Oil",
+      phase: "Three Phase",
+      ratingCount: 122,
+      rating: 4.7,
+      range: "15-500 kVA",
+      category: "servo"
+    }
+  ];
+
+  // Define transformers
+  const transformers = [
+    {
+      id: "distribution-transformer",
+      name: "Distribution Transformers",
+      image: "/src/assets/Range6.png",
+      fuelType: "N/A",
+      cpcbNorm: "N/A",
+      cooling: "Oil/Dry",
+      phase: "Three Phase",
+      ratingCount: 88,
+      rating: 4.8,
+      range: "100-2500 kVA",
+      category: "transformers"
+    },
+    {
+      id: "power-transformer",
+      name: "Power Transformers",
+      image: "/src/assets/Range5.png",
+      fuelType: "N/A",
+      cpcbNorm: "N/A",
+      cooling: "Oil",
+      phase: "Three Phase",
+      ratingCount: 76,
+      rating: 4.9,
+      range: "1-10 MVA",
+      category: "transformers"
+    }
+  ];
+
+  // Combine all products
+  const allProducts = [
+    ...dieselGenerators,
+    ...gasGenerators,
+    ...portableGenerators,
+    ...electricalPanels,
+    ...servoStabilizers,
+    ...transformers
+  ];
+
+  // Filter products based on selected category
+  const getDisplayProducts = () => {
+    // Filter by power range if applicable
+    const filterByPowerRange = (products) => {
+      if (powerRange === 'all') return products;
+      
+      return products.filter(product => {
+        if (powerRange === 'small') {
+          return product.range.includes('5') || product.range.includes('10') || 
+                 product.range.includes('15') || product.range.includes('20') || 
+                 product.range.includes('25') || (parseInt(product.range) < 50);
+        } else if (powerRange === 'medium') {
+          return product.range.includes('50') || product.range.includes('60') || 
+                 product.range.includes('75') || product.range.includes('100') || 
+                 product.range.includes('125') || product.range.includes('160') || 
+                 product.range.includes('200') || (parseInt(product.range) <= 250);
+        } else if (powerRange === 'large') {
+          return product.range.includes('250') || product.range.includes('300') || 
+                 product.range.includes('320') || product.range.includes('500') || 
+                 product.range.includes('750') || product.range.includes('1000') ||
+                 product.range.includes('1500') || (parseInt(product.range) > 250);
+        }
+        return true;
+      });
+    };
+
+    // Sort products based on sort option
+    const sortProducts = (products) => {
+      if (sortBy === 'rating') {
+        return [...products].sort((a, b) => b.rating - a.rating);
+      } else if (sortBy === 'popularity') {
+        return [...products].sort((a, b) => b.ratingCount - a.ratingCount);
+      }
+      // Add other sorting options like price if needed
+      return products;
+    };
+
+    // First filter by category
+    let filteredProducts;
+    switch (selectedCategory) {
+      case 'diesel':
+        filteredProducts = dieselGenerators;
+        break;
+      case 'gas':
+        filteredProducts = gasGenerators;
+        break;
+      case 'portable':
+        filteredProducts = portableGenerators;
+        break;
+      case 'electrical':
+        filteredProducts = electricalPanels;
+        break;
+      case 'servo':
+        filteredProducts = servoStabilizers;
+        break;
+      case 'transformers':
+        filteredProducts = transformers;
+        break;
+      default:
+        filteredProducts = dieselGenerators;
+    }
+
+    // Then apply power range filter
+    filteredProducts = filterByPowerRange(filteredProducts);
+    
+    // Finally sort the products
+    return sortProducts(filteredProducts);
+  };
+
+  // Get the display products based on filters
+  const displayProducts = getDisplayProducts();
+
+  // Get the current category display name
+  const getCurrentCategoryDisplayName = () => {
+    if (kirloskarSubcategories.some(sub => sub.id === selectedCategory)) {
+      const subcat = kirloskarSubcategories.find(sub => sub.id === selectedCategory);
+      return subcat ? subcat.name : "Products";
+    } else {
+      const cat = categories.find(cat => cat.id === selectedCategory);
+      return cat ? cat.name : "Products";
+    }
+  };
 
   // SEO metadata
   const seoData = {
@@ -111,6 +379,268 @@ const Products = () => {
     description: "Browse our full range of Kirloskar-certified diesel generators, electrical panels, transformers and more power solutions for all your industrial needs.",
     url: "https://kumarpower.com/products",
     imageUrl: "https://kumarpower.com/images/products-header.jpg",
+  };
+
+  // Handler for category selection
+  const handleCategorySelection = (categoryId: string) => {
+    setSelectedCategory(categoryId);
+    
+    // If it's a main category with subcategories, show the dropdown
+    if (categoryId === 'kirloskar') {
+      setShowKirloskarDropdown(true);
+      setSelectedCategory('diesel'); // Default to diesel when kirloskar is selected
+    } else {
+      // For subcategories and other main categories, just set the selected category
+      setShowKirloskarDropdown(categoryId === 'kirloskar');
+    }
+  };
+
+  // Function to open the specs modal
+  const openSpecsModal = (product) => {
+    setSelectedProductForSpecs(product);
+    setShowSpecsModal(true);
+  };
+
+  // Additional specifications data (would be part of product data in a real app)
+  const getDetailedSpecs = (product) => {
+    // This is sample data - in a real app, this would be structured data stored with each product
+    const powerRangeMap = {
+      diesel: {
+        engineSpecs: {
+          manufacturer: "Kirloskar Oil Engines Ltd.",
+          model: `KDG ${product.range.split(' ')[0]}`,
+          cylinders: product.range.includes("20") ? "4" : product.range.includes("62.5") ? "6" : "6",
+          displacement: product.range.includes("20") ? "2.8L" : product.range.includes("62.5") ? "3.8L" : "6.7L",
+          aspiration: product.range.includes("750") ? "Turbocharged with Aftercooler" : "Turbocharged",
+          compressionRatio: "16.5:1",
+          oilCapacity: product.range.includes("20") ? "8.5L" : product.range.includes("62.5") ? "13L" : "18L",
+          coolantCapacity: product.range.includes("20") ? "12L" : product.range.includes("62.5") ? "18L" : "24L",
+        },
+        alternatorSpecs: {
+          manufacturer: "Kirloskar Electric Company",
+          model: `KEC ${product.range.split(' ')[0]}`,
+          insulation: "Class H",
+          bearings: "Single Bearing",
+          excitationSystem: "Brushless",
+          voltageRegulation: "±1%",
+          waveformDistortion: "Less than 3%",
+          telephoneInterference: "THF < 2%",
+        },
+        controlPanel: {
+          controller: "DeepSea DSE7320",
+          parameters: "Voltage, Current, Frequency, Engine RPM, Oil Pressure, Water Temperature",
+          protection: "High Water Temperature, Low Oil Pressure, Over/Under Speed, Over/Under Voltage, Overload",
+          indicators: "Mains Available, Generator Available, Mains On Load, Generator On Load",
+          communications: "RS232, RS485 MODBUS RTU",
+        }
+      },
+      gas: {
+        engineSpecs: {
+          manufacturer: "Kirloskar Gas Engines Ltd.",
+          model: `KGE ${product.range.split(' ')[0]}`,
+          cylinders: product.range.includes("25") ? "4" : "6",
+          displacement: product.range.includes("25") ? "3.2L" : "6.5L",
+          aspiration: "Naturally Aspirated",
+          compressionRatio: "10.5:1",
+          oilCapacity: product.range.includes("25") ? "9L" : "15L",
+          coolantCapacity: product.range.includes("25") ? "12L" : "20L",
+          gasType: "Natural Gas / CNG / LPG",
+        },
+        alternatorSpecs: {
+          manufacturer: "Kirloskar Electric Company",
+          model: `KEC-G ${product.range.split(' ')[0]}`,
+          insulation: "Class H",
+          bearings: "Single Bearing",
+          excitationSystem: "Brushless",
+          voltageRegulation: "±1%",
+          waveformDistortion: "Less than 3%",
+          telephoneInterference: "THF < 2%",
+        },
+        controlPanel: {
+          controller: "DeepSea DSE8610",
+          parameters: "Voltage, Current, Frequency, Engine RPM, Gas Pressure, Water Temperature",
+          protection: "High Water Temperature, Low Gas Pressure, Over/Under Speed, Over/Under Voltage, Overload",
+          indicators: "Mains Available, Generator Available, Mains On Load, Generator On Load",
+          communications: "RS232, RS485 MODBUS RTU",
+        }
+      },
+      portable: {
+        engineSpecs: {
+          manufacturer: "Kirloskar Portable Generators",
+          model: `KPG ${product.range.split(' ')[0]}`,
+          cylinders: "1",
+          displacement: product.range.includes("3") ? "0.4L" : "0.6L",
+          aspiration: "Naturally Aspirated",
+          compressionRatio: "8.5:1",
+          oilCapacity: product.range.includes("3") ? "1.1L" : "1.3L",
+          fuelType: product.fuelType,
+          fuelCapacity: product.range.includes("3") ? "12L" : "18L",
+        },
+        alternatorSpecs: {
+          manufacturer: "Kirloskar Electric Company",
+          model: `KEC-P ${product.range.split(' ')[0]}`,
+          insulation: "Class F",
+          bearings: "Single Bearing",
+          excitationSystem: "Brushed",
+          voltageRegulation: "±3%",
+          waveformDistortion: "Less than 5%",
+          telephoneInterference: "THF < 3%",
+        },
+        controlPanel: {
+          controller: "Analog",
+          parameters: "Voltage, Frequency",
+          protection: "Overload Protection",
+          outlets: "2x 230V AC, 1x 12V DC (optional)",
+          indicators: "Power On, Low Oil Alert",
+        }
+      },
+      electrical: {
+        specifications: {
+          manufacturer: "Kirloskar Electric Products",
+          enclosure: "CRCA Sheet Steel",
+          protection: "IP54",
+          finish: "Powder Coated",
+          color: "RAL7032",
+          busbars: "Aluminum/Copper",
+          rating: "As per system requirement",
+          switchgear: "ABB/Schneider/L&T/Siemens",
+        },
+        features: {
+          autoTransfer: "Available",
+          synchronization: "Available",
+          metering: "Digital/Analog",
+          indicators: "LED Type",
+          cooling: "Forced Air",
+          ventilation: "Louvered Doors",
+        },
+      },
+      servo: {
+        specifications: {
+          manufacturer: "Kirloskar Servo Controls",
+          inputVoltage: "170V-260V (1Φ) / 340V-460V (3Φ)",
+          outputVoltage: "230V±1% (1Φ) / 400V±1% (3Φ)",
+          correction: "Up to 50V/sec",
+          coolingSystem: product.cooling,
+          protectionClass: "IP21",
+          controlType: "Microprocessor Based",
+          efficiency: ">95%",
+        },
+        features: {
+          overloadCapacity: "200% for 60 sec",
+          indicators: "Input Voltage, Output Voltage, On, Off",
+          protection: "Over/Under Voltage, Overload, Short Circuit",
+          bypass: "Manual/Automatic",
+          remoteControl: "Optional",
+          soundLevel: "<45dB",
+        },
+      },
+      transformers: {
+        specifications: {
+          manufacturer: "Kirloskar Transformers",
+          type: product.id.includes("distribution") ? "Distribution" : "Power",
+          cooling: product.cooling,
+          insulation: "Class A",
+          tappings: "±5% in steps of 2.5%",
+          vectorGroup: "Dyn11",
+          temperature: "40°C ambient",
+          impedance: "4.5% - 5%",
+        },
+        features: {
+          lowLoss: "CRGO Core",
+          windingMaterial: "Copper",
+          termination: "Cable Box/Bus Duct",
+          protection: "Buchholz Relay, WTI, OTI",
+          conservator: "Provided",
+          silicaGel: "Provided",
+          oilLevel: "Provided",
+        },
+      },
+    };
+    
+    // Select the right specs based on product category
+    if (product.category === 'diesel') return powerRangeMap.diesel;
+    if (product.category === 'gas') return powerRangeMap.gas;
+    if (product.category === 'portable') return powerRangeMap.portable;
+    if (product.category === 'electrical') return powerRangeMap.electrical;
+    if (product.category === 'servo') return powerRangeMap.servo;
+    if (product.category === 'transformers') return powerRangeMap.transformers;
+    
+    // Default to diesel if not found
+    return powerRangeMap.diesel;
+  };
+  
+  // Function to render specifications in the modal
+  const renderSpecifications = (specs, product) => {
+    if (product.category === 'diesel' || product.category === 'gas' || product.category === 'portable') {
+      return (
+        <Tabs defaultValue="engine" className="w-full">
+          <TabsList className="grid w-full grid-cols-3">
+            <TabsTrigger value="engine">Engine</TabsTrigger>
+            <TabsTrigger value="alternator">Alternator</TabsTrigger>
+            <TabsTrigger value="control">Control Panel</TabsTrigger>
+          </TabsList>
+          <TabsContent value="engine" className="pt-4">
+            <div className="grid grid-cols-2 gap-3">
+              {Object.entries(specs.engineSpecs).map(([key, value]) => (
+                <div key={key} className="border-b border-gray-100 pb-2">
+                  <p className="text-sm font-medium text-gray-500 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
+                  <p className="text-base font-semibold">{value as React.ReactNode}</p>
+                </div>
+              ))}
+            </div>
+          </TabsContent>
+          <TabsContent value="alternator" className="pt-4">
+            <div className="grid grid-cols-2 gap-3">
+              {Object.entries(specs.alternatorSpecs).map(([key, value]) => (
+                <div key={key} className="border-b border-gray-100 pb-2">
+                  <p className="text-sm font-medium text-gray-500 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
+                  <p className="text-base font-semibold">{value as React.ReactNode}</p>
+                </div>
+              ))}
+            </div>
+          </TabsContent>
+          <TabsContent value="control" className="pt-4">
+            <div className="grid grid-cols-2 gap-3">
+              {Object.entries(specs.controlPanel).map(([key, value]) => (
+                <div key={key} className="border-b border-gray-100 pb-2">
+                  <p className="text-sm font-medium text-gray-500 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
+                  <p className="text-base font-semibold">{value as React.ReactNode}</p>
+                </div>
+              ))}
+            </div>
+          </TabsContent>
+        </Tabs>
+      );
+    } else {
+      return (
+        <Tabs defaultValue="specifications" className="w-full">
+          <TabsList className="grid w-full grid-cols-2">
+            <TabsTrigger value="specifications">Specifications</TabsTrigger>
+            <TabsTrigger value="features">Features</TabsTrigger>
+          </TabsList>
+          <TabsContent value="specifications" className="pt-4">
+            <div className="grid grid-cols-2 gap-3">
+              {Object.entries(specs.specifications).map(([key, value]) => (
+                <div key={key} className="border-b border-gray-100 pb-2">
+                  <p className="text-sm font-medium text-gray-500 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
+                  <p className="text-base font-semibold">{value as React.ReactNode}</p>
+                </div>
+              ))}
+            </div>
+          </TabsContent>
+          <TabsContent value="features" className="pt-4">
+            <div className="grid grid-cols-2 gap-3">
+              {Object.entries(specs.features).map(([key, value]) => (
+                <div key={key} className="border-b border-gray-100 pb-2">
+                  <p className="text-sm font-medium text-gray-500 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
+                  <p className="text-base font-semibold">{value as React.ReactNode}</p>
+                </div>
+              ))}
+            </div>
+          </TabsContent>
+        </Tabs>
+      );
+    }
   };
 
   return (
@@ -165,8 +695,6 @@ const Products = () => {
                 className="bg-gray-800 border border-gray-700 rounded px-2 py-1 text-sm text-white"
               >
                 <option value="popularity">Popularity</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
                 <option value="rating">Rating</option>
               </select>
             </div>
@@ -204,16 +732,50 @@ const Products = () => {
               <ul className="space-y-1">
                 {categories.map((category) => (
                   <li key={category.id}>
-                    <button
-                      className={`w-full text-left px-2 py-2 rounded-sm transition text-sm ${
-                        category.active
-                          ? 'bg-blue-900 text-blue-200 font-medium'
-                          : 'hover:bg-gray-800 text-gray-300'
-                      }`}
-                      onClick={() => setSelectedCategory(category.id)}
-                    >
-                      {category.name}
-                    </button>
+                    {category.hasDropdown ? (
+                      <>
+                        <button
+                          className={`w-full text-left px-2 py-2 rounded-sm transition text-sm flex items-center justify-between ${
+                            selectedCategory === 'diesel' || selectedCategory === 'gas' || selectedCategory === 'portable'
+                              ? 'bg-blue-900 text-blue-200 font-medium'
+                              : 'hover:bg-gray-800 text-gray-300'
+                          }`}
+                          onClick={() => handleCategorySelection(category.id)}
+                        >
+                          <span>{category.name}</span>
+                          <ChevronRight className={`ml-2 w-4 h-4 transition-transform ${showKirloskarDropdown ? 'rotate-90' : ''}`} />
+                        </button>
+                        {showKirloskarDropdown && (
+                          <ul className="ml-4 mt-1 space-y-1">
+                            {kirloskarSubcategories.map((subcat) => (
+                              <li key={subcat.id}>
+                                <button
+                                  className={`w-full text-left px-2 py-2 rounded-sm transition text-sm ${
+                                    selectedCategory === subcat.id
+                                      ? 'bg-blue-900 text-blue-200 font-medium'
+                                      : 'hover:bg-gray-800 text-gray-300'
+                                  }`}
+                                  onClick={() => setSelectedCategory(subcat.id)}
+                                >
+                                  {subcat.name}
+                                </button>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </>
+                    ) : (
+                      <button
+                        className={`w-full text-left px-2 py-2 rounded-sm transition text-sm ${
+                          selectedCategory === category.id
+                            ? 'bg-blue-900 text-blue-200 font-medium'
+                            : 'hover:bg-gray-800 text-gray-300'
+                        }`}
+                        onClick={() => handleCategorySelection(category.id)}
+                      >
+                        {category.name}
+                      </button>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -238,10 +800,14 @@ const Products = () => {
             {/* Products Grid */}
             <div className="flex-1">
               <div className="mb-5">
-                <h2 className="text-xl font-bold text-white">Diesel Generators</h2>
+                <h2 className="text-xl font-bold text-white">{getCurrentCategoryDisplayName()}</h2>
                 <p className="text-gray-400 mt-1 text-sm">
-                  Kirloskar's range of diesel generators are designed for maximum performance and reliability. 
-                  Our generators meet the latest CPCB norms and are built for Indian conditions.
+                  {selectedCategory === 'diesel' && 'Kirloskar\'s range of diesel generators are designed for maximum performance and reliability. Our generators meet the latest CPCB norms and are built for Indian conditions.'}
+                  {selectedCategory === 'gas' && 'Eco-friendly and efficient, our gas generators provide clean power with lower emissions and reduced operating costs.'}
+                  {selectedCategory === 'portable' && 'Compact and versatile generators perfect for homes, small businesses, construction sites, and outdoor events.'}
+                  {selectedCategory === 'electrical' && 'High-quality electrical panels for power distribution, control, and protection of your electrical systems.'}
+                  {selectedCategory === 'servo' && 'Reliable servo stabilizers to protect your equipment from voltage fluctuations and ensure consistent power supply.'}
+                  {selectedCategory === 'transformers' && 'Durable and efficient transformers designed for various industrial and commercial applications.'}
                 </p>
               </div>
               
@@ -277,7 +843,12 @@ const Products = () => {
                         </div>
                         
                         <div className="mt-3 flex gap-1 justify-between">
-                          <Button variant="outline" size="sm" className="h-7 text-xs flex items-center gap-1 py-0 px-2 border-gray-600 text-gray-300 bg-gray-700 hover:bg-gray-600">
+                          <Button 
+                            variant="outline" 
+                            size="sm" 
+                            className="h-7 text-xs flex items-center gap-1 py-0 px-2 border-gray-600 text-gray-300 bg-gray-700 hover:bg-gray-600"
+                            onClick={() => openSpecsModal(product)}
+                          >
                             View Specs <ChevronRight className="w-3 h-3" />
                           </Button>
                           <Button variant="outline" size="sm" className="h-7 text-xs flex items-center gap-1 py-0 px-2 border-gray-600 text-gray-300 bg-gray-700 hover:bg-gray-600">
@@ -488,6 +1059,85 @@ const Products = () => {
           </div>
         </section>
       </main>
+      
+      {/* Product Specifications Modal */}
+      <Dialog open={showSpecsModal} onOpenChange={setShowSpecsModal}>
+        <DialogContent className="sm:max-w-[800px] max-h-[90vh] overflow-y-auto">
+          {selectedProductForSpecs && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="text-xl">{selectedProductForSpecs.name} Specifications</DialogTitle>
+                <DialogDescription className="text-gray-500">
+                  Detailed technical specifications and features.
+                </DialogDescription>
+              </DialogHeader>
+              
+              <div className="mt-4">
+                {/* Product Image and Key Info */}
+                <div className="flex flex-col sm:flex-row gap-6 mb-6">
+                  <div className="w-full sm:w-1/3">
+                    <div className="rounded-md overflow-hidden border border-gray-200">
+                      <img 
+                        src={selectedProductForSpecs.image} 
+                        alt={selectedProductForSpecs.name} 
+                        className="w-full h-auto object-cover"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold mb-2">{selectedProductForSpecs.name}</h3>
+                    <div className="space-y-2">
+                      <div className="flex items-start gap-2">
+                        <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
+                        <div>
+                          <p className="font-medium">Power Range</p>
+                          <p className="text-gray-600">{selectedProductForSpecs.range}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
+                        <div>
+                          <p className="font-medium">Fuel Type</p>
+                          <p className="text-gray-600">{selectedProductForSpecs.fuelType}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
+                        <div>
+                          <p className="font-medium">Cooling System</p>
+                          <p className="text-gray-600">{selectedProductForSpecs.cooling}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
+                        <div>
+                          <p className="font-medium">Phase</p>
+                          <p className="text-gray-600">{selectedProductForSpecs.phase}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Tabs for detailed specs */}
+                <div className="mt-4 border-t pt-4">
+                  {renderSpecifications(getDetailedSpecs(selectedProductForSpecs), selectedProductForSpecs)}
+                </div>
+                
+                {/* CTA Buttons */}
+                <div className="mt-6 flex flex-wrap gap-3 pt-4 border-t">
+                  <Button size="sm" variant="default" className="bg-blue-600 hover:bg-blue-700">
+                    Request Quote
+                  </Button>
+                  <Button size="sm" variant="outline" className="flex items-center gap-1">
+                    <Download className="w-4 h-4" /> Download Brochure
+                  </Button>
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
       
       <Footer />
     </>

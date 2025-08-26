@@ -17,17 +17,10 @@ import Testimonials from "./pages/about/Testimonials";
 // Main Products page
 import Products from "./pages/Products";
 
-// Product pages
-import ElectricalPanels from "./pages/products/ElectricalPanels";
-import ServoStabilizers from "./pages/products/ServoStabilizers";
-
-import Transformers from "./pages/products/Transformers";
 
 
-// Kirloskar Generator pages
-import GasGenerators from "./pages/products/kirloskar/GasGenerators";
-import PortableGenerators from "./pages/products/kirloskar/PortableGenerators";
-import DieselGenerators from "./pages/products/kirloskar/DieselGenerators";
+
+
 
 // Services pages
 
@@ -35,7 +28,7 @@ import AnnualMaintenance from "./pages/services/AnnualMaintenance";
 import Installation from "./pages/services/Installation";
 import RepairOverhaul from "./pages/services/RepairOverhaul";
 import EmergencySupport from "./pages/services/EmergencySupport";
-import Rental from "./pages/services/Rental";
+
 
 // Our Clients page (formerly Industries)
 import Industries from "./pages/ValueClient";
@@ -72,24 +65,17 @@ const App = () => (
 
           {/* Product Routes */}
           <Route path="/products" element={<Products />} />
-          <Route path="/products/electrical-panels" element={<ElectricalPanels />} />
-          <Route path="/products/servo-stabilizers" element={<ServoStabilizers />} />
-          
-          <Route path="/products/transformers" element={<Transformers />} />
+   
           
 
-          {/* Kirloskar Generator Routes */}
-          <Route path="/products/kirloskar/gas-generators" element={<GasGenerators />} />
-          <Route path="/products/kirloskar/portable-generators" element={<PortableGenerators />} />
-          <Route path="/products/kirloskar/diesel-generators" element={<DieselGenerators />} />
-          
+     
           {/* Services Routes */}
           
           <Route path="/services/annual-maintenance" element={<AnnualMaintenance />} />
           <Route path="/services/installation" element={<Installation />} />
           <Route path="/services/repair-overhaul" element={<RepairOverhaul />} />
           <Route path="/services/emergency-support" element={<EmergencySupport />} />
-          <Route path="/services/rental" element={<Rental />} />
+          
           
           {/* Installation Route */}
           <Route path="/installation" element={<Installation />} />

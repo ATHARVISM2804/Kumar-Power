@@ -8,51 +8,8 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
+import asset1 from "@/assets/Kumar Assets/mrg Green 160kVA-.png"
 const AnnualMaintenanceService = () => {
-  // AMC plan features
-  const amcPlans = [
-    {
-      title: "Basic AMC",
-      price: "₹25,000",
-      features: [
-        "Quarterly preventive maintenance visits",
-        "Basic parts replacement",
-        "48-hour emergency response",
-        "Remote diagnostics support",
-        "Service reports"
-      ],
-      isPopular: false
-    },
-    {
-      title: "Standard AMC",
-      price: "₹40,000",
-      features: [
-        "Bi-monthly preventive maintenance visits",
-        "Standard parts replacement",
-        "24-hour emergency response",
-        "Remote diagnostics support",
-        "Detailed performance analysis",
-        "Operator training"
-      ],
-      isPopular: true
-    },
-    {
-      title: "Premium AMC",
-      price: "₹60,000",
-      features: [
-        "Monthly preventive maintenance visits",
-        "Comprehensive parts replacement",
-        "12-hour emergency response",
-        "Remote monitoring system",
-        "Detailed performance analysis",
-        "Operator training",
-        "Annual system audit",
-        "Temporary generator backup during extended repairs"
-      ],
-      isPopular: false
-    }
-  ];
-
   // FAQ items
   const faqItems = [
     {
@@ -131,14 +88,19 @@ const AnnualMaintenanceService = () => {
                   <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
                     <Link to="/contact">Request AMC Quote</Link>
                   </Button>
-                  <Button asChild size="lg" variant="outline" className="border-blue-600 text-blue-600">
+                  <Button
+                    asChild
+                    size="lg"
+                    variant="outline"
+                    className="border-blue-600 text-blue-600 bg-white hover:bg-blue-600 hover:text-white hover:border-blue-700 transition-colors duration-200"
+                  >
                     <Link to="/services">View All Services</Link>
                   </Button>
                 </div>
               </div>
               <div className="rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
                 <img 
-                  src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755014000/maintenance_service_detailed_vfgm3h.jpg" 
+                  src={asset1}
                   alt="Technician performing maintenance" 
                   className="w-full h-auto"
                 />
@@ -203,56 +165,6 @@ const AnnualMaintenanceService = () => {
                   </p>
                 </Card>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* AMC Plans - White Background */}
-        <section className="py-16 md:py-24 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <span className="text-blue-600 font-medium uppercase tracking-wider">Flexible Options</span>
-              <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">
-                Choose the Right AMC Plan for Your Needs
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Flexible maintenance contracts designed to meet different operational requirements and budgets
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {amcPlans.map((plan, index) => (
-                <Card key={index} className={`overflow-hidden flex flex-col transform transition-all duration-300 hover:shadow-2xl ${
-                  plan.isPopular ? 'border-blue-600 border-2 scale-105 shadow-xl' : 'hover:-translate-y-2'
-                }`}>
-                  {plan.isPopular && (
-                    <div className="bg-blue-600 text-white text-center py-2">
-                      <span className="font-medium">Most Popular</span>
-                    </div>
-                  )}
-                  <div className="p-8 flex-grow flex flex-col">
-                    <h3 className="text-2xl font-bold mb-2">{plan.title}</h3>
-                    <div className="text-3xl font-bold mb-6 text-blue-600">{plan.price}<span className="text-lg text-gray-500 font-normal"> / year</span></div>
-                    <ul className="mb-8 flex-grow space-y-4">
-                      {plan.features.map((feature, i) => (
-                        <li key={i} className="flex items-start gap-3">
-                          <CheckCircle2 className="h-5 w-5 text-blue-600 flex-shrink-0 mt-1" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Button asChild className={`w-full mt-auto py-6 text-lg ${
-                      plan.isPopular ? 'bg-blue-600 hover:bg-blue-700' : 'bg-gray-800 hover:bg-gray-900'
-                    }`}>
-                      <Link to="/contact">Get Started</Link>
-                    </Button>
-                  </div>
-                </Card>
-              ))}
-            </div>
-            <div className="text-center mt-8 text-gray-500">
-              <p>* All prices are starting prices. Final quote depends on equipment specifications and quantity.</p>
-              <p>* Customized plans available for special requirements.</p>
             </div>
           </div>
         </section>
@@ -361,10 +273,19 @@ const AnnualMaintenanceService = () => {
                 Contact our service team today to discuss the ideal Annual Maintenance Contract for your power systems.
               </p>
               <div className="flex flex-wrap justify-center gap-6">
-                <Button asChild size="lg" className="bg-white text-blue-900 hover:bg-gray-100 px-8 py-6 text-lg">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-white border border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white hover:border-blue-900 px-8 py-6 text-lg transition-colors duration-200"
+                >
                   <Link to="/contact">Request AMC Quote</Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-blue-800 px-8 py-6 text-lg">
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="bg-transparent border border-white text-white hover:bg-white hover:text-blue-900 hover:border-blue-900 px-8 py-6 text-lg transition-colors duration-200"
+                >
                   <Link to="/services">Explore Other Services</Link>
                 </Button>
               </div>
@@ -378,4 +299,5 @@ const AnnualMaintenanceService = () => {
 };
 
 export default AnnualMaintenanceService;
+
 
