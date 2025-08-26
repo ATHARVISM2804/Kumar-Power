@@ -9,71 +9,81 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
 // Import client logos
-import Adani from '@/assets/Adani.png';
-import Afcons from '@/assets/Afcons.png';
-import AirIndia from '@/assets/air-india-logo-png_seeklogo-5113 1.png';
-import Apollo from '@/assets/Apollo.png';
-import BritishPaints from '@/assets/BristishPaints.png';
-import Caritas from '@/assets/Caritas (1).png';
-import CEC1 from '@/assets/CEC (1).png';
-import CEC2 from '@/assets/CEC (2).png';
-import Comed from '@/assets/Comed.png';
-import Daikin from '@/assets/Daikin.png';
-import GMR1 from '@/assets/GMR (1).png';
-import GMR2 from '@/assets/GMR (2).png';
-import Honeywell from '@/assets/Honeywell.png';
-import Honeywell1 from '@/assets/Honeywell 1 (1).png';
-import IGNOU from '@/assets/IGNOU-Preview 1.png';
-import KEC from '@/assets/KEC.png';
-import Kashyapi1 from '@/assets/Kashyapi (1).png';
-import Kashyapi2 from '@/assets/Kashyapi (2).png';
-import Kirloskar from '@/assets/kirlosksar profile.png';
-import Malhotra from '@/assets/Malhotra.png';
-import Mapple from '@/assets/Mapple.png';
-import Nation from '@/assets/Nation.png';
-import NBCC from '@/assets/NBCC 1.png';
-import NccLimited from '@/assets/Ncc Limited.png';
-import OJC from '@/assets/OJC.png';
-import PWC from '@/assets/PWC.png';
-import RaiFoundation from '@/assets/Rai Foundation.png';
-import SisInfotech from '@/assets/SIS (1).png';
-import Seasons1 from '@/assets/Seasons (1).png';
-import Seasons2 from '@/assets/Seasons (2).png';
-import Suez from '@/assets/Suez.png';
-import SnPInfra from '@/assets/S&P Infra.png';
+import ncc from '@/assets/Clients page/Ncc Limited.jpg'
+import airindia from '@/assets/Clients page/Air_India.png'
+import vistara from '@/assets/Clients page/Vistara.jpg'
+import sikki from '@/assets/Clients page/Sikka.jpg'
+import addidas from '@/assets/Clients page/Adidas.jpg'
+import nationaldisas from '@/assets/Clients page/National Disaster.jpg'
+import kec from '@/assets/Clients page/KEC.jpg'
+import daikin from '@/assets/Clients page/Daikin.jpg'
+import ignou from '@/assets/Clients page/Ignou.jpg'
+import nccltd from '@/assets/Clients page/Ncc Limited.jpg'
+import honeywell from '@/assets/Clients page/Honeywell.jpg'
+import ace from '@/assets/Clients page/AceConstruction.jpg'
+import mes from '@/assets/Clients page/MilitaryEngineerServices.png'
+import rai from '@/assets/Clients page/Rai Foundation.jpg'
+import nbcc from '@/assets/Clients page/NBCC.jpg'
+import guru from '@/assets/Clients page/GuruTejBahadur.jpg'
+import cec from '@/assets/Clients page/CEC.jpg'
+import ojc from '@/assets/Clients page/OJC.jpg'
+import seasons from '@/assets/Clients page/Seasons.jpg'
+import dps from '@/assets/Clients page/DPS.jpg'
+import gmr from '@/assets/Clients page/GMR Infra.jpg'
+import britishpaints from '@/assets/Clients page/BristishPaints.jpg'
+import vikas from '@/assets/Clients page/VikasPublishing.jpg'
+import gepl  from '@/assets/Clients page/GEPL.jpg'
+import mapple  from '@/assets/Clients page/Mapple.jpg'
+import clarion  from '@/assets/Clients page/Clarion.png'
+import snp  from '@/assets/Clients page/S&P Infra.jpg'
+import afcons  from '@/assets/Clients page/Afcons.png'
+import comed  from '@/assets/Clients page/Comed.png'
+import kashyapi  from '@/assets/Clients page/Kashyapi.png'
+
+
 
 const ValueClient = () => {
   // Group logos by industry sectors
   const industrialClients = [
-    { name: "Adani", logo: Adani },
-    { name: "Afcons", logo: Afcons },
-    { name: "GMR", logo: GMR1 },
-    { name: "Honeywell", logo: Honeywell },
-    { name: "KEC", logo: KEC },
-    { name: "Kirloskar", logo: Kirloskar },
-    { name: "S&P Infra", logo: SnPInfra },
-    { name: "Suez", logo: Suez }
+    { name: "NCC Limited", logo: ncc },
+    { name: "KEC", logo: kec },
+    { name: "Honeywell", logo: honeywell },
+    { name: "S&P Infra", logo: snp },
+    { name: "Afcons", logo: afcons },
+    { name: "Comed", logo: comed },
+    { name: "Kashyapi", logo: kashyapi },
+    { name: "GMR Infra", logo: gmr },
+    { name: "vistara", logo: vistara },
+    { name: "addidas", logo: addidas },
+    { name: "daikin", logo: daikin },
+    { name: "nccltd", logo: nccltd },
+    { name: "guru", logo: guru },
+    { name: "britishpaints", logo: britishpaints },
+    { name: "vikas", logo: vikas },
+    { name: "gepl", logo: gepl }
+    
   ];
 
   const constructionClients = [
-    { name: "Kashyapi", logo: Kashyapi1 },
-    { name: "Malhotra", logo: Malhotra },
-    { name: "NBCC", logo: NBCC },
-    { name: "NCC Limited", logo: NccLimited },
-    { name: "CEC", logo: CEC1 }
+    { name: "NBCC", logo: nbcc },
+    { name: "Ace Construction", logo: ace },
+    { name: "CEC", logo: cec },
+    { name: "OJC", logo: ojc },
+    { name: "Sikka", logo: sikki }
   ];
 
   const hospitalityClients = [
-    { name: "Mapple", logo: Mapple },
-    { name: "Seasons", logo: Seasons1 },
-    { name: "Apollo", logo: Apollo }
+    { name: "Mapple", logo: mapple },
+    { name: "Seasons", logo: seasons },
+    { name: "Clarion", logo: clarion }
   ];
 
   const governmentClients = [
-    { name: "Air India", logo: AirIndia },
-    { name: "IGNOU", logo: IGNOU },
-    { name: "PWC", logo: PWC },
-    { name: "Rai Foundation", logo: RaiFoundation }
+    { name: "Air India", logo: airindia },
+    { name: "IGNOU", logo: ignou },
+    { name: "Rai Foundation", logo: rai },
+    { name: "Military Engineer Services", logo: mes },
+    { name: "National Disaster", logo: nationaldisas }
   ];
 
   // Testimonials from clients
@@ -156,16 +166,16 @@ const ValueClient = () => {
               </div>
               <div className="grid grid-cols-2 gap-6">
                 <div className="rounded-lg overflow-hidden shadow-lg">
-                  <img src={GMR1} alt="Client working with Kumar Power" className="w-full h-auto object-contain bg-white p-6" />
+                  <img src={ncc} alt="Client working with Kumar Power" className="w-full h-auto object-contain bg-white p-6" />
                 </div>
                 <div className="rounded-lg overflow-hidden shadow-lg">
-                  <img src={Kirloskar} alt="Client partnership with Kumar Power" className="w-full h-auto object-contain bg-white p-6" />
+                  <img src={kec} alt="Client partnership with Kumar Power" className="w-full h-auto object-contain bg-white p-6" />
                 </div>
                 <div className="rounded-lg overflow-hidden shadow-lg">
-                  <img src={NBCC} alt="Kumar Power client installation" className="w-full h-auto object-contain bg-white p-6" />
+                  <img src={nbcc} alt="Kumar Power client installation" className="w-full h-auto object-contain bg-white p-6" />
                 </div>
                 <div className="rounded-lg overflow-hidden shadow-lg">
-                  <img src={Apollo} alt="Kumar Power service delivery" className="w-full h-auto object-contain bg-white p-6" />
+                  <img src={honeywell} alt="Kumar Power service delivery" className="w-full h-auto object-contain bg-white p-6" />
                 </div>
               </div>
             </div>
@@ -198,7 +208,7 @@ const ValueClient = () => {
                   <img 
                     src={client.logo} 
                     alt={`${client.name} logo`} 
-                    className="max-h-16 max-w-full object-contain"
+                    className="max-h-24 max-w-full object-contain"
                   />
                 </div>
               ))}

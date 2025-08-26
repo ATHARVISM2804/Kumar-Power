@@ -9,14 +9,67 @@ import { Card } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
 
+import range5 from "@/assets/Range5.png"
+
+
+import instal2 from '@/assets/Installation/instal2.png'
+import instal3 from '@/assets/Installation/instal3.png'
+import instal4 from '@/assets/Installation/instal4.png'
+import instal5 from '@/assets/Installation/instal5.png'
+import instal6 from '@/assets/Installation/instal6.png'
+import instal7 from '@/assets/Installation/instal7.png'
+import instal8 from '@/assets/Installation/instal8.png'
+import instal9 from '@/assets/Installation/instal9.png'
+import instal10 from '@/assets/Installation/instal10.png'
+import instal11 from '@/assets/Installation/instal11.png'
+
+import instal13 from '@/assets/Installation/instal13.png'
+import instal14 from '@/assets/Installation/instal14.png'
+import instal15 from '@/assets/Installation/instal15.png'
+import instal16 from '@/assets/Installation/instal16.png'
+import instal17 from '@/assets/Installation/instal17.png'
+import instal18 from '@/assets/Installation/instal18.png'
+import instal19 from '@/assets/Installation/instal19.png'
+import instal20 from '@/assets/Installation/instal20.png'
+import instal21 from '@/assets/Installation/instal21.png'
+import instal22 from '@/assets/Installation/instal22.png'
+import instal23 from '@/assets/Installation/instal23.png'
+import instal24 from '@/assets/Installation/instal24.png'
+import instal25 from '@/assets/Installation/instal25.png'
+import instal26 from '@/assets/Installation/instal26.png'
+import instal27 from '@/assets/Installation/instal27.png'
+
 const InstallationService = () => {
-  // Professional Installation products (30 images)
-  const installationProducts = Array.from({ length: 30 }, (_, i) => ({
-    id: i + 1,
-    name: `Installation Product ${i + 1}`,
-    imageUrl: `https://res.cloudinary.com/dinhcaf2c/image/upload/v1755014000/installation_product_${(i % 10) + 1}_${Math.floor(i/10) + 1}.jpg`,
-    category: ['Industrial', 'Commercial', 'Residential'][i % 3]
-  }));
+  // Professional Installation products (27 images)
+  const installationProducts = [
+    
+    { id: 2, name: "Commercial Power System", imageUrl: instal2, category: "Commercial" },
+    { id: 3, name: "Residential Backup Generator", imageUrl: instal3, category: "Residential" },
+    { id: 4, name: "Hospital Emergency Power", imageUrl: instal4, category: "Commercial" },
+    { id: 5, name: "Data Center Installation", imageUrl: instal5, category: "Industrial" },
+    { id: 6, name: "Manufacturing Facility Setup", imageUrl: instal6, category: "Industrial" },
+    { id: 7, name: "Office Building Generator", imageUrl: instal7, category: "Commercial" },
+    { id: 8, name: "Home Standby Power", imageUrl: instal8, category: "Residential" },
+    { id: 9, name: "Retail Power Solution", imageUrl: instal9, category: "Commercial" },
+    { id: 10, name: "Industrial Complex System", imageUrl: instal10, category: "Industrial" },
+    { id: 11, name: "Apartment Building Generator", imageUrl: instal11, category: "Residential" },
+    
+    { id: 13, name: "Hotel Backup System", imageUrl: instal13, category: "Commercial" },
+    { id: 14, name: "Residential Power Solution", imageUrl: instal14, category: "Residential" },
+    { id: 15, name: "Warehouse Power Setup", imageUrl: instal15, category: "Industrial" },
+    { id: 16, name: "School Generator Installation", imageUrl: instal16, category: "Commercial" },
+    { id: 17, name: "Single Family Home System", imageUrl: instal17, category: "Residential" },
+    { id: 18, name: "Manufacturing Plant Power", imageUrl: instal18, category: "Industrial" },
+    { id: 19, name: "Office Complex Generator", imageUrl: instal19, category: "Commercial" },
+    { id: 20, name: "Luxury Home Installation", imageUrl: instal20, category: "Residential" },
+    { id: 21, name: "Industrial Site Power", imageUrl: instal21, category: "Industrial" },
+    { id: 22, name: "Retail Center Backup", imageUrl: instal22, category: "Commercial" },
+    { id: 23, name: "Residential Community System", imageUrl: instal23, category: "Residential" },
+    { id: 24, name: "Production Facility Setup", imageUrl: instal24, category: "Industrial" },
+    { id: 25, name: "Medical Center Installation", imageUrl: instal25, category: "Commercial" },
+    { id: 26, name: "Suburban Home Generator", imageUrl: instal26, category: "Residential" },
+    { id: 27, name: "Distribution Center Power", imageUrl: instal27, category: "Industrial" },
+  ];
 
   // FAQ items
   const faqItems = [
@@ -133,7 +186,7 @@ const InstallationService = () => {
               </div>
               <div className="rounded-lg overflow-hidden shadow-xl">
                 <img 
-                  src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755014000/installation_service_detailed_hjd9tw.jpg" 
+                  src={range5} 
                   alt="Generator installation in progress" 
                   className="w-full h-auto"
                 />
@@ -386,4 +439,3 @@ const InstallationService = () => {
 };
 
 export default InstallationService;
-                  
