@@ -655,7 +655,7 @@ const Products = () => {
       
       <main className="bg-black min-h-screen">
         {/* Hero Banner */}
-        <div className="relative bg-black text-white h-[450px] overflow-hidden">
+        <div className="relative bg-black text-white h-[320px] md:h-[450px] overflow-hidden">
           <div 
             className="absolute inset-0 bg-cover bg-center"
             style={{ 
@@ -664,18 +664,18 @@ const Products = () => {
             }}
           ></div>
           <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-90"></div>
-          <div className="relative max-w-7xl mx-auto px-4 py-20 md:py-24 flex flex-col gap-4 h-full justify-center">
-            <h1 className="text-4xl md:text-5xl font-bold max-w-2xl">
+          <div className="relative max-w-7xl mx-auto px-4 py-10 md:py-24 flex flex-col gap-4 h-full justify-center">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold max-w-2xl">
               Powering Progress, One Generator at a Time
             </h1>
-            <p className="text-lg md:text-xl max-w-2xl">
+            <p className="text-base sm:text-lg md:text-xl max-w-2xl">
               Explore our full range of Kirloskar-certified diesel generators, trusted across India's most demanding industries.
             </p>
-            <div className="flex gap-4 mt-4">
-              <Button size="lg" variant="default" className="bg-primary hover:bg-primary/90">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 w-full max-w-xs sm:max-w-none">
+              <Button size="lg" variant="default" className="bg-primary hover:bg-primary/90 w-full sm:w-auto">
                 Request a Quote
               </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white/10 w-full sm:w-auto">
                 Download Product Catalogue
               </Button>
             </div>
@@ -683,9 +683,9 @@ const Products = () => {
         </div>
 
         {/* Product Selection Area */}
-        <div className="max-w-7xl mx-auto px-4 py-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 py-6 sm:py-8">
           {/* Filter and Sort Controls */}
-          <div className="flex justify-between items-center mb-6 gap-4">
+          <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center mb-6 gap-3 sm:gap-4">
             <div className="flex items-center gap-2">
               <span className="text-sm font-medium text-gray-300">Sort by:</span>
               <select
@@ -727,7 +727,7 @@ const Products = () => {
           
           <div className="flex flex-col md:flex-row gap-6">
             {/* Category Sidebar */}
-            <div className={`md:w-64 bg-gray-900 rounded-md shadow-md p-4 ${showMobileFilters ? 'block' : 'hidden md:block'}`}>
+            <div className={`w-full md:w-64 bg-gray-900 rounded-md shadow-md p-4 ${showMobileFilters ? 'block' : 'hidden md:block'} mb-4 md:mb-0`}>
               <h2 className="text-base font-semibold mb-4 text-white">Product Categories</h2>
               <ul className="space-y-1">
                 {categories.map((category) => (
@@ -811,11 +811,11 @@ const Products = () => {
                 </p>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
                 {displayProducts.map((product) => (
                   <Card key={product.id} className="overflow-hidden border border-gray-700 rounded-md bg-gray-800 hover:bg-gray-750">
                     <div>
-                      <div className="aspect-w-16 aspect-h-9 bg-gray-700 overflow-hidden h-48">
+                      <div className="aspect-w-16 aspect-h-9 bg-gray-700 overflow-hidden h-40 sm:h-48">
                         <img 
                           src={product.image} 
                           alt={product.name} 
@@ -826,11 +826,11 @@ const Products = () => {
                         <h3 className="font-medium text-sm text-white">{product.name}</h3>
                         
                         <div className="mt-2 text-xs text-gray-300">
-                          <div className="flex justify-between items-center">
+                          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
                             <span>Fuel Type: {product.fuelType}</span>
                             <span>CPCB Norm: {product.cpcbNorm}</span>
                           </div>
-                          <div className="flex justify-between items-center mt-1">
+                          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mt-1">
                             <span>Cooling: {product.cooling}</span>
                             <span>Phase: {product.phase}</span>
                           </div>
@@ -842,7 +842,7 @@ const Products = () => {
                           <span className="text-xs ml-1 text-gray-500">({product.ratingCount})</span>
                         </div>
                         
-                        <div className="mt-3 flex gap-1 justify-between">
+                        <div className="mt-3 flex flex-col sm:flex-row gap-2 sm:gap-1 justify-between">
                           <Button 
                             variant="outline" 
                             size="sm" 
@@ -882,11 +882,11 @@ const Products = () => {
           </div>
           
           {/* Kumar Power Info */}
-          <div className="mt-8 flex flex-col sm:flex-row sm:items-center justify-between text-xs text-gray-400 border-t border-gray-700 pt-3">
+          <div className="mt-8 flex flex-col sm:flex-row sm:items-center justify-between text-xs text-gray-400 border-t border-gray-700 pt-3 gap-2">
             <div>
               <span className="font-medium">Kumar Power:</span> India's Most Trusted Kirloskar-Certified Generator Brand!
             </div>
-            <div className="flex items-center gap-4 mt-2 sm:mt-0">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 mt-2 sm:mt-0">
               <Button variant="ghost" size="sm" className="flex items-center gap-1 text-xs h-7 p-0 text-gray-400 hover:text-gray-200">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -913,11 +913,11 @@ const Products = () => {
         </div>
         
         {/* Why Choose Kirloskar Generators Section */}
-        <section className="bg-[#E5E7EB] text-gray-800 py-12">
-          <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-2xl font-bold text-center mb-10">Why Choose Kirloskar Generators?</h2>
+        <section className="bg-[#E5E7EB] text-gray-800 py-8 sm:py-12">
+          <div className="max-w-7xl mx-auto px-2 sm:px-4">
+            <h2 className="text-xl sm:text-2xl font-bold text-center mb-6 sm:mb-10">Why Choose Kirloskar Generators?</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {/* Unmatched Reliability */}
               <div className="bg-white p-6 rounded-md shadow-sm">
                 <div className="mb-4 text-blue-600">
@@ -990,11 +990,11 @@ const Products = () => {
         </section>
         
         {/* Certifications Section */}
-        <section className="bg-black text-white py-12">
-          <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-2xl font-bold text-center mb-8">Certified Excellence</h2>
+        <section className="bg-black text-white py-8 sm:py-12">
+          <div className="max-w-7xl mx-auto px-2 sm:px-4">
+            <h2 className="text-xl sm:text-2xl font-bold text-center mb-6 sm:mb-8">Certified Excellence</h2>
             
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-14">
+            <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 md:gap-14">
               <div className="text-center">
                 <div className="w-20 h-20 mx-auto mb-3 flex items-center justify-center rounded-md bg-gray-800">
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
@@ -1044,10 +1044,10 @@ const Products = () => {
         </section>
         
         {/* Help Section */}
-        <section className="py-12 bg-gray-300">
-          <div className="max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-2xl font-bold mb-2 text-gray-800">Need Help Choosing the Right Electrical Solution?</h2>
-            <p className="text-sm text-gray-600 mb-6">
+        <section className="py-8 sm:py-12 bg-gray-300">
+          <div className="max-w-4xl mx-auto px-2 sm:px-4 text-center">
+            <h2 className="text-xl sm:text-2xl font-bold mb-2 text-gray-800">Need Help Choosing the Right Electrical Solution?</h2>
+            <p className="text-xs sm:text-sm text-gray-600 mb-6">
               Our team of experts will help you select the perfect solution based on your industry and budget.
             </p>
             <Button variant="default" size="md" className="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 flex items-center justify-center gap-1 font-medium">
@@ -1066,7 +1066,7 @@ const Products = () => {
           {selectedProductForSpecs && (
             <>
               <DialogHeader>
-                <DialogTitle className="text-xl">{selectedProductForSpecs.name} Specifications</DialogTitle>
+                <DialogTitle className="text-lg sm:text-xl">{selectedProductForSpecs.name} Specifications</DialogTitle>
                 <DialogDescription className="text-gray-500">
                   Detailed technical specifications and features.
                 </DialogDescription>
@@ -1085,7 +1085,7 @@ const Products = () => {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold mb-2">{selectedProductForSpecs.name}</h3>
+                    <h3 className="text-base sm:text-lg font-semibold mb-2">{selectedProductForSpecs.name}</h3>
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
                         <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
@@ -1125,11 +1125,11 @@ const Products = () => {
                 </div>
                 
                 {/* CTA Buttons */}
-                <div className="mt-6 flex flex-wrap gap-3 pt-4 border-t">
-                  <Button size="sm" variant="default" className="bg-blue-600 hover:bg-blue-700">
+                <div className="mt-6 flex flex-col sm:flex-row flex-wrap gap-3 pt-4 border-t">
+                  <Button size="sm" variant="default" className="bg-blue-600 hover:bg-blue-700 w-full sm:w-auto">
                     Request Quote
                   </Button>
-                  <Button size="sm" variant="outline" className="flex items-center gap-1">
+                  <Button size="sm" variant="outline" className="flex items-center gap-1 w-full sm:w-auto">
                     <Download className="w-4 h-4" /> Download Brochure
                   </Button>
                 </div>
