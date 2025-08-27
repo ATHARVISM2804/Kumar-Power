@@ -7,28 +7,89 @@ import portable3 from "@/assets/Range6.png";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
+// Animated Card component
 const Card = ({ title, img, caption }: { title: string; img: string; caption: string }) => (
-  <article className="overflow-hidden flex flex-col shadow">
-    <div className="w-full h-60 flex items-center justify-center overflow-hidden">
-      <img
+  <motion.article
+    className="overflow-hidden flex flex-col shadow bg-gray-900 rounded-lg border border-gray-800"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -20 }}
+    transition={{ duration: 0.4 }}
+    whileHover={{ 
+      scale: 1.03, 
+      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      borderColor: "#3b82f6" 
+    }}
+    whileTap={{ scale: 0.98 }}
+  >
+    <div className="w-full h-60 flex items-center justify-center overflow-hidden bg-white">
+      <motion.img
         src={img}
         alt={title}
         className="object-contain w-full h-60"
-        style={{ background: "white" }}
         loading="lazy"
+        initial={{ scale: 1 }}
+        whileHover={{ scale: 1.12, rotate: 0.5 }}
+        transition={{ 
+          duration: 0.4,
+          ease: "easeOut"
+        }}
       />
     </div>
-    <div className="p-4 flex-1 flex flex-col">
-      <h3 className="font-semibold mb-1">{title}</h3>
+    <motion.div 
+      className="p-4 flex-1 flex flex-col"
+      initial={{ background: "linear-gradient(180deg, rgba(17, 24, 39, 0) 0%, rgba(17, 24, 39, 1) 100%)" }}
+      whileHover={{ background: "linear-gradient(180deg, rgba(29, 78, 216, 0) 0%, rgba(29, 78, 216, 0.2) 100%)" }}
+    >
+      <motion.h3 
+        className="font-semibold mb-1 text-lg"
+        whileHover={{ color: "#60a5fa" }}
+      >
+        {title}
+      </motion.h3>
       <p className="text-sm text-muted-foreground mb-4 flex-1">{caption}</p>
       <div className="flex items-center gap-2">
-        <Button size="sm">
-          Explore more <ArrowRight className="ml-1 h-4 w-4" />
-        </Button>
+        <motion.div
+          whileHover={{ x: 5 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+        >
+          <Button 
+            size="sm" 
+            className="overflow-hidden group relative" 
+            variant="default"
+          >
+            <motion.span 
+              initial={{ opacity: 1 }}
+              whileHover={{ opacity: 0.9 }}
+            >
+              Explore more
+            </motion.span>
+            <motion.div
+              className="ml-1 inline-flex"
+              initial={{ x: 0 }}
+              whileHover={{ x: 3 }}
+              transition={{ 
+                duration: 0.2,
+                repeat: Infinity,
+                repeatType: "reverse",
+                repeatDelay: 0.2
+              }}
+            >
+              <ArrowRight className="h-4 w-4 group-hover:text-white" />
+            </motion.div>
+            <motion.span 
+              className="absolute bottom-0 left-0 h-0.5 bg-white"
+              initial={{ width: 0 }}
+              whileHover={{ width: "100%" }}
+              transition={{ duration: 0.3 }}
+            />
+          </Button>
+        </motion.div>
       </div>
-    </div>
-  </article>
+    </motion.div>
+  </motion.article>
 );
 
 const GeneratorRange = () => {
@@ -83,52 +144,107 @@ const GeneratorRange = () => {
       : generatorData.filter((generator) => generator.categories.includes(activeFilter));
 
   return (
-    <section id="range" className="py-16 bg-black text-primary-foreground">
+    <motion.section
+      id="range"
+      className="py-16 bg-black text-primary-foreground"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="container mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2">Explore Our Generator Range</h2>
-        <p className="text-muted-foreground mb-8">
-          Kirloskar-certified systems tailored for industrial, commercial, and backup applications.
-        </p>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <h2 className="text-2xl md:text-3xl font-bold mb-2">Explore Our Generator Range</h2>
+          <p className="text-muted-foreground mb-8">
+            Kirloskar-certified systems tailored for industrial, commercial, and backup applications.
+          </p>
+        </motion.div>
 
         {/* Interactive filter buttons */}
-        <div className="flex flex-wrap gap-x-6 gap-y-4 mb-10">
-          {filterTypes.map((type) => (
-            <button
+        <motion.div
+          className="flex flex-wrap gap-x-6 gap-y-4 mb-10"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          {filterTypes.map((type, index) => (
+            <motion.button
               key={type}
               onClick={() => setActiveFilter(type)}
               className={`flex items-center gap-2 px-3 py-1.5 rounded-full transition-colors ${
                 activeFilter === type ? "bg-blue-600 text-white" : "hover:bg-gray-800"
               }`}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3, delay: 0.1 * index }}
+              whileHover={{ 
+                scale: 1.08,
+                boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)" 
+              }}
+              whileTap={{ scale: 0.95 }}
             >
-              <span
+              <motion.span
                 className={`inline-block h-3 w-3 rounded-full ${
                   activeFilter === type ? "bg-white" : "bg-white/70"
                 }`}
+                animate={{
+                  scale: activeFilter === type ? [1, 1.2, 1] : 1,
+                }}
+                whileHover={{ 
+                  backgroundColor: activeFilter === type ? "#fff" : "rgba(255, 255, 255, 0.9)",
+                  scale: 1.2
+                }}
+                transition={{ duration: 0.3 }}
               />
               <span className="text-base font-medium">{type} Generators</span>
-            </button>
+            </motion.button>
           ))}
-        </div>
+        </motion.div>
 
         {/* Filtered generator grid */}
         {filteredGenerators.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredGenerators.map((generator, index) => (
-              <Card
-                key={index}
-                title={generator.title}
-                img={generator.img}
-                caption={generator.caption}
-              />
-            ))}
-          </div>
+          <motion.div 
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" 
+            layout
+            transition={{
+              layout: { duration: 0.6, type: "spring", bounce: 0.25 }
+            }}
+          >
+            <AnimatePresence mode="wait">
+              {filteredGenerators.map((generator, index) => (
+                <motion.div
+                  key={generator.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -30 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  layout
+                >
+                  <Card
+                    title={generator.title}
+                    img={generator.img}
+                    caption={generator.caption}
+                  />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
         ) : (
-          <div className="text-center py-10">
+          <motion.div
+            className="text-center py-10"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <p className="text-xl">No generators found in this category.</p>
-          </div>
+          </motion.div>
         )}
       </div>
-    </section>
+    </motion.section>
   );
 };
 
