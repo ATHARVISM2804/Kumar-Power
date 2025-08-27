@@ -33,14 +33,20 @@ const PSCard = ({ title, desc, specs, img }: { title: string; desc: string; spec
       <div className="space-y-2 mb-6">
         {specs.map((spec) => (
           <div key={spec} className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-blue-600" />
+            <span className="inline-flex items-center justify-center rounded-full bg-blue-100 h-5 w-5">
+              <span className="h-2 w-2 rounded-full bg-blue-600" />
+            </span>
             <span className="text-sm">{spec}</span>
           </div>
         ))}
       </div>
-      <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-        Explore More <ArrowRight className="ml-2 h-4 w-4" />
-      </Button>
+      <div className="mt-auto">
+        <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-md">
+          <div className="flex items-center gap-2">
+            Explore More <ArrowRight className="h-4 w-4" />
+          </div>
+        </Button>
+      </div>
     </div>
   </article>
 );
@@ -194,6 +200,7 @@ const PowerSolutions = () => {
           features: ["LCD Display", "Mobile App", "Battery Management", "IoT Enabled"]
         };
       case 'Variable Frequency Drives (VFDs)':
+
         return {
           powerRange: ["Below 5kW", "5-50kW", "50-200kW", "Above 200kW"],
           application: ["HVAC", "Manufacturing", "Conveyors", "Pumps"],
@@ -258,13 +265,13 @@ const PowerSolutions = () => {
       logoRef.current?.appendChild(clone);
     });
 
-    // GSAP animation - increased speed
+    // GSAP animation - slower speed
     gsap.fromTo(
       logoRef.current,
       { x: 0 },
       {
         x: -totalWidth,
-        duration: 15, // Faster animation (was 30)
+        duration: 20, // Slower animation (was 15)
         ease: "linear",
         repeat: -1,
         onRepeat: () => {
@@ -397,6 +404,14 @@ const PowerSolutions = () => {
             <img src={trust7} alt="GMP" className="h-20 w-auto" />
           </div>
         </div>
+      </div>
+      
+      {/* Power in Action Section */}
+      <div className="container mx-auto mt-16 mb-12 px-4 md:px-0 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold">
+          Power in Action
+        </h2>
+        <div className="mx-auto w-24 h-1 bg-black mt-2"></div>
       </div>
     </section>
   );

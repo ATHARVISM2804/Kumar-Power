@@ -1,4 +1,4 @@
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 import teamImg from "@/assets/gallery-networking.jpg";
 import { Button } from "@/components/ui/button";
 
@@ -13,15 +13,15 @@ const About = () => {
   return (
     <>
       {/* Hero Section as per provided image */}
-      <div className="bg-black py-6 md:py-8">
+      <div className="bg-black py-6 md:py-10">
         <div className="container mx-auto text-center px-4">
           <div className="flex items-center justify-center mb-1">
             <span className="block h-px w-8 md:w-16 bg-white mr-2 md:mr-4" />
-            <span className="text-white text-xl md:text-3xl font-semibold tracking-wide">
+            <span className="text-white text-2xl md:text-4xl font-semibold tracking-wide">
               ABOUT KUMAR POWER
             </span>
           </div>
-          <div className="text-white text-lg md:text-xl font-normal">
+          <div className="text-white text-xl md:text-2xl font-normal">
             Powering Progress.
           </div>
         </div>
@@ -32,27 +32,29 @@ const About = () => {
           {/* Left: Text Content */}
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Engineering India’s
+              Engineering India's
               <br /> Energy Backbone.
             </h2>
-            <p className="mb-6 text-base md:text-lg text-muted-foreground">
+            <p className="mb-6 text-base md:text-lg">
               For over 30+ years, Kumar Power has engineered uninterrupted power
-              across India’s industries, infrastructure, and institutions. With
+              across India's industries, infrastructure, and institutions. With
               Kirloskar certification and ISO 9001:2015 accreditation, we serve
               500+ enterprise clients with unmatched reliability and scale.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-10 mb-8">
               {features.map((f) => (
                 <div key={f.label} className="flex items-center gap-4">
-                  <span className="inline-flex items-center justify-center rounded-full bg-blue-100 h-9 w-9">
-                    <CheckCircle2 className="text-blue-600 h-5 w-5" />
+                  <span className="inline-flex items-center justify-center rounded-full bg-blue-100 h-12 w-12">
+                    <CheckCircle2 className="text-blue-600 h-6 w-6" />
                   </span>
-                  <span className="text-base">{f.label}</span>
+                  <span className="text-base font-medium">{f.label}</span>
                 </div>
               ))}
             </div>
-            <Button asChild size="lg" className="mt-2">
-              <a href="#legacy">Explore Our Legacy</a>
+            <Button asChild size="lg" className="mt-2 bg-blue-600 hover:bg-blue-700 px-6 py-6 rounded-lg">
+              <a href="#legacy" className="flex items-center gap-2">
+                Explore Our Legacy <ArrowRight className="h-5 w-5 ml-1" />
+              </a>
             </Button>
           </div>
           {/* Right: Team Image */}

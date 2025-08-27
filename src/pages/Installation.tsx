@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle2, Wrench, Gauge, BookOpen, UserCheck, Truck, Settings, ArrowRight } from 'lucide-react';
 import Header from "@/components/landing/Header";
@@ -10,13 +10,15 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Badge } from '@/components/ui/badge';
 
 const InstallationService = () => {
-  // Professional Installation products (30 images)
-  const installationProducts = Array.from({ length: 30 }, (_, i) => ({
-    id: i + 1,
-    name: `Installation Product ${i + 1}`,
-    imageUrl: `https://res.cloudinary.com/dinhcaf2c/image/upload/v1755014000/installation_product_${(i % 10) + 1}_${Math.floor(i/10) + 1}.jpg`,
-    category: ['Industrial', 'Commercial', 'Residential'][i % 3]
-  }));
+  // Sample products with distinct categories
+  const installationProducts = [
+    { id: 1, name: "Industrial Generator A", imageUrl: "https://via.placeholder.com/150", category: "Industrial" },
+    { id: 2, name: "Commercial Generator B", imageUrl: "https://via.placeholder.com/150", category: "Commercial" },
+    { id: 3, name: "Residential Generator C", imageUrl: "https://via.placeholder.com/150", category: "Residential" },
+    { id: 4, name: "Industrial Generator D", imageUrl: "https://via.placeholder.com/150", category: "Industrial" },
+    { id: 5, name: "Commercial Generator E", imageUrl: "https://via.placeholder.com/150", category: "Commercial" },
+    { id: 6, name: "Residential Generator F", imageUrl: "https://via.placeholder.com/150", category: "Residential" },
+  ];
 
   // FAQ items
   const faqItems = [
@@ -73,6 +75,14 @@ const InstallationService = () => {
       description: "Professional installation by authorized technicians maintains manufacturer warranty coverage and provides additional installation workmanship guarantees."
     }
   ];
+
+  // State for selected category
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+  // Filtered products based on selected category
+  const filteredProducts = selectedCategory
+    ? installationProducts.filter((product) => product.category === selectedCategory)
+    : installationProducts;
 
   return (
     <div className="min-h-screen bg-background">
@@ -306,15 +316,43 @@ const InstallationService = () => {
               </p>
               
               <div className="flex flex-wrap gap-4 justify-center mb-10">
-                <Badge className="cursor-pointer bg-blue-600 hover:bg-blue-700 text-white px-4 py-2">All Installations</Badge>
-                <Badge className="cursor-pointer bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2">Industrial</Badge>
-                <Badge className="cursor-pointer bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2">Commercial</Badge>
-                <Badge className="cursor-pointer bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2">Residential</Badge>
+                <Badge
+                  className={`cursor-pointer px-4 py-2 ${
+                    selectedCategory === null ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-800'
+                  }`}
+                  onClick={() => setSelectedCategory(null)}
+                >
+                  All Installations
+                </Badge>
+                <Badge
+                  className={`cursor-pointer px-4 py-2 ${
+                    selectedCategory === 'Industrial' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-800'
+                  }`}
+                  onClick={() => setSelectedCategory('Industrial')}
+                >
+                  Industrial
+                </Badge>
+                <Badge
+                  className={`cursor-pointer px-4 py-2 ${
+                    selectedCategory === 'Commercial' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-800'
+                  }`}
+                  onClick={() => setSelectedCategory('Commercial')}
+                >
+                  Commercial
+                </Badge>
+                <Badge
+                  className={`cursor-pointer px-4 py-2 ${
+                    selectedCategory === 'Residential' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-800'
+                  }`}
+                  onClick={() => setSelectedCategory('Residential')}
+                >
+                  Residential
+                </Badge>
               </div>
             </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {installationProducts.map((product) => (
+              {filteredProducts.map((product) => (
                 <div 
                   key={product.id} 
                   className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 group"

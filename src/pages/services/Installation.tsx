@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle2, Wrench, Gauge, BookOpen, UserCheck, Truck, Settings, ArrowRight } from 'lucide-react';
 import Header from "@/components/landing/Header";
@@ -127,8 +127,34 @@ const InstallationService = () => {
     }
   ];
 
+  // State for selected category
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+  // Filtered products based on selected category
+  const filteredProducts = selectedCategory
+    ? installationProducts.filter((product) => product.category === selectedCategory)
+    : installationProducts;
+
   return (
     <div className="min-h-screen bg-background">
+      <style jsx global>{`
+        .perspective-1000 {
+          perspective: 1000px;
+        }
+        .transform-style-3d {
+          transform-style: preserve-3d;
+        }
+        .backface-hidden {
+          backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+          transform: rotateY(180deg);
+        }
+        .group:hover .group-hover\\:rotate-y-180 {
+          transform: rotateY(180deg);
+        }
+      `}</style>
+      
       <Header />
       <SEOJsonLD
         title="Generator Installation & Commissioning Services | Kumar Power"
@@ -359,28 +385,84 @@ const InstallationService = () => {
               </p>
               
               <div className="flex flex-wrap gap-4 justify-center mb-10">
-                <Badge className="cursor-pointer bg-blue-600 hover:bg-blue-700 text-white px-4 py-2">All Installations</Badge>
-                <Badge className="cursor-pointer bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2">Industrial</Badge>
-                <Badge className="cursor-pointer bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2">Commercial</Badge>
-                <Badge className="cursor-pointer bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2">Residential</Badge>
+                <Badge
+                  className={`cursor-pointer px-4 py-2 ${
+                    selectedCategory === null ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-800'
+                  }`}
+                  onClick={() => setSelectedCategory(null)}
+                >
+                  All Installations
+                </Badge>
+                <Badge
+                  className={`cursor-pointer px-4 py-2 ${
+                    selectedCategory === 'Industrial' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-800'
+                  }`}
+                  onClick={() => setSelectedCategory('Industrial')}
+                >
+                  Industrial
+                </Badge>
+                <Badge
+                  className={`cursor-pointer px-4 py-2 ${
+                    selectedCategory === 'Commercial' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-800'
+                  }`}
+                  onClick={() => setSelectedCategory('Commercial')}
+                >
+                  Commercial
+                </Badge>
+                <Badge
+                  className={`cursor-pointer px-4 py-2 ${
+                    selectedCategory === 'Residential' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-800'
+                  }`}
+                  onClick={() => setSelectedCategory('Residential')}
+                >
+                  Residential
+                </Badge>
               </div>
             </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {installationProducts.map((product) => (
+              {filteredProducts.map((product) => (
                 <div 
                   key={product.id} 
-                  className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 group"
+                  className="group h-80 perspective-1000 w-full"
                 >
-                  <div className="relative aspect-square overflow-hidden">
-                    <img 
-                      src={product.imageUrl} 
-                      alt={product.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                      <p className="text-white font-medium">{product.name}</p>
-                      <Badge className="self-start mt-2 bg-blue-600">{product.category}</Badge>
+                  <div className="relative h-full w-full transition-transform duration-500 transform-style-3d group-hover:rotate-y-180">
+                    {/* Card Front */}
+                    <div className="absolute h-full w-full backface-hidden rounded-lg shadow-md overflow-hidden">
+                      <img 
+                        src={product.imageUrl} 
+                        alt={product.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    
+                    {/* Card Back */}
+                    <div className="absolute h-full w-full backface-hidden rotate-y-180 rounded-lg shadow-md overflow-hidden">
+                      <div className="flex flex-col justify-between h-full p-6 bg-gradient-to-br from-blue-900 to-blue-700 text-white">
+                        <div>
+                          <h3 className="text-xl font-bold mb-2">{product.name}</h3>
+                          <Badge className="mb-4">{product.category}</Badge>
+                          <p className="text-sm opacity-90">
+                            Professional installation with industry-standard quality and safety protocols.
+                          </p>
+                        </div>
+                        <div className="mt-4">
+                          <ul className="text-sm space-y-1">
+                            <li className="flex items-center gap-2">
+                              <CheckCircle2 className="h-4 w-4" />
+                              <span>Expert technicians</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                              <CheckCircle2 className="h-4 w-4" />
+                              <span>Warranty protected</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                              <CheckCircle2 className="h-4 w-4" />
+                              <span>Code compliant</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -430,8 +512,6 @@ const InstallationService = () => {
             </div>
           </div>
         </section>
-
-        
       </main>
       <Footer />
     </div>

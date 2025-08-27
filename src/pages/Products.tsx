@@ -8,6 +8,8 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import hero from "@/assets/Products/HeropBG.png"
+
 
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("diesel");
@@ -659,7 +661,8 @@ const Products = () => {
           <div 
             className="absolute inset-0 bg-cover bg-center"
             style={{ 
-              backgroundImage: "url('/src/assets/FRAME.png')",
+              // backgroundImage: "url('/src/assets/FRAME.png')",
+              backgroundImage: `url(${hero})`,
               filter: "brightness(0.5)",
             }}
           ></div>
@@ -685,7 +688,9 @@ const Products = () => {
         {/* Product Selection Area */}
         <div className="max-w-7xl mx-auto px-2 sm:px-4 py-6 sm:py-8">
           {/* Filter and Sort Controls */}
-          <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center mb-6 gap-3 sm:gap-4">
+
+          <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center px-20 mb-20 gap-3 sm:gap-4">
+          <div className='flex items-center gap-10'>
             <div className="flex items-center gap-2">
               <span className="text-sm font-medium text-gray-300">Sort by:</span>
               <select
@@ -713,7 +718,7 @@ const Products = () => {
                 <option value="large">Large (250+ kVA)</option>
               </select>
             </div>
-            
+            </div>
             <Button
               variant="outline"
               size="sm"
@@ -869,7 +874,7 @@ const Products = () => {
               </div>
               
               {/* Not Sure What Fits Section */}
-              <div className="mt-10 bg-gray-800 p-4 rounded-md border border-gray-700">
+              <div className="mt-10 bg-gray-800 w-[20vw] p-4 rounded-md border border-gray-700">
                 <h3 className="font-medium text-base mb-1 text-white">Not sure what fits?</h3>
                 <p className="text-xs text-gray-400 mb-3">
                   Use our 3-step Generator Selector to find the perfect power solution for your needs.
@@ -884,10 +889,10 @@ const Products = () => {
           {/* Kumar Power Info */}
           <div className="mt-8 flex flex-col sm:flex-row sm:items-center justify-between text-xs text-gray-400 border-t border-gray-700 pt-3 gap-2">
             <div>
-              <span className="font-medium">Kumar Power:</span> India's Most Trusted Kirloskar-Certified Generator Brand!
+              <span className="font-medium text-blue-600">Kumar Power:</span> India's Most Trusted Kirloskar-Certified Generator Brand!
             </div>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 mt-2 sm:mt-0">
-              <Button variant="ghost" size="sm" className="flex items-center gap-1 text-xs h-7 p-0 text-gray-400 hover:text-gray-200">
+              <Button variant="ghost" size="sm" className="flex items-center gap-1 text-xs h-7 p-4 bg-white/20 text-gray-400 hover:text-gray-200">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                   <polyline points="7 10 12 15 17 10" />
@@ -895,13 +900,13 @@ const Products = () => {
                 </svg>
                 Download All Catalogs
               </Button>
-              <Button variant="ghost" size="sm" className="flex items-center gap-1 text-xs h-7 p-0 text-gray-400 hover:text-gray-200">
+              <Button variant="ghost" size="sm" className="bg-white/20 flex items-center gap-1 text-xs h-7 p-4 text-gray-400 hover:text-gray-200">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                 </svg>
                 Talk to Power Expert
               </Button>
-              <Button variant="ghost" size="sm" className="flex items-center gap-1 text-xs h-7 p-0 text-gray-400 hover:text-gray-200">
+              <Button variant="ghost" size="sm" className="bg-blue-600 flex items-center gap-1 text-xs h-7 p-4 text-white hover:text-gray-200">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="12" y1="5" x2="12" y2="19" />
                   <line x1="5" y1="12" x2="19" y2="12" />
@@ -1050,12 +1055,14 @@ const Products = () => {
             <p className="text-xs sm:text-sm text-gray-600 mb-6">
               Our team of experts will help you select the perfect solution based on your industry and budget.
             </p>
-            <Button variant="default" size="md" className="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 flex items-center justify-center gap-1 font-medium">
+            <div className='flex w-full items-center justify-center'>
+            <Button variant="default" size="md" className=" bg-white p-4 hover:bg-gray-100 text-gray-800 border border-gray-300 flex items-center justify-center gap-1 font-medium">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
               </svg>
               Talk to an Expert
             </Button>
+            </div>
           </div>
         </section>
       </main>

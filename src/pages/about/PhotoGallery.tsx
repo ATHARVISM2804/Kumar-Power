@@ -2,6 +2,7 @@ import Header from "@/components/landing/Header";
 import Footer from "@/components/landing/Footer";
 import SEOJsonLD from "@/components/SEOJsonLD";
 import { useState, useEffect, useLayoutEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion"; // Import framer-motion
 import gallery from "@/assets/Gallery1.png";
 import gallery2 from "@/assets/gallery2.png";
 import gallery3 from "@/assets/gallery3.png";
@@ -16,6 +17,37 @@ import gal2 from "@/assets/gal2.png";
 import gal3 from "@/assets/gal3.png";
 import gal4 from "@/assets/gal4.png";
 import gal5 from "@/assets/gal6.png";
+import event1 from "@/assets/Events/DIWALI PARTY (100).jpg"
+import event2 from "@/assets/Events/DIWALI PARTY (105).jpg"
+import event3 from "@/assets/Events/DIWALI PARTY (24).jpg"
+import event4 from "@/assets/Events/DIWALI PARTY (28).jpg"
+import event5 from "@/assets/Events/DIWALI PARTY (29).jpg"
+import event6 from "@/assets/Events/DIWALI PARTY (30).jpg"
+import event7 from "@/assets/Events/DIWALI PARTY (31).jpg"
+import event8 from "@/assets/Events/DIWALI PARTY (32).jpg"
+import event9 from "@/assets/Events/DIWALI PARTY (33).jpg"
+import event10 from "@/assets/Events/DIWALI PARTY (4).jpg"
+import event11 from "@/assets/Events/DIWALI PARTY (5).jpg"
+import event12 from "@/assets/Events/DIWALI PARTY (53).jpg"
+import event13 from "@/assets/Events/DIWALI PARTY (54).jpg"
+import event14 from "@/assets/Events/DIWALI PARTY (55).jpg"
+import event15 from "@/assets/Events/DIWALI PARTY (56).jpg"
+import event16 from "@/assets/Events/DIWALI PARTY (57).jpg"
+import event17 from "@/assets/Events/DIWALI PARTY (58).jpg"
+import event18 from "@/assets/Events/DIWALI PARTY (59).jpg"
+import event19 from "@/assets/Events/DIWALI PARTY (6).jpg"
+import event20 from "@/assets/Events/DIWALI PARTY (60).jpg"
+import event21 from "@/assets/Events/DIWALI PARTY (61).jpg"
+import event22 from "@/assets/Events/DIWALI PARTY (62).jpg"
+import event23 from "@/assets/Events/DIWALI PARTY (63).jpg"
+import event24 from "@/assets/Events/DIWALI PARTY (64).jpg"
+import event25 from "@/assets/Events/DIWALI PARTY (65).jpg"
+import event26 from "@/assets/Events/DIWALI PARTY (66).jpg"
+import event27 from "@/assets/Events/DIWALI PARTY (67).jpg"
+import event28 from "@/assets/Events/DIWALI PARTY (68).jpg"
+import event29 from "@/assets/Events/DIWALI PARTY (69).jpg"
+import event30 from "@/assets/Events/DIWALI PARTY (70).jpg"
+
 
 interface GalleryImage {
   id: number;
@@ -29,8 +61,39 @@ interface GalleryImage {
 }
 
 const Masonry = ({ images }: { images: GalleryImage[] }) => {
+  // Animation variants for the container
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  // Animation variants for individual images - sliding from right to left
+  const itemVariants = {
+    hidden: { opacity: 0, x: 50 }, // Start from the right
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 70,
+        damping: 20
+      }
+    }
+  };
+
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <motion.div 
+      className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      key={images.map(img => img.id).join('-')} // Force re-render on filter change
+    >
       {images.map((image, index) => {
         // Calculate span classes based on image index for varying sizes
         const spanClasses = `
@@ -40,9 +103,10 @@ const Masonry = ({ images }: { images: GalleryImage[] }) => {
         `;
 
         return (
-          <div 
+          <motion.div 
             key={image.id} 
             className={`relative group overflow-hidden rounded-lg ${spanClasses}`}
+            variants={itemVariants}
           >
             <img 
               src={image.src}
@@ -57,9 +121,36 @@ const Masonry = ({ images }: { images: GalleryImage[] }) => {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         );
       })}
+    </motion.div>
+  );
+};
+
+const SimpleImageGrid = ({ images }: { images: GalleryImage[] }) => {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {images.map((image) => (
+        <div 
+          key={image.id} 
+          className="relative overflow-hidden rounded-lg group"
+        >
+          <img 
+            src={image.src}
+            alt={image.alt} 
+            className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="absolute bottom-0 left-0 right-0 p-4">
+              <h3 className="text-white font-semibold text-lg">{image.alt}</h3>
+              <p className="text-white/80 text-sm mt-1">
+                {image.category.charAt(0).toUpperCase() + image.category.slice(1)}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
@@ -68,6 +159,7 @@ const PhotoGallery = () => {
   const [activeFilter, setActiveFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredImages, setFilteredImages] = useState<GalleryImage[]>([]);
+  const [filteredStoryImages, setFilteredStoryImages] = useState<GalleryImage[]>([]);
 
   const filters = [
     { id: "all", label: "All" },
@@ -166,7 +258,8 @@ const PhotoGallery = () => {
   // Filter images based on active filter and search query
   useEffect(() => {
     const filterImages = () => {
-      let filtered = [...galleryImages, ...storyImages];
+      // Filter only gallery images (not story images) for the Featured Gallery
+      let filtered = [...galleryImages];
       
       // Apply category filter
       if (activeFilter !== "all") {
@@ -182,6 +275,22 @@ const PhotoGallery = () => {
       }
       
       setFilteredImages(filtered);
+
+      // Separately filter story images for the "Real Stories" section
+      let filteredStories = [...storyImages];
+      
+      if (activeFilter !== "all") {
+        filteredStories = filteredStories.filter(img => img.category === activeFilter);
+      }
+      
+      if (searchQuery) {
+        const query = searchQuery.toLowerCase();
+        filteredStories = filteredStories.filter(
+          img => img.alt.toLowerCase().includes(query) || img.category.toLowerCase().includes(query)
+        );
+      }
+      
+      setFilteredStoryImages(filteredStories);
     };
     
     filterImages();
@@ -253,24 +362,39 @@ const PhotoGallery = () => {
         </div>
       </section>
       
-      {/* Featured Gallery */}
+      {/* Featured Gallery - Modified to use SimpleImageGrid instead of SlidingGallery */}
       <section className="py-10 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white">Featured Gallery</h2>
           
-          {filteredImages.length === 0 ? (
-            <div className="text-center py-20">
-              <p className="text-white text-lg">No gallery images found matching your filter criteria.</p>
-              <button 
-                onClick={() => {setActiveFilter('all'); setSearchQuery('');}}
-                className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+          <AnimatePresence mode="wait">
+            {filteredImages.length === 0 ? (
+              <motion.div 
+                key="empty"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="text-center py-20"
               >
-                Show All Images
-              </button>
-            </div>
-          ) : (
-            <Masonry images={filteredImages} />
-          )}
+                <p className="text-white text-lg">No gallery images found matching your filter criteria.</p>
+                <button 
+                  onClick={() => {setActiveFilter('all'); setSearchQuery('');}}
+                  className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+                >
+                  Show All Images
+                </button>
+              </motion.div>
+            ) : (
+              <motion.div
+                key="gallery"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                <SimpleImageGrid images={filteredImages} />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </section>
       
@@ -279,7 +403,7 @@ const PhotoGallery = () => {
         <div className="max-w-7xl mx-auto px-6">
           <h3 className="text-2xl font-bold text-center mb-8">Real Stories. Real Impact.</h3>
           
-          {filteredImages.filter(img => !('size' in img)).length === 0 ? (
+          {filteredStoryImages.length === 0 ? (
             <div className="text-center py-10">
               <p className="text-gray-600 text-lg">No story images found matching your filter criteria.</p>
               <button 
@@ -291,55 +415,53 @@ const PhotoGallery = () => {
             </div>
           ) : (
             <div className="grid md:grid-cols-2 gap-6">
-              {filteredImages
-                .filter(img => !('size' in img))
-                .map((story: GalleryImage) => {
-                  // Define story details based on the image ID
-                  const storyDetails = {
-                    9: {
-                      title: "Behind the Scenes: Manufacturing Excellence",
-                      description: "Take a tour of our state-of-the-art manufacturing facility where precision engineering meets quality craftsmanship.",
-                      location: "@ Kumar Generator House"
-                    },
-                    10: {
-                      title: "Client Success Story: NTPC Power Plant",
-                      description: "How our generators provided uninterrupted backup power for India's largest power generation facility.",
-                      location: "@ NTPC Limited"
-                    },
-                    11: {
-                      title: "Emergency Response: Cyclone Relief",
-                      description: "Our mobile generator units deployed during natural disasters to provide critical power to emergency services.",
-                      location: "@ Disaster Management Authority"
-                    },
-                    12: {
-                      title: "Innovation Spotlight: Eco-Friendly Generators",
-                      description: "Introducing our new line of environmentally conscious generators with reduced emissions and noise levels.",
-                      location: "@ Green Energy Summit"
-                    }
-                  };
-                  
-                  const details = storyDetails[story.id as keyof typeof storyDetails] || {
-                    title: story.alt,
-                    description: "Learn more about our power solutions and services.",
-                    location: "@ Kumar Power"
-                  };
-                  
-                  return (
-                    <div key={story.id} className="relative overflow-hidden rounded-lg group">
-                      <img 
-                        src={story.src}
-                        alt={story.alt} 
-                        className="w-full h-64 object-cover"
-                      />
-                      <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-                      <div className="p-4 bg-white">
-                        <h4 className="font-bold">{details.title}</h4>
-                        <p className="text-sm text-gray-600 mt-1">{details.description}</p>
-                        <p className="text-xs text-gray-500 mt-2">{details.location}</p>
-                      </div>
+              {filteredStoryImages.map((story: GalleryImage) => {
+                // Define story details based on the image ID
+                const storyDetails = {
+                  9: {
+                    title: "Behind the Scenes: Manufacturing Excellence",
+                    description: "Take a tour of our state-of-the-art manufacturing facility where precision engineering meets quality craftsmanship.",
+                    location: "@ Kumar Generator House"
+                  },
+                  10: {
+                    title: "Client Success Story: NTPC Power Plant",
+                    description: "How our generators provided uninterrupted backup power for India's largest power generation facility.",
+                    location: "@ NTPC Limited"
+                  },
+                  11: {
+                    title: "Emergency Response: Cyclone Relief",
+                    description: "Our mobile generator units deployed during natural disasters to provide critical power to emergency services.",
+                    location: "@ Disaster Management Authority"
+                  },
+                  12: {
+                    title: "Innovation Spotlight: Eco-Friendly Generators",
+                    description: "Introducing our new line of environmentally conscious generators with reduced emissions and noise levels.",
+                    location: "@ Green Energy Summit"
+                  }
+                };
+                
+                const details = storyDetails[story.id as keyof typeof storyDetails] || {
+                  title: story.alt,
+                  description: "Learn more about our power solutions and services.",
+                  location: "@ Kumar Power"
+                };
+                
+                return (
+                  <div key={story.id} className="relative overflow-hidden rounded-lg group">
+                    <img 
+                      src={story.src}
+                      alt={story.alt} 
+                      className="w-full h-64 object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+                    <div className="p-4 bg-white">
+                      <h4 className="font-bold">{details.title}</h4>
+                      <p className="text-sm text-gray-600 mt-1">{details.description}</p>
+                      <p className="text-xs text-gray-500 mt-2">{details.location}</p>
                     </div>
-                  );
-                })}
+                  </div>
+                );
+              })}
             </div>
           )}
         </div>
@@ -382,5 +504,6 @@ const PhotoGallery = () => {
 };
 
 export default PhotoGallery;
+          
 
 
