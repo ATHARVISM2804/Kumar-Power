@@ -423,10 +423,18 @@ const Contact = () => {
                 <p className="mb-4 text-gray-300">New Address: 904, 9th Floor, Westend Mall, Janakpuri, New Delhi - 110058</p>
                 
                 <div className="w-full h-72 bg-gray-700 rounded-md overflow-hidden relative">
-                  {/* Placeholder for Google Maps - Replace with actual Google Maps embed */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-6 h-6 bg-blue-500 rounded-full animate-ping"></div>
-                  </div>
+                  {/* Google Maps embed */}
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.906561651749!2d77.0909653!3d28.628740799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d04afb8dbcfe7%3A0x7a3fea49479dd4c8!2sWestend%20Mall!5e0!3m2!1sen!2sin!4v1695047878395!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="100%" 
+                    style={{ border: 0 }} 
+                    allowFullScreen={false} 
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Kumar Power Office Location"
+                    className="absolute inset-0"
+                  />
                 </div>
               </div>
             </div>
