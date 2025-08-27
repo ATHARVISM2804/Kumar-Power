@@ -9,6 +9,12 @@ import { Card } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import hero from "@/assets/Products/HeropBG.png"
+import range1 from "@/assets/Range1.png";
+import range2 from "@/assets/Range2.png";
+import range3 from "@/assets/Range3.png";
+import range4 from "@/assets/Range4.png";
+import range5 from "@/assets/Range5.png";
+import range6 from "@/assets/Range6.png";
 
 
 const Products = () => {
@@ -42,7 +48,7 @@ const Products = () => {
     {
       id: "7_5-20kva",
       name: "7.5 kVA - 20 kVA Diesel Generators",
-      image: "../src/assets/Range1.png",
+      image: range1, // Use imported image
       fuelType: "Diesel",
       cpcbNorm: "CPCB-IV+",
       cooling: "Liquid",
@@ -55,7 +61,7 @@ const Products = () => {
     {
       id: "25-62_5kva",
       name: "25 kVA - 62.5 kVA Diesel Generators",
-      image: "../src/assets/Range2.png",
+      image: range2, // Use imported image
       fuelType: "Diesel",
       cpcbNorm: "CPCB-IV+",
       cooling: "Liquid",
@@ -68,7 +74,7 @@ const Products = () => {
     {
       id: "62_5-160kva",
       name: "62.5 kVA - 160 kVA Diesel Generators",
-      image: "../src/assets/Range3.png",
+      image: range3, // Use imported image
       fuelType: "Diesel",
       cpcbNorm: "CPCB-IV+",
       cooling: "Liquid",
@@ -81,7 +87,7 @@ const Products = () => {
     {
       id: "200-250kva",
       name: "200 kVA - 250 kVA Diesel Generators",
-      image: "../src/assets/Range4.png",
+      image: range4, // Use imported image
       fuelType: "Diesel",
       cpcbNorm: "CPCB-IV+",
       cooling: "Liquid",
@@ -94,7 +100,7 @@ const Products = () => {
     {
       id: "320-750kva",
       name: "320 kVA - 750 kVA Diesel Generators",
-      image: "../src/assets/Range5.png",
+      image: range5, // Use imported image
       fuelType: "Diesel",
       cpcbNorm: "CPCB-IV+",
       cooling: "Liquid",
@@ -107,7 +113,7 @@ const Products = () => {
     {
       id: "750-1500kva",
       name: "750 kVA - 1500 kVA Diesel Generators",
-      image: "../src/assets/Range6.png",
+      image: range6, // Use imported image
       fuelType: "Diesel",
       cpcbNorm: "CPCB-IV+",
       cooling: "Liquid",
@@ -124,7 +130,7 @@ const Products = () => {
     {
       id: "10-25kva-gas",
       name: "10 kVA - 25 kVA Gas Generators",
-      image: "../src/assets/Range2.png",
+      image: range2, // Use imported image
       fuelType: "Natural Gas/CNG",
       cpcbNorm: "CPCB-IV+",
       cooling: "Liquid",
@@ -137,7 +143,7 @@ const Products = () => {
     {
       id: "30-62kva-gas",
       name: "30 kVA - 62 kVA Gas Generators",
-      image: "../src/assets/Range3.png",
+      image: range3, // Use imported image
       fuelType: "Natural Gas/CNG",
       cpcbNorm: "CPCB-IV+",
       cooling: "Liquid",
@@ -150,7 +156,7 @@ const Products = () => {
     {
       id: "75-125kva-gas",
       name: "75 kVA - 125 kVA Gas Generators",
-      image: "../src/assets/Range4.png",
+      image: range4, // Use imported image
       fuelType: "Natural Gas/CNG",
       cpcbNorm: "CPCB-IV+",
       cooling: "Liquid",
@@ -167,7 +173,7 @@ const Products = () => {
     {
       id: "1-3kva-portable",
       name: "1 kVA - 3 kVA Portable Generators",
-      image: "../src/assets/Range1.png",
+      image: range1, // Use imported image
       fuelType: "Gasoline",
       cpcbNorm: "CPCB-IV+",
       cooling: "Air",
@@ -180,7 +186,7 @@ const Products = () => {
     {
       id: "3-5kva-portable",
       name: "3 kVA - 5 kVA Portable Generators",
-      image: "../src/assets/Range1.png",
+      image: range1, // Use imported image
       fuelType: "Gasoline/Diesel",
       cpcbNorm: "CPCB-IV+",
       cooling: "Air",
@@ -197,7 +203,7 @@ const Products = () => {
     {
       id: "auto-transfer",
       name: "Automatic Transfer Switch Panels",
-      image: "../src/assets/Range2.png",
+      image: range2, // Use imported image
       fuelType: "N/A",
       cpcbNorm: "N/A",
       cooling: "Fan/Natural",
@@ -210,7 +216,7 @@ const Products = () => {
     {
       id: "distribution-panels",
       name: "Power Distribution Panels",
-      image: "../src/assets/Range3.png",
+      image: range3, // Use imported image
       fuelType: "N/A",
       cpcbNorm: "N/A",
       cooling: "Fan/Natural",
@@ -227,7 +233,7 @@ const Products = () => {
     {
       id: "single-phase-servo",
       name: "Single Phase Servo Stabilizers",
-      image: "../src/assets/Range4.png",
+      image: range4, // Use imported image
       fuelType: "N/A",
       cpcbNorm: "N/A",
       cooling: "Air/Oil",
@@ -240,7 +246,7 @@ const Products = () => {
     {
       id: "three-phase-servo",
       name: "Three Phase Servo Stabilizers",
-      image: "../src/assets/Range5.png",
+      image: range5, // Use imported image
       fuelType: "N/A",
       cpcbNorm: "N/A",
       cooling: "Air/Oil",
@@ -257,7 +263,7 @@ const Products = () => {
     {
       id: "distribution-transformer",
       name: "Distribution Transformers",
-      image: "../src/assets/Range6.png",
+      image: range6, // Use imported image
       fuelType: "N/A",
       cpcbNorm: "N/A",
       cooling: "Oil/Dry",
@@ -270,7 +276,7 @@ const Products = () => {
     {
       id: "power-transformer",
       name: "Power Transformers",
-      image: "../src/assets/Range5.png",
+      image: range5, // Use imported image
       fuelType: "N/A",
       cpcbNorm: "N/A",
       cooling: "Oil",
