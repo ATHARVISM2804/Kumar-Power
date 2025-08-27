@@ -202,7 +202,7 @@ const Contact = () => {
                 <div className="text-right">
                   <button
                     type="submit"
-                    className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded transition-colors flex items-center"
+                    className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded transition-colors flex items-center mx-auto"
                   >
                     Send Secure Message
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
