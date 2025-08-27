@@ -3,6 +3,7 @@ import sustainable from "@/assets/blog2.png";
 import maintenance from "@/assets/blog1.png";
 import { ArrowRight, X } from "lucide-react";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 // Define blog data structure
 interface BlogPost {
@@ -73,47 +74,135 @@ const blogPosts: BlogPost[] = [
 
 // Blog Modal Component
 const BlogModal = ({ blog, isOpen, onClose }: { blog: BlogPost | null; isOpen: boolean; onClose: () => void }) => {
-  if (!isOpen || !blog) return null;
+  if (!blog) return null;
   
   return (
-    <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4">
-      <div className="bg-white rounded-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
-        <div className="flex justify-between items-center p-4 border-b">
-          <h2 className="text-xl font-bold">{blog.title}</h2>
-          <button onClick={onClose} className="p-1 rounded-full hover:bg-gray-100">
-            <X className="h-6 w-6" />
-          </button>
-        </div>
-        
-        <div className="p-6">
-          <img src={blog.img} alt={blog.title} className="w-full h-64 object-cover rounded-lg mb-6" />
-          <div dangerouslySetInnerHTML={{ __html: blog.content }} className="prose max-w-none" />
-        </div>
-      </div>
-    </div>
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div 
+          className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          onClick={onClose}
+        >
+          <motion.div 
+            className="bg-white rounded-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto"
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -50, scale: 0.9 }}
+            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-center p-4 border-b">
+              <motion.h2 
+                className="text-xl font-bold"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                {blog.title}
+              </motion.h2>
+              <motion.button 
+                onClick={onClose} 
+                className="p-1 rounded-full hover:bg-gray-100"
+                whileHover={{ rotate: 90, scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <X className="h-6 w-6" />
+              </motion.button>
+            </div>
+            
+            <div className="p-6">
+              <motion.img 
+                src={blog.img} 
+                alt={blog.title} 
+                className="w-full h-64 object-cover rounded-lg mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+              />
+              <motion.div 
+                dangerouslySetInnerHTML={{ __html: blog.content }} 
+                className="prose max-w-none"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+              />
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 
 const BlogCard = ({ 
   blog, 
-  onReadMore 
+  onReadMore,
+  index
 }: { 
   blog: BlogPost; 
-  onReadMore: (blog: BlogPost) => void 
+  onReadMore: (blog: BlogPost) => void;
+  index: number;
 }) => (
-  <article className="rounded-xl bg-white overflow-hidden flex flex-col shadow-md">
-    <img src={blog.img} alt={blog.title} className="h-48 w-full object-cover" loading="lazy" />
+  <motion.article 
+    className="rounded-xl bg-white overflow-hidden flex flex-col shadow-md"
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay: 0.2 + index * 0.15 }}
+    whileHover={{ y: -8, transition: { duration: 0.2 } }}
+  >
+    <motion.div className="overflow-hidden h-48">
+      <motion.img 
+        src={blog.img} 
+        alt={blog.title} 
+        className="h-48 w-full object-cover" 
+        loading="lazy"
+        whileHover={{ scale: 1.1 }}
+        transition={{ duration: 0.4 }}
+      />
+    </motion.div>
     <div className="p-6 flex-1 flex flex-col">
-      <h3 className="font-semibold text-lg mb-2 text-gray-900 line-clamp-2">{blog.title}</h3>
-      <p className="text-sm text-gray-600 mb-6 flex-1">{blog.summary}</p>
-      <button 
-        onClick={() => onReadMore(blog)} 
-        className="text-blue-600 font-medium text-sm flex items-center gap-1 hover:underline mt-auto"
+      <motion.h3 
+        className="font-semibold text-lg mb-2 text-gray-900 line-clamp-2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3 + index * 0.15 }}
       >
-        Read More <ArrowRight className="h-4 w-4" />
-      </button>
+        {blog.title}
+      </motion.h3>
+      <motion.p 
+        className="text-sm text-gray-600 mb-6 flex-1"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4 + index * 0.15 }}
+      >
+        {blog.summary}
+      </motion.p>
+      <motion.button 
+        onClick={() => onReadMore(blog)} 
+        className="text-blue-600 font-medium text-sm flex items-center gap-1 hover:underline mt-auto group"
+        whileHover={{ x: 5 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        Read More 
+        <motion.div
+          initial={{ x: 0 }}
+          animate={{ x: 0 }}
+          whileHover={{ x: 3 }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "mirror",
+            duration: 0.6
+          }}
+        >
+          <ArrowRight className="h-4 w-4" />
+        </motion.div>
+      </motion.button>
     </div>
-  </article>
+  </motion.article>
 );
 
 const BlogSection = () => {
@@ -127,26 +216,49 @@ const BlogSection = () => {
   
   const closeModal = () => {
     setIsModalOpen(false);
-    setSelectedBlog(null);
+    setTimeout(() => setSelectedBlog(null), 300); // Delay clearing blog until animation finishes
   };
   
   return (
-    <section id="blogs" className="py-10 md:py-20 bg-black">
+    <motion.section 
+      id="blogs" 
+      className="py-10 md:py-20 bg-black"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="container mx-auto px-4 md:px-0">
-        <h2 className="text-3xl md:text-5xl font-bold mb-2 md:mb-3 text-white">Blogs</h2>
-        <p className="text-white/80 mb-8 md:mb-12 text-base md:text-lg">
+        <motion.h2 
+          className="text-3xl md:text-5xl font-bold mb-2 md:mb-3 text-white"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+        >
+          Blogs
+        </motion.h2>
+        <motion.p 
+          className="text-white/80 mb-8 md:mb-12 text-base md:text-lg"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+        >
           Explore expert articles, case studies, and latest trends in industrial power solutions.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          {blogPosts.map((blog) => (
-            <BlogCard key={blog.id} blog={blog} onReadMore={handleReadMore} />
+        </motion.p>
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+        >
+          {blogPosts.map((blog, index) => (
+            <BlogCard key={blog.id} blog={blog} onReadMore={handleReadMore} index={index} />
           ))}
-        </div>
+        </motion.div>
       </div>
       
       {/* Blog modal */}
       <BlogModal blog={selectedBlog} isOpen={isModalOpen} onClose={closeModal} />
-    </section>
+    </motion.section>
   );
 };
 

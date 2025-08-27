@@ -66,9 +66,9 @@ const Footer = () => {
                   
                   {showGeneratorDropdown && (
                     <ul className="ml-4 mt-2 space-y-2 border-l border-white/20 pl-3">
-                      <li><a href="#gas" className="text-white/80 hover:text-white transition-colors">Gas Generators</a></li>
-                      <li><a href="#portable" className="text-white/80 hover:text-white transition-colors">Portable Generators</a></li>
-                      <li><a href="#diesel" className="text-white/80 hover:text-white transition-colors">Diesel Generators</a></li>
+                      <li><a onClick={() => window.location.href="/products"} className="text-white/80 hover:text-white transition-colors">Gas Generators</a></li>
+                      <li><a onClick={() => window.location.href="/products"} className="text-white/80 hover:text-white transition-colors">Portable Generators</a></li>
+                      <li><a onClick={() => window.location.href="/products"} className="text-white/80 hover:text-white transition-colors">Diesel Generators</a></li>
                     </ul>
                   )}
                 </li>

@@ -16,56 +16,125 @@ import trust7 from "@/assets/CEC (1).png";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 const PSCard = ({ title, desc, specs, img }: { title: string; desc: string; specs: string[]; img: string }) => (
-  <article className="bg-white rounded-lg overflow-hidden shadow-md flex flex-col">
-    <div className="w-full h-48  p-2 flex items-center justify-center overflow-hidden">
-      <img
+  <motion.article 
+    className="bg-white rounded-lg overflow-hidden shadow-md flex flex-col"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -10 }}
+    transition={{ duration: 0.4 }}
+    whileHover={{ 
+      scale: 1.02, 
+      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" 
+    }}
+  >
+    <div className="w-full h-48 p-2 flex items-center justify-center overflow-hidden">
+      <motion.img
         src={img}
         alt={title}
         className="object-contain w-full translate-y-1 h-full"
         style={{ background: "white" }}
+        whileHover={{ scale: 1.07, rotate: 0.5 }}
+        transition={{ duration: 0.3 }}
       />
     </div>
     <div className="p-6 flex flex-col flex-1">
-      <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="text-muted-foreground text-sm mb-4">{desc}</p>
+      <motion.h3 
+        className="text-xl font-bold mb-2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.1 }}
+      >
+        {title}
+      </motion.h3>
+      <motion.p 
+        className="text-muted-foreground text-sm mb-4"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2 }}
+      >
+        {desc}
+      </motion.p>
       <div className="space-y-2 mb-6">
-        {specs.map((spec) => (
-          <div key={spec} className="flex items-center gap-2">
-            <span className="inline-flex items-center justify-center rounded-full bg-blue-100 h-5 w-5">
-              <span className="h-2 w-2 rounded-full bg-blue-600" />
-            </span>
+        {specs.map((spec, index) => (
+          <motion.div 
+            key={spec} 
+            className="flex items-center gap-2"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 + index * 0.1 }}
+          >
+            <motion.span 
+              className="inline-flex items-center justify-center rounded-full bg-blue-100 h-5 w-5"
+              whileHover={{ scale: 1.2, backgroundColor: "#bfdbfe" }}
+            >
+              <motion.span 
+                className="h-2 w-2 rounded-full bg-blue-600" 
+                whileHover={{ scale: 1.3 }}
+              />
+            </motion.span>
             <span className="text-sm">{spec}</span>
-          </div>
+          </motion.div>
         ))}
       </div>
       <div className="mt-auto">
-        <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-md">
-          <div className="flex items-center gap-2">
-            Explore More <ArrowRight className="h-4 w-4" />
-          </div>
-        </Button>
+        <motion.div
+          whileHover={{ x: 5 }}
+          transition={{ type: "spring", stiffness: 400 }}
+        >
+          <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-md overflow-hidden">
+            <div className="flex items-center gap-2">
+              Explore More 
+              <motion.div
+                initial={{ x: 0 }}
+                whileHover={{ x: 3 }}
+                transition={{ 
+                  repeat: Infinity, 
+                  repeatType: "reverse", 
+                  duration: 0.6 
+                }}
+              >
+                <ArrowRight className="h-4 w-4" />
+              </motion.div>
+            </div>
+          </Button>
+        </motion.div>
       </div>
     </div>
-  </article>
+  </motion.article>
 );
 
 const FilterSection = ({ title, options }: { title: string; options: string[] }) => (
-  <div className="mb-6">
+  <motion.div 
+    className="mb-6"
+    initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.3 }}
+  >
     <h4 className="text-gray-900 font-medium mb-3">{title}</h4>
     <div className="space-y-2">
-      {options.map((option) => (
-        <label key={option} className="flex items-center gap-2 cursor-pointer">
-          <input
+      {options.map((option, index) => (
+        <motion.label 
+          key={option} 
+          className="flex items-center gap-2 cursor-pointer"
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.1 * index, duration: 0.2 }}
+          whileHover={{ x: 2, color: "#3b82f6" }}
+        >
+          <motion.input
             type="checkbox"
             className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.8 }}
           />
           <span className="text-gray-600 text-sm">{option}</span>
-        </label>
+        </motion.label>
       ))}
     </div>
-  </div>
+  </motion.div>
 );
 
 const PowerSolutions = () => {
@@ -289,17 +358,30 @@ const PowerSolutions = () => {
   return (
     <section id="solutions" className="py-0">
       {/* Hero Image Section moved to the top */}
-      <div className="w-full flex justify-center items-center py-0">
-        <img
+      <motion.div 
+        className="w-full flex justify-center items-center py-0"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <motion.img
           src={allProductsImg}
           alt="All Products"
           className="w-full h-[180px] sm:h-[250px] md:h-[250px] object-cover rounded-none"
           style={{ maxWidth: "100vw" }}
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
         />
-      </div>
+      </motion.div>
       
       {/* Breadcrumb Navigation */}
-      <div className="bg-gray-50 border-b">
+      <motion.div 
+        className="bg-gray-50 border-b"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.4 }}
+      >
         <div className="container mx-auto px-4 md:px-0 py-3">
           <div className="flex items-center text-sm">
             <Link to="/" className="text-gray-500 hover:text-blue-600">Home</Link>
@@ -307,20 +389,37 @@ const PowerSolutions = () => {
             <Link to="/products" className="text-gray-500 hover:text-blue-600">Products</Link>
           </div>
         </div>
-      </div>
+      </motion.div>
       
       {/* Section Title */}
-      <div className="container mx-auto px-4 md:px-0 py-4">
-        <h1 className="text-3xl font-bold text-gray-900 mb-1">Power Solutions</h1>
-        <div className="w-16 h-1 bg-blue-600 rounded mb-6"></div>
-      </div>
+      <motion.div 
+        className="container mx-auto px-4 md:px-0 py-4"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5, duration: 0.5 }}
+      >
+        <motion.h1 
+          className="text-3xl font-bold text-gray-900 mb-1"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+        >
+          Power Solutions
+        </motion.h1>
+        <motion.div 
+          className="w-16 h-1 bg-blue-600 rounded mb-6"
+          initial={{ width: 0 }}
+          animate={{ width: 64 }}
+          transition={{ delay: 0.8, duration: 0.5 }}
+        ></motion.div>
+      </motion.div>
       
       {/* Category Navigation */}
       <div className="bg-gray-50 border-b mb-6">
         <div className="container mx-auto px-4 md:px-0 overflow-x-auto">
           <div className="flex space-x-6 py-3 min-w-max">
-            {categories.map((category) => (
-              <button
+            {categories.map((category, index) => (
+              <motion.button
                 key={category}
                 onClick={() => setActiveCategory(category)}
                 className={`whitespace-nowrap py-2 px-1 border-b-2 transition-colors ${
@@ -328,9 +427,14 @@ const PowerSolutions = () => {
                     ? "border-blue-600 text-blue-600 font-medium" 
                     : "border-transparent text-gray-600 hover:text-blue-600"
                 }`}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 + index * 0.1, duration: 0.3 }}
+                whileHover={{ y: -2 }}
+                whileTap={{ y: 0 }}
               >
                 {category}
-              </button>
+              </motion.button>
             ))}
           </div>
         </div>
@@ -339,56 +443,138 @@ const PowerSolutions = () => {
       {/* Rest of the content */}
       <div className="container mx-auto grid md:grid-cols-4 gap-4 md:gap-8 px-4 md:px-0">
         {/* Left: Content */}
-        <div className="md:col-span-3">
-          <div className="grid md:grid-cols-2 gap-6">
-            {categoryProducts[activeCategory as keyof typeof categoryProducts].map((product, idx) => (
-              <PSCard
-                key={`${activeCategory}-${idx}`}
-                title={product.title}
-                desc={product.desc}
-                specs={product.specs}
-                img={product.img}
-              />
-            ))}
-          </div>
+        <motion.div 
+          className="md:col-span-3"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 1.0 }}
+        >
+          <AnimatePresence mode="wait">
+            <motion.div 
+              key={activeCategory}
+              className="grid md:grid-cols-2 gap-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {categoryProducts[activeCategory as keyof typeof categoryProducts].map((product, idx) => (
+                <PSCard
+                  key={`${activeCategory}-${idx}`}
+                  title={product.title}
+                  desc={product.desc}
+                  specs={product.specs}
+                  img={product.img}
+                />
+              ))}
+            </motion.div>
+          </AnimatePresence>
           
           {/* Empty state if no products for a category */}
           {categoryProducts[activeCategory as keyof typeof categoryProducts].length === 0 && (
-            <div className="flex flex-col items-center justify-center py-16">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-gray-300 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <motion.div 
+              className="flex flex-col items-center justify-center py-16"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4 }}
+            >
+              <motion.svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                className="h-16 w-16 text-gray-300 mb-4" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+                initial={{ scale: 0.5, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
-              </svg>
-              <h3 className="text-xl font-medium text-gray-900 mb-2">No products available</h3>
-              <p className="text-gray-500">We're currently updating our {activeCategory} catalog.</p>
-            </div>
+              </motion.svg>
+              <motion.h3 
+                className="text-xl font-medium text-gray-900 mb-2"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.3 }}
+              >
+                No products available
+              </motion.h3>
+              <motion.p 
+                className="text-gray-500"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.3 }}
+              >
+                We're currently updating our {activeCategory} catalog.
+              </motion.p>
+            </motion.div>
           )}
-        </div>
+        </motion.div>
         
         {/* Right: Filter */}
-        <div className="bg-white mt-10 p-6 rounded-lg shadow-sm border h-fit">
-          <h3 className="font-semibold text-lg mb-6">Filter {activeCategory}</h3>
+        <motion.div 
+          className="bg-white mt-10 p-6 rounded-lg shadow-sm border h-fit"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 1.2 }}
+        >
+          <motion.h3 
+            className="font-semibold text-lg mb-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.3 }}
+          >
+            Filter {activeCategory}
+          </motion.h3>
           
-          {Object.entries(activeFilters).map(([filterName, options]) => (
-            <FilterSection
-              key={`${activeCategory}-${filterName}`}
-              title={filterName.charAt(0).toUpperCase() + filterName.slice(1).replace(/([A-Z])/g, ' $1')}
-              options={options as string[]}
-            />
-          ))}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeCategory}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {Object.entries(activeFilters).map(([filterName, options], index) => (
+                <FilterSection
+                  key={`${activeCategory}-${filterName}`}
+                  title={filterName.charAt(0).toUpperCase() + filterName.slice(1).replace(/([A-Z])/g, ' $1')}
+                  options={options as string[]}
+                />
+              ))}
+            </motion.div>
+          </AnimatePresence>
 
-          <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-            Apply Filters
-          </Button>
-        </div>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.5, duration: 0.3 }}
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+          >
+            <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+              Apply Filters
+            </Button>
+          </motion.div>
+        </motion.div>
       </div>
       
-      {/* Trusted By Section - fix container height for mobile */}
-      <div className="container mx-auto mt-10 md:mt-20 mb-10 px-4 md:px-0">
-        <div className="text-center mb-10">
+      {/* Trusted By Section */}
+      <motion.div 
+        className="container mx-auto mt-10 md:mt-20 mb-10 px-4 md:px-0"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 1.5 }}
+      >
+        <motion.div 
+          className="text-center mb-10"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.6 }}
+        >
           <h3 className="text-2xl md:text-3xl font-bold">
             Trusted Across India's Largest Enterprises
           </h3>
-        </div>
+        </motion.div>
         <div ref={logoContainerRef} className="overflow-hidden relative h-20">
           <div 
             ref={logoRef} 
@@ -404,15 +590,30 @@ const PowerSolutions = () => {
             <img src={trust7} alt="GMP" className="h-20 w-auto" />
           </div>
         </div>
-      </div>
+      </motion.div>
       
       {/* Power in Action Section */}
-      <div className="container mx-auto mt-16 mb-12 px-4 md:px-0 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold">
+      <motion.div 
+        className="container mx-auto mt-16 mb-12 px-4 md:px-0 text-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.8, duration: 0.6 }}
+      >
+        <motion.h2 
+          className="text-3xl md:text-4xl font-bold"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 1.9, duration: 0.5 }}
+        >
           Power in Action
-        </h2>
-        <div className="mx-auto w-24 h-1 bg-black mt-2"></div>
-      </div>
+        </motion.h2>
+        <motion.div 
+          className="mx-auto w-24 h-1 bg-black mt-2"
+          initial={{ width: 0 }}
+          animate={{ width: 96 }}
+          transition={{ delay: 2.0, duration: 0.5 }}
+        ></motion.div>
+      </motion.div>
     </section>
   );
 };
