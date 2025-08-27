@@ -1,7 +1,7 @@
 import Header from "@/components/landing/Header";
 import Footer from "@/components/landing/Footer";
 import SEOJsonLD from "@/components/SEOJsonLD";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import gallery from "@/assets/Gallery1.png";
 import gallery2 from "@/assets/gallery2.png";
 import gallery3 from "@/assets/gallery3.png";
@@ -27,6 +27,42 @@ interface GalleryImage {
     rowSpan: number;
   };
 }
+
+const Masonry = ({ images }: { images: GalleryImage[] }) => {
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {images.map((image, index) => {
+        // Calculate span classes based on image index for varying sizes
+        const spanClasses = `
+          ${index % 3 === 0 ? 'col-span-2 row-span-2' : ''}
+          ${index % 5 === 0 ? 'md:col-span-2' : ''}
+          ${index % 4 === 0 ? 'lg:row-span-2' : ''}
+        `;
+
+        return (
+          <div 
+            key={image.id} 
+            className={`relative group overflow-hidden rounded-lg ${spanClasses}`}
+          >
+            <img 
+              src={image.src}
+              alt={image.alt} 
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <h3 className="text-white font-semibold text-lg">{image.alt}</h3>
+                <p className="text-white/80 text-sm mt-1">
+                  {image.category.charAt(0).toUpperCase() + image.category.slice(1)}
+                </p>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
 const PhotoGallery = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -219,37 +255,21 @@ const PhotoGallery = () => {
       
       {/* Featured Gallery */}
       <section className="py-10 bg-black">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-2xl font-bold mb-6 text-white">Featured Gallery</h2>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white">Featured Gallery</h2>
           
-          {filteredImages.filter(img => 'size' in img).length === 0 ? (
+          {filteredImages.length === 0 ? (
             <div className="text-center py-20">
               <p className="text-white text-lg">No gallery images found matching your filter criteria.</p>
               <button 
                 onClick={() => {setActiveFilter('all'); setSearchQuery('');}}
-                className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md"
+                className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
               >
                 Show All Images
               </button>
             </div>
           ) : (
-            <div className="grid grid-cols-8 grid-rows-9 gap-1.5 max-h-[1400px]">
-              {filteredImages
-                .filter(img => 'size' in img)
-                .map((image: GalleryImage) => (
-                  <div 
-                    key={image.id} 
-                    className={`col-span-${image.size?.colSpan} row-span-${image.size?.rowSpan} overflow-hidden`}
-                  >
-                    <img 
-                      src={image.src}
-                      alt={image.alt} 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                ))
-              }
-            </div>
+            <Masonry images={filteredImages} />
           )}
         </div>
       </section>
@@ -362,5 +382,5 @@ const PhotoGallery = () => {
 };
 
 export default PhotoGallery;
-                 
+
 
