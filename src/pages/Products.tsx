@@ -41,6 +41,8 @@ const Products = () => {
     { id: "diesel", name: "Diesel Generators" },
     { id: "gas", name: "Gas Generators" },
     { id: "portable", name: "Portable Generators" },
+    { id: "portable", name: "CPCB4+" },
+    { id: "portable", name: "Optiprime" },
   ];
   
   // Define generator products based on the images
@@ -738,7 +740,7 @@ const Products = () => {
           
           <div className="flex flex-col md:flex-row gap-6">
             {/* Category Sidebar */}
-            <div className={`w-full md:w-64 bg-gray-900 rounded-md shadow-md p-4 ${showMobileFilters ? 'block' : 'hidden md:block'} mb-4 md:mb-0`}>
+            <div className={`relative w-full md:w-64 z-10 rounded-md shadow-md p-4 ${showMobileFilters ? 'block' : 'hidden md:block'} mb-4 md:mb-0`}>
               <h2 className="text-base font-semibold mb-4 text-white">Product Categories</h2>
               <ul className="space-y-1">
                 {categories.map((category) => (
@@ -746,25 +748,23 @@ const Products = () => {
                     {category.hasDropdown ? (
                       <>
                         <button
-                          className={`w-full text-left px-2 py-2 rounded-sm transition text-sm flex items-center justify-between ${
-                            selectedCategory === 'diesel' || selectedCategory === 'gas' || selectedCategory === 'portable'
-                              ? 'bg-blue-900 text-blue-200 font-medium'
-                              : 'hover:bg-gray-800 text-gray-300'
-                          }`}
+                          className={`w-full text-left px-2 py-2 rounded-sm transition text-sm flex items-center justify-between text-white`}
                           onClick={() => handleCategorySelection(category.id)}
                         >
                           <span>{category.name}</span>
                           <ChevronRight className={`ml-2 w-4 h-4 transition-transform ${showKirloskarDropdown ? 'rotate-90' : ''}`} />
                         </button>
+                        <div className='absolute top-1 left-0 w-full h-[37vh] rounded-md -z-10 bg-[#2D6FBA]/30'></div>
                         {showKirloskarDropdown && (
-                          <ul className="ml-4 mt-1 space-y-1">
+                          
+                          <ul className="ml-4 mt-1 space-y-1 bg-">
                             {kirloskarSubcategories.map((subcat) => (
                               <li key={subcat.id}>
                                 <button
-                                  className={`w-full text-left px-2 py-2 rounded-sm transition text-sm ${
+                                  className={`w-full text-left px-2 py-2  rounded-sm transition text-sm ${
                                     selectedCategory === subcat.id
-                                      ? 'bg-blue-900 text-blue-200 font-medium'
-                                      : 'hover:bg-gray-800 text-gray-300'
+                                      ? 'bg-blue-600 text-white'
+                                      : 'text-gray-200 hover:bg-[#22305a]'
                                   }`}
                                   onClick={() => setSelectedCategory(subcat.id)}
                                 >
@@ -791,18 +791,17 @@ const Products = () => {
                 ))}
               </ul>
               
-              <div className="mt-6 pt-6 border-t border-gray-700">
+              <div className="mt-16 pt-6 border-t border-gray-700">
                 <h3 className="text-sm font-semibold mb-3 text-gray-200">Certifications</h3>
-                <div className="space-y-2">
+                <div className="bg-[#181d23] rounded-lg p-4 flex flex-wrap gap-2">
                   {['ISO 9001', 'CPCB-IV+', 'CE', 'BIS'].map((cert) => (
-                    <div key={cert} className="flex items-center">
-                      <input
-                        type="checkbox"
-                        id={`cert-${cert}`}
-                        className="mr-2"
-                      />
-                      <label htmlFor={`cert-${cert}`} className="text-xs text-gray-300">{cert}</label>
-                    </div>
+                    <span
+                      key={cert}
+                      className="inline-block px-3 py-1 rounded bg-[#23272f] text-xs text-gray-200 font-medium"
+                      style={{ minWidth: '70px', textAlign: 'center' }}
+                    >
+                      {cert}
+                    </span>
                   ))}
                 </div>
               </div>
@@ -1148,3 +1147,4 @@ const Products = () => {
 };
 
 export default Products;
+
