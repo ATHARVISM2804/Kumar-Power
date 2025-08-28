@@ -419,10 +419,14 @@ const OurClients = () => {
           
           {/* Client Grids - one for each tab */}
           <div className="bg-black p-8 rounded-md">
-            <p className="text-gray-400 font-semibold mb-6 flex gap-2 items-center">
-              {clientCategories[activeTab].icon}
-              {clientCategories[activeTab].title}
-            </p>
+            <div className="flex flex-col mb-6">
+              <p className="text-white font-semibold flex gap-2 items-center text-xl">
+                {clientCategories[activeTab].icon}
+                {clientCategories[activeTab].title}
+              </p>
+              {/* Blue underline below the name */}
+              <span className="mt-2 w-full h-0.5 bg-gradient-to-r from-blue-400 to-blue-700/0 rounded"></span>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-8">
               {clientCategories[activeTab].clients.map((client, index) => (
                 <div key={index}>
