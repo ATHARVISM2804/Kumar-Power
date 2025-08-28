@@ -232,54 +232,59 @@ Rajvinder Singh Kumar is the Founder and CEO of Kumar Generator House, a company
           </div>
           
           <div className="bg-white p-6 rounded-lg text-black max-w-9xl mx-auto mt-8">
-            <h3 className="text-xl font-bold mb-4">Quality Policy Statement</h3>
-            <p className="text-sm mb-6">
-              At Kumar Generator House, we are committed to delivering world-class power products and turnkey solutions that exceed customer expectations. Our robust design, meticulous manufacturing, and comprehensive testing ensure reliability and performance in every installation.
-            </p>
-            <div className="flex items-start justify-between gap-6">
-              <ul className="space-y-3 mb-6 flex-1 min-w-[220px]">
-              <li className="flex items-start text-sm">
-                <svg className="w-5 h-5 text-black mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span>ISO 9001:2015 certified quality management system</span>
-              </li>
-              <li className="flex items-start text-sm">
-                <svg className="w-5 h-5 text-black mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span>Rigorous testing protocols for all equipment</span>
-              </li>
-              <li className="flex items-start text-sm">
-                <svg className="w-5 h-5 text-black mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span>Continuous improvement through customer feedback</span>
-              </li>
-              <li className="flex items-start text-sm">
-                <svg className="w-5 h-5 text-black mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span>Regular training and skill enhancement for our team</span>
-              </li>
-            </ul>
-            
-            <div className="flex flex-col gap-4 min-w-[180px] max-w-[180px]">
-              <div className="border border-gray-300 p-3 rounded flex items-center justify-center w-full">
-                <img 
-                  src={isoprof}
-                  alt="ISO 9001:2015" 
-                  className="h-16 w-full object-contain"
-                />
+            <div className="flex flex-col md:flex-row gap-8 items-start">
+              {/* Left: Statement and List */}
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold mb-3">Quality Policy Statement</h3>
+                <p className="text-base text-gray-800 mb-6">
+                  At Kumar Generator House, we are committed to delivering world-class power products and turnkey solutions that exceed customer expectations. Our robust design, meticulous manufacturing, and comprehensive testing ensure reliability and performance in every installation.
+                </p>
+                <ul className="space-y-4">
+                  <li className="flex items-center text-base">
+                    <svg className="w-5 h-5 text-black mr-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    ISO 9001:2015 certified quality management system
+                  </li>
+                  <li className="flex items-center text-base">
+                    <svg className="w-5 h-5 text-black mr-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    Rigorous testing protocols for all equipment
+                  </li>
+                  <li className="flex items-center text-base">
+                    <svg className="w-5 h-5 text-black mr-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    Continuous improvement through customer feedback
+                  </li>
+                  <li className="flex items-center text-base">
+                    <svg className="w-5 h-5 text-black mr-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    Regular training and skill enhancement for our team
+                  </li>
+                </ul>
               </div>
-              <div className="border border-gray-300 p-3 rounded flex items-center justify-center w-full">
-                <img 
-                  src={kirlo}
-                  alt="Kirloskar Authorized" 
-                  className="h-16 w-full object-contain"
-                />
+              {/* Right: Certificates */}
+              <div className="flex flex-row gap-6 min-w-[220px]">
+                <div className="border border-black rounded-lg flex flex-col items-center justify-center w-[160px] h-[200px] bg-white">
+                  <img 
+                    src={isoprof}
+                    alt="ISO 9001:2015" 
+                    className="h-24 w-24 object-contain mt-6 mb-2  rounded"
+                  />
+                  <div className="text-sm font-medium text-gray-800 mt-2 mb-2">ISO 9001:2015</div>
+                </div>
+                <div className="border border-black p-2 rounded-lg flex flex-col items-center justify-center w-[160px] h-[200px] bg-white">
+                  <img 
+                    src={kirlo}
+                    alt="Kirloskar Authorized" 
+                    className="h-24 w-24 object-contain mt-6 mb-2"
+                  />
+                  <div className="text-sm font-medium text-gray-800 mt-2 mb-2">Kirloskar Authorized</div>
+                </div>
               </div>
-            </div>
             </div>
           </div>
         </div>
