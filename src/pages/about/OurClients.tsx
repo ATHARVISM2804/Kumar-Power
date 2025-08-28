@@ -288,63 +288,63 @@ const OurClients = () => {
               <img src={afcons} alt="Afcons" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={kec} alt="KEC" className="h-12" />
+              <img src={kec} alt="KEC" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={ojc} alt="Oriental" className="h-12" />
+              <img src={ojc} alt="Oriental" className="h-20" />
             </div>
             
             {/* Row 4 */}
             <div className="flex items-center justify-center">
-              <img src={mapple} alt="Mapple" className="h-12" />
+              <img src={mapple} alt="Mapple" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={comed} alt="Coated" className="h-12" />
+              <img src={comed} alt="Coated" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={mbd} alt="MBD Group" className="h-12" />
+              <img src={mbd} alt="MBD Group" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={sp} alt="Infrastructure" className="h-12" />
+              <img src={sp} alt="Infrastructure" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={rai} alt="Raj Foundation" className="h-12" />
+              <img src={rai} alt="Raj Foundation" className="h-20" />
             </div>
             
             {/* Row 5 */}
             <div className="flex items-center justify-center">
-              <img src={kashyapi} alt="Kashyapi" className="h-12" />
+              <img src={kashyapi} alt="Kashyapi" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={pwc} alt="PwC" className="h-12" />
+              <img src={pwc} alt="PwC" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={daiken} alt="Daikin" className="h-12" />
+              <img src={daiken} alt="Daikin" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={ignou} alt="IGNOU" className="h-12" />
+              <img src={ignou} alt="IGNOU" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={vistara} alt="Vistaar" className="h-12" />
+              <img src={vistara} alt="Vistaar" className="h-20" />
             </div>
           </div>
         </div>
       </section>
       
       {/* Statistics Section */}
-      <section className="py-12 bg-gray-100">
+      <section className="py-12 ">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-3 gap-8 text-center">
             <div>
-              <h3 className="text-3xl font-bold text-gray-800">500+</h3>
+              <h3 className="text-3xl font-bold text-blue-500">500+</h3>
               <p className="text-sm text-gray-600">Enterprise Clients</p>
             </div>
             <div>
-              <h3 className="text-3xl font-bold text-gray-800">30+</h3>
+              <h3 className="text-3xl font-bold text-blue-500">30+</h3>
               <p className="text-sm text-gray-600">Years of Service</p>
             </div>
             <div>
-              <h3 className="text-3xl font-bold text-gray-800">10000+</h3>
+              <h3 className="text-3xl font-bold text-blue-500">10000+</h3>
               <p className="text-sm text-gray-600">Installations Across India</p>
             </div>
           </div>
