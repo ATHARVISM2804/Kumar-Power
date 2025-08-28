@@ -52,7 +52,11 @@ const About = () => {
               ))}
             </div>
             <Button asChild size="lg" className="mt-2 bg-blue-600 hover:bg-blue-700 px-6 py-6 rounded-lg">
-              <a href="#legacy" className="flex items-center gap-2">
+              <a onClick={
+                () => {
+                  window.location.href = "/about/OurProfile";
+                }
+              } className="flex items-center gap-2">
                 Explore Our Legacy <ArrowRight className="h-5 w-5 ml-1" />
               </a>
             </Button>

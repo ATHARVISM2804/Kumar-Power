@@ -285,6 +285,32 @@ const BlogSection = () => {
       
       {/* Blog modal */}
       <BlogModal blog={selectedBlog} isOpen={isModalOpen} onClose={closeModal} />
+
+      {/* CTA Section */}
+      <div className="mt-16 md:mt-24 bg-white rounded-none mx-auto max-w-none px-0 py-0 border-none shadow-none">
+        <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+          <div className="flex-1 md:pr-10">
+            <h3 className="text-2xl md:text-3xl font-bold text-black mb-4 text-left">Call To Action</h3>
+            <p className="text-gray-800 text-base md:text-lg mb-0 max-w-xl text-left">
+              Have questions or need more information? We're here to help! Click the 'Enquire Now' button to get in touch with our team. Whether you're interested in learning more about our services, products, or pricing, simply send us your inquiry and we'll respond promptly. Let us help you find the right solution for your needs!
+            </p>
+          </div>
+          <div className="flex flex-col gap-4 w-full md:w-[320px] md:mr-10 mt-8 md:mt-0">
+            <button
+              type="button"
+              className="bg-black hover:bg-gray-900 text-white font-medium px-6 py-3 rounded-md transition-colors w-full"
+            >
+              Enquire Now
+            </button>
+            <button
+              type="button"
+              className="bg-white border border-gray-400 text-black font-medium px-6 py-3 rounded-md transition-colors w-full"
+            >
+              Download Our Company Profile
+            </button>
+          </div>
+        </div>
+      </div>
     </motion.section>
   );
 };

@@ -21,7 +21,11 @@ const CTASection = () => {
             className="w-full sm:w-auto bg-transparent hover:bg-transparent border-2 border-white text-white hover:bg-white/10 rounded-md px-6 py-3 h-auto"
             asChild
           >
-            <a href="#contact" className="flex items-center gap-2">
+            <a onClick={
+                () => {
+                  window.location.href = "/contact";
+                }
+              } className="flex items-center gap-2">
               <Phone className="size-5"/> Talk to an Expert
             </a>
           </Button>
