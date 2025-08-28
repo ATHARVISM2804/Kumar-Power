@@ -1045,10 +1045,10 @@ const Products = () => {
         </section>
         
         {/* Help Section */}
-        <section className="py-8 sm:py-12 bg-gray-300">
+        <section className="py-8 sm:py-12 bg-[#AAAAAA]">
           <div className="max-w-4xl mx-auto px-2 sm:px-4 text-center">
             <h2 className="text-xl sm:text-2xl font-bold mb-2 text-gray-800">Need Help Choosing the Right Electrical Solution?</h2>
-            <p className="text-xs sm:text-sm text-gray-600 mb-6">
+            <p className="text-xs sm:text-sm text-black mb-6">
               Our team of experts will help you select the perfect solution based on your industry and budget.
             </p>
             <div className='flex w-full items-center justify-center'>
