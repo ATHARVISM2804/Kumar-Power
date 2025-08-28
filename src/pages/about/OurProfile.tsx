@@ -22,18 +22,18 @@ const About = () => {
       <div className="bg-gray-100 py-12">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
           {/* Image on the left */}
-          <div className="rounded-lg overflow-hidden">
+          <div className=" overflow-hidden">
             <img 
               src={OurProfile}
               alt="Kumar Power Facility" 
-              className="w-full h-auto object-cover shadow-lg max-h-[400px]"
+              className="w-[30vw] h-auto object-cover shadow-lg max-h-[400px]"
             />
           </div>
           
           {/* Text on the right with smaller font size */}
           <div>
-            <h1 className="text-3xl font-bold mb-3">Know About Power</h1>
-            <h2 className="text-lg text-primary font-semibold mb-2">-Trusted Name in Power Solutions Providers.</h2>
+            <h1 className="text-5xl mb-3">Know About Power</h1>
+            <h2 className="text-2xl text-black mb-2">-Trusted Name in Power Solutions Providers.</h2>
             <p className="text-base">
               Kumar Generator House is a premier Kirloskar-certified power partner with over 30+ years of 
               excellence in providing comprehensive power solutions across India. Established in 1985, we have 
@@ -142,23 +142,24 @@ const About = () => {
       </div>
       
       {/* Meet the Team Section */}
-      <div className="py-16 bg-gray-500">
+      <div className="py-16 bg-[#AAAAAA]">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-12">
+          <h2 className="text-4xl font-bold text-center mb-2">
             Meet the Visionaries Behind the Power
           </h2>
-          
+          {/* Blue underline below the heading */}
+          <div className="mx-auto w-44 h-1 bg-[#2D6FBA] rounded mb-10"></div>
           <div className="grid md:grid-cols-3 gap-8 mt-12">
             {/* Team Member 1 */}
             <div className="text-center">
-              <div className="bg-white p-4 rounded-lg shadow-md h-full">
+              <div className="bg-white p-4 rounded-sm shadow-md h-full">
                 <img 
                   src={rajvinder}
                   alt="Rajvinder Singh Kumar" 
                   className="w-48 h-48 object-cover mx-auto mb-4"
                 />
                 <h3 className="text-base font-bold uppercase mb-1">RAJVINDER SINGH KUMAR</h3>
-                <p className="text-primary font-semibold text-sm mb-1">Director</p>
+                <p className="text-primary font-semibold text-sm mb-1">Founder and CEO</p>
                 <p className="text-xs text-gray-500 mb-3">Proud member of NRI Gaurdian Delhi Branch</p>
                 <p className="mt-2 text-sm text-left">
                   Rajvinder Singh Kumar is the Founder and CEO of Kumar Generator 
@@ -272,12 +273,13 @@ const About = () => {
             </div>
           </div>
           
-          <div className="bg-white p-6 rounded-lg text-black max-w-5xl mx-auto mt-8">
+          <div className="bg-white p-6 rounded-lg text-black max-w-9xl mx-auto mt-8">
             <h3 className="text-xl font-bold mb-4">Quality Policy Statement</h3>
             <p className="text-sm mb-6">
               At Kumar Generator House, we are committed to delivering world-class power products and turnkey solutions that exceed customer expectations. Our robust design, meticulous manufacturing, and comprehensive testing ensure reliability and performance in every installation.
             </p>
-            <ul className="space-y-3 mb-6">
+            <div className="flex items-start justify-between gap-6">
+              <ul className="space-y-3 mb-6 flex-1 min-w-[220px]">
               <li className="flex items-start text-sm">
                 <svg className="w-5 h-5 text-black mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -304,21 +306,22 @@ const About = () => {
               </li>
             </ul>
             
-            <div className="flex flex-wrap gap-4">
-              <div className="border border-gray-300 p-3 rounded flex items-center justify-center">
+            <div className="flex flex-col gap-4 min-w-[180px] max-w-[180px]">
+              <div className="border border-gray-300 p-3 rounded flex items-center justify-center w-full">
                 <img 
                   src={isoprof}
                   alt="ISO 9001:2015" 
-                  className="h-16"
+                  className="h-16 w-full object-contain"
                 />
               </div>
-              <div className="border border-gray-300 p-3 rounded flex items-center justify-center">
+              <div className="border border-gray-300 p-3 rounded flex items-center justify-center w-full">
                 <img 
                   src={kirlo}
                   alt="Kirloskar Authorized" 
-                  className="h-16"
+                  className="h-16 w-full object-contain"
                 />
               </div>
+            </div>
             </div>
           </div>
         </div>
@@ -326,12 +329,18 @@ const About = () => {
       
       {/* CTA Section */}
       <div className="py-12 bg-white">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Power Your Business?</h2>
-          <p className="text-lg mb-8">Contact our power solutions experts today to discover how Kumar Generator House can provide reliable power solutions tailored to your needs.</p>
-          <a href="/contact" className="inline-block bg-black hover:bg-black/90 text-white px-6 py-3 rounded-md font-medium">
-            Get in Touch →
-          </a>
+        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="flex-1 min-w-[280px]">
+            <h2 className="text-2xl md:text-3xl font-bold mb-2">Ready to Power Your Business?</h2>
+            <p className="text-base md:text-lg text-gray-700">
+              Contact us today for a consultation and discover how Kumar Generator House can provide reliable power solutions tailored to your needs.
+            </p>
+          </div>
+          <div className="mt-6 md:mt-0">
+            <a href="/contact" className="inline-block bg-black hover:bg-black/90 text-white px-8 py-3 rounded-md font-medium transition-colors">
+              Get in Touch →
+            </a>
+          </div>
         </div>
       </div>
       

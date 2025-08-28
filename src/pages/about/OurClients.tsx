@@ -199,7 +199,7 @@ const OurClients = () => {
       
       {/* Hero Section */}
       <section 
-        className="bg-cover bg-center py-24 text-white relative" 
+        className="bg-contain bg-center py-24 text-white relative" 
         style={{ 
           backgroundImage: `url(${handshake})`,
           backgroundPosition: "center 20%"
@@ -207,132 +207,144 @@ const OurClients = () => {
       >
         <div className="absolute inset-0 bg-black opacity-20"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Powering India's<br />Elite Enterprises</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Powering India's<br />Elite Enterprises
+          </h1>
+          {/* Add underline below the heading */}
+          <div className="w-24 h-1 bg-white mb-10"></div>
           <p className="text-lg max-w-2xl">
             For over three decades, Kumar Generator House has been the trusted power partner for India's most demanding institutions.
           </p>
-          <button className="flex items-center text-blue-300 mt-4 text-sm">
+          <button className="flex items-center text-white mt-4 text-sm">
             Explore our client portfolio
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" 
+     className="h-4 w-4 ml-2" 
+     viewBox="0 0 24 24" 
+     fill="currentColor">
+  <path d="M12 4v16m0 0l-6-6m6 6l6-6" 
+        stroke="currentColor" 
+        strokeWidth="2" 
+        strokeLinecap="round" 
+        strokeLinejoin="round"/>
+</svg>
+
           </button>
         </div>
       </section>
       
       {/* Our Esteemed Clients Section */}
-      <section className="bg-gray-900 py-6 text-white">
+      <section className="bg-black py-6 text-white">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-2xl font-bold text-center">Our Esteemed Clients</h2>
+          <h2 className="text-5xl font-medium text-center">Our Esteemed Clients</h2>
         </div>
       </section>
       
       {/* Client Logos Grid */}
       <section className="bg-white py-12">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             {/* Row 1 */}
-            <div className="flex items-center justify-center">
-              <img src={honeywell} alt="Honeywell" className="h-12" />
+            <div className="flex items-center justify-center ">
+              <img src={honeywell} alt="Honeywell" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={suez} alt="Suez" className="h-12" />
+              <img src={suez} alt="Suez" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={adani} alt="Adani Wilmar" className="h-12" />
+              <img src={adani} alt="Adani Wilmar" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={sikka} alt="Sikka" className="h-12" />
+              <img src={sikka} alt="Sikka" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={apollo} alt="Apollo" className="h-12" />
+              <img src={apollo} alt="Apollo" className="h-20" />
             </div>
             
             {/* Row 2 */}
             <div className="flex items-center justify-center">
-              <img src={cec} alt="National Small Industries" className="h-12" />
+              <img src={cec} alt="National Small Industries" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={seasons} alt="Seasons" className="h-12" />
+              <img src={seasons} alt="Seasons" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={ncc} alt="NCC" className="h-12" />
+              <img src={ncc} alt="NCC" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={gmr} alt="GMR" className="h-12" />
+              <img src={gmr} alt="GMR" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={airindia} alt="Air India" className="h-12" />
+              <img src={airindia} alt="Air India" className="h-20" />
             </div>
             
             {/* Row 3 */}
             <div className="flex items-center justify-center">
-              <img src={british} alt="British Paints" className="h-12" />
+              <img src={british} alt="British Paints" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={nbcc} alt="NHPC" className="h-12" />
+              <img src={nbcc} alt="NHPC" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={afcons} alt="Afcons" className="h-12" />
+              <img src={afcons} alt="Afcons" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={kec} alt="KEC" className="h-12" />
+              <img src={kec} alt="KEC" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={ojc} alt="Oriental" className="h-12" />
+              <img src={ojc} alt="Oriental" className="h-20" />
             </div>
             
             {/* Row 4 */}
             <div className="flex items-center justify-center">
-              <img src={mapple} alt="Mapple" className="h-12" />
+              <img src={mapple} alt="Mapple" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={comed} alt="Coated" className="h-12" />
+              <img src={comed} alt="Coated" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={mbd} alt="MBD Group" className="h-12" />
+              <img src={mbd} alt="MBD Group" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={sp} alt="Infrastructure" className="h-12" />
+              <img src={sp} alt="Infrastructure" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={rai} alt="Raj Foundation" className="h-12" />
+              <img src={rai} alt="Raj Foundation" className="h-20" />
             </div>
             
             {/* Row 5 */}
             <div className="flex items-center justify-center">
-              <img src={kashyapi} alt="Kashyapi" className="h-12" />
+              <img src={kashyapi} alt="Kashyapi" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={pwc} alt="PwC" className="h-12" />
+              <img src={pwc} alt="PwC" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={daiken} alt="Daikin" className="h-12" />
+              <img src={daiken} alt="Daikin" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={ignou} alt="IGNOU" className="h-12" />
+              <img src={ignou} alt="IGNOU" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={vistara} alt="Vistaar" className="h-12" />
+              <img src={vistara} alt="Vistaar" className="h-20" />
             </div>
           </div>
         </div>
       </section>
       
       {/* Statistics Section */}
-      <section className="py-12 bg-gray-100">
+      <section className="py-12 ">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-3 gap-8 text-center">
             <div>
-              <h3 className="text-3xl font-bold text-gray-800">500+</h3>
+              <h3 className="text-3xl font-bold text-blue-500">500+</h3>
               <p className="text-sm text-gray-600">Enterprise Clients</p>
             </div>
             <div>
-              <h3 className="text-3xl font-bold text-gray-800">30+</h3>
+              <h3 className="text-3xl font-bold text-blue-500">30+</h3>
               <p className="text-sm text-gray-600">Years of Service</p>
             </div>
             <div>
-              <h3 className="text-3xl font-bold text-gray-800">10000+</h3>
+              <h3 className="text-3xl font-bold text-blue-500">10000+</h3>
               <p className="text-sm text-gray-600">Installations Across India</p>
             </div>
           </div>
@@ -406,11 +418,15 @@ const OurClients = () => {
           </div>
           
           {/* Client Grids - one for each tab */}
-          <div className="bg-[#191D2C] p-8 rounded-md">
-            <p className="text-gray-400 font-semibold mb-6 flex gap-2 items-center">
-              {clientCategories[activeTab].icon}
-              {clientCategories[activeTab].title}
-            </p>
+          <div className="bg-black p-8 rounded-md">
+            <div className="flex flex-col mb-6">
+              <p className="text-white font-semibold flex gap-2 items-center text-xl">
+                {clientCategories[activeTab].icon}
+                {clientCategories[activeTab].title}
+              </p>
+              {/* Blue underline below the name */}
+              <span className="mt-2 w-full h-0.5 bg-gradient-to-r from-blue-400 to-blue-700/0 rounded"></span>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-8">
               {clientCategories[activeTab].clients.map((client, index) => (
                 <div key={index}>
