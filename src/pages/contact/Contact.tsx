@@ -2,7 +2,7 @@ import Header from "@/components/landing/Header";
 import Footer from "@/components/landing/Footer";
 import SEOJsonLD from "@/components/SEOJsonLD";
 import { useState } from "react";
-import contact from "@/assets/contact.png"
+import contact from "./image.png"
 
 const Contact = () => {
   // Form state for the main contact form
@@ -80,10 +80,13 @@ const Contact = () => {
           backgroundSize: "cover",
           backgroundPosition: "center"
         }}>
-          <div className="absolute inset-0 z-0 bg-cover bg-center opacity-60" style={{
-            backgroundImage: `url(${contact})`,
-            mixBlendMode: "normal"
-          }}></div>
+          <div className="absolute inset-0 z-0 bg-no-repeat bg-cover opacity-60"
+            style={{
+              backgroundImage: 'url(https://i.pinimg.com/736x/fe/44/56/fe4456118e2c95e3416848c659e5337e.jpg)',
+              mixBlendMode: "normal",
+              backgroundPosition: "center -380px" // move image up
+            }}
+          ></div>
           
           <div className="container mx-auto px-4 relative z-10 flex justify-center items-center min-h-[280px]">
             {/* Glassmorphism Card */}
