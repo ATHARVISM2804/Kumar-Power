@@ -157,8 +157,16 @@ const GeneratorRange = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <h2 className="text-2xl md:text-3xl font-bold mb-2">Explore Our Generator Range</h2>
-          <p className="text-muted-foreground mb-8">
+          <h2 className="text-2xl md:text-5xl font-extralight tracking-tighter mb-2">
+            Explore Our Generator Range
+            <motion.div
+              className="h-1 w-24 bg-blue-600 mt-1"
+              initial={{ width: 0 }}
+              animate={{ width: "5rem" }}
+              transition={{ delay: 0.8, duration: 0.8 }}
+            />
+          </h2>
+          <p className="text-white mt-6  mb-8">
             Kirloskar-certified systems tailored for industrial, commercial, and backup applications.
           </p>
         </motion.div>

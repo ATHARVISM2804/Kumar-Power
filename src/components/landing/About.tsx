@@ -31,7 +31,7 @@ const About = () => {
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center px-4 md:px-0">
           {/* Left: Text Content */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl tracking-tighter  mb-10">
               Engineering India's
               <br /> Energy Backbone.
             </h2>
@@ -45,7 +45,7 @@ const About = () => {
               {features.map((f) => (
                 <div key={f.label} className="flex items-center gap-4">
                   <span className="inline-flex items-center justify-center rounded-full bg-blue-100 h-12 w-12">
-                    <CheckCircle2 className="text-blue-600 h-6 w-6" />
+                    <CheckCircle2 className="text-white bg-blue-600 rounded-full h-6 w-6" />
                   </span>
                   <span className="text-base font-medium">{f.label}</span>
                 </div>

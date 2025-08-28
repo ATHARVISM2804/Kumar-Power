@@ -42,15 +42,15 @@ const Testimonials = () => {
 								{t.title}
 							</div>
 							<div className="flex-1 flex flex-col px-4 md:px-6 py-4 md:py-6">
-								<Quote className="text-blue-500 w-6 md:w-8 h-6 md:h-8 mb-3" />
-								<p className="text-gray-900 text-sm md:text-base mb-4 md:mb-6 flex-1 leading-relaxed">
+								<Quote className="text-blue-500 w-5 md:w-6 h-5 md:h-6 mb-2" />
+								<p className="text-gray-900 text-xs md:text-sm mb-3 md:mb-4 flex-1 leading-relaxed">
 									{t.quote}
 								</p>
 								<div className="mt-auto text-right">
-									<div className="font-bold text-base md:text-lg text-gray-900">
+									<div className="font-bold text-sm md:text-base text-gray-900">
 										{t.name}
 									</div>
-									<div className="text-xs md:text-sm text-gray-600">{t.role}</div>
+									<div className="text-xs text-gray-600">{t.role}</div>
 								</div>
 							</div>
 						</div>

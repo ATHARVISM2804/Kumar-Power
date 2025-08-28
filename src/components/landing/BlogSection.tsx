@@ -72,10 +72,23 @@ const blogPosts: BlogPost[] = [
   }
 ];
 
+// Utility to render HTML content with styled headings and points
+const renderBlogContent = (html: string) => {
+  // Replace <h3> with styled headings
+  let content = html.replace(/<h3>(.*?)<\/h3>/g, (_, text) =>
+    `<h3 class="font-bold text-lg md:text-xl mb-2 mt-4 text-gray-900">${text}</h3>`
+  );
+  // Replace <p> with styled paragraphs
+  content = content.replace(/<p>(.*?)<\/p>/g, (_, text) =>
+    `<p class="text-base md:text-lg mb-2 text-gray-800">${text}</p>`
+  );
+  // Optionally, you can style <ul>/<li> if you add lists in future
+  return content;
+};
+
 // Blog Modal Component
 const BlogModal = ({ blog, isOpen, onClose }: { blog: BlogPost | null; isOpen: boolean; onClose: () => void }) => {
   if (!blog) return null;
-  
   return (
     <AnimatePresence>
       {isOpen && (
@@ -124,11 +137,12 @@ const BlogModal = ({ blog, isOpen, onClose }: { blog: BlogPost | null; isOpen: b
                 transition={{ delay: 0.3 }}
               />
               <motion.div 
-                dangerouslySetInnerHTML={{ __html: blog.content }} 
-                className="prose max-w-none"
+                className="max-w-none"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
+                // Render headings and points with custom styles
+                dangerouslySetInnerHTML={{ __html: renderBlogContent(blog.content) }}
               />
             </div>
           </motion.div>
@@ -148,20 +162,33 @@ const BlogCard = ({
   index: number;
 }) => (
   <motion.article 
-    className="rounded-xl bg-white overflow-hidden flex flex-col shadow-md"
+    className="rounded-xl bg-white overflow-hidden flex flex-col shadow-md transition-all duration-300"
     initial={{ opacity: 0, y: 30 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5, delay: 0.2 + index * 0.15 }}
-    whileHover={{ y: -8, transition: { duration: 0.2 } }}
+    whileHover={{
+      y: -14,
+      scale: 1.03,
+      boxShadow: "0 12px 32px 0 rgba(212,175,55,0.18)",
+      borderImage: "linear-gradient(90deg, #d4af37 0%, #f7e7b4 100%) 1",
+      borderWidth: "2px",
+      borderStyle: "solid",
+      borderColor: "#d4af37",
+      transition: { duration: 0.35 }
+    }}
+    style={{
+      border: "2px solid transparent",
+      borderImage: "none"
+    }}
   >
     <motion.div className="overflow-hidden h-48">
       <motion.img 
         src={blog.img} 
         alt={blog.title} 
-        className="h-48 w-full object-cover" 
+        className="h-48 w-full object-cover transition-all duration-300"
         loading="lazy"
-        whileHover={{ scale: 1.1 }}
-        transition={{ duration: 0.4 }}
+        whileHover={{ scale: 1.10, filter: "brightness(0.92) saturate(1.1)" }}
+        transition={{ duration: 0.35 }}
       />
     </motion.div>
     <div className="p-6 flex-1 flex flex-col">

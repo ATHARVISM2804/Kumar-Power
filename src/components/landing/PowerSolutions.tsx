@@ -17,6 +17,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
 
 const PSCard = ({ title, desc, specs, img }: { title: string; desc: string; specs: string[]; img: string }) => (
   <motion.article 
@@ -30,11 +31,12 @@ const PSCard = ({ title, desc, specs, img }: { title: string; desc: string; spec
       boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" 
     }}
   >
-    <div className="w-full h-48 p-2 flex items-center justify-center overflow-hidden">
+    {/* Increased image container height and image height */}
+    <div className="w-full h-64 p-2 flex items-center justify-center overflow-hidden">
       <motion.img
         src={img}
         alt={title}
-        className="object-contain w-full translate-y-1 h-full"
+        className="object-contain w-full h-60 translate-y-1"
         style={{ background: "white" }}
         whileHover={{ scale: 1.07, rotate: 0.5 }}
         transition={{ duration: 0.3 }}
@@ -141,6 +143,8 @@ const PowerSolutions = () => {
   const logoRef = useRef<HTMLDivElement>(null);
   const logoContainerRef = useRef<HTMLDivElement>(null);
   const [activeCategory, setActiveCategory] = useState<string>("Generators");
+  const [selectedFilters, setSelectedFilters] = useState<{ [key: string]: string[] }>({});
+  const [filteredProducts, setFilteredProducts] = useState<any[]>([]);
 
   // Categories for the navigation tabs
   const categories = [
@@ -309,6 +313,45 @@ const PowerSolutions = () => {
 
   const activeFilters = getFilterOptionsForCategory(activeCategory);
 
+  // Reset filters and filtered products when category changes
+  useEffect(() => {
+    setSelectedFilters({});
+    setFilteredProducts([]);
+  }, [activeCategory]);
+
+  // Handle filter checkbox change
+  const handleFilterChange = (filterName: string, option: string, checked: boolean) => {
+    setSelectedFilters(prev => {
+      const prevOptions = prev[filterName] || [];
+      let newOptions;
+      if (checked) {
+        newOptions = [...prevOptions, option];
+      } else {
+        newOptions = prevOptions.filter(o => o !== option);
+      }
+      return { ...prev, [filterName]: newOptions };
+    });
+  };
+
+  // Filter products based on selected filters
+  const applyFilters = () => {
+    const products = categoryProducts[activeCategory as keyof typeof categoryProducts];
+    if (!products) return setFilteredProducts([]);
+    // Only filter if any filter is selected
+    if (Object.values(selectedFilters).every(arr => arr.length === 0)) {
+      setFilteredProducts([]);
+      return;
+    }
+    // Simple filter: product.specs must include at least one selected filter value
+    const selectedValues = Object.values(selectedFilters).flat();
+    const filtered = products.filter(product =>
+      selectedValues.every(val =>
+        product.specs.some(spec => spec.toLowerCase().includes(val.toLowerCase()))
+      )
+    );
+    setFilteredProducts(filtered);
+  };
+
   useEffect(() => {
     if (!logoRef.current || !logoContainerRef.current) return;
     
@@ -458,7 +501,10 @@ const PowerSolutions = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              {categoryProducts[activeCategory as keyof typeof categoryProducts].map((product, idx) => (
+              {(filteredProducts.length > 0
+                ? filteredProducts
+                : categoryProducts[activeCategory as keyof typeof categoryProducts]
+              ).map((product, idx) => (
                 <PSCard
                   key={`${activeCategory}-${idx}`}
                   title={product.title}
@@ -470,8 +516,9 @@ const PowerSolutions = () => {
             </motion.div>
           </AnimatePresence>
           
-          {/* Empty state if no products for a category */}
-          {categoryProducts[activeCategory as keyof typeof categoryProducts].length === 0 && (
+          {/* Empty state if no products for a category or filter */}
+          {(filteredProducts.length === 0 &&
+            categoryProducts[activeCategory as keyof typeof categoryProducts].length === 0) && (
             <motion.div 
               className="flex flex-col items-center justify-center py-16"
               initial={{ opacity: 0, scale: 0.9 }}
@@ -508,6 +555,44 @@ const PowerSolutions = () => {
               </motion.p>
             </motion.div>
           )}
+          {(filteredProducts.length === 0 &&
+            Object.values(selectedFilters).flat().length > 0) && (
+            <motion.div 
+              className="flex flex-col items-center justify-center py-16"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4 }}
+            >
+              <motion.svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                className="h-16 w-16 text-gray-300 mb-4" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+                initial={{ scale: 0.5, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+              </motion.svg>
+              <motion.h3 
+                className="text-xl font-medium text-gray-900 mb-2"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.3 }}
+              >
+                No products match the selected filters
+              </motion.h3>
+              <motion.p 
+                className="text-gray-500"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.3 }}
+              >
+                Try adjusting your filter criteria.
+              </motion.p>
+            </motion.div>
+          )}
         </motion.div>
         
         {/* Right: Filter */}
@@ -535,11 +620,39 @@ const PowerSolutions = () => {
               transition={{ duration: 0.3 }}
             >
               {Object.entries(activeFilters).map(([filterName, options], index) => (
-                <FilterSection
+                <motion.div 
+                  className="mb-6"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
                   key={`${activeCategory}-${filterName}`}
-                  title={filterName.charAt(0).toUpperCase() + filterName.slice(1).replace(/([A-Z])/g, ' $1')}
-                  options={options as string[]}
-                />
+                >
+                  <h4 className="text-gray-900 font-medium mb-3">
+                    {filterName.charAt(0).toUpperCase() + filterName.slice(1).replace(/([A-Z])/g, ' $1')}
+                  </h4>
+                  <div className="space-y-2">
+                    {options.map((option, idx) => (
+                      <motion.label 
+                        key={option}
+                        className="flex items-center gap-2 cursor-pointer"
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.1 * idx, duration: 0.2 }}
+                        whileHover={{ x: 2, color: "#3b82f6" }}
+                      >
+                        <motion.input
+                          type="checkbox"
+                          className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                          checked={selectedFilters[filterName]?.includes(option) || false}
+                          onChange={e => handleFilterChange(filterName, option, e.target.checked)}
+                          whileHover={{ scale: 1.2 }}
+                          whileTap={{ scale: 0.8 }}
+                        />
+                        <span className="text-gray-600 text-sm">{option}</span>
+                      </motion.label>
+                    ))}
+                  </div>
+                </motion.div>
               ))}
             </motion.div>
           </AnimatePresence>
@@ -551,7 +664,7 @@ const PowerSolutions = () => {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
           >
-            <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+            <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white" onClick={applyFilters}>
               Apply Filters
             </Button>
           </motion.div>
@@ -571,7 +684,7 @@ const PowerSolutions = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.6 }}
         >
-          <h3 className="text-2xl md:text-3xl font-bold">
+          <h3 className="text-4xl md:text-5xl font-semibold">
             Trusted Across India's Largest Enterprises
           </h3>
         </motion.div>
