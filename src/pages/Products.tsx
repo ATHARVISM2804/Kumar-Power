@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Header from "@/components/landing/Header";
 import Footer from "@/components/landing/Footer";
 import SEOJsonLD from "@/components/SEOJsonLD";
@@ -672,7 +672,7 @@ const Products = () => {
               filter: "brightness(0.5)",
             }}
           ></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-90"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/35 to-transparent opacity-90"></div>
           <div className="relative max-w-7xl mx-auto px-4 py-10 md:py-24 flex flex-col gap-4 h-full justify-center">
             <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold max-w-2xl">
               Powering Progress, One Generator at a Time
@@ -681,10 +681,10 @@ const Products = () => {
               Explore our full range of Kirloskar-certified diesel generators, trusted across India's most demanding industries.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 w-full max-w-xs sm:max-w-none">
-              <Button size="lg" variant="default" className="bg-primary hover:bg-primary/90 w-full sm:w-auto">
+              <Button size="lg" variant="default" className="bg-[#2D6FBA] hover:bg-[#2360a0] w-full sm:w-auto">
                 Request a Quote
               </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white/10 w-full sm:w-auto">
+              <Button size="lg" variant="outline" className="bg-transparent border-[#2D6FBA] text-[#2D6FBA] hover:bg-[#2D6FBA]/10 w-full sm:w-auto">
                 Download Product Catalogue
               </Button>
             </div>
@@ -728,7 +728,7 @@ const Products = () => {
             <Button
               variant="outline"
               size="sm"
-              className="flex items-center gap-1 border-gray-700 text-gray-300 bg-gray-800 hover:bg-gray-700"
+              className="flex items-center gap-1 border-[#2D6FBA] text-[#2D6FBA] bg-gray-800 hover:bg-[#2D6FBA]/10"
               onClick={() => setShowMobileFilters(!showMobileFilters)}
             >
               <Filter className="w-4 h-4" /> 
@@ -857,19 +857,19 @@ const Products = () => {
                           <Button 
                             variant="outline" 
                             size="sm" 
-                            className="h-7 text-xs flex items-center gap-1 py-0 px-2 border-gray-600 text-gray-300 bg-gray-700 hover:bg-gray-600"
+                            className="h-7 text-xs flex items-center gap-1 py-0 px-2 border-[#2D6FBA] text-[#2D6FBA] bg-gray-700 hover:bg-[#2D6FBA]/10"
                             onClick={() => openSpecsModal(product)}
                           >
                             View Specs <ChevronRight className="w-3 h-3" />
                           </Button>
-                          <Button variant="outline" size="sm" className="h-7 text-xs flex items-center gap-1 py-0 px-2 border-gray-600 text-gray-300 bg-gray-700 hover:bg-gray-600">
+                          <Button variant="outline" size="sm" className="h-7 text-xs flex items-center gap-1 py-0 px-2 border-[#2D6FBA] text-[#2D6FBA] bg-gray-700 hover:bg-[#2D6FBA]/10">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                               <rect x="3" y="3" width="18" height="18" rx="2" />
                               <path d="M3 9h18" />
                             </svg>
                             Brochure
                           </Button>
-                          <Button variant="default" size="sm" className="h-7 text-xs py-0 px-4 bg-blue-600 hover:bg-blue-700 text-white">
+                          <Button variant="default" size="sm" className="h-7 text-xs py-0 px-4 bg-[#2D6FBA] hover:bg-[#2360a0] text-white">
                             Get Quote
                           </Button>
                         </div>
@@ -885,7 +885,7 @@ const Products = () => {
                 <p className="text-xs text-gray-400 mb-3">
                   Use our 3-step Generator Selector to find the perfect power solution for your needs.
                 </p>
-                <Button variant="default" size="sm" className="text-xs px-4 py-1 h-7 bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-1">
+                <Button variant="default" size="sm" className="text-xs px-4 py-1 h-7 bg-[#2D6FBA] hover:bg-[#2360a0] text-white flex items-center gap-1">
                   Start Selector <ChevronRight className="w-3 h-3" />
                 </Button>
               </div>
@@ -898,7 +898,7 @@ const Products = () => {
               <span className="font-medium text-blue-600">Kumar Power:</span> India's Most Trusted Kirloskar-Certified Generator Brand!
             </div>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 mt-2 sm:mt-0">
-              <Button variant="ghost" size="sm" className="flex items-center gap-1 text-xs h-7 p-4 bg-white/20 text-gray-400 hover:text-gray-200">
+              <Button variant="ghost" size="sm" className="flex items-center gap-1 text-xs h-7 p-4 bg-white/20 text-[#2D6FBA] hover:text-[#2360a0]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                   <polyline points="7 10 12 15 17 10" />
@@ -906,13 +906,13 @@ const Products = () => {
                 </svg>
                 Download All Catalogs
               </Button>
-              <Button variant="ghost" size="sm" className="bg-white/20 flex items-center gap-1 text-xs h-7 p-4 text-gray-400 hover:text-gray-200">
+              <Button variant="ghost" size="sm" className="bg-white/20 flex items-center gap-1 text-xs h-7 p-4 text-[#2D6FBA] hover:text-[#2360a0]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                 </svg>
                 Talk to Power Expert
               </Button>
-              <Button variant="ghost" size="sm" className="bg-blue-600 flex items-center gap-1 text-xs h-7 p-4 text-white hover:text-gray-200">
+              <Button variant="ghost" size="sm" className="bg-[#2D6FBA] flex items-center gap-1 text-xs h-7 p-4 text-white hover:text-[#2360a0]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="12" y1="5" x2="12" y2="19" />
                   <line x1="5" y1="12" x2="19" y2="12" />
@@ -1062,7 +1062,7 @@ const Products = () => {
               Our team of experts will help you select the perfect solution based on your industry and budget.
             </p>
             <div className='flex w-full items-center justify-center'>
-            <Button variant="default" size="md" className=" bg-white p-4 hover:bg-gray-100 text-gray-800 border border-gray-300 flex items-center justify-center gap-1 font-medium">
+            <Button variant="default" size="md" className=" bg-white p-4 hover:bg-gray-100 text-[#2D6FBA] border border-[#2D6FBA] flex items-center justify-center gap-1 font-medium">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
               </svg>
@@ -1139,10 +1139,10 @@ const Products = () => {
                 
                 {/* CTA Buttons */}
                 <div className="mt-6 flex flex-col sm:flex-row flex-wrap gap-3 pt-4 border-t">
-                  <Button size="sm" variant="default" className="bg-blue-600 hover:bg-blue-700 w-full sm:w-auto">
+                  <Button size="sm" variant="default" className="bg-[#2D6FBA] hover:bg-[#2360a0] w-full sm:w-auto">
                     Request Quote
                   </Button>
-                  <Button size="sm" variant="outline" className="flex items-center gap-1 w-full sm:w-auto">
+                  <Button size="sm" variant="outline" className="flex items-center gap-1 w-full sm:w-auto border-[#2D6FBA] text-[#2D6FBA] hover:bg-[#2D6FBA]/10">
                     <Download className="w-4 h-4" /> Download Brochure
                   </Button>
                 </div>
