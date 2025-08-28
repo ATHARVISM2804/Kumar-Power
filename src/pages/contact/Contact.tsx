@@ -75,7 +75,7 @@ const Contact = () => {
       
       <main>
         {/* FIRST SECTION: Powering Connections Section */}
-        <section className="py-20 bg-blue-900 relative overflow-hidden" style={{
+        <section className="py-20 bg-[#2D6FBA] relative overflow-hidden" style={{
           backgroundImage: "linear-gradient(to right, #0a1535, #1a2a59)",
           backgroundSize: "cover",
           backgroundPosition: "center"
@@ -87,20 +87,20 @@ const Contact = () => {
           
           <div className="container mx-auto px-4 relative z-10 flex justify-center items-center min-h-[280px]">
             {/* Glassmorphism Card */}
-            <div className="max-w-3xl mx-auto px-10 py-12 bg-black/30 backdrop-blur-md border border-white/20 rounded-lg shadow-2xl text-center relative overflow-hidden">
+            <div className="max-w-3xl mx-auto px-10 py-12 bg-black/60    shadow-2xl text-center relative overflow-hidden">
               {/* Additional glass effect layer */}
               <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-20 z-0"></div>
               
               {/* Content with improved contrast */}
               <div className="relative z-10">
                 <h2 className="text-3xl md:text-4xl font-bold mb-2 text-white drop-shadow-md">Powering Connections That Matter</h2>
-                <p className="text-lg text-white mb-8 drop-shadow">Let's build something extraordinary. Talk to our experts today.</p>
+                <p className="text-base text-white tracking-tighter font-extralight mb-8 drop-shadow">Let's build something extraordinary. Talk to our experts today.</p>
                 
                 <div className="flex flex-wrap justify-center gap-4">
-                  <a href="#contact-form" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md font-medium transition-colors shadow-lg">
+                  <a href="#contact-form" className="bg-[#2D6FBA] hover:bg-[#2360a0] text-white px-8 py-3 rounded-[5px] font-medium transition-colors shadow-lg">
                     Start Your Inquiry
                   </a>
-                  <a href="https://wa.me/919778431767" target="_blank" rel="noreferrer" className="bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-blue-600/50 text-white px-8 py-3 rounded-md font-medium transition-colors shadow-lg">
+                  <a href="https://wa.me/919778431767" target="_blank" rel="noreferrer" className="backdrop-blur-sm border border-[#2D6FBA] hover:bg-[#2D6FBA]/50 text-white px-8 py-3 rounded-[5px] font-medium transition-colors shadow-lg">
                     Connect on WhatsApp
                   </a>
                 </div>
@@ -112,58 +112,59 @@ const Contact = () => {
         {/* Get in Touch Form - Part of First Section */}
         <section id="contact-form" className="py-16 bg-black">
           <div className="container mx-auto px-4">
-            <div className="max-w-2xl mx-auto bg-gray-300 p-8 rounded-md">
-              <h2 className="text-2xl font-bold text-center mb-6 border-b pb-4">Get in Touch</h2>
-              
+            <div className="max-w-2xl mx-auto bg-[#AAAAAA] p-8 rounded-[18px] shadow-lg">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold text-white mb-2">Get in Touch</h2>
+                <div className="mx-auto w-24 h-1 bg-[#2D6FBA] rounded mb-2"></div>
+              </div>
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                    <label htmlFor="name" className="block text-sm font-medium text-white mb-1">Full Name</label>
                     <input
                       type="text"
                       id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full p-2 border border-gray-300 rounded bg-black text-white"
+                      className="w-full p-3 rounded-[7px] bg-black text-white border-none placeholder-white"
                       placeholder="Enter your name"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                    <label htmlFor="email" className="block text-sm font-medium text-white mb-1">Email Address</label>
                     <input
                       type="email"
                       id="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full p-2 border border-gray-300 rounded bg-black text-white"
+                      className="w-full p-3 rounded-[7px] bg-black text-white/20 border-none placeholder-white"
                       placeholder="Enter your email"
                     />
                   </div>
                 </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                    <label htmlFor="phone" className="block text-sm font-medium text-white mb-1">Phone Number</label>
                     <input
                       type="tel"
                       id="phone"
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full p-2 border border-gray-300 rounded bg-black text-white"
+                      className="w-full p-3 rounded-[7px] bg-black text-white border-none placeholder-white"
                       placeholder="Enter your phone number"
                     />
                   </div>
                   <div>
-                    <label htmlFor="department" className="block text-sm font-medium text-gray-700 mb-1">Department</label>
+                    <label htmlFor="department" className="block text-sm font-medium text-white mb-1">Department</label>
                     <select
                       id="department"
                       name="department"
                       value={formData.department}
                       onChange={handleChange}
-                      className="w-full p-2 border border-gray-300 rounded bg-black text-white"
+                      className="w-full p-3 rounded-[7px] bg-black text-white border-none placeholder-white"
                     >
                       <option value="">Select Department</option>
                       <option value="sales">Sales</option>
@@ -173,42 +174,41 @@ const Contact = () => {
                     </select>
                   </div>
                 </div>
-                
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message:</label>
+                  <label htmlFor="message" className="block text-sm font-medium text-white mb-1">Message</label>
                   <textarea
                     id="message"
                     name="message"
                     rows={5}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full p-2 border border-gray-300 rounded bg-black text-white"
+                    className="w-full p-3 rounded-[7px] bg-black text-white border-none placeholder-white"
                     placeholder="Tell us about your requirements"
                   ></textarea>
                 </div>
-                
-                <div className="flex items-center">
-                  <input
-                    type="checkbox"
-                    id="callback"
-                    name="callback"
-                    className="h-4 w-4 text-blue-600 border-gray-300 rounded"
-                  />
-                  <label htmlFor="callback" className="ml-2 block text-sm text-gray-700">
-                    Request a callback
-                  </label>
-                </div>
-                
-                <div className="text-right">
-                  <button
-                    type="submit"
-                    className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded transition-colors flex items-center mx-auto"
-                  >
-                    Send Secure Message
-                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </button>
+                <div>
+                  <div className="flex items-center translate-y-10 mt-2 gap-2">
+                    <input
+                      type="checkbox"
+                      id="callback"
+                      name="callback"
+                      className="h-4 w-4 text-[#2D6FBA]  border-gray-300 rounded focus:ring-[#2D6FBA]"
+                    />
+                    <label htmlFor="callback" className="block text-sm text-white cursor-pointer">
+                      Request a callback
+                    </label>
+                  </div>
+                  <div className="flex justify-end mt-4">
+                    <button
+                      type="submit"
+                      className="bg-[#2D6FBA] hover:bg-[#2360a0] text-white font-medium py-3 px-8 rounded-[7px] transition-colors flex items-center"
+                    >
+                      Send Secure Message
+                      <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </button>
+                  </div>
                 </div>
               </form>
             </div>
@@ -222,13 +222,13 @@ const Contact = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Office Hours */}
                 <div className="bg-black text-white p-6 rounded-md">
-                  <div className="flex items-center mb-4">
+                  <div className="items-center mb-4">
                     <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
                       <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
-                    <h3 className="ml-3 text-lg font-bold">Office Hours</h3>
+                    <h3 className="mt-3 text-lg font-bold">Office Hours</h3>
                   </div>
                   <p className="text-gray-300 text-sm">Monday - Saturday</p>
                   <p className="text-gray-300 text-sm">10:00 AM - 7:00 PM</p>
@@ -237,13 +237,13 @@ const Contact = () => {
 
                 {/* Phone */}
                 <div className="bg-black text-white p-6 rounded-md">
-                  <div className="flex items-center mb-4">
+                  <div className=" items-center mb-4">
                     <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
                       <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
                     </div>
-                    <h3 className="ml-3 text-lg font-bold">Phone</h3>
+                    <h3 className="mt-3 text-lg font-bold">Phone</h3>
                   </div>
                   <p className="text-gray-300 text-sm">Main: 9778431767</p>
                   <p className="text-gray-300 text-sm">Support: 9778477796</p>
@@ -252,13 +252,13 @@ const Contact = () => {
 
                 {/* Email */}
                 <div className="bg-black text-white p-6 rounded-md">
-                  <div className="flex items-center mb-4">
+                  <div className="items-center mb-4">
                     <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
                       <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     </div>
-                    <h3 className="ml-3 text-lg font-bold">Email</h3>
+                    <h3 className="mt-3 text-lg font-bold">Email</h3>
                   </div>
                   <p className="text-gray-300 text-sm">kumargeneratorshouse@gmail.com</p>
                 </div>
@@ -321,7 +321,7 @@ const Contact = () => {
                 </div>
                 
                 {/* Right Side: Resume Form - Updated to match image */}
-                <div className="bg-gray-400 p-6 rounded-md text-black">
+                <div className="bg-[#AAAAAA] p-6 rounded-md text-black">
                   <form onSubmit={handleResumeSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
@@ -401,7 +401,7 @@ const Contact = () => {
                     
                     <button
                       type="submit"
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded transition-colors"
+                      className="w-full bg-[#2D6FBA] hover:bg-[#2360a0] text-white font-medium py-3 px-4 rounded transition-colors"
                     >
                       Submit Application
                     </button>
@@ -411,30 +411,35 @@ const Contact = () => {
               
               {/* Map Section */}
               <div className="mt-12">
-                <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-3">
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
+                <div className="relative w-full">
+                  {/* Full width map */}
+                  <div className="w-[99vw] h-72 md:h-80 lg:h-96 bg-gray-700 -translate-x-[12vw] overflow-hidden relative">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.906561651749!2d77.0909653!3d28.628740799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d04afb8dbcfe7%3A0x7a3fea49479dd4c8!2sWestend%20Mall!5e0!3m2!1sen!2sin!4v1695047878395!5m2!1sen!2sin"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen={false}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Kumar Power Office Location"
+                      className="absolute inset-0"
+                    />
+                    {/* Overlay info card */}
+                    <div className="absolute left-16 bottom-8 bg-black/80 text-white rounded-lg shadow-lg py-10 px-6 max-w-xs flex flex-col gap-2">
+                      <div className="flex items-center gap-2 mb-1">
+                        <svg className="w-5 h-5 text-[#2D6FBA]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <circle cx="12" cy="11" r="3" fill="currentColor" />
+                        </svg>
+                        <span className="font-semibold text-lg">Our Office</span>
+                      </div>
+                      <div className="text-sm font-extralight leading-snug tracking-tighter">
+                        New Address: 904, 9th Floor, Westend Mall,<br />
+                        Janakpuri, New Delhi - 110058
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="text-lg font-bold">Our Office</h3>
-                </div>
-                <p className="mb-4 text-gray-300">New Address: 904, 9th Floor, Westend Mall, Janakpuri, New Delhi - 110058</p>
-                
-                <div className="w-full h-72 bg-gray-700 rounded-md overflow-hidden relative">
-                  {/* Google Maps embed */}
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.906561651749!2d77.0909653!3d28.628740799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d04afb8dbcfe7%3A0x7a3fea49479dd4c8!2sWestend%20Mall!5e0!3m2!1sen!2sin!4v1695047878395!5m2!1sen!2sin" 
-                    width="100%" 
-                    height="100%" 
-                    style={{ border: 0 }} 
-                    allowFullScreen={false} 
-                    loading="lazy" 
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Kumar Power Office Location"
-                    className="absolute inset-0"
-                  />
                 </div>
               </div>
             </div>

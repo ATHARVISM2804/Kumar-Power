@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <>
       {/* Call To Action Section */}
-      <section className="bg-white border-t border-gray-200 px-4 sm:px-6 lg:px-8">
+      {/* <section className="bg-white border-t border-gray-200 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 py-8 sm:py-12">
           <div className="flex-1 max-w-full lg:max-w-2xl">
             <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold text-black mb-3">Call To Action</h2>
@@ -34,7 +34,7 @@ const Footer = () => {
             </a>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Main Footer */}
       <footer id="contact" className="bg-black text-white">
