@@ -453,7 +453,7 @@ const PhotoGallery = () => {
                       alt={story.alt} 
                       className="w-full h-64 object-cover"
                     />
-                    <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+                    {/* <div className="absolute inset-0 bg-black bg-opacity-40"></div> */}
                     <div className="p-4 bg-white">
                       <h4 className="font-bold">{details.title}</h4>
                       <p className="text-sm text-gray-600 mt-1">{details.description}</p>
