@@ -69,14 +69,14 @@ const About = () => {
           </p>
 
           {/* Timeline Container with gradient background */}
-          <div className="max-w-6xl mx-auto bg-gradient-to-b from-zinc-800 to-zinc-600 rounded-lg p-8">
+          <div className="max-w-6xl mx-auto bg-gradient-to-b from-white/95 to-transparent p-8">
             {/* 1975 - Foundation */}
             <div className="relative grid md:grid-cols-2 gap-6 items-center mb-16">
-              <div className="bg-zinc-800 p-6 rounded-lg">
+              <div className="text-black p-6 rounded-lg flex flex-col items-start md:items-start">
                 <span className="inline-block px-3 py-1 bg-black text-white text-sm font-medium rounded-md mb-4">1975</span>
                 <h3 className="text-xl font-bold mb-3">Foundation</h3>
-                <p className="text-zinc-300">Kumar Generator House was established with a vision to provide reliable power solutions to businesses across India.</p>
-                <div className="absolute bottom-0 left-0 h-1 w-16 bg-zinc-600 mt-4 ml-6"></div>
+                <p>Kumar Generator House was established with a vision to provide reliable power solutions to businesses across India.</p>
+                <div className="w-16 h-1 bg-zinc-600 mt-4 self-start"></div>
               </div>
               <div>
                 <img 
@@ -86,14 +86,13 @@ const About = () => {
                 />
               </div>
             </div>
-            
             {/* 2005 - Kirloskar Partnership */}
             <div className="relative grid md:grid-cols-2 gap-6 items-center mb-16">
-              <div className="md:order-2 bg-zinc-800 p-6 rounded-lg">
+              <div className="text-black p-6 rounded-lg md:order-2 flex flex-col items-start md:items-start">
                 <span className="inline-block px-3 py-1 bg-black text-white text-sm font-medium rounded-md mb-4">2005</span>
                 <h3 className="text-xl font-bold mb-3">Kirloskar Partnership</h3>
-                <p className="text-zinc-300">Became an authorized partner of Kirloskar, expanding our product range and technical capabilities.</p>
-                <div className="absolute bottom-0 left-0 h-1 w-16 bg-zinc-600 mt-4 ml-6"></div>
+                <p>Became an authorized partner of Kirloskar, expanding our product range and technical capabilities.</p>
+                <div className="w-16 h-1 bg-zinc-600 mt-4 self-start"></div>
               </div>
               <div className="md:order-1">
                 <img 
@@ -103,14 +102,13 @@ const About = () => {
                 />
               </div>
             </div>
-            
             {/* 2012 - ISO Certification */}
             <div className="relative grid md:grid-cols-2 gap-6 items-center mb-16">
-              <div className="bg-zinc-800 p-6 rounded-lg">
+              <div className="text-black p-6 rounded-lg flex flex-col items-start md:items-start">
                 <span className="inline-block px-3 py-1 bg-black text-white text-sm font-medium rounded-md mb-4">2012</span>
                 <h3 className="text-xl font-bold mb-3">ISO Certification</h3>
-                <p className="text-zinc-300">Achieved ISO 9001:2015 certification, validating our commitment to quality management systems.</p>
-                <div className="absolute bottom-0 left-0 h-1 w-16 bg-zinc-600 mt-4 ml-6"></div>
+                <p>Achieved ISO 9001:2015 certification, validating our commitment to quality management systems.</p>
+                <div className="w-16 h-1 bg-zinc-600 mt-4 self-start"></div>
               </div>
               <div>
                 <img 
@@ -120,14 +118,13 @@ const About = () => {
                 />
               </div>
             </div>
-            
             {/* 2020 - Nationwide Expansion */}
             <div className="relative grid md:grid-cols-2 gap-6 items-center">
-              <div className="md:order-2 bg-zinc-800 p-6 rounded-lg">
+              <div className="text-white p-6 rounded-lg md:order-2 flex flex-col items-start md:items-start">
                 <span className="inline-block px-3 py-1 bg-black text-white text-sm font-medium rounded-md mb-4">2020</span>
                 <h3 className="text-xl font-bold mb-3">Nationwide Expansion</h3>
-                <p className="text-zinc-300">Expanded operations to all major cities in India with service centers and technical support teams.</p>
-                <div className="absolute bottom-0 left-0 h-1 w-16 bg-zinc-600 mt-4 ml-6"></div>
+                <p>Expanded operations to all major cities in India with service centers and technical support teams.</p>
+                <div className="w-16 h-1 bg-white mt-4 self-start"></div>
               </div>
               <div className="md:order-1">
                 <img 
@@ -149,76 +146,48 @@ const About = () => {
           </h2>
           {/* Blue underline below the heading */}
           <div className="mx-auto w-44 h-1 bg-[#2D6FBA] rounded mb-10"></div>
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
+          <div className="flex flex-wrap justify-center gap-8 mt-12">
             {/* Team Member 1 */}
-            <div className="text-center">
-              <div className="bg-white p-4 rounded-sm shadow-md h-full">
-                <img 
-                  src={rajvinder}
-                  alt="Rajvinder Singh Kumar" 
-                  className="w-48 h-48 object-cover mx-auto mb-4"
-                />
-                <h3 className="text-base font-bold uppercase mb-1">RAJVINDER SINGH KUMAR</h3>
-                <p className="text-primary font-semibold text-sm mb-1">Founder and CEO</p>
-                <p className="text-xs text-gray-500 mb-3">Proud member of NRI Gaurdian Delhi Branch</p>
-                <p className="mt-2 text-sm text-left">
-                  Rajvinder Singh Kumar is the Founder and CEO of Kumar Generator 
-                  House, where he provides strategic vision for innovative and 
-                  sustainable power solutions. With decades of industry experience 
-                  in power generation equipment, he has driven remarkable growth and 
-                  customer satisfaction. With an unwavering focus on quality, client 
-                  satisfaction, and a commitment to excellence. Under his guidance, 
-                  Kumar Generator House has become a trusted name in the industry, 
-                  known for delivering reliable and efficient end-to-end power 
-                  solutions.
-                </p>
-              </div>
+            <div className="bg-white rounded-lg shadow-md flex flex-col items-center px-6 py-8 max-w-[320px] w-full">
+              <img 
+                src={rajvinder}
+                alt="Rajvinder Singh Kumar" 
+                className="w-44 h-44 object-cover mb-4 rounded"
+              />
+              <h3 className="text-lg font-bold uppercase mb-1 text-center">RAJVINDER SINGH KUMAR</h3>
+              <p className="font-semibold text-sm mb-1 text-center">(Founder and CEO)</p>
+              <p className="text-xs text-gray-500 mb-3 text-center">Proud member of NRI Gaurdian Delhi Branch</p>
+              <p className="mt-2 text-sm text-center">
+                Rajvinder Singh Kumar is the Founder and CEO of Kumar Generator House, where he provides strategic vision for innovative and sustainable power solutions. With decades of industry experience in power generation equipment, he has driven remarkable growth and customer satisfaction. With an unwavering focus on quality, client satisfaction, and a commitment to excellence. Under his guidance, Kumar Generator House has become a trusted name in the industry, known for delivering reliable and efficient end-to-end power solutions.
+              </p>
             </div>
-            
             {/* Team Member 2 */}
-            <div className="text-center">
-              <div className="bg-white p-4 rounded-lg shadow-md h-full">
-                <img 
-                  src={jagjit}
-                  alt="Jagjit Singh Kumar" 
-                  className="w-48 h-48 object-cover mx-auto mb-4"
-                />
-                <h3 className="text-base font-bold uppercase mb-1">JAGJIT SINGH KUMAR</h3>
-                <p className="text-primary font-semibold text-sm mb-1">Director</p>
-                <p className="text-xs text-gray-500 mb-3">Proud member of NRI Guardian Delhi Central</p>
-                <p className="mt-2 text-sm text-left">
-                  Jagjit Singh Kumar is a director at Kumar Generator House, where he 
-                  plays a pivotal role in shaping the company's overall trajectory and 
-                  growth initiatives. With a focus on enhancing internal processes and 
-                  building partnerships, he has accelerated the company's expansion 
-                  while maintaining the high quality standards that distinguish our 
-                  clients. His strategic approach and dedication to innovation continue to 
-                  shape the company's success in the power solutions industry.
-                </p>
-              </div>
+            <div className="bg-white rounded-lg shadow-md flex flex-col items-center px-6 py-8 max-w-[320px] w-full">
+              <img 
+                src={jagjit}
+                alt="Jagjit Singh Kumar" 
+                className="w-44 h-44 object-cover mb-4 rounded"
+              />
+              <h3 className="text-lg font-bold uppercase mb-1 text-center">JAGJIT SINGH KUMAR</h3>
+              <p className="font-semibold text-sm mb-1 text-center">(Director)</p>
+              <p className="text-xs text-gray-500 mb-3 text-center">Proud member of NRI Guardian Delhi Central</p>
+              <p className="mt-2 text-sm text-center">
+                Jagjit Singh Kumar is a director at Kumar Generator House, where he plays a pivotal role in shaping the company's overall trajectory and growth initiatives. With a focus on enhancing internal processes and building partnerships, he has accelerated the company's expansion while maintaining the high quality standards that distinguish our clients. His strategic approach and dedication to innovation continue to shape the company's success in the power solutions industry.
+              </p>
             </div>
-            
             {/* Team Member 3 */}
-            <div className="text-center">
-              <div className="bg-white p-4 rounded-lg shadow-md h-full">
-                <img 
-                  src={manjot}
-                  alt="Manjot Singh Kumar" 
-                  className="w-48 h-48 object-cover mx-auto mb-4"
-                />
-                <h3 className="text-base font-bold uppercase mb-1">MANJOT SINGH KUMAR</h3>
-                <p className="text-primary font-semibold text-sm mb-1">Director</p>
-                <p className="text-xs text-gray-500 mb-3">Kumar Generator House India Pvt. Ltd</p>
-                <p className="mt-2 text-sm text-left">
-                  Manjot Singh Kumar is the director of Kumar Generator House, a 
-                  company with a proven track record of over 30 years in providing power 
-                  solutions. With a keen focus on growth, innovation, and sustainability, 
-                  Manjot leads the company toward achieving excellence in every aspect 
-                  of operations. His leadership ensures streamlined processes and 
-                  operational efficiency, and long-term business relationships, ensuring 
-                  that Kumar Generator House remains a trusted name in the industry.
-                </p>
-              </div>
+            <div className="bg-white rounded-lg shadow-md flex flex-col items-center px-6 py-8 max-w-[320px] w-full">
+              <img 
+                src={manjot}
+                alt="Manjot Singh Kumar" 
+                className="w-44 h-44 object-cover mb-4 rounded"
+              />
+              <h3 className="text-lg font-bold uppercase mb-1 text-center">MANJOT SINGH KUMAR</h3>
+              <p className="font-semibold text-sm mb-1 text-center">(Director)</p>
+              <p className="text-xs text-gray-500 mb-3 text-center">Kumar Generator House India Pvt. Ltd</p>
+              <p className="mt-2 text-sm text-center">
+                Manjot Singh Kumar is the director of Kumar Generator House, a company with a proven track record of over 30 years in providing power solutions. With a keen focus on growth, innovation, and sustainability, Manjot leads the company toward achieving excellence in every aspect of operations. His leadership ensures streamlined processes and operational efficiency, and long-term business relationships, ensuring that Kumar Generator House remains a trusted name in the industry.
+              </p>
             </div>
           </div>
         </div>

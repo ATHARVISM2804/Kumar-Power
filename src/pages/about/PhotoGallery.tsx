@@ -453,7 +453,7 @@ const PhotoGallery = () => {
                       alt={story.alt} 
                       className="w-full h-64 object-cover"
                     />
-                    <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+                    {/* <div className="absolute inset-0 bg-black bg-opacity-40"></div> */}
                     <div className="p-4 bg-white">
                       <h4 className="font-bold">{details.title}</h4>
                       <p className="text-sm text-gray-600 mt-1">{details.description}</p>
@@ -468,7 +468,7 @@ const PhotoGallery = () => {
       </section>
       
       {/* Experience Power Excellence Section */}
-      <section className="py-10 bg-black text-white mb-8">
+      <section className="py-10 bg-black text-white ">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="flex flex-col justify-center">
@@ -485,11 +485,11 @@ const PhotoGallery = () => {
                 </a>
               </div>
             </div>
-            <div className="h-72 overflow-hidden rounded">
+            <div className="flex items-center justify-center">
               <img 
                 src={gal5}
                 alt="Industrial generator installation" 
-                className="w-full h-full object-cover"
+                className="w-full h-auto max-h-[350px] rounded object-contain"
               />
             </div>
           </div>
@@ -504,6 +504,6 @@ const PhotoGallery = () => {
 };
 
 export default PhotoGallery;
-          
+
 
 
