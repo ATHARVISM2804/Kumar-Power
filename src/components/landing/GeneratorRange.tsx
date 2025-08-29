@@ -5,22 +5,100 @@ import portable1 from "@/assets/Range4.png";
 import portable2 from "@/assets/Range5.png";
 import portable3 from "@/assets/Range6.png";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Modal for generator info
+const GeneratorModal = ({
+  open,
+  onClose,
+  generator,
+}: {
+  open: boolean;
+  onClose: () => void;
+  generator: { title: string; img: string; caption: string } | null;
+}) => {
+  if (!open || !generator) return null;
+  return (
+    <AnimatePresence>
+      <motion.div
+        className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.3 }}
+        onClick={onClose}
+      >
+        <motion.div
+          className="bg-white rounded-xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-lg"
+          initial={{ opacity: 0, y: 40, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: -40, scale: 0.95 }}
+          transition={{ type: "spring", damping: 22, stiffness: 300 }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="flex justify-between items-center p-4 border-b">
+            <h2 className="text-lg font-bold">{generator.title}</h2>
+            <button
+              onClick={onClose}
+              className="p-1 rounded-full hover:bg-gray-100"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          </div>
+          <div className="p-6">
+            <img
+              src={generator.img}
+              alt={generator.title}
+              className="w-full h-48 object-contain rounded mb-4 bg-gray-100"
+            />
+            <p className="text-base text-gray-800 mb-2">{generator.caption}</p>
+            <div className="mt-4">
+              <ul className="list-disc pl-5 text-sm text-gray-700 space-y-2">
+                <li>Kirloskar-certified reliability and performance</li>
+                <li>Suitable for industrial, commercial, and backup use</li>
+                <li>Robust after-sales support and service network</li>
+                <li>Contact us for detailed specifications and pricing</li>
+                <li>Power Range: Available from 2.8 kVA up to 1500 kVA</li>
+                <li>Fuel Options: Diesel, Gas, CPCB4+ compliant models</li>
+                <li>Features: High efficiency, low emissions, silent operation, easy maintenance</li>
+                <li>Applications: Factories, hospitals, campuses, events, remote sites</li>
+                <li>Warranty: Up to 2 years or 5000 hours (whichever is earlier)</li>
+                <li>Optional Accessories: AMF panels, remote monitoring, soundproof canopy</li>
+              </ul>
+            </div>
+            
+          </div>
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
+  );
+};
+
 // Animated Card component
-const Card = ({ title, img, caption }: { title: string; img: string; caption: string }) => (
+const Card = ({
+  title,
+  img,
+  caption,
+  onExplore,
+}: {
+  title: string;
+  img: string;
+  caption: string;
+  onExplore: () => void;
+}) => (
   <motion.article
     className="overflow-hidden flex flex-col shadow bg-gray-900 rounded-lg border border-gray-800"
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: -20 }}
     transition={{ duration: 0.4 }}
-    whileHover={{ 
-      scale: 1.03, 
-      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-      borderColor: "#3b82f6" 
+    whileHover={{
+      scale: 1.03,
+      boxShadow:
+        "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      borderColor: "#3b82f6",
     }}
     whileTap={{ scale: 0.98 }}
   >
@@ -32,18 +110,24 @@ const Card = ({ title, img, caption }: { title: string; img: string; caption: st
         loading="lazy"
         initial={{ scale: 1 }}
         whileHover={{ scale: 1.12, rotate: 0.5 }}
-        transition={{ 
+        transition={{
           duration: 0.4,
-          ease: "easeOut"
+          ease: "easeOut",
         }}
       />
     </div>
-    <motion.div 
+    <motion.div
       className="p-4 flex-1 flex flex-col"
-      initial={{ background: "linear-gradient(180deg, rgba(17, 24, 39, 0) 0%, rgba(17, 24, 39, 1) 100%)" }}
-      whileHover={{ background: "linear-gradient(180deg, rgba(29, 78, 216, 0) 0%, rgba(29, 78, 216, 0.2) 100%)" }}
+      initial={{
+        background:
+          "linear-gradient(180deg, rgba(17, 24, 39, 0) 0%, rgba(17, 24, 39, 1) 100%)",
+      }}
+      whileHover={{
+        background:
+          "linear-gradient(180deg, rgba(29, 78, 216, 0) 0%, rgba(29, 78, 216, 0.2) 100%)",
+      }}
     >
-      <motion.h3 
+      <motion.h3
         className="font-semibold mb-1 text-lg"
         whileHover={{ color: "#60a5fa" }}
       >
@@ -55,31 +139,29 @@ const Card = ({ title, img, caption }: { title: string; img: string; caption: st
           whileHover={{ x: 5 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-          <Button 
-            size="sm" 
-            className="overflow-hidden group relative" 
+          <Button
+            size="sm"
+            className="overflow-hidden group relative"
             variant="default"
+            onClick={onExplore}
           >
-            <motion.span 
-              initial={{ opacity: 1 }}
-              whileHover={{ opacity: 0.9 }}
-            >
+            <motion.span initial={{ opacity: 1 }} whileHover={{ opacity: 0.9 }}>
               Explore more
             </motion.span>
             <motion.div
               className="ml-1 inline-flex"
               initial={{ x: 0 }}
               whileHover={{ x: 3 }}
-              transition={{ 
+              transition={{
                 duration: 0.2,
                 repeat: Infinity,
                 repeatType: "reverse",
-                repeatDelay: 0.2
+                repeatDelay: 0.2,
               }}
             >
               <ArrowRight className="h-4 w-4 group-hover:text-white" />
             </motion.div>
-            <motion.span 
+            <motion.span
               className="absolute bottom-0 left-0 h-0.5 bg-white"
               initial={{ width: 0 }}
               whileHover={{ width: "100%" }}
@@ -96,6 +178,14 @@ const GeneratorRange = () => {
   // Define generator types for filtering
   const filterTypes = ["All", "Gas", "Portable", "Diesel", "CPCB4+"];
   const [activeFilter, setActiveFilter] = useState("All");
+
+  // Modal state
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalGenerator, setModalGenerator] = useState<{
+    title: string;
+    img: string;
+    caption: string;
+  } | null>(null);
 
   // Define data with categories for filtering
   const generatorData = [
@@ -141,7 +231,15 @@ const GeneratorRange = () => {
   const filteredGenerators =
     activeFilter === "All"
       ? generatorData
-      : generatorData.filter((generator) => generator.categories.includes(activeFilter));
+      : generatorData.filter((generator) =>
+          generator.categories.includes(activeFilter)
+        );
+
+  // Handler for Explore More button
+  const handleExplore = (generator: { title: string; img: string; caption: string }) => {
+    setModalGenerator(generator);
+    setModalOpen(true);
+  };
 
   return (
     <motion.section
@@ -235,6 +333,7 @@ const GeneratorRange = () => {
                     title={generator.title}
                     img={generator.img}
                     caption={generator.caption}
+                    onExplore={() => handleExplore(generator)}
                   />
                 </motion.div>
               ))}
@@ -252,6 +351,12 @@ const GeneratorRange = () => {
           </motion.div>
         )}
       </div>
+      {/* Modal for generator info */}
+      <GeneratorModal
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+        generator={modalGenerator}
+      />
     </motion.section>
   );
 };

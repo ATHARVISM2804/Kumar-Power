@@ -207,7 +207,7 @@ const OurClients = () => {
       >
         <div className="absolute inset-0 bg-black opacity-20"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="text-5xl md:text-6xl font-bold mb-4">
             Powering India's<br />Elite Enterprises
           </h1>
           {/* Add underline below the heading */}

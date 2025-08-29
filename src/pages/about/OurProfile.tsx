@@ -142,7 +142,7 @@ const About = () => {
               <img 
                 src={rajvinder}
                 alt="Rajvinder Singh Kumar" 
-                className=" h-full object-cover mb-4 "
+                className=" h-[57vh] object-cover mb-4 "
               />
               <h3 className="text-lg font-bold uppercase mb-1 text-center">RAJVINDER SINGH KUMAR</h3>
               <p className="font-semibold text-sm mb-1 text-center">(Founder and CEO)</p>

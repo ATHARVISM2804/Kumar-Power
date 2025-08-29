@@ -324,7 +324,11 @@ const Certifications = () => {
               strive to improve our processes, enhance our services, and exceed industry standards.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold shadow-lg">
+              <button onClick={
+                () => {
+                  window.location.href = "/contact";
+                }
+              } className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold shadow-lg">
                 Contact Us
               </button>
               <button className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors font-semibold">

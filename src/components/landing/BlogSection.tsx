@@ -296,7 +296,11 @@ const BlogSection = () => {
             </p>
           </div>
           <div className="flex flex-col gap-4 w-full md:w-[320px] md:mr-10 mt-8 md:mt-0">
-            <button
+            <button onClick={
+                () => {
+                  window.location.href = "/contact";
+                }
+              }
               type="button"
               className="bg-black hover:bg-gray-900 text-white font-medium px-6 py-3 rounded-md transition-colors w-full"
             >

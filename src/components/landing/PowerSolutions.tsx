@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, X } from "lucide-react";
 import diesel from "@/assets/ps1.png";
 import gas from "@/assets/ps2.png";
 import portable from "@/assets/ps3.png";
@@ -19,7 +19,71 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import React from "react";
 
-const PSCard = ({ title, desc, specs, img }: { title: string; desc: string; specs: string[]; img: string }) => (
+// Modal for product info
+const ProductModal = ({
+  open,
+  onClose,
+  product,
+}: {
+  open: boolean;
+  onClose: () => void;
+  product: { title: string; desc: string; specs: string[]; img: string } | null;
+}) => {
+  if (!open || !product) return null;
+  return (
+    <AnimatePresence>
+      <motion.div
+        className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.3 }}
+        onClick={onClose}
+      >
+        <motion.div
+          className="bg-white rounded-xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-lg"
+          initial={{ opacity: 0, y: 40, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: -40, scale: 0.95 }}
+          transition={{ type: "spring", damping: 22, stiffness: 300 }}
+          onClick={e => e.stopPropagation()}
+        >
+          <div className="flex justify-between items-center p-4 border-b">
+            <h2 className="text-lg font-bold">{product.title}</h2>
+            <button
+              onClick={onClose}
+              className="p-1 rounded-full hover:bg-gray-100"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          </div>
+          <div className="p-6">
+            <img
+              src={product.img}
+              alt={product.title}
+              className="w-full h-48 object-contain rounded mb-4 bg-gray-100"
+            />
+            <p className="text-base text-gray-800 mb-2">{product.desc}</p>
+            <div className="mt-4">
+              <ul className="list-disc pl-5 text-sm text-gray-700 space-y-2">
+                {product.specs.map((spec, idx) => (
+                  <li key={idx}>{spec}</li>
+                ))}
+                <li>Certified for reliability and safety</li>
+                <li>Suitable for industrial, commercial, and backup use</li>
+                <li>Contact us for detailed specifications and pricing</li>
+                <li>Warranty and after-sales support available</li>
+              </ul>
+            </div>
+            
+          </div>
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
+  );
+};
+
+const PSCard = ({ title, desc, specs, img, onExplore }: { title: string; desc: string; specs: string[]; img: string; onExplore: () => void }) => (
   <motion.article 
     className="bg-white rounded-lg overflow-hidden shadow-md flex flex-col"
     initial={{ opacity: 0, y: 20 }}
@@ -86,7 +150,7 @@ const PSCard = ({ title, desc, specs, img }: { title: string; desc: string; spec
           whileHover={{ x: 5 }}
           transition={{ type: "spring", stiffness: 400 }}
         >
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-md overflow-hidden">
+          <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-md overflow-hidden" onClick={onExplore}>
             <div className="flex items-center gap-2">
               Explore More 
               <motion.div
@@ -145,6 +209,8 @@ const PowerSolutions = () => {
   const [activeCategory, setActiveCategory] = useState<string>("Generators");
   const [selectedFilters, setSelectedFilters] = useState<{ [key: string]: string[] }>({});
   const [filteredProducts, setFilteredProducts] = useState<any[]>([]);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalProduct, setModalProduct] = useState<{ title: string; desc: string; specs: string[]; img: string } | null>(null);
 
   // Categories for the navigation tabs
   const categories = [
@@ -398,6 +464,12 @@ const PowerSolutions = () => {
     };
   }, []);
 
+  // Handler for Explore More button
+  const handleExplore = (product: { title: string; desc: string; specs: string[]; img: string }) => {
+    setModalProduct(product);
+    setModalOpen(true);
+  };
+
   return (
     <section id="solutions" className="py-0">
       {/* Hero Image Section moved to the top */}
@@ -511,6 +583,7 @@ const PowerSolutions = () => {
                   desc={product.desc}
                   specs={product.specs}
                   img={product.img}
+                  onExplore={() => handleExplore(product)}
                 />
               ))}
             </motion.div>
@@ -727,6 +800,13 @@ const PowerSolutions = () => {
           transition={{ delay: 2.0, duration: 0.5 }}
         ></motion.div>
       </motion.div>
+
+      {/* Product info modal */}
+      <ProductModal
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+        product={modalProduct}
+      />
     </section>
   );
 };
