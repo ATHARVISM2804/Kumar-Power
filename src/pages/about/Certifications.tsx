@@ -181,7 +181,7 @@ const Certifications = () => {
             variants={fadeIn}
             className="text-center"
           >
-            <h1 className="text-5xl font-bold tracking-tight mb-4 text-blue-500">
+            <h1 className="text-5xl font-bold tracking-tight mb-4" style={{ color: "#2D6FBA" }}>
               Our Certifications
             </h1>
             <p className="text-xl text-white max-w-3xl mx-auto mb-12">
@@ -251,7 +251,7 @@ const Certifications = () => {
             variants={fadeIn}
             className="text-3xl font-bold mb-12 text-center"
           >
-            Why Certifications <span className="text-blue-600">Matter</span>
+            Why Certifications <span style={{ color: "#2D6FBA" }}>Matter</span>
           </motion.h2>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -293,7 +293,7 @@ const Certifications = () => {
                 variants={fadeIn}
                 className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow flex flex-col items-center text-center"
               >
-                <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 mb-6">
+                <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mb-6" style={{ color: "#2D6FBA" }}>
                   {item.icon}
                 </div>
                 <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
@@ -328,10 +328,10 @@ const Certifications = () => {
                 () => {
                   window.location.href = "/contact";
                 }
-              } className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold shadow-lg">
+              } className="bg-[#2D6FBA] text-white px-8 py-3 rounded-lg hover:bg-[#22548e] transition-colors font-semibold shadow-lg">
                 Contact Us
               </button>
-              <button className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors font-semibold">
+              <button className="border-2 border-[#2D6FBA] text-[#2D6FBA] px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors font-semibold">
                 View Projects
               </button>
             </div>
@@ -342,7 +342,7 @@ const Certifications = () => {
       {/* Certificate Slider Section */}
       <section className="py-20 bg-black text-white">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-12 text-center">Our Professional <span className="text-blue-500">Certifications</span></h2>
+          <h2 className="text-3xl font-bold mb-12 text-center">Our Professional <span style={{ color: "#2D6FBA" }}>Certifications</span></h2>
           
           <div className="relative" ref={certificateSliderRef}>
             {/* Main slide display */}
@@ -368,7 +368,7 @@ const Certifications = () => {
                         />
                       </div>
                       <h3 className="text-xl font-bold mb-2 text-center">{certificate.name}</h3>
-                      <span className="bg-blue-900 text-blue-200 text-xs px-3 py-1 rounded-full mx-auto mb-3">
+                      <span className="bg-[#22548e] text-[#2D6FBA] text-xs px-3 py-1 rounded-full mx-auto mb-3">
                         Since {certificate.year}
                       </span>
                       <p className="text-gray-300 text-sm mb-3">{certificate.description}</p>
@@ -390,7 +390,7 @@ const Certifications = () => {
                     setTimeout(() => setIsAutoplay(true), 10000);
                   }}
                   className={`w-3 h-3 rounded-full transition-colors ${
-                    index === activeIndex ? 'bg-blue-500' : 'bg-gray-600'
+                    index === activeIndex ? 'bg-[#2D6FBA]' : 'bg-gray-600'
                   }`}
                   aria-label={`View certificates group ${index + 1}`}
                 />

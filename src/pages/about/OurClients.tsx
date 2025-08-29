@@ -185,7 +185,7 @@ const OurClients = () => {
   const TabButton = ({ id, title, icon, isActive }) => (
     <button 
       onClick={() => setActiveTab(id)}
-      className={`flex items-center px-3 py-1.5 text-sm rounded-md ${isActive ? 'bg-blue-600' : 'bg-[#2D3546]'} text-white`}
+      className={`flex items-center px-3 py-1.5 text-sm rounded-md ${isActive ? 'bg-[#2D6FBA]' : 'bg-[#2D3546]'} text-white`}
     >
       {icon}
       {title}
@@ -336,15 +336,15 @@ const OurClients = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-3 gap-8 text-center">
             <div>
-              <h3 className="text-3xl font-bold text-blue-500">500+</h3>
+              <h3 className="text-3xl font-bold text-[#2D6FBA]">500+</h3>
               <p className="text-sm text-gray-600">Enterprise Clients</p>
             </div>
             <div>
-              <h3 className="text-3xl font-bold text-blue-500">30+</h3>
+              <h3 className="text-3xl font-bold text-[#2D6FBA]">30+</h3>
               <p className="text-sm text-gray-600">Years of Service</p>
             </div>
             <div>
-              <h3 className="text-3xl font-bold text-blue-500">10000+</h3>
+              <h3 className="text-3xl font-bold text-[#2D6FBA]">10000+</h3>
               <p className="text-sm text-gray-600">Installations Across India</p>
             </div>
           </div>
@@ -425,7 +425,7 @@ const OurClients = () => {
                 {clientCategories[activeTab].title}
               </p>
               {/* Blue underline below the name */}
-              <span className="mt-2 w-full h-0.5 bg-gradient-to-r from-blue-400 to-blue-700/0 rounded"></span>
+              <span className="mt-2 w-full h-0.5 bg-gradient-to-r from-[#2D6FBA] to-[#2D6FBA]/0 rounded"></span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-8">
               {clientCategories[activeTab].clients.map((client, index) => (

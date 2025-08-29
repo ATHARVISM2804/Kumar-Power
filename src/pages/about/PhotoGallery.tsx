@@ -474,7 +474,7 @@ const PhotoGallery = () => {
                 onClick={() => setActiveFilter(filter.id)}
                 className={`px-4 py-1 text-sm rounded-md ${
                   activeFilter === filter.id 
-                    ? "bg-blue-600 text-white" 
+                    ? "bg-[#2D6FBA] text-white" 
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                 }`}
               >
@@ -515,7 +515,7 @@ const PhotoGallery = () => {
                 <p className="text-white text-lg">No gallery images found matching your filter criteria.</p>
                 <button 
                   onClick={() => {setActiveFilter('all'); setSearchQuery('');}}
-                  className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+                  className="mt-4 px-4 py-2 bg-[#2D6FBA] text-white rounded-md hover:bg-[#22548e] transition-colors"
                 >
                   Show All Images
                 </button>
@@ -531,7 +531,7 @@ const PhotoGallery = () => {
                 {filteredImages.length > 12 && !showAllImages && (
                   <div className="flex justify-center mt-8">
                     <button
-                      className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                      className="px-6 py-2 bg-[#2D6FBA] text-white rounded hover:bg-[#22548e] transition-colors"
                       onClick={() => setShowAllImages(true)}
                     >
                       See More
@@ -629,7 +629,7 @@ const PhotoGallery = () => {
                 Ready to transform your power infrastructure with industry-leading generator solutions? Our team of experts is ready to guide you through every step.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a href="/contact" className="bg-blue-600 text-white text-sm px-6 py-2 rounded hover:bg-blue-700 transition-colors">
+                <a href="/contact" className="bg-[#2D6FBA] text-white text-sm px-6 py-2 rounded hover:bg-[#22548e] transition-colors">
                   Book Your Consultation →
                 </a>
                 <a href="/downloads/kumar-power-media-kit.pdf" download className="border border-white text-white text-sm px-6 py-2 rounded hover:bg-white hover:text-black transition-colors">

@@ -50,11 +50,11 @@ const AnnualMaintenanceService = () => {
           <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dinhcaf2c/image/upload/v1755014000/maintenance_service_detailed_vfgm3h.jpg')] opacity-20 bg-cover bg-center"></div>
           <div className="container mx-auto text-center px-4 relative z-10">
             <div className="flex items-center justify-center mb-4">
-              <span className="block h-px w-8 md:w-16 bg-blue-500 mr-2 md:mr-4" />
-              <span className="text-blue-500 text-xl md:text-3xl font-semibold tracking-wide">
+              <span style={{ backgroundColor: "#2D6FBA" }} className="block h-px w-8 md:w-16 mr-2 md:mr-4" />
+              <span style={{ color: "#2D6FBA" }} className="text-xl md:text-3xl font-semibold tracking-wide">
                 ANNUAL MAINTENANCE CONTRACTS
               </span>
-              <span className="block h-px w-8 md:w-16 bg-blue-500 ml-2 md:ml-4" />
+              <span style={{ backgroundColor: "#2D6FBA" }} className="block h-px w-8 md:w-16 ml-2 md:ml-4" />
             </div>
             <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white">
               Preventive Care for Uninterrupted Power
@@ -62,19 +62,18 @@ const AnnualMaintenanceService = () => {
             <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
               Ensure maximum uptime and equipment longevity with our comprehensive maintenance solutions
             </p>
-            <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg">
+            <Button asChild size="lg" style={{ backgroundColor: "#2D6FBA" }} className="hover:brightness-90 text-white px-8 py-6 text-lg">
               <Link to="/contact">Request AMC Quote</Link>
             </Button>
           </div>
         </div>
-
         {/* Intro Section - White Background */}
         <section className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Keep Your Power Systems Running at <span className="text-blue-600">Peak Efficiency</span>
+                  Keep Your Power Systems Running at <span style={{ color: "#2D6FBA" }}>Peak Efficiency</span>
                 </h2>
                 <p className="text-lg text-gray-700 mb-6">
                   Our Annual Maintenance Contracts (AMC) provide scheduled preventive maintenance, prompt repairs, and 
@@ -85,14 +84,15 @@ const AnnualMaintenanceService = () => {
                   extend equipment life, and optimize performance for maximum ROI.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
+                  <Button asChild size="lg" style={{ backgroundColor: "#2D6FBA" }} className="hover:brightness-90">
                     <Link to="/contact">Request AMC Quote</Link>
                   </Button>
                   <Button
                     asChild
                     size="lg"
                     variant="outline"
-                    className="border-blue-600 text-blue-600 bg-white hover:bg-blue-600 hover:text-white hover:border-blue-700 transition-colors duration-200"
+                    style={{ borderColor: "#2D6FBA", color: "#2D6FBA" }}
+                    className="bg-white hover:brightness-90 hover:text-white hover:bg-[#2D6FBA] hover:border-[#2D6FBA] transition-colors duration-200"
                   >
                     <Link to="/services">View All Services</Link>
                   </Button>
@@ -108,12 +108,11 @@ const AnnualMaintenanceService = () => {
             </div>
           </div>
         </section>
-
         {/* Benefits Section - Black Background */}
         <section className="py-16 md:py-24 bg-black text-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <span className="text-blue-400 font-medium uppercase tracking-wider">Why Choose Our AMC</span>
+              <span style={{ color: "#2D6FBA" }} className="font-medium uppercase tracking-wider">Why Choose Our AMC</span>
               <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">
                 Benefits of Our Annual Maintenance Contracts
               </h2>
@@ -121,42 +120,41 @@ const AnnualMaintenanceService = () => {
                 Proactive maintenance is the key to reliable power generation and equipment longevity
               </p>
             </div>
-            
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
+              {{
                 {
-                  icon: <Shield className="h-10 w-10" />,
+                  icon: <Shield className="h-10 w-10" style={{ color: "#2D6FBA" }} />,
                   title: "Prevent Costly Breakdowns",
                   description: "Regular maintenance identifies and resolves potential issues before they lead to major failures and expensive repairs."
                 },
                 {
-                  icon: <Clock className="h-10 w-10" />,
+                  icon: <Clock className="h-10 w-10" style={{ color: "#2D6FBA" }} />,
                   title: "Minimize Downtime",
                   description: "Scheduled maintenance during off-peak hours and priority emergency response ensure your operations continue without interruption."
                 },
                 {
-                  icon: <Calendar className="h-10 w-10" />,
+                  icon: <Calendar className="h-10 w-10" style={{ color: "#2D6FBA" }} />,
                   title: "Extend Equipment Life",
                   description: "Proper maintenance significantly extends the operational lifespan of generators and power equipment, maximizing your investment."
                 },
                 {
-                  icon: <AlertCircle className="h-10 w-10" />,
+                  icon: <AlertCircle className="h-10 w-10" style={{ color: "#2D6FBA" }} />,
                   title: "Regulatory Compliance",
                   description: "Our maintenance protocols ensure your equipment meets all environmental and safety regulations, avoiding potential penalties."
                 },
                 {
-                  icon: <FileText className="h-10 w-10" />,
+                  icon: <FileText className="h-10 w-10" style={{ color: "#2D6FBA" }} />,
                   title: "Detailed Documentation",
                   description: "Comprehensive service records and performance reports help with warranty claims, insurance requirements, and future planning."
                 },
                 {
-                  icon: <Wrench className="h-10 w-10" />,
+                  icon: <Wrench className="h-10 w-10" style={{ color: "#2D6FBA" }} />,
                   title: "Expert Technicians",
                   description: "All maintenance is performed by Kirloskar-certified engineers with extensive experience across our full range of equipment."
                 }
-              ].map((item, index) => (
+              }.map((item, index) => (
                 <Card key={index} className="bg-gray-900 border-0 p-6 hover:bg-gray-800 transition-colors duration-300">
-                  <div className="mb-4 text-blue-400">
+                  <div className="mb-4" style={{ color: "#2D6FBA" }}>
                     {item.icon}
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-white">{item.title}</h3>
@@ -168,12 +166,11 @@ const AnnualMaintenanceService = () => {
             </div>
           </div>
         </section>
-
         {/* Maintenance Process - Black Background */}
         <section className="py-16 md:py-24 bg-black text-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <span className="text-blue-400 font-medium uppercase tracking-wider">How We Work</span>
+              <span style={{ color: "#2D6FBA" }} className="font-medium uppercase tracking-wider">How We Work</span>
               <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">
                 Our Maintenance Process
               </h2>
@@ -181,15 +178,13 @@ const AnnualMaintenanceService = () => {
                 A systematic approach to ensure comprehensive care for your power equipment
               </p>
             </div>
-            
             <div className="max-w-4xl mx-auto">
               <div className="relative">
                 {/* Timeline line */}
-                <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-blue-500"></div>
-                
+                <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5" style={{ backgroundColor: "#2D6FBA" }}></div>
                 {/* Timeline items */}
                 <div className="space-y-16">
-                  {[
+                  {{
                     {
                       step: 1,
                       title: "Initial System Assessment",
@@ -215,12 +210,12 @@ const AnnualMaintenanceService = () => {
                       title: "Continuous Support",
                       description: "Ongoing technical assistance, emergency response, and proactive notifications for scheduled maintenance to ensure your equipment operates reliably."
                     }
-                  ].map((item, index) => (
+                  }.map((item, index) => (
                     <div key={index} className="relative pl-12 md:pl-24">
-                      <div className="absolute left-0 md:left-4 top-0 w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                      <div className="absolute left-0 md:left-4 top-0 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg" style={{ backgroundColor: "#2D6FBA" }}>
                         {item.step}
                       </div>
-                      <h3 className="text-2xl font-bold mb-3 text-blue-400">{item.title}</h3>
+                      <h3 className="text-2xl font-bold mb-3" style={{ color: "#2D6FBA" }}>{item.title}</h3>
                       <p className="text-gray-300 text-lg">
                         {item.description}
                       </p>
@@ -231,12 +226,11 @@ const AnnualMaintenanceService = () => {
             </div>
           </div>
         </section>
-
         {/* FAQ Section - White Background */}
         <section className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <span className="text-blue-600 font-medium uppercase tracking-wider">Get Answers</span>
+              <span style={{ color: "#2D6FBA" }} className="font-medium uppercase tracking-wider">Get Answers</span>
               <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">
                 Frequently Asked Questions
               </h2>
@@ -244,7 +238,6 @@ const AnnualMaintenanceService = () => {
                 Common questions about our Annual Maintenance Contracts
               </p>
             </div>
-            
             <div className="max-w-4xl mx-auto">
               <Accordion type="single" collapsible className="w-full">
                 {faqItems.map((item, index) => (
@@ -261,9 +254,8 @@ const AnnualMaintenanceService = () => {
             </div>
           </div>
         </section>
-
         {/* CTA Section - Black Background with gradient */}
-        <section className="py-16 md:py-24 bg-gradient-to-br from-black to-blue-900">
+        <section className="py-16 md:py-24" style={{ background: "linear-gradient(135deg, black 0%, #2D6FBA 100%)" }}>
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center text-white">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -276,7 +268,8 @@ const AnnualMaintenanceService = () => {
                 <Button
                   asChild
                   size="lg"
-                  className="bg-white border border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white hover:border-blue-900 px-8 py-6 text-lg transition-colors duration-200"
+                  style={{ backgroundColor: "white", borderColor: "#2D6FBA", color: "#2D6FBA" }}
+                  className="hover:bg-[#2D6FBA] hover:text-white hover:border-[#2D6FBA] px-8 py-6 text-lg transition-colors duration-200"
                 >
                   <Link to="/contact">Request AMC Quote</Link>
                 </Button>
@@ -284,7 +277,8 @@ const AnnualMaintenanceService = () => {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="bg-transparent border border-white text-white hover:bg-white hover:text-blue-900 hover:border-blue-900 px-8 py-6 text-lg transition-colors duration-200"
+                  style={{ borderColor: "white", color: "white" }}
+                  className="bg-transparent hover:bg-white hover:text-[#2D6FBA] hover:border-[#2D6FBA] px-8 py-6 text-lg transition-colors duration-200"
                 >
                   <Link to="/services">Explore Other Services</Link>
                 </Button>
@@ -293,6 +287,12 @@ const AnnualMaintenanceService = () => {
           </div>
         </section>
       </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default AnnualMaintenanceService;
       <Footer />
     </div>
   );
