@@ -160,7 +160,7 @@ const ValueClient = () => {
                     <Link to="/contact">Discuss Your Requirements</Link>
                   </Button>
                   <Button asChild size="lg" variant="outline" className='hover:bg-black'>
-                    <Link to="/services">View Our Services</Link>
+                    <Link to="/products">View Our Services</Link>
                   </Button>
                 </div>
               </div>
@@ -252,7 +252,7 @@ const ValueClient = () => {
 
             <div className="mt-12 text-center">
               <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
-                <Link to="/services/industrial">Industrial Power Solutions</Link>
+                <Link to="/installation">Industrial Power Solutions</Link>
               </Button>
             </div>
           </div>
@@ -384,7 +384,7 @@ const ValueClient = () => {
                   variant="outline"
                   className="border-blue-600 text-black hover:bg-black  text-lg px-8 py-4 h-14"
                 >
-                  <Link to="/services">Explore Our Solutions</Link>
+                  <Link to="/products">Explore Our Solutions</Link>
                 </Button>
               </div>
             </div>

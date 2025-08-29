@@ -28,6 +28,10 @@ const Products = () => {
   const [showSpecsModal, setShowSpecsModal] = useState(false);
   const [selectedProductForSpecs, setSelectedProductForSpecs] = useState<any>(null);
 
+  // State for generator selector modal
+  const [showSelectorModal, setShowSelectorModal] = useState(false);
+  const [showRecommendationModal, setShowRecommendationModal] = useState(false);
+
   // Define product categories
   const categories = [
     { id: "kirloskar", name: "Kirloskar Generators", hasDropdown: true }, 
@@ -653,6 +657,28 @@ const Products = () => {
     }
   };
 
+  // Example recommended models data
+  const recommendedModels = [
+    {
+      model: "Model XG-500",
+      capacity: 500,
+      fuelType: "Diesel",
+      price: "$15,000 - $20,000",
+    },
+    {
+      model: "Model XG-750",
+      capacity: 750,
+      fuelType: "Natural Gas",
+      price: "$22,000 - $28,000",
+    },
+    {
+      model: "Model XG-1000",
+      capacity: 1000,
+      fuelType: "Diesel",
+      price: "$30,000 - $35,000",
+    },
+  ];
+
   return (
     <>
       <SEOJsonLD
@@ -884,7 +910,12 @@ const Products = () => {
                 <p className="text-xs text-gray-400 mb-3">
                   Use our 3-step Generator Selector to find the perfect power solution for your needs.
                 </p>
-                <Button variant="default" size="sm" className="text-xs px-4 py-1 h-7 bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-1">
+                <Button
+                  variant="default"
+                  size="sm"
+                  className="text-xs px-4 py-1 h-7 bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-1"
+                  onClick={() => setShowSelectorModal(true)}
+                >
                   Start Selector <ChevronRight className="w-3 h-3" />
                 </Button>
               </div>
@@ -1165,6 +1196,116 @@ const Products = () => {
           )}
         </DialogContent>
       </Dialog>
+
+      {/* Generator Selector Modal */}
+      <Dialog open={showSelectorModal} onOpenChange={setShowSelectorModal}>
+        <DialogContent className="sm:max-w-[500px] bg-black text-white">
+          <DialogHeader>
+            <DialogTitle className="text-xl text-center mb-2">Select Your Power Requirements</DialogTitle>
+          </DialogHeader>
+          <form
+            className="flex flex-col gap-4"
+            onSubmit={e => {
+              e.preventDefault();
+              setShowSelectorModal(false);
+              setShowRecommendationModal(true);
+            }}
+          >
+            <div>
+              <label className="block text-sm mb-1">kVA/kW Input</label>
+              <input
+                type="text"
+                placeholder="Enter kVA/kW"
+                className="w-full px-3 py-2 rounded bg-gray-900 text-white border border-gray-700"
+              />
+            </div>
+            <div>
+              <label className="block text-sm mb-1">Use Case</label>
+              <input
+                type="text"
+                placeholder="Enter use case"
+                className="w-full px-3 py-2 rounded bg-gray-900 text-white border border-gray-700"
+              />
+            </div>
+            <DialogTitle className="text-lg text-center mt-2 mb-2">Generator Usage Conditions</DialogTitle>
+            <div>
+              <label className="block text-sm mb-1">Indoor/Outdoor</label>
+              <input
+                type="text"
+                placeholder="Enter location"
+                className="w-full px-3 py-2 rounded bg-gray-900 text-white border border-gray-700"
+              />
+            </div>
+            <div>
+              <label className="block text-sm mb-1">Operating Hours Per Day</label>
+              <input
+                type="text"
+                placeholder="Enter hours"
+                className="w-full px-3 py-2 rounded bg-gray-900 text-white border border-gray-700"
+              />
+            </div>
+            <div>
+              <label className="block text-sm mb-1">Load Type</label>
+              <input
+                type="text"
+                placeholder="Enter load type"
+                className="w-full px-3 py-2 rounded bg-gray-900 text-white border border-gray-700"
+              />
+            </div>
+            <Button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white mt-2 w-full">
+              Submit
+            </Button>
+          </form>
+        </DialogContent>
+      </Dialog>
+
+      {/* Recommended Generator Models Modal */}
+      <Dialog open={showRecommendationModal} onOpenChange={setShowRecommendationModal}>
+        <DialogContent className="sm:max-w-[700px] bg-black text-white">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold mb-2">Recommended Generator Models</DialogTitle>
+            <DialogDescription className="text-gray-300 mb-4">
+              Based on your input, we recommend the following generator models. Review the specifications and price estimates below, and choose the best option for your needs.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="mb-6">
+            <div className="font-semibold text-lg mb-2">Model Specifications</div>
+            <div className="overflow-x-auto">
+              <table className="min-w-full bg-black text-white border border-gray-700 rounded">
+                <thead>
+                  <tr className="bg-gray-900">
+                    <th className="py-2 px-4 text-left font-semibold">Model</th>
+                    <th className="py-2 px-4 text-left font-semibold">Capacity (kW)</th>
+                    <th className="py-2 px-4 text-left font-semibold">Fuel Type</th>
+                    <th className="py-2 px-4 text-left font-semibold">Estimated Price</th>
+                    <th className="py-2 px-4 text-left font-semibold">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {recommendedModels.map((m, idx) => (
+                    <tr key={m.model} className={idx % 2 === 0 ? "bg-gray-950" : "bg-gray-900"}>
+                      <td className="py-2 px-4">{m.model}</td>
+                      <td className="py-2 px-4 text-blue-400">{m.capacity}</td>
+                      <td className="py-2 px-4 text-blue-400">{m.fuelType}</td>
+                      <td className="py-2 px-4">{m.price}</td>
+                      <td className="py-2 px-4">
+                        <span className="text-blue-400 cursor-pointer hover:underline mr-2">Compare</span>
+                        <span className="text-blue-400 cursor-pointer hover:underline">Request Quote</span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div className="mt-4">
+            <div className="font-semibold mb-1">Additional Information</div>
+            <div className="text-gray-300 text-sm">
+              For more detailed specifications, including dimensions, weight, and noise levels, please refer to the product brochures available for each model. You can also contact our support team for further assistance.
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
       
       <Footer />
     </>
@@ -1172,4 +1313,3 @@ const Products = () => {
 };
 
 export default Products;
-

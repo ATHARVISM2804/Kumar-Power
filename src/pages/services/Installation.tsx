@@ -206,7 +206,7 @@ const InstallationService = () => {
                     <Link to="/contact">Schedule Installation</Link>
                   </Button>
                   <Button asChild size="lg" variant="outline" className='hover:bg-black'>
-                    <Link to="/services">View All Services</Link>
+                    <Link to="/products">View All Services</Link>
                   </Button>
                 </div>
               </div>
