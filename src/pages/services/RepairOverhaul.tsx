@@ -141,12 +141,12 @@ const RepairOverhaulService = () => {
         {/* Hero Banner */}
         <div className="bg-black py-12 md:py-16">
           <div className="container mx-auto text-center px-4">
-            <Badge className="mb-4 bg-blue-600 text-white hover:bg-blue-700">Expert Services</Badge>
+            <Badge className="mb-4 bg-custom-blue text-white hover:bg-[#225488]">Expert Services</Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Repair & Overhaul Services</h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
               Professional restoration and renewal of power systems for optimal performance and reliability
             </p>
-            <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
+            <Button asChild size="lg" className="bg-custom-blue hover:bg-[#225488]">
               <Link to="/contact">Request Emergency Service</Link>
             </Button>
           </div>
@@ -159,8 +159,8 @@ const RepairOverhaulService = () => {
               <div>
                 <div className="inline-block mb-4">
                   <div className="flex items-center">
-                    <span className="block h-1 w-10 bg-blue-600 mr-3"></span>
-                    <span className="text-blue-600 font-semibold tracking-wider">KUMAR POWER EXPERTISE</span>
+                    <span className="block h-1 w-10 bg-custom-blue mr-3"></span>
+                    <span className="text-custom-blue font-semibold tracking-wider">KUMAR POWER EXPERTISE</span>
                   </div>
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -177,14 +177,14 @@ const RepairOverhaulService = () => {
                   investment in critical power infrastructure.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
+                  <Button asChild size="lg" className="bg-custom-blue hover:bg-[#225488]">
                     <Link to="/contact">Request Repair Service</Link>
                   </Button>
                   <Button
                     asChild
                     size="lg"
                     variant="outline"
-                    className="border-blue-600 text-blue-600 bg-white hover:bg-blue-600 hover:text-white hover:border-blue-700 transition-colors duration-200"
+                    className="border-custom-blue text-custom-blue bg-white hover:bg-custom-blue hover:text-white hover:border-[#225488] transition-colors duration-200"
                   >
                     <a href="tel:+918888888888" className="flex items-center gap-2">
                       <Zap size={18} /> Emergency Repair Hotline
@@ -209,9 +209,9 @@ const RepairOverhaulService = () => {
             <div className="text-center mb-16">
               <div className="inline-block mb-4">
                 <div className="flex items-center justify-center">
-                  <span className="block h-1 w-10 bg-blue-600 mr-3"></span>
+                  <span className="block h-1 w-10 bg-custom-blue mr-3"></span>
                   <span className="text-blue-400 font-semibold tracking-wider">MAKING THE RIGHT CHOICE</span>
-                  <span className="block h-1 w-10 bg-blue-600 ml-3"></span>
+                  <span className="block h-1 w-10 bg-custom-blue ml-3"></span>
                 </div>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -225,8 +225,8 @@ const RepairOverhaulService = () => {
             <div className="max-w-4xl mx-auto">
               <Tabs defaultValue="repair" className="w-full">
                 <TabsList className="grid grid-cols-2 bg-gray-800">
-                  <TabsTrigger value="repair" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">Repair Services</TabsTrigger>
-                  <TabsTrigger value="overhaul" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">Overhaul Services</TabsTrigger>
+                  <TabsTrigger value="repair" className="data-[state=active]:bg-custom-blue data-[state=active]:text-white">Repair Services</TabsTrigger>
+                  <TabsTrigger value="overhaul" className="data-[state=active]:bg-custom-blue data-[state=active]:text-white">Overhaul Services</TabsTrigger>
                 </TabsList>
                 <TabsContent value="repair" className="mt-6">
                   <Card className="p-8 bg-gray-900 border-gray-800">
@@ -309,9 +309,9 @@ const RepairOverhaulService = () => {
             <div className="text-center mb-16">
               <div className="inline-block mb-4">
                 <div className="flex items-center justify-center">
-                  <span className="block h-1 w-10 bg-blue-600 mr-3"></span>
-                  <span className="text-blue-600 font-semibold tracking-wider">COMPREHENSIVE SOLUTIONS</span>
-                  <span className="block h-1 w-10 bg-blue-600 ml-3"></span>
+                  <span className="block h-1 w-10 bg-custom-blue mr-3"></span>
+                  <span className="text-[#2D6FBA] font-semibold tracking-wider">COMPREHENSIVE SOLUTIONS</span>
+                  <span className="block h-1 w-10 bg-custom-blue ml-3"></span>
                 </div>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -324,17 +324,17 @@ const RepairOverhaulService = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {repairServices.map((service, index) => (
-                <Card key={index} className="overflow-hidden border-2 hover:border-blue-600 transition-all duration-300">
+                <Card key={index} className="overflow-hidden border-2 hover:border-custom-blue transition-all duration-300">
                   <div className="p-8">
                     <div className="mb-6">
-                      {service.icon}
+                      {React.cloneElement(service.icon, { className: "h-10 w-10 text-[#2D6FBA]" })}
                     </div>
                     <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
                     <p className="text-muted-foreground mb-6">{service.description}</p>
                     <ul className="space-y-3">
                       {service.features.map((feature, i) => (
                         <li key={i} className="flex items-start gap-3">
-                          <CheckCircle2 className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                          <CheckCircle2 className="h-5 w-5 text-[#2D6FBA] mt-0.5 flex-shrink-0" />
                           <span className="text-gray-700">{feature}</span>
                         </li>
                       ))}
@@ -352,9 +352,9 @@ const RepairOverhaulService = () => {
             <div className="text-center mb-16">
               <div className="inline-block mb-4">
                 <div className="flex items-center justify-center">
-                  <span className="block h-1 w-10 bg-blue-600 mr-3"></span>
+                  <span className="block h-1 w-10 bg-custom-blue mr-3"></span>
                   <span className="text-blue-400 font-semibold tracking-wider">WHY PROFESSIONAL REPAIR MATTERS</span>
-                  <span className="block h-1 w-10 bg-blue-600 ml-3"></span>
+                  <span className="block h-1 w-10 bg-custom-blue ml-3"></span>
                 </div>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -367,7 +367,7 @@ const RepairOverhaulService = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {repairBenefits.map((benefit, index) => (
-                <div key={index} className="p-6 bg-gray-900 rounded-lg border border-gray-800 hover:border-blue-600 transition-all duration-300">
+                <div key={index} className="p-6 bg-gray-900 rounded-lg border border-gray-800 hover:border-custom-blue transition-all duration-300">
                   <div className="mb-4">
                     {benefit.icon}
                   </div>
@@ -380,7 +380,7 @@ const RepairOverhaulService = () => {
             </div>
             
             <div className="mt-12 text-center">
-              <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
+              <Button asChild size="lg" className="bg-custom-blue hover:bg-[#225488]">
                 <Link to="/contact">Schedule Your Repair Service</Link>
               </Button>
             </div>
@@ -393,9 +393,9 @@ const RepairOverhaulService = () => {
             <div className="text-center mb-16">
               <div className="inline-block mb-4">
                 <div className="flex items-center justify-center">
-                  <span className="block h-1 w-10 bg-blue-600 mr-3"></span>
-                  <span className="text-blue-600 font-semibold tracking-wider">OUR SYSTEMATIC APPROACH</span>
-                  <span className="block h-1 w-10 bg-blue-600 ml-3"></span>
+                  <span className="block h-1 w-10 bg-custom-blue mr-3"></span>
+                  <span className="text-[#2D6FBA] font-semibold tracking-wider">OUR SYSTEMATIC APPROACH</span>
+                  <span className="block h-1 w-10 bg-custom-blue ml-3"></span>
                 </div>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -409,119 +409,119 @@ const RepairOverhaulService = () => {
             <div className="max-w-4xl mx-auto">
               <div className="relative">
                 {/* Timeline line */}
-                <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-blue-600"></div>
+                <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-custom-blue"></div>
                 
                 {/* Timeline items */}
                 <div className="space-y-16">
                   <div className="relative pl-12 md:pl-20">
-                    <div className="absolute left-0 md:left-4 top-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">1</div>
-                    <h3 className="text-2xl font-bold mb-3 text-blue-600">Initial Assessment & Diagnostics</h3>
+                    <div className="absolute left-0 md:left-4 top-0 w-8 h-8 bg-custom-blue rounded-full flex items-center justify-center text-white font-bold">1</div>
+                    <h3 className="text-2xl font-bold mb-3 text-[#2D6FBA]">Initial Assessment & Diagnostics</h3>
                     <p className="text-muted-foreground mb-4">
                       Our technicians conduct a thorough inspection and diagnostic testing to identify the root cause of the issue 
                       and any related problems that need addressing.
                     </p>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#2D6FBA] mt-0.5 flex-shrink-0" />
                         <span>Comprehensive digital diagnostics using advanced testing equipment</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#2D6FBA] mt-0.5 flex-shrink-0" />
                         <span>Detailed inspection by certified technicians with specialized expertise</span>
                       </li>
                     </ul>
                   </div>
                   
                   <div className="relative pl-12 md:pl-20">
-                    <div className="absolute left-0 md:left-4 top-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">2</div>
-                    <h3 className="text-2xl font-bold mb-3 text-blue-600">Detailed Scope & Estimate</h3>
+                    <div className="absolute left-0 md:left-4 top-0 w-8 h-8 bg-custom-blue rounded-full flex items-center justify-center text-white font-bold">2</div>
+                    <h3 className="text-2xl font-bold mb-3 text-[#2D6FBA]">Detailed Scope & Estimate</h3>
                     <p className="text-muted-foreground mb-4">
                       We provide a comprehensive scope of work and detailed cost estimate, explaining all required repairs, 
                       parts, and labor before proceeding with any work.
                     </p>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#2D6FBA] mt-0.5 flex-shrink-0" />
                         <span>Transparent pricing with detailed breakdown of all costs</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#2D6FBA] mt-0.5 flex-shrink-0" />
                         <span>Clear timeline expectations with completion estimates</span>
                       </li>
                     </ul>
                   </div>
                   
                   <div className="relative pl-12 md:pl-20">
-                    <div className="absolute left-0 md:left-4 top-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">3</div>
-                    <h3 className="text-2xl font-bold mb-3 text-blue-600">Parts Procurement</h3>
+                    <div className="absolute left-0 md:left-4 top-0 w-8 h-8 bg-custom-blue rounded-full flex items-center justify-center text-white font-bold">3</div>
+                    <h3 className="text-2xl font-bold mb-3 text-[#2D6FBA]">Parts Procurement</h3>
                     <p className="text-muted-foreground mb-4">
                       Our team sources genuine OEM parts or high-quality alternatives as specified, ensuring quick availability 
                       for time-sensitive repairs.
                     </p>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#2D6FBA] mt-0.5 flex-shrink-0" />
                         <span>Extensive parts inventory for common repair components</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#2D6FBA] mt-0.5 flex-shrink-0" />
                         <span>Direct relationships with manufacturers for expedited shipping</span>
                       </li>
                     </ul>
                   </div>
                   
                   <div className="relative pl-12 md:pl-20">
-                    <div className="absolute left-0 md:left-4 top-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">4</div>
-                    <h3 className="text-2xl font-bold mb-3 text-blue-600">Skilled Repair Execution</h3>
+                    <div className="absolute left-0 md:left-4 top-0 w-8 h-8 bg-custom-blue rounded-full flex items-center justify-center text-white font-bold">4</div>
+                    <h3 className="text-2xl font-bold mb-3 text-[#2D6FBA]">Skilled Repair Execution</h3>
                     <p className="text-muted-foreground mb-4">
                       Our certified technicians perform the necessary repairs or overhaul procedures according to manufacturer 
                       specifications and industry best practices.
                     </p>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#2D6FBA] mt-0.5 flex-shrink-0" />
                         <span>Factory-trained technicians with specialized certifications</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#2D6FBA] mt-0.5 flex-shrink-0" />
                         <span>Advanced tooling and equipment for precise repairs</span>
                       </li>
                     </ul>
                   </div>
                   
                   <div className="relative pl-12 md:pl-20">
-                    <div className="absolute left-0 md:left-4 top-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">5</div>
-                    <h3 className="text-2xl font-bold mb-3 text-blue-600">Testing & Quality Assurance</h3>
+                    <div className="absolute left-0 md:left-4 top-0 w-8 h-8 bg-custom-blue rounded-full flex items-center justify-center text-white font-bold">5</div>
+                    <h3 className="text-2xl font-bold mb-3 text-[#2D6FBA]">Testing & Quality Assurance</h3>
                     <p className="text-muted-foreground mb-4">
                       We conduct comprehensive post-repair testing under load conditions to ensure all systems function properly 
                       and meet performance specifications.
                     </p>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#2D6FBA] mt-0.5 flex-shrink-0" />
                         <span>Load bank testing to verify performance under various conditions</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#2D6FBA] mt-0.5 flex-shrink-0" />
                         <span>Detailed performance metrics verification and documentation</span>
                       </li>
                     </ul>
                   </div>
                   
                   <div className="relative pl-12 md:pl-20">
-                    <div className="absolute left-0 md:left-4 top-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">6</div>
-                    <h3 className="text-2xl font-bold mb-3 text-blue-600">Detailed Documentation & Warranty</h3>
+                    <div className="absolute left-0 md:left-4 top-0 w-8 h-8 bg-custom-blue rounded-full flex items-center justify-center text-white font-bold">6</div>
+                    <h3 className="text-2xl font-bold mb-3 text-[#2D6FBA]">Detailed Documentation & Warranty</h3>
                     <p className="text-muted-foreground mb-4">
                       We provide complete documentation of all work performed, parts replaced, and testing results, along with 
                       warranty information for your records.
                     </p>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#2D6FBA] mt-0.5 flex-shrink-0" />
                         <span>Comprehensive service reports with detailed findings</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#2D6FBA] mt-0.5 flex-shrink-0" />
                         <span>Clear warranty terms and recommended follow-up service</span>
                       </li>
                     </ul>
@@ -538,9 +538,9 @@ const RepairOverhaulService = () => {
             <div className="text-center mb-16">
               <div className="inline-block mb-4">
                 <div className="flex items-center justify-center">
-                  <span className="block h-1 w-10 bg-blue-600 mr-3"></span>
-                  <span className="text-blue-400 font-semibold tracking-wider">FREQUENTLY ASKED QUESTIONS</span>
-                  <span className="block h-1 w-10 bg-blue-600 ml-3"></span>
+                  <span className="block h-1 w-10 bg-custom-blue mr-3"></span>
+                  <span className="text-[#2D6FBA] font-semibold tracking-wider">FREQUENTLY ASKED QUESTIONS</span>
+                  <span className="block h-1 w-10 bg-custom-blue ml-3"></span>
                 </div>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -582,7 +582,7 @@ const RepairOverhaulService = () => {
                 <Button
                   asChild
                   size="lg"
-                  className="bg-white border border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white hover:border-blue-900 px-35 py-8 text-lg min-w-[240px] transition-colors duration-200"
+                  className="bg-white border border-[#2D6FBA] text-[#2D6FBA] hover:bg-[#2D6FBA] hover:text-white hover:border-[#225488] px-35 py-8 text-lg min-w-[240px] transition-colors duration-200"
                 >
                   <Link to="/contact">Request Repair Service</Link>
                 </Button>
@@ -590,7 +590,7 @@ const RepairOverhaulService = () => {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="bg-transparent border border-white text-white hover:bg-white hover:text-blue-900 hover:border-blue-900 px-8 py-4 text-lg min-w-[240px] transition-colors duration-200"
+                  className="bg-transparent border border-white text-white hover:bg-white hover:text-[#2D6FBA] hover:border-[#2D6FBA] px-8 py-4 text-lg min-w-[240px] transition-colors duration-200"
                 >
                   <a href="tel:+918888888888" className="flex items-center justify-center gap-2 w-full h-full">
                     <Zap size={20} /> Emergency Repair Hotline
@@ -602,6 +602,26 @@ const RepairOverhaulService = () => {
         </section>
       </main>
       <Footer />
+      <style jsx global>{`
+        .bg-custom-blue {
+          background-color: #2D6FBA !important;
+        }
+        .text-custom-blue {
+          color: #2D6FBA !important;
+        }
+        .border-custom-blue {
+          border-color: #2D6FBA !important;
+        }
+        .hover\:bg-custom-blue:hover {
+          background-color: #225488 !important;
+        }
+        .hover\:border-custom-blue:hover {
+          border-color: #225488 !important;
+        }
+        .hover\:text-custom-blue:hover {
+          color: #225488 !important;
+        }
+      `}</style>
     </div>
   );
 };

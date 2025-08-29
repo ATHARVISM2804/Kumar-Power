@@ -150,8 +150,14 @@ const InstallationService = () => {
         .rotate-y-180 {
           transform: rotateY(180deg);
         }
-        .group:hover .group-hover\\:rotate-y-180 {
+        .group:hover .group-hover\:rotate-y-180 {
           transform: rotateY(180deg);
+        }
+        .bg-custom-blue {
+          background-color: #2D6FBA !important;
+        }
+        .text-custom-blue {
+          color: #2D6FBA !important;
         }
       `}</style>
       
@@ -167,12 +173,12 @@ const InstallationService = () => {
         {/* Hero Banner */}
         <div className="bg-black py-12 md:py-16">
           <div className="container mx-auto text-center px-4">
-            <Badge className="mb-4 bg-blue-600 text-white hover:bg-blue-700">Professional Services</Badge>
+            <Badge className="mb-4 bg-custom-blue text-white hover:bg-[#225488]">Professional Services</Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Installation & Commissioning</h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
               Expert power system installation and commissioning services for optimal performance, reliability, and compliance.
             </p>
-            <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
+            <Button asChild size="lg" className="bg-custom-blue hover:bg-[#225488]">
               <Link to="/contact">Schedule a Consultation</Link>
             </Button>
           </div>
@@ -185,8 +191,8 @@ const InstallationService = () => {
               <div>
                 <div className="inline-block mb-4">
                   <div className="flex items-center">
-                    <span className="block h-1 w-10 bg-blue-600 mr-3"></span>
-                    <span className="text-blue-600 font-semibold tracking-wider">KUMAR POWER EXPERTISE</span>
+                    <span className="block h-1 w-10 bg-custom-blue mr-3"></span>
+                    <span className="text-custom-blue font-semibold tracking-wider">KUMAR POWER EXPERTISE</span>
                   </div>
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -202,7 +208,7 @@ const InstallationService = () => {
                   and minimize downtime across industries.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
+                  <Button asChild size="lg" className="bg-custom-blue hover:bg-[#225488]">
                     <Link to="/contact">Schedule Installation</Link>
                   </Button>
                   <Button asChild size="lg" variant="outline" className='hover:bg-black'>
@@ -227,9 +233,9 @@ const InstallationService = () => {
             <div className="text-center mb-16">
               <div className="inline-block mb-4">
                 <div className="flex items-center justify-center">
-                  <span className="block h-1 w-10 bg-blue-600 mr-3"></span>
+                  <span className="block h-1 w-10 bg-custom-blue mr-3"></span>
                   <span className="text-blue-400 font-semibold tracking-wider">THE KUMAR POWER APPROACH</span>
-                  <span className="block h-1 w-10 bg-blue-600 ml-3"></span>
+                  <span className="block h-1 w-10 bg-custom-blue ml-3"></span>
                 </div>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -243,119 +249,119 @@ const InstallationService = () => {
             <div className="max-w-4xl mx-auto">
               <div className="relative">
                 {/* Timeline line */}
-                <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-blue-600"></div>
+                <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-custom-blue"></div>
                 
                 {/* Timeline items */}
                 <div className="space-y-16">
                   <div className="relative pl-12 md:pl-20">
-                    <div className="absolute left-0 md:left-4 top-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">1</div>
-                    <h3 className="text-2xl font-bold mb-3 text-blue-400">Initial Consultation & Site Survey</h3>
+                    <div className="absolute left-0 md:left-4 top-0 w-8 h-8 bg-custom-blue rounded-full flex items-center justify-center text-white font-bold">1</div>
+                    <h3 className="text-2xl font-bold mb-3 text-[#2D6FBA]">Initial Consultation & Site Survey</h3>
                     <p className="text-gray-300 mb-4">
                       We begin with a thorough assessment of your power requirements and site conditions to determine the optimal 
                       system configuration, placement, and infrastructure needs.
                     </p>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#2D6FBA] mt-0.5 flex-shrink-0" />
                         <span>Comprehensive load analysis and power requirements assessment</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#2D6FBA] mt-0.5 flex-shrink-0" />
                         <span>Detailed site inspection and infrastructure evaluation</span>
                       </li>
                     </ul>
                   </div>
                   
                   <div className="relative pl-12 md:pl-20">
-                    <div className="absolute left-0 md:left-4 top-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">2</div>
-                    <h3 className="text-2xl font-bold mb-3 text-blue-400">Detailed Design & Planning</h3>
+                    <div className="absolute left-0 md:left-4 top-0 w-8 h-8 bg-custom-blue rounded-full flex items-center justify-center text-white font-bold">2</div>
+                    <h3 className="text-2xl font-bold mb-3 text-[#2D6FBA]">Detailed Design & Planning</h3>
                     <p className="text-gray-300 mb-4">
                       Our engineers develop comprehensive installation plans including electrical schematics, mechanical layouts, 
                       and project timelines tailored to your specific needs.
                     </p>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#2D6FBA] mt-0.5 flex-shrink-0" />
                         <span>Custom system design optimized for your facility</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#2D6FBA] mt-0.5 flex-shrink-0" />
                         <span>Detailed project timeline and resource allocation</span>
                       </li>
                     </ul>
                   </div>
                   
                   <div className="relative pl-12 md:pl-20">
-                    <div className="absolute left-0 md:left-4 top-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">3</div>
-                    <h3 className="text-2xl font-bold mb-3 text-blue-400">Permitting & Compliance</h3>
+                    <div className="absolute left-0 md:left-4 top-0 w-8 h-8 bg-custom-blue rounded-full flex items-center justify-center text-white font-bold">3</div>
+                    <h3 className="text-2xl font-bold mb-3 text-[#2D6FBA]">Permitting & Compliance</h3>
                     <p className="text-gray-300 mb-4">
                       We handle all necessary permits, regulatory approvals, and compliance requirements to ensure your installation 
                       meets all local and national standards.
                     </p>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#2D6FBA] mt-0.5 flex-shrink-0" />
                         <span>Complete management of permit acquisition process</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#2D6FBA] mt-0.5 flex-shrink-0" />
                         <span>Regulatory compliance verification and documentation</span>
                       </li>
                     </ul>
                   </div>
                   
                   <div className="relative pl-12 md:pl-20">
-                    <div className="absolute left-0 md:left-4 top-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">4</div>
-                    <h3 className="text-2xl font-bold mb-3 text-blue-400">Professional Installation</h3>
+                    <div className="absolute left-0 md:left-4 top-0 w-8 h-8 bg-custom-blue rounded-full flex items-center justify-center text-white font-bold">4</div>
+                    <h3 className="text-2xl font-bold mb-3 text-[#2D6FBA]">Professional Installation</h3>
                     <p className="text-gray-300 mb-4">
                       Our certified technicians execute the installation according to the detailed plan, ensuring all components are 
                       properly installed, connected, and secured.
                     </p>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#2D6FBA] mt-0.5 flex-shrink-0" />
                         <span>Expert mechanical and electrical installation by certified technicians</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#2D6FBA] mt-0.5 flex-shrink-0" />
                         <span>Quality control checks at each installation milestone</span>
                       </li>
                     </ul>
                   </div>
                   
                   <div className="relative pl-12 md:pl-20">
-                    <div className="absolute left-0 md:left-4 top-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">5</div>
-                    <h3 className="text-2xl font-bold mb-3 text-blue-400">Testing & Commissioning</h3>
+                    <div className="absolute left-0 md:left-4 top-0 w-8 h-8 bg-custom-blue rounded-full flex items-center justify-center text-white font-bold">5</div>
+                    <h3 className="text-2xl font-bold mb-3 text-[#2D6FBA]">Testing & Commissioning</h3>
                     <p className="text-gray-300 mb-4">
                       We conduct comprehensive testing of all systems, including load testing, performance verification, and safety checks 
                       to ensure everything functions correctly.
                     </p>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#2D6FBA] mt-0.5 flex-shrink-0" />
                         <span>Full-load testing under various operational conditions</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#2D6FBA] mt-0.5 flex-shrink-0" />
                         <span>System performance optimization and calibration</span>
                       </li>
                     </ul>
                   </div>
                   
                   <div className="relative pl-12 md:pl-20">
-                    <div className="absolute left-0 md:left-4 top-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">6</div>
-                    <h3 className="text-2xl font-bold mb-3 text-blue-400">Training & Handover</h3>
+                    <div className="absolute left-0 md:left-4 top-0 w-8 h-8 bg-custom-blue rounded-full flex items-center justify-center text-white font-bold">6</div>
+                    <h3 className="text-2xl font-bold mb-3 text-[#2D6FBA]">Training & Handover</h3>
                     <p className="text-gray-300 mb-4">
                       We provide thorough training for your staff on system operation and basic maintenance, along with complete documentation 
                       and warranty information.
                     </p>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#2D6FBA] mt-0.5 flex-shrink-0" />
                         <span>Comprehensive operator training and knowledge transfer</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#2D6FBA] mt-0.5 flex-shrink-0" />
                         <span>Complete system documentation and maintenance schedules</span>
                       </li>
                     </ul>
@@ -372,9 +378,9 @@ const InstallationService = () => {
             <div className="text-center mb-16">
               <div className="inline-block mb-4">
                 <div className="flex items-center justify-center">
-                  <span className="block h-1 w-10 bg-blue-600 mr-3"></span>
-                  <span className="text-blue-600 font-semibold tracking-wider">OUR PROFESSIONAL INSTALLATIONS</span>
-                  <span className="block h-1 w-10 bg-blue-600 ml-3"></span>
+                  <span className="block h-1 w-10 bg-custom-blue mr-3"></span>
+                  <span className="text-custom-blue font-semibold tracking-wider">OUR PROFESSIONAL INSTALLATIONS</span>
+                  <span className="block h-1 w-10 bg-custom-blue ml-3"></span>
                 </div>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -387,7 +393,7 @@ const InstallationService = () => {
               <div className="flex flex-wrap gap-4 justify-center mb-10">
                 <Badge
                   className={`cursor-pointer px-4 py-2 ${
-                    selectedCategory === null ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-800'
+                    selectedCategory === null ? 'bg-custom-blue text-white' : 'bg-gray-200 text-gray-800'
                   }`}
                   onClick={() => setSelectedCategory(null)}
                 >
@@ -395,7 +401,7 @@ const InstallationService = () => {
                 </Badge>
                 <Badge
                   className={`cursor-pointer px-4 py-2 ${
-                    selectedCategory === 'Industrial' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-800'
+                    selectedCategory === 'Industrial' ? 'bg-custom-blue text-white' : 'bg-gray-200 text-gray-800'
                   }`}
                   onClick={() => setSelectedCategory('Industrial')}
                 >
@@ -403,7 +409,7 @@ const InstallationService = () => {
                 </Badge>
                 <Badge
                   className={`cursor-pointer px-4 py-2 ${
-                    selectedCategory === 'Commercial' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-800'
+                    selectedCategory === 'Commercial' ? 'bg-custom-blue text-white' : 'bg-gray-200 text-gray-800'
                   }`}
                   onClick={() => setSelectedCategory('Commercial')}
                 >
@@ -411,7 +417,7 @@ const InstallationService = () => {
                 </Badge>
                 <Badge
                   className={`cursor-pointer px-4 py-2 ${
-                    selectedCategory === 'Residential' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-800'
+                    selectedCategory === 'Residential' ? 'bg-custom-blue text-white' : 'bg-gray-200 text-gray-800'
                   }`}
                   onClick={() => setSelectedCategory('Residential')}
                 >
@@ -470,7 +476,7 @@ const InstallationService = () => {
             </div>
             
             <div className="text-center mt-12">
-              <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
+              <Button asChild size="lg" className="bg-custom-blue hover:bg-[#225488]">
                 <Link to="/contact">Schedule Your Installation</Link>
               </Button>
             </div>
@@ -483,9 +489,9 @@ const InstallationService = () => {
             <div className="text-center mb-16">
               <div className="inline-block mb-4">
                 <div className="flex items-center justify-center">
-                  <span className="block h-1 w-10 bg-blue-600 mr-3"></span>
-                  <span className="text-blue-400 font-semibold tracking-wider">FREQUENTLY ASKED QUESTIONS</span>
-                  <span className="block h-1 w-10 bg-blue-600 ml-3"></span>
+                  <span className="block h-1 w-10 bg-custom-blue mr-3"></span>
+                  <span className="text-[#2D6FBA] font-semibold tracking-wider">FREQUENTLY ASKED QUESTIONS</span>
+                  <span className="block h-1 w-10 bg-custom-blue ml-3"></span>
                 </div>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">

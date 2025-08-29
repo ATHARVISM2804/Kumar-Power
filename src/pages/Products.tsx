@@ -685,7 +685,7 @@ const Products = () => {
               Explore our full range of Kirloskar-certified diesel generators, trusted across India's most demanding industries.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 w-full max-w-xs sm:max-w-none">
-              <Button size="lg" variant="default" className="bg-primary hover:bg-primary/90 w-full sm:w-auto">
+              <Button size="lg" variant="default" className="bg-[#2D6FBA] hover:bg-[#225488] w-full sm:w-auto">
                 Request a Quote
               </Button>
               <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white/10 w-full sm:w-auto">
@@ -766,7 +766,7 @@ const Products = () => {
                                   className={`w-full text-left px-2 py-2  rounded-sm transition text-sm ${
                                     selectedCategory === subcat.id
                                       ? 'bg-[#2D6FBA] text-white'
-                                      : 'text-gray-200 hover:bg-[#22305a]'
+                                      : 'text-gray-200 hover:bg-[#225488]'
                                   }`}
                                   onClick={() => setSelectedCategory(subcat.id)}
                                 >
@@ -781,7 +781,7 @@ const Products = () => {
                       <button
                         className={`w-full text-left px-2 py-2 rounded-sm transition text-sm ${
                           selectedCategory === category.id
-                            ? 'bg-[#22548e] text-[#2D6FBA] font-medium'
+                            ? 'bg-[#225488] text-[#2D6FBA] font-medium'
                             : 'hover:bg-gray-800 text-gray-300'
                         }`}
                         onClick={() => handleCategorySelection(category.id)}
@@ -870,7 +870,7 @@ const Products = () => {
                             </svg>
                             Brochure
                           </Button>
-                          <Button variant="default" size="sm" className="h-7 text-xs py-0 px-4 bg-[#2D6FBA] hover:bg-[#22548e] text-white">
+                          <Button variant="default" size="sm" className="h-7 text-xs py-0 px-4 bg-[#2D6FBA] hover:bg-[#225488] text-white">
                             Get Quote
                           </Button>
                         </div>
@@ -889,7 +889,7 @@ const Products = () => {
                 <Button
                   variant="default"
                   size="sm"
-                  className="text-xs px-4 py-1 h-7 bg-[#2D6FBA] hover:bg-[#22548e] text-white flex items-center gap-1"
+                  className="text-xs px-4 py-1 h-7 bg-[#2D6FBA] hover:bg-[#225488] text-white flex items-center gap-1"
                   onClick={() => setShowSelectorModal(true)}
                 >
                   Start Selector <ChevronRight className="w-3 h-3" />
@@ -918,7 +918,7 @@ const Products = () => {
       Download All Catalogs
     </Button>
 
-    {/* Talk Button */}
+    {/* Talk Button */} 
     <Button  onClick={
                 () => {
                   window.location.href = "/contact";
@@ -938,7 +938,7 @@ const Products = () => {
     <Button
       variant="ghost"
       size="sm"
-      className="bg-[#2D6FBA] flex items-center gap-1 text-xs h-7 p-4 text-white hover:bg-[#22548e] hover:text-white"
+      className="bg-[#2D6FBA] flex items-center gap-1 text-xs h-7 p-4 text-white hover:bg-[#225488] hover:text-white"
     >
       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <line x1="12" y1="5" x2="12" y2="19" />
@@ -1160,7 +1160,7 @@ const Products = () => {
                 
                 {/* CTA Buttons */}
                 <div className="mt-6 flex flex-col sm:flex-row flex-wrap gap-3 pt-4 border-t">
-                  <Button size="sm" variant="default" className="bg-[#2D6FBA] hover:bg-[#22548e] w-full sm:w-auto">
+                  <Button size="sm" variant="default" className="bg-[#2D6FBA] hover:bg-[#225488] w-full sm:w-auto">
                     Request Quote
                   </Button>
                   <Button size="sm" variant="outline" className="flex items-center gap-1 w-full sm:w-auto">
@@ -1221,7 +1221,7 @@ const Products = () => {
                 className="w-full px-3 py-2 rounded bg-gray-900 text-white border border-gray-700"
               />
             </div>
-            <Button type="submit" className="bg-[#2D6FBA] hover:bg-[#22548e] text-white mt-2 w-full">
+            <Button type="submit" className="bg-[#2D6FBA] hover:bg-[#225488] text-white mt-2 w-full">
               Submit
             </Button>
           </form>
@@ -1229,6 +1229,17 @@ const Products = () => {
       </Dialog>
       
       <Footer />
+      <style jsx global>{`
+        .bg-custom-blue {
+          background-color: #2D6FBA !important;
+        }
+        .text-custom-blue {
+          color: #2D6FBA !important;
+        }
+        .hover\:bg-custom-blue:hover {
+          background-color: #225488 !important;
+        }
+      `}</style>
     </>
   );
 };

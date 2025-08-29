@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CheckCircle2, FileText, Shield, Wrench, Clock, Calendar, AlertCircle } from 'lucide-react';
+import { FileText, Shield, Wrench, Clock, Calendar, AlertCircle } from 'lucide-react';
 import Header from "@/components/landing/Header";
 import Footer from "@/components/landing/Footer";
 import SEOJsonLD from "@/components/SEOJsonLD";
@@ -8,7 +8,8 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
-import asset1 from "@/assets/Kumar Assets/mrg Green 160kVA-.png"
+import asset1 from "@/assets/Kumar Assets/mrg Green 160kVA-.png";
+
 const AnnualMaintenanceService = () => {
   // FAQ items
   const faqItems = [
@@ -45,7 +46,7 @@ const AnnualMaintenanceService = () => {
       />
 
       <main>
-        {/* Hero Banner - Black Background */}
+        {/* Hero Banner */}
         <div className="bg-black py-16 md:py-24 relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dinhcaf2c/image/upload/v1755014000/maintenance_service_detailed_vfgm3h.jpg')] opacity-20 bg-cover bg-center"></div>
           <div className="container mx-auto text-center px-4 relative z-10">
@@ -67,7 +68,8 @@ const AnnualMaintenanceService = () => {
             </Button>
           </div>
         </div>
-        {/* Intro Section - White Background */}
+
+        {/* Intro Section */}
         <section className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -108,7 +110,8 @@ const AnnualMaintenanceService = () => {
             </div>
           </div>
         </section>
-        {/* Benefits Section - Black Background */}
+
+        {/* Benefits Section */}
         <section className="py-16 md:py-24 bg-black text-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
@@ -121,7 +124,7 @@ const AnnualMaintenanceService = () => {
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {{
+              {[
                 {
                   icon: <Shield className="h-10 w-10" style={{ color: "#2D6FBA" }} />,
                   title: "Prevent Costly Breakdowns",
@@ -152,7 +155,7 @@ const AnnualMaintenanceService = () => {
                   title: "Expert Technicians",
                   description: "All maintenance is performed by Kirloskar-certified engineers with extensive experience across our full range of equipment."
                 }
-              }.map((item, index) => (
+              ].map((item, index) => (
                 <Card key={index} className="bg-gray-900 border-0 p-6 hover:bg-gray-800 transition-colors duration-300">
                   <div className="mb-4" style={{ color: "#2D6FBA" }}>
                     {item.icon}
@@ -166,7 +169,8 @@ const AnnualMaintenanceService = () => {
             </div>
           </div>
         </section>
-        {/* Maintenance Process - Black Background */}
+
+        {/* Maintenance Process */}
         <section className="py-16 md:py-24 bg-black text-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
@@ -184,7 +188,7 @@ const AnnualMaintenanceService = () => {
                 <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5" style={{ backgroundColor: "#2D6FBA" }}></div>
                 {/* Timeline items */}
                 <div className="space-y-16">
-                  {{
+                  {[
                     {
                       step: 1,
                       title: "Initial System Assessment",
@@ -210,7 +214,7 @@ const AnnualMaintenanceService = () => {
                       title: "Continuous Support",
                       description: "Ongoing technical assistance, emergency response, and proactive notifications for scheduled maintenance to ensure your equipment operates reliably."
                     }
-                  }.map((item, index) => (
+                  ].map((item, index) => (
                     <div key={index} className="relative pl-12 md:pl-24">
                       <div className="absolute left-0 md:left-4 top-0 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg" style={{ backgroundColor: "#2D6FBA" }}>
                         {item.step}
@@ -226,7 +230,8 @@ const AnnualMaintenanceService = () => {
             </div>
           </div>
         </section>
-        {/* FAQ Section - White Background */}
+
+        {/* FAQ Section */}
         <section className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
@@ -254,7 +259,8 @@ const AnnualMaintenanceService = () => {
             </div>
           </div>
         </section>
-        {/* CTA Section - Black Background with gradient */}
+
+        {/* CTA Section */}
         <section className="py-16 md:py-24" style={{ background: "linear-gradient(135deg, black 0%, #2D6FBA 100%)" }}>
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center text-white">
@@ -293,11 +299,3 @@ const AnnualMaintenanceService = () => {
 };
 
 export default AnnualMaintenanceService;
-      <Footer />
-    </div>
-  );
-};
-
-export default AnnualMaintenanceService;
-
-

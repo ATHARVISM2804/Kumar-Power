@@ -57,7 +57,7 @@ const Header = () => {
             <div className="absolute left-0 top-[90%] pt-3 hidden group-hover:block hover:block">
               <div className="bg-white shadow-lg rounded-md min-w-[220px] z-10 overflow-hidden">
                 <Link to="/services/annual-maintenance" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Annual Maintenance</Link>
-                <Link to="/services/installation" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Installation & Commissioning</Link>
+                {/* <Link to="/services/installation" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Installation & Commissioning</Link> */}
                 <Link to="/services/repair-overhaul" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Repair & Overhaul</Link>
                 <Link to="/services/emergency-support" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">24/7 Emergency Support</Link>
                 
