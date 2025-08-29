@@ -43,7 +43,7 @@ const UseCases = () => {
               <article key={it.title} className="mb-8">
                 <h3 className="text-lg md:text-xl font-semibold mb-1">{it.title}</h3>
                 <p className="text-gray-300 text-sm leading-relaxed mb-2">{it.text}</p>
-                <button className="text-blue-400 text-sm hover:text-blue-300 p-0 m-0">
+                <button className="text-[#2D6FBA] text-sm hover:text-[#22548e] p-0 m-0">
                   LEARN MORE
                 </button>
               </article>

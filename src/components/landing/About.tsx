@@ -45,18 +45,18 @@ const About = () => {
               {features.map((f) => (
                 <div key={f.label} className="flex items-center gap-4">
                   <span className="inline-flex items-center justify-center rounded-full bg-blue-100 h-12 w-12">
-                    <CheckCircle2 className="text-white bg-blue-600 rounded-full h-6 w-6" />
+                    <CheckCircle2 className="text-white" style={{ background: "#2D6FBA", borderRadius: "9999px" }} />
                   </span>
                   <span className="text-base font-medium">{f.label}</span>
                 </div>
               ))}
             </div>
-            <Button asChild size="lg" className="mt-2 bg-blue-600 hover:bg-blue-700 px-6 py-6 rounded-lg">
-              <a onClick={
-                () => {
-                  window.location.href = "/about/OurProfile";
-                }
-              } className="flex items-center gap-2">
+            <Button asChild size="lg" className="mt-2" style={{ background: "#2D6FBA" }}>
+              <a
+                onClick={() => { window.location.href = "/about/OurProfile"; }}
+                className="flex items-center gap-2 hover:bg-[#22548e] px-6 py-6 rounded-lg"
+                style={{ background: "#2D6FBA" }}
+              >
                 Explore Our Legacy <ArrowRight className="h-5 w-5 ml-1" />
               </a>
             </Button>

@@ -98,7 +98,7 @@ const Card = ({
       scale: 1.03,
       boxShadow:
         "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-      borderColor: "#3b82f6",
+      borderColor: "#2D6FBA",
     }}
     whileTap={{ scale: 0.98 }}
   >
@@ -124,12 +124,12 @@ const Card = ({
       }}
       whileHover={{
         background:
-          "linear-gradient(180deg, rgba(29, 78, 216, 0) 0%, rgba(29, 78, 216, 0.2) 100%)",
+          "linear-gradient(180deg, rgba(45, 111, 186, 0) 0%, rgba(45, 111, 186, 0.2) 100%)",
       }}
     >
       <motion.h3
         className="font-semibold mb-1 text-lg"
-        whileHover={{ color: "#60a5fa" }}
+        whileHover={{ color: "#2D6FBA" }}
       >
         {title}
       </motion.h3>
@@ -141,7 +141,7 @@ const Card = ({
         >
           <Button
             size="sm"
-            className="overflow-hidden group relative"
+            className="overflow-hidden group relative bg-[#2D6FBA] hover:bg-[#22548e]"
             variant="default"
             onClick={onExplore}
           >
@@ -258,7 +258,8 @@ const GeneratorRange = () => {
           <h2 className="text-2xl md:text-5xl font-extralight tracking-tighter mb-2">
             Explore Our Generator Range
             <motion.div
-              className="h-1 w-24 bg-blue-600 mt-1"
+              className="h-1 w-24"
+              style={{ background: "#2D6FBA" }}
               initial={{ width: 0 }}
               animate={{ width: "5rem" }}
               transition={{ delay: 0.8, duration: 0.8 }}
@@ -281,7 +282,7 @@ const GeneratorRange = () => {
               key={type}
               onClick={() => setActiveFilter(type)}
               className={`flex items-center gap-2 px-3 py-1.5 rounded-full transition-colors ${
-                activeFilter === type ? "bg-blue-600 text-white" : "hover:bg-gray-800"
+                activeFilter === type ? "bg-[#2D6FBA] text-white" : "hover:bg-gray-800"
               }`}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}

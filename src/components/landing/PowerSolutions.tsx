@@ -133,11 +133,11 @@ const PSCard = ({ title, desc, specs, img, onExplore }: { title: string; desc: s
             transition={{ delay: 0.2 + index * 0.1 }}
           >
             <motion.span 
-              className="inline-flex items-center justify-center rounded-full bg-blue-100 h-5 w-5"
+              className="inline-flex items-center justify-center rounded-full bg-[#D6E8FA] h-5 w-5"
               whileHover={{ scale: 1.2, backgroundColor: "#bfdbfe" }}
             >
               <motion.span 
-                className="h-2 w-2 rounded-full bg-blue-600" 
+                className="h-2 w-2 rounded-full bg-[#2D6FBA]" 
                 whileHover={{ scale: 1.3 }}
               />
             </motion.span>
@@ -150,7 +150,7 @@ const PSCard = ({ title, desc, specs, img, onExplore }: { title: string; desc: s
           whileHover={{ x: 5 }}
           transition={{ type: "spring", stiffness: 400 }}
         >
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-md overflow-hidden" onClick={onExplore}>
+          <Button className="bg-[#2D6FBA] hover:bg-[#22548e] text-white rounded-md overflow-hidden" onClick={onExplore}>
             <div className="flex items-center gap-2">
               Explore More 
               <motion.div
@@ -188,11 +188,11 @@ const FilterSection = ({ title, options }: { title: string; options: string[] })
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.1 * index, duration: 0.2 }}
-          whileHover={{ x: 2, color: "#3b82f6" }}
+          whileHover={{ x: 2, color: "#2D6FBA" }}
         >
           <motion.input
             type="checkbox"
-            className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+            className="h-4 w-4 rounded border-gray-300 text-[#2D6FBA] focus:ring-[#2D6FBA]"
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.8 }}
           />
@@ -607,9 +607,9 @@ const PowerSolutions = () => {
       >
         <div className="container mx-auto px-4 md:px-0 py-3">
           <div className="flex items-center text-sm">
-            <Link to="/" className="text-gray-500 hover:text-blue-600">Home</Link>
+            <Link to="/" className="text-gray-500 hover:text-[#2D6FBA]">Home</Link>
             <span className="mx-2 text-gray-400">›</span>
-            <Link to="/products" className="text-gray-500 hover:text-blue-600">Products</Link>
+            <Link to="/products" className="text-gray-500 hover:text-[#2D6FBA]">Products</Link>
           </div>
         </div>
       </motion.div>
@@ -630,7 +630,8 @@ const PowerSolutions = () => {
           Power Solutions
         </motion.h1>
         <motion.div 
-          className="w-16 h-1 bg-blue-600 rounded mb-6"
+          className="w-16 h-1 rounded mb-6"
+          style={{ background: "#2D6FBA" }}
           initial={{ width: 0 }}
           animate={{ width: 64 }}
           transition={{ delay: 0.8, duration: 0.5 }}
@@ -647,8 +648,8 @@ const PowerSolutions = () => {
                 onClick={() => setActiveCategory(category)}
                 className={`whitespace-nowrap py-2 px-1 border-b-2 transition-colors ${
                   activeCategory === category 
-                    ? "border-blue-600 text-blue-600 font-medium" 
-                    : "border-transparent text-gray-600 hover:text-blue-600"
+                    ? "border-[#2D6FBA] text-[#2D6FBA] font-medium" 
+                    : "border-transparent text-gray-600 hover:text-[#2D6FBA]"
                 }`}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -819,11 +820,11 @@ const PowerSolutions = () => {
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.1 * idx, duration: 0.2 }}
-                        whileHover={{ x: 2, color: "#3b82f6" }}
+                        whileHover={{ x: 2, color: "#2D6FBA" }}
                       >
                         <motion.input
                           type="checkbox"
-                          className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                          className="h-4 w-4 rounded border-gray-300 text-[#2D6FBA] focus:ring-[#2D6FBA]"
                           checked={selectedFilters[filterName]?.includes(option) || false}
                           onChange={e => handleFilterChange(filterName, option, e.target.checked)}
                           whileHover={{ scale: 1.2 }}
@@ -844,7 +845,7 @@ const PowerSolutions = () => {
             transition={{ delay: 1.5, duration: 0.3 }}
             className="flex gap-2"
           >
-            <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white" onClick={applyFilters}>
+            <Button className="w-full bg-[#2D6FBA] hover:bg-[#22548e] text-white" onClick={applyFilters}>
               Apply Filters
             </Button>
             <Button className="w-full bg-gray-200 hover:bg-gray-300 text-black" onClick={resetFilters}>

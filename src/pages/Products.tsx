@@ -30,7 +30,6 @@ const Products = () => {
 
   // State for generator selector modal
   const [showSelectorModal, setShowSelectorModal] = useState(false);
-  const [showRecommendationModal, setShowRecommendationModal] = useState(false);
 
   // Define product categories
   const categories = [
@@ -624,8 +623,7 @@ const Products = () => {
             </div>
           </TabsContent>
         </Tabs>
-      );
-    } else {
+      )} else {
       return (
         <Tabs defaultValue="specifications" className="w-full">
           <TabsList className="grid w-full grid-cols-2">
@@ -656,28 +654,6 @@ const Products = () => {
       );
     }
   };
-
-  // Example recommended models data
-  const recommendedModels = [
-    {
-      model: "Model XG-500",
-      capacity: 500,
-      fuelType: "Diesel",
-      price: "$15,000 - $20,000",
-    },
-    {
-      model: "Model XG-750",
-      capacity: 750,
-      fuelType: "Natural Gas",
-      price: "$22,000 - $28,000",
-    },
-    {
-      model: "Model XG-1000",
-      capacity: 1000,
-      fuelType: "Diesel",
-      price: "$30,000 - $35,000",
-    },
-  ];
 
   return (
     <>
@@ -789,7 +765,7 @@ const Products = () => {
                                 <button
                                   className={`w-full text-left px-2 py-2  rounded-sm transition text-sm ${
                                     selectedCategory === subcat.id
-                                      ? 'bg-blue-600 text-white'
+                                      ? 'bg-[#2D6FBA] text-white'
                                       : 'text-gray-200 hover:bg-[#22305a]'
                                   }`}
                                   onClick={() => setSelectedCategory(subcat.id)}
@@ -805,7 +781,7 @@ const Products = () => {
                       <button
                         className={`w-full text-left px-2 py-2 rounded-sm transition text-sm ${
                           selectedCategory === category.id
-                            ? 'bg-blue-900 text-blue-200 font-medium'
+                            ? 'bg-[#22548e] text-[#2D6FBA] font-medium'
                             : 'hover:bg-gray-800 text-gray-300'
                         }`}
                         onClick={() => handleCategorySelection(category.id)}
@@ -894,7 +870,7 @@ const Products = () => {
                             </svg>
                             Brochure
                           </Button>
-                          <Button variant="default" size="sm" className="h-7 text-xs py-0 px-4 bg-blue-600 hover:bg-blue-700 text-white">
+                          <Button variant="default" size="sm" className="h-7 text-xs py-0 px-4 bg-[#2D6FBA] hover:bg-[#22548e] text-white">
                             Get Quote
                           </Button>
                         </div>
@@ -913,7 +889,7 @@ const Products = () => {
                 <Button
                   variant="default"
                   size="sm"
-                  className="text-xs px-4 py-1 h-7 bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-1"
+                  className="text-xs px-4 py-1 h-7 bg-[#2D6FBA] hover:bg-[#22548e] text-white flex items-center gap-1"
                   onClick={() => setShowSelectorModal(true)}
                 >
                   Start Selector <ChevronRight className="w-3 h-3" />
@@ -925,14 +901,14 @@ const Products = () => {
           {/* Kumar Power Info */}
           <div className="mt-8 flex flex-col sm:flex-row sm:items-center justify-between text-xs text-gray-400 border-t border-gray-700 pt-3 gap-2">
             <div>
-              <span className="font-medium text-blue-600">Kumar Power:</span> India's Most Trusted Kirloskar-Certified Generator Brand!
+              <span className="font-medium text-[#2D6FBA]">Kumar Power:</span> India's Most Trusted Kirloskar-Certified Generator Brand!
             </div>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 mt-2 sm:mt-0">
               {/* Download Button */}
     <Button
       variant="ghost"
       size="sm"
-      className="flex items-center gap-1 text-xs h-7 p-4 bg-white/20 text-gray-400 hover:bg-blue-600 hover:text-white"
+      className="flex items-center gap-1 text-xs h-7 p-4 bg-white/20 text-gray-400 hover:bg-[#2D6FBA] hover:text-white"
     >
       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -950,7 +926,7 @@ const Products = () => {
               } 
       variant="ghost"
       size="sm"
-      className="bg-white/20 flex items-center gap-1 text-xs h-7 p-4 text-gray-400 hover:bg-blue-600 hover:text-white"
+      className="bg-white/20 flex items-center gap-1 text-xs h-7 p-4 text-gray-400 hover:bg-[#2D6FBA] hover:text-white"
     >
       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
@@ -962,7 +938,7 @@ const Products = () => {
     <Button
       variant="ghost"
       size="sm"
-      className="bg-blue-600 flex items-center gap-1 text-xs h-7 p-4 text-white hover:bg-blue-700 hover:text-white"
+      className="bg-[#2D6FBA] flex items-center gap-1 text-xs h-7 p-4 text-white hover:bg-[#22548e] hover:text-white"
     >
       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <line x1="12" y1="5" x2="12" y2="19" />
@@ -982,7 +958,7 @@ const Products = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {/* Unmatched Reliability */}
               <div className="bg-white p-6 rounded-md shadow-sm">
-                <div className="mb-4 text-blue-600">
+                <div className="mb-4" style={{ color: "#2D6FBA" }}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
                   </svg>
@@ -993,7 +969,7 @@ const Products = () => {
 
               {/* Fuel Efficiency */}
               <div className="bg-white p-6 rounded-md shadow-sm">
-                <div className="mb-4 text-blue-600">
+                <div className="mb-4" style={{ color: "#2D6FBA" }}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6zM6.646 4.646l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448c.82-1.641 1.717-2.753 2.093-3.13z"/>
                   </svg>
@@ -1004,7 +980,7 @@ const Products = () => {
 
               {/* Rapid Response */}
               <div className="bg-white p-6 rounded-md shadow-sm">
-                <div className="mb-4 text-blue-600">
+                <div className="mb-4" style={{ color: "#2D6FBA" }}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
                     <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
@@ -1016,7 +992,7 @@ const Products = () => {
 
               {/* Low Noise Operation */}
               <div className="bg-white p-6 rounded-md shadow-sm">
-                <div className="mb-4 text-blue-600">
+                <div className="mb-4" style={{ color: "#2D6FBA" }}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
                     <path d="M10.002 4.646a.5.5 0 0 1 .707 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.707-.708L11.293 7 10.002 5.707a.5.5 0 0 1 0-.708zm-6.293 0a.5.5 0 0 0-.707 0l-2 2a.5.5 0 0 0 0 .708l2 2a.5.5 0 0 0 .707-.708L1.707 7l2.001-1.293a.5.5 0 0 0 0-.708z"/>
@@ -1028,7 +1004,7 @@ const Products = () => {
 
               {/* Easy Maintenance */}
               <div className="bg-white p-6 rounded-md shadow-sm">
-                <div className="mb-4 text-blue-600">
+                <div className="mb-4" style={{ color: "#2D6FBA" }}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M8.932.727c-.243-.97-1.62-.97-1.864 0l-.071.286a.96.96 0 0 1-1.622.434l-.205-.211c-.695-.719-1.888-.03-1.613.931l.08.284a.96.96 0 0 1-1.186 1.187l-.284-.081c-.96-.275-1.65.918-.931 1.613l.211.205a.96.96 0 0 1-.434 1.622l-.286.071c-.97.243-.97 1.62 0 1.864l.286.071a.96.96 0 0 1 .434 1.622l-.211.205c-.719.695-.03 1.888.931 1.613l.284-.08a.96.96 0 0 1 1.187 1.187l-.081.283c-.275.96.918 1.65 1.613.931l.205-.211a.96.96 0 0 1 1.622.434l.071.286c.243.97 1.62.97 1.864 0l.071-.286a.96.96 0 0 1 1.622-.434l.205.211c.695.719 1.888.03 1.613-.931l-.08-.284a.96.96 0 0 1 1.187-1.187l.283.081c.96.275 1.65-.918.931-1.613l-.211-.205a.96.96 0 0 1 .434-1.622l.286-.071c.97-.243.97-1.62 0-1.864l-.286-.071a.96.96 0 0 1-.434-1.622l.211-.205c.719-.695.03-1.888-.931-1.613l-.284.08a.96.96 0 0 1-1.187-1.186l.081-.284c.275-.96-.918-1.65-1.613-.931l-.205.211a.96.96 0 0 1-1.622-.434L8.932.727zM8 12.997a4.998 4.998 0 1 1 0-9.995 4.998 4.998 0 0 1 0 9.996z"/>
                   </svg>
@@ -1039,7 +1015,7 @@ const Products = () => {
 
               {/* Smart Controls */}
               <div className="bg-white p-6 rounded-md shadow-sm">
-                <div className="mb-4 text-blue-600">
+                <div className="mb-4" style={{ color: "#2D6FBA" }}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
                   </svg>
@@ -1059,35 +1035,35 @@ const Products = () => {
             <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 md:gap-14">
               <div className="text-center">
                 <div className="w-20 h-20 mx-auto mb-3 flex items-center justify-center rounded-md bg-gray-800">
-                  <BadgeCheckIcon className="w-8 h-8 text-blue-500" />
+                  <BadgeCheckIcon className="w-8 h-8" style={{ color: "#2D6FBA" }} />
                 </div>
                 <p className="font-medium text-sm text-gray-300">ISO 9001:2015</p>
               </div>
               
               <div className="text-center">
                 <div className="w-20 h-20 mx-auto mb-3 flex items-center justify-center rounded-md bg-gray-800">
-                  <BadgeCheckIcon className="w-8 h-8 text-blue-500" />
+                  <BadgeCheckIcon className="w-8 h-8" style={{ color: "#2D6FBA" }} />
                 </div>
                 <p className="font-medium text-sm text-gray-300">CPCB-IV+</p>
               </div>
               
               <div className="text-center">
                 <div className="w-20 h-20 mx-auto mb-3 flex items-center justify-center rounded-md bg-gray-800">
-                 <BadgeCheckIcon className="w-8 h-8 text-blue-500" />
+                 <BadgeCheckIcon className="w-8 h-8" style={{ color: "#2D6FBA" }} />
                 </div>
                 <p className="font-medium text-sm text-gray-300">CE Certified</p>
               </div>
               
               <div className="text-center">
                 <div className="w-20 h-20 mx-auto mb-3 flex items-center justify-center rounded-md bg-gray-800">
-                  <BadgeCheckIcon className="w-8 h-8 text-blue-500" />
+                  <BadgeCheckIcon className="w-8 h-8" style={{ color: "#2D6FBA" }} />
                 </div>
                 <p className="font-medium text-sm text-gray-300">BIS Approved</p>
               </div>
               
               <div className="text-center">
                 <div className="w-20 h-20 mx-auto mb-3 flex items-center justify-center rounded-md bg-gray-800">
-                  <BadgeCheckIcon className="w-8 h-8 text-blue-500" />
+                  <BadgeCheckIcon className="w-8 h-8" style={{ color: "#2D6FBA" }} />
                 </div>
                 <p className="font-medium text-sm text-gray-300">Kirloskar Authorized</p>
               </div>
@@ -1184,7 +1160,7 @@ const Products = () => {
                 
                 {/* CTA Buttons */}
                 <div className="mt-6 flex flex-col sm:flex-row flex-wrap gap-3 pt-4 border-t">
-                  <Button size="sm" variant="default" className="bg-blue-600 hover:bg-blue-700 w-full sm:w-auto">
+                  <Button size="sm" variant="default" className="bg-[#2D6FBA] hover:bg-[#22548e] w-full sm:w-auto">
                     Request Quote
                   </Button>
                   <Button size="sm" variant="outline" className="flex items-center gap-1 w-full sm:w-auto">
@@ -1203,14 +1179,7 @@ const Products = () => {
           <DialogHeader>
             <DialogTitle className="text-xl text-center mb-2">Select Your Power Requirements</DialogTitle>
           </DialogHeader>
-          <form
-            className="flex flex-col gap-4"
-            onSubmit={e => {
-              e.preventDefault();
-              setShowSelectorModal(false);
-              setShowRecommendationModal(true);
-            }}
-          >
+          <form className="flex flex-col gap-4">
             <div>
               <label className="block text-sm mb-1">kVA/kW Input</label>
               <input
@@ -1252,58 +1221,10 @@ const Products = () => {
                 className="w-full px-3 py-2 rounded bg-gray-900 text-white border border-gray-700"
               />
             </div>
-            <Button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white mt-2 w-full">
+            <Button type="submit" className="bg-[#2D6FBA] hover:bg-[#22548e] text-white mt-2 w-full">
               Submit
             </Button>
           </form>
-        </DialogContent>
-      </Dialog>
-
-      {/* Recommended Generator Models Modal */}
-      <Dialog open={showRecommendationModal} onOpenChange={setShowRecommendationModal}>
-        <DialogContent className="sm:max-w-[700px] bg-black text-white">
-          <DialogHeader>
-            <DialogTitle className="text-2xl font-bold mb-2">Recommended Generator Models</DialogTitle>
-            <DialogDescription className="text-gray-300 mb-4">
-              Based on your input, we recommend the following generator models. Review the specifications and price estimates below, and choose the best option for your needs.
-            </DialogDescription>
-          </DialogHeader>
-          <div className="mb-6">
-            <div className="font-semibold text-lg mb-2">Model Specifications</div>
-            <div className="overflow-x-auto">
-              <table className="min-w-full bg-black text-white border border-gray-700 rounded">
-                <thead>
-                  <tr className="bg-gray-900">
-                    <th className="py-2 px-4 text-left font-semibold">Model</th>
-                    <th className="py-2 px-4 text-left font-semibold">Capacity (kW)</th>
-                    <th className="py-2 px-4 text-left font-semibold">Fuel Type</th>
-                    <th className="py-2 px-4 text-left font-semibold">Estimated Price</th>
-                    <th className="py-2 px-4 text-left font-semibold">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {recommendedModels.map((m, idx) => (
-                    <tr key={m.model} className={idx % 2 === 0 ? "bg-gray-950" : "bg-gray-900"}>
-                      <td className="py-2 px-4">{m.model}</td>
-                      <td className="py-2 px-4 text-blue-400">{m.capacity}</td>
-                      <td className="py-2 px-4 text-blue-400">{m.fuelType}</td>
-                      <td className="py-2 px-4">{m.price}</td>
-                      <td className="py-2 px-4">
-                        <span className="text-blue-400 cursor-pointer hover:underline mr-2">Compare</span>
-                        <span className="text-blue-400 cursor-pointer hover:underline">Request Quote</span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div className="mt-4">
-            <div className="font-semibold mb-1">Additional Information</div>
-            <div className="text-gray-300 text-sm">
-              For more detailed specifications, including dimensions, weight, and noise levels, please refer to the product brochures available for each model. You can also contact our support team for further assistance.
-            </div>
-          </div>
         </DialogContent>
       </Dialog>
       
