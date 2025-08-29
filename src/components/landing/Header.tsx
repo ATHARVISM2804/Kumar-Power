@@ -142,7 +142,7 @@ const Header = () => {
               </summary>
               <div className="mt-2 ml-4 space-y-2">
                 <Link to="/services/annual-maintenance" className="block py-2" onClick={closeMobileMenu}>Annual Maintenance</Link>
-                <Link to="/services/installation" className="block py-2" onClick={closeMobileMenu}>Installation & Commissioning</Link>
+                {/* <Link to="/services/installation" className="block py-2" onClick={closeMobileMenu}>Installation & Commissioning</Link> */}
                 <Link to="/services/repair-overhaul" className="block py-2" onClick={closeMobileMenu}>Repair & Overhaul</Link>
                 <Link to="/services/emergency-support" className="block py-2" onClick={closeMobileMenu}>24/7 Emergency Support</Link>
                 <Link to="/services/rental" className="block py-2" onClick={closeMobileMenu}>Generator Rental</Link>
