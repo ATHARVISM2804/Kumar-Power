@@ -35,6 +35,7 @@ import Industries from "./pages/ValueClient";
 
 // Contact page
 import Contact from "./pages/contact/Contact";
+import Submissions from "./pages/Data";
 
 const queryClient = new QueryClient();
 
@@ -72,6 +73,7 @@ const App = () => (
           {/* Services Routes */}
           
           <Route path="/services/annual-maintenance" element={<AnnualMaintenance />} />
+          <Route path="/data" element={<Submissions />} />
           <Route path="/services/installation" element={<Installation />} />
           <Route path="/services/repair-overhaul" element={<RepairOverhaul />} />
           <Route path="/services/emergency-support" element={<EmergencySupport />} />

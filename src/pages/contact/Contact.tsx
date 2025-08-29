@@ -42,10 +42,15 @@ const Contact = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Updated contact form submit handler
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
-    alert("Thank you for your message. We'll get back to you shortly!");
+    await fetch("http://localhost:5000/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+    alert("Thank you for your message!");
     setFormData({
       name: "",
       email: "",
@@ -55,10 +60,24 @@ const Contact = () => {
     });
   };
 
-  const handleResumeSubmit = (e: React.FormEvent) => {
+  // Updated resume form submit handler
+  const handleResumeSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Resume submission logic would go here
-    alert("Thank you for submitting your resume. We'll review it and contact you if there's a suitable position.");
+    const formDataObj = new FormData();
+    formDataObj.append("fullName", resumeData.fullName);
+    formDataObj.append("email", resumeData.email);
+    formDataObj.append("phone", resumeData.phone);
+    formDataObj.append("message", resumeData.message);
+    if (resumeData.resume) {
+      formDataObj.append("resume", resumeData.resume);
+    }
+
+    await fetch("http://localhost:5000/api/resume", {
+      method: "POST",
+      body: formDataObj,
+    });
+
+    alert("Resume submitted successfully!");
     setResumeData({
       fullName: "",
       email: "",
