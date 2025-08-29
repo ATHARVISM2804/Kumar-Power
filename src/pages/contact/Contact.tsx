@@ -413,38 +413,48 @@ const Contact = () => {
               </div>
               
               {/* Map Section */}
-              <div className="mt-12">
-                <div className="relative w-full">
-                  {/* Full width map */}
-                  <div className="w-[99vw] h-72 md:h-80 lg:h-96 bg-gray-700 -translate-x-[12vw] overflow-hidden relative">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.906561651749!2d77.0909653!3d28.628740799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d04afb8dbcfe7%3A0x7a3fea49479dd4c8!2sWestend%20Mall!5e0!3m2!1sen!2sin!4v1695047878395!5m2!1sen!2sin"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen={false}
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Kumar Power Office Location"
-                      className="absolute inset-0"
-                    />
-                    {/* Overlay info card */}
-                    <div className="absolute left-16 bottom-8 bg-black/80 text-white rounded-lg shadow-lg py-10 px-6 max-w-xs flex flex-col gap-2">
-                      <div className="flex items-center gap-2 mb-1">
-                        <svg className="w-5 h-5 text-[#2D6FBA]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                          <circle cx="12" cy="11" r="3" fill="currentColor" />
-                        </svg>
-                        <span className="font-semibold text-lg">Our Office</span>
-                      </div>
-                      <div className="text-sm font-extralight leading-snug tracking-tighter">
-                        New Address: 904, 9th Floor, Westend Mall,<br />
-                        Janakpuri, New Delhi - 110058
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+       {/* Full-width Map Section */}
+<div className="relative w-screen mt-10 left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.002710082035!2d77.07707537557323!3d28.629680875666285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d04bf7f6ae361%3A0x88c15da012435142!2sWestend%20Mall%20Janakpuri%20West%20Delhi!5e0!3m2!1sen!2sin!4v1756473543698!5m2!1sen!2sin"
+    className="absolute inset-0 w-full h-full"
+    style={{ border: 0 }}
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    title="Kumar Power Office Location"
+  />
+
+  {/* Overlay info card */}
+  <div className="absolute left-4 md:left-12 bottom-4 md:bottom-8 bg-black/80 text-white rounded-lg shadow-lg py-4 px-5 md:py-6 md:px-8 max-w-xs flex flex-col gap-2">
+    <div className="flex items-center gap-2 mb-1">
+      <svg
+        className="w-5 h-5 text-[#2D6FBA]"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+        />
+        <circle cx="12" cy="11" r="3" fill="currentColor" />
+      </svg>
+      <span className="font-semibold text-lg">Our Office</span>
+    </div>
+    <div className="text-sm font-extralight leading-snug tracking-tighter">
+      New Address: 904, 9th Floor, Westend Mall,<br />
+      Janakpuri, New Delhi - 110058
+    </div>
+  </div>
+</div>
+
+
+
+
+
             </div>
           </div>
         </section>

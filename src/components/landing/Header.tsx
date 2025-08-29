@@ -42,7 +42,7 @@ const Header = () => {
               <div className="bg-white shadow-lg rounded-md min-w-[200px] z-10 overflow-hidden">
                 <Link to="/about/OurProfile" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Our Profile</Link>
                 <Link to="/about/Testimonials" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Testimonials</Link>
-                <Link to="/about/OurClients" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Our Clients</Link>
+                {/* <Link to="/about/OurClients" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Our Clients</Link> */}
                 <Link to="/about/PhotoGallery" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Photo gallery</Link>
                 <Link to="/about/Certifications" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Certifications</Link>
               </div>
@@ -75,7 +75,7 @@ const Header = () => {
           
           {/* Our Clients  */}
           <li className="relative group">
-            <Link to="/our-clients" className="hover:text-primary transition-colors flex items-center gap-1 cursor-pointer py-4">
+            <Link to="/about/OurClients" className="hover:text-primary transition-colors flex items-center gap-1 cursor-pointer py-4">
               Our Clients 
             </Link>
            
