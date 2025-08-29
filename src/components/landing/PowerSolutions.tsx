@@ -227,25 +227,52 @@ const PowerSolutions = () => {
       {
         title: "Kirloskar CPCB4+ Diesel Genset",
         desc: "Advanced diesel generators with CPCB4+ compliance, offering superior fuel efficiency and eco-friendly operations.",
-        specs: ["2 kVA - 1000 kVA Range", "CPCB4+ Compliant", "3 Phase Output"],
+        specs: [
+          "2 kVA - 1000 kVA Range",
+          "CPCB4+ Compliant",
+          "3 Phase Output",
+          "Fuel: Diesel",
+          "Application: Industrial, Commercial",
+          "Certification: ISO 9001, CE Certified, UL Listed"
+        ],
         img: diesel
       },
       {
         title: "Gas Generators",
         desc: "Eco-friendly natural gas and LPG generators with lower emissions and operational costs for sustainable power generation.",
-        specs: ["15 kVA - 500 kVA", "Low Emissions", "Quiet Operation"],
+        specs: [
+          "15 kVA - 500 kVA",
+          "Low Emissions",
+          "Quiet Operation",
+          "Fuel: Natural Gas, LPG",
+          "Application: Industrial, Commercial, Residential",
+          "Certification: CPCB4+, ISO 9001"
+        ],
         img: gas
       },
       {
         title: "Portable Generators",
         desc: "Compact and mobile power solutions for construction sites, events, and emergency backup with easy transport features.",
-        specs: ["2 kVA - 15 kVA", "Lightweight Design"],
+        specs: [
+          "2 kVA - 15 kVA",
+          "Lightweight Design",
+          "Fuel: Petrol, Diesel",
+          "Application: Construction, Events, Residential",
+          "Certification: CE Certified"
+        ],
         img: portable
       },
       {
         title: "Uninterruptible Power Supply (UPS)",
         desc: "Protection against power outages with instant backup power and surge protection for critical equipment and data centers.",
-        specs: ["1 kVA - 500 kVA Range", "Online Double Conversion", "Battery Backup"],
+        specs: [
+          "1 kVA - 500 kVA Range",
+          "Online Double Conversion",
+          "Battery Backup",
+          "Fuel: N/A",
+          "Application: Industrial, IT Equipment",
+          "Certification: ISO 9001"
+        ],
         img: ups
       }
     ],
@@ -253,13 +280,27 @@ const PowerSolutions = () => {
       {
         title: "Home Inverters",
         desc: "Reliable power backup solutions for residential use with quick switchover and battery management.",
-        specs: ["600VA - 3500VA", "Pure Sine Wave", "LCD Display"],
+        specs: [
+          "600VA - 3500VA",
+          "Pure Sine Wave",
+          "LCD Display",
+          "Application: Home",
+          "Type: Pure Sine Wave",
+          "Features: Battery Management, LCD Display"
+        ],
         img: ups
       },
       {
         title: "Solar Inverters",
         desc: "Harness solar energy with efficient conversion and battery charging capabilities for sustainable power.",
-        specs: ["1kW - 100kW", "MPPT Technology", "Grid-tie Option"],
+        specs: [
+          "1kW - 100kW",
+          "MPPT Technology",
+          "Grid-tie Option",
+          "Application: Solar, Commercial",
+          "Type: Solar Hybrid",
+          "Features: MPPT, Mobile App"
+        ],
         img: portable
       }
     ],
@@ -267,13 +308,27 @@ const PowerSolutions = () => {
       {
         title: "AC Drives",
         desc: "Precise motor control solutions for industrial applications, offering energy savings and process optimization.",
-        specs: ["0.25kW - 800kW", "Vector Control", "IP54 Protection"],
+        specs: [
+          "0.25kW - 800kW",
+          "Vector Control",
+          "IP54 Protection",
+          "Application: Manufacturing, Conveyors",
+          "Control Type: Vector Control",
+          "Protection: IP54"
+        ],
         img: gas
       },
       {
         title: "HVAC Drives",
         desc: "Specialized VFDs for HVAC applications with building automation integration capabilities.",
-        specs: ["Fan & Pump Control", "BMS Compatible", "Energy Monitoring"],
+        specs: [
+          "Fan & Pump Control",
+          "BMS Compatible",
+          "Energy Monitoring",
+          "Application: HVAC, Pumps",
+          "Control Type: Closed Loop",
+          "Protection: IP20"
+        ],
         img: diesel
       }
     ],
@@ -281,13 +336,27 @@ const PowerSolutions = () => {
       {
         title: "Power Control Centers",
         desc: "Centralized electrical distribution systems for industrial facilities with comprehensive protection features.",
-        specs: ["Up to 6300A", "Short Circuit Protection", "Type 2 Coordination"],
+        specs: [
+          "Up to 6300A",
+          "Short Circuit Protection",
+          "Type 2 Coordination",
+          "Current Rating: Above 2000A",
+          "Application: Power Distribution, Motor Control",
+          "Certification: IEC 61439, UL Listed"
+        ],
         img: diesel
       },
       {
         title: "AMF Panels",
         desc: "Automatic Mains Failure panels for seamless power transfer between utility and generator supply.",
-        specs: ["Auto/Manual Operation", "Engine Protection", "Programmable Logic"],
+        specs: [
+          "Auto/Manual Operation",
+          "Engine Protection",
+          "Programmable Logic",
+          "Current Rating: 100-630A",
+          "Application: Synchronization",
+          "Certification: CE Certified"
+        ],
         img: gas
       }
     ],
@@ -295,13 +364,27 @@ const PowerSolutions = () => {
       {
         title: "Industrial Voltage Stabilizers",
         desc: "High-precision voltage regulation systems for sensitive equipment and production lines.",
-        specs: ["5kVA - 5000kVA", "±1% Output Accuracy", "Digital Control"],
+        specs: [
+          "5kVA - 5000kVA",
+          "±1% Output Accuracy",
+          "Digital Control",
+          "Power Range: High Voltage",
+          "Application: Industrial, IT Equipment",
+          "Features: Digital Display, Remote Monitoring"
+        ],
         img: portable
       },
       {
         title: "Oil Cooled Stabilizers",
         desc: "Heavy-duty stabilizers for harsh environments with superior thermal management.",
-        specs: ["Three Phase", "IGBT Technology", "Overload Protection"],
+        specs: [
+          "Three Phase",
+          "IGBT Technology",
+          "Overload Protection",
+          "Power Range: Three Phase",
+          "Application: Medical, HVAC",
+          "Technology: IGBT Based"
+        ],
         img: ups
       }
     ],
@@ -309,13 +392,27 @@ const PowerSolutions = () => {
       {
         title: "Distribution Transformers",
         desc: "Reliable power distribution transformers for commercial and industrial applications.",
-        specs: ["10kVA - 5000kVA", "Oil/Dry Type", "ONAN/ONAF Cooling"],
+        specs: [
+          "10kVA - 5000kVA",
+          "Oil/Dry Type",
+          "ONAN/ONAF Cooling",
+          "Type: Oil Filled",
+          "Cooling: ONAN",
+          "Application: Distribution, Power"
+        ],
         img: diesel
       },
       {
         title: "Isolation Transformers",
         desc: "Protection against electrical noise and interference for sensitive electronic equipment.",
-        specs: ["Galvanic Isolation", "Copper Windings", "K-Factor Rated"],
+        specs: [
+          "Galvanic Isolation",
+          "Copper Windings",
+          "K-Factor Rated",
+          "Type: Isolation",
+          "Cooling: OFWF",
+          "Application: Industrial"
+        ],
         img: gas
       }
     ]
@@ -379,11 +476,16 @@ const PowerSolutions = () => {
 
   const activeFilters = getFilterOptionsForCategory(activeCategory);
 
-  // Reset filters and filtered products when category changes
-  useEffect(() => {
-    setSelectedFilters({});
-    setFilteredProducts([]);
-  }, [activeCategory]);
+  // Helper: check if product matches selected filters
+  const productMatchesFilters = (product: any, filters: { [key: string]: string[] }) => {
+    // For each filter group, at least one selected value must match a spec
+    return Object.entries(filters).every(([filterName, selectedValues]) => {
+      if (!selectedValues.length) return true;
+      return selectedValues.some(val =>
+        product.specs.some(spec => spec.toLowerCase().includes(val.toLowerCase()))
+      );
+    });
+  };
 
   // Handle filter checkbox change
   const handleFilterChange = (filterName: string, option: string, checked: boolean) => {
@@ -399,25 +501,31 @@ const PowerSolutions = () => {
     });
   };
 
-  // Filter products based on selected filters
+  // Apply filters button handler
   const applyFilters = () => {
     const products = categoryProducts[activeCategory as keyof typeof categoryProducts];
     if (!products) return setFilteredProducts([]);
-    // Only filter if any filter is selected
     if (Object.values(selectedFilters).every(arr => arr.length === 0)) {
       setFilteredProducts([]);
       return;
     }
-    // Simple filter: product.specs must include at least one selected filter value
-    const selectedValues = Object.values(selectedFilters).flat();
-    const filtered = products.filter(product =>
-      selectedValues.every(val =>
-        product.specs.some(spec => spec.toLowerCase().includes(val.toLowerCase()))
-      )
-    );
+    const filtered = products.filter(product => productMatchesFilters(product, selectedFilters));
     setFilteredProducts(filtered);
   };
 
+  // Reset filters button handler
+  const resetFilters = () => {
+    setSelectedFilters({});
+    setFilteredProducts([]);
+  };
+
+  // Reset filters and filtered products when category changes
+  useEffect(() => {
+    setSelectedFilters({});
+    setFilteredProducts([]);
+  }, [activeCategory]);
+
+  // Scrollable logo marquee effect
   useEffect(() => {
     if (!logoRef.current || !logoContainerRef.current) return;
     
@@ -692,7 +800,7 @@ const PowerSolutions = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              {Object.entries(activeFilters).map(([filterName, options], index) => (
+              {Object.entries(getFilterOptionsForCategory(activeCategory)).map(([filterName, options], index) => (
                 <motion.div 
                   className="mb-6"
                   initial={{ opacity: 0, y: 10 }}
@@ -734,11 +842,13 @@ const PowerSolutions = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.5, duration: 0.3 }}
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
+            className="flex gap-2"
           >
             <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white" onClick={applyFilters}>
               Apply Filters
+            </Button>
+            <Button className="w-full bg-gray-200 hover:bg-gray-300 text-black" onClick={resetFilters}>
+              Reset Filters
             </Button>
           </motion.div>
         </motion.div>

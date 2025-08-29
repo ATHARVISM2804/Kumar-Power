@@ -136,8 +136,12 @@ const InstallationService = () => {
                   <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
                     <Link to="/contact">Schedule Installation</Link>
                   </Button>
-                  <Button asChild size="lg" variant="outline">
-                    <Link to="/services">View All Services</Link>
+                  <Button
+                    asChild
+                    size="lg"
+                    variant="outline"
+                  >
+                    <Link to="/services/annual-maintenance">View All Services</Link>
                   </Button>
                 </div>
               </div>
