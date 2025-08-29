@@ -63,8 +63,13 @@ const upload = multer({ storage });
 
 // Get all contact submissions
 app.get("/api/contact", async (req, res) => {
-  const contacts = await Contact.find().sort({ createdAt: -1 });
-  res.json(contacts);
+  try {
+    const contacts = await Contact.find().sort({ createdAt: -1 });
+    res.json(contacts);
+  } catch (err) {
+    console.error("Error in /api/contact:", err);
+    res.status(500).json({ success: false, error: err.message });
+  }
 });
 
 app.get("/", async (req, res) => {
@@ -73,8 +78,13 @@ app.get("/", async (req, res) => {
 
 // Get all resume submissions
 app.get("/api/resume", async (req, res) => {
-  const resumes = await Resume.find().sort({ createdAt: -1 });
-  res.json(resumes);
+  try {
+    const resumes = await Resume.find().sort({ createdAt: -1 });
+    res.json(resumes);
+  } catch (err) {
+    console.error("Error in /api/resume:", err);
+    res.status(500).json({ success: false, error: err.message });
+  }
 });
 
 // Serve resume files statically

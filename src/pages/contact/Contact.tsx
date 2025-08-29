@@ -45,7 +45,8 @@ const Contact = () => {
   // Updated contact form submit handler
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await fetch("http://localhost:5000/api/contact", {
+    await fetch("https://kumar-power.onrender.com/api/contact", {
+    // await fetch("http://localhost:5000/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),

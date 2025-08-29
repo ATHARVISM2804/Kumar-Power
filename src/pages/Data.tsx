@@ -9,12 +9,18 @@ const Submissions = () => {
     const fetchData = async () => {
       try {
         // Fetch contact submissions
-        const contactRes = await fetch("http://localhost:5000/api/contact");
+        const contactRes = await fetch("https://kumar-power.onrender.com/api/contact");
+        if (!contactRes.ok) {
+          throw new Error(`Contact API error: ${contactRes.status}`);
+        }
         const contactData = await contactRes.json();
         setContacts(contactData);
 
         // Fetch resume submissions
-        const resumeRes = await fetch("http://localhost:5000/api/resume");
+        const resumeRes = await fetch("https://kumar-power.onrender.com/api/resume");
+        if (!resumeRes.ok) {
+          throw new Error(`Resume API error: ${resumeRes.status}`);
+        }
         const resumeData = await resumeRes.json();
         setResumes(resumeData);
 
