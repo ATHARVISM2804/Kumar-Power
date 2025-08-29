@@ -67,6 +67,10 @@ app.get("/api/contact", async (req, res) => {
   res.json(contacts);
 });
 
+app.get("/", async (req, res) => {
+  res.send("Welcome to the Resume API");
+});
+
 // Get all resume submissions
 app.get("/api/resume", async (req, res) => {
   const resumes = await Resume.find().sort({ createdAt: -1 });
