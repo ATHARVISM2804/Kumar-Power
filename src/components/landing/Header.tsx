@@ -126,7 +126,7 @@ const Header = () => {
               <div className="mt-2 ml-4 space-y-2">
                 <Link to="/about/OurProfile" className="block py-2" onClick={closeMobileMenu}>Our Profile</Link>
                 <Link to="/about/Testimonials" className="block py-2" onClick={closeMobileMenu}>Testimonials</Link>
-                <Link to="/about/OurClients" className="block py-2" onClick={closeMobileMenu}>Our Clients</Link>
+                {/* <Link to="/about/OurClients" className="block py-2" onClick={closeMobileMenu}>Our Clients</Link> */}
                 <Link to="/about/PhotoGallery" className="block py-2" onClick={closeMobileMenu}>Photo gallery</Link>
                 <Link to="/about/Certifications" className="block py-2" onClick={closeMobileMenu}>Certifications</Link>
               </div>
@@ -180,7 +180,7 @@ const Header = () => {
           
           {/* Our Clients link */}
           <div className="py-3 border-b">
-            <Link to="/our-clients" className="block" onClick={closeMobileMenu}>Our Clients</Link>
+            <Link to="/about/OurClients" className="block" onClick={closeMobileMenu}>Our Clients</Link>
           </div>
 
           {/* Installation link */}
