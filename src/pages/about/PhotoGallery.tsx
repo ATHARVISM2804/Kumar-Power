@@ -632,7 +632,7 @@ const PhotoGallery = () => {
                 <a href="/contact" className="bg-[#2D6FBA] text-white text-sm px-6 py-2 rounded hover:bg-[#22548e] transition-colors">
                   Book Your Consultation →
                 </a>
-                <a href="/downloads/kumar-power-media-kit.pdf" download className="border border-white text-white text-sm px-6 py-2 rounded hover:bg-white hover:text-black transition-colors">
+                <a href="/Images.zip" download className="border border-white text-white text-sm px-6 py-2 rounded hover:bg-white hover:text-black transition-colors">
                   Download Media Kit
                 </a>
               </div>
