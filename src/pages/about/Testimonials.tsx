@@ -59,10 +59,10 @@ const Testimonials = () => {
         <div className="max-w-7xl mx-auto px-8">
           <div className="mb-6">
             <div className="border-l-4 border-[#2D6FBA] pl-4">
-              <h2 className="text-3xl font-bold">POWERING INDIA'S<br />SUCCESS STORIES</h2>
+              <h2 className="text-4xl font-bold">POWERING INDIA'S<br />SUCCESS STORIES</h2>
               <p className="mt-2">Testimonials from industry leaders</p>
             </div>
-            <button className="text-[#2D6FBA] mt-4 flex items-center text-sm">
+            <button className="text-[#2D6FBA] mt-4 flex items-center text-lg">
               Discover
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -76,7 +76,7 @@ const Testimonials = () => {
       <section className="bg-white py-8">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-8 flex items-center justify-between">
-            <h3 className="text-xl font-semibold">Client Success Stories</h3>
+            <h3 className="text-3xl font-semibold">Client Success Stories</h3>
             <button className="text-sm text-gray-500 flex items-center">
               Filter by industry...
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -251,7 +251,7 @@ const Testimonials = () => {
           
           {/* Trusted By Section */}
           <div className="text-center mb-8">
-            <p className="text-sm mb-6">Trusted by India's Leading Organizations</p>
+            <p className="text-2xl mb-6">Trusted by India's Leading Organizations</p>
             <div className="logos-container">
               <div className="logos-slide">
                 {/* First set of logos */}

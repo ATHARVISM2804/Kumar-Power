@@ -225,10 +225,10 @@ const PowerSolutions = () => {
   const categoryProducts = {
     Generators: [
       {
-        title: "Kirloskar Diesel Generator. ",
+        title: "Kirloskar Optiprime Generator. ",
         desc: "Advanced diesel generators with CPCB4+ compliance, offering superior fuel efficiency and eco-friendly operations.",
         specs: [
-          "2 kVA – 1500 kVA.",
+          "125 kva - 6600 kva.",
           "CPCB4+ Compliant",
           "3 Phase Output",
           "Fuel: Diesel",
@@ -262,19 +262,19 @@ const PowerSolutions = () => {
         ],
         img: portable
       },
-      {
-        title: "Kirloskar Optiprime ",
-        desc: "Protection against power outages with instant backup power and surge protection for critical equipment and data centers.",
-        specs: [
-          " 125 kva - 6600 kva",
-          "Online Double Conversion",
-          "Battery Backup",
-          "Fuel: N/A",
-          "Application: Industrial, IT Equipment",
-          "Certification: ISO 9001"
-        ],
-        img: ups
-      }
+      // {
+      //   title: "Kirloskar Optiprime ",
+      //   desc: "Protection against power outages with instant backup power and surge protection for critical equipment and data centers.",
+      //   specs: [
+      //     " 125 kva - 6600 kva",
+      //     "Online Double Conversion",
+      //     "Battery Backup",
+      //     "Fuel: N/A",
+      //     "Application: Industrial, IT Equipment",
+      //     "Certification: ISO 9001"
+      //   ],
+      //   img: ups
+      // }
     ],
     Inverters: [
       {

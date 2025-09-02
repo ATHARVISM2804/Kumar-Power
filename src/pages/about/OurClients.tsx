@@ -354,7 +354,7 @@ const OurClients = () => {
       {/* Our Prestigious Clients Section */}
       <section className="bg-[#3B4255] text-white py-16">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-2xl font-bold text-center mb-2">Our Prestigious Clients</h2>
+          <h2 className="text-4xl font-bold text-center mb-2">Our Prestigious Clients</h2>
           <p className="text-sm text-center max-w-2xl mx-auto mb-8">
             We are proud to partner with industry leaders across various sectors, providing exceptional power solutions.
           </p>
