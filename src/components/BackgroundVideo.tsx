@@ -14,7 +14,7 @@ const BackgroundVideo = () => {
         videoId: "FZGwh-hlDH4",
         playerVars: {
           autoplay: 1,
-          mute: 0, // try with sound
+          mute: 1, // start muted (required for autoplay)
           controls: 0,
           rel: 0,
           loop: 1,
@@ -28,8 +28,20 @@ const BackgroundVideo = () => {
         events: {
           onReady: (event: any) => {
             event.target.playVideo();
-            // attempt unmute (will work only if user interacted before)
-            event.target.unMute();
+
+            // Wait for website load
+            window.onload = () => {
+              // After 2s, start listening for mouse move
+              setTimeout(() => {
+                const handleMouseMove = () => {
+                  event.target.unMute(); // unmute video
+                  event.target.setVolume(100); // max volume
+                  window.removeEventListener("mousemove", handleMouseMove);
+                };
+
+                window.addEventListener("mousemove", handleMouseMove);
+              }, 2000);
+            };
           },
         },
       });
@@ -39,7 +51,7 @@ const BackgroundVideo = () => {
   return (
     <div className="absolute inset-0 w-full h-full overflow-hidden">
       <div id="yt-player" className="absolute inset-0 w-full h-full" />
-      {/* Overlays to block UI */}
+      {/* Overlays to hide YouTube UI */}
       <div className="absolute top-0 left-0 w-full h-[40px] bg-black z-10"></div>
       <div className="absolute bottom-0 left-0 w-full h-[55px] bg-black z-10"></div>
       <div className="absolute top-[40px] right-0 w-[100px] h-[40px] bg-black z-10"></div>
