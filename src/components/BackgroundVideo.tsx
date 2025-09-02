@@ -35,7 +35,7 @@ const BackgroundVideo = () => {
               setTimeout(() => {
                 const handleMouseMove = () => {
                   event.target.unMute(); // unmute video
-                  event.target.setVolume(100); // max volume
+                  event.target.setVolume(50); // max volume
                   window.removeEventListener("mousemove", handleMouseMove);
                 };
 
