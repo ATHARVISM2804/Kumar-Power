@@ -40,7 +40,7 @@ const BackgroundVideo = () => {
                 };
 
                 window.addEventListener("mousemove", handleMouseMove);
-              }, 2000);
+              }, 1000);
             };
           },
         },
