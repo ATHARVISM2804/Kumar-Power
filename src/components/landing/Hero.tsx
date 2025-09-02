@@ -51,7 +51,7 @@ const Hero = () => {
           <div className="absolute inset-0 w-full h-full overflow-hidden">
             {/* Enhanced YouTube embed with better scaling to preserve content while hiding UI */}
             <iframe
-              src="https://www.youtube.com/embed/FZGwh-hlDH4?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=FZGwh-hlDH4&modestbranding=1&fs=0&disablekb=1&iv_load_policy=3&playsinline=1&enablejsapi=1"
+              src="https://www.youtube.com/embed/FZGwh-hlDH4?autoplay=1&mute=0&controls=1&showinfo=0&rel=0&loop=1&playlist=FZGwh-hlDH4&modestbranding=1&fs=0&disablekb=1&iv_load_policy=3&playsinline=1&enablejsapi=1"
               allow="autoplay; encrypted-media"
               className="absolute inset-0 w-[105%] md:w-[105%] lg:w-[105%] h-[110%] md:h-[110%] lg:h-[110%] translate-x-[-2.5%] md:translate-x-[-2.5%] lg:translate-x-[-2.5%] translate-y-[-5%] md:translate-y-[-5%] lg:translate-y-[-5%]"
               style={{ 
