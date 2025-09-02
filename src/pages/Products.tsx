@@ -41,11 +41,10 @@ const Products = () => {
 
   // Subcategories for Kirloskar Generators
   const kirloskarSubcategories = [
-    { id: "diesel", name: "Diesel Generators" },
+    { id: "diesel", name: "CPCB4+ Diesel Generators" },
     { id: "gas", name: "Gas Generators" },
     { id: "portable", name: "Portable Generators" },
-    { id: "portable", name: "CPCB4+" },
-    { id: "portable", name: "Optiprime" },
+    { id: "optiprime", name: "Optiprime" },
   ];
   
   // Define generator products based on the images
@@ -396,18 +395,30 @@ const Products = () => {
 
   // Handler for category selection
   const handleCategorySelection = (categoryId: string) => {
-    setSelectedCategory(categoryId);
-    
     // If it's a main category with subcategories, show the dropdown
     if (categoryId === 'kirloskar') {
-      setShowKirloskarDropdown(true);
-      setSelectedCategory('diesel'); // Default to diesel when kirloskar is selected
+      // Toggle the dropdown if clicking on Kirloskar again
+      if (selectedCategory === 'diesel' || selectedCategory === 'gas' || 
+          selectedCategory === 'portable' || selectedCategory === 'optiprime') {
+        setShowKirloskarDropdown(!showKirloskarDropdown);
+      } else {
+        // If coming from a different category, set default to diesel and show dropdown
+        setSelectedCategory('diesel');
+        setShowKirloskarDropdown(true);
+      }
     } else {
-      // For subcategories and other main categories, just set the selected category
-      setShowKirloskarDropdown(categoryId === 'kirloskar');
+      // For other main categories, set the category and hide Kirloskar dropdown
+      setSelectedCategory(categoryId);
+      setShowKirloskarDropdown(false);
     }
   };
 
+  // Handler for subcategory selection
+  const handleSubcategorySelection = (subcategoryId: string) => {
+    setSelectedCategory(subcategoryId);
+    // Keep the dropdown open when selecting subcategories
+  };
+  
   // Function to open the specs modal
   const openSpecsModal = (product) => {
     setSelectedProductForSpecs(product);
@@ -750,38 +761,45 @@ const Products = () => {
                     {category.hasDropdown ? (
                       <>
                         <button
-                          className={`w-full text-left px-2 py-2 rounded-sm transition text-sm flex items-center justify-between text-white`}
+                          className={`w-full text-left px-2 py-2 rounded-sm transition text-sm flex items-center justify-between ${
+                            selectedCategory === 'diesel' || selectedCategory === 'gas' || 
+                            selectedCategory === 'portable' || selectedCategory === 'optiprime'
+                              ? 'bg-[#2D6FBA]/20 text-white font-medium'
+                              : 'text-white hover:bg-gray-800'
+                          }`}
                           onClick={() => handleCategorySelection(category.id)}
                         >
                           <span>{category.name}</span>
                           <ChevronRight className={`ml-2 w-4 h-4 transition-transform ${showKirloskarDropdown ? 'rotate-90' : ''}`} />
                         </button>
-                        <div className='absolute top-1 left-0 w-full h-[37vh] rounded-md -z-10 bg-[#2D6FBA]/30'></div>
+                        
                         {showKirloskarDropdown && (
-                          
-                          <ul className="ml-4 mt-1 space-y-1 bg-">
-                            {kirloskarSubcategories.map((subcat) => (
-                              <li key={subcat.id}>
-                                <button
-                                  className={`w-full text-left px-2 py-2  rounded-sm transition text-sm ${
-                                    selectedCategory === subcat.id
-                                      ? 'bg-[#2D6FBA] text-white'
-                                      : 'text-gray-200 hover:bg-[#225488]'
-                                  }`}
-                                  onClick={() => setSelectedCategory(subcat.id)}
-                                >
-                                  {subcat.name}
-                                </button>
-                              </li>
-                            ))}
-                          </ul>
+                          <div className="relative">
+                            <div className='absolute top-0 left-0 w-full h-full rounded-md -z-10 bg-[#2D6FBA]/10'></div>
+                            <ul className="ml-4 mt-1 space-y-1 py-2">
+                              {kirloskarSubcategories.map((subcat) => (
+                                <li key={subcat.id}>
+                                  <button
+                                    className={`w-full text-left px-3 py-1.5 rounded-sm transition text-sm ${
+                                      selectedCategory === subcat.id
+                                        ? 'bg-[#2D6FBA] text-white font-medium'
+                                        : 'text-gray-200 hover:bg-[#2D6FBA]/50'
+                                    }`}
+                                    onClick={() => handleSubcategorySelection(subcat.id)}
+                                  >
+                                    {subcat.name}
+                                  </button>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
                         )}
                       </>
                     ) : (
                       <button
                         className={`w-full text-left px-2 py-2 rounded-sm transition text-sm ${
                           selectedCategory === category.id
-                            ? 'bg-[#225488] text-[#2D6FBA] font-medium'
+                            ? 'bg-[#2D6FBA] text-white font-medium'
                             : 'hover:bg-gray-800 text-gray-300'
                         }`}
                         onClick={() => handleCategorySelection(category.id)}

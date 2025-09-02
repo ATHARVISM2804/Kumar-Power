@@ -1,21 +1,61 @@
 import Header from "@/components/landing/Header";
 import Footer from "@/components/landing/Footer";
 import SEOJsonLD from "@/components/SEOJsonLD";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import test1 from "@/assets/test1.png";
 import test2 from "@/assets/test2.png";
 import test3 from "@/assets/test3.png";
 import test4 from "@/assets/test4.png";
-import client from "@/assets/Vector (8).png"
+
+import testimonial from "@/assets/testimonial banner.webp"
+import trust from "@/assets/Seasons (1).png";
+import trust1 from "@/assets/SIS (1).png";
+import trust2 from "@/assets/Vistara 1 (1).png";
+import trust3 from "@/assets/GMR (1).png";
+import trust4 from "@/assets/Honeywell 1 (1).png";
+import trust5 from "@/assets/Kashyapi (2).png";
+import trust6 from "@/assets/Caritas (1).png";
+import trust7 from "@/assets/CEC (1).png";
 
 const Testimonials = () => {
   return (
     <div className="min-h-screen bg-background">
+      <style jsx global>{`
+        @keyframes slide {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+        
+        .logos-container {
+          overflow: hidden;
+          padding: 20px 0;
+          white-space: nowrap;
+          position: relative;
+        }
+        
+        .logos-slide {
+          display: inline-block;
+          animation: slide 20s linear infinite;
+        }
+        
+        .logo-item {
+          display: inline-flex;
+          margin: 0 30px;
+        }
+      `}</style>
+      
       <SEOJsonLD />
       <Header />
       
-      {/* Success Stories Section - Black background header */}
-      <section className="bg-black text-white py-16 h-80">
+      {/* Success Stories Section - Banner image background header */}
+      <section 
+        className="py-16 h-80 bg-cover bg-center text-white" 
+        style={{ backgroundImage: `url(${testimonial})` }}
+      >
         <div className="max-w-7xl mx-auto px-8">
           <div className="mb-6">
             <div className="border-l-4 border-[#2D6FBA] pl-4">
@@ -51,7 +91,7 @@ const Testimonials = () => {
             <div className="border rounded-lg overflow-hidden">
               <div className="h-48 overflow-hidden">
                 <img 
-                  src={test1}
+                  // src={test1}
                   alt="Indian Railways" 
                   className="w-full h-full object-cover"
                 />
@@ -86,7 +126,7 @@ const Testimonials = () => {
             <div className="border rounded-lg overflow-hidden">
               <div className="h-48 overflow-hidden">
                 <img 
-                  src={test2}
+                  // src={test2}
                   alt="Apollo Hospital" 
                   className="w-full h-full object-cover"
                 />
@@ -121,7 +161,7 @@ const Testimonials = () => {
             <div className="border rounded-lg overflow-hidden">
               <div className="h-48 overflow-hidden">
                 <img 
-                  src={test3}
+                  // src={test3}
                   alt="Reliance Industries" 
                   className="w-full h-full object-cover"
                 />
@@ -156,7 +196,7 @@ const Testimonials = () => {
             <div className="border rounded-lg overflow-hidden">
               <div className="h-48 overflow-hidden">
                 <img 
-                  src={test4}
+                  // src={test4}
                   alt="Wipro Electronics" 
                   className="w-full h-full object-cover"
                 />
@@ -212,16 +252,60 @@ const Testimonials = () => {
           {/* Trusted By Section */}
           <div className="text-center mb-8">
             <p className="text-sm mb-6">Trusted by India's Leading Organizations</p>
-            <div className="grid grid-cols-6 gap-4">
-              {Array.from({ length: 6 }).map((_, index) => (
-                <div key={index} className="bg-gray-800 bg-opacity-50 rounded py-2 px-4 flex items-center justify-center">
-                  <img 
-                    src={client}
-                    alt={`Client logo ${index + 1}`}
-                    className="max-h-8"
-                  />
+            <div className="logos-container">
+              <div className="logos-slide">
+                {/* First set of logos */}
+                <div className="logo-item">
+                  <img src={trust} alt="Seasons" className="max-h-16 w-auto" />
                 </div>
-              ))}
+                <div className="logo-item">
+                  <img src={trust1} alt="SIS" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src={trust2} alt="Vistara" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src={trust3} alt="GMR" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src={trust4} alt="Honeywell" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src={trust5} alt="Kashyapi" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src={trust6} alt="Caritas" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src={trust7} alt="CEC" className="max-h-16 w-auto" />
+                </div>
+                
+                {/* Duplicate logos for continuous loop */}
+                <div className="logo-item">
+                  <img src={trust} alt="Seasons" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src={trust1} alt="SIS" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src={trust2} alt="Vistara" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src={trust3} alt="GMR" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src={trust4} alt="Honeywell" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src={trust5} alt="Kashyapi" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src={trust6} alt="Caritas" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src={trust7} alt="CEC" className="max-h-16 w-auto" />
+                </div>
+              </div>
             </div>
           </div>
           
@@ -245,7 +329,7 @@ const Testimonials = () => {
                 </svg>
               </button>
               <button className="border border-white text-white py-2 px-6 rounded">
-                Download Case Studies
+                Download Brochure
               </button>
             </div>
             
