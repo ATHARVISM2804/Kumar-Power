@@ -225,10 +225,10 @@ const PowerSolutions = () => {
   const categoryProducts = {
     Generators: [
       {
-        title: "Kirloskar CPCB4+ Diesel Genset",
+        title: "Kirloskar Diesel Generator. ",
         desc: "Advanced diesel generators with CPCB4+ compliance, offering superior fuel efficiency and eco-friendly operations.",
         specs: [
-          "2 kVA - 1000 kVA Range",
+          "2 kVA – 1500 kVA.",
           "CPCB4+ Compliant",
           "3 Phase Output",
           "Fuel: Diesel",
@@ -263,10 +263,10 @@ const PowerSolutions = () => {
         img: portable
       },
       {
-        title: "Uninterruptible Power Supply (UPS)",
+        title: "Kirloskar Optiprime ",
         desc: "Protection against power outages with instant backup power and surge protection for critical equipment and data centers.",
         specs: [
-          "1 kVA - 500 kVA Range",
+          " 125 kva - 6600 kva",
           "Online Double Conversion",
           "Battery Backup",
           "Fuel: N/A",

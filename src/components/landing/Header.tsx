@@ -40,7 +40,7 @@ const Header = () => {
             </span>
             <div className="absolute left-0 top-[90%] pt-3 hidden group-hover:block hover:block">
               <div className="bg-white shadow-lg rounded-md min-w-[200px] z-10 overflow-hidden">
-                <Link to="/about/OurProfile" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Our Profile</Link>
+                <Link to="/about/OurProfile" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Our Story</Link>
                 <Link to="/about/Testimonials" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Testimonials</Link>
                 {/* <Link to="/about/OurClients" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Our Clients</Link> */}
                 <Link to="/about/PhotoGallery" className="block px-4 py-3 hover:bg-gray-100 cursor-pointer">Photo gallery</Link>
@@ -124,7 +124,7 @@ const Header = () => {
                 <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
               </summary>
               <div className="mt-2 ml-4 space-y-2">
-                <Link to="/about/OurProfile" className="block py-2" onClick={closeMobileMenu}>Our Profile</Link>
+                <Link to="/about/OurProfile" className="block py-2" onClick={closeMobileMenu}>Our Story</Link>
                 <Link to="/about/Testimonials" className="block py-2" onClick={closeMobileMenu}>Testimonials</Link>
                 {/* <Link to="/about/OurClients" className="block py-2" onClick={closeMobileMenu}>Our Clients</Link> */}
                 <Link to="/about/PhotoGallery" className="block py-2" onClick={closeMobileMenu}>Photo gallery</Link>

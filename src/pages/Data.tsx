@@ -193,7 +193,7 @@ const Submissions = () => {
                       <td className="p-3 border text-center">
                         {r.resumePath ? (
                           <a
-                            href={`http://localhost:5000${r.resumePath}`}
+                            href={`https://kumar-power.onrender.com${r.resumePath}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-[#2D6FBA] underline font-medium hover:text-blue-700"

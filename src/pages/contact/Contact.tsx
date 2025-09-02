@@ -73,7 +73,7 @@ const Contact = () => {
       formDataObj.append("resume", resumeData.resume);
     }
 
-    await fetch("http://localhost:5000/api/resume", {
+    await fetch("https://kumar-power.onrender.com/api/resume", {
       method: "POST",
       body: formDataObj,
     });

@@ -115,37 +115,66 @@ const Hero = () => {
                 </Button>
               </div>
               
-              {/* Trusted By Logos - responsive on small screens */}
+              {/* Trusted By Logos - with sliding animation */}
               <div className="mt-3 md:mt-6 flex flex-col items-center w-full">
                 <span className="text-white text-sm md:text-base font-semibold mb-1 md:mb-2 tracking-wide">
                   TRUSTED BY
                 </span>
-                <div className="flex flex-row flex-wrap justify-center gap-2 md:gap-4 w-full max-w-2xl">
-                  <img
-                    src={trust1}
-                    alt="Tech Innovators"
-                    className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
-                  />
-                  <img
-                    src={trust2}
-                    alt="EcoPower Solutions"
-                    className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
-                  />
-                  <img
-                    src={trust3}
-                    alt="ManufacturePro"
-                    className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
-                  />
-                  <img
-                    src={trust4}
-                    alt="LogiTrans"
-                    className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
-                  />
-                  <img
-                    src={trust5}
-                    alt="BuildMaster"
-                    className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
-                  />
+                <div className="w-full overflow-hidden relative">
+                  <div className="flex animate-marquee space-x-4 whitespace-nowrap">
+                    <img
+                      src={trust1}
+                      alt="Tech Innovators"
+                      className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
+                    />
+                    <img
+                      src={trust2}
+                      alt="EcoPower Solutions"
+                      className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
+                    />
+                    <img
+                      src={trust3}
+                      alt="ManufacturePro"
+                      className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
+                    />
+                    <img
+                      src={trust4}
+                      alt="LogiTrans"
+                      className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
+                    />
+                    <img
+                      src={trust5}
+                      alt="BuildMaster"
+                      className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
+                    />
+                    
+                    {/* Duplicate set of logos for continuous animation */}
+                    <img
+                      src={trust1}
+                      alt="Tech Innovators"
+                      className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
+                    />
+                    <img
+                      src={trust2}
+                      alt="EcoPower Solutions"
+                      className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
+                    />
+                    <img
+                      src={trust3}
+                      alt="ManufacturePro"
+                      className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
+                    />
+                    <img
+                      src={trust4}
+                      alt="LogiTrans"
+                      className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
+                    />
+                    <img
+                      src={trust5}
+                      alt="BuildMaster"
+                      className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
+                    />
+                  </div>
                 </div>
               </div>
             </div>

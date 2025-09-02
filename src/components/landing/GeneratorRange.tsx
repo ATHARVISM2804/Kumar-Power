@@ -176,7 +176,7 @@ const Card = ({
 
 const GeneratorRange = () => {
   // Define generator types for filtering
-  const filterTypes = ["All", "Gas", "Portable", "Diesel", "CPCB4+"];
+  const filterTypes = ["All", "Gas", "Portable", "Kirloskar Optiprime", "CPCB4+ Diesel Generators" ];
   const [activeFilter, setActiveFilter] = useState("All");
 
   // Modal state
@@ -190,10 +190,10 @@ const GeneratorRange = () => {
   // Define data with categories for filtering
   const generatorData = [
     {
-      title: "Kirloskar 1010 – 1500 kVA",
+      title: "Kirloskar 125 kVA – 6600 kVA.",
       img: diesel,
-      caption: "High-output diesel gensets engineered for mission-critical facilities.",
-      categories: ["Diesel", "CPCB4+"],
+      caption: "High-output Kirloskar Optiprime   engineered for mission-critical facilities.",
+      categories: ["Kirloskar Optiprime"],
     },
     {
       title: "Kirloskar Gas Genset",
@@ -202,13 +202,13 @@ const GeneratorRange = () => {
       categories: ["Gas"],
     },
     {
-      title: "Kirloskar 82.5–160 kVA",
+      title: "Kirloskar CPCB4+ Diesel Generators",
       img: portable,
       caption: "Versatile DG sets for plants, campuses, and commercial towers.",
-      categories: ["Portable", "Diesel"],
+      categories: [ "CPCB4+ Diesel Generators"],
     },
     {
-      title: "Kirloskar 2.8 – 5.5 kVA",
+      title: "Kirloskar 2.8 – 5.5 kVA ",
       img: portable1,
       caption: "Portable power for events, remote sites, and emergency backup.",
       categories: ["Portable"],
@@ -217,13 +217,13 @@ const GeneratorRange = () => {
       title: "Kirloskar 200 kVA–250 kVA",
       img: portable2,
       caption: "Balanced performance for medium-scale industrial needs.",
-      categories: ["Diesel", "CPCB4+"],
+      categories: ["Gas"],
     },
     {
       title: "Kirloskar 320–1010 kVA",
       img: portable3,
       caption: "Scalable solutions with robust service network coverage.",
-      categories: ["Diesel"],
+      categories: ["All"],
     },
   ];
 

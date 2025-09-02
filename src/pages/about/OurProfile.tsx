@@ -34,7 +34,7 @@ const About = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-2 text-black">Know About Power</h1>
             <h2 className="text-xl md:text-2xl font-semibold text-black mb-4">–Trusted Name in Power Solutions Providers.</h2>
             <p className="text-base text-black mb-4">
-              Kumar Generator House is a premier Kirloskar-certified power partner with over 30+ years of excellence in providing comprehensive power solutions across India. Established in 1985, we have grown to become one of the most trusted names in power generation equipment and services.
+              Kumar Generator House is a premier Kirloskar-certified power partner with over 30+ years of excellence in providing comprehensive power solutions across India. Established in 1995, we have grown to become one of the most trusted names in power generation equipment and services.
             </p>
             <p className="text-base text-black mb-4">
               Our expertise spans across sales, installation, commissioning, and maintenance of diesel generators, ensuring uninterrupted power supply for critical operations, our expertise spans across SITC (Supply, Installation, Testing & Commissioning) and end-to-end power solutions..
@@ -64,7 +64,7 @@ const About = () => {
             {/* 1975 - Foundation */}
             <div className="relative grid md:grid-cols-2 gap-6 items-center mb-16">
               <div className="text-black p-6 rounded-lg flex flex-col items-start md:items-start">
-                <span className="inline-block px-3 py-1 bg-black text-white text-sm font-medium rounded-md mb-4">1975</span>
+                <span className="inline-block px-3 py-1 bg-black text-white text-sm font-medium rounded-md mb-4">1995</span>
                 <h3 className="text-xl font-bold mb-3">Foundation</h3>
                 <p>Kumar Generator House was established with a vision to provide reliable power solutions to businesses across India.</p>
                 <div className="w-16 h-1 bg-zinc-600 mt-4 self-start"></div>
@@ -80,7 +80,7 @@ const About = () => {
             {/* 2005 - Kirloskar Partnership */}
             <div className="relative grid md:grid-cols-2 gap-6 items-center mb-16">
               <div className="text-black p-6 rounded-lg md:order-2 flex flex-col items-start md:items-start">
-                <span className="inline-block px-3 py-1 bg-black text-white text-sm font-medium rounded-md mb-4">2005</span>
+                <span className="inline-block px-3 py-1 bg-black text-white text-sm font-medium rounded-md mb-4">2001</span>
                 <h3 className="text-xl font-bold mb-3">Kirloskar Partnership</h3>
                 <p>Became an authorized partner of Kirloskar, expanding our product range and technical capabilities.</p>
                 <div className="w-16 h-1 bg-zinc-600 mt-4 self-start"></div>
