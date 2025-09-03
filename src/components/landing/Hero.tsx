@@ -50,6 +50,7 @@ const Hero = () => {
         {/* Background video with improved configuration to hide controls */}
         <div className="absolute left-0 lg:top-0 inset-0 w-full h-full md:w-[110vw] md:h-[150vh] lg:h-[110vh] pointer-events-none z-0 md:top-[-45vh] md:translate-x-[-5%] md:translate-y-[-5%]">
           <BackgroundVideo />
+          
         </div>
         
         {/* Reduced overlay opacity for mobile to maintain video visibility */}
