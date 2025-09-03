@@ -1,11 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { useEffect, useState } from "react";
-import trust1 from "@/assets/trust1.png"
-import trust2 from "@/assets/trust2.png"
-import trust3 from "@/assets/trust3.png"
-import trust4 from "@/assets/trust4.png"
-import trust5 from "@/assets/trust5.png"
+import trust from "@/assets/Seasons (1).png";
+import trust1 from "@/assets/SIS (1).png";
+import trust2 from "@/assets/Vistara 1 (1).png";
+import trust3 from "@/assets/GMR (1).png";
+import trust4 from "@/assets/Honeywell 1 (1).png";
+import trust5 from "@/assets/Kashyapi (2).png";
+import trust6 from "@/assets/Caritas (1).png";
+import trust7 from "@/assets/CEC (1).png";
 import companyProfile from "@/assets/company profile-compressed.pdf" // Import PDF file
 import BackgroundVideo from "../BackgroundVideo";
 
@@ -164,6 +167,21 @@ const Hero = () => {
                     />
                     <img
                       src={trust5}
+                      alt="BuildMaster"
+                      className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
+                    />
+                    <img
+                      src={trust}
+                      alt="BuildMaster"
+                      className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
+                    />
+                    <img
+                      src={trust6}
+                      alt="BuildMaster"
+                      className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
+                    />
+                    <img
+                      src={trust7}
                       alt="BuildMaster"
                       className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
                     />
