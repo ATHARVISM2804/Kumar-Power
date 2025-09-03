@@ -9,7 +9,7 @@ import trust4 from "@/assets/Honeywell 1 (1).png";
 import trust5 from "@/assets/Kashyapi (2).png";
 import trust6 from "@/assets/Caritas (1).png";
 import trust7 from "@/assets/CEC (1).png";
-import companyProfile from "@/assets/company profile-compressed.pdf" // Import PDF file
+import companyProfile from "./company profile-compressed.pdf" // Import PDF file
 import BackgroundVideo from "../BackgroundVideo";
 
 const Hero = () => {
