@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 
 const BackgroundVideo = () => {
-  const audioRef = useRef<HTMLAudioElement | null>(null);
   const playerRef = useRef<any>(null);
-  const [audioPlaying, setAudioPlaying] = useState(false);
+  const [videoMuted, setVideoMuted] = useState(true);
 
   useEffect(() => {
     // Load YouTube IFrame API
@@ -30,74 +29,27 @@ const BackgroundVideo = () => {
         events: {
           onReady: (event: any) => {
             event.target.playVideo();
+            if (videoMuted) {
+              event.target.mute();
+            } else {
+              event.target.unMute();
+            }
           },
         },
       });
     };
+  }, [videoMuted]);
 
-    // More aggressive approach to unlock audio
-    const tryPlayAudio = () => {
-      if (audioRef.current && !audioPlaying) {
-        // First try with inaudible volume to trick autoplay policies
-        audioRef.current.muted = false;
-        audioRef.current.volume = 0.01;
-
-        const playPromise = audioRef.current.play();
-        if (playPromise !== undefined) {
-          playPromise
-            .then(() => {
-              // Now increase volume gradually
-              setTimeout(() => {
-                if (audioRef.current) {
-                  audioRef.current.volume = 1;
-                  setAudioPlaying(true);
-                }
-              }, 500);
-            })
-            .catch(() => {});
-        }
+  // Mute/unmute button handler
+  const handleMuteToggle = () => {
+    if (playerRef.current) {
+      if (videoMuted) {
+        playerRef.current.unMute();
+        setVideoMuted(false);
+      } else {
+        playerRef.current.mute();
+        setVideoMuted(true);
       }
-    };
-
-    // Unlock audio on first interaction
-    const enableAudio = () => {
-      if (audioRef.current) {
-        audioRef.current.muted = false;
-        audioRef.current.volume = 1;
-        audioRef.current.play().then(() => setAudioPlaying(true)).catch(() => {});
-      }
-
-      // Remove all event listeners once audio is playing
-      ["mousemove", "click", "touchstart", "keydown", "scroll"].forEach((event) => {
-        window.removeEventListener(event, enableAudio);
-      });
-    };
-
-    // Add multiple event listeners for user interaction
-    ["mousemove", "click", "touchstart", "keydown", "scroll"].forEach((event) => {
-      window.addEventListener(event, enableAudio);
-    });
-
-    // Try playing immediately
-    tryPlayAudio();
-
-    // Also try after a short delay
-    setTimeout(tryPlayAudio, 1000);
-
-    return () => {
-      // Remove all event listeners
-      ["mousemove", "click", "touchstart", "keydown", "scroll"].forEach((event) => {
-        window.removeEventListener(event, enableAudio);
-      });
-    };
-  }, [audioPlaying]);
-
-  // Manual play button handler
-  const handlePlayButtonClick = () => {
-    if (audioRef.current) {
-      audioRef.current.muted = false;
-      audioRef.current.volume = 1;
-      audioRef.current.play().then(() => setAudioPlaying(true)).catch(() => {});
     }
   };
 
@@ -106,27 +58,24 @@ const BackgroundVideo = () => {
       {/* YouTube Video */}
       <div id="yt-player" className="absolute inset-0 w-full h-full" />
 
-      {/* Local Audio */}
-      <audio
-        ref={audioRef}
-        src="/audio/background.mp3"
-        loop
-        preload="auto"
-        playsInline
-      />
-
-      {/* Manual play button as fallback (only shown if audio isn't playing) */}
-      {!audioPlaying && (
-        <button
-          onClick={handlePlayButtonClick}
-          className="absolute bottom-20 right-10 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-3 rounded-full z-20"
-          aria-label="Play music"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
-            <path d="M8 5v14l11-7z" />
+      {/* Mute/Unmute Button - Fixed position, larger size, high visibility */}
+      <button
+        onClick={handleMuteToggle}
+        className="absolute bottom-32 right-28 bg-black bg-opacity-60 hover:bg-opacity-80 text-white p-4 rounded-full z-[2100] pointer-events-auto"
+        aria-label={videoMuted ? "Unmute video" : "Mute video"}
+      >
+        {videoMuted ? (
+          // Mute icon
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 24 24">
+            <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.06c1.48-.74 2.5-2.26 2.5-4.03zm3.5 0c0 2.76-1.69 5.1-4.1 6.07l1.45 1.45c2.89-1.34 4.65-4.23 4.65-7.52s-1.76-6.18-4.65-7.52l-1.45 1.45c2.41.97 4.1 3.31 4.1 6.07zM4.27 3L3 4.27l5 5V15h4l5 5 1.27-1.27L4.27 3z"/>
           </svg>
-        </button>
-      )}
+        ) : (
+          // Unmute icon
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 24 24">
+            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.06c1.48-.74 2.5-2.26 2.5-4.03zm3.5 0c0 2.76-1.69 5.1-4.1 6.07l1.45 1.45c2.89-1.34 4.65-4.23 4.65-7.52s-1.76-6.18-4.65-7.52l-1.45 1.45c2.41.97 4.1 3.31 4.1 6.07z"/>
+          </svg>
+        )}
+      </button>
 
       {/* Overlays to hide YouTube UI */}
       <div className="absolute top-0 left-0 w-full h-[40px] bg-black z-10"></div>

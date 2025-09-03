@@ -48,17 +48,16 @@ const Hero = () => {
     <section id="home" className="relative bg-black lg:bg-white">
       <div className="relative h-[58vh] md:h-[78vh] lg:h-[95vh] overflow-hidden rounded-xl z-1 border shadow-[var(--shadow-glow)]">
         {/* Background video with improved configuration to hide controls */}
-        <div className="absolute left-0 lg:top-0 inset-0 w-full h-full md:w-[110vw] md:h-[150vh] lg:h-[110vh] pointer-events-none z-0 md:top-[-45vh] md:translate-x-[-5%] md:translate-y-[-5%]">
+        <div className="absolute left-0 lg:top-0 inset-0 w-full h-full md:w-[110vw] md:h-[150vh] lg:h-[110vh] z-0 md:top-[-45vh] md:translate-x-[-5%] md:translate-y-[-5%]">
           <BackgroundVideo />
-          
         </div>
         
-        {/* Reduced overlay opacity for mobile to maintain video visibility */}
-        <div className={`absolute inset-0 ${isMobile ? 'bg-black/40' : 'bg-black/10'} z-5`}></div>
+        {/* Reduced overlay opacity for mobile to maintain video visibility - ensure it doesn't block video controls */}
+        <div className={`absolute inset-0 ${isMobile ? 'bg-black/40' : 'bg-black/10'} z-5 pointer-events-none`}></div>
         
-        {/* Semi-transparent base overlay to ensure text readability on video (shows with scroll) */}
+        {/* Semi-transparent base overlay - make sure it doesn't block video controls */}
         {showOverlay && (
-          <div className="absolute inset-0 bg-black/40 md:bg-black/20 z-10"></div>
+          <div className="absolute inset-0 bg-black/40 md:bg-black/20 z-10 pointer-events-none"></div>
         )}
         
         {/* Main Content Overlay */}
