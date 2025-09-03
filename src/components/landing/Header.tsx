@@ -111,7 +111,7 @@ const Header = () => {
         </button>
       </nav>
       
-      {/* Mobile Menu - updated to show/hide based on state */}
+      {/* Mobile Menu - updated to match large screen structure */}
       <div className={`md:hidden bg-white border-t shadow-lg ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
         <div className="px-4 py-2">
           <Link to="/" className="block py-3 border-b" onClick={closeMobileMenu}>Home</Link>
@@ -126,7 +126,6 @@ const Header = () => {
               <div className="mt-2 ml-4 space-y-2">
                 <Link to="/about/OurProfile" className="block py-2" onClick={closeMobileMenu}>Our Story</Link>
                 <Link to="/about/Testimonials" className="block py-2" onClick={closeMobileMenu}>Testimonials</Link>
-                {/* <Link to="/about/OurClients" className="block py-2" onClick={closeMobileMenu}>Our Clients</Link> */}
                 <Link to="/about/PhotoGallery" className="block py-2" onClick={closeMobileMenu}>Photo gallery</Link>
                 <Link to="/about/Certifications" className="block py-2" onClick={closeMobileMenu}>Certifications</Link>
               </div>
@@ -142,40 +141,15 @@ const Header = () => {
               </summary>
               <div className="mt-2 ml-4 space-y-2">
                 <Link to="/services/annual-maintenance" className="block py-2" onClick={closeMobileMenu}>Annual Maintenance</Link>
-                {/* <Link to="/services/installation" className="block py-2" onClick={closeMobileMenu}>Installation & Commissioning</Link> */}
                 <Link to="/services/repair-overhaul" className="block py-2" onClick={closeMobileMenu}>Repair & Overhaul</Link>
                 <Link to="/services/emergency-support" className="block py-2" onClick={closeMobileMenu}>24/7 Emergency Support</Link>
-                <Link to="/services/rental" className="block py-2" onClick={closeMobileMenu}>Generator Rental</Link>
               </div>
             </details>
           </div>
           
-          {/* Updated Products dropdown for mobile */}
+          {/* Products link for mobile */}
           <div className="py-3 border-b">
-            <details className="group">
-              <summary className="flex justify-between items-center cursor-pointer list-none">
-                <span>Products</span>
-                <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
-              </summary>
-              <div className="mt-2 ml-4 space-y-2">
-                <details className="group">
-                  <summary className="flex justify-between items-center cursor-pointer list-none py-2">
-                    <span>Kirloskar Generators</span>
-                    <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
-                  </summary>
-                  <div className="ml-4 space-y-2 mt-1">
-                    <Link to="/products/kirloskar/gas-generators" className="block py-2" onClick={closeMobileMenu}>Kirloskar Gas Generators</Link>
-                    <Link to="/products/kirloskar/portable-generators" className="block py-2" onClick={closeMobileMenu}>Kirloskar Portable Generators</Link>
-                    <Link to="/products/kirloskar/diesel-generators" className="block py-2" onClick={closeMobileMenu}>Kirloskar Diesel Generators</Link>
-                  </div>
-                </details>
-                <Link to="/products/electrical-panels" className="block py-2" onClick={closeMobileMenu}>Electrical Panels</Link>
-                <Link to="/products/servo-stabilizers" className="block py-2" onClick={closeMobileMenu}>Servo Stabilizers</Link>
-                <Link to="/products/inverters" className="block py-2" onClick={closeMobileMenu}>Inverters (UPS Systems)</Link>
-                <Link to="/products/transformers" className="block py-2" onClick={closeMobileMenu}>Transformers</Link>
-                <Link to="/products/vfds" className="block py-2" onClick={closeMobileMenu}>VFDs</Link>
-              </div>
-            </details>
+            <Link to="/products" className="block" onClick={closeMobileMenu}>Products</Link>
           </div>
           
           {/* Our Clients link */}
