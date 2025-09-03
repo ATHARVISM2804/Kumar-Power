@@ -176,7 +176,7 @@ const Card = ({
 
 const GeneratorRange = () => {
   // Define generator types for filtering
-  const filterTypes = ["All", "Gas", "Portable", "Kirloskar Optiprime", "CPCB4+ Diesel" ];
+  const filterTypes = ["All", "Gas", "Portable", "Kirloskar Optiprime" ];
   const [activeFilter, setActiveFilter] = useState("All");
 
   // Modal state
