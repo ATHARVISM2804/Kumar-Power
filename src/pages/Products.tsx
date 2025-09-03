@@ -309,20 +309,29 @@ const Products = () => {
       if (powerRange === 'all') return products;
       
       return products.filter(product => {
+        // Skip filtering non-generator products that don't have power ratings
+        if (!product.range || product.range === 'Various') return true;
+        
+        // Extract numbers from the range string (e.g., "7.5 - 20 kVA" => [7.5, 20])
+        const rangeValues = product.range.match(/[\d.]+/g)?.map(Number) || [];
+        
+        // If we can't parse the range properly, include the product
+        if (rangeValues.length === 0) return true;
+        
+        // Get the maximum value in the range (typically the second number)
+        const maxValue = Math.max(...rangeValues);
+        // Get the minimum value in the range (typically the first number)
+        const minValue = Math.min(...rangeValues);
+        
         if (powerRange === 'small') {
-          return product.range.includes('5') || product.range.includes('10') || 
-                 product.range.includes('15') || product.range.includes('20') || 
-                 product.range.includes('25') || (parseInt(product.range) < 50);
+          // Small: Up to 50 kVA
+          return maxValue <= 50;
         } else if (powerRange === 'medium') {
-          return product.range.includes('50') || product.range.includes('60') || 
-                 product.range.includes('75') || product.range.includes('100') || 
-                 product.range.includes('125') || product.range.includes('160') || 
-                 product.range.includes('200') || (parseInt(product.range) <= 250);
+          // Medium: 50-250 kVA
+          return (minValue <= 250 && maxValue >= 50);
         } else if (powerRange === 'large') {
-          return product.range.includes('250') || product.range.includes('300') || 
-                 product.range.includes('320') || product.range.includes('500') || 
-                 product.range.includes('750') || product.range.includes('1000') ||
-                 product.range.includes('1500') || (parseInt(product.range) > 250);
+          // Large: 250+ kVA
+          return maxValue > 250;
         }
         return true;
       });
