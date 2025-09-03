@@ -1,11 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { useEffect, useState } from "react";
-import trust1 from "@/assets/trust1.png"
-import trust2 from "@/assets/trust2.png"
-import trust3 from "@/assets/trust3.png"
-import trust4 from "@/assets/trust4.png"
-import trust5 from "@/assets/trust5.png"
+import trust from "@/assets/Seasons (1).png";
+import trust1 from "@/assets/SIS (1).png";
+import trust2 from "@/assets/Vistara 1 (1).png";
+import trust3 from "@/assets/GMR (1).png";
+import trust4 from "@/assets/Honeywell 1 (1).png";
+import trust5 from "@/assets/Kashyapi (2).png";
+import trust6 from "@/assets/Caritas (1).png";
+import trust7 from "@/assets/CEC (1).png";
+import companyProfile from "./profile.pdf" // Import PDF file
 import BackgroundVideo from "../BackgroundVideo";
 
 const Hero = () => {
@@ -91,6 +95,15 @@ const Hero = () => {
                 <Button
                   variant="outline"
                   className="border border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white font-semibold px-4 md:px-6 py-2 md:py-3 rounded-lg shadow-lg w-full sm:w-auto flex items-center justify-center backdrop-blur text-sm md:text-base"
+                  onClick={() => {
+                    // Create anchor element to trigger download
+                    const link = document.createElement('a');
+                    link.href = companyProfile;
+                    link.download = 'Kumar-Power-Company-Profile.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }}
                 >
                   Download Profile&nbsp;
                   <Download size={16} className="ml-1 md:ml-2" />
@@ -153,6 +166,21 @@ const Hero = () => {
                     />
                     <img
                       src={trust5}
+                      alt="BuildMaster"
+                      className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
+                    />
+                    <img
+                      src={trust}
+                      alt="BuildMaster"
+                      className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
+                    />
+                    <img
+                      src={trust6}
+                      alt="BuildMaster"
+                      className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
+                    />
+                    <img
+                      src={trust7}
                       alt="BuildMaster"
                       className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
                     />
