@@ -75,9 +75,9 @@ const Hero = () => {
                 <br />Built for the Nation.
               </h1>
               <p className="text-white/90 text-center text-sm sm:text-base md:text-lg font-medium">
-                <span className="hidden md:inline">Kirloskar Certified | ISO 9001:2015 | 500+ Enterprise Clients | 30+ Years of Uninterrupted Excellence</span>
+                <span className="hidden md:inline">Authorized Channel Distibutor | ISO 9001:2015 | 500+ Enterprise Clients | 30+ Years of Uninterrupted Excellence</span>
                 <span className="md:hidden">
-                  Kirloskar Certified<br />
+                  Authorized Channel Distibutor<br />
                   ISO 9001:2015<br />
                   500+ Enterprise Clients<br />
                   30+ Years of Excellence

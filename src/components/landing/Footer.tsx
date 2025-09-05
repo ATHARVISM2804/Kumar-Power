@@ -44,7 +44,7 @@ const Footer = () => {
             <div className="space-y-3">
               <h4 className="font-bold text-white text-lg">Kumar Power</h4>
               <p className="text-sm text-white/80">
-                Kumar Generator House is certified ISO 9001:2015 Company &amp; have emerged as the leading Power Solution Providers. Being an authorized Channel Partner of Kirloskar Oil Engines Limited, Kumar Generator House is committed to provide quality power solutions.
+                Kumar Power is certified ISO 9001:2015 Company &amp; have emerged as the leading Power Solution Providers. Being an authorized Channel Partner of Kirloskar Oil Engines Limited, Kumar Generator House is committed to provide quality power solutions.
               </p>
             </div>
 

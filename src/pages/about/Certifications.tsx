@@ -426,7 +426,7 @@ const Certifications = () => {
             </button>
           </div>
           
-          {/* Industry Partnerships */}
+          {/* Industry Partnerships
           <div className="mt-20">
             <h3 className="text-2xl font-bold mb-8 text-center">Industry Partnerships</h3>
             <div className="flex flex-wrap justify-center items-center gap-8">
@@ -440,7 +440,7 @@ const Certifications = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
       

@@ -176,7 +176,7 @@ const Card = ({
 
 const GeneratorRange = () => {
   // Define generator types for filtering
-  const filterTypes = ["All", "Gas", "Portable", "Kirloskar Optiprime" ];
+  const filterTypes = ["All", "CPCB4+ Diesel", "Gas", "Portable","Kirloskar Optiprime" ];
   const [activeFilter, setActiveFilter] = useState("All");
 
   // Modal state
@@ -196,7 +196,7 @@ const GeneratorRange = () => {
       categories: ["Kirloskar Optiprime"],
     },
     {
-      title: "Kirloskar Gas Genset",
+      title: "Kirloskar Gas Generators",
       img: gas,
       caption: "Cleaner power with optimized fuel efficiency and reliability.",
       categories: ["Gas"],

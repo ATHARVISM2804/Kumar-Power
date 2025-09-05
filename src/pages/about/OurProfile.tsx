@@ -31,8 +31,8 @@ const About = () => {
           </div>
           {/* Text on the right */}
           <div className="flex-1 md:w-2/3 md:pl-12 mt-8 md:mt-0">
-            <h1 className="text-4xl md:text-5xl font-bold mb-2 text-black">Know About Power</h1>
-            <h2 className="text-xl md:text-2xl font-semibold text-black mb-4">–Trusted Name in Power Solutions Providers.</h2>
+            <h1 className="text-4xl md:text-5xl font-bold mb-2 text-black">Know About Kumar Power</h1>
+            <h2 className="text-xl md:text-2xl font-semibold text-black mb-4">–Trusted Name in Power Solutions Industries.</h2>
             <p className="text-base text-black mb-4">
              Kumar Power is a premier Kirloskar-certified power partner with over 30+ years of excellence in providing comprehensive power solutions across India. Established in 1995, we have grown to become one of the most trusted names in power generation equipment and services.
             </p>
@@ -43,7 +43,7 @@ const About = () => {
               As an authorized dealer and service provider for Kirloskar Green Gensets, we bring the reliability and efficiency of world-class power solutions to our clients. Our team of certified engineers and technicians ensures that every installation meets the highest standards of performance and safety.
             </p>
             <p className="text-base text-black">
-              With a customer-first approach and commitment to excellence, Kumar Generator House has successfully delivered over 10000+ power solutions across the country, building lasting relationships with our clients through exceptional service and support.
+              With a customer-first approach and commitment to excellence, Kumar Power has successfully delivered over 10000+ power solutions across the country, building lasting relationships with our clients through exceptional service and support.
             </p>
           </div>
         </div>
@@ -144,11 +144,11 @@ const About = () => {
                 alt="Rajvinder Singh Kumar" 
                 className=" h-[57vh] object-cover mb-4 "
               />
-              <h3 className="text-lg font-bold uppercase mb-1 text-center">RAJVINDER SINGH KUMAR</h3>
-              <p className="font-semibold text-sm mb-1 text-center">(Founder and CEO)</p>
-              <p className="text-xs text-black mb-2 text-center">Proud member of NRI Gaurdian Delhi Branch</p>
+              <h3 className="text-lg font-bold uppercase mb-1 text-center">RS KUMAR</h3>
+              <p className="font-semibold text-sm mb-1 text-center">(Founder)</p>
+              
               <p className="text-xs text-center">
-Rajvinder Singh Kumar is the Founder and CEO of Kumar Generator House, a company he established with a vision to provide reliable and sustainable power solutions. With decades of industry experience, Rajvinder has been the driving force behind the company’s growth and success. His leadership is centered on innovation, customer satisfaction, and a commitment to excellence. Under his guidance, Kumar Generator House has become a trusted name in the industry, focused on empowering businesses and communities with top-quality solutions.              </p>
+            RS Kumar is the Founder and CEO of Kumar Generator House, a company he established with a vision to provide reliable and sustainable power solutions. With decades of industry experience, Rajvinder has been the driving force behind the company’s growth and success. His leadership is centered on innovation, customer satisfaction, and a commitment to excellence. Under his guidance, Kumar Generator House has become a trusted name in the industry, focused on empowering businesses and communities with top-quality solutions.              </p>
             </div>
             {/* Team Member 2 */}
             <div className="bg-white rounded-xl shadow-lg flex flex-col items-center px-6 py-8 w-full border border-gray-200">
@@ -157,11 +157,11 @@ Rajvinder Singh Kumar is the Founder and CEO of Kumar Generator House, a company
                 alt="Jagjit Singh Kumar" 
                 className=" h-full object-cover  mb-10 translate-y-5 "
               />
-              <h3 className="text-lg font-bold uppercase mb-1 text-center">JAGJIT SINGH KUMAR</h3>
+              <h3 className="text-lg font-bold uppercase mb-1 text-center">JS KUMAR</h3>
               <p className="font-semibold text-sm mb-1 text-center">(Director)</p>
-              <p className="text-xs text-black mb-2 text-center">Proud member of NRI Guardian Delhi Central</p>
+              
               <p className="text-xs text-center">
-                DirecJasjot Singh Kumar is a director at Kumar Generator House, where he plays a pivotal role in overseeing business strategy, operations, and growth initiatives. With a focus on enhancing internal processes and fostering partnerships, Jasjot is committed to driving the company’s expansion and ensuring the delivery of efficient, high-quality service to clients. His strategic approach and dedication to innovation continue to shape the company’s success in the power solutions sector.tor at Kumar Generator House, Jagjit focuses on business strategy and partnerships, ensuring quality service and driving the company’s growth in the power sector.
+                JS Kumar is a director at Kumar Generator House, where he plays a pivotal role in overseeing business strategy, operations, and growth initiatives. With a focus on enhancing internal processes and fostering partnerships, Jasjot is committed to driving the company’s expansion and ensuring the delivery of efficient, high-quality service to clients. His strategic approach and dedication to innovation continue to shape the company’s success in the power solutions sector.tor at Kumar Generator House, Jagjit focuses on business strategy and partnerships, ensuring quality service and driving the company’s growth in the power sector.
               </p>
             </div>
             {/* Team Member 3 */}
@@ -171,11 +171,11 @@ Rajvinder Singh Kumar is the Founder and CEO of Kumar Generator House, a company
                 alt="Manjot Singh Kumar" 
                 className=" h-full object-cover mb-10 translate-y-5"
               />
-              <h3 className="text-lg font-bold uppercase mb-1 text-center">MANJOT SINGH KUMAR</h3>
+              <h3 className="text-lg font-bold uppercase mb-1 text-center">MS KUMAR</h3>
               <p className="font-semibold text-sm mb-1 text-center">(Director)</p>
-              <p className="text-xs text-black mb-2 text-center">Kumar Generator House India Pvt. Ltd</p>
+              
               <p className="text-xs text-center">
-                DirManjot Singh Kumar is the director of Kumar Generator House, a company with a rich legacy of over 30 years in providing reliable power solutions. With a keen focus on growth, innovation, and sustainability, Manjot leads the company towards achieving excellence in every aspect of its operations. His leadership style emphasizes customer satisfaction, operational efficiency, and long-term business relationships, ensuring that Kumar Generator House remains a trusted name in the industry.ector, Manjot leads Kumar Generator House with a focus on growth and sustainability, ensuring operational excellence and long-term client relationships.
+                MS Kumar is the director of Kumar Generator House, a company with a rich legacy of over 30 years in providing reliable power solutions. With a keen focus on growth, innovation, and sustainability, Manjot leads the company towards achieving excellence in every aspect of its operations. His leadership style emphasizes customer satisfaction, operational efficiency, and long-term business relationships, ensuring that Kumar Generator House remains a trusted name in the industry.ector, Manjot leads Kumar Generator House with a focus on growth and sustainability, ensuring operational excellence and long-term client relationships.
               </p>
             </div>
           </div>
@@ -237,7 +237,7 @@ Rajvinder Singh Kumar is the Founder and CEO of Kumar Generator House, a company
               <div className="flex-1">
                 <h3 className="text-2xl font-bold mb-3">Quality Policy Statement</h3>
                 <p className="text-base text-gray-800 mb-6">
-                  At Kumar Generator House, we are committed to delivering world-class power products and turnkey solutions that exceed customer expectations. Our robust design, meticulous manufacturing, and comprehensive testing ensure reliability and performance in every installation.
+                  At Kumar Power, we are committed to delivering world-class power products and turnkey solutions that exceed customer expectations. Our robust design, meticulous manufacturing, and comprehensive testing ensure reliability and performance in every installation.
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-center text-base">
@@ -278,7 +278,7 @@ Rajvinder Singh Kumar is the Founder and CEO of Kumar Generator House, a company
                 </div>
                 <div className="border border-black p-2 rounded-lg flex flex-col items-center justify-center w-[160px] h-[200px] bg-white">
                   <img 
-                    src={kirlo}
+                    src="https://res.cloudinary.com/dmhabztbf/image/upload/v1757064221/Screenshot_2025-06-02_at_12.44.43_PM_lxdedo_tuh3qm.png"
                     alt="Kirloskar Authorized" 
                     className="h-24 w-24 object-contain mt-6 mb-2"
                   />
