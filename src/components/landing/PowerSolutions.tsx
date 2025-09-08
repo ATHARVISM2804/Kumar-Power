@@ -206,7 +206,7 @@ const FilterSection = ({ title, options }: { title: string; options: string[] })
 const PowerSolutions = () => {
   const logoRef = useRef<HTMLDivElement>(null);
   const logoContainerRef = useRef<HTMLDivElement>(null);
-  const [activeCategory, setActiveCategory] = useState<string>("Generators");
+  const [activeCategory, setActiveCategory] = useState<string>("Optiprime Generators");
   const [selectedFilters, setSelectedFilters] = useState<{ [key: string]: string[] }>({});
   const [filteredProducts, setFilteredProducts] = useState<any[]>([]);
   const [modalOpen, setModalOpen] = useState(false);
@@ -214,21 +214,23 @@ const PowerSolutions = () => {
 
   // Categories for the navigation tabs
   const categories = [
-    "Generators",
-    
+    "Optiprime Generators",
+    "Gas Generators", 
+    "Portable Generators",
+    "CPCB4+ Diesel Generator",
     "Electrical Panels",
     "Servo Stabilizers",
-    "Transformers"
+    "Transformers",
   ];
   
   // Category-specific product data
   const categoryProducts = {
-    Generators: [
+    "Optiprime Generators": [
       {
-        title: "Kirloskar Optiprime Generator. ",
+        title: "Kirloskar Optiprime Generator",
         desc: "Advanced diesel generators with CPCB4+ compliance, offering superior fuel efficiency and eco-friendly operations.",
         specs: [
-          "125 kva - 6600 kva.",
+          "125 kva - 6600 kva",
           "CPCB4+ Compliant",
           "3 Phase Output",
           "Fuel: Diesel",
@@ -236,7 +238,9 @@ const PowerSolutions = () => {
           "Certification: ISO 9001, CE Certified, UL Listed"
         ],
         img: diesel
-      },
+      }
+    ],
+    "Gas Generators": [
       {
         title: "Gas Generators",
         desc: "Eco-friendly natural gas and LPG generators with lower emissions and operational costs for sustainable power generation.",
@@ -249,7 +253,9 @@ const PowerSolutions = () => {
           "Certification: CPCB4+, ISO 9001"
         ],
         img: gas
-      },
+      }
+    ],
+    "Portable Generators": [
       {
         title: "Portable Generators",
         desc: "Compact and mobile power solutions for construction sites, events, and emergency backup with easy transport features.",
@@ -261,20 +267,22 @@ const PowerSolutions = () => {
           "Certification: CE Certified"
         ],
         img: portable
-      },
-      // {
-      //   title: "Kirloskar Optiprime ",
-      //   desc: "Protection against power outages with instant backup power and surge protection for critical equipment and data centers.",
-      //   specs: [
-      //     " 125 kva - 6600 kva",
-      //     "Online Double Conversion",
-      //     "Battery Backup",
-      //     "Fuel: N/A",
-      //     "Application: Industrial, IT Equipment",
-      //     "Certification: ISO 9001"
-      //   ],
-      //   img: ups
-      // }
+      }
+    ],
+    "CPCB4+ Diesel Generator": [
+      {
+        title: "CPCB4+ Diesel Generator",
+        desc: "Environment-compliant diesel generators meeting CPCB4+ emission norms with advanced pollution control technology.",
+        specs: [
+          "125 kva - 6600 kva",
+          "CPCB4+ Emission Compliance",
+          "Advanced Pollution Control",
+          "Fuel: Diesel",
+          "Application: Industrial, Commercial",
+          "Certification: CPCB4+, ISO 9001"
+        ],
+        img: ups
+      }
     ],
     Inverters: [
       {
@@ -421,7 +429,10 @@ const PowerSolutions = () => {
   // Get the filter options based on active category
   const getFilterOptionsForCategory = (category: string) => {
     switch(category) {
-      case 'Generators':
+      case 'Optiprime Generators':
+      case 'Gas Generators':
+      case 'Portable Generators':
+      case 'CPCB4+ Diesel Generator':
         return {
           powerRange: ["0-50 kVA", "51-200 kVA", "201-500 kVA", "501+ kVA"],
           application: ["Industrial", "Commercial", "Residential", "Construction", "Events"],

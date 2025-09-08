@@ -135,59 +135,59 @@ const Contact = () => {
         {/* Get in Touch Form - Part of First Section */}
         <section id="contact-form" className="py-16 bg-black">
           <div className="container mx-auto px-4">
-            <div className="max-w-2xl mx-auto bg-[#AAAAAA] p-8 rounded-[18px] shadow-lg">
+            <div className="max-w-2xl mx-auto bg-white p-8 rounded-[18px] shadow-lg">
               <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold text-white mb-2">Get in Touch</h2>
+                <h2 className="text-3xl font-bold text-black mb-2">Get in Touch</h2>
                 <div className="mx-auto w-24 h-1 bg-[#2D6FBA] rounded mb-2"></div>
               </div>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-white mb-1">Full Name</label>
+                    <label htmlFor="name" className="block text-sm font-medium text-black mb-1">Full Name</label>
                     <input
                       type="text"
                       id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full p-3 rounded-[7px] bg-black text-white border-none placeholder-white"
+                      className="w-full p-3 rounded-[7px] bg-gray-100 text-black border border-gray-300 placeholder-gray-500"
                       placeholder="Enter your name"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-white mb-1">Email Address</label>
+                    <label htmlFor="email" className="block text-sm font-medium text-black mb-1">Email Address</label>
                     <input
                       type="email"
                       id="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full p-3 rounded-[7px] bg-black text-white/20 border-none placeholder-white"
+                      className="w-full p-3 rounded-[7px] bg-gray-100 text-black border border-gray-300 placeholder-gray-500"
                       placeholder="Enter your email"
                     />
                   </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-white mb-1">Phone Number</label>
+                    <label htmlFor="phone" className="block text-sm font-medium text-black mb-1">Phone Number</label>
                     <input
                       type="tel"
                       id="phone"
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full p-3 rounded-[7px] bg-black text-white border-none placeholder-white"
+                      className="w-full p-3 rounded-[7px] bg-gray-100 text-black border border-gray-300 placeholder-gray-500"
                       placeholder="Enter your phone number"
                     />
                   </div>
                   <div>
-                    <label htmlFor="department" className="block text-sm font-medium text-white mb-1">Department</label>
+                    <label htmlFor="department" className="block text-sm font-medium text-black mb-1">Department</label>
                     <select
                       id="department"
                       name="department"
                       value={formData.department}
                       onChange={handleChange}
-                      className="w-full p-3 rounded-[7px] bg-black text-white border-none placeholder-white"
+                      className="w-full p-3 rounded-[7px] bg-gray-100 text-black border border-gray-300"
                     >
                       <option value="">Select Department</option>
                       <option value="sales">Sales</option>
@@ -198,14 +198,14 @@ const Contact = () => {
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-white mb-1">Message</label>
+                  <label htmlFor="message" className="block text-sm font-medium text-black mb-1">Message</label>
                   <textarea
                     id="message"
                     name="message"
                     rows={5}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full p-3 rounded-[7px] bg-black text-white border-none placeholder-white"
+                    className="w-full p-3 rounded-[7px] bg-gray-100 text-black border border-gray-300 placeholder-gray-500"
                     placeholder="Tell us about your requirements"
                   ></textarea>
                 </div>
@@ -217,7 +217,7 @@ const Contact = () => {
                       name="callback"
                       className="h-4 w-4 text-[#2D6FBA]  border-gray-300 rounded focus:ring-[#2D6FBA]"
                     />
-                    <label htmlFor="callback" className="block text-sm text-white cursor-pointer">
+                    <label htmlFor="callback" className="block text-sm text-black cursor-pointer">
                       Request a callback
                     </label>
                   </div>
@@ -344,7 +344,7 @@ const Contact = () => {
                 </div>
                 
                 {/* Right Side: Resume Form - Updated to match image */}
-                <div className="bg-[#AAAAAA] p-6 rounded-md text-black">
+                <div className="bg-white p-6 rounded-md text-black">
                   <form onSubmit={handleResumeSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
@@ -355,7 +355,7 @@ const Contact = () => {
                           name="fullName"
                           value={resumeData.fullName}
                           onChange={handleResumeChange}
-                          className="w-full p-3 bg-black border-none rounded text-white placeholder-gray-400"
+                          className="w-full p-3 bg-gray-100 border border-gray-300 rounded text-black placeholder-gray-500"
                           placeholder="Enter your full name"
                         />
                       </div>
@@ -367,7 +367,7 @@ const Contact = () => {
                           name="email"
                           value={resumeData.email}
                           onChange={handleResumeChange}
-                          className="w-full p-3 bg-black border-none rounded text-white placeholder-gray-400"
+                          className="w-full p-3 bg-gray-100 border border-gray-300 rounded text-black placeholder-gray-500"
                           placeholder="Enter your email"
                         />
                       </div>
@@ -381,7 +381,7 @@ const Contact = () => {
                         name="phone"
                         value={resumeData.phone}
                         onChange={handleResumeChange}
-                        className="w-full p-3 bg-black border-none rounded text-white placeholder-gray-400"
+                        className="w-full p-3 bg-gray-100 border border-gray-300 rounded text-black placeholder-gray-500"
                         placeholder="Enter your phone number"
                       />
                     </div>
@@ -394,7 +394,7 @@ const Contact = () => {
                         rows={4}
                         value={resumeData.message}
                         onChange={handleResumeChange}
-                        className="w-full p-3 bg-black border-none rounded text-white placeholder-gray-400"
+                        className="w-full p-3 bg-gray-100 border border-gray-300 rounded text-black placeholder-gray-500"
                         placeholder="Tell us about yourself and why you're interested in joining our team"
                       ></textarea>
                     </div>
@@ -402,14 +402,14 @@ const Contact = () => {
                     <div>
                       <label htmlFor="resume" className="block text-sm font-medium text-black mb-1">Upload Resume (PDF/DOC)</label>
                       <div className="relative">
-                        <div className="border-2 border-dashed border-gray-700 rounded p-8 text-center bg-transparent">
+                        <div className="border-2 border-dashed border-gray-300 rounded p-8 text-center bg-gray-50">
                           <div className="flex justify-center mb-2">
-                            <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0l-4 4m4-4v12" />
                             </svg>
                           </div>
-                          <p className="text-sm text-gray-700">Drag and drop your resume here or click to browse</p>
-                          <p className="text-xs text-gray-600 mt-1">Maximum file size: 5MB</p>
+                          <p className="text-sm text-gray-600">Drag and drop your resume here or click to browse</p>
+                          <p className="text-xs text-gray-500 mt-1">Maximum file size: 5MB</p>
                           <input
                             type="file"
                             id="resume"

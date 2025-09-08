@@ -1,10 +1,11 @@
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import teamImg from "@/assets/gallery-networking.jpg";
 import { Button } from "@/components/ui/button";
+import three from "@/assets/Gallery/Threee.png";
 
 const About = () => {
   const features = [
-    { label: "Kirloskar Certified" },
+    { label: "Kirloskar Authorized Distributor" },
     { label: "24/7 Service Infrastructure" },
     { label: "500+ Enterprise Clients" },
     { label: "ISO 9001:2015 Accredited" },
@@ -27,7 +28,7 @@ const About = () => {
         </div>
       </div>
       {/* End Hero Section */}
-      <section id="about" className="py-8 md:py-16">
+      <section id="about" className="py-8  md:py-12">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center px-4 md:px-0">
           {/* Left: Text Content */}
           <div>
@@ -64,7 +65,7 @@ const About = () => {
           {/* Right: Team Image */}
           <div className="flex justify-center">
             <img
-              src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1755020628/Screenshot_2025-08-12_231224_xauibh.png"
+              src={three}
               alt="Kumar Power team"
               className="w-full max-w-2xl object-contain"
               loading="lazy"

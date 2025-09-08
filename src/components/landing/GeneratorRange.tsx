@@ -176,7 +176,7 @@ const Card = ({
 
 const GeneratorRange = () => {
   // Define generator types for filtering
-  const filterTypes = ["All", "CPCB4+ Diesel", "Gas", "Portable","Kirloskar Optiprime" ];
+  const filterTypes = ["All", "Kirloskar CPCB4+ Diesel", "Kirloskar Gas", "Portable","Kirloskar Optiprime" ];
   const [activeFilter, setActiveFilter] = useState("All");
 
   // Modal state
@@ -190,15 +190,15 @@ const GeneratorRange = () => {
   // Define data with categories for filtering
   const generatorData = [
     {
-      title: "Kirloskar 125 kVA – 6600 kVA.",
+      title: "Kirloskar Optiprime Generator.",
       img: diesel,
-      caption: "High-output Kirloskar Optiprime   engineered for mission-critical facilities.",
+      caption: "High-output Kirloskar Optiprime engineered for mission-critical facilities.",
       categories: ["Kirloskar Optiprime"],
     },
     {
       title: "Kirloskar Gas Generators",
       img: gas,
-      caption: "Cleaner power with optimized fuel efficiency and reliability.",
+      caption: "Clean, efficient power for commercial and industrial applications.",
       categories: ["Gas"],
     },
     {
@@ -208,7 +208,7 @@ const GeneratorRange = () => {
       categories: [ "CPCB4+ Diesel Generators"],
     },
     {
-      title: "Kirloskar 2.8 – 5.5 kVA ",
+      title: "Kirloskar Portable Generators",
       img: portable1,
       caption: "Portable power for events, remote sites, and emergency backup.",
       categories: ["Portable"],

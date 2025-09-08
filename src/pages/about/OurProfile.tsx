@@ -32,7 +32,7 @@ const About = () => {
           {/* Text on the right */}
           <div className="flex-1 md:w-2/3 md:pl-12 mt-8 md:mt-0">
             <h1 className="text-4xl md:text-5xl font-bold mb-2 text-black">Know About Kumar Power</h1>
-            <h2 className="text-xl md:text-2xl font-semibold text-black mb-4">–Trusted Name in Power Solutions Industries.</h2>
+            <h2 className="text-xl md:text-2xl font-semibold text-black mb-4">–Trusted Name in Power Solutions Industry</h2>
             <p className="text-base text-black mb-4">
              Kumar Power is a premier Kirloskar-certified power partner with over 30+ years of excellence in providing comprehensive power solutions across India. Established in 1995, we have grown to become one of the most trusted names in power generation equipment and services.
             </p>
@@ -97,7 +97,7 @@ const About = () => {
             <div className="relative grid md:grid-cols-2 gap-6 items-center mb-16">
               <div className="text-black p-6 rounded-lg flex flex-col items-start md:items-start">
                 <span className="inline-block px-3 py-1 bg-black text-white text-sm font-medium rounded-md mb-4">2012</span>
-                <h3 className="text-xl font-bold mb-3">ISO Certification</h3>
+                <h3 className="text-xl font-bold mb-3">ISO Certificates</h3>
                 <p>Achieved ISO 9001:2015 certification, validating our commitment to quality management systems.</p>
                 <div className="w-16 h-1 bg-zinc-600 mt-4 self-start"></div>
               </div>
