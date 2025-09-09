@@ -720,7 +720,7 @@ const Products = () => {
                         <img
                           src={product.image}
                           alt={product.name}
-                          className="w-full h-full bg-white object-cover"
+                          className="w-full h-full bg-white object-contain"
                         />
                       </div>
                       <div className="p-3">
