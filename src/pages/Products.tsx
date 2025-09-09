@@ -15,6 +15,20 @@ import range3 from "@/assets/Range3.png";
 import range4 from "@/assets/Range4.png";
 import range5 from "@/assets/Range5.png";
 import range6 from "@/assets/Range6.png";
+import DG1 from "@/assets/Kumar Assets/7.5KVA DG.png";
+import DG2 from "@/assets/Kumar Assets/320KVa.png";
+import DG3 from "@/assets/Kumar Assets/25kwa dg.png";
+import DG4 from "@/assets/Kumar Assets/62.5KVA DG.png";
+import DG5 from "@/assets/Kumar Assets/new750.png";
+import port from "@/assets/Kumar Assets/20240820_left side 2.8 with 5.5 kVA.png";
+import panel1 from "@/assets/Panel/Porcelin_clad_vaccum_circuit_breaker 1.png"
+import panel2 from "@/assets/Panel/Panels 1.png"
+import panel3 from "@/assets/Panel/SF6_Circuit_breaker 1.png"
+import panel4 from "@/assets/Panel/Unitised_package_substation 1.png"
+import panel5 from "@/assets/Panel/Vacuum_circuit_breaker 2.png"
+import panel6 from "@/assets/Panel/amf-panel-auto-synchronize-panels-24 1.png"
+import panel7 from "@/assets/Panel/distribution_panel 1.png"
+import panel8 from "@/assets/Panel/feeder-pillar2 1.png"
 
 
 const Products = () => {
@@ -50,8 +64,8 @@ const Products = () => {
   // Define generator products based on the images
   const dieselGenerators = [
     {
-      id: "7_5-20kva",
-      name: "7.5 kVA - 20 kVA Diesel Generators",
+      id: "200 kVA to 250 kVA",
+      name: "200 kVA to 250 kVA Diesel Generators",
       image: range1, // Use imported image
       fuelType: "Diesel",
       cpcbNorm: "CPCB-IV+",
@@ -63,48 +77,48 @@ const Products = () => {
       category: "diesel"
     },
     {
-      id: "25-62_5kva",
-      name: "25 kVA - 62.5 kVA Diesel Generators",
-      image: range2, // Use imported image
+      id: "7.5 kVA to 20 kVA",
+      name: "7.5 kVA to 20 kVA diesel generators",
+      image: DG1, // Use imported image
       fuelType: "Diesel",
       cpcbNorm: "CPCB-IV+",
       cooling: "Liquid",
       phase: "Three Phase",
       ratingCount: 153,
       rating: 4.8,
-      range: "25 - 62.5 kVA",
+      range: "7.5 kVA to 20 kVA",
       category: "diesel"
     },
     {
-      id: "62_5-160kva",
-      name: "62.5 kVA - 160 kVA Diesel Generators",
-      image: range3, // Use imported image
+      id: "25 kVA to 58.5 kVA",
+      name: "25 kVA to 58.5 kVA diesel generators",
+      image: DG3, // Use imported image
       fuelType: "Diesel",
       cpcbNorm: "CPCB-IV+",
       cooling: "Liquid",
       phase: "Three Phase",
       ratingCount: 132,
       rating: 4.9,
-      range: "62.5 - 160 kVA",
+      range: "25 kVA to 58.5 kVA",
       category: "diesel"
     },
     {
-      id: "200-250kva",
-      name: "200 kVA - 250 kVA Diesel Generators",
-      image: range4, // Use imported image
+      id: "82.5 kVA to 160 kVA",
+      name: "82.5 kVA to 160 kVA diesel generators",
+      image: range6, // Use imported image
       fuelType: "Diesel",
       cpcbNorm: "CPCB-IV+",
       cooling: "Liquid",
       phase: "Three Phase",
       ratingCount: 118,
       rating: 4.8,
-      range: "200 - 250 kVA",
+      range: "82.5 kVA to 160 kVA",
       category: "diesel"
     },
     {
-      id: "320-750kva",
+      id: "320 kVA to 750 kVA ",
       name: "320 kVA - 750 kVA Diesel Generators",
-      image: range5, // Use imported image
+      image: range6, // Use imported image
       fuelType: "Diesel",
       cpcbNorm: "CPCB-IV+",
       cooling: "Liquid",
@@ -117,7 +131,7 @@ const Products = () => {
     {
       id: "750-1500kva",
       name: "750 kVA - 1500 kVA Diesel Generators",
-      image: range6, // Use imported image
+      image: DG5, // Use imported image
       fuelType: "Diesel",
       cpcbNorm: "CPCB-IV+",
       cooling: "Liquid",
@@ -132,8 +146,8 @@ const Products = () => {
   // Define gas generators
   const gasGenerators = [
     {
-      id: "10-25kva-gas",
-      name: "10 kVA - 25 kVA Gas Generators",
+      id: "15 kVA to 250 kVA",
+      name: "15 kVA to 250 kVA Gas Generators",
       image: range2, // Use imported image
       fuelType: "Natural Gas/CNG",
       cpcbNorm: "CPCB-IV+",
@@ -141,73 +155,53 @@ const Products = () => {
       phase: "Single/Three Phase",
       ratingCount: 145,
       rating: 4.6,
-      range: "10 - 25 kVA",
+      range: "15 kVA to 250 kVA",
       category: "gas"
     },
-    {
-      id: "30-62kva-gas",
-      name: "30 kVA - 62 kVA Gas Generators",
-      image: range3, // Use imported image
-      fuelType: "Natural Gas/CNG",
-      cpcbNorm: "CPCB-IV+",
-      cooling: "Liquid",
-      phase: "Three Phase",
-      ratingCount: 124,
-      rating: 4.7,
-      range: "30 - 62 kVA",
-      category: "gas"
-    },
-    {
-      id: "75-125kva-gas",
-      name: "75 kVA - 125 kVA Gas Generators",
-      image: range4, // Use imported image
-      fuelType: "Natural Gas/CNG",
-      cpcbNorm: "CPCB-IV+",
-      cooling: "Liquid",
-      phase: "Three Phase",
-      ratingCount: 98,
-      rating: 4.8,
-      range: "75 - 125 kVA",
-      category: "gas"
-    }
+    
   ];
 
   // Define portable generators
   const portableGenerators = [
     {
-      id: "1-3kva-portable",
-      name: "1 kVA - 3 kVA Portable Generators",
-      image: range1, // Use imported image
+      id: "2.1 kVA to 5 kVA",
+      name: "2.1 kVA to 5 kVA Portable Generators",
+      image: port, // Use imported image
       fuelType: "Gasoline",
       cpcbNorm: "CPCB-IV+",
       cooling: "Air",
       phase: "Single Phase",
       ratingCount: 210,
       rating: 4.5,
-      range: "1 - 3 kVA",
+      range: "2.1 kVA to 5 kVA",
       category: "portable"
     },
+    
+  ];
+
+  // Define Optiprime generators (This is the new data array that was missing)
+  const optiprimeGenerators = [
     {
-      id: "3-5kva-portable",
-      name: "3 kVA - 5 kVA Portable Generators",
-      image: range1, // Use imported image
-      fuelType: "Gasoline/Diesel",
+      id: "optiprime-product-1",
+      name: "Kirloskar Optiprime Generator",
+      image: range1, // Placeholder image
+      fuelType: "Diesel",
       cpcbNorm: "CPCB-IV+",
-      cooling: "Air",
-      phase: "Single Phase",
-      ratingCount: 185,
-      rating: 4.6,
-      range: "3 - 5 kVA",
-      category: "portable"
-    }
+      cooling: "Liquid",
+      phase: "Three Phase",
+      ratingCount: 195,
+      rating: 4.8,
+      range: "100 kVA",
+      category: "optiprime"
+    },
   ];
 
   // Define electrical panels
   const electricalPanels = [
     {
-      id: "auto-transfer",
-      name: "Automatic Transfer Switch Panels",
-      image: range2, // Use imported image
+      id: " (AMF) Panels",
+      name: " AMF Panels",
+      image: panel6, // Use imported image
       fuelType: "N/A",
       cpcbNorm: "N/A",
       cooling: "Fan/Natural",
@@ -218,8 +212,86 @@ const Products = () => {
       category: "electrical"
     },
     {
-      id: "distribution-panels",
-      name: "Power Distribution Panels",
+      id: "Vacuum Circuit Breaker ",
+      name: "Vacuum Circuit Breaker ",
+      image: panel5, // Use imported image
+      fuelType: "N/A",
+      cpcbNorm: "N/A",
+      cooling: "Fan/Natural",
+      phase: "Three Phase",
+      ratingCount: 98,
+      rating: 4.6,
+      range: "Various",
+      category: "electrical"
+    },
+    {
+      id: "SF6 circuit breakers  ",
+      name: "SF6 circuit breakers",
+      image: range3, // Use imported image
+      fuelType: "N/A",
+      cpcbNorm: "N/A",
+      cooling: "Fan/Natural",
+      phase: "Three Phase",
+      ratingCount: 98,
+      rating: 4.6,
+      range: "Various",
+      category: "electrical"
+    },
+    {
+      id: "Unitized Package Substation ",
+      name: "Unitized Package Substation",
+      image: range3, // Use imported image
+      fuelType: "N/A",
+      cpcbNorm: "N/A",
+      cooling: "Fan/Natural",
+      phase: "Three Phase",
+      ratingCount: 98,
+      rating: 4.6,
+      range: "Various",
+      category: "electrical"
+    },
+    {
+      id: "Panels",
+      name: "Panels ",
+      image: range3, // Use imported image
+      fuelType: "N/A",
+      cpcbNorm: "N/A",
+      cooling: "Fan/Natural",
+      phase: "Three Phase",
+      ratingCount: 98,
+      rating: 4.6,
+      range: "Various",
+      category: "electrical"
+    },
+    {
+      id: "Distribution Boxes",
+      name: "Distribution Boxes ",
+      image: range3, // Use imported image
+      fuelType: "N/A",
+      cpcbNorm: "N/A",
+      cooling: "Fan/Natural",
+      phase: "Three Phase",
+      ratingCount: 98,
+      rating: 4.6,
+      range: "Various",
+      category: "electrical"
+    },
+    {
+      id: "Feeder Pillars",
+      name: "Feeder Pillars",
+      image: range3, // Use imported image
+      fuelType: "N/A",
+      cpcbNorm: "N/A",
+      cooling: "Fan/Natural",
+      phase: "Three Phase",
+      ratingCount: 98,
+      rating: 4.6,
+      range: "Various",
+      category: "electrical"
+    },
+    {
+      id: "Porecilin Clad Vaccum Circuit Breaker ",
+      name: "Porecilin Clad Vaccum Circuit Breaker ",
       image: range3, // Use imported image
       fuelType: "N/A",
       cpcbNorm: "N/A",
@@ -359,6 +431,9 @@ const Products = () => {
         break;
       case 'portable':
         filteredProducts = portableGenerators;
+        break;
+      case 'optiprime': // ADDED THIS CASE
+        filteredProducts = optiprimeGenerators;
         break;
       case 'electrical':
         filteredProducts = electricalPanels;
@@ -594,6 +669,8 @@ const Products = () => {
     if (product.category === 'diesel') return powerRangeMap.diesel;
     if (product.category === 'gas') return powerRangeMap.gas;
     if (product.category === 'portable') return powerRangeMap.portable;
+    // Add the Optiprime case
+    if (product.category === 'optiprime') return powerRangeMap.diesel;
     if (product.category === 'electrical') return powerRangeMap.electrical;
     if (product.category === 'servo') return powerRangeMap.servo;
     if (product.category === 'transformers') return powerRangeMap.transformers;
@@ -604,7 +681,7 @@ const Products = () => {
   
   // Function to render specifications in the modal
   const renderSpecifications = (specs, product) => {
-    if (product.category === 'diesel' || product.category === 'gas' || product.category === 'portable') {
+    if (product.category === 'diesel' || product.category === 'gas' || product.category === 'portable' || product.category === 'optiprime') {
       return (
         <Tabs defaultValue="engine" className="w-full">
           <TabsList className="grid w-full grid-cols-3">
@@ -822,8 +899,8 @@ const Products = () => {
               
               <div className="mt-16 pt-6 border-t border-gray-700">
                 <h3 className="text-sm font-semibold mb-3 text-gray-200">Certifications</h3>
-                <div className="bg-[#181d23] rounded-lg p-4 flex flex-wrap gap-2">
-                  {['ISO 9001', 'CPCB-IV+', 'CE', 'BIS'].map((cert) => (
+                <div className="bg-[#181d23] rounded-lg p-6 flex flex-wrap gap-2">
+                  {['ISO 9001', 'CPCB-IV+', 'Kirloskar Authorized Distributor'].map((cert) => (
                     <span
                       key={cert}
                       className="inline-block px-3 py-1 rounded bg-[#23272f] text-xs text-gray-200 font-medium"
@@ -844,6 +921,7 @@ const Products = () => {
                   {selectedCategory === 'diesel' && 'Kirloskar\'s range of diesel generators are designed for maximum performance and reliability. Our generators meet the latest CPCB norms and are built for Indian conditions.'}
                   {selectedCategory === 'gas' && 'Eco-friendly and efficient, our gas generators provide clean power with lower emissions and reduced operating costs.'}
                   {selectedCategory === 'portable' && 'Compact and versatile generators perfect for homes, small businesses, construction sites, and outdoor events.'}
+                  {selectedCategory === 'optiprime' && 'Kirloskar Optiprime series are advanced generators offering superior fuel efficiency and smart monitoring for optimized performance.'}
                   {selectedCategory === 'electrical' && 'High-quality electrical panels for power distribution, control, and protection of your electrical systems.'}
                   {selectedCategory === 'servo' && 'Reliable servo stabilizers to protect your equipment from voltage fluctuations and ensure consistent power supply.'}
                   {selectedCategory === 'transformers' && 'Durable and efficient transformers designed for various industrial and commercial applications.'}
@@ -1074,19 +1152,7 @@ const Products = () => {
                 <p className="font-medium text-sm text-gray-300">CPCB-IV+</p>
               </div>
               
-              <div className="text-center">
-                <div className="w-20 h-20 mx-auto mb-3 flex items-center justify-center rounded-md bg-gray-800">
-                 <BadgeCheckIcon className="w-8 h-8" style={{ color: "#2D6FBA" }} />
-                </div>
-                <p className="font-medium text-sm text-gray-300">CE Certified</p>
-              </div>
               
-              <div className="text-center">
-                <div className="w-20 h-20 mx-auto mb-3 flex items-center justify-center rounded-md bg-gray-800">
-                  <BadgeCheckIcon className="w-8 h-8" style={{ color: "#2D6FBA" }} />
-                </div>
-                <p className="font-medium text-sm text-gray-300">BIS Approved</p>
-              </div>
               
               <div className="text-center">
                 <div className="w-20 h-20 mx-auto mb-3 flex items-center justify-center rounded-md bg-gray-800">

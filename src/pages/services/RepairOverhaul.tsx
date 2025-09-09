@@ -10,7 +10,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from '@/components/ui/badge';
 
-import asset2 from "@/assets/Kumar Assets/kirloskar _320-1010 kVA-.png"
+import asset2 from "@/assets/Kumar Assets/new750.png"
 
 const RepairOverhaulService = () => {
   // Repair services
