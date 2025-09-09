@@ -1092,45 +1092,58 @@ const Products = () => {
           </DialogHeader>
           <form className="flex flex-col gap-4">
             <div>
-              <label className="block text-sm mb-1">kVA/kW Input</label>
+              <label className="block text-sm mb-1">kVA Rating <span className="text-red-500">*</span></label>
               <input
                 type="text"
-                placeholder="Enter kVA/kW"
+                placeholder="Enter kVA rating"
                 className="w-full px-3 py-2 rounded bg-gray-900 text-white border border-gray-700"
+                required
               />
             </div>
             <div>
-              <label className="block text-sm mb-1">Use Case</label>
-              <input
-                type="text"
-                placeholder="Enter use case"
+              <label className="block text-sm mb-1">Installation Location <span className="text-red-500">*</span></label>
+              <select
                 className="w-full px-3 py-2 rounded bg-gray-900 text-white border border-gray-700"
-              />
+                required
+              >
+                <option value="">Select location</option>
+                <option value="rooftop">Rooftop Installation</option>
+                <option value="ground">Ground Floor Installation</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm mb-1">Use Case <span className="text-red-500">*</span></label>
+              <select
+                className="w-full px-3 py-2 rounded bg-gray-900 text-white border border-gray-700"
+                required
+              >
+                <option value="">Select use case</option>
+                <option value="residential">Residential</option>
+                <option value="commercial">Commercial</option>
+                <option value="industrial">Industrial</option>
+              </select>
             </div>
             <DialogTitle className="text-lg text-center mt-2 mb-2">Generator Usage Conditions</DialogTitle>
             <div>
-              <label className="block text-sm mb-1">Indoor/Outdoor</label>
-              <input
-                type="text"
-                placeholder="Enter location"
-                className="w-full px-3 py-2 rounded bg-gray-900 text-white border border-gray-700"
-              />
-            </div>
-            <div>
               <label className="block text-sm mb-1">Operating Hours Per Day</label>
-              <input
-                type="text"
-                placeholder="Enter hours"
+              <select
                 className="w-full px-3 py-2 rounded bg-gray-900 text-white border border-gray-700"
-              />
+              >
+                <option value="">Select operating hours</option>
+                <option value="2">2 hours</option>
+                <option value="6">6 hours</option>
+                <option value="more">More than 6 hours</option>
+              </select>
             </div>
             <div>
               <label className="block text-sm mb-1">Load Type</label>
-              <input
-                type="text"
-                placeholder="Enter load type"
+              <select
                 className="w-full px-3 py-2 rounded bg-gray-900 text-white border border-gray-700"
-              />
+              >
+                <option value="">Select load type</option>
+                <option value="constant">Constant Load</option>
+                <option value="variable">Variable Load</option>
+              </select>
             </div>
             <Button type="submit" className="bg-[#2D6FBA] hover:bg-[#225488] text-white mt-2 w-full">
               Submit
