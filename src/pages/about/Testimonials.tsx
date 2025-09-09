@@ -109,13 +109,6 @@ const Testimonials = () => {
           <div className="grid md:grid-cols-2 gap-6">
             {/* Testimonial 1 - Indian Railways */}
             <div className="border rounded-lg overflow-hidden">
-              <div className="h-48 overflow-hidden">
-                <img 
-                  // src={test1}
-                  alt="Indian Railways" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
               <div className="p-4">
                 <div className="flex items-center mb-4">
                   <div className="h-10 w-10 rounded-full bg-gray-300 mr-3 overflow-hidden">
@@ -144,13 +137,6 @@ const Testimonials = () => {
             
             {/* Testimonial 2 - Vikram Mehta */}
             <div className="border rounded-lg overflow-hidden">
-              <div className="h-48 overflow-hidden">
-                <img 
-                  // src={test2}
-                  alt="Apollo Hospital" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
               <div className="p-4">
                 <div className="flex items-center mb-4">
                   <div className="h-10 w-10 rounded-full bg-gray-300 mr-3 overflow-hidden">
@@ -178,14 +164,8 @@ const Testimonials = () => {
             </div>
             
             {/* Testimonial 3 - Anand Patel */}
-            <div className="border rounded-lg overflow-hidden">
-              <div className="h-48 overflow-hidden">
-                <img 
-                  // src={test3}
-                  alt="Reliance Industries" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
+            <div className="border  rounded-lg overflow-hidden">
+              
               <div className="p-4">
                 <div className="flex items-center mb-4">
                   <div className="h-10 w-10 rounded-full bg-gray-300 mr-3 overflow-hidden">
@@ -214,13 +194,7 @@ const Testimonials = () => {
             
             {/* Testimonial 4 - Sunita Reddy */}
             <div className="border rounded-lg overflow-hidden">
-              <div className="h-48 overflow-hidden">
-                <img 
-                  // src={test4}
-                  alt="Wipro Electronics" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              
               <div className="p-4">
                 <div className="flex items-center mb-4">
                   <div className="h-10 w-10 rounded-full bg-gray-300 mr-3 overflow-hidden">
