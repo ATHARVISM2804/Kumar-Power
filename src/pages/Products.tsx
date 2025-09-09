@@ -34,6 +34,7 @@ import servo2 from "@/assets/servo/servo2.png"
 import trans1 from "@/assets/transformer/Trans1.png"
 import trans2 from "@/assets/transformer/trans2.png"
 import trans3 from "@/assets/transformer/trans3.png"
+import Brochure from "@/assets/Brochure.pdf"
 
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("diesel");
@@ -719,7 +720,7 @@ const Products = () => {
                         <img
                           src={product.image}
                           alt={product.name}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full bg-white object-cover"
                         />
                       </div>
                       <div className="p-3">
@@ -756,7 +757,9 @@ const Products = () => {
                               <rect x="3" y="3" width="18" height="18" rx="2" />
                               <path d="M3 9h18" />
                             </svg>
+                            <a href={Brochure} download={`${product.name} Brochure.pdf`} >
                             Brochure
+                            </a>
                           </Button>
                           <Button variant="default" size="sm" className="h-7 text-xs py-0 px-4 bg-[#2D6FBA] hover:bg-[#225488] text-white">
                             Get Quote
@@ -982,13 +985,98 @@ const Products = () => {
                 </DialogDescription>
               </DialogHeader>
 
-              {/* Only CTA Buttons remain */}
+              {/* Technical Specifications Section */}
+              <div className="mt-4">
+                <h3 className="font-semibold text-base mb-2">Technical Specifications:</h3>
+                <div className="bg-gray-50 rounded-md p-4 text-sm">
+                  {selectedProductForSpecs.category === 'diesel' && (
+                    <>
+                      <p className="mb-3">
+                        Engineered with Kirloskar's robust CPCB IV+ compliant diesel engine technology, this generator delivers exceptional power stability with voltage regulation of ±1% and frequency regulation of ±0.25%. The advanced cooling system maintains optimal operating temperatures even in ambient conditions up to 50°C, while the intelligent AMF control panel provides comprehensive protection against overload, short circuit, and phase imbalance.
+                      </p>
+                      <p>
+                        The unit features a high-capacity fuel tank providing up to 12 hours of continuous operation at 75% load, with fuel consumption optimization technology that reduces diesel usage by up to 15% compared to standard generators. The acoustic enclosure is designed to limit noise levels to 75dB at 1-meter distance, making it suitable for residential and commercial applications. Standard features include remote monitoring capability via GSM/GPRS, auto-start functionality, and a maintenance-free battery system with intelligent charging.
+                      </p>
+                    </>
+                  )}
+                  
+                  {selectedProductForSpecs.category === 'gas' && (
+                    <>
+                      <p className="mb-3">
+                        This state-of-the-art gas generator utilizes Kirloskar's eco-friendly gas engine technology, featuring electronic fuel injection for precise air-fuel ratio control and reduced emissions. The system achieves NOx emissions below 100mg/Nm³, significantly lower than diesel alternatives, while maintaining thermal efficiency of up to 40%. Compatible with multiple fuel types including natural gas, LPG, and biogas, the flexible design includes automatic fuel switchover capability.
+                      </p>
+                      <p>
+                        Advanced heat recovery systems capture waste heat, enabling cogeneration applications with total system efficiency exceeding 85%. The integrated digital control platform provides real-time performance monitoring with predictive maintenance algorithms that identify potential issues before they affect operation. The specially designed catalyst system ensures compliance with the most stringent emission standards while maintaining optimal performance across variable loads from 30% to 100% with minimal efficiency loss.
+                      </p>
+                    </>
+                  )}
+                  
+                  {selectedProductForSpecs.category === 'portable' && (
+                    <>
+                      <p className="mb-3">
+                        This compact portable generator combines lightweight design (under 50kg) with robust power output, featuring Kirloskar's proprietary AVR technology that delivers clean sine wave output with less than 3% THD, making it safe for sensitive electronics. The reinforced tubular frame provides superior protection during transportation, while the ergonomic handle design with anti-vibration grips ensures comfortable portability.
+                      </p>
+                      <p>
+                        The unit incorporates intelligent idle control that automatically adjusts engine speed to match load requirements, reducing fuel consumption by up to 25% during partial load operation. Multiple output sockets including standard 15A, USB ports with fast charging capability, and a dedicated high-current outlet provide versatile power options. The rugged construction features IP23 protection rating against dust and water splashes, with all-terrain wheels designed for easy movement across uneven surfaces.
+                      </p>
+                    </>
+                  )}
+                  
+                  {selectedProductForSpecs.category === 'optiprime' && (
+                    <>
+                      <p className="mb-3">
+                        The Optiprime series represents Kirloskar's latest advancement in generator technology, featuring proprietary variable speed control that dynamically adjusts engine RPM based on load demand, achieving up to 25% fuel savings compared to conventional fixed-speed generators. The integrated IoT platform provides comprehensive remote monitoring and control capabilities, with real-time performance analytics and predictive maintenance scheduling.
+                      </p>
+                      <p>
+                        The advanced combustion system utilizes multi-stage injection technology that optimizes fuel atomization across all load profiles, maintaining emissions well below regulatory requirements while enhancing performance. The smart load management system automatically prioritizes critical equipment during power constraints, ensuring essential operations remain uninterrupted. The modular design enables easy expansion with parallel operation capability for up to 8 units without additional synchronization hardware.
+                      </p>
+                    </>
+                  )}
+                  
+                  {selectedProductForSpecs.category === 'electrical' && (
+                    <>
+                      <p className="mb-3">
+                        This advanced electrical panel features Form 4b separation with CRCA steel construction (minimum 2mm thickness) and IP54 protection class, ensuring complete isolation between functional units for maximum safety during maintenance. The intelligent power management system incorporates digital metering with Class 0.5 accuracy, capable of monitoring over 50 electrical parameters with harmonics analysis up to the 40th order.
+                      </p>
+                      <p>
+                        The arc flash mitigation technology includes ultra-fast detection systems that respond within 4ms to potential arc faults, while the thermal management system utilizes computational fluid dynamics to optimize air flow patterns, reducing hotspots by up to 15°C. All critical components are sourced from tier-1 manufacturers with redundancy built into protection circuits. The modular design allows for future expansion without system downtime, and the integrated power quality analyzers continuously monitor and log events for comprehensive power audits.
+                      </p>
+                    </>
+                  )}
+                  
+                  {selectedProductForSpecs.category === 'servo' && (
+                    <>
+                      <p className="mb-3">
+                        This servo stabilizer utilizes high-precision carbon brush technology with a minimum life of 25,000 service hours, achieving voltage correction speeds of 20V/second with regulation accuracy of ±1% even under severe fluctuation conditions. The wide input voltage range accommodates variations from -40% to +25% of nominal voltage while maintaining stable output, with intelligent buck-boost switching that minimizes stress on servo components.
+                      </p>
+                      <p>
+                        The thermal design incorporates specially formulated insulation materials with Class H temperature rating, enabling continuous operation at ambient temperatures up to 55°C without derating. The digital control system provides comprehensive protection against over/under voltage, overload, and phase reversal with adjustable time delay settings. For critical applications, the stabilizer includes bypass functionality with zero transfer time and a specialized inrush current management system that accommodates loads with high starting current requirements without nuisance tripping.
+                      </p>
+                    </>
+                  )}
+                  
+                  {selectedProductForSpecs.category === 'transformers' && (
+                    <>
+                      <p className="mb-3">
+                        This transformer utilizes premium grain-oriented silicon steel core with step-lap construction technique, reducing core losses by up to 15% compared to conventional designs. The copper windings feature thermally upgraded paper insulation with optimized duct placement for efficient heat dissipation, maintaining winding hotspot temperatures below 98°C even at 110% continuous loading.
+                      </p>
+                      <p>
+                        The hermetically sealed tank design eliminates oxygen contact with insulating oil, extending oil life by up to 35% while the advanced cooling system with directed oil flow technology targets critical hot zones. The comprehensive monitoring package includes fiber optic temperature sensors embedded within windings for real-time thermal profile analysis. Off-circuit tap changers provide ±5% voltage adjustment in 2.5% steps, while superior surge protection withstands lightning impulse voltages up to 95kV. The specially formulated insulating oil contains natural ester compounds for enhanced biodegradability and fire safety with flash point exceeding 300°C.
+                      </p>
+                    </>
+                  )}
+                </div>
+              </div>
+
+              {/* CTA Buttons */}
               <div className="mt-6 flex flex-col sm:flex-row flex-wrap gap-3 pt-4 border-t">
                 <Button size="sm" variant="default" className="bg-[#2D6FBA] hover:bg-[#225488] w-full sm:w-auto">
                   Request Quote
                 </Button>
                 <Button size="sm" variant="outline" className="flex items-center gap-1 w-full sm:w-auto">
-                  <Download className="w-4 h-4" /> Download Brochure
+                  <Download className="w-4 h-4" /> <a href={Brochure} download={"Brochure.pdf"} >
+                            Brochure
+                            </a>  
                 </Button>
               </div>
             </>
