@@ -249,7 +249,7 @@ const BlogSection = () => {
   return (
     <motion.section 
       id="blogs" 
-      className="py-10 md:py-20 bg-black"
+      className=" bg-black"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}

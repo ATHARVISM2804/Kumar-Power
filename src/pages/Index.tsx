@@ -29,8 +29,8 @@ const Index = () => {
         <Testimonials />
         <BlogSection />
         
-      </main>
       <Footer />
+      </main>
     </div>
   );
 };
