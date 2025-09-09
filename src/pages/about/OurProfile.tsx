@@ -11,6 +11,10 @@ import manjot from "@/assets/manjot.png";
 import jagjit from "@/assets/jagjit.png";
 import isoprof from "@/assets/iso profile.png";
 import kirlo from "@/assets/kirlosksar profile.png"
+import gen from "@/assets/gen team.webp"
+import earth from "@/assets/earth.png"
+import certificate from "@/assets/Certificate 1.png"
+import certi from "@/assets/certi1.png"
 
 const About = () => {
   return (
@@ -71,7 +75,7 @@ const About = () => {
               </div>
               <div>
                 <img 
-                  src={Welding}
+                  src={gen}
                   alt="Welding work" 
                   className="w-full h-64 object-cover rounded-lg"
                 />
@@ -87,7 +91,7 @@ const About = () => {
               </div>
               <div className="md:order-1">
                 <img 
-                  src={Contract} 
+                  src={certificate} 
                   alt="Contract signing" 
                   className="w-full h-64 object-cover rounded-lg"
                 />
@@ -97,13 +101,13 @@ const About = () => {
             <div className="relative grid md:grid-cols-2 gap-6 items-center mb-16">
               <div className="text-black p-6 rounded-lg flex flex-col items-start md:items-start">
                 <span className="inline-block px-3 py-1 bg-black text-white text-sm font-medium rounded-md mb-4">2012</span>
-                <h3 className="text-xl font-bold mb-3">ISO Certificates</h3>
+                <h3 className="text-xl font-bold mb-3">ISO Certification</h3>
                 <p>Achieved ISO 9001:2015 certification, validating our commitment to quality management systems.</p>
                 <div className="w-16 h-1 bg-zinc-600 mt-4 self-start"></div>
               </div>
               <div>
                 <img 
-                  src={iso}
+                  src={certi}
                   alt="Person working on laptop" 
                   className="w-full h-64 object-cover rounded-lg"
                 />
@@ -119,7 +123,7 @@ const About = () => {
               </div>
               <div className="md:order-1">
                 <img 
-                  src={Nation}
+                  src={earth}
                   alt="Skyscraper buildings" 
                   className="w-full h-64 object-cover rounded-lg"
                 />
@@ -144,10 +148,10 @@ const About = () => {
                 alt="Rajvinder Singh Kumar" 
                 className=" h-[57vh] object-cover mb-4 "
               />
-              <h3 className="text-lg font-bold uppercase mb-1 text-center">RS KUMAR</h3>
-              <p className="font-semibold text-sm mb-1 text-center">(Founder)</p>
+              <h3 className="text-xl font-bold uppercase mb-1 text-center">RS KUMAR</h3>
+              <p className="font-semibold text-m mb-1 text-center">(Founder)</p>
               
-              <p className="text-xs text-center">
+              <p className="text-s text-center">
             RS Kumar is the Founder and CEO of Kumar Generator House, a company he established with a vision to provide reliable and sustainable power solutions. With decades of industry experience, Rajvinder has been the driving force behind the company’s growth and success. His leadership is centered on innovation, customer satisfaction, and a commitment to excellence. Under his guidance, Kumar Generator House has become a trusted name in the industry, focused on empowering businesses and communities with top-quality solutions.              </p>
             </div>
             {/* Team Member 2 */}
@@ -157,10 +161,10 @@ const About = () => {
                 alt="Jagjit Singh Kumar" 
                 className=" h-full object-cover  mb-10 translate-y-5 "
               />
-              <h3 className="text-lg font-bold uppercase mb-1 text-center">JS KUMAR</h3>
-              <p className="font-semibold text-sm mb-1 text-center">(Director)</p>
+              <h3 className="text-xl font-bold uppercase mb-1 text-center">JS KUMAR</h3>
+              <p className="font-semibold text-m mb-1 text-center">(Director)</p>
               
-              <p className="text-xs text-center">
+              <p className="text-s text-center">
                 JS Kumar is a director at Kumar Generator House, where he plays a pivotal role in overseeing business strategy, operations, and growth initiatives. With a focus on enhancing internal processes and fostering partnerships, Jasjot is committed to driving the company’s expansion and ensuring the delivery of efficient, high-quality service to clients. His strategic approach and dedication to innovation continue to shape the company’s success in the power solutions sector.tor at Kumar Generator House, Jagjit focuses on business strategy and partnerships, ensuring quality service and driving the company’s growth in the power sector.
               </p>
             </div>
@@ -171,10 +175,10 @@ const About = () => {
                 alt="Manjot Singh Kumar" 
                 className=" h-full object-cover mb-10 translate-y-5"
               />
-              <h3 className="text-lg font-bold uppercase mb-1 text-center">MS KUMAR</h3>
-              <p className="font-semibold text-sm mb-1 text-center">(Director)</p>
+              <h3 className="text-xl font-bold uppercase mb-1 text-center">MS KUMAR</h3>
+              <p className="font-semibold text-m mb-1 text-center">(Director)</p>
               
-              <p className="text-xs text-center">
+              <p className="text-s text-center">
                 MS Kumar is the director of Kumar Generator House, a company with a rich legacy of over 30 years in providing reliable power solutions. With a keen focus on growth, innovation, and sustainability, Manjot leads the company towards achieving excellence in every aspect of its operations. His leadership style emphasizes customer satisfaction, operational efficiency, and long-term business relationships, ensuring that Kumar Generator House remains a trusted name in the industry.ector, Manjot leads Kumar Generator House with a focus on growth and sustainability, ensuring operational excellence and long-term client relationships.
               </p>
             </div>

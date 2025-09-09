@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Header from "@/components/landing/Header";
 import Footer from "@/components/landing/Footer";
 import SEOJsonLD from "@/components/SEOJsonLD";
@@ -31,6 +31,76 @@ import vistara from "@/assets/Vistara.png";
 
 const OurClients = () => {
   const [activeTab, setActiveTab] = useState("industries");
+  const [counts, setCounts] = useState({ clients: 0, years: 0, installations: 0 });
+  const statsRef = useRef(null);
+  const animationStarted = useRef(false);
+  
+  // Animation function to count up numbers
+  const animateNumbers = (resetAnimation = false) => {
+    // Allow restarting animation on hover when resetAnimation is true
+    if (animationStarted.current && !resetAnimation) return;
+    
+    const finalNumbers = {
+      clients: 500,
+      years: 30,
+      installations: 10000
+    };
+    
+    // Reset counts to 0 for a fresh animation if requested
+    if (resetAnimation) {
+      setCounts({ clients: 0, years: 0, installations: 0 });
+    }
+    
+    const duration = 1500; // Slightly faster animation (1.5 seconds)
+    const startTime = Date.now();
+    animationStarted.current = true;
+    
+    const updateNumbers = () => {
+      const now = Date.now();
+      const progress = Math.min((now - startTime) / duration, 1); // Progress from 0 to 1
+      
+      // Easing function for smooth animation
+      const easeOutQuad = t => t * (2 - t);
+      const easedProgress = easeOutQuad(progress);
+      
+      setCounts({
+        clients: Math.floor(easedProgress * finalNumbers.clients),
+        years: Math.floor(easedProgress * finalNumbers.years),
+        installations: Math.floor(easedProgress * finalNumbers.installations)
+      });
+      
+      if (progress < 1) {
+        requestAnimationFrame(updateNumbers);
+      } else {
+        // Set to final values when animation completes
+        setCounts(finalNumbers);
+        // Allow restarting animation on hover
+        if (resetAnimation) {
+          animationStarted.current = false;
+        }
+      }
+    };
+    
+    updateNumbers();
+  };
+  
+  // Intersection Observer for triggering animation when visible
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateNumbers();
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+    
+    return () => observer.disconnect();
+  }, []);
 
   // Client data for each category
   const clientCategories = {
@@ -332,19 +402,49 @@ const OurClients = () => {
       </section>
       
       {/* Statistics Section */}
-      <section className="py-12 ">
+      <section ref={statsRef} className="py-16 bg-gradient-to-r from-gray-50 to-gray-100">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-3 gap-8 text-center">
-            <div>
-              <h3 className="text-3xl font-bold text-[#2D6FBA]">500+</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+            <div 
+              className="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105 cursor-pointer"
+              onMouseEnter={() => animateNumbers(true)}
+            >
+              <div className="flex justify-center items-center mb-4">
+                <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#2D6FBA]" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-4xl font-bold text-[#2D6FBA] mb-2">{counts.clients}+</h3>
               <p className="text-sm text-gray-600">Enterprise Clients</p>
             </div>
-            <div>
-              <h3 className="text-3xl font-bold text-[#2D6FBA]">30+</h3>
+            <div 
+              className="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105 cursor-pointer"
+              onMouseEnter={() => animateNumbers(true)}
+            >
+              <div className="flex justify-center items-center mb-4">
+                <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#2D6FBA]" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-4xl font-bold text-[#2D6FBA] mb-2">{counts.years}+</h3>
               <p className="text-sm text-gray-600">Years of Service</p>
             </div>
-            <div>
-              <h3 className="text-3xl font-bold text-[#2D6FBA]">10000+</h3>
+            <div 
+              className="bg-white p-8 rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105 cursor-pointer"
+              onMouseEnter={() => animateNumbers(true)}
+            >
+              <div className="flex justify-center items-center mb-4">
+                <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#2D6FBA]" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-4xl font-bold text-[#2D6FBA] mb-2">{counts.installations}+</h3>
               <p className="text-sm text-gray-600">Installations Across India</p>
             </div>
           </div>

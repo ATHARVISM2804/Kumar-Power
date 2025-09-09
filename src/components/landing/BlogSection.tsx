@@ -287,7 +287,7 @@ const BlogSection = () => {
       <BlogModal blog={selectedBlog} isOpen={isModalOpen} onClose={closeModal} />
 
       {/* CTA Section */}
-      <div className="mt-16 md:mt-24 bg-white rounded-none mx-auto max-w-none px-0 py-0 border-none shadow-none">
+      <div className="mt-16  md:mt-24 bg-white rounded-none mx-auto max-w-none px-0 py-0 border-none shadow-none">
         <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div className="flex-1 md:pr-10">
             <h3 className="text-2xl md:text-3xl font-bold text-black mb-4 text-left">Call To Action</h3>
