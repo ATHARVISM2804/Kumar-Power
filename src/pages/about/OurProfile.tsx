@@ -4,7 +4,7 @@ import SEOJsonLD from "@/components/SEOJsonLD";
 import OurProfile from "@/assets/ourprofile1.png"
 import Welding from "@/assets/welding.png";
 import Contract from "@/assets/contract.png";
-import iso from "@/assets/iso.png";
+import iso from "@/assets/Contact/iso.jpeg";
 import Nation from "@/assets/Nation.png";
 import rajvinder from "@/assets/rajvinder.png";
 import manjot from "@/assets/manjot.png";
@@ -274,7 +274,7 @@ const About = () => {
               <div className="flex flex-row gap-6 min-w-[220px]">
                 <div className="border border-black rounded-lg flex flex-col items-center justify-center w-[160px] h-[200px] bg-white">
                   <img 
-                    src={isoprof}
+                    src={iso}
                     alt="ISO 9001:2015" 
                     className="h-24 w-24 object-contain mt-6 mb-2  rounded"
                   />

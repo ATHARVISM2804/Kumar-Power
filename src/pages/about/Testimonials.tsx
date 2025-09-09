@@ -7,15 +7,21 @@ import test2 from "@/assets/test2.png";
 import test3 from "@/assets/test3.png";
 import test4 from "@/assets/test4.png";
 
-import testimonial from "@/assets/testimonial banner.webp"
-import trust from "@/assets/Seasons (1).png";
+import testimonial from "@/assets/Testimonial/testii.jpeg"
+import trust from "@/assets/Clients page/GMR Infra.jpg";
 import trust1 from "@/assets/SIS (1).png";
 import trust2 from "@/assets/Vistara 1 (1).png";
-import trust3 from "@/assets/GMR (1).png";
+import trust3 from "@/assets/Clients page/GMR Infra.jpg";
 import trust4 from "@/assets/Honeywell 1 (1).png";
 import trust5 from "@/assets/Kashyapi (2).png";
 import trust6 from "@/assets/Caritas (1).png";
 import trust7 from "@/assets/CEC (1).png";
+import ace from "@/assets/Clients page/AceConstruction.jpg";
+import claroin from "@/assets/Clients page/Clarion.png";
+import Comed from "@/assets/Clients page/Comed.png";
+import Dps from "@/assets/Clients page/DPS.jpg";
+import GEPL from "@/assets/Clients page/GEPL.jpg";
+import addidas from "@/assets/Clients page/Adidas.jpg";
 
 const Testimonials = () => {
   return (
@@ -51,26 +57,40 @@ const Testimonials = () => {
       <SEOJsonLD />
       <Header />
       
-      {/* Success Stories Section - Banner image background header */}
-      <section 
-        className="py-16 h-80 bg-cover bg-center text-white" 
-        style={{ backgroundImage: `url(${testimonial})` }}
-      >
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="mb-6">
-            <div className="border-l-4 border-[#2D6FBA] pl-4">
-              <h2 className="text-4xl font-bold">POWERING INDIA'S<br />SUCCESS STORIES</h2>
-              <p className="mt-2">Testimonials from industry leaders</p>
-            </div>
-            <button className="text-[#2D6FBA] mt-4 flex items-center text-lg">
-              Discover
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </section>
+     {/* Success Stories Section - Banner image background header */}
+{/* Success Stories Section - Banner image background header */}
+<section 
+  className="relative py-16 h-80 bg-cover bg-no-repeat text-white" 
+  style={{ 
+    backgroundImage: `url(${testimonial})`,
+    backgroundPosition: "40% 30%"  // X% Y% → adjust this
+    // Example: "50% 0%" (center top), "50% 100%" (center bottom), "0% 50%" (left center)
+    // Or use pixels: "0px 100px", "50px 200px", etc.
+  }}
+>
+  {/* Optional overlay for readability */}
+  <div className="absolute inset-0 bg-black/40"></div>
+
+  <div className="relative max-w-7xl mx-auto px-8">
+    <div className="mb-6">
+      <div className="border-l-4 border-[#2D6FBA] pl-4">
+        <h2 className="text-4xl font-bold leading-tight">
+          POWERING INDIA'S<br />SUCCESS STORIES
+        </h2>
+        <p className="mt-2 text-gray-200">Testimonials from industry leaders</p>
+      </div>
+
+      <button className="text-[#2D6FBA] mt-4 flex items-center text-lg font-medium hover:underline">
+        Discover
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+          <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+
       
       {/* Client Stories Section - White background */}
       <section className="bg-white py-8">
@@ -277,7 +297,22 @@ const Testimonials = () => {
                   <img src={trust6} alt="Caritas" className="max-h-16 w-auto" />
                 </div>
                 <div className="logo-item">
-                  <img src={trust7} alt="CEC" className="max-h-16 w-auto" />
+                  <img src={addidas} alt="CEC" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src={GEPL} alt="CEC" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src={Dps} alt="CEC" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src={Comed} alt="CEC" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src={ace} alt="CEC" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src={claroin} alt="CEC" className="max-h-16 w-auto" />
                 </div>
                 
                 {/* Duplicate logos for continuous loop */}
@@ -304,6 +339,24 @@ const Testimonials = () => {
                 </div>
                 <div className="logo-item">
                   <img src={trust7} alt="CEC" className="max-h-16 w-auto" />
+                </div>
+                 <div className="logo-item">
+                  <img src={addidas} alt="CEC" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src={GEPL} alt="CEC" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src={Dps} alt="CEC" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src={Comed} alt="CEC" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src={ace} alt="CEC" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src={claroin} alt="CEC" className="max-h-16 w-auto" />
                 </div>
               </div>
             </div>

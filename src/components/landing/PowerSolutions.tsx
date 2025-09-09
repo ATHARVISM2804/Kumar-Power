@@ -8,11 +8,17 @@ import allProductsImg from "@/assets/ALL PRODUCTS.png";
 import trust from "@/assets/Seasons (1).png";
 import trust1 from "@/assets/SIS (1).png";
 import trust2 from "@/assets/Vistara 1 (1).png";
-import trust3 from "@/assets/GMR (1).png";
+import trust3 from "@/assets/Clients page/GMR Infra.jpg";
 import trust4 from "@/assets/Honeywell 1 (1).png";
 import trust5 from "@/assets/Kashyapi (2).png";
 import trust6 from "@/assets/Caritas (1).png";
 import trust7 from "@/assets/CEC (1).png";
+import ace from "@/assets/Clients page/AceConstruction.jpg";
+import claroin from "@/assets/Clients page/Clarion.png";
+import Comed from "@/assets/Clients page/Comed.png";
+import Dps from "@/assets/Clients page/DPS.jpg";
+import GEPL from "@/assets/Clients page/GEPL.jpg";
+import addidas from "@/assets/Clients page/Adidas.jpg";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
@@ -896,6 +902,12 @@ const PowerSolutions = () => {
             <img src={trust5} alt="STS" className="h-20 w-auto" />
             <img src={trust6} alt="GMP" className="h-20 w-auto" />
             <img src={trust7} alt="GMP" className="h-20 w-auto" />
+            <img src={ace} alt="GMP" className="h-20 w-auto" />
+            <img src={claroin} alt="GMP" className="h-20 w-auto" />
+            <img src={addidas} alt="GMP" className="h-20 w-auto" />
+            <img src={GEPL} alt="GMP" className="h-20 w-auto" />
+            <img src={Dps} alt="GMP" className="h-20 w-auto" />
+            <img src={Comed} alt="GMP" className="h-20 w-auto" />
           </div>
         </div>
       </motion.div>

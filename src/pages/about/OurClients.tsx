@@ -11,7 +11,7 @@ import apollo from "@/assets/Apollo.png";
 import cec from "@/assets/CEC (1).png";
 import seasons from "@/assets/Seasons (1).png";
 import ncc from "@/assets/Ncc Limited.png";
-import gmr from "@/assets/GMR (1).png";
+import gmr from "@/assets/Clients page/GMR Infra.jpg";
 import airindia from "@/assets/air-india-logo-png_seeklogo-5113 1.png";
 import british from "@/assets/BristishPaints.png";
 import nbcc from "@/assets/NBCC 1.png"
@@ -28,6 +28,13 @@ import pwc from "@/assets/PWC.png";
 import daiken from "@/assets/Daikin.png";
 import ignou from "@/assets/IGNOU-Preview 1.png";
 import vistara from "@/assets/Vistara.png";
+import ace from "@/assets/Clients page/AceConstruction.jpg";
+import claroin from "@/assets/Clients page/Clarion.png";
+import Comed from "@/assets/Clients page/Comed.png";
+import Dps from "@/assets/Clients page/DPS.jpg";
+import GEPL from "@/assets/Clients page/GEPL.jpg";
+import addidas from "@/assets/Clients page/Adidas.jpg";
+
 
 const OurClients = () => {
   const [activeTab, setActiveTab] = useState("industries");
@@ -396,6 +403,22 @@ const OurClients = () => {
             </div>
             <div className="flex items-center justify-center">
               <img src={vistara} alt="Vistaar" className="h-20" />
+            </div>
+            {/* Row 4 */}
+            <div className="flex items-center justify-center">
+              <img src={ace} alt="Mapple" className="h-20" />
+            </div>
+            <div className="flex items-center justify-center">
+              <img src={claroin} alt="Coated" className="h-20" />
+            </div>
+            <div className="flex items-center justify-center">
+              <img src={Comed} alt="MBD Group" className="h-20" />
+            </div>
+            <div className="flex items-center justify-center">
+              <img src={Dps} alt="Infrastructure" className="h-20" />
+            </div>
+            <div className="flex items-center justify-center">
+              <img src={addidas} alt="Raj Foundation" className="h-20" />
             </div>
           </div>
         </div>

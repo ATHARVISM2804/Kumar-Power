@@ -2,7 +2,7 @@ import Header from "@/components/landing/Header";
 import Footer from "@/components/landing/Footer";
 import SEOJsonLD from "@/components/SEOJsonLD";
 import { useState } from "react";
-import contact from "./image.png"
+import contact from "@/assets/Contact/contact.jpeg";
 
 const Contact = () => {
   // Form state for the main contact form
@@ -102,7 +102,7 @@ const Contact = () => {
         }}>
           <div className="absolute inset-0 z-0 bg-no-repeat bg-cover opacity-60"
             style={{
-              backgroundImage: 'url(https://i.pinimg.com/736x/fe/44/56/fe4456118e2c95e3416848c659e5337e.jpg)',
+              backgroundImage: 'url(' + contact + ')',
               mixBlendMode: "normal",
               backgroundPosition: "center -380px" // move image up
             }}
