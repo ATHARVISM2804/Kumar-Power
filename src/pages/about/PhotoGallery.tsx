@@ -120,6 +120,12 @@ import instal26 from "@/assets/Installation/instal26.png";
 import instal27 from "@/assets/Installation/instal27.png";
 import instal28 from "@/assets/Installation/instal28.png";
 
+import award1 from "@/assets/Award 1.png";
+import award2 from "@/assets/award 2.png";
+import award3 from "@/assets/award 3.png";
+import award4 from "@/assets/award 4.png";
+
+
 interface GalleryImage {
   id: number;
   src: string;
@@ -237,67 +243,17 @@ const PhotoGallery = () => {
     { id: "all", label: "All" },
     { id: "installations", label: "Installations" },
     { id: "events", label: "Events" },
-    { id: "factory", label: "Factory" },
-    { id: "on-site", label: "On-Site" },
+    { id: "Award", label: "Award Ceremony" },
+    
   ];
 
   const galleryImages: GalleryImage[] = [
-    {
-      id: 1,
-      src: gallery2,
-      alt: "Industrial machinery",
-      category: "factory",
-      size: { colSpan: 5, rowSpan: 3 }
-    },
-    {
-      id: 2,
-      src: gallery3,
-      alt: "Generator installation",
-      category: "installations",
-      size: { colSpan: 3, rowSpan: 3 }
-    },
-    {
-      id: 3,
-      src: gallery4,
-      alt: "Circuit board maintenance",
-      category: "on-site",
-      size: { colSpan: 3, rowSpan: 3 }
-    },
-    {
-      id: 4,
-      src: gallery5,
-      alt: "Control room",
-      category: "factory",
-      size: { colSpan: 5, rowSpan: 3 }
-    },
-    {
-      id: 5,
-      src: gallery6,
-      alt: "Gas turbine installation",
-      category: "installations",
-      size: { colSpan: 5, rowSpan: 3 }
-    },
-    {
-      id: 6,
-      src: gallery7,
-      alt: "Monitoring room",
-      category: "on-site",
-      size: { colSpan: 3, rowSpan: 3 }
-    },
-    {
-      id: 7,
-      src: gallery8,
-      alt: "Large industrial generator",
-      category: "installations",
-      size: { colSpan: 3, rowSpan: 3 }
-    },
-    {
-      id: 8,
-      src: gallery9,
-      alt: "Tablet control interface",
-      category: "events",
-      size: { colSpan: 2, rowSpan: 3 }
-    },
+    // Award Ceremony images
+    { id: 1, src: award1, alt: "Kumar Power Excellence Award", category: "Award" },
+    { id: 2, src: award2, alt: "Service Recognition Award", category: "Award" },
+    { id: 3, src: award3, alt: "Industry Leadership Award", category: "Award" },
+    { id: 4, src: award4, alt: "Best Power Solutions Provider", category: "Award" },
+    
     // Diwali Party images (all in 'events' category)
     { id: 101, src: diwali4, alt: "Diwali Party 4", category: "events" },
     { id: 102, src: diwali5, alt: "Diwali Party 5", category: "events" },
