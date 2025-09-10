@@ -24,7 +24,24 @@ import gsap from "gsap";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import React from "react";
-
+import dg1 from "@/assets/Kumar Assets/7.5KVA DG.png";
+import dg2 from "@/assets/Kumar Assets/320KVa.png";
+import dg3 from "@/assets/Kumar Assets/25kwa dg.png";
+import dg4 from "@/assets/Kumar Assets/62.5KVA DG.png";
+import dg5 from "@/assets/Kumar Assets/new750.png";
+import Panel1 from "@/assets/Panel/Porcelin_clad_vaccum_circuit_breaker 1.png"
+import Panel2 from "@/assets/Panel/Panels 1.png"
+import Panel3 from "@/assets/Panel/SF6_Circuit_breaker 1.png"
+import Panel4 from "@/assets/Panel/Unitised_package_substation 1.png"
+import Panel5 from "@/assets/Panel/Vacuum_circuit_breaker 2.png"
+import Panel6 from "@/assets/Panel/amf-panel-auto-synchronize-panels-24 1.png"
+import Panel7 from "@/assets/Panel/distribution_panel 1.png"
+import Panel8 from "@/assets/Panel/feeder-pillar2 1.png"
+import Servo1 from "@/assets/servo/servo1.png"
+import Servo2 from "@/assets/servo/servo2.png"
+import Trans1 from "@/assets/transformer/Trans1.png"
+import Trans2 from "@/assets/transformer/trans2.png"
+import Trans3 from "@/assets/transformer/trans3.png"
 // Modal for product info
 const ProductModal = ({
   open,
@@ -251,7 +268,7 @@ const PowerSolutions = () => {
         title: "Gas Generators",
         desc: "Eco-friendly natural gas and LPG generators with lower emissions and operational costs for sustainable power generation.",
         specs: [
-          "15 kVA - 500 kVA",
+          "15 kVA - 250 kVA",
           "Low Emissions",
           "Quiet Operation",
           "Fuel: Natural Gas, LPG",
@@ -266,7 +283,7 @@ const PowerSolutions = () => {
         title: "Portable Generators",
         desc: "Compact and mobile power solutions for construction sites, events, and emergency backup with easy transport features.",
         specs: [
-          "2 kVA - 15 kVA",
+          "2.1 kVA to 5 kVA",
           "Lightweight Design",
           "Fuel: Petrol, Diesel",
           "Application: Construction, Events, Residential",
@@ -277,18 +294,89 @@ const PowerSolutions = () => {
     ],
     "CPCB4+ Diesel Generator": [
       {
-        title: "CPCB4+ Diesel Generator",
-        desc: "Environment-compliant diesel generators meeting CPCB4+ emission norms with advanced pollution control technology.",
-        specs: [
-          "125 kva - 6600 kva",
-          "CPCB4+ Emission Compliance",
-          "Advanced Pollution Control",
-          "Fuel: Diesel",
-          "Application: Industrial, Commercial",
-          "Certification: CPCB4+, ISO 9001"
-        ],
-        img: ups
-      }
+    title: "CPCB4+ Diesel Generators",
+    desc: "High-performance CPCB4+ compliant diesel generators with liquid cooling, ideal for industrial and commercial usage.",
+    specs: [
+      "Range: 200 kVA - 250 kVA",
+      "CPCB Norm: CPCB4+ Emission Compliance",
+      "Fuel: Diesel",
+      "Cooling: Liquid",
+      "Phase: Three Phase",
+      "Application: Industrial, Commercial",
+      "Certification: CPCB4+, ISO 9001"
+    ],
+    img: diesel
+  },
+  {
+    title: "CPCB4+ Diesel Generators",
+    desc: "Compact CPCB4+ compliant diesel generators designed for small businesses and commercial setups.",
+    specs: [
+      "Range: 7.5 kVA - 20 kVA",
+      "CPCB Norm: CPCB4+ Emission Compliance",
+      "Fuel: Diesel",
+      "Cooling: Liquid",
+      "Phase: Three Phase",
+      "Application: Residential, Small Commercial",
+      "Certification: CPCB4+, ISO 9001"
+    ],
+    img: dg1
+  },
+  {
+    title: "CPCB4+ Diesel Generators",
+    desc: "Reliable CPCB4+ emission compliant diesel generators with advanced liquid cooling for efficient performance.",
+    specs: [
+      "Range: 25 kVA - 58.5 kVA",
+      "CPCB Norm: CPCB4+ Emission Compliance",
+      "Fuel: Diesel",
+      "Cooling: Liquid",
+      "Phase: Three Phase",
+      "Application: Industrial, Commercial",
+      "Certification: CPCB4+, ISO 9001"
+    ],
+    img: dg3
+  },
+  {
+    title: "CPCB4+ Diesel Generators",
+    desc: "Versatile CPCB4+ compliant diesel generators designed for medium-scale industries and businesses.",
+    specs: [
+      "Range: 82.5 kVA - 160 kVA",
+      "CPCB Norm: CPCB4+ Emission Compliance",
+      "Fuel: Diesel",
+      "Cooling: Liquid",
+      "Phase: Three Phase",
+      "Application: Industrial, Commercial",
+      "Certification: CPCB4+, ISO 9001"
+    ],
+    img: dg2
+  },
+  {
+    title: "CPCB4+ Diesel Generators",
+    desc: "Heavy-duty CPCB4+ compliant diesel generators offering superior efficiency and power reliability.",
+    specs: [
+      "Range: 320 kVA - 750 kVA",
+      "CPCB Norm: CPCB4+ Emission Compliance",
+      "Fuel: Diesel",
+      "Cooling: Liquid",
+      "Phase: Three Phase",
+      "Application: Large Industrial, Commercial",
+      "Certification: CPCB4+, ISO 9001"
+    ],
+    img: dg2
+  },
+  {
+    title: "CPCB4+ Diesel Generators",
+    desc: "High-capacity CPCB4+ diesel generators for continuous heavy industrial and commercial applications.",
+    specs: [
+      "Range: 750 kVA - 1500 kVA",
+      "CPCB Norm: CPCB4+ Emission Compliance",
+      "Fuel: Diesel",
+      "Cooling: Liquid",
+      "Phase: Three Phase",
+      "Application: Heavy Industrial, Commercial Complexes",
+      "Certification: CPCB4+, ISO 9001"
+    ],
+    img: dg5
+  }
     ],
     Inverters: [
       {
@@ -348,87 +436,152 @@ const PowerSolutions = () => {
     ],
     "Electrical Panels": [
       {
-        title: "Power Control Centers",
-        desc: "Centralized electrical distribution systems for industrial facilities with comprehensive protection features.",
-        specs: [
-          "Up to 6300A",
-          "Short Circuit Protection",
-          "Type 2 Coordination",
-          "Current Rating: Above 2000A",
-          "Application: Power Distribution, Motor Control",
-          "Certification: IEC 61439, UL Listed"
-        ],
-        img: diesel
-      },
-      {
-        title: "AMF Panels",
-        desc: "Automatic Mains Failure panels for seamless power transfer between utility and generator supply.",
-        specs: [
-          "Auto/Manual Operation",
-          "Engine Protection",
-          "Programmable Logic",
-          "Current Rating: 100-630A",
-          "Application: Synchronization",
-          "Certification: CE Certified"
-        ],
-        img: gas
-      }
+    title: "AMF Panels",
+    desc: "Automatic Mains Failure panels for seamless switching between mains and backup power supply, ensuring uninterrupted operation.",
+    specs: [
+      "Auto/Manual Operation",
+      "Engine Protection",
+      "Programmable Logic Control",
+      "Current Rating: 100-630A",
+      "Application: Synchronization & Backup Power",
+      "Certification: CE Certified"
+    ],
+    img: Panel6
+  },
+  {
+    title: "Vacuum Circuit Breaker",
+    desc: "High-performance vacuum circuit breakers designed for medium voltage applications, ensuring safe and reliable power distribution.",
+    specs: [
+      "Voltage Rating: Up to 36kV",
+      "Interrupting Medium: Vacuum",
+      "Low Maintenance Design",
+      "Application: Industrial & Utility Systems",
+      "High Dielectric Strength",
+      "Certification: IEC Standards"
+    ],
+    img: Panel5
+  },
+  {
+    title: "SF6 Circuit Breakers",
+    desc: "Advanced circuit breakers utilizing SF6 gas for superior arc quenching, offering reliable protection for medium voltage systems.",
+    specs: [
+      "Voltage Rating: Up to 40.5kV",
+      "Insulating Medium: SF6 Gas",
+      "Arc Quenching Technology",
+      "Application: Switchgear, Industrial Plants",
+      "Low Maintenance",
+      "Certification: IEC & ANSI Compliant"
+    ],
+    img: Panel3
+  },
+  {
+    title: "Unitized Package Substation",
+    desc: "Compact and factory-built substations designed for fast installation, providing safe and efficient power distribution.",
+    specs: [
+      "Voltage Rating: Up to 36kV",
+      "Integrated Transformer, Switchgear & Protection",
+      "Compact Outdoor Design",
+      "Plug-and-Play Setup",
+      "Application: Industrial, Commercial & Utility",
+      "Certification: IEC, ISO Standards"
+    ],
+    img: Panel4
+  },
+  {
+    title: "Panels",
+    desc: "Customizable electrical control and distribution panels designed for reliable operation in industrial applications.",
+    specs: [
+      "Voltage Rating: Up to 33kV",
+      "Customized Control & Protection",
+      "High Fault Level Endurance",
+      "Application: Power Distribution & Automation",
+      "Indoor/Outdoor Installation",
+      "Certification: IEC 61439"
+    ],
+    img: Panel2
+  },
+  {
+    title: "Distribution Boxes",
+    desc: "Sturdy and safe distribution boxes to manage and distribute electrical power efficiently for various installations.",
+    specs: [
+      "Voltage Rating: Up to 415V",
+      "Circuit Protection with MCB/ELCB",
+      "Compact & Robust Design",
+      "Application: Residential, Commercial & Industrial",
+      "Wall or Floor Mounted",
+      "Certification: CE & IEC Compliant"
+    ],
+    img: Panel7
+  }
     ],
     "Servo Stabilizers": [
       {
-        title: "Industrial Voltage Stabilizers",
-        desc: "High-precision voltage regulation systems for sensitive equipment and production lines.",
-        specs: [
-          "5kVA - 5000kVA",
-          "±1% Output Accuracy",
-          "Digital Control",
-          "Power Range: High Voltage",
-          "Application: Industrial, IT Equipment",
-          "Features: Digital Display, Remote Monitoring"
-        ],
-        img: portable
-      },
-      {
-        title: "Oil Cooled Stabilizers",
-        desc: "Heavy-duty stabilizers for harsh environments with superior thermal management.",
-        specs: [
-          "Three Phase",
-          "IGBT Technology",
-          "Overload Protection",
-          "Power Range: Three Phase",
-          "Application: Medical, HVAC",
-          "Technology: IGBT Based"
-        ],
-        img: ups
-      }
+    title: "Oil Cooled Servo Stabilizers",
+    desc: "Heavy-duty oil-cooled stabilizers designed for high-load applications, ensuring superior voltage regulation and thermal efficiency.",
+    specs: [
+      "Power Range: 5kVA - 5000kVA",
+      "Cooling: Oil Immersion",
+      "Voltage Accuracy: ±1%",
+      "Phase: Single/Three Phase",
+      "Application: Industrial Plants, HVAC Systems, Medical Equipment",
+      "Features: Digital Metering, Overload & Short Circuit Protection"
+    ],
+    img: Servo1
+  },
+  {
+    title: "Air Cooled Servo Stabilizers",
+    desc: "Compact and efficient air-cooled stabilizers for commercial and IT infrastructure, offering reliable power protection.",
+    specs: [
+      "Power Range: 5kVA - 500kVA",
+      "Cooling: Natural/Forced Air",
+      "Voltage Accuracy: ±1%",
+      "Phase: Single/Three Phase",
+      "Application: Data Centers, Offices, Laboratories",
+      "Features: Digital Display, Fast Response, Overload Protection"
+    ],
+    img: Servo2
+  }
     ],
     Transformers: [
       {
-        title: "Distribution Transformers",
-        desc: "Reliable power distribution transformers for commercial and industrial applications.",
-        specs: [
-          "10kVA - 5000kVA",
-          "Oil/Dry Type",
-          "ONAN/ONAF Cooling",
-          "Type: Oil Filled",
-          "Cooling: ONAN",
-          "Application: Distribution, Power"
-        ],
-        img: diesel
-      },
-      {
-        title: "Isolation Transformers",
-        desc: "Protection against electrical noise and interference for sensitive electronic equipment.",
-        specs: [
-          "Galvanic Isolation",
-          "Copper Windings",
-          "K-Factor Rated",
-          "Type: Isolation",
-          "Cooling: OFWF",
-          "Application: Industrial"
-        ],
-        img: gas
-      }
+    title: "Distribution Transformers",
+    desc: "Reliable and efficient transformers designed for safe power distribution in commercial and industrial sectors.",
+    specs: [
+      "Capacity: 10kVA - 5000kVA",
+      "Type: Oil-Filled/Dry Type",
+      "Cooling: ONAN/ONAF",
+      "Phase: Three Phase",
+      "Application: Power Distribution, Utilities, Industries",
+      "Standards: IS 1180, IEC 60076"
+    ],
+    img: Trans1
+  },
+  {
+    title: "Power Transformers",
+    desc: "Heavy-duty power transformers designed for high voltage transmission with superior energy efficiency and performance.",
+    specs: [
+      "Capacity: 5MVA - 500MVA",
+      "Type: Oil-Immersed",
+      "Cooling: ONAF/OFWF",
+      "Phase: Three Phase",
+      "Application: Transmission, Generation Plants, Substations",
+      "Standards: IEC 60076, ANSI"
+    ],
+    img: Trans2
+  },
+  {
+    title: "Cast Resin Transformers",
+    desc: "Eco-friendly, low-maintenance dry-type transformers ideal for commercial and indoor installations.",
+    specs: [
+      "Capacity: 100kVA - 2500kVA",
+      "Type: Epoxy Resin Encapsulated",
+      "Cooling: Air Natural (AN)",
+      "Phase: Three Phase",
+      "Application: Indoor, Renewable, Commercial Buildings",
+      "Standards: IEC 60076-11"
+    ],
+    img: Trans3
+  }
     ]
   };
 
