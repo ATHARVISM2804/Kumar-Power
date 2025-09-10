@@ -124,7 +124,7 @@ import award1 from "@/assets/Award 1.png";
 import award2 from "@/assets/award 2.png";
 import award3 from "@/assets/award 3.png";
 import award4 from "@/assets/award 4.png";
-
+import ps from "@/assets/ps2.png"
 
 interface GalleryImage {
   id: number;
@@ -595,9 +595,9 @@ const PhotoGallery = () => {
             </div>
             <div className="flex items-center justify-center">
               <img 
-                src={gal5}
+                src={ps}
                 alt="Industrial generator installation" 
-                className="w-full h-auto max-h-[350px] rounded object-contain"
+                className="w-full h-auto max-h-[350px] p-3 bg-white rounded object-contain"
               />
             </div>
           </div>
