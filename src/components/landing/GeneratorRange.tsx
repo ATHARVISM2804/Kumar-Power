@@ -62,13 +62,23 @@ const GeneratorModal = ({
                 <li>Contact us for detailed specifications and pricing</li>
                 <li>Power Range: Available from 2.8 kVA up to 1500 kVA</li>
                 <li>Fuel Options: Diesel, Gas, CPCB4+ compliant models</li>
-                <li>Features: High efficiency, low emissions, silent operation, easy maintenance</li>
-                <li>Applications: Factories, hospitals, campuses, events, remote sites</li>
-                <li>Warranty: Up to 2 years or 5000 hours (whichever is earlier)</li>
-                <li>Optional Accessories: AMF panels, remote monitoring, soundproof canopy</li>
+                <li>
+                  Features: High efficiency, low emissions, silent operation,
+                  easy maintenance
+                </li>
+                <li>
+                  Applications: Factories, hospitals, campuses, events, remote
+                  sites
+                </li>
+                <li>
+                  Warranty: Up to 2 years or 5000 hours (whichever is earlier)
+                </li>
+                <li>
+                  Optional Accessories: AMF panels, remote monitoring,
+                  soundproof canopy
+                </li>
               </ul>
             </div>
-            
           </div>
         </motion.div>
       </motion.div>
@@ -176,7 +186,13 @@ const Card = ({
 
 const GeneratorRange = () => {
   // Define generator types for filtering
-  const filterTypes = ["All", "Kirloskar CPCB4+ Diesel", "Kirloskar Gas", "Portable","Kirloskar Optiprime" ];
+  const filterTypes = [
+    "All",
+    "CPCB4+ Diesel Generators",
+    "Gas Generators",
+    "Portable Generators",
+    "Optiprime",
+  ];
   const [activeFilter, setActiveFilter] = useState("All");
 
   // Modal state
@@ -187,45 +203,73 @@ const GeneratorRange = () => {
     caption: string;
   } | null>(null);
 
-  // Define data with categories for filtering
-  const generatorData = [
-    {
-      title: "Kirloskar Optiprime Generator.",
-      img: diesel,
-      caption: "High-output Kirloskar Optiprime engineered for mission-critical facilities.",
-      categories: ["Kirloskar Optiprime"],
-    },
-    {
-      title: "Kirloskar Gas Generators",
-      img: gas,
-      caption: "Clean, efficient power for commercial and industrial applications.",
-      categories: ["Gas"],
-    },
-    {
-      title: "Kirloskar CPCB4+ Diesel Generators",
-      img: portable,
-      caption: "Versatile DG sets for plants, campuses, and commercial towers.",
-      categories: [ "CPCB4+ Diesel Generators"],
-    },
-    {
-      title: "Kirloskar Portable Generators",
-      img: portable1,
-      caption: "Portable power for events, remote sites, and emergency backup.",
-      categories: ["Portable"],
-    },
-    {
-      title: "Kirloskar 200 kVA–250 kVA",
-      img: portable2,
-      caption: "Balanced performance for medium-scale industrial needs.",
-      categories: ["Gas"],
-    },
-    {
-      title: "Kirloskar 320–1010 kVA",
-      img: portable3,
-      caption: "Scalable solutions with robust service network coverage.",
-      categories: ["All"],
-    },
-  ];
+ // Define data with categories for filtering
+const generatorData = [
+  {
+    title: "Kirloskar Optiprime Generator",
+    img: diesel,
+    caption:
+      "High-output Kirloskar Optiprime engineered for mission-critical facilities.",
+    categories: ["Optiprime"],
+  },
+  {
+    title: "Kirloskar Gas Generator (15 – 250 kVA)",
+    img: gas,
+    caption:
+      "Clean, efficient power for commercial and industrial applications.",
+    categories: ["Gas Generators"],
+  },
+  {
+    title: "Kirloskar CPCB4+ Diesel Generator (7.5 – 20 kVA)",
+    img: portable1,
+    caption:
+      "Portable power for events, remote sites, and emergency backup.",
+    categories: ["CPCB4+ Diesel Generators"],
+  },
+  {
+    title: "Kirloskar CPCB4+ Diesel Generator (25 – 58.5 kVA)",
+    img: portable2,
+    caption:
+      "Balanced performance for medium-scale industrial needs.",
+    categories: ["CPCB4+ Diesel Generators"],
+  },
+  {
+    title: "Kirloskar CPCB4+ Diesel Generator (82.5 – 160 kVA)",
+    img: portable3,
+    caption:
+      "Scalable solutions with robust service network coverage.",
+    categories: ["CPCB4+ Diesel Generators"],
+  },
+  {
+    title: "Kirloskar CPCB4+ Diesel Generator (200 – 250 kVA)",
+    img: portable,
+    caption:
+      "Versatile DG sets for plants, campuses, and commercial towers.",
+    categories: ["CPCB4+ Diesel Generators"],
+  },
+  {
+    title: "Kirloskar CPCB4+ Diesel Generator (320 – 750 kVA)",
+    img: diesel,
+    caption:
+      "Durable, high-efficiency backup for industries and campuses.",
+    categories: ["CPCB4+ Diesel Generators"],
+  },
+  {
+    title: "Kirloskar CPCB4+ Diesel Generator (750 – 1500 kVA)",
+    img: gas,
+    caption:
+      "Low-emission, reliable diesel generator for versatile use.",
+    categories: ["CPCB4+ Diesel Generators"],
+  },
+  {
+    title: "Kirloskar Portable Generator (2.1 – 5 kVA)",
+    img: portable1,
+    caption:
+      "Compact portable power for small-scale events, sites, and emergency use.",
+    categories: ["Portable Generators"],
+  },
+];
+
 
   // Filter generators based on the active filter
   const filteredGenerators =
@@ -236,7 +280,11 @@ const GeneratorRange = () => {
         );
 
   // Handler for Explore More button
-  const handleExplore = (generator: { title: string; img: string; caption: string }) => {
+  const handleExplore = (generator: {
+    title: string;
+    img: string;
+    caption: string;
+  }) => {
     setModalGenerator(generator);
     setModalOpen(true);
   };
@@ -266,7 +314,8 @@ const GeneratorRange = () => {
             />
           </h2>
           <p className="text-white mt-6  mb-8">
-            Kirloskar-certified systems tailored for industrial, commercial, and backup applications.
+            Kirloskar-certified systems tailored for industrial, commercial, and
+            backup applications.
           </p>
         </motion.div>
 
@@ -282,14 +331,17 @@ const GeneratorRange = () => {
               key={type}
               onClick={() => setActiveFilter(type)}
               className={`flex items-center gap-2 px-3 py-1.5 rounded-full transition-colors ${
-                activeFilter === type ? "bg-[#2D6FBA] text-white" : "hover:bg-gray-800"
+                activeFilter === type
+                  ? "bg-[#2D6FBA] text-white"
+                  : "hover:bg-gray-800"
               }`}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.3, delay: 0.1 * index }}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.08,
-                boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)" 
+                boxShadow:
+                  "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
               }}
               whileTap={{ scale: 0.95 }}
             >
@@ -300,24 +352,27 @@ const GeneratorRange = () => {
                 animate={{
                   scale: activeFilter === type ? [1, 1.2, 1] : 1,
                 }}
-                whileHover={{ 
-                  backgroundColor: activeFilter === type ? "#fff" : "rgba(255, 255, 255, 0.9)",
-                  scale: 1.2
+                whileHover={{
+                  backgroundColor:
+                    activeFilter === type
+                      ? "#fff"
+                      : "rgba(255, 255, 255, 0.9)",
+                  scale: 1.2,
                 }}
                 transition={{ duration: 0.3 }}
               />
-              <span className="text-base font-medium">{type} Generators</span>
+              <span className="text-base font-medium">{type}</span>
             </motion.button>
           ))}
         </motion.div>
 
         {/* Filtered generator grid */}
         {filteredGenerators.length > 0 ? (
-          <motion.div 
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" 
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
             layout
             transition={{
-              layout: { duration: 0.6, type: "spring", bounce: 0.25 }
+              layout: { duration: 0.6, type: "spring", bounce: 0.25 },
             }}
           >
             <AnimatePresence mode="wait">
