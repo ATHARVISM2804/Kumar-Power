@@ -117,7 +117,7 @@ const Hero = () => {
                     // Create anchor element to trigger download
                     const link = document.createElement("a");
                     link.href = companyProfile;
-                    link.download = "Kumar-Power-Company-Profile.pdf";
+                    link.download = "Kumar Power - Company Profile.pdf";
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);

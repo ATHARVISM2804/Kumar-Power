@@ -4,6 +4,7 @@ import maintenance from "@/assets/blog1.png";
 import { ArrowRight, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import companyProfile from "./profile.pdf";
 
 // Define blog data structure
 interface BlogPost {
@@ -307,6 +308,15 @@ const BlogSection = () => {
               Enquire Now
             </button>
             <button
+            onClick={() => {
+                    // Create anchor element to trigger download
+                    const link = document.createElement("a");
+                    link.href = companyProfile;
+                    link.download = "Kumar Power - Company Profile.pdf";
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }}
               type="button"
               className="bg-white border border-gray-400 text-black font-medium px-6 py-3 rounded-md transition-colors w-full"
             >
