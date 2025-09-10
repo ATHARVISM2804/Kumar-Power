@@ -15,7 +15,7 @@ import Comed from "@/assets/Clients page/Comed.png";
 import Dps from "@/assets/Clients page/DPS.jpg";
 import GEPL from "@/assets/Clients page/GEPL.jpg";
 import addidas from "@/assets/Clients page/Adidas.jpg";
-import companyProfile from "./profile.pdf" // Import PDF file
+import companyProfile from "./profile.pdf"; // Import PDF file
 import BackgroundVideo from "../BackgroundVideo";
 
 const Hero = () => {
@@ -29,7 +29,7 @@ const Hero = () => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     const handleScroll = () => {
       // If user has scrolled past threshold, show overlay permanently
       if (window.scrollY > 180) {
@@ -42,11 +42,11 @@ const Hero = () => {
     // Add event listeners
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", checkMobile);
-    
+
     // Initial checks
     checkMobile();
     handleScroll();
-    
+
     // Cleanup
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -56,20 +56,24 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative bg-black lg:bg-white">
-      <div className="relative h-[58vh] md:h-[78vh] lg:h-[95vh] overflow-hidden rounded-xl z-1 border shadow-[var(--shadow-glow)]">
+      <div className="relative h-[50vh] md:h-[78vh] lg:h-[95vh] overflow-hidden rounded-xl z-1 border shadow-[var(--shadow-glow)]">
         {/* Background video with improved configuration to hide controls */}
-        <div className="absolute left-0 lg:top-0 inset-0 w-full h-full md:w-[110vw] md:h-[150vh] lg:h-[110vh] z-0 md:top-[-45vh] md:translate-x-[-5%] md:translate-y-[-5%]">
+        <div className="absolute left-0 lg:top-0 -top-5 inset-0 w-full h-full md:w-[110vw] md:h-[150vh] lg:h-[110vh] z-0 md:top-[-45vh] md:translate-x-[-5%] md:translate-y-[-5%]">
           <BackgroundVideo />
         </div>
-        
+
         {/* Reduced overlay opacity for mobile to maintain video visibility - ensure it doesn't block video controls */}
-        <div className={`absolute inset-0 ${isMobile ? 'bg-black/40' : 'bg-black/10'} z-5 pointer-events-none`}></div>
-        
+        <div
+          className={`absolute inset-0 ${
+            isMobile ? "bg-black/40" : "bg-black/10"
+          } z-5 pointer-events-none`}
+        ></div>
+
         {/* Semi-transparent base overlay - make sure it doesn't block video controls */}
         {showOverlay && (
           <div className="absolute inset-0 bg-black/40 md:bg-black/20 z-10 pointer-events-none"></div>
         )}
-        
+
         {/* Main Content Overlay */}
         {showOverlay && (
           <div className="absolute top-0 left-0 h-full w-full flex flex-col items-center justify-center z-20 p-4">
@@ -78,23 +82,31 @@ const Hero = () => {
                 Unleashing Power
                 <br />
                 Solutions.
-                <br />Built for the Nation.
+                <br />
+                Built for the Nation.
               </h1>
               <p className="text-white/90 text-center text-sm sm:text-base md:text-lg font-medium">
-                <span className="hidden md:inline">Authorized Channel Distributor | ISO 9001:2015 | 500+ Enterprise Clients | 30+ Years of Uninterrupted Excellence</span>
+                <span className="hidden md:inline">
+                  Authorized Channel Distributor | ISO 9001:2015 | 500+
+                  Enterprise Clients | 30+ Years of Uninterrupted Excellence
+                </span>
                 <span className="md:hidden">
-                  Authorized Channel Distributor<br />
-                  ISO 9001:2015<br />
-                  500+ Enterprise Clients<br />
+                  Authorized Channel Distributor
+                  <br />
+                  ISO 9001:2015
+                  <br />
+                  500+ Enterprise Clients
+                  <br />
                   30+ Years of Excellence
                 </span>
               </p>
               <div className="flex flex-col sm:flex-row gap-3 w-full justify-center mt-2">
-                <Button onClick={
-                () => {
-                  window.location.href = "/products";
-                }
-} className="bg-[#2D6FBA] hover:bg-[#22548e] text-white font-semibold px-4 md:px-6 py-2 md:py-3 rounded-lg shadow-lg w-full sm:w-auto text-sm md:text-base">
+                <Button
+                  onClick={() => {
+                    window.location.href = "/products";
+                  }}
+                  className="bg-[#2D6FBA] hover:bg-[#22548e] text-white font-semibold px-4 md:px-6 py-2 md:py-3 rounded-lg shadow-lg w-full sm:w-auto text-sm md:text-base"
+                >
                   Explore Power Solutions&nbsp;{" "}
                   <span className="ml-1 md:ml-2">→</span>
                 </Button>
@@ -103,9 +115,9 @@ const Hero = () => {
                   className="border border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white font-semibold px-4 md:px-6 py-2 md:py-3 rounded-lg shadow-lg w-full sm:w-auto flex items-center justify-center backdrop-blur text-sm md:text-base"
                   onClick={() => {
                     // Create anchor element to trigger download
-                    const link = document.createElement('a');
+                    const link = document.createElement("a");
                     link.href = companyProfile;
-                    link.download = 'Kumar-Power-Company-Profile.pdf';
+                    link.download = "Kumar-Power-Company-Profile.pdf";
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);
@@ -115,7 +127,7 @@ const Hero = () => {
                   <Download size={16} className="ml-1 md:ml-2" />
                 </Button>
               </div>
-              
+
               {/* Trusted By Logos - with sliding animation */}
               <div className="mt-3 md:mt-6 flex flex-col items-center w-full">
                 <span className="text-white text-sm md:text-base font-semibold mb-1 md:mb-2 tracking-wide">
@@ -173,7 +185,7 @@ const Hero = () => {
                       alt="BuildMaster"
                       className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
                     />
-                    
+
                     {/* Duplicate set of logos for continuous animation */}
                     <img
                       src={trust1}
@@ -221,8 +233,6 @@ const Hero = () => {
             </div>
           </div>
         )}
-
-        
       </div>
     </section>
   );
