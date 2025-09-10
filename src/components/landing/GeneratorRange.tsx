@@ -33,6 +33,11 @@ const GeneratorModal = ({
     | null;
 }) => {
   if (!open || !generator) return null;
+  
+  // Extract power range from title if available
+  const powerRangeMatch = generator.title.match(/\(([^)]+)\)/);
+  const powerRange = powerRangeMatch ? powerRangeMatch[1] : null;
+  
   return (
     <AnimatePresence>
       <motion.div
@@ -51,29 +56,56 @@ const GeneratorModal = ({
           transition={{ type: "spring", damping: 22, stiffness: 300 }}
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="flex justify-between items-center p-4 border-b">
-            <h2 className="text-lg font-bold">{generator.title}</h2>
+          <div className="flex justify-between items-center p-4 border-b border-gray-200 bg-gradient-to-r from-[#2D6FBA]/10 to-white">
+            <h2 className="text-lg font-bold text-gray-800">{generator.title.replace(/\([^)]+\)/, '')}</h2>
             <button
               onClick={onClose}
-              className="p-1 rounded-full hover:bg-gray-100"
+              className="p-1 rounded-full hover:bg-gray-100 transition-colors"
             >
               <X className="h-5 w-5" />
             </button>
           </div>
+          
           <div className="p-6">
-            <img
-              src={generator.img}
-              alt={generator.title}
-              className="w-full h-48 object-contain rounded mb-4 bg-gray-100"
-            />
-            <p className="text-base text-gray-800 mb-2">{generator.caption}</p>
-            <div className="mt-4">
-              <ul className="list-disc pl-5 text-sm text-gray-700 space-y-2">
+            <div className="bg-gray-50 rounded-lg p-4 mb-4">
+              <img
+                src={generator.img}
+                alt={generator.title}
+                className="w-full h-48 object-contain rounded mb-3"
+              />
+              
+              {powerRange && (
+                <div className="bg-[#2D6FBA]/10 rounded-md py-2 px-3 inline-flex items-center mb-3">
+                  <span className="mr-2 text-[#2D6FBA]">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </span>
+                  <span className="font-medium text-gray-700">Power Range: {powerRange}</span>
+                </div>
+              )}
+            </div>
+            
+            <p className="text-base text-gray-700 mb-4 italic border-l-2 border-[#2D6FBA] pl-3">
+              {generator.caption}
+            </p>
+            
+            <div className="mt-4 bg-gray-50 rounded-lg p-4">
+              <h3 className="font-medium text-gray-800 mb-2 flex items-center">
+                <span className="w-5 h-5 rounded-full bg-[#2D6FBA] flex items-center justify-center text-white mr-2 text-xs">✓</span>
+                Key Features
+              </h3>
+              <ul className="list-none pl-3 text-sm text-gray-700 space-y-3 mt-2">
                 {generator.details.map((point, idx) => (
-                  <li key={idx}>{point}</li>
+                  <li key={idx} className="flex items-start">
+                    <span className="text-[#2D6FBA] mr-2 mt-0.5">•</span>
+                    <span>{point}</span>
+                  </li>
                 ))}
               </ul>
             </div>
+            
+            
           </div>
         </motion.div>
       </motion.div>
@@ -202,7 +234,7 @@ const GeneratorRange = () => {
   // Define data with categories for filtering
   const generatorData = [
     {
-      title: "Kirloskar Optiprime Generator",
+      title: "Kirloskar Optiprime Generator (100 – 500 kVA)",
       img: diesel,
       caption:
         "High-output Kirloskar Optiprime engineered for mission-critical facilities.",
