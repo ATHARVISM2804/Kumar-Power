@@ -50,6 +50,67 @@ const Products = () => {
   // State for generator selector modal
   const [showSelectorModal, setShowSelectorModal] = useState(false);
 
+  // Quote modal state
+  const [showQuoteModal, setShowQuoteModal] = useState(false);
+  const [quoteProduct, setQuoteProduct] = useState<any>(null);
+  const [quoteForm, setQuoteForm] = useState({ name: '', email: '', phone: '', message: '' });
+  const [quoteResult, setQuoteResult] = useState('');
+  const [quoteSending, setQuoteSending] = useState(false);
+
+  const openQuoteModal = (product: any) => {
+    setQuoteProduct(product);
+    setQuoteForm({ name: '', email: '', phone: '', message: `I'm interested in ${product?.name || ''}` });
+    setShowQuoteModal(true);
+  };
+
+  const closeQuoteModal = () => {
+    setShowQuoteModal(false);
+    setQuoteProduct(null);
+  };
+
+  const handleQuoteChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setQuoteForm(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleQuoteSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setQuoteResult('Sending....');
+    setQuoteSending(true);
+    try {
+      const formEl = e.target as HTMLFormElement;
+      const formData = new FormData(formEl);
+      // append access_key and product name
+      formData.append('access_key', 'YOUR_ACCESS_KEY_HERE');
+      formData.append('product', quoteProduct?.name || '');
+
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        setQuoteResult('Form Submitted Successfully');
+        formEl.reset();
+        setQuoteForm({ name: '', email: '', phone: '', message: '' });
+        // close modal after short delay
+        setTimeout(() => {
+          setShowQuoteModal(false);
+          setQuoteResult('');
+        }, 1800);
+      } else {
+        console.error('Error', data);
+        setQuoteResult(data.message || 'Submission failed');
+      }
+    } catch (err) {
+      console.error(err);
+      setQuoteResult('Submission error');
+    } finally {
+      setQuoteSending(false);
+    }
+  };
+
   // Define product categories
   const categories = [
     { id: "kirloskar", name: "Kirloskar Generators", hasDropdown: true },
@@ -761,7 +822,7 @@ const Products = () => {
                             Brochure
                             </a>
                           </Button>
-                          <Button variant="default" size="sm" className="h-7 text-xs py-0 px-4 bg-[#2D6FBA] hover:bg-[#225488] text-white">
+                          <Button variant="default" size="sm" className="h-7 text-xs py-0 px-4 bg-[#2D6FBA] hover:bg-[#225488] text-white" onClick={() => openQuoteModal(product)}>
                             Get Quote
                           </Button>
                         </div>
@@ -1148,6 +1209,45 @@ const Products = () => {
             <Button type="submit" className="bg-[#2D6FBA] hover:bg-[#225488] text-white mt-2 w-full">
               Submit
             </Button>
+          </form>
+        </DialogContent>
+      </Dialog>
+
+      {/* Quote Modal */}
+      <Dialog open={showQuoteModal} onOpenChange={setShowQuoteModal}>
+        <DialogContent className="sm:max-w-[600px]">
+          <DialogHeader>
+            <DialogTitle>Request a Quote</DialogTitle>
+            <DialogDescription>Provide your contact details and product information. We'll contact you shortly.</DialogDescription>
+          </DialogHeader>
+
+          <form onSubmit={handleQuoteSubmit} className="flex text-black flex-col gap-3 mt-4">
+            <div>
+              <label className="block text-sm mb-1">Name <span className="text-red-500">*</span></label>
+              <input name="name" value={quoteForm.name} onChange={handleQuoteChange} required className="w-full text-black px-3 py-2 rounded bg-white border border-gray-300" />
+            </div>
+            <div>
+              <label className="block text-sm mb-1">Email <span className="text-red-500">*</span></label>
+              <input name="email" type="email" value={quoteForm.email} onChange={handleQuoteChange} required className="w-full text-black px-3 py-2 rounded bg-white border border-gray-300" />
+            </div>
+            <div>
+              <label className="block text-sm mb-1">Phone <span className="text-red-500">*</span></label>
+              <input name="phone" type="tel" value={quoteForm.phone} onChange={handleQuoteChange} required className="w-full text-black px-3 py-2 rounded bg-white border border-gray-300" />
+            </div>
+            <div>
+              <label className="block text-sm mb-1">Message</label>
+              <textarea name="message" value={quoteForm.message} onChange={handleQuoteChange} rows={4} className="w-full text-black px-3 py-2 rounded bg-white border border-gray-300" />
+            </div>
+
+            <div className="flex gap-2 mt-2">
+              <Button type="submit" className="bg-[#2D6FBA] hover:bg-[#225488] " disabled={quoteSending}>
+                {quoteSending ? 'Sending...' : 'Send Quote'}
+              </Button>
+               <Button variant="outline" onClick={closeQuoteModal}>Cancel</Button>
+             </div>
+            {quoteResult && (
+              <div className="mt-2"><span className="text-sm text-gray-500">{quoteResult}</span></div>
+            )}
           </form>
         </DialogContent>
       </Dialog>

@@ -38,6 +38,7 @@ import instal24 from '@/assets/Installation/instal24.png'
 import instal25 from '@/assets/Installation/instal25.png'
 import instal26 from '@/assets/Installation/instal26.png'
 import instal27 from '@/assets/Installation/instal27.png'
+import heroinstal from "@/assets/heroinstalll.jpeg"
 
 const InstallationService = () => {
   // Professional Installation products (27 images)
@@ -174,8 +175,8 @@ const InstallationService = () => {
 
       <main>
         {/* Hero Banner */}
-        <div className="bg-black py-12 md:py-16">
-          <div className="container mx-auto text-center px-4">
+        <div className="bg-black py-8 md:py-16" style={{ backgroundImage: `url(${heroinstal})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center center' }}>
+          <div className="container mx-auto text-center px-4 bg-black/50 backdrop-blur-sm py-12 md:py-16">
             <Badge className="mb-4 bg-custom-blue text-white hover:bg-[#225488]">Professional Services</Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Installation & Commissioning</h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
