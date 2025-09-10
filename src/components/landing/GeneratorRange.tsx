@@ -9,6 +9,12 @@ import { ArrowRight, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+import dG1 from "@/assets/Kumar Assets/7.5KVA DG.png";
+import dG2 from "@/assets/Kumar Assets/320KVa.png";
+import dG3 from "@/assets/Kumar Assets/25kwa dg.png";
+import dG4 from "@/assets/Kumar Assets/62.5KVA DG.png";
+import dG5 from "@/assets/Kumar Assets/new750.png";
+
 // Modal for generator info
 const GeneratorModal = ({
   open,
@@ -17,7 +23,14 @@ const GeneratorModal = ({
 }: {
   open: boolean;
   onClose: () => void;
-  generator: { title: string; img: string; caption: string } | null;
+  generator:
+    | {
+        title: string;
+        img: string;
+        caption: string;
+        details: string[];
+      }
+    | null;
 }) => {
   if (!open || !generator) return null;
   return (
@@ -56,27 +69,9 @@ const GeneratorModal = ({
             <p className="text-base text-gray-800 mb-2">{generator.caption}</p>
             <div className="mt-4">
               <ul className="list-disc pl-5 text-sm text-gray-700 space-y-2">
-                <li>Kirloskar-certified reliability and performance</li>
-                <li>Suitable for industrial, commercial, and backup use</li>
-                <li>Robust after-sales support and service network</li>
-                <li>Contact us for detailed specifications and pricing</li>
-                <li>Power Range: Available from 2.8 kVA up to 1500 kVA</li>
-                <li>Fuel Options: Diesel, Gas, CPCB4+ compliant models</li>
-                <li>
-                  Features: High efficiency, low emissions, silent operation,
-                  easy maintenance
-                </li>
-                <li>
-                  Applications: Factories, hospitals, campuses, events, remote
-                  sites
-                </li>
-                <li>
-                  Warranty: Up to 2 years or 5000 hours (whichever is earlier)
-                </li>
-                <li>
-                  Optional Accessories: AMF panels, remote monitoring,
-                  soundproof canopy
-                </li>
+                {generator.details.map((point, idx) => (
+                  <li key={idx}>{point}</li>
+                ))}
               </ul>
             </div>
           </div>
@@ -201,75 +196,123 @@ const GeneratorRange = () => {
     title: string;
     img: string;
     caption: string;
+    details: string[];
   } | null>(null);
 
- // Define data with categories for filtering
-const generatorData = [
-  {
-    title: "Kirloskar Optiprime Generator",
-    img: diesel,
-    caption:
-      "High-output Kirloskar Optiprime engineered for mission-critical facilities.",
-    categories: ["Optiprime"],
-  },
-  {
-    title: "Kirloskar Gas Generator (15 – 250 kVA)",
-    img: gas,
-    caption:
-      "Clean, efficient power for commercial and industrial applications.",
-    categories: ["Gas Generators"],
-  },
-  {
-    title: "Kirloskar CPCB4+ Diesel Generator (7.5 – 20 kVA)",
-    img: portable1,
-    caption:
-      "Portable power for events, remote sites, and emergency backup.",
-    categories: ["CPCB4+ Diesel Generators"],
-  },
-  {
-    title: "Kirloskar CPCB4+ Diesel Generator (25 – 58.5 kVA)",
-    img: portable2,
-    caption:
-      "Balanced performance for medium-scale industrial needs.",
-    categories: ["CPCB4+ Diesel Generators"],
-  },
-  {
-    title: "Kirloskar CPCB4+ Diesel Generator (82.5 – 160 kVA)",
-    img: portable3,
-    caption:
-      "Scalable solutions with robust service network coverage.",
-    categories: ["CPCB4+ Diesel Generators"],
-  },
-  {
-    title: "Kirloskar CPCB4+ Diesel Generator (200 – 250 kVA)",
-    img: portable,
-    caption:
-      "Versatile DG sets for plants, campuses, and commercial towers.",
-    categories: ["CPCB4+ Diesel Generators"],
-  },
-  {
-    title: "Kirloskar CPCB4+ Diesel Generator (320 – 750 kVA)",
-    img: diesel,
-    caption:
-      "Durable, high-efficiency backup for industries and campuses.",
-    categories: ["CPCB4+ Diesel Generators"],
-  },
-  {
-    title: "Kirloskar CPCB4+ Diesel Generator (750 – 1500 kVA)",
-    img: gas,
-    caption:
-      "Low-emission, reliable diesel generator for versatile use.",
-    categories: ["CPCB4+ Diesel Generators"],
-  },
-  {
-    title: "Kirloskar Portable Generator (2.1 – 5 kVA)",
-    img: portable1,
-    caption:
-      "Compact portable power for small-scale events, sites, and emergency use.",
-    categories: ["Portable Generators"],
-  },
-];
-
+  // Define data with categories for filtering
+  const generatorData = [
+    {
+      title: "Kirloskar Optiprime Generator",
+      img: diesel,
+      caption:
+        "High-output Kirloskar Optiprime engineered for mission-critical facilities.",
+      categories: ["Optiprime"],
+      details: [
+        "Designed for high-load and mission-critical operations.",
+        "Ensures stable and efficient performance under continuous use.",
+        "Silent operation with advanced fuel efficiency.",
+        "Trusted choice for IT parks, hospitals, and data centers.",
+      ],
+    },
+    {
+      title: "Kirloskar Gas Generator (15 – 250 kVA)",
+      img: gas,
+      caption:
+        "Clean, efficient power for commercial and industrial applications.",
+      categories: ["Gas Generators"],
+      details: [
+        "Eco-friendly with low emissions.",
+        "Cost-effective for long-duration use.",
+        "Ideal for industries, hotels, and campuses.",
+        "Wide service support across India.",
+      ],
+    },
+    {
+      title: "Kirloskar CPCB4+ Diesel Generator (7.5 – 20 kVA)",
+      img: dG1,
+      caption: "Portable power for events, remote sites, and emergency backup.",
+      categories: ["CPCB4+ Diesel Generators"],
+      details: [
+        "Compact and easy to transport.",
+        "Reliable for small businesses and households.",
+        "Low fuel consumption with CPCB4+ compliance.",
+        "Perfect for emergency and small-scale power needs.",
+      ],
+    },
+    {
+      title: "Kirloskar CPCB4+ Diesel Generator (25 – 58.5 kVA)",
+      img: dG3,
+      caption: "Balanced performance for medium-scale industrial needs.",
+      categories: ["CPCB4+ Diesel Generators"],
+      details: [
+        "Suitable for small to medium industries.",
+        "Optimized for continuous performance.",
+        "Durable engine with low maintenance.",
+        "Silent operation for commercial use.",
+      ],
+    },
+    {
+      title: "Kirloskar CPCB4+ Diesel Generator (82.5 – 160 kVA)",
+      img: dG2,
+      caption: "Scalable solutions with robust service network coverage.",
+      categories: ["CPCB4+ Diesel Generators"],
+      details: [
+        "Medium to large-scale industrial use.",
+        "Efficient fuel management system.",
+        "Wide power range with reliable output.",
+        "Strong service and support network.",
+      ],
+    },
+    {
+      title: "Kirloskar CPCB4+ Diesel Generator (200 – 250 kVA)",
+      img: portable,
+      caption: "Versatile DG sets for plants, campuses, and commercial towers.",
+      categories: ["CPCB4+ Diesel Generators"],
+      details: [
+        "Ideal for campuses and mid-size factories.",
+        "Fuel-efficient with low emissions.",
+        "Noise-free and durable design.",
+        "Supports long working hours without breakdown.",
+      ],
+    },
+    {
+      title: "Kirloskar CPCB4+ Diesel Generator (320 – 750 kVA)",
+      img: dG2,
+      caption: "Durable, high-efficiency backup for industries and campuses.",
+      categories: ["CPCB4+ Diesel Generators"],
+      details: [
+        "Large-scale power solution for industries.",
+        "Designed for heavy-duty continuous operation.",
+        "Complies with CPCB4+ emission norms.",
+        "Available with AMF panels and canopy options.",
+      ],
+    },
+    {
+      title: "Kirloskar CPCB4+ Diesel Generator (750 – 1500 kVA)",
+      img: dG5,
+      caption: "Low-emission, reliable diesel generator for versatile use.",
+      categories: ["CPCB4+ Diesel Generators"],
+      details: [
+        "Massive power backup for large plants and campuses.",
+        "Long operational life with robust design.",
+        "Fuel-efficient with reduced emissions.",
+        "Comes with soundproof and weatherproof enclosures.",
+      ],
+    },
+    {
+      title: "Kirloskar Portable Generator (2.1 – 5 kVA)",
+      img: portable1,
+      caption:
+        "Compact portable power for small-scale events, sites, and emergency use.",
+      categories: ["Portable Generators"],
+      details: [
+        "Lightweight and easy to carry.",
+        "Best for home and small event use.",
+        "Quick start with silent operation.",
+        "Affordable backup solution for households.",
+      ],
+    },
+  ];
 
   // Filter generators based on the active filter
   const filteredGenerators =
@@ -284,6 +327,7 @@ const generatorData = [
     title: string;
     img: string;
     caption: string;
+    details: string[];
   }) => {
     setModalGenerator(generator);
     setModalOpen(true);
@@ -313,7 +357,7 @@ const generatorData = [
               transition={{ delay: 0.8, duration: 0.8 }}
             />
           </h2>
-          <p className="text-white mt-6  mb-8">
+          <p className="text-white mt-6 mb-8">
             Kirloskar-certified systems tailored for industrial, commercial, and
             backup applications.
           </p>
