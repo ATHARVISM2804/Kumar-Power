@@ -254,9 +254,9 @@ const BlogSection = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="container mx-auto px-4 md:px-0">
+      <div className="container pt-10 mx-auto px-4 md:px-0">
         <motion.h2 
-          className="text-3xl md:text-5xl font-bold mb-2 md:mb-3 text-white"
+          className="text-3xl md:text-5xl   font-bold mb-2 md:mb-3 text-white"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
