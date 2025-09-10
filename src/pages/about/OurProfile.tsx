@@ -125,7 +125,7 @@ const About = () => {
                 <img 
                   src={earth}
                   alt="Skyscraper buildings" 
-                  className="w-full h-64 object-cover rounded-lg"
+                  className="w-full h-64 object-cover  rounded-lg"
                 />
               </div>
             </div>
