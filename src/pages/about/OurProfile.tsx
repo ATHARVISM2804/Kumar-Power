@@ -77,7 +77,7 @@ const About = () => {
                 <img 
                   src={gen}
                   alt="Welding work" 
-                  className="w-full h-64 object-cover rounded-lg"
+                  className="w-full  object-cover rounded-lg"
                 />
               </div>
             </div>
@@ -93,7 +93,7 @@ const About = () => {
                 <img 
                   src={certificate} 
                   alt="Contract signing" 
-                  className="w-full h-64 object-cover rounded-lg"
+                  className="w-full  object-cover rounded-lg"
                 />
               </div>
             </div>
@@ -109,7 +109,7 @@ const About = () => {
                 <img 
                   src={certi}
                   alt="Person working on laptop" 
-                  className="w-full h-64 object-cover rounded-lg"
+                  className="w-full    object-cover rounded-lg"
                 />
               </div>
             </div>
@@ -125,7 +125,7 @@ const About = () => {
                 <img 
                   src={earth}
                   alt="Skyscraper buildings" 
-                  className="w-full h-64 object-cover  rounded-lg"
+                  className="w-full  object-cover  rounded-lg"
                 />
               </div>
             </div>
