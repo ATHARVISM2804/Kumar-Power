@@ -55,7 +55,7 @@ const BackgroundVideo = () => {
   };
 
   return (
-    <div className="absolute inset-0 w-full h-full overflow-hidden">
+    <div className="absolute inset-0 w-full h-full -translate-y-5 overflow-hidden">
       {/* YouTube Video */}
       <div id="yt-player" className="absolute inset-0 w-full h-full" />
 
@@ -63,7 +63,7 @@ const BackgroundVideo = () => {
 
       <button
         onClick={handleMuteToggle}
-        className="absolute bottom-2 z-[1000] md:bottom-32 md:right-28 bg-black bg-opacity-60 hover:bg-opacity-80 text-white p-4 rounded-full pointer-events-auto"
+        className="absolute bottom-2 z-50 md:bottom-32 md:right-28 bg-black bg-opacity-60 hover:bg-opacity-80 text-white p-4 rounded-full pointer-events-auto"
         aria-label={videoMuted ? "Unmute video" : "Mute video"}
       >
         {videoMuted ? (
@@ -74,7 +74,7 @@ const BackgroundVideo = () => {
       </button>
 
       {/* Overlays to hide YouTube UI */}
-      <div className="absolute top-0 left-0 w-full h-[55px] bg-black z-10"></div>
+      <div className="absolute top-0 left-0 w-full h-[55px] md:h-[55px] bg-black z-10"></div>
       <div className="absolute bottom-0 left-0 w-full h-[55px] bg-black z-10"></div>
       <div className="absolute top-[40px] right-0 w-[100px] h-[40px] bg-black z-10"></div>
     </div>
