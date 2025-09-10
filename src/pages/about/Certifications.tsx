@@ -20,7 +20,7 @@ const Certifications = () => {
   const certificates = [
     {
       name: "Authorisation Certification",
-      description: "Kumar Generator House is our authorised KOEL Green Dealer for sale of KOEL Green Diesel Generating Sets and Chhota Chilli Range of Gensets",
+      description: "Kumar Generator House is our authorised KOEL Green Dealer for sale of KOEL Green Diesel Generating Sets and Chhota Chilli Range of generators",
       issuer: "Authorisation certificate",
       year: "2024",
       icon: "shield-check",
@@ -43,16 +43,16 @@ const Certifications = () => {
       image: certi3
     },
     {
-      name: "Certificate for Highest in MHP Gensets (2014)",
-      description: "Awarded to Kumar Generator House, Delhi for highest volume in MHP Gensets in FY 14.",
+      name: "Certificate for Highest in MHP generators (2014)",
+      description: "Awarded to Kumar Generator House, Delhi for highest volume in MHP generators in FY 14.",
       issuer: "Kirloskar Conference Awards - Pune",
       year: "2014",
       icon: "award",
       image: certi4
     },
     {
-      name: "Certificate for Highest in HHP Gensets (2014)",
-      description: "Awarded to Kumar Generator House, Delhi for highest volume in HHP Gensets in FY 14.",
+      name: "Certificate for Highest in HHP generators (2014)",
+      description: "Awarded to Kumar Generator House, Delhi for highest volume in HHP generators in FY 14.",
       issuer: "Kirloskar Conference Awards - Pune",
       year: "2014",
       icon: "zap",
