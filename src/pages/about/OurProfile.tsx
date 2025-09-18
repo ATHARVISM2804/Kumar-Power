@@ -11,7 +11,7 @@ import manjot from "@/assets/manjot.png";
 import jagjit from "@/assets/jagjit.png";
 import isoprof from "@/assets/iso profile.png";
 import kirlo from "@/assets/kirlosksar profile.png"
-import gen from "@/assets/gen team.webp"
+import gen from "@/assets/Range5.png"
 import earth from "@/assets/earth.png"
 import certificate from "@/assets/Certificate 1.png"
 import certi from "@/assets/certi1.png"
