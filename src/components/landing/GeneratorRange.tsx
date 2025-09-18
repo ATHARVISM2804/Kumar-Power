@@ -126,7 +126,7 @@ const Card = ({
   onExplore: () => void;
 }) => (
   <motion.article
-    className="overflow-hidden flex flex-col shadow bg-gray-900 rounded-lg border border-gray-800"
+    className="overflow-hidden flex flex-col shadow bg-gray-900 rounded-lg border border-gray-800 h-[420px]"
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: -20 }}
@@ -139,11 +139,11 @@ const Card = ({
     }}
     whileTap={{ scale: 0.98 }}
   >
-    <div className="w-full h-60 flex items-center justify-center overflow-hidden bg-white">
+    <div className="w-full h-[200px] flex items-center justify-center overflow-hidden bg-white">
       <motion.img
         src={img}
         alt={title}
-        className="object-contain w-full h-60"
+        className="object-contain w-full h-[180px]"
         loading="lazy"
         initial={{ scale: 1 }}
         whileHover={{ scale: 1.12, rotate: 0.5 }}
@@ -165,13 +165,13 @@ const Card = ({
       }}
     >
       <motion.h3
-        className="font-semibold mb-1 text-lg"
+        className="font-semibold mb-1 text-lg h-[52px] line-clamp-2"
         whileHover={{ color: "#2D6FBA" }}
       >
         {title}
       </motion.h3>
-      <p className="text-sm text-muted-foreground mb-4 flex-1">{caption}</p>
-      <div className="flex items-center gap-2">
+      <p className="text-sm text-muted-foreground mb-4 flex-1 line-clamp-3 h-[60px]">{caption}</p>
+      <div className="flex items-center gap-2 mt-auto">
         <motion.div
           whileHover={{ x: 5 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -234,7 +234,7 @@ const GeneratorRange = () => {
   // Define data with categories for filtering
   const generatorData = [
     {
-      title: "Kirloskar Optiprime Generator (100 – 500 kVA)",
+      title: "Kirloskar Optiprime Generator (125 – 6600 kVA)",
       img: diesel,
       caption:
         "High-output Kirloskar Optiprime engineered for mission-critical facilities.",
@@ -460,6 +460,7 @@ const GeneratorRange = () => {
                   exit={{ opacity: 0, y: -30 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   layout
+                  className="flex"
                 >
                   <Card
                     title={generator.title}

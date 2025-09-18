@@ -3,6 +3,13 @@ import { Phone, Download } from "lucide-react";
 import need from "@/assets/need assistance.png"
 
 const CTASection = () => {
+  // WhatsApp function to open chat with the given phone number
+  const openWhatsApp = () => {
+    // Format: https://wa.me/<phone_number>
+    const phoneNumber = "919773851767"; // Remove + and add country code without leading zero
+    window.open(`https://wa.me/${phoneNumber}`, '_blank');
+  };
+
   return (
     <section id="cta" className="py-16 bg-black relative">
       {/* Background image with overlay */}
@@ -31,11 +38,11 @@ const CTASection = () => {
           </Button>
           <Button 
             className="w-full sm:w-auto bg-gradient-to-r from-amber-400 to-blue-500 hover:from-amber-500 hover:to-blue-600 text-white font-medium border-2 border-white rounded-md px-6 py-3 h-auto"
-            asChild
+            onClick={openWhatsApp}
           >
-            <a href="/contact" className="flex items-center gap-2 ">
-              <Download className="size-5"/> Request a Quote
-            </a>
+            <span className="flex items-center gap-2">
+              <Download className="size-5"/> Connect on WhatsApp 
+            </span>
           </Button>
         </div>
       </div>

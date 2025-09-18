@@ -258,7 +258,7 @@ const PowerSolutions = () => {
           "3 Phase Output",
           "Fuel: Diesel",
           "Application: Industrial, Commercial",
-          "Certification: ISO 9001, CE Certified, UL Listed"
+          "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
         ],
         img: diesel
       }
@@ -273,7 +273,7 @@ const PowerSolutions = () => {
           "Quiet Operation",
           "Fuel: Natural Gas, LPG",
           "Application: Industrial, Commercial, Residential",
-          "Certification: CPCB4+, ISO 9001"
+          "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
         ],
         img: gas
       }
@@ -287,7 +287,7 @@ const PowerSolutions = () => {
           "Lightweight Design",
           "Fuel: Petrol, Diesel",
           "Application: Construction, Events, Residential",
-          "Certification: CE Certified"
+          "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
         ],
         img: portable
       }
@@ -303,7 +303,7 @@ const PowerSolutions = () => {
       "Cooling: Liquid",
       "Phase: Three Phase",
       "Application: Industrial, Commercial",
-      "Certification: CPCB4+, ISO 9001"
+      "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
     ],
     img: diesel
   },
@@ -317,7 +317,7 @@ const PowerSolutions = () => {
       "Cooling: Liquid",
       "Phase: Three Phase",
       "Application: Residential, Small Commercial",
-      "Certification: CPCB4+, ISO 9001"
+      "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
     ],
     img: dg1
   },
@@ -331,7 +331,7 @@ const PowerSolutions = () => {
       "Cooling: Liquid",
       "Phase: Three Phase",
       "Application: Industrial, Commercial",
-      "Certification: CPCB4+, ISO 9001"
+      "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
     ],
     img: dg3
   },
@@ -345,7 +345,7 @@ const PowerSolutions = () => {
       "Cooling: Liquid",
       "Phase: Three Phase",
       "Application: Industrial, Commercial",
-      "Certification: CPCB4+, ISO 9001"
+      "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
     ],
     img: dg2
   },
@@ -359,7 +359,7 @@ const PowerSolutions = () => {
       "Cooling: Liquid",
       "Phase: Three Phase",
       "Application: Large Industrial, Commercial",
-      "Certification: CPCB4+, ISO 9001"
+      "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
     ],
     img: dg2
   },
@@ -373,7 +373,7 @@ const PowerSolutions = () => {
       "Cooling: Liquid",
       "Phase: Three Phase",
       "Application: Heavy Industrial, Commercial Complexes",
-      "Certification: CPCB4+, ISO 9001"
+      "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
     ],
     img: dg5
   }
@@ -444,7 +444,7 @@ const PowerSolutions = () => {
       "Programmable Logic Control",
       "Current Rating: 100-630A",
       "Application: Synchronization & Backup Power",
-      "Certification: CE Certified"
+     "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
     ],
     img: Panel6
   },
@@ -457,7 +457,7 @@ const PowerSolutions = () => {
       "Low Maintenance Design",
       "Application: Industrial & Utility Systems",
       "High Dielectric Strength",
-      "Certification: IEC Standards"
+      "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
     ],
     img: Panel5
   },
@@ -470,7 +470,7 @@ const PowerSolutions = () => {
       "Arc Quenching Technology",
       "Application: Switchgear, Industrial Plants",
       "Low Maintenance",
-      "Certification: IEC & ANSI Compliant"
+      "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
     ],
     img: Panel3
   },
@@ -483,7 +483,7 @@ const PowerSolutions = () => {
       "Compact Outdoor Design",
       "Plug-and-Play Setup",
       "Application: Industrial, Commercial & Utility",
-      "Certification: IEC, ISO Standards"
+      "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
     ],
     img: Panel4
   },
@@ -496,7 +496,7 @@ const PowerSolutions = () => {
       "High Fault Level Endurance",
       "Application: Power Distribution & Automation",
       "Indoor/Outdoor Installation",
-      "Certification: IEC 61439"
+      "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
     ],
     img: Panel2
   },
@@ -509,7 +509,7 @@ const PowerSolutions = () => {
       "Compact & Robust Design",
       "Application: Residential, Commercial & Industrial",
       "Wall or Floor Mounted",
-      "Certification: CE & IEC Compliant"
+      "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
     ],
     img: Panel7
   }
@@ -596,7 +596,7 @@ const PowerSolutions = () => {
           powerRange: ["0-50 kVA", "51-200 kVA", "201-500 kVA", "501+ kVA"],
           application: ["Industrial", "Commercial", "Residential", "Construction", "Events"],
           fuelType: ["Diesel", "Natural Gas", "Bi-Fuel", "LPG", "Petrol"],
-          certification: ["CPCB4+", "ISO 9001", "CE Certified", "UL Listed"]
+          certification: ["CPCB4+", "ISO 9001:2015", "Kirloskar Authorized"]
         };
       case 'Inverters':
         return {
@@ -618,7 +618,7 @@ const PowerSolutions = () => {
           currentRating: ["Up to 100A", "100-630A", "630-2000A", "Above 2000A"],
           application: ["Power Distribution", "Motor Control", "Synchronization"],
           features: ["Automatic Changeover", "APFC", "Energy Metering"],
-          certification: ["IEC 61439", "UL Listed", "CE Certified"]
+          certification: ["CPCB4+", "ISO 9001:2015", "Kirloskar Authorized"]
         };
       case 'Servo Stabilizers':
         return {
@@ -639,7 +639,7 @@ const PowerSolutions = () => {
           powerRange: ["0-50 kVA", "51-200 kVA", "201-500 kVA", "501+ kVA"],
           application: ["Industrial", "Commercial", "Residential", "Construction", "Events"],
           fuelType: ["Diesel", "Natural Gas", "Bi-Fuel", "LPG", "Petrol"],
-          certification: ["CPCB4+", "ISO 9001", "CE Certified", "UL Listed"]
+          certification: ["CPCB4+", "ISO 9001:2015", "Kirloskar Authorized"]
         };
     }
   };
