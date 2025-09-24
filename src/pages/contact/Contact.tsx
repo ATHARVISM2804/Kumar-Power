@@ -123,7 +123,7 @@ const Contact = () => {
                   <a href="#contact-form" className="bg-[#2D6FBA] hover:bg-[#2360a0] text-white px-8 py-3 rounded-[5px] font-medium transition-colors shadow-lg">
                     Start Your Inquiry
                   </a>
-                  <a href="https://wa.me/919778431767" target="_blank" rel="noreferrer" className="backdrop-blur-sm border border-[#2D6FBA] hover:bg-[#2D6FBA]/50 text-white px-8 py-3 rounded-[5px] font-medium transition-colors shadow-lg">
+                  <a href="https://wa.me/+919773851767" target="_blank" rel="noreferrer" className="backdrop-blur-sm border border-[#2D6FBA] hover:bg-[#2D6FBA]/50 text-white px-8 py-3 rounded-[5px] font-medium transition-colors shadow-lg">
                     Connect on WhatsApp
                   </a>
                 </div>

@@ -123,7 +123,7 @@ const Products = () => {
   const kirloskarSubcategories = [
     { id: "diesel", name: "CPCB4+ Diesel Generators" },
     { id: "gas", name: "Gas Generators" },
-    { id: "portable", name: "Portable Generators" },
+    { id: "portable", name: "Petrol Generators" },
     { id: "optiprime", name: "Optiprime" },
   ];
 
@@ -238,7 +238,7 @@ const Products = () => {
   const portableGenerators = [
     {
       id: "2.1 kVA to 5 kVA",
-      name: "2.1 kVA to 5 kVA Portable Generators",
+      name: "2.1 kVA to 5 kVA Petrol Generators",
       image: port, // Use imported image
       fuelType: "Gasoline",
       cpcbNorm: "CPCB-IV+",
@@ -627,8 +627,8 @@ const Products = () => {
               Explore our full range of Kirloskar-certified diesel generators, trusted across India's most demanding industries.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 w-full max-w-xs sm:max-w-none">
-              <Button size="lg" variant="default" className="bg-[#2D6FBA] hover:bg-[#225488] w-full sm:w-auto">
-                Request a Quote
+              <Button  size="lg" variant="default" className="bg-[#2D6FBA] hover:bg-[#225488] w-full sm:w-auto">
+                <Link to="/contact">Request a Quote</Link>
               </Button>
               <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white/10 w-full sm:w-auto">
                 Download Product Catalogue
@@ -1067,7 +1067,7 @@ const Products = () => {
                   {selectedProductForSpecs.category === 'portable' && (
                     <>
                       <p className="mb-3">
-                        This compact portable generator combines lightweight design (under 50kg) with robust power output, featuring Kirloskar's proprietary AVR technology that delivers clean sine wave output with less than 3% THD, making it safe for sensitive electronics. The reinforced tubular frame provides superior protection during transportation, while the ergonomic handle design with anti-vibration grips ensures comfortable portability.
+                        This compact portable Petrol generator combines lightweight design (under 50kg) with robust power output, featuring Kirloskar's proprietary AVR technology that delivers clean sine wave output with less than 3% THD, making it safe for sensitive electronics. The reinforced tubular frame provides superior protection during transportation, while the ergonomic handle design with anti-vibration grips ensures comfortable portability.
                       </p>
                       <p>
                         The unit incorporates intelligent idle control that automatically adjusts engine speed to match load requirements, reducing fuel consumption by up to 25% during partial load operation. Multiple output sockets including standard 15A, USB ports with fast charging capability, and a dedicated high-current outlet provide versatile power options. The rugged construction features IP23 protection rating against dust and water splashes, with all-terrain wheels designed for easy movement across uneven surfaces.

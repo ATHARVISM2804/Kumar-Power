@@ -216,7 +216,7 @@ const InstallationService = () => {
                     <Link to="/contact">Schedule Installation</Link>
                   </Button>
                   <Button asChild size="lg" variant="outline" className='hover:bg-black'>
-                    <Link to="/products">View All Services</Link>
+                    <Link to="/services/annual-maintenance">View All Services</Link>
                   </Button>
                 </div>
               </div>
@@ -476,9 +476,7 @@ const InstallationService = () => {
                               <span>Code compliant</span>
                             </li>
                           </ul>
-                          <Button size="sm" variant="outline" className="mt-3 bg-white/10 text-white hover:bg-white/20 w-full">
-                            Learn More <ArrowRight className="w-4 h-4 ml-2" />
-                          </Button>
+                         
                         </div>
                       </div>
                     </div>
