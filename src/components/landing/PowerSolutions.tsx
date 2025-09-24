@@ -239,7 +239,7 @@ const PowerSolutions = () => {
   const categories = [
     "Optiprime Generators",
     "Gas Generators", 
-    "Portable Generators",
+    "Petrol Generators",
     "CPCB4+ Diesel Generator",
     "Electrical Panels",
     "Servo Stabilizers",
@@ -278,9 +278,9 @@ const PowerSolutions = () => {
         img: gas
       }
     ],
-    "Portable Generators": [
+    "Petrol Generators": [
       {
-        title: "Portable Generators",
+        title: "Petrol Generators",
         desc: "Compact and mobile power solutions for construction sites, events, and emergency backup with easy transport features.",
         specs: [
           "2.1 kVA to 5 kVA",
@@ -590,7 +590,7 @@ const PowerSolutions = () => {
     switch(category) {
       case 'Optiprime Generators':
       case 'Gas Generators':
-      case 'Portable Generators':
+      case 'Petrol Generators':
       case 'CPCB4+ Diesel Generator':
         return {
           powerRange: ["0-50 kVA", "51-200 kVA", "201-500 kVA", "501+ kVA"],

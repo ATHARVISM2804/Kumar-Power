@@ -143,7 +143,7 @@ const GeneratorRange = () => {
     "All",
     "CPCB4+ Diesel Generators",
     "Gas Generators",
-    "Portable Generators",
+    "Petrol Generators",
     "Optiprime",
   ];
   const [activeFilter, setActiveFilter] = useState("All");
@@ -209,11 +209,11 @@ const GeneratorRange = () => {
       brochureUrl: cpcb750,
     },
     {
-      title: "Kirloskar Portable Generator (2.1 – 5 kVA)",
+      title: "Kirloskar Petrol Generator (2.1 – 5 kVA)",
       img: portable1,
       caption:
         "Compact portable power for small-scale events, sites, and emergency use.",
-      categories: ["Portable Generators"],
+      categories: ["Petrol Generators"],
       brochureUrl: cpcb750,
     },
   ];

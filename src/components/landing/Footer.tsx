@@ -98,7 +98,8 @@ const Footer = () => {
               <h4 className="font-bold text-white text-lg">Contact Us</h4>
               <ul className="space-y-2 text-sm text-white/90">
                 <li className="leading-relaxed">
-                  904, Westend Mall, Janakpuri,<br />New Delhi 110058
+                  614, 6th Floor, Suneja Tower-II,
+Distt. Centre, Janak Puri,<br />New Delhi-110 058
                 </li>
                 <li className="space-y-1">
                   <div>P : <a href="tel:+919773851767" className="hover:text-blue-300 transition-colors">+91 97738 51767</a></div>
@@ -108,15 +109,15 @@ const Footer = () => {
                   E : <a href="mailto:kumargeneratorhouse@gmail.com" className="hover:text-blue-300 transition-colors break-all">kumargeneratorhouse@gmail.com</a>
                 </li>
                 <li className="flex gap-6 pt-2">
-                  <a href="https://facebook.com/kumarpower" target="_blank" rel="noopener noreferrer" aria-label="Facebook" 
+                  <a href="https://www.facebook.com/kumargenerator/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" 
                      className="hover:text-blue-500 transition-colors">
                     <Facebook size={20} strokeWidth={1.5} />
                   </a>
-                  <a href="https://instagram.com/kumarpower" target="_blank" rel="noopener noreferrer" aria-label="Instagram" 
+                  <a href="https://www.instagram.com/Kumarpowerlimitless" target="_blank" rel="noopener noreferrer" aria-label="Instagram" 
                      className="hover:text-pink-500 transition-colors">
                     <Instagram size={20} strokeWidth={1.5} />
                   </a>
-                  <a href="https://linkedin.com/company/kumarpower" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" 
+                  <a href="https://www.linkedin.com/company/kumar-generator-house---india/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" 
                      className="hover:text-blue-400 transition-colors">
                     <Linkedin size={20} strokeWidth={1.5} />
                   </a>
