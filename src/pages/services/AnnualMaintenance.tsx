@@ -137,7 +137,7 @@ const AnnualMaintenanceService = () => {
              hover:bg-[#2D6FBA] hover:text-white hover:border-[#2D6FBA] 
              transition-colors duration-200"
                   >
-                    <Link to="/services">View All Services</Link>
+                    <Link to="/products">View All Products</Link>
                   </Button>
                 </div>
               </div>
@@ -404,14 +404,17 @@ const AnnualMaintenanceService = () => {
                   <Link to="/contact">Request AMC Quote</Link>
                 </Button>
                 <Button
-                  asChild
-                  size="lg"
-                  variant="outline"
-                  style={{ borderColor: "white", color: "white" }}
-                  className="bg-transparent hover:bg-white hover:text-[#2D6FBA] hover:border-[#2D6FBA] px-8 py-6 text-lg transition-colors duration-200"
-                >
-                  <Link to="/services">Explore Other Services</Link>
-                </Button>
+  asChild
+  size="lg"
+  variant="outline"
+  style={{ borderColor: "white", color: "white" }}
+  className="bg-transparent hover:bg-white/10 hover:text-[#2D6FBA] hover:border-[#2D6FBA] px-8 py-6 text-lg transition-colors duration-200"
+>
+  <Link to="/products" className="text-white hover:text-[#2D6FBA]">
+    Explore Other Services
+  </Link>
+</Button>
+
               </div>
             </div>
           </div>

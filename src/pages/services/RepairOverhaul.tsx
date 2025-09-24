@@ -186,7 +186,7 @@ const RepairOverhaulService = () => {
                     variant="outline"
                     className="border-custom-blue text-custom-blue bg-white hover:bg-custom-blue hover:text-white hover:border-[#225488] transition-colors duration-200"
                   >
-                    <a href="tel:+918888888888" className="flex items-center gap-2">
+                    <a href="tel:+919773851767" className="flex items-center gap-2">
                       <Zap size={18} /> Emergency Repair Hotline
                     </a>
                   </Button>
@@ -578,25 +578,29 @@ const RepairOverhaulService = () => {
               <p className="text-lg md:text-xl mb-10 text-gray-200">
                 Contact our expert technicians today for fast, reliable repair services that get your power systems back to peak performance.
               </p>
-              <div className="flex flex-row justify-center gap-6">
-                <Button
-                  asChild
-                  size="lg"
-                  className="bg-white border border-[#2D6FBA] text-[#2D6FBA] hover:bg-[#2D6FBA] hover:text-white hover:border-[#225488] px-35 py-8 text-lg min-w-[240px] transition-colors duration-200"
-                >
-                  <Link to="/contact">Request Repair Service</Link>
-                </Button>
-                <Button
-                  asChild
-                  size="lg"
-                  variant="outline"
-                  className="bg-transparent border border-white text-white hover:bg-white hover:text-[#2D6FBA] hover:border-[#2D6FBA] px-8 py-4 text-lg min-w-[240px] transition-colors duration-200"
-                >
-                  <a href="tel:+918888888888" className="flex items-center justify-center gap-2 w-full h-full">
-                    <Zap size={20} /> Emergency Repair Hotline
-                  </a>
-                </Button>
-              </div>
+              <div className="flex flex-wrap gap-4 justify-center">
+  {/* Primary Button */}
+  <Button
+    asChild
+    size="lg"
+    className="bg-[#2D6FBA] text-white border border-[#2D6FBA] hover:bg-[#225488] hover:border-[#225488] px-6 py-3 text-base min-w-[220px] rounded-lg font-medium transition-colors duration-200"
+  >
+    <Link to="/contact">Request Repair Service</Link>
+  </Button>
+
+  {/* Secondary Button */}
+  <Button
+    asChild
+    size="lg"
+    variant="outline"
+    className="bg-transparent border border-white text-white hover:bg-white hover:text-[#2D6FBA] hover:border-[#2D6FBA] px-6 py-3 text-base min-w-[220px] rounded-lg font-medium flex items-center justify-center gap-2 transition-colors duration-200"
+  >
+    <a href="tel:+919773851767" className="flex items-center gap-2">
+      <Zap size={18} /> Emergency Repair Hotline
+    </a>
+  </Button>
+</div>
+
             </div>
           </div>
         </section>

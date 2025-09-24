@@ -135,7 +135,7 @@ const EmergencySupportService = () => {
               Rapid response solutions for power emergencies when every minute counts
             </p>
             <Button asChild size="lg" className="bg-custom-blue hover:bg-[#225488]">
-              <a href="tel:+918888888888" className="flex items-center gap-2">
+              <a href="tel:+919773851767" className="flex items-center gap-2">
                 <PhoneCall size={20} /> Emergency Hotline
               </a>
             </Button>
@@ -168,13 +168,18 @@ const EmergencySupportService = () => {
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Button asChild size="lg" className="bg-custom-blue hover:bg-[#225488]">
-                    <a href="tel:+918888888888" className="flex items-center gap-2">
+                    <a href="tel:+919773851767" className="flex items-center gap-2">
                       <PhoneCall size={20} /> Emergency Hotline
                     </a>
                   </Button>
-                  <Button asChild size="lg" variant="outline">
-                    <Link to="/contact">Request Priority Service</Link>
-                  </Button>
+                  <Button
+  asChild
+  size="lg"
+  variant="outline"
+  className="border border-custom-blue text-custom-blue hover:bg-custom-blue hover:text-white hover:border-[#225488] transition-colors duration-200"
+>
+  <Link to="/contact">Request Priority Service</Link>
+</Button>
                 </div>
               </div>
               <div className="rounded-lg overflow-hidden shadow-xl">
