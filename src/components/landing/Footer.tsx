@@ -72,9 +72,9 @@ const Footer = () => {
                     </ul>
                   )}
                 </li>
-                <li><a href="#electrical-panels" className="hover:text-blue-300 transition-colors">Electrical Panels</a></li>
-                <li><a href="#servo-stabilizers" className="hover:text-blue-300 transition-colors">Servo Stabilizers</a></li>
-                <li><a href="#transformers" className="hover:text-blue-300 transition-colors">Transformers</a></li>
+                <li><a href="/products" className="hover:text-blue-300 transition-colors">Electrical Panels</a></li>
+                <li><a href="/products" className="hover:text-blue-300 transition-colors">Servo Stabilizers</a></li>
+                <li><a href="/products" className="hover:text-blue-300 transition-colors">Transformers</a></li>
               </ul>
             </div>
 
@@ -83,12 +83,12 @@ const Footer = () => {
               <h4 className="font-bold text-white text-lg">Useful Links</h4>
               <ul className="grid grid-cols-2 sm:grid-cols-1 gap-2 text-sm text-white/90">
                 <li><a href="#home" className="hover:text-blue-300 transition-colors">Home</a></li>
-                <li><a href="#about" className="hover:text-blue-300 transition-colors">About us</a></li>
-                <li><a href="#clients" className="hover:text-blue-300 transition-colors">Our Clients</a></li>
-                <li><a href="#installation" className="hover:text-blue-300 transition-colors">Installation</a></li>
-                <li><a href="#testimonials" className="hover:text-blue-300 transition-colors">Testimonials</a></li>
-                <li><a href="#certifications" className="hover:text-blue-300 transition-colors">Certifications</a></li>
-                <li><a href="#contact" className="hover:text-blue-300 transition-colors">Contact Us</a></li>
+                <li><a href="/about/OurProfile" className="hover:text-blue-300 transition-colors">About us</a></li>
+                <li><a href="/about/OurClients" className="hover:text-blue-300 transition-colors">Our Clients</a></li>
+                <li><a href="/installation" className="hover:text-blue-300 transition-colors">Installation</a></li>
+                <li><a href="/about/Testimonials" className="hover:text-blue-300 transition-colors">Testimonials</a></li>
+                <li><a href="/about/Certifications" className="hover:text-blue-300 transition-colors">Certifications</a></li>
+                <li><a href="/contact" className="hover:text-blue-300 transition-colors">Contact Us</a></li>
                 <li><a href="#blogs" className="hover:text-blue-300 transition-colors">Blog</a></li>
               </ul>
             </div>
