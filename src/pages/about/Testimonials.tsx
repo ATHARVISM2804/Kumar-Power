@@ -107,117 +107,206 @@ const Testimonials = () => {
           
           {/* Testimonial Grid - Exactly as shown in image */}
           <div className="grid md:grid-cols-2 gap-6">
-            {/* Testimonial 1 - Indian Railways */}
+            {/* Testimonial 1 - Khushi Aggarwal, Platter Me Crazy */}
             <div className="border rounded-lg overflow-hidden">
               <div className="p-4">
                 <div className="flex items-center mb-4">
                   <div className="h-10 w-10 rounded-full bg-gray-300 mr-3 overflow-hidden">
                     <img 
-                      src="https://randomuser.me/api/portraits/women/62.jpg" 
-                      alt="Rupa Sharma" 
+                      src="https://randomuser.me/api/portraits/women/45.jpg" 
+                      alt="Khushi Aggarwal" 
                       className="h-full w-full object-cover"
                     />
                   </div>
                   <div>
-                    <h4 className="font-semibold">Rupa Sharma</h4>
-                    <p className="text-xs text-gray-600">Technical Director, Indian Railways</p>
+                    <h4 className="font-semibold">Khushi Aggarwal</h4>
+                    <p className="text-xs text-gray-600">Founder, Platter Me Crazy</p>
                   </div>
                 </div>
                 <p className="text-sm mb-4">
-                  "The reliability of Kumar generators has been crucial for our railway operations across the country. Their solutions have withstood extreme weather conditions and safety standards required by railways."
+                  <span className="font-semibold">I, Khushi Aggarwal</span>, Founder of <span className="font-semibold">Platter Me Crazy</span>, a brand synonymous with culinary artistry and luxury dining experiences. We curate exquisite charcuterie boards and handcrafted artisanal foods that elevate every occasion into a memorable indulgence. Our signature creations include gourmet flavoured butters, silky-smooth hummus blends, and wholesome baked crisps, each crafted with uncompromising freshness and zero preservatives. Whether for intimate soirées, premium gifting, or grand corporate gatherings, we bring an unmatched blend of flavor, finesse and sophistication to the table.
                 </p>
-                <button className="text-xs text-[#2D6FBA] flex items-center">
-                  Watch Full Story
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                  </svg>
-                </button>
               </div>
             </div>
-            
-            {/* Testimonial 2 - Vikram Mehta */}
+            {/* Testimonial 2 - Mr. Jasjot Singh Kumar */}
             <div className="border rounded-lg overflow-hidden">
               <div className="p-4">
                 <div className="flex items-center mb-4">
                   <div className="h-10 w-10 rounded-full bg-gray-300 mr-3 overflow-hidden">
                     <img 
-                      src="https://randomuser.me/api/portraits/men/42.jpg" 
-                      alt="Vikram Mehta" 
+                      src="https://randomuser.me/api/portraits/men/44.jpg" 
+                      alt="Jasjot Singh Kumar" 
                       className="h-full w-full object-cover"
                     />
                   </div>
                   <div>
-                    <h4 className="font-semibold">Vikram Mehta</h4>
-                    <p className="text-xs text-gray-600">Facility Manager, Apollo Hospitals</p>
+                    <h4 className="font-semibold">Mr. Jasjot Singh Kumar</h4>
+                    <p className="text-xs text-gray-600">Power Solutions & Genset Expert</p>
                   </div>
                 </div>
                 <p className="text-sm mb-4">
-                  "For healthcare, uninterrupted power is not just a convenience—it's a necessity. Kumar Generator House understands this critical need and delivers excellence."
+                  <span className="font-semibold">Mr. Jasjot Singh Kumar</span> an expert in power solutions and Genset systems. Jasjot combines in-depth technical expertise with a strong customer-centric approach, delivering innovative, reliable, and efficient solutions tailored to client needs. His prompt service, meticulous attention to detail, and commitment to excellence ensures seamless installations and hassle-free maintenance every time.
                 </p>
-                <button className="text-xs text-[#2D6FBA] flex items-center">
-                  Watch Full Story
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            
-            {/* Testimonial 3 - Anand Patel */}
-            <div className="border  rounded-lg overflow-hidden">
-              
-              <div className="p-4">
-                <div className="flex items-center mb-4">
-                  <div className="h-10 w-10 rounded-full bg-gray-300 mr-3 overflow-hidden">
-                    <img 
-                      src="https://randomuser.me/api/portraits/men/62.jpg" 
-                      alt="Anand Patel" 
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Anand Patel</h4>
-                    <p className="text-xs text-gray-600">Infrastructure Head, Reliance Industries</p>
-                  </div>
-                </div>
                 <p className="text-sm mb-4">
-                  "We've relied on Kumar Generators for over a decade. Their preventive maintenance program has saved us millions in potential downtime costs."
+                  For anyone looking for unmatched professionalism and top-tier expertise in the Genset Industry, <span className="font-semibold">Jasjot Singh</span> is the name you can trust.
                 </p>
-                <button className="text-xs text-[#2D6FBA] flex items-center">
-                  Watch Full Story
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                  </svg>
-                </button>
               </div>
             </div>
             
-            {/* Testimonial 4 - Sunita Reddy */}
+            {/* Testimonial 3 - Kaustubh Jain, TEAMCC */}
             <div className="border rounded-lg overflow-hidden">
-              
               <div className="p-4">
                 <div className="flex items-center mb-4">
                   <div className="h-10 w-10 rounded-full bg-gray-300 mr-3 overflow-hidden">
                     <img 
-                      src="https://randomuser.me/api/portraits/women/32.jpg" 
-                      alt="Sunita Reddy" 
+                      src="https://randomuser.me/api/portraits/men/55.jpg" 
+                      alt="Kaustubh Jain" 
                       className="h-full w-full object-cover"
                     />
                   </div>
                   <div>
-                    <h4 className="font-semibold">Sunita Reddy</h4>
-                    <p className="text-xs text-gray-600">CEO, Wipro Electronics</p>
+                    <h4 className="font-semibold">Kaustubh Jain</h4>
+                    <p className="text-xs text-gray-600">TEAM Construction Chemicals (TEAMCC)</p>
                   </div>
                 </div>
-                <p className="text-sm mb-4">
-                  "The custom power solutions designed by Kumar Generator House have been instrumental in our manufacturing excellence and meeting strict delivery timelines."
+                <p className="text-sm mb-2">
+                  I am Kaustubh Jain representing the category marble adhesives and coatings. At TEAMCC we specialise in high-performance epoxy adhesives, polyester adhesives, tile adhesives and marble coatings.
                 </p>
-                <button className="text-xs text-[#2D6FBA] flex items-center">
-                  Watch Full Story
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                  </svg>
-                </button>
+                <p className="text-sm mb-2">
+                  I have had the pleasure of knowing Mr. Jasjot Singh, and I can confidently say he is a true professional in the generator industry. Representing the trusted Kirloskar brand, Jasjot ensures top-quality products backed by exceptional service. His deep knowledge of power solutions, combined with his commitment to delivering the right generator for every requirement, makes him a go-to expert.
+                </p>
+                <p className="text-sm mb-2">
+                  Whether it’s for commercial, industrial, or residential needs, Jasjot’s guidance is reliable and his follow-up impeccable. If you’re looking for a dependable generator partner who values both quality and customer satisfaction, I highly recommend Mr. Jasjot Singh.
+                </p>
+                <div className="text-xs text-gray-500 mt-2">
+                  Kaustubh Jain<br />
+                  BNI Lakshay
+                </div>
+              </div>
+            </div>
+            
+            {/* Testimonial 4 - Atul Jewellers */}
+            <div className="border rounded-lg overflow-hidden">
+              <div className="p-4">
+                <div className="flex items-center mb-4">
+                  <div className="h-10 w-10 rounded-full bg-gray-300 mr-3 overflow-hidden">
+                    <img 
+                      src="https://randomuser.me/api/portraits/men/24.jpg" 
+                      alt="Atul Jewellers" 
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Atul Jewellers</h4>
+                    <p className="text-xs text-gray-600">Proprietor, New Delhi</p>
+                  </div>
+                </div>
+                <p className="text-sm mb-2">
+                  We at <span className="font-semibold">Atul Jewellers</span>, are engaged in retail & wholesale of precious gemstones, diamonds & fine jewellery for almost five decades. We are the only jewellery house in Delhi, with in-house state of art gem testing & diamond grading laboratory, and we also provide this facility to almost 500 retailers across Delhi NCR.
+                </p>
+                <p className="text-sm mb-2">
+                  I wish to record our appreciation and acknowledgement, for R.S. Kumar of Kumar Generator House, who has provided gensets, for our new store at Defence Colony.
+                </p>
+                <p className="text-sm mb-2">
+                  Mr. Kumar and his team is extremely professional in their approach and suggested valuable tips to plan the load distribution, making optimum utilization of energy generated. The rates charged were reasonable and delivery provided in promised time with excellent back up support.
+                </p>
+                <p className="text-sm mb-2">
+                  We recommend Kumar Generator House to all my colleagues for power backup facilitation and wish R.S. Kumar & his team all round success in all its endeavors.
+                </p>
+                <div className="text-xs text-gray-500 mt-2">
+                  Dated: 28<sup>th</sup> Dec. 2018<br />
+                  for Atul Jewellers<br />
+                  <span style={{ fontFamily: 'cursive' }}>Jain</span>, Proprietor
+                </div>
+              </div>
+            </div>
+            {/* Testimonial 5 - Brown Gold */}
+            <div className="border rounded-lg overflow-hidden">
+              <div className="p-4">
+                <div className="flex items-center mb-4">
+                  <div className="h-10 w-10 rounded-full bg-gray-300 mr-3 overflow-hidden">
+                    <img 
+                      src="https://randomuser.me/api/portraits/men/65.jpg" 
+                      alt="Bharat Anand" 
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Brown Gold</h4>
+                    <p className="text-xs text-gray-600">Bharat Anand, Director</p>
+                  </div>
+                </div>
+                <p className="text-sm mb-2">
+                  We at Brown Gold are a team of young and dynamic interior designers engaged in the business of providing complete design solutions for our clients, be it individual, architects or corporate for the last 3 decades. We have a passion of interiors which enables us in providing quality and timely delivery of our design services and products for our clients pan India.
+                </p>
+                <p className="text-sm mb-2">
+                  We would like to place on record our appreciation for <span className="font-semibold">Mr. R. S. Kumar of Kumar Generator House</span>.
+                </p>
+                <p className="text-sm mb-2">
+                  We had taken their services for our 40 KVA Kirloskar generator & a small genset of 7 KVA. We would like to take this opportunity to thank you for providing excellent advice, excellent products & excellent service. We would not hesitate to recommend <span className="font-semibold">Kumar Generator House</span> to prospective clients, looking for a high level of professional service, with attention on a long term client focused relationship.
+                </p>
+                <p className="text-sm mb-2">
+                  We are extremely pleased and look forward to increasing our level of business with yourselves in the coming years.
+                </p>
+                <p className="text-sm mb-2">
+                  Thank you <span className="font-semibold">Mr. R. S. Kumar</span> for your positive & professional approach.
+                </p>
+                <div className="text-xs text-gray-500 mt-2">
+                  Bharat Anand<br />
+                  Director, Brown Gold
+                </div>
+              </div>
+            </div>
+            {/* Testimonial 6 - RENT IT BAE */}
+            <div className="border rounded-lg overflow-hidden">
+              <div className="p-4">
+                <div className="flex items-center mb-4">
+                  <div className="h-10 w-10 rounded-full bg-gray-300 mr-3 overflow-hidden">
+                    <img 
+                      src="https://randomuser.me/api/portraits/women/77.jpg" 
+                      alt="RENT IT BAE" 
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">RENT IT BAE</h4>
+                    <p className="text-xs text-gray-600">Luxury Fashion Rental Service</p>
+                  </div>
+                </div>
+                <p className="text-sm mb-2">
+                  RENT IT BAE is a luxury fashion rental service offering Ethnic, Western & Accessories from designer labels at a fraction of MRP. Servicing 15 cities via Website, m-site, Android & iOS apps. First to introduce Monthly Fashion Subscription in the country. The company has its 2 Flagship Stores in New Delhi (Rajouri Garden and Greater Kailash-1). RENT IT BAE has taken the media limelight for building country’s first tech driven store.
+                </p>
+                <p className="text-sm mb-2">
+                  We highly appreciate the fast and seamless service provided by your company. The installation of invertors for RENT IT BAE’s South Delhi Flagship Store at Greater Kailash seemed a fluid task with your service. The requirement for a power back up is a must for all companies now days especially in the retail sector. You understood the requirement and delivered the apt products at a reasonable price. All was done post one phone call. No follow up were required. The products were delivered and installed within 24 hours. We would be happy to recommend your products and service.
+                </p>
+                <div className="text-xs text-gray-500 mt-2">
+                  Thank you.
+                </div>
+              </div>
+            </div>
+            {/* Testimonial 7 - K.K. Setia, Olympus, Intown Realtors Pvt Ltd */}
+            <div className="border rounded-lg overflow-hidden">
+              <div className="p-4">
+                <div className="flex items-center mb-4">
+                  <div className="h-10 w-10 rounded-full bg-gray-300 mr-3 overflow-hidden">
+                    <img 
+                      src="https://randomuser.me/api/portraits/men/71.jpg" 
+                      alt="K.K. Setia" 
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">K.K. Setia</h4>
+                    <p className="text-xs text-gray-600">Olympus, Intown Realtors Pvt Ltd</p>
+                    <p className="text-xs text-gray-400">3rd March, 2025</p>
+                  </div>
+                </div>
+                <p className="text-sm mb-2">
+                  I K.K. Setia, Director of Intown Realtors, have been in commercial Real Estate business for the last 18 years. I have been a member of BNI Olympus Noida since December 2015.
+                </p>
+                <p className="text-sm mb-2">
+                  "I recently needed a generator for my Sector 18 office building and reached out to my fellow BNI member, Mr. Manjot Singh Kumar. His team promptly inspected the site, provided a tailored solution, and even assisted with the necessary approvals. The generator was delivered and installed within the promised timeframe, and the team ensured that everything was functioning perfectly before they left. I am thoroughly impressed with the professionalism and efficiency displayed by Kumar Generator House. I highly recommend their services to anyone in need of reliable power solutions."
+                </p>
               </div>
             </div>
           </div>
@@ -389,3 +478,4 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+
