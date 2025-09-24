@@ -125,7 +125,7 @@ const Products = () => {
   const kirloskarSubcategories = [
     { id: "diesel", name: "CPCB4+ Diesel Generators" },
     { id: "gas", name: "Gas Generators" },
-    { id: "petrol", name: "Petrol Generators" },
+    { id: "portable", name: "Petrol Generators" },
     { id: "optiprime", name: "Optiprime" },
   ];
 
