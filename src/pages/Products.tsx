@@ -35,6 +35,8 @@ import trans1 from "@/assets/transformer/Trans1.png"
 import trans2 from "@/assets/transformer/trans2.png"
 import trans3 from "@/assets/transformer/trans3.png"
 import Brochure from "@/assets/Brochure.pdf"
+import GensetWorkingLimit from "@/assets/Brochure/genset working limit .pdf"
+import Portfolio from "@/assets/Brochure/Portfolio.pdf"
 
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("diesel");
@@ -123,7 +125,7 @@ const Products = () => {
   const kirloskarSubcategories = [
     { id: "diesel", name: "CPCB4+ Diesel Generators" },
     { id: "gas", name: "Gas Generators" },
-    { id: "portable", name: "Petrol Generators" },
+    { id: "petrol", name: "Petrol Generators" },
     { id: "optiprime", name: "Optiprime" },
   ];
 
@@ -630,9 +632,15 @@ const Products = () => {
               <Button  size="lg" variant="default" className="bg-[#2D6FBA] hover:bg-[#225488] w-full sm:w-auto">
                 <Link to="/contact">Request a Quote</Link>
               </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white/10 w-full sm:w-auto">
-                Download Product Catalogue
-              </Button>
+              <a href={Portfolio} download>
+  <Button 
+    size="lg" 
+    variant="outline" 
+    className="bg-transparent border-white text-white hover:bg-white/10 w-full sm:w-auto"
+  >
+    Download Product Catalogue
+  </Button>
+</a>  
             </div>
           </div>
         </div>
@@ -849,18 +857,33 @@ const Products = () => {
             </div>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 mt-2 sm:mt-0">
               {/* Download Button */}
-              <Button
-                variant="ghost"
-                size="sm"
-                className="flex items-center gap-1 text-xs h-7 p-4 bg-white/20 text-gray-400 hover:bg-[#2D6FBA] hover:text-white"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                  <polyline points="7 10 12 15 17 10" />
-                  <line x1="12" y1="15" x2="12" y2="3" />
-                </svg>
-                Download All Catalogs
-              </Button>
+             
+
+<a href={GensetWorkingLimit} download="Genset-Working-Limit.pdf">
+  <Button
+    variant="ghost"
+    size="sm"
+    className="flex items-center gap-1 text-xs h-7 p-4 bg-white/20 text-gray-400 hover:bg-[#2D6FBA] hover:text-white"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="12"
+      height="12"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="7 10 12 15 17 10" />
+      <line x1="12" y1="15" x2="12" y2="3" />
+    </svg>
+    Download Generator Working Catalogs
+  </Button>
+</a>
+
 
               {/* Talk Button */}
               <Button onClick={
@@ -888,7 +911,7 @@ const Products = () => {
                   <line x1="12" y1="5" x2="12" y2="19" />
                   <line x1="5" y1="12" x2="19" y2="12" />
                 </svg>
-                Request Quote
+                <Link to="/contact">Request Quote</Link>
               </Button>
             </div>
           </div>
@@ -1124,7 +1147,7 @@ const Products = () => {
               {/* CTA Buttons */}
               <div className="mt-6 flex flex-col sm:flex-row flex-wrap gap-3 pt-4 border-t">
                 <Button size="sm" variant="default" className="bg-[#2D6FBA] hover:bg-[#225488] w-full sm:w-auto">
-                  Request Quote
+                  <Link to="/contact">Request Quote </Link>
                 </Button>
                 <Button size="sm" variant="outline" className="flex items-center gap-1 w-full sm:w-auto">
                   <Download className="w-4 h-4" /> <a href={Brochure} download={"Brochure.pdf"} >

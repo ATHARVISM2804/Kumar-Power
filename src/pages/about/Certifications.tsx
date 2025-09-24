@@ -331,8 +331,12 @@ const Certifications = () => {
               } className="bg-[#2D6FBA] text-white px-8 py-3 rounded-lg hover:bg-[#22548e] transition-colors font-semibold shadow-lg">
                 Contact Us
               </button>
-              <button className="border-2 border-[#2D6FBA] text-[#2D6FBA] px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors font-semibold">
-                View Projects
+              <button onClick={
+                () => {
+                  window.location.href = "/products";
+                }
+              } className="border-2 border-[#2D6FBA] text-[#2D6FBA] px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors font-semibold">
+                View Products
               </button>
             </div>
           </motion.div>
@@ -358,20 +362,20 @@ const Certifications = () => {
                   {certificateSlides[activeIndex].map((certificate, idx) => (
                     <div 
                       key={idx} 
-                      className="bg-gray-900 p-6 rounded-xl shadow-lg overflow-hidden flex flex-col"
+                      className="bg-gray-900 p-8 rounded-xl shadow-lg overflow-hidden flex flex-col"
                     >
-                      <div className="h-40 flex items-center justify-center mb-4">
+                      <div className="h-56 flex items-center justify-center mb-4">
                         <img 
                           src={certificate.image} 
                           alt={certificate.name} 
-                          className="h-full max-h-32 w-auto object-contain"
+                          className="h-full max-h-52 w-auto object-contain"
                         />
                       </div>
-                      <h3 className="text-xl font-bold mb-2 text-center">{certificate.name}</h3>
+                      <h3 className="text-2xl font-bold mb-2 text-center">{certificate.name}</h3>
                       <span className="bg-[#22548e] text-[#2D6FBA] text-xs px-3 py-1 rounded-full mx-auto mb-3">
                         Since {certificate.year}
                       </span>
-                      <p className="text-gray-300 text-sm mb-3">{certificate.description}</p>
+                      <p className="text-gray-300 text-base mb-3">{certificate.description}</p>
                       <p className="text-gray-400 text-sm mt-auto">Issued by: <strong className="text-white">{certificate.issuer}</strong></p>
                     </div>
                   ))}

@@ -22,6 +22,7 @@ import Comed from "@/assets/Clients page/Comed.png";
 import Dps from "@/assets/Clients page/DPS.jpg";
 import GEPL from "@/assets/Clients page/GEPL.jpg";
 import addidas from "@/assets/Clients page/Adidas.jpg";
+import Portfolio from "@/assets/Brochure/Portfolio.pdf"
 
 const Testimonials = () => {
   return (
@@ -80,12 +81,7 @@ const Testimonials = () => {
         <p className="mt-2 text-gray-200">Testimonials from industry leaders</p>
       </div>
 
-      <button className="text-[#2D6FBA] mt-4 flex items-center text-lg font-medium hover:underline">
-        Discover
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
-          <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-        </svg>
-      </button>
+      
     </div>
   </div>
 </section>
@@ -444,9 +440,11 @@ const Testimonials = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
-              <button className="border border-white text-white py-2 px-6 rounded">
-                Download Brochure
-              </button>
+              <a href={Portfolio} download>
+  <button className="border border-white text-white py-2 px-6 rounded">
+    Download Brochure
+  </button>
+</a>
             </div>
             
             {/* Contact Info */}

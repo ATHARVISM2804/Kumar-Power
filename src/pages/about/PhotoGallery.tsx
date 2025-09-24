@@ -125,6 +125,7 @@ import award2 from "@/assets/award 2.png";
 import award3 from "@/assets/award 3.png";
 import award4 from "@/assets/award 4.png";
 import ps from "@/assets/ps2.png"
+import Portfolio from "@/assets/Brochure/Portfolio.pdf"
 
 interface GalleryImage {
   id: number;
@@ -588,9 +589,13 @@ const PhotoGallery = () => {
                 <a href="/contact" className="bg-[#2D6FBA] text-white text-sm px-6 py-2 rounded hover:bg-[#22548e] transition-colors">
                   Book Your Consultation →
                 </a>
-                <a href="/Images.zip" download className="border border-white text-white text-sm px-6 py-2 rounded hover:bg-white hover:text-black transition-colors">
-                  Download Media Kit
-                </a>
+                <a 
+  href={Portfolio} 
+  download 
+  className="border border-white text-white text-sm px-6 py-2 rounded hover:bg-white hover:text-black transition-colors"
+>
+  Download Media Kit
+</a>
               </div>
             </div>
             <div className="flex items-center justify-center">
