@@ -5,7 +5,7 @@ import portable1 from "@/assets/Range4.png";
 import portable2 from "@/assets/Range5.png";
 import portable3 from "@/assets/Range6.png";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, X } from "lucide-react";
+import { Download } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -14,202 +14,128 @@ import dG2 from "@/assets/Kumar Assets/320KVa.png";
 import dG3 from "@/assets/Kumar Assets/25kwa dg.png";
 import dG4 from "@/assets/Kumar Assets/62.5KVA DG.png";
 import dG5 from "@/assets/Kumar Assets/new750.png";
+import optiprime from "../../assets/Brochure/OPTIPRIME- 117,400,500,640,1000,1500 & 2020 KVA.pdf";
+import Cpcb from "@/assets/Brochure/7.5-20 kVA.pdf";
+import cpcb58 from "@/assets/Brochure/25-58.5.pdf";
+import cpcb160 from "@/assets/Brochure/82.5-160.pdf";
+import cpcb250 from "@/assets/Brochure/200-250.pdf";
+import cpcb320 from "@/assets/Brochure/320-750.pdf";
+import cpcb750 from "@/assets/Brochure/750 kVA-1500 kVA.pdf";
 
-// Modal for generator info
-const GeneratorModal = ({
-  open,
-  onClose,
-  generator,
-}: {
-  open: boolean;
-  onClose: () => void;
-  generator:
-    | {
-        title: string;
-        img: string;
-        caption: string;
-        details: string[];
-      }
-    | null;
-}) => {
-  if (!open || !generator) return null;
-  
-  // Extract power range from title if available
-  const powerRangeMatch = generator.title.match(/\(([^)]+)\)/);
-  const powerRange = powerRangeMatch ? powerRangeMatch[1] : null;
-  
-  return (
-    <AnimatePresence>
-      <motion.div
-        className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.3 }}
-        onClick={onClose}
-      >
-        <motion.div
-          className="bg-white rounded-xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-lg"
-          initial={{ opacity: 0, y: 40, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: -40, scale: 0.95 }}
-          transition={{ type: "spring", damping: 22, stiffness: 300 }}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <div className="flex justify-between items-center p-4 border-b border-gray-200 bg-gradient-to-r from-[#2D6FBA]/10 to-white">
-            <h2 className="text-lg font-bold text-gray-800">{generator.title.replace(/\([^)]+\)/, '')}</h2>
-            <button
-              onClick={onClose}
-              className="p-1 rounded-full hover:bg-gray-100 transition-colors"
-            >
-              <X className="h-5 w-5" />
-            </button>
-          </div>
-          
-          <div className="p-6">
-            <div className="bg-gray-50 rounded-lg p-4 mb-4">
-              <img
-                src={generator.img}
-                alt={generator.title}
-                className="w-full h-48 object-contain rounded mb-3"
-              />
-              
-              {powerRange && (
-                <div className="bg-[#2D6FBA]/10 rounded-md py-2 px-3 inline-flex items-center mb-3">
-                  <span className="mr-2 text-[#2D6FBA]">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </span>
-                  <span className="font-medium text-gray-700">Power Range: {powerRange}</span>
-                </div>
-              )}
-            </div>
-            
-            <p className="text-base text-gray-700 mb-4 italic border-l-2 border-[#2D6FBA] pl-3">
-              {generator.caption}
-            </p>
-            
-            <div className="mt-4 bg-gray-50 rounded-lg p-4">
-              <h3 className="font-medium text-gray-800 mb-2 flex items-center">
-                <span className="w-5 h-5 rounded-full bg-[#2D6FBA] flex items-center justify-center text-white mr-2 text-xs">✓</span>
-                Key Features
-              </h3>
-              <ul className="list-none pl-3 text-sm text-gray-700 space-y-3 mt-2">
-                {generator.details.map((point, idx) => (
-                  <li key={idx} className="flex items-start">
-                    <span className="text-[#2D6FBA] mr-2 mt-0.5">•</span>
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            
-          </div>
-        </motion.div>
-      </motion.div>
-    </AnimatePresence>
-  );
-};
 
 // Animated Card component
 const Card = ({
   title,
   img,
   caption,
-  onExplore,
+  brochureUrl,
 }: {
   title: string;
   img: string;
   caption: string;
-  onExplore: () => void;
-}) => (
-  <motion.article
-    className="overflow-hidden flex flex-col shadow bg-gray-900 rounded-lg border border-gray-800 h-[420px]"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: -20 }}
-    transition={{ duration: 0.4 }}
-    whileHover={{
-      scale: 1.03,
-      boxShadow:
-        "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-      borderColor: "#2D6FBA",
-    }}
-    whileTap={{ scale: 0.98 }}
-  >
-    <div className="w-full h-[200px] flex items-center justify-center overflow-hidden bg-white">
-      <motion.img
-        src={img}
-        alt={title}
-        className="object-contain w-full h-[180px]"
-        loading="lazy"
-        initial={{ scale: 1 }}
-        whileHover={{ scale: 1.12, rotate: 0.5 }}
-        transition={{
-          duration: 0.4,
-          ease: "easeOut",
-        }}
-      />
-    </div>
-    <motion.div
-      className="p-4 flex-1 flex flex-col"
-      initial={{
-        background:
-          "linear-gradient(180deg, rgba(17, 24, 39, 0) 0%, rgba(17, 24, 39, 1) 100%)",
-      }}
+  brochureUrl: string;
+}) => {
+  // Create a sanitized filename from the generator title
+  const downloadFileName = title
+    .replace('Kirloskar ', '')
+    .replace(/[^\w\s()-]/g, '')
+    .trim() + ' Brochure.pdf';
+  
+  return (
+    <motion.article
+      className="overflow-hidden flex flex-col shadow bg-gray-900 rounded-lg border border-gray-800 h-[420px]"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.4 }}
       whileHover={{
-        background:
-          "linear-gradient(180deg, rgba(45, 111, 186, 0) 0%, rgba(45, 111, 186, 0.2) 100%)",
+        scale: 1.03,
+        boxShadow:
+          "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+        borderColor: "#2D6FBA",
       }}
+      whileTap={{ scale: 0.98 }}
     >
-      <motion.h3
-        className="font-semibold mb-1 text-lg h-[52px] line-clamp-2"
-        whileHover={{ color: "#2D6FBA" }}
-      >
-        {title}
-      </motion.h3>
-      <p className="text-sm text-muted-foreground mb-4 flex-1 line-clamp-3 h-[60px]">{caption}</p>
-      <div className="flex items-center gap-2 mt-auto">
-        <motion.div
-          whileHover={{ x: 5 }}
-          transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        >
-          <Button
-            size="sm"
-            className="overflow-hidden group relative bg-[#2D6FBA] hover:bg-[#22548e]"
-            variant="default"
-            onClick={onExplore}
-          >
-            <motion.span initial={{ opacity: 1 }} whileHover={{ opacity: 0.9 }}>
-              Explore more
-            </motion.span>
-            <motion.div
-              className="ml-1 inline-flex"
-              initial={{ x: 0 }}
-              whileHover={{ x: 3 }}
-              transition={{
-                duration: 0.2,
-                repeat: Infinity,
-                repeatType: "reverse",
-                repeatDelay: 0.2,
-              }}
-            >
-              <ArrowRight className="h-4 w-4 group-hover:text-white" />
-            </motion.div>
-            <motion.span
-              className="absolute bottom-0 left-0 h-0.5 bg-white"
-              initial={{ width: 0 }}
-              whileHover={{ width: "100%" }}
-              transition={{ duration: 0.3 }}
-            />
-          </Button>
-        </motion.div>
+      <div className="w-full h-[200px] flex items-center justify-center overflow-hidden bg-white">
+        <motion.img
+          src={img}
+          alt={title}
+          className="object-contain w-full h-[180px]"
+          loading="lazy"
+          initial={{ scale: 1 }}
+          whileHover={{ scale: 1.12, rotate: 0.5 }}
+          transition={{
+            duration: 0.4,
+            ease: "easeOut",
+          }}
+        />
       </div>
-    </motion.div>
-  </motion.article>
-);
+      <motion.div
+        className="p-4 flex-1 flex flex-col"
+        initial={{
+          background:
+            "linear-gradient(180deg, rgba(17, 24, 39, 0) 0%, rgba(17, 24, 39, 1) 100%)",
+        }}
+        whileHover={{
+          background:
+            "linear-gradient(180deg, rgba(45, 111, 186, 0) 0%, rgba(45, 111, 186, 0.2) 100%)",
+        }}
+      >
+        <motion.h3
+          className="font-semibold mb-1 text-lg h-[52px] line-clamp-2"
+          whileHover={{ color: "#2D6FBA" }}
+        >
+          {title}
+        </motion.h3>
+        <p className="text-sm text-muted-foreground mb-4 flex-1 line-clamp-3 h-[60px]">{caption}</p>
+        <div className="flex items-center gap-2 mt-auto">
+          <motion.div
+            whileHover={{ y: -3 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            className="w-full"
+          >
+            <a 
+              href={brochureUrl} 
+              download={downloadFileName}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full block"
+            >
+              <Button
+                size="sm"
+                className="overflow-hidden group relative bg-[#2D6FBA] hover:bg-[#22548e] w-full"
+                variant="default"
+              >
+                <motion.span initial={{ opacity: 1 }} whileHover={{ opacity: 0.9 }}>
+                  Download Brochure
+                </motion.span>
+                <motion.div
+                  className="ml-1 inline-flex"
+                  initial={{ y: 0 }}
+                  whileHover={{ y: -3 }}
+                  transition={{
+                    duration: 0.2,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    repeatDelay: 0.2,
+                  }}
+                >
+                  <Download className="h-4 w-4 group-hover:text-white" />
+                </motion.div>
+                <motion.span
+                  className="absolute bottom-0 left-0 h-0.5 bg-white"
+                  initial={{ width: 0 }}
+                  whileHover={{ width: "100%" }}
+                  transition={{ duration: 0.3 }}
+                />
+              </Button>
+            </a>
+          </motion.div>
+        </div>
+      </motion.div>
+    </motion.article>
+  );
+};
 
 const GeneratorRange = () => {
   // Define generator types for filtering
@@ -222,15 +148,6 @@ const GeneratorRange = () => {
   ];
   const [activeFilter, setActiveFilter] = useState("All");
 
-  // Modal state
-  const [modalOpen, setModalOpen] = useState(false);
-  const [modalGenerator, setModalGenerator] = useState<{
-    title: string;
-    img: string;
-    caption: string;
-    details: string[];
-  } | null>(null);
-
   // Define data with categories for filtering
   const generatorData = [
     {
@@ -239,12 +156,7 @@ const GeneratorRange = () => {
       caption:
         "High-output Kirloskar Optiprime engineered for mission-critical facilities.",
       categories: ["Optiprime"],
-      details: [
-        "Designed for high-load and mission-critical operations.",
-        "Ensures stable and efficient performance under continuous use.",
-        "Silent operation with advanced fuel efficiency.",
-        "Trusted choice for IT parks, hospitals, and data centers.",
-      ],
+      brochureUrl: optiprime,
     },
     {
       title: "Kirloskar Gas Generator (15 – 250 kVA)",
@@ -252,84 +164,49 @@ const GeneratorRange = () => {
       caption:
         "Clean, efficient power for commercial and industrial applications.",
       categories: ["Gas Generators"],
-      details: [
-        "Eco-friendly with low emissions.",
-        "Cost-effective for long-duration use.",
-        "Ideal for industries, hotels, and campuses.",
-        "Wide service support across India.",
-      ],
+      brochureUrl: Cpcb,
     },
     {
       title: "Kirloskar CPCB4+ Diesel Generator (7.5 – 20 kVA)",
       img: dG1,
       caption: "Portable power for events, remote sites, and emergency backup.",
       categories: ["CPCB4+ Diesel Generators"],
-      details: [
-        "Compact and easy to transport.",
-        "Reliable for small businesses and households.",
-        "Low fuel consumption with CPCB4+ compliance.",
-        "Perfect for emergency and small-scale power needs.",
-      ],
+      brochureUrl: Cpcb,
     },
     {
       title: "Kirloskar CPCB4+ Diesel Generator (25 – 58.5 kVA)",
       img: dG3,
       caption: "Balanced performance for medium-scale industrial needs.",
       categories: ["CPCB4+ Diesel Generators"],
-      details: [
-        "Suitable for small to medium industries.",
-        "Optimized for continuous performance.",
-        "Durable engine with low maintenance.",
-        "Silent operation for commercial use.",
-      ],
+      brochureUrl: cpcb58,
     },
     {
       title: "Kirloskar CPCB4+ Diesel Generator (82.5 – 160 kVA)",
       img: dG2,
       caption: "Scalable solutions with robust service network coverage.",
       categories: ["CPCB4+ Diesel Generators"],
-      details: [
-        "Medium to large-scale industrial use.",
-        "Efficient fuel management system.",
-        "Wide power range with reliable output.",
-        "Strong service and support network.",
-      ],
+      brochureUrl: cpcb160,
     },
     {
       title: "Kirloskar CPCB4+ Diesel Generator (200 – 250 kVA)",
       img: portable,
       caption: "Versatile DG sets for plants, campuses, and commercial towers.",
       categories: ["CPCB4+ Diesel Generators"],
-      details: [
-        "Ideal for campuses and mid-size factories.",
-        "Fuel-efficient with low emissions.",
-        "Noise-free and durable design.",
-        "Supports long working hours without breakdown.",
-      ],
+      brochureUrl: cpcb250,
     },
     {
       title: "Kirloskar CPCB4+ Diesel Generator (320 – 750 kVA)",
       img: dG2,
       caption: "Durable, high-efficiency backup for industries and campuses.",
       categories: ["CPCB4+ Diesel Generators"],
-      details: [
-        "Large-scale power solution for industries.",
-        "Designed for heavy-duty continuous operation.",
-        "Complies with CPCB4+ emission norms.",
-        "Available with AMF panels and canopy options.",
-      ],
+      brochureUrl: cpcb320,
     },
     {
       title: "Kirloskar CPCB4+ Diesel Generator (750 – 1500 kVA)",
       img: dG5,
       caption: "Low-emission, reliable diesel generator for versatile use.",
       categories: ["CPCB4+ Diesel Generators"],
-      details: [
-        "Massive power backup for large plants and campuses.",
-        "Long operational life with robust design.",
-        "Fuel-efficient with reduced emissions.",
-        "Comes with soundproof and weatherproof enclosures.",
-      ],
+      brochureUrl: cpcb750,
     },
     {
       title: "Kirloskar Portable Generator (2.1 – 5 kVA)",
@@ -337,12 +214,7 @@ const GeneratorRange = () => {
       caption:
         "Compact portable power for small-scale events, sites, and emergency use.",
       categories: ["Portable Generators"],
-      details: [
-        "Lightweight and easy to carry.",
-        "Best for home and small event use.",
-        "Quick start with silent operation.",
-        "Affordable backup solution for households.",
-      ],
+      brochureUrl: cpcb750,
     },
   ];
 
@@ -353,17 +225,6 @@ const GeneratorRange = () => {
       : generatorData.filter((generator) =>
           generator.categories.includes(activeFilter)
         );
-
-  // Handler for Explore More button
-  const handleExplore = (generator: {
-    title: string;
-    img: string;
-    caption: string;
-    details: string[];
-  }) => {
-    setModalGenerator(generator);
-    setModalOpen(true);
-  };
 
   return (
     <motion.section
@@ -391,7 +252,7 @@ const GeneratorRange = () => {
           </h2>
           <p className="text-white mt-6 mb-8">
             Kirloskar-certified systems tailored for industrial, commercial, and
-            backup applications.
+            backup applications. Download brochures for detailed specifications.
           </p>
         </motion.div>
 
@@ -466,7 +327,7 @@ const GeneratorRange = () => {
                     title={generator.title}
                     img={generator.img}
                     caption={generator.caption}
-                    onExplore={() => handleExplore(generator)}
+                    brochureUrl={generator.brochureUrl}
                   />
                 </motion.div>
               ))}
@@ -484,14 +345,9 @@ const GeneratorRange = () => {
           </motion.div>
         )}
       </div>
-      {/* Modal for generator info */}
-      <GeneratorModal
-        open={modalOpen}
-        onClose={() => setModalOpen(false)}
-        generator={modalGenerator}
-      />
     </motion.section>
   );
 };
 
 export default GeneratorRange;
+

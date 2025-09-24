@@ -813,15 +813,7 @@ const Products = () => {
                           >
                             View Specs <ChevronRight className="w-3 h-3" />
                           </Button>
-                          <Button variant="outline" size="sm" className="h-7 text-xs flex items-center gap-1 py-0 px-2 border-gray-600 text-gray-300 bg-gray-700 hover:bg-gray-600">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                              <rect x="3" y="3" width="18" height="18" rx="2" />
-                              <path d="M3 9h18" />
-                            </svg>
-                            <a href={Brochure} download={`${product.name} Brochure.pdf`} >
-                            Brochure
-                            </a>
-                          </Button>
+                          
                           <Button variant="default" size="sm" className="h-7 text-xs py-0 px-4 bg-[#2D6FBA] hover:bg-[#225488] text-white" onClick={() => openQuoteModal(product)}>
                             Get Quote
                           </Button>
