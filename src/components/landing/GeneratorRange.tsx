@@ -21,7 +21,8 @@ import cpcb160 from "@/assets/Brochure/82.5-160.pdf";
 import cpcb250 from "@/assets/Brochure/200-250.pdf";
 import cpcb320 from "@/assets/Brochure/320-750.pdf";
 import cpcb750 from "@/assets/Brochure/750 kVA-1500 kVA.pdf";
-
+import Gase from "@/assets/Brochure/NEW CATELOG - GAS GENSET.pdf";
+import sential from "@/assets/Brochure/4.Kirloskar powergen_Sentinel series Genset.pdf"
 
 // Animated Card component
 const Card = ({
@@ -143,7 +144,7 @@ const GeneratorRange = () => {
     "All",
     "CPCB4+ Diesel Generators",
     "Gas Generators",
-    "Petrol Generators",
+    "Portable Generators",
     "Optiprime",
   ];
   const [activeFilter, setActiveFilter] = useState("All");
@@ -164,7 +165,7 @@ const GeneratorRange = () => {
       caption:
         "Clean, efficient power for commercial and industrial applications.",
       categories: ["Gas Generators"],
-      brochureUrl: Cpcb,
+      brochureUrl: Gase,
     },
     {
       title: "Kirloskar CPCB4+ Diesel Generator (7.5 – 20 kVA)",
@@ -213,8 +214,8 @@ const GeneratorRange = () => {
       img: portable1,
       caption:
         "Compact portable power for small-scale events, sites, and emergency use.",
-      categories: ["Petrol Generators"],
-      brochureUrl: cpcb750,
+      categories: ["Portable Generators"],
+      brochureUrl: sential,
     },
   ];
 

@@ -239,7 +239,7 @@ const PowerSolutions = () => {
   const categories = [
     "Optiprime Generators",
     "Gas Generators", 
-    "Petrol Generators",
+    "Portable Generators",
     "CPCB4+ Diesel Generator",
     "Electrical Panels",
     "Servo Stabilizers",
@@ -278,7 +278,7 @@ const PowerSolutions = () => {
         img: gas
       }
     ],
-    "Petrol Generators": [
+    "Portable Generators": [
       {
         title: "Petrol Generators",
         desc: "Compact and mobile power solutions for construction sites, events, and emergency backup with easy transport features.",

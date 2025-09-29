@@ -15,6 +15,7 @@ import gen from "@/assets/Range5.png"
 import earth from "@/assets/earth.png"
 import certificate from "@/assets/Certificate 1.png"
 import certi from "@/assets/certi1.png"
+import isocerti from "@/assets/Testimonial/iso certificate.jpeg"
 
 const About = () => {
   return (
@@ -107,9 +108,9 @@ const About = () => {
               </div>
               <div>
                 <img 
-                  src={certi}
+                  src={iso}
                   alt="Person working on laptop" 
-                  className="w-full    object-cover rounded-lg"
+                  className="w-[70vh] h-[55vh]  object-cover rounded-lg"
                 />
               </div>
             </div>

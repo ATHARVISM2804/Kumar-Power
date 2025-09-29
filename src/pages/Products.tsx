@@ -37,6 +37,7 @@ import trans3 from "@/assets/transformer/trans3.png"
 import Brochure from "@/assets/Brochure.pdf"
 import GensetWorkingLimit from "@/assets/Brochure/genset working limit .pdf"
 import Portfolio from "@/assets/Brochure/Portfolio.pdf"
+import bharat from "@/assets/Brochure/Bharat rajptar .pdf"
 
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("diesel");
@@ -857,34 +858,56 @@ const Products = () => {
             </div>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 mt-2 sm:mt-0">
               {/* Download Button */}
-             
+              
+              {/* New Bharat Rajpat Button */}
+             <a href={bharat} download="Bharat rajptar .pdf" ><Button
+                variant="ghost"
+                size="sm"
+                className="flex items-center gap-1 text-xs h-7 p-4 bg-white/20 text-gray-400 hover:bg-[#2D6FBA] hover:text-white"
+              >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                Download Bharat Rajpat
+              </Button></a> 
 
-<a href={GensetWorkingLimit} download="Genset-Working-Limit.pdf">
-  <Button
-    variant="ghost"
-    size="sm"
-    className="flex items-center gap-1 text-xs h-7 p-4 bg-white/20 text-gray-400 hover:bg-[#2D6FBA] hover:text-white"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="12"
-      height="12"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-      <polyline points="7 10 12 15 17 10" />
-      <line x1="12" y1="15" x2="12" y2="3" />
-    </svg>
-    Download Generator Working Catalogs
-  </Button>
-</a>
-
-
+              <a href={GensetWorkingLimit} download="Genset-Working-Limit.pdf">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="flex items-center gap-1 text-xs h-7 p-4 bg-white/20 text-gray-400 hover:bg-[#2D6FBA] hover:text-white"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                  Download Direction 76
+                </Button>
+              </a>
+              
               {/* Talk Button */}
               <Button onClick={
                 () => {
