@@ -125,7 +125,7 @@ import award2 from "@/assets/award 2.png";
 import award3 from "@/assets/award 3.png";
 import award4 from "@/assets/award 4.png";
 import ps from "@/assets/ps2.png"
-import Portfolio from "@/assets/Brochure/Portfolio.pdf"
+import Portfolio from "@/assets/Brochure/PortfolioProfile.pdf"
 
 interface GalleryImage {
   id: number;
