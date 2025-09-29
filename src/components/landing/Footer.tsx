@@ -98,12 +98,12 @@ const Footer = () => {
               <h4 className="font-bold text-white text-lg">Contact Us</h4>
               <ul className="space-y-2 text-sm text-white/90">
                 <li className="leading-relaxed">
-                  614, 6th Floor, Suneja Tower-II,
-Distt. Centre, Janak Puri,<br />New Delhi-110 058
+                  904, Westend Mall, Janakpuri,<br />New Delhi 110058
                 </li>
                 <li className="space-y-1">
-                  <div>P : <a href="tel:+919773851767" className="hover:text-blue-300 transition-colors">+91 97738 51767</a></div>
-                  <div><a href="tel:01145086389" className="hover:text-blue-300 transition-colors">011-45086389</a></div>
+                  <div>Main : <a href="tel:+919773851767" className="hover:text-blue-300 transition-colors">+91 97738 51767</a></div>
+                  <div>Support : <a href="tel:+919773877796" className="hover:text-blue-300 transition-colors">+91 97738 77796</a></div>
+                  <div>Landline : <a href="tel:01140191273" className="hover:text-blue-300 transition-colors">011-40191273</a></div>
                 </li>
                 <li>
                   E : <a href="mailto:kumargeneratorhouse@gmail.com" className="hover:text-blue-300 transition-colors break-all">kumargeneratorhouse@gmail.com</a>
