@@ -37,7 +37,7 @@ import trans3 from "@/assets/transformer/trans3.png"
 import Brochure from "@/assets/Brochure.pdf"
 import GensetWorkingLimit from "@/assets/Brochure/genset working limit .pdf"
 import Portfolio from "@/assets/Brochure/Portfolio.pdf"
-import bharat from "@/assets/Brochure/Bharat rajptar .pdf"
+import bharat from "@/assets/Brochure/genset working limit in delhi ncr.pdf"
 
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("diesel");
@@ -883,7 +883,7 @@ const Products = () => {
                 Download Bharat Rajpat
               </Button></a> 
 
-              <a href={GensetWorkingLimit} download="Genset-Working-Limit.pdf">
+              <a href={GensetWorkingLimit} download="genset working limit in delhi ncr.pdf">
                 <Button
                   variant="ghost"
                   size="sm"
