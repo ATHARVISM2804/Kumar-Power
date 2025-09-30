@@ -177,7 +177,7 @@ const About = () => {
                 alt="Manjot Singh Kumar" 
                 className="h-[57vh] object-cover mb-4"
               />
-              <h3 className="text-xl font-bold uppercase mb-1 text-center">JS KUMAR</h3>
+              <h3 className="text-xl font-bold uppercase mb-1 text-center">MS KUMAR</h3>
               <p className="font-semibold text-lg mb-3 text-center">(Director)</p>
               
               <p className="text-base text-justify leading-relaxed">
