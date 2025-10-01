@@ -31,7 +31,7 @@ const BackgroundVideo = () => {
         videoId: "FZGwh-hlDH4",
         playerVars: {
           autoplay: 1,
-          mute: 1, // Always start muted to comply with browser policies
+          mute: 1, 
           controls: 0,
           rel: 0,
           loop: 1,
@@ -149,19 +149,20 @@ const BackgroundVideo = () => {
       {/* YouTube Video */}
       <div id={playerId.current} className="absolute inset-0 w-full h-full" />
 
-      {/* Mute/Unmute Button - Fixed position, larger size, high visibility */}
-
-      <button
-        onClick={handleMuteToggle}
-        className="absolute bottom-2 z-50 md:bottom-32 md:right-28 bg-black bg-opacity-60 hover:bg-opacity-80 text-white p-4 rounded-full pointer-events-auto"
-        aria-label={videoMuted ? "Unmute video" : "Mute video"}
-      >
-        {videoMuted ? (
-          <VolumeX size={32} className="text-white" />
-        ) : (
-          <Volume2 size={32} className="text-white" />
-        )}
-      </button>
+      {/* Mute/Unmute Button - Fixed position, larger size, high visibility with maximum z-index */}
+      <div className="fixed inset-0 pointer-events-none z-[9999]">
+        <button
+          onClick={handleMuteToggle}
+          className="absolute bottom-2 md:bottom-32 md:right-28 bg-black bg-opacity-60 hover:bg-opacity-80 text-white p-4 rounded-full pointer-events-auto transition-all duration-200 hover:scale-110 shadow-2xl"
+          aria-label={videoMuted ? "Unmute video" : "Mute video"}
+        >
+          {videoMuted ? (
+            <VolumeX size={32} className="text-white" />
+          ) : (
+            <Volume2 size={32} className="text-white" />
+          )}
+        </button>
+      </div>
 
       {/* Overlays to hide YouTube UI */}
       <div className="absolute top-0 left-0 w-full h-[55px] md:h-[55px] bg-black z-10"></div>
