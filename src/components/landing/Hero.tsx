@@ -23,6 +23,12 @@ const Hero = () => {
   const [showOverlay, setShowOverlay] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    return () => setMounted(false);
+  }, []);
 
   useEffect(() => {
     // Check if it's a mobile device
@@ -59,7 +65,7 @@ const Hero = () => {
       <div className="relative h-[50vh] md:h-[78vh] lg:h-[95vh] overflow-hidden rounded-xl z-1 border shadow-[var(--shadow-glow)]">
         {/* Background video with improved configuration to hide controls */}
         <div className="absolute left-0 lg:top-0 -top-5 inset-0 w-full h-full md:w-[110vw] md:h-[150vh] lg:h-[110vh] z-0 md:top-[-45vh] md:translate-x-[-5%] md:translate-y-[-5%]">
-          <BackgroundVideo />
+          {mounted && <BackgroundVideo />}
         </div>
 
         {/* Reduced overlay opacity for mobile to maintain video visibility - ensure it doesn't block video controls */}
