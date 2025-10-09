@@ -38,6 +38,16 @@ import Brochure from "@/assets/Brochure.pdf"
 import GensetWorkingLimit from "@/assets/Brochure/genset working limit .pdf"
 import Portfolio from "@/assets/Brochure/Portfolio.pdf"
 import bharat from "@/assets/Brochure/Bharat rajptar .pdf"
+// Import specific brochures for each generator type
+import optiprimeBrochure from "@/assets/Brochure/OPTIPRIME- 117,400,500,640,1000,1500 & 2020 KVA.pdf"
+import cpcb7To20 from "@/assets/Brochure/7.5-20 kVA.pdf"
+import cpcb25To58 from "@/assets/Brochure/25-58.5.pdf"
+import cpcb82To160 from "@/assets/Brochure/82.5-160.pdf"
+import cpcb200To250 from "@/assets/Brochure/200-250.pdf"
+import cpcb320To750 from "@/assets/Brochure/320-750.pdf"
+import cpcb750To1500 from "@/assets/Brochure/750 kVA-1500 kVA.pdf"
+import gasBrochure from "@/assets/Brochure/NEW CATELOG - GAS GENSET.pdf"
+import petrolBrochure from "@/assets/Brochure/4.Kirloskar powergen_Sentinel series Genset.pdf"
 
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("diesel");
@@ -126,7 +136,7 @@ const Products = () => {
   const kirloskarSubcategories = [
     { id: "diesel", name: "CPCB4+ Diesel Generators" },
     { id: "gas", name: "Gas Generators" },
-    { id: "portable", name: "Petrol Generators" },
+    { id: "portable", name: "Portable Generators" },
     { id: "optiprime", name: "Optiprime" },
   ];
 
@@ -142,7 +152,7 @@ const Products = () => {
       phase: "Three Phase",
       ratingCount: 178,
       rating: 4.7,
-      range: "7.5 - 20 kVA",
+      range: "200 - 250 kVA",
       category: "diesel",
       description: "Our range of diesel generators are designed for maximum performance and reliability. Our generators meet the latest CPCB norms and are built for Indian conditions.",
     },
@@ -241,7 +251,7 @@ const Products = () => {
   const portableGenerators = [
     {
       id: "2.1 kVA to 5 kVA",
-      name: "2.1 kVA to 5 kVA Petrol Generators",
+      name: "2.1 kVA to 5 kVA Portable Generators",
       image: port, // Use imported image
       fuelType: "Gasoline",
       cpcbNorm: "CPCB-IV+",
@@ -1113,7 +1123,7 @@ const Products = () => {
                   {selectedProductForSpecs.category === 'portable' && (
                     <>
                       <p className="mb-3">
-                        This compact portable Petrol generator combines lightweight design (under 50kg) with robust power output, featuring Kirloskar's proprietary AVR technology that delivers clean sine wave output with less than 3% THD, making it safe for sensitive electronics. The reinforced tubular frame provides superior protection during transportation, while the ergonomic handle design with anti-vibration grips ensures comfortable portability.
+                        This compact portable Portable generator combines lightweight design (under 50kg) with robust power output, featuring Kirloskar's proprietary AVR technology that delivers clean sine wave output with less than 3% THD, making it safe for sensitive electronics. The reinforced tubular frame provides superior protection during transportation, while the ergonomic handle design with anti-vibration grips ensures comfortable portability.
                       </p>
                       <p>
                         The unit incorporates intelligent idle control that automatically adjusts engine speed to match load requirements, reducing fuel consumption by up to 25% during partial load operation. Multiple output sockets including standard 15A, USB ports with fast charging capability, and a dedicated high-current outlet provide versatile power options. The rugged construction features IP23 protection rating against dust and water splashes, with all-terrain wheels designed for easy movement across uneven surfaces.
@@ -1175,9 +1185,45 @@ const Products = () => {
                 {/* Only show brochure button for generator categories */}
                 {['diesel', 'gas', 'portable', 'optiprime'].includes(selectedProductForSpecs.category) && (
                   <Button size="sm" variant="outline" className="flex items-center gap-1 w-full sm:w-auto">
-                    <Download className="w-4 h-4" /> <a href={Brochure} download={"Brochure.pdf"} >
-                              Brochure
-                              </a>  
+                    <Download className="w-4 h-4" /> 
+                    <a 
+                      href={
+                        selectedProductForSpecs.category === 'diesel' 
+                          ? (selectedProductForSpecs.range.includes("7.5") || selectedProductForSpecs.range.includes("7.5 - 20") 
+                              ? cpcb7To20 
+                              : selectedProductForSpecs.range.includes("58") || selectedProductForSpecs.range.includes("25 - 58.5") 
+                                ? cpcb25To58 
+                                : selectedProductForSpecs.range.includes("82.5") || selectedProductForSpecs.range.includes("82.5 - 160") 
+                                  ? cpcb82To160 
+                                  : selectedProductForSpecs.range.includes("250") || selectedProductForSpecs.range.includes("200 - 250") || selectedProductForSpecs.id.includes("200 kVA to 250 kVA")
+                                    ? cpcb200To250
+                                    : selectedProductForSpecs.range.includes("320") || selectedProductForSpecs.range.includes("320 - 750")
+                                      ? cpcb320To750
+                                      : selectedProductForSpecs.range.includes("750") || selectedProductForSpecs.range.includes("750 - 1500")
+                                        ? cpcb750To1500
+                                        : Brochure)
+                          : selectedProductForSpecs.category === 'gas' 
+                            ? gasBrochure 
+                            : selectedProductForSpecs.category === 'portable' 
+                              ? petrolBrochure 
+                              : selectedProductForSpecs.category === 'optiprime' 
+                                ? optiprimeBrochure 
+                                : Brochure
+                      } 
+                      download={
+                        selectedProductForSpecs.category === 'diesel' 
+                          ? `Kirloskar ${selectedProductForSpecs.range} Diesel Generator Brochure.pdf`
+                          : selectedProductForSpecs.category === 'gas' 
+                            ? "Kirloskar Gas Generator Brochure.pdf" 
+                            : selectedProductForSpecs.category === 'portable' 
+                              ? "Kirloskar Portable Generator Brochure.pdf" 
+                              : selectedProductForSpecs.category === 'optiprime' 
+                                ? "Kirloskar Optiprime Generator Brochure.pdf" 
+                                : "Generator Brochure.pdf"
+                      }
+                    >
+                      Brochure
+                    </a>  
                   </Button>
                 )}
               </div>
