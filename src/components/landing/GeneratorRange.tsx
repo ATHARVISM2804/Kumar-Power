@@ -210,7 +210,7 @@ const GeneratorRange = () => {
       brochureUrl: cpcb750,
     },
     {
-      title: "Kirloskar Petrol Generator (2.1 – 5 kVA)",
+      title: "Kirloskar Portable Generator (2.1 – 5 kVA)",
       img: portable1,
       caption:
         "Compact portable power for small-scale events, sites, and emergency use.",

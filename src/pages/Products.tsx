@@ -37,7 +37,7 @@ import trans3 from "@/assets/transformer/trans3.png"
 import Brochure from "@/assets/Brochure.pdf"
 import GensetWorkingLimit from "@/assets/Brochure/genset working limit .pdf"
 import Portfolio from "@/assets/Brochure/Portfolio.pdf"
-import bharat from "@/assets/Brochure/genset working limit in delhi ncr.pdf"
+import bharat from "@/assets/Brochure/Bharat rajptar .pdf"
 
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("diesel");
@@ -1172,11 +1172,14 @@ const Products = () => {
                 <Button size="sm" variant="default" className="bg-[#2D6FBA] hover:bg-[#225488] w-full sm:w-auto">
                   <Link to="/contact">Request Quote </Link>
                 </Button>
-                <Button size="sm" variant="outline" className="flex items-center gap-1 w-full sm:w-auto">
-                  <Download className="w-4 h-4" /> <a href={Brochure} download={"Brochure.pdf"} >
-                            Brochure
-                            </a>  
-                </Button>
+                {/* Only show brochure button for generator categories */}
+                {['diesel', 'gas', 'portable', 'optiprime'].includes(selectedProductForSpecs.category) && (
+                  <Button size="sm" variant="outline" className="flex items-center gap-1 w-full sm:w-auto">
+                    <Download className="w-4 h-4" /> <a href={Brochure} download={"Brochure.pdf"} >
+                              Brochure
+                              </a>  
+                  </Button>
+                )}
               </div>
             </>
           )}

@@ -280,12 +280,12 @@ const PowerSolutions = () => {
     ],
     "Portable Generators": [
       {
-        title: "Petrol Generators",
+        title: "Portable Generators",
         desc: "Compact and mobile power solutions for construction sites, events, and emergency backup with easy transport features.",
         specs: [
           "2.1 kVA to 5 kVA",
           "Lightweight Design",
-          "Fuel: Petrol, Diesel",
+          "Fuel: Portable, Diesel",
           "Application: Construction, Events, Residential",
           "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
         ],
@@ -294,7 +294,7 @@ const PowerSolutions = () => {
     ],
     "CPCB4+ Diesel Generator": [
       {
-    title: "CPCB4+ Diesel Generators",
+    title: "CPCB4+ Diesel Generators(200 kVA - 250 kVA)",
     desc: "High-performance CPCB4+ compliant diesel generators with liquid cooling, ideal for industrial and commercial usage.",
     specs: [
       "Range: 200 kVA - 250 kVA",
@@ -308,7 +308,7 @@ const PowerSolutions = () => {
     img: diesel
   },
   {
-    title: "CPCB4+ Diesel Generators",
+    title: "CPCB4+ Diesel Generators( 7.5 kVA - 20 kVA)",
     desc: "Compact CPCB4+ compliant diesel generators designed for small businesses and commercial setups.",
     specs: [
       "Range: 7.5 kVA - 20 kVA",
@@ -322,7 +322,7 @@ const PowerSolutions = () => {
     img: dg1
   },
   {
-    title: "CPCB4+ Diesel Generators",
+    title: "CPCB4+ Diesel Generators(25 kVA - 58.5 kVA)",
     desc: "Reliable CPCB4+ emission compliant diesel generators with advanced liquid cooling for efficient performance.",
     specs: [
       "Range: 25 kVA - 58.5 kVA",
@@ -336,7 +336,7 @@ const PowerSolutions = () => {
     img: dg3
   },
   {
-    title: "CPCB4+ Diesel Generators",
+    title: "CPCB4+ Diesel Generators(82.5 kVA - 160 kVA)",
     desc: "Versatile CPCB4+ compliant diesel generators designed for medium-scale industries and businesses.",
     specs: [
       "Range: 82.5 kVA - 160 kVA",
@@ -350,7 +350,7 @@ const PowerSolutions = () => {
     img: dg2
   },
   {
-    title: "CPCB4+ Diesel Generators",
+    title: "CPCB4+ Diesel Generators(320 kVA - 750 kVA)",
     desc: "Heavy-duty CPCB4+ compliant diesel generators offering superior efficiency and power reliability.",
     specs: [
       "Range: 320 kVA - 750 kVA",
@@ -364,7 +364,7 @@ const PowerSolutions = () => {
     img: dg2
   },
   {
-    title: "CPCB4+ Diesel Generators",
+    title: "CPCB4+ Diesel Generators(750 kVA - 1500 kVA)",
     desc: "High-capacity CPCB4+ diesel generators for continuous heavy industrial and commercial applications.",
     specs: [
       "Range: 750 kVA - 1500 kVA",
@@ -590,12 +590,12 @@ const PowerSolutions = () => {
     switch(category) {
       case 'Optiprime Generators':
       case 'Gas Generators':
-      case 'Petrol Generators':
+      case 'Portable Generators':
       case 'CPCB4+ Diesel Generator':
         return {
           powerRange: ["0-50 kVA", "51-200 kVA", "201-500 kVA", "501+ kVA"],
           application: ["Industrial", "Commercial", "Residential", "Construction", "Events"],
-          fuelType: ["Diesel", "Natural Gas", "Bi-Fuel", "LPG", "Petrol"],
+          fuelType: ["Diesel", "Natural Gas", , "LPG", "Petrol"],
           certification: ["CPCB4+", "ISO 9001:2015", "Kirloskar Authorized"]
         };
       case 'Inverters':
@@ -638,7 +638,7 @@ const PowerSolutions = () => {
         return {
           powerRange: ["0-50 kVA", "51-200 kVA", "201-500 kVA", "501+ kVA"],
           application: ["Industrial", "Commercial", "Residential", "Construction", "Events"],
-          fuelType: ["Diesel", "Natural Gas", "Bi-Fuel", "LPG", "Petrol"],
+          fuelType: ["Diesel", "Natural Gas", , "LPG", "Petrol"],
           certification: ["CPCB4+", "ISO 9001:2015", "Kirloskar Authorized"]
         };
     }
