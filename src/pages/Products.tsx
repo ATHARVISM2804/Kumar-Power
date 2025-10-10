@@ -890,7 +890,7 @@ const Products = () => {
                     <polyline points="7 10 12 15 17 10" />
                     <line x1="12" y1="15" x2="12" y2="3" />
                   </svg>
-                Download Bharat Rajpat
+                Download Bharat Rajptar
               </Button></a> 
 
               <a href={GensetWorkingLimit} download="genset working limit in delhi ncr.pdf">
