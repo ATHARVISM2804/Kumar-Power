@@ -890,7 +890,7 @@ const Products = () => {
               </div>
 
               {/* Not Sure What Fits Section */}
-              <div className="mt-10 bg-gray-800 w-[20vw] p-4 rounded-md border border-gray-700">
+              <div className="mt-10 bg-gray-800 w-full sm:max-w-xs md:max-w-md lg:max-w-xs xl:max-w-sm 2xl:max-w-md p-4 rounded-md border border-gray-700 mx-auto flex flex-col items-center text-center">
                 <h3 className="font-medium text-base mb-1 text-white">Not sure what fits?</h3>
                 <p className="text-xs text-gray-400 mb-3">
                   Use our 3-step Generator Selector to find the perfect power solution for your needs.
