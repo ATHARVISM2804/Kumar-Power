@@ -48,6 +48,7 @@ import cpcb320To750 from "@/assets/Brochure/320-750.pdf"
 import cpcb750To1500 from "@/assets/Brochure/750 kVA-1500 kVA.pdf"
 import gasBrochure from "@/assets/Brochure/NEW CATELOG - GAS GENSET.pdf"
 import petrolBrochure from "@/assets/Brochure/4.Kirloskar powergen_Sentinel series Genset.pdf"
+import Direction76 from "@/assets/Brochure/Direction76.pdf"
 
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("diesel");
@@ -893,7 +894,7 @@ const Products = () => {
                 Download Bharat Rajptar
               </Button></a> 
 
-              <a href={GensetWorkingLimit} download="genset working limit in delhi ncr.pdf">
+              <a href={Direction76} download="Direction76.pdf">
                 <Button
                   variant="ghost"
                   size="sm"
