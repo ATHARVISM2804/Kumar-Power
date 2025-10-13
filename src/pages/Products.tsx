@@ -661,8 +661,52 @@ const Products = () => {
         <div className="max-w-7xl mx-auto px-2 sm:px-4 py-6 sm:py-8">
           {/* Filter and Sort Controls */}
 
-          <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center px-20 mb-20 gap-3 sm:gap-4">
-            <div className='flex items-center gap-10'>
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center px-4 sm:px-20 mb-10 sm:mb-20 gap-4">
+            {/* Mobile View */}
+            <div className="w-full flex flex-col gap-4 sm:hidden">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="flex flex-col gap-2">
+                  <span className="text-sm font-medium text-gray-300">Sort by:</span>
+                  <select
+                    id="sort-by-mobile"
+                    value={sortBy}
+                    onChange={(e) => setSortBy(e.target.value)}
+                    className="w-full bg-gray-800 border border-gray-700 rounded px-2 py-2 text-sm text-white"
+                  >
+                    <option value="popularity">Popularity</option>
+                    <option value="rating">Rating</option>
+                  </select>
+                </div>
+                
+                <div className="flex flex-col gap-2">
+                  <span className="text-sm font-medium text-gray-300">Power Range:</span>
+                  <select
+                    id="power-range-mobile"
+                    value={powerRange}
+                    onChange={(e) => setPowerRange(e.target.value)}
+                    className="w-full bg-gray-800 border border-gray-700 rounded px-2 py-2 text-sm text-white"
+                  >
+                    <option value="all">All Ranges</option>
+                    <option value="small">Small (5-50 kVA)</option>
+                    <option value="medium">Medium (50-250 kVA)</option>
+                    <option value="large">Large (250+ kVA)</option>
+                  </select>
+                </div>
+              </div>
+              
+              <Button
+                variant="outline"
+                size="sm"
+                className="w-full flex items-center justify-center gap-1 border-gray-700 text-gray-300 bg-gray-800 hover:bg-gray-700 py-2"
+                onClick={() => setShowMobileFilters(!showMobileFilters)}
+              >
+                <Filter className="w-4 h-4" />
+                <span>More Filters</span>
+              </Button>
+            </div>
+
+            {/* Desktop View */}
+            <div className='hidden sm:flex items-center gap-10'>
               <div className="flex items-center gap-2">
                 <span className="text-sm font-medium text-gray-300">Sort by:</span>
                 <select
@@ -690,11 +734,12 @@ const Products = () => {
                   <option value="large">Large (250+ kVA)</option>
                 </select>
               </div>
-            </div>
+            </div> {/* <-- FIXED: added missing closing angle bracket here */}
+            
             <Button
               variant="outline"
               size="sm"
-              className="flex items-center gap-1 border-gray-700 text-gray-300 bg-gray-800 hover:bg-gray-700"
+              className="hidden sm:flex items-center gap-1 border-gray-700 text-gray-300 bg-gray-800 hover:bg-gray-700"
               onClick={() => setShowMobileFilters(!showMobileFilters)}
             >
               <Filter className="w-4 h-4" />
@@ -1341,17 +1386,20 @@ const Products = () => {
       </Dialog>
 
       <Footer />
-      <style jsx global>{`
-        .bg-custom-blue {
-          background-color: #2D6FBA !important;
-        }
-        .text-custom-blue {
-          color: #2D6FBA !important;
-        }
-        .hover\:bg-custom-blue:hover {
-          background-color: #225488 !important;
-        }
-      `}</style>
+      {/* FIXED: Use a standard <style> tag instead of <style jsx global> */}
+      <style>
+        {`
+          .bg-custom-blue {
+            background-color: #2D6FBA !important;
+          }
+          .text-custom-blue {
+            color: #2D6FBA !important;
+          }
+          .hover\\:bg-custom-blue:hover {
+            background-color: #225488 !important;
+          }
+        `}
+      </style>
     </>
   );
 };
