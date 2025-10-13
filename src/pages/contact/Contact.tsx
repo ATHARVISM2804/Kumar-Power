@@ -210,7 +210,7 @@ const Contact = () => {
                   ></textarea>
                 </div>
                 <div>
-                  <div className="flex items-center translate-y-10 mt-2 gap-2">
+                  <div className="flex mb-20 md:mb-0 items-center translate-y-10 mt-2 gap-2">
                     <input
                       type="checkbox"
                       id="callback"
