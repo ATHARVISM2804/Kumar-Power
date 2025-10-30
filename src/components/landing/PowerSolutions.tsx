@@ -42,6 +42,7 @@ import Servo2 from "@/assets/servo/servo2.png"
 import Trans1 from "@/assets/transformer/Trans1.png"
 import Trans2 from "@/assets/transformer/trans2.png"
 import Trans3 from "@/assets/transformer/trans3.png"
+
 // Modal for product info
 const ProductModal = ({
   open,
@@ -426,7 +427,7 @@ const PowerSolutions = () => {
       "High Dielectric Strength",
       "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
     ],
-    img: Panel5
+    img: Panel1
   },
   {
     title: "SF6 Circuit Breakers",
@@ -440,19 +441,6 @@ const PowerSolutions = () => {
       "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
     ],
     img: Panel3
-  },
-  {
-    title: "Unitized Package Substation",
-    desc: "Compact and factory-built substations designed for fast installation, providing safe and efficient power distribution.",
-    specs: [
-      "Voltage Rating: Up to 36kV",
-      "Integrated Transformer, Switchgear & Protection",
-      "Compact Outdoor Design",
-      "Plug-and-Play Setup",
-      "Application: Industrial, Commercial & Utility",
-      "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
-    ],
-    img: Panel4
   },
   {
     title: "Panels",
@@ -548,6 +536,19 @@ const PowerSolutions = () => {
       "Standards: IEC 60076-11"
     ],
     img: Trans3
+  },
+  {
+    title: "Unitized Package Substation",
+    desc: "Compact and factory-built substations designed for fast installation, providing safe and efficient power distribution.",
+    specs: [
+      "Voltage Rating: Up to 36kV",
+      "Integrated Transformer, Switchgear & Protection",
+      "Compact Outdoor Design",
+      "Plug-and-Play Setup",
+      "Application: Industrial, Commercial & Utility",
+      "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
+    ],
+    img: Panel4
   }
     ]
   };
