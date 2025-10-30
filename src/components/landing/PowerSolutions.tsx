@@ -430,19 +430,6 @@ const PowerSolutions = () => {
     img: Panel1
   },
   {
-    title: "SF6 Circuit Breakers",
-    desc: "Advanced circuit breakers utilizing SF6 gas for superior arc quenching, offering reliable protection for medium voltage systems.",
-    specs: [
-      "Voltage Rating: Up to 40.5kV",
-      "Insulating Medium: SF6 Gas",
-      "Arc Quenching Technology",
-      "Application: Switchgear, Industrial Plants",
-      "Low Maintenance",
-      "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
-    ],
-    img: Panel3
-  },
-  {
     title: "Panels",
     desc: "Customizable electrical control and distribution panels designed for reliable operation in industrial applications.",
     specs: [
