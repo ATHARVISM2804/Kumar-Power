@@ -195,43 +195,10 @@ const PSCard = ({ title, desc, specs, img, onExplore }: { title: string; desc: s
   </motion.article>
 );
 
-const FilterSection = ({ title, options }: { title: string; options: string[] }) => (
-  <motion.div 
-    className="mb-6"
-    initial={{ opacity: 0, y: 10 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.3 }}
-  >
-    <h4 className="text-gray-900 font-medium mb-3">{title}</h4>
-    <div className="space-y-2">
-      {options.map((option, index) => (
-        <motion.label 
-          key={option} 
-          className="flex items-center gap-2 cursor-pointer"
-          initial={{ opacity: 0, x: -10 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.1 * index, duration: 0.2 }}
-          whileHover={{ x: 2, color: "#2D6FBA" }}
-        >
-          <motion.input
-            type="checkbox"
-            className="h-4 w-4 rounded border-gray-300 text-[#2D6FBA] focus:ring-[#2D6FBA]"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.8 }}
-          />
-          <span className="text-gray-600 text-sm">{option}</span>
-        </motion.label>
-      ))}
-    </div>
-  </motion.div>
-);
-
 const PowerSolutions = () => {
   const logoRef = useRef<HTMLDivElement>(null);
   const logoContainerRef = useRef<HTMLDivElement>(null);
   const [activeCategory, setActiveCategory] = useState<string>("Optiprime Generators");
-  const [selectedFilters, setSelectedFilters] = useState<{ [key: string]: string[] }>({});
-  const [filteredProducts, setFilteredProducts] = useState<any[]>([]);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalProduct, setModalProduct] = useState<{ title: string; desc: string; specs: string[]; img: string } | null>(null);
 
@@ -294,89 +261,89 @@ const PowerSolutions = () => {
     ],
     "CPCB4+ Diesel Generator": [
       {
-    title: "CPCB4+ Diesel Generators(200 kVA - 250 kVA)",
-    desc: "High-performance CPCB4+ compliant diesel generators with liquid cooling, ideal for industrial and commercial usage.",
-    specs: [
-      "Range: 200 kVA - 250 kVA",
-      "CPCB Norm: CPCB4+ Emission Compliance",
-      "Fuel: Diesel",
-      "Cooling: Liquid",
-      "Phase: Three Phase",
-      "Application: Industrial, Commercial",
-      "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
-    ],
-    img: diesel
-  },
-  {
-    title: "CPCB4+ Diesel Generators( 7.5 kVA - 20 kVA)",
-    desc: "Compact CPCB4+ compliant diesel generators designed for small businesses and commercial setups.",
-    specs: [
-      "Range: 7.5 kVA - 20 kVA",
-      "CPCB Norm: CPCB4+ Emission Compliance",
-      "Fuel: Diesel",
-      "Cooling: Liquid",
-      "Phase: Three Phase",
-      "Application: Residential, Small Commercial",
-      "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
-    ],
-    img: dg1
-  },
-  {
-    title: "CPCB4+ Diesel Generators(25 kVA - 58.5 kVA)",
-    desc: "Reliable CPCB4+ emission compliant diesel generators with advanced liquid cooling for efficient performance.",
-    specs: [
-      "Range: 25 kVA - 58.5 kVA",
-      "CPCB Norm: CPCB4+ Emission Compliance",
-      "Fuel: Diesel",
-      "Cooling: Liquid",
-      "Phase: Three Phase",
-      "Application: Industrial, Commercial",
-      "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
-    ],
-    img: dg3
-  },
-  {
-    title: "CPCB4+ Diesel Generators(82.5 kVA - 160 kVA)",
-    desc: "Versatile CPCB4+ compliant diesel generators designed for medium-scale industries and businesses.",
-    specs: [
-      "Range: 82.5 kVA - 160 kVA",
-      "CPCB Norm: CPCB4+ Emission Compliance",
-      "Fuel: Diesel",
-      "Cooling: Liquid",
-      "Phase: Three Phase",
-      "Application: Industrial, Commercial",
-      "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
-    ],
-    img: dg2
-  },
-  {
-    title: "CPCB4+ Diesel Generators(320 kVA - 750 kVA)",
-    desc: "Heavy-duty CPCB4+ compliant diesel generators offering superior efficiency and power reliability.",
-    specs: [
-      "Range: 320 kVA - 750 kVA",
-      "CPCB Norm: CPCB4+ Emission Compliance",
-      "Fuel: Diesel",
-      "Cooling: Liquid",
-      "Phase: Three Phase",
-      "Application: Large Industrial, Commercial",
-      "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
-    ],
-    img: dg2
-  },
-  {
-    title: "CPCB4+ Diesel Generators(750 kVA - 1500 kVA)",
-    desc: "High-capacity CPCB4+ diesel generators for continuous heavy industrial and commercial applications.",
-    specs: [
-      "Range: 750 kVA - 1500 kVA",
-      "CPCB Norm: CPCB4+ Emission Compliance",
-      "Fuel: Diesel",
-      "Cooling: Liquid",
-      "Phase: Three Phase",
-      "Application: Heavy Industrial, Commercial Complexes",
-      "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
-    ],
-    img: dg5
-  }
+        title: "CPCB4+ Diesel Generators( 7.5 kVA - 20 kVA)",
+        desc: "Compact CPCB4+ compliant diesel generators designed for small businesses and commercial setups.",
+        specs: [
+          "Range: 7.5 kVA - 20 kVA",
+          "CPCB Norm: CPCB4+ Emission Compliance",
+          "Fuel: Diesel",
+          "Cooling: Liquid",
+          "Phase: Three Phase",
+          "Application: Residential, Small Commercial",
+          "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
+        ],
+        img: dg1
+      },
+      {
+        title: "CPCB4+ Diesel Generators(25 kVA - 58.5 kVA)",
+        desc: "Reliable CPCB4+ emission compliant diesel generators with advanced liquid cooling for efficient performance.",
+        specs: [
+          "Range: 25 kVA - 58.5 kVA",
+          "CPCB Norm: CPCB4+ Emission Compliance",
+          "Fuel: Diesel",
+          "Cooling: Liquid",
+          "Phase: Three Phase",
+          "Application: Industrial, Commercial",
+          "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
+        ],
+        img: dg3
+      },
+      {
+        title: "CPCB4+ Diesel Generators(82.5 kVA - 160 kVA)",
+        desc: "Versatile CPCB4+ compliant diesel generators designed for medium-scale industries and businesses.",
+        specs: [
+          "Range: 82.5 kVA - 160 kVA",
+          "CPCB Norm: CPCB4+ Emission Compliance",
+          "Fuel: Diesel",
+          "Cooling: Liquid",
+          "Phase: Three Phase",
+          "Application: Industrial, Commercial",
+          "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
+        ],
+        img: dg2
+      },
+      {
+        title: "CPCB4+ Diesel Generators(200 kVA - 250 kVA)",
+        desc: "High-performance CPCB4+ compliant diesel generators with liquid cooling, ideal for industrial and commercial usage.",
+        specs: [
+          "Range: 200 kVA - 250 kVA",
+          "CPCB Norm: CPCB4+ Emission Compliance",
+          "Fuel: Diesel",
+          "Cooling: Liquid",
+          "Phase: Three Phase",
+          "Application: Industrial, Commercial",
+          "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
+        ],
+        img: diesel
+      },
+      {
+        title: "CPCB4+ Diesel Generators(320 kVA - 750 kVA)",
+        desc: "Heavy-duty CPCB4+ compliant diesel generators offering superior efficiency and power reliability.",
+        specs: [
+          "Range: 320 kVA - 750 kVA",
+          "CPCB Norm: CPCB4+ Emission Compliance",
+          "Fuel: Diesel",
+          "Cooling: Liquid",
+          "Phase: Three Phase",
+          "Application: Large Industrial, Commercial",
+          "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
+        ],
+        img: dg2
+      },
+      {
+        title: "CPCB4+ Diesel Generators(750 kVA - 1500 kVA)",
+        desc: "High-capacity CPCB4+ diesel generators for continuous heavy industrial and commercial applications.",
+        specs: [
+          "Range: 750 kVA - 1500 kVA",
+          "CPCB Norm: CPCB4+ Emission Compliance",
+          "Fuel: Diesel",
+          "Cooling: Liquid",
+          "Phase: Three Phase",
+          "Application: Heavy Industrial, Commercial Complexes",
+          "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
+        ],
+        img: dg5
+      }
     ],
     Inverters: [
       {
@@ -585,114 +552,9 @@ const PowerSolutions = () => {
     ]
   };
 
-  // Get the filter options based on active category
-  const getFilterOptionsForCategory = (category: string) => {
-    switch(category) {
-      case 'Optiprime Generators':
-      case 'Gas Generators':
-      case 'Portable Generators':
-      case 'CPCB4+ Diesel Generator':
-        return {
-          powerRange: ["0-50 kVA", "51-200 kVA", "201-500 kVA", "501+ kVA"],
-          application: ["Industrial", "Commercial", "Residential", "Construction", "Events"],
-          fuelType: ["Diesel", "Natural Gas", , "LPG", "Petrol"],
-          certification: ["CPCB4+", "ISO 9001:2015", "Kirloskar Authorized"]
-        };
-      case 'Inverters':
-        return {
-          powerRange: ["Below 1kVA", "1-3kVA", "3-10kVA", "Above 10kVA"],
-          application: ["Home", "Commercial", "Solar", "Industrial"],
-          type: ["Pure Sine Wave", "Modified Sine Wave", "Solar Hybrid"],
-          features: ["LCD Display", "Mobile App", "Battery Management", "IoT Enabled"]
-        };
-      case 'Variable Frequency Drives (VFDs)':
-
-        return {
-          powerRange: ["Below 5kW", "5-50kW", "50-200kW", "Above 200kW"],
-          application: ["HVAC", "Manufacturing", "Conveyors", "Pumps"],
-          controlType: ["V/F Control", "Sensorless Vector", "Closed Loop"],
-          protection: ["IP20", "IP54", "IP66", "UL Type 1"]
-        };
-      case 'Electrical Panels':
-        return {
-          currentRating: ["Up to 100A", "100-630A", "630-2000A", "Above 2000A"],
-          application: ["Power Distribution", "Motor Control", "Synchronization"],
-          features: ["Automatic Changeover", "APFC", "Energy Metering"],
-          certification: ["CPCB4+", "ISO 9001:2015", "Kirloskar Authorized"]
-        };
-      case 'Servo Stabilizers':
-        return {
-          powerRange: ["Single Phase", "Three Phase", "High Voltage"],
-          application: ["Industrial", "Medical", "IT Equipment", "HVAC"],
-          features: ["Digital Display", "Auto Bypass", "Remote Monitoring"],
-          technology: ["IGBT Based", "Relay Based", "Microprocessor Control"]
-        };
-      case 'Transformers':
-        return {
-          powerRange: ["10-100kVA", "100-500kVA", "500-2000kVA", "Above 2000kVA"],
-          type: ["Oil Filled", "Dry Type", "Cast Resin", "Isolation"],
-          cooling: ["ONAN", "ONAF", "OFAF", "OFWF"],
-          application: ["Distribution", "Power", "Industrial"]
-        };
-      default:
-        return {
-          powerRange: ["0-50 kVA", "51-200 kVA", "201-500 kVA", "501+ kVA"],
-          application: ["Industrial", "Commercial", "Residential", "Construction", "Events"],
-          fuelType: ["Diesel", "Natural Gas", , "LPG", "Petrol"],
-          certification: ["CPCB4+", "ISO 9001:2015", "Kirloskar Authorized"]
-        };
-    }
-  };
-
-  const activeFilters = getFilterOptionsForCategory(activeCategory);
-
-  // Helper: check if product matches selected filters
-  const productMatchesFilters = (product: any, filters: { [key: string]: string[] }) => {
-    // For each filter group, at least one selected value must match a spec
-    return Object.entries(filters).every(([filterName, selectedValues]) => {
-      if (!selectedValues.length) return true;
-      return selectedValues.some(val =>
-        product.specs.some(spec => spec.toLowerCase().includes(val.toLowerCase()))
-      );
-    });
-  };
-
-  // Handle filter checkbox change
-  const handleFilterChange = (filterName: string, option: string, checked: boolean) => {
-    setSelectedFilters(prev => {
-      const prevOptions = prev[filterName] || [];
-      let newOptions;
-      if (checked) {
-        newOptions = [...prevOptions, option];
-      } else {
-        newOptions = prevOptions.filter(o => o !== option);
-      }
-      return { ...prev, [filterName]: newOptions };
-    });
-  };
-
-  // Apply filters button handler
-  const applyFilters = () => {
-    const products = categoryProducts[activeCategory as keyof typeof categoryProducts];
-    if (!products) return setFilteredProducts([]);
-    if (Object.values(selectedFilters).every(arr => arr.length === 0)) {
-      setFilteredProducts([]);
-      return;
-    }
-    const filtered = products.filter(product => productMatchesFilters(product, selectedFilters));
-    setFilteredProducts(filtered);
-  };
-
-  // Reset filters button handler
-  const resetFilters = () => {
-    setSelectedFilters({});
-    setFilteredProducts([]);
-  };
-
   // Reset filters and filtered products when category changes
   useEffect(() => {
-    setSelectedFilters({});
-    setFilteredProducts([]);
+    setModalOpen(false);
   }, [activeCategory]);
 
   // Scrollable logo marquee effect
@@ -834,11 +696,11 @@ const PowerSolutions = () => {
         </div>
       </div>
       
-      {/* Rest of the content */}
-      <div className="container mx-auto grid md:grid-cols-4 gap-4 md:gap-8 px-4 md:px-0">
-        {/* Left: Content */}
+      {/* Main content - remove grid and use full width */}
+      <div className="container mx-auto px-4 md:px-0">
+        {/* Content takes full width */}
         <motion.div 
-          className="md:col-span-3"
+          className="w-full"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 1.0 }}
@@ -846,16 +708,13 @@ const PowerSolutions = () => {
           <AnimatePresence mode="wait">
             <motion.div 
               key={activeCategory}
-              className="grid md:grid-cols-2 gap-6"
+              className="grid md:grid-cols-3 gap-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              {(filteredProducts.length > 0
-                ? filteredProducts
-                : categoryProducts[activeCategory as keyof typeof categoryProducts]
-              ).map((product, idx) => (
+              {categoryProducts[activeCategory as keyof typeof categoryProducts].map((product, idx) => (
                 <PSCard
                   key={`${activeCategory}-${idx}`}
                   title={product.title}
@@ -868,9 +727,8 @@ const PowerSolutions = () => {
             </motion.div>
           </AnimatePresence>
           
-          {/* Empty state if no products for a category or filter */}
-          {(filteredProducts.length === 0 &&
-            categoryProducts[activeCategory as keyof typeof categoryProducts].length === 0) && (
+          {/* Simplified empty state */}
+          {categoryProducts[activeCategory as keyof typeof categoryProducts].length === 0 && (
             <motion.div 
               className="flex flex-col items-center justify-center py-16"
               initial={{ opacity: 0, scale: 0.9 }}
@@ -907,121 +765,6 @@ const PowerSolutions = () => {
               </motion.p>
             </motion.div>
           )}
-          {(filteredProducts.length === 0 &&
-            Object.values(selectedFilters).flat().length > 0) && (
-            <motion.div 
-              className="flex flex-col items-center justify-center py-16"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4 }}
-            >
-              <motion.svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                className="h-16 w-16 text-gray-300 mb-4" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor"
-                initial={{ scale: 0.5, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
-              </motion.svg>
-              <motion.h3 
-                className="text-xl font-medium text-gray-900 mb-2"
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.3 }}
-              >
-                No products match the selected filters
-              </motion.h3>
-              <motion.p 
-                className="text-gray-500"
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.5, duration: 0.3 }}
-              >
-                Try adjusting your filter criteria.
-              </motion.p>
-            </motion.div>
-          )}
-        </motion.div>
-        
-        {/* Right: Filter */}
-        <motion.div 
-          className="bg-white mt-10 p-6 rounded-lg shadow-sm border h-fit"
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 1.2 }}
-        >
-          <motion.h3 
-            className="font-semibold text-lg mb-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.3 }}
-          >
-            Filter {activeCategory}
-          </motion.h3>
-          
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeCategory}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              {Object.entries(getFilterOptionsForCategory(activeCategory)).map(([filterName, options], index) => (
-                <motion.div 
-                  className="mb-6"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                  key={`${activeCategory}-${filterName}`}
-                >
-                  <h4 className="text-gray-900 font-medium mb-3">
-                    {filterName.charAt(0).toUpperCase() + filterName.slice(1).replace(/([A-Z])/g, ' $1')}
-                  </h4>
-                  <div className="space-y-2">
-                    {options.map((option, idx) => (
-                      <motion.label 
-                        key={option}
-                        className="flex items-center gap-2 cursor-pointer"
-                        initial={{ opacity: 0, x: -10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.1 * idx, duration: 0.2 }}
-                        whileHover={{ x: 2, color: "#2D6FBA" }}
-                      >
-                        <motion.input
-                          type="checkbox"
-                          className="h-4 w-4 rounded border-gray-300 text-[#2D6FBA] focus:ring-[#2D6FBA]"
-                          checked={selectedFilters[filterName]?.includes(option) || false}
-                          onChange={e => handleFilterChange(filterName, option, e.target.checked)}
-                          whileHover={{ scale: 1.2 }}
-                          whileTap={{ scale: 0.8 }}
-                        />
-                        <span className="text-gray-600 text-sm">{option}</span>
-                      </motion.label>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
-
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.5, duration: 0.3 }}
-            className="flex gap-2"
-          >
-            <Button className="w-full bg-[#2D6FBA] hover:bg-[#22548e] text-white" onClick={applyFilters}>
-              Apply Filters
-            </Button>
-            <Button className="w-full bg-gray-200 hover:bg-gray-300 text-black" onClick={resetFilters}>
-              Reset Filters
-            </Button>
-          </motion.div>
         </motion.div>
       </div>
       

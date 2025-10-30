@@ -83,15 +83,15 @@ const Hero = () => {
         {/* Main Content Overlay */}
         {showOverlay && (
           <div className="absolute top-0 left-0 h-full w-full flex flex-col items-center justify-center z-20 p-4">
-            <div className="backdrop-blur-xl border border-white/30 rounded-2xl p-6 md:p-8 lg:p-12 shadow-2xl w-full max-w-[90%] sm:max-w-xs md:max-w-lg lg:max-w-2xl flex flex-col items-center space-y-4 md:space-y-8">
-              <h1 className="text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-center leading-tight drop-shadow-lg">
+            <div className="backdrop-blur-xl border border-white/30 rounded-2xl p-4 md:p-8 lg:p-12 shadow-2xl w-full max-w-[90%] sm:max-w-xs md:max-w-lg lg:max-w-2xl flex flex-col items-center space-y-2 md:space-y-8">
+              <h1 className="text-white text-xl sm:text-2xl md:text-5xl lg:text-6xl font-extrabold text-center leading-tight drop-shadow-lg">
                 Unleashing Power
                 <br />
                 Solutions.
                 <br />
                 Built for the Nation.
               </h1>
-              <p className="text-white/90 text-center text-sm sm:text-base md:text-lg font-medium">
+              <p className="text-white/90 text-center text-xs sm:text-sm md:text-lg font-medium">
                 <span className="hidden md:inline">
                   Authorized Channel Distributor | ISO 9001:2015 | 500+
                   Enterprise Clients | 30+ Years of Uninterrupted Excellence
@@ -106,7 +106,7 @@ const Hero = () => {
                   30+ Years of Excellence
                 </span>
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 w-full justify-center mt-2">
+              <div className="flex flex-col sm:flex-row gap-2 w-full justify-center">
                 <Button
                   onClick={() => {
                     window.location.href = "/products";
@@ -135,8 +135,8 @@ const Hero = () => {
               </div>
 
               {/* Trusted By Logos - with sliding animation */}
-              <div className="mt-3 md:mt-6 flex flex-col items-center w-full">
-                <span className="text-white text-sm md:text-base font-semibold mb-1 md:mb-2 tracking-wide">
+              <div className="mt-2 md:mt-6 flex flex-col items-center w-full">
+                <span className="text-white text-xs md:text-base font-semibold mb-1 tracking-wide">
                   TRUSTED BY
                 </span>
                 <div className="w-full overflow-hidden relative">
@@ -233,6 +233,24 @@ const Hero = () => {
                       alt="BuildMaster"
                       className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
                     />
+                  </div>
+                </div>
+              </div>
+
+              {/* Associations Section - Optimized for mobile visibility */}
+              <div className="mt-1 md:mt-4 flex flex-col items-center w-full pb-2">
+                <span className="text-white text-xs md:text-base font-semibold mb-1 tracking-wide">
+                  ASSOCIATIONS
+                </span>
+                <div className="flex flex-wrap justify-center gap-1 md:gap-3 px-2">
+                  <div className="bg-white/10 backdrop-blur border border-white/20 rounded-md px-2 md:px-3 py-1">
+                    <span className="text-white text-xs md:text-sm font-medium whitespace-nowrap">Kirloskar Authorized</span>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur border border-white/20 rounded-md px-2 md:px-3 py-1">
+                    <span className="text-white text-xs md:text-sm font-medium whitespace-nowrap">CPCB Certified</span>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur border border-white/20 rounded-md px-2 md:px-3 py-1">
+                    <span className="text-white text-xs md:text-sm font-medium whitespace-nowrap">ISO 9001:2015</span>
                   </div>
                 </div>
               </div>
