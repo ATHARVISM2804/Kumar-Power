@@ -61,9 +61,6 @@ const Products = () => {
   const [showSpecsModal, setShowSpecsModal] = useState(false);
   const [selectedProductForSpecs, setSelectedProductForSpecs] = useState<any>(null);
 
-  // State for generator selector modal
-  const [showSelectorModal, setShowSelectorModal] = useState(false);
-
   // Quote modal state
   const [showQuoteModal, setShowQuoteModal] = useState(false);
   const [quoteProduct, setQuoteProduct] = useState<any>(null);
@@ -894,8 +891,8 @@ const Products = () => {
                 ))}
               </div>
 
-              {/* Not Sure What Fits Section */}
-              <div className="mt-10 bg-gray-800 w-full sm:max-w-xs md:max-w-md lg:max-w-xs xl:max-w-sm 2xl:max-w-md p-4 rounded-md border border-gray-700 mx-auto flex flex-col items-center text-center">
+              {/* Remove Not Sure What Fits Section */}
+              {/* <div className="mt-10 bg-gray-800 w-full sm:max-w-xs md:max-w-md lg:max-w-xs xl:max-w-sm 2xl:max-w-md p-4 rounded-md border border-gray-700 mx-auto flex flex-col items-center text-center">
                 <h3 className="font-medium text-base mb-1 text-white">Not sure what fits?</h3>
                 <p className="text-xs text-gray-400 mb-3">
                   Use our 3-step Generator Selector to find the perfect power solution for your needs.
@@ -908,7 +905,7 @@ const Products = () => {
                 >
                   Start Selector <ChevronRight className="w-3 h-3" />
                 </Button>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -1283,74 +1280,6 @@ const Products = () => {
         </DialogContent>
       </Dialog>
 
-      {/* Generator Selector Modal */}
-      <Dialog open={showSelectorModal} onOpenChange={setShowSelectorModal}>
-        <DialogContent className="sm:max-w-[500px] bg-black text-white">
-          <DialogHeader>
-            <DialogTitle className="text-xl text-center mb-2">Select Your Power Requirements</DialogTitle>
-          </DialogHeader>
-          <form className="flex flex-col gap-4">
-            <div>
-              <label className="block text-sm mb-1">kVA Rating <span className="text-red-500">*</span></label>
-              <input
-                type="text"
-                placeholder="Enter kVA rating"
-                className="w-full px-3 py-2 rounded bg-gray-900 text-white border border-gray-700"
-                required
-              />
-            </div>
-            <div>
-              <label className="block text-sm mb-1">Installation Location <span className="text-red-500">*</span></label>
-              <select
-                className="w-full px-3 py-2 rounded bg-gray-900 text-white border border-gray-700"
-                required
-              >
-                <option value="">Select location</option>
-                <option value="rooftop">Rooftop Installation</option>
-                <option value="ground">Ground Floor Installation</option>
-              </select>
-            </div>
-            <div>
-              <label className="block text-sm mb-1">Use Case <span className="text-red-500">*</span></label>
-              <select
-                className="w-full px-3 py-2 rounded bg-gray-900 text-white border border-gray-700"
-                required
-              >
-                <option value="">Select use case</option>
-                <option value="residential">Residential</option>
-                <option value="commercial">Commercial</option>
-                <option value="industrial">Industrial</option>
-              </select>
-            </div>
-            <DialogTitle className="text-lg text-center mt-2 mb-2">Generator Usage Conditions</DialogTitle>
-            <div>
-              <label className="block text-sm mb-1">Operating Hours Per Day</label>
-              <select
-                className="w-full px-3 py-2 rounded bg-gray-900 text-white border border-gray-700"
-              >
-                <option value="">Select operating hours</option>
-                <option value="2">2 hours</option>
-                <option value="6">6 hours</option>
-                <option value="more">More than 6 hours</option>
-              </select>
-            </div>
-            <div>
-              <label className="block text-sm mb-1">Load Type</label>
-              <select
-                className="w-full px-3 py-2 rounded bg-gray-900 text-white border border-gray-700"
-              >
-                <option value="">Select load type</option>
-                <option value="constant">Constant Load</option>
-                <option value="variable">Variable Load</option>
-              </select>
-            </div>
-            <Button type="submit" className="bg-[#2D6FBA] hover:bg-[#225488] text-white mt-2 w-full">
-              Submit
-            </Button>
-          </form>
-        </DialogContent>
-      </Dialog>
-
       {/* Quote Modal */}
       <Dialog open={showQuoteModal} onOpenChange={setShowQuoteModal}>
         <DialogContent className="sm:max-w-[600px]">
@@ -1390,7 +1319,6 @@ const Products = () => {
         </DialogContent>
       </Dialog>
 
-      <Footer />
       {/* FIXED: Use a standard <style> tag instead of <style jsx global> */}
       <style>
         {`
