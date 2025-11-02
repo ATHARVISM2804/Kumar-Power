@@ -216,7 +216,7 @@ const InstallationService = () => {
                     <Link to="/contact">Schedule Installation</Link>
                   </Button>
                   <Button asChild size="lg" variant="outline" className='hover:bg-black'>
-                    <Link to="/services/annual-maintenance">View All Services</Link>
+                    <Link to="/products">View all Products</Link>
                   </Button>
                 </div>
               </div>
@@ -434,53 +434,13 @@ const InstallationService = () => {
               {filteredProducts.map((product) => (
                 <div 
                   key={product.id} 
-                  className="group h-80 perspective-1000 w-full cursor-pointer"
+                  className="h-80 w-full rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
                 >
-                  <div className="relative h-full w-full transition-transform-500 transform-style-3d group-hover:rotate-y-180">
-                    {/* Card Front */}
-                    <div className="absolute h-full w-full backface-hidden rounded-lg shadow-md overflow-hidden">
-                      <div className="h-full relative">
-                        <img 
-                          src={product.imageUrl} 
-                          alt={product.name}
-                          className="w-full h-full object-cover"
-                        />
-                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                          <h3 className="text-white text-lg font-semibold">{product.name}</h3>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* Card Back */}
-                    <div className="absolute h-full w-full backface-hidden rotate-y-180 rounded-lg shadow-md overflow-hidden">
-                      <div className="flex flex-col justify-between h-full p-6 bg-gradient-to-br from-blue-900 to-blue-700 text-white">
-                        <div>
-                          <h3 className="text-xl font-bold mb-2">{product.name}</h3>
-                          <Badge className="mb-4 bg-blue-500/30 text-white hover:bg-blue-500/50">{product.category}</Badge>
-                          <p className="text-sm opacity-90">
-                            Professional installation with industry-standard quality and safety protocols.
-                          </p>
-                        </div>
-                        <div className="mt-4">
-                          <ul className="text-sm space-y-1">
-                            <li className="flex items-center gap-2">
-                              <CheckCircle2 className="h-4 w-4 text-blue-300" />
-                              <span>Expert technicians</span>
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <CheckCircle2 className="h-4 w-4 text-blue-300" />
-                              <span>Warranty protected</span>
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <CheckCircle2 className="h-4 w-4 text-blue-300" />
-                              <span>Code compliant</span>
-                            </li>
-                          </ul>
-                         
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <img 
+                    src={product.imageUrl} 
+                    alt={product.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               ))}
             </div>
