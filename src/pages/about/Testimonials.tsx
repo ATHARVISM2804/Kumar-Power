@@ -107,6 +107,11 @@ const Testimonials = () => {
             <div className="border rounded-lg overflow-hidden">
               <div className="p-4">
                 <div className="flex items-center mb-4">
+                  <img 
+                    src="https://res.cloudinary.com/dmhabztbf/image/upload/v1761902468/Screenshot_2025-10-31_144115_lybhem.png"
+                    alt="Platter Me Crazy Logo" 
+                    className="w-16 h-16 object-contain mr-3 rounded"
+                  />
                   <div>
                     <h4 className="font-semibold text-2xl">Khushi Aggarwal</h4>
                     <p className="text-xs text-gray-600">Founder, Platter Me Crazy</p>
@@ -117,13 +122,18 @@ const Testimonials = () => {
                 </p>
               </div>
             </div>
-            {/* Testimonial 2 - Mr. Jasjot Singh Kumar */}
+            {/* Testimonial 2 - Kaustubh Jain, TEAMCC */}
             
             
             {/* Testimonial 3 - Kaustubh Jain, TEAMCC */}
             <div className="border rounded-lg overflow-hidden">
               <div className="p-4">
                 <div className="flex items-center mb-4">
+                  <img 
+                    src="https://res.cloudinary.com/dmhabztbf/image/upload/v1761902466/Screenshot_2025-10-31_144303_wgqqaq.png"
+                    alt="TEAMCC Logo" 
+                    className="w-16 h-16 object-contain mr-3 rounded"
+                  />
                   <div>
                     <h4 className="font-semibold text-2xl">Kaustubh Jain</h4>
                     <p className="text-xs text-gray-600">TEAM Construction Chemicals (TEAMCC)</p>
@@ -136,7 +146,7 @@ const Testimonials = () => {
                   I have had the pleasure of knowing Mr. Jasjot Singh, and I can confidently say he is a true professional in the generator industry. Representing the trusted Kirloskar brand, Jasjot ensures top-quality products backed by exceptional service. His deep knowledge of power solutions, combined with his commitment to delivering the right generator for every requirement, makes him a go-to expert.
                 </p>
                 <p className="text-base mb-2">
-                  Whether it’s for commercial, industrial, or residential needs, Jasjot’s guidance is reliable and his follow-up impeccable. If you’re looking for a dependable generator partner who values both quality and customer satisfaction, I highly recommend Mr. Jasjot Singh.
+                  Whether it's for commercial, industrial, or residential needs, Jasjot's guidance is reliable and his follow-up impeccable. If you're looking for a dependable generator partner who values both quality and customer satisfaction, I highly recommend Mr. Jasjot Singh.
                 </p>
                 <div className="text-xs text-gray-500 mt-2">
                   Kaustubh Jain<br />
@@ -149,6 +159,11 @@ const Testimonials = () => {
             <div className="border rounded-lg overflow-hidden">
               <div className="p-4">
                 <div className="flex items-center mb-4">
+                  <img 
+                    src="https://res.cloudinary.com/dmhabztbf/image/upload/v1761902462/Screenshot_2025-10-31_144354_iiu1nu.png"
+                    alt="Atul Jewellers Logo" 
+                    className="w-16 h-16 object-contain mr-3 rounded"
+                  />
                   <div>
                     <h4 className="font-semibold text-2xl">Atul Jewellers</h4>
                     <p className="text-xs text-gray-600">Proprietor, New Delhi</p>
@@ -177,6 +192,11 @@ const Testimonials = () => {
             <div className="border rounded-lg overflow-hidden">
               <div className="p-4">
                 <div className="flex items-center mb-4">
+                  <img 
+                    src="https://res.cloudinary.com/dmhabztbf/image/upload/v1761902474/Gemini_Generated_Image_1je1r11je1r11je1_ksybnh.png"
+                    alt="Brown Gold Logo" 
+                    className="w-16 h-16 object-contain mr-3 rounded"
+                  />
                   <div>
                     <h4 className="font-semibold text-2xl">Brown Gold</h4>
                     <p className="text-xs text-gray-600">Bharat Anand, Director</p>
@@ -207,16 +227,21 @@ const Testimonials = () => {
             <div className="border rounded-lg overflow-hidden">
               <div className="p-4">
                 <div className="flex items-center mb-4">
+                  <img 
+                    src="https://res.cloudinary.com/dmhabztbf/image/upload/v1761902462/Screenshot_2025-10-31_144806_gklejh.png"
+                    alt="RENT IT BAE Logo" 
+                    className="w-16 h-16 object-contain mr-3 rounded"
+                  />
                   <div>
                     <h4 className="font-semibold text-2xl">RENT IT BAE</h4>
                     <p className="text-xs text-gray-600">Luxury Fashion Rental Service</p>
                   </div>
                 </div>
                 <p className="text-base mb-2">
-                  RENT IT BAE is a luxury fashion rental service offering Ethnic, Western & Accessories from designer labels at a fraction of MRP. Servicing 15 cities via Website, m-site, Android & iOS apps. First to introduce Monthly Fashion Subscription in the country. The company has its 2 Flagship Stores in New Delhi (Rajouri Garden and Greater Kailash-1). RENT IT BAE has taken the media limelight for building country’s first tech driven store.
+                  RENT IT BAE is a luxury fashion rental service offering Ethnic, Western & Accessories from designer labels at a fraction of MRP. Servicing 15 cities via Website, m-site, Android & iOS apps. First to introduce Monthly Fashion Subscription in the country. The company has its 2 Flagship Stores in New Delhi (Rajouri Garden and Greater Kailash-1). RENT IT BAE has taken the media limelight for building country's first tech driven store.
                 </p>
                 <p className="text-base mb-2">
-                  We highly appreciate the fast and seamless service provided by your company. The installation of invertors for RENT IT BAE’s South Delhi Flagship Store at Greater Kailash seemed a fluid task with your service. The requirement for a power back up is a must for all companies now days especially in the retail sector. You understood the requirement and delivered the apt products at a reasonable price. All was done post one phone call. No follow up were required. The products were delivered and installed within 24 hours. We would be happy to recommend your products and service.
+                  We highly appreciate the fast and seamless service provided by your company. The installation of invertors for RENT IT BAE's South Delhi Flagship Store at Greater Kailash seemed a fluid task with your service. The requirement for a power back up is a must for all companies now days especially in the retail sector. You understood the requirement and delivered the apt products at a reasonable price. All was done post one phone call. No follow up were required. The products were delivered and installed within 24 hours. We would be happy to recommend your products and service.
                 </p>
                 <div className="text-xs text-gray-500 mt-2">
                   Thank you.
@@ -227,6 +252,11 @@ const Testimonials = () => {
             <div className="border rounded-lg overflow-hidden">
               <div className="p-4">
                 <div className="flex items-center mb-4">
+                  <img 
+                    src="https://res.cloudinary.com/dmhabztbf/image/upload/v1761902462/Screenshot_2025-10-31_145022_ffeb43.png"
+                    alt="Intown Realtors Logo" 
+                    className="w-16 h-16 object-contain mr-3 rounded"
+                  />
                   <div>
                     <h4 className="font-semibold text-2xl">K.K. Setia</h4>
                     <p className="text-xs text-gray-600">Olympus, Intown Realtors Pvt Ltd</p>
@@ -239,6 +269,38 @@ const Testimonials = () => {
                 <p className="text-base mb-2">
                   "I recently needed a generator for my Sector 18 office building and reached out to my fellow BNI member, Mr. Manjot Singh Kumar. His team promptly inspected the site, provided a tailored solution, and even assisted with the necessary approvals. The generator was delivered and installed within the promised timeframe, and the team ensured that everything was functioning perfectly before they left. I am thoroughly impressed with the professionalism and efficiency displayed by Kumar Generator House. I highly recommend their services to anyone in need of reliable power solutions."
                 </p>
+              </div>
+            </div>
+            {/* Testimonial 8 - Shivani Saini, Anytime Fitness */}
+            <div className="border rounded-lg overflow-hidden">
+              <div className="p-4">
+                <div className="flex items-center mb-4">
+                  <img 
+                    src="https://res.cloudinary.com/dmhabztbf/image/upload/v1762064945/Screenshot_2025-11-02_115831_lgqzrn.png"
+                    alt="Anytime Fitness Logo" 
+                    className="w-16 h-16 object-contain mr-3 rounded"
+                  />
+                  <div>
+                    <h4 className="font-semibold text-2xl">Shivani Saini</h4>
+                    <p className="text-xs text-gray-600">Owner, Anytime Fitness</p>
+                    <p className="text-xs text-gray-400">26 Sep 25</p>
+                  </div>
+                </div>
+                <p className="text-base mb-2">
+                  As fitness industry in India is rising rapidly, Anytime Fitness has marked its biggest presence in this field and possesses more than 160 clubs pan-India with 80+ within Delhi NCR. The club is open 24/7 which gives its members the flexibility to workout at any hour of the day as per their schedule.
+                </p>
+                <p className="text-base mb-2">
+                  The biggest challenge an Anytime Fitness Club faces is uninterrupted 24/7 power supply for its customers. For the same, the club is reliant on an efficient power back up system. During the setting up of Anytime Fitness Sec 29, Gurugram I, Shivani Saini, owner of the club, got the reference of Mr Jasjot Singh (Mob No. 9773877796) of M/s Kumar Generator House from a trustworthy friend.
+                </p>
+                <p className="text-base mb-2">
+                  I write this testimonial to express my deep gratitude to Mr Jasjot Singh of guiding me towards the trusted Kirloskar Brand and explaining me the complete process of installation in great details. He personally visited the site and I must compliment his eye for details and the experience he carries in this field. As a true professional Mr Jasjot and his team ensured a smooth installation and thereafter a continuous follow up till such time the machine got fully functional. The equipment is top notch and has been performing flawlessly during power outages. The customer support has been outstanding, addressing all our concerns promptly. I am truly indebted to services of Kumar Generator House and I would highly recommend Mr Jasjot Singh for any kind of Generator Services in Delhi NCR.
+                </p>
+                <div className="text-xs text-gray-500 mt-2">
+                  Shivani Saini<br />
+                  Owner, Anytime Fitness<br />
+                  SCO NO 318, SCO Market,<br />
+                  Sec 29, Gurugram
+                </div>
               </div>
             </div>
           </div>

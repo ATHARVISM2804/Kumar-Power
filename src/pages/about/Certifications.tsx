@@ -137,29 +137,49 @@ const Certifications = () => {
 
   // Improved image slider animation control
   const [sliderPosition, setSliderPosition] = useState(0);
+  const [isSliderPaused, setIsSliderPaused] = useState(false);
+  const sliderIntervalRef = useRef(null);
 
   useEffect(() => {
-    // Ensure the slider starts from the beginning on page load
-    setSliderPosition(0);
+    // Clear any existing interval
+    if (sliderIntervalRef.current) {
+      clearInterval(sliderIntervalRef.current);
+    }
     
-    // Slow continuous slide animation
-    const slideAnimation = setInterval(() => {
-      setSliderPosition(prev => {
-        // Calculate the step size as a percentage of the total width
-        const step = 0.2;
-        const newPos = prev - step;
-        
-        // Reset to start position when we've gone through all images
-        if (newPos <= -100) {
-          return 0;
-        }
-        
-        return newPos;
-      });
-    }, 50);
+    // Start the slider animation only if not paused
+    if (!isSliderPaused) {
+      sliderIntervalRef.current = setInterval(() => {
+        setSliderPosition(prev => {
+          // Each step moves 0.1% for smoother animation
+          const step = 0.1;
+          const newPos = prev - step;
+          
+          // Reset to start when we've moved one full set of images
+          // Since we have 3 sets of images, reset when we've moved 100%
+          if (newPos <= -100) {
+            return 0;
+          }
+          
+          return newPos;
+        });
+      }, 30); // Faster interval for smoother animation
+    }
 
-    return () => clearInterval(slideAnimation);
-  }, []);
+    return () => {
+      if (sliderIntervalRef.current) {
+        clearInterval(sliderIntervalRef.current);
+      }
+    };
+  }, [isSliderPaused]);
+
+  // Handle mouse enter/leave for pause functionality
+  const handleSliderMouseEnter = () => {
+    setIsSliderPaused(true);
+  };
+
+  const handleSliderMouseLeave = () => {
+    setIsSliderPaused(false);
+  };
 
   // Update Industry Partnerships section to use certi7 and certi8
   const partnerImages = [certi7, certi8, certi7, certi8];
@@ -182,7 +202,7 @@ const Certifications = () => {
             className="text-center"
           >
             <h1 className="text-5xl font-bold tracking-tight mb-4" style={{ color: "#2D6FBA" }}>
-              Our Certifications
+              Awards and Certificates
             </h1>
             <p className="text-xl text-white max-w-3xl mx-auto mb-12">
               Kumar Power is proud to hold certifications that validate our commitment to quality, safety, 
@@ -192,12 +212,17 @@ const Certifications = () => {
         </div>
 
         {/* Sliding ceremony images */}
-        <div className="relative h-80 md:h-96 mt-8 mb-12 overflow-hidden">
+        <div 
+          className="relative h-80 md:h-96 mt-8 mb-12 overflow-hidden"
+          onMouseEnter={handleSliderMouseEnter}
+          onMouseLeave={handleSliderMouseLeave}
+        >
           <div 
-            className="absolute flex h-full transition-transform"
+            className="absolute flex h-full"
             style={{ 
               transform: `translateX(${sliderPosition}%)`,
-              transition: 'transform 0.5s linear'
+              width: '300%', // Ensure we have enough width for 3 sets of images
+              transition: isSliderPaused ? 'none' : 'none' // Remove CSS transition to avoid conflicts
             }}
           >
             {[...ceremonyImages, ...ceremonyImages, ...ceremonyImages].map((img, index) => (
@@ -213,28 +238,38 @@ const Certifications = () => {
                     objectFit: "cover"
                   }}
                 />
-                <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-sm font-medium">
-                  <div className="bg-black/70 px-3 py-1 rounded-full inline-block">
-                    Kumar Power Award {index % ceremonyImages.length + 1}
-                  </div>
-                </div>
               </div>
             ))}
           </div>
           
-          {/* Slider controls - optional */}
+          {/* Slider controls */}
           <div className="absolute bottom-4 right-4 z-20 flex space-x-2">
             <button 
               className="bg-white/20 backdrop-blur-sm p-2 rounded-full text-white hover:bg-white/40 transition-colors"
-              aria-label="Pause slider"
-              onClick={() => setSliderPosition(prev => prev)}
+              aria-label={isSliderPaused ? "Resume slider" : "Pause slider"}
+              onClick={() => setIsSliderPaused(!isSliderPaused)}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="6" y="4" width="4" height="16"></rect>
-                <rect x="14" y="4" width="4" height="16"></rect>
-              </svg>
+              {isSliderPaused ? (
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="6" y="4" width="4" height="16"></rect>
+                  <rect x="14" y="4" width="4" height="16"></rect>
+                </svg>
+              )}
             </button>
           </div>
+          
+          {/* Hover indicator */}
+          {isSliderPaused && (
+            <div className="absolute top-4 left-4 z-20">
+              <div className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-white text-sm">
+                Paused
+              </div>
+            </div>
+          )}
         </div>
       </motion.section>
       

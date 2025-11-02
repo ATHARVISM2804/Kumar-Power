@@ -153,24 +153,10 @@ const About = () => {
               <p className="font-semibold text-lg mb-3 text-center">(Founder)</p>
               
               <p className="text-base text-justify leading-relaxed">
-                RS Kumar is the Founder and CEO of Kumar Generator House, a company he established with a vision to provide reliable and sustainable power solutions. With decades of industry experience, Rajvinder has been the driving force behind the company's growth and success. His leadership is centered on innovation, customer satisfaction, and a commitment to excellence. Under his guidance, Kumar Generator House has become a trusted name in the industry, focused on empowering businesses and communities with top-quality solutions.
+                RS Kumar is the Founder of Kumar Generator House, a company he established with a vision to provide reliable and sustainable power solutions. With decades of industry experience,he has been the driving force behind the company's growth and success. His leadership is centered on innovation, customer satisfaction, and a commitment to excellence. Under his guidance, Kumar Generator House has become a trusted name in the industry, focused on empowering businesses and communities with top-quality solutions.
               </p>
             </div>
-            {/* Team Member 2 */}
-            <div className="bg-white rounded-xl shadow-lg flex flex-col items-center px-6 py-8 w-full border border-gray-200">
-              <img 
-                src={jagjit}
-                alt="Jagjit Singh Kumar" 
-                className="h-[57vh] object-cover mb-4"
-              />
-              <h3 className="text-xl font-bold uppercase mb-1 text-center">JS KUMAR</h3>
-              <p className="font-semibold text-lg mb-3 text-center">(Director)</p>
-              
-              <p className="text-base text-justify leading-relaxed">
-                JS Kumar is a director at Kumar Generator House, where he plays a pivotal role in overseeing business strategy, operations, and growth initiatives. With a focus on enhancing internal processes and fostering partnerships, Jasjot is committed to driving the company's expansion and ensuring the delivery of efficient, high-quality service to clients. His strategic approach and dedication to innovation continue to shape the company's success in the power solutions sector.
-              </p>
-            </div>
-            {/* Team Member 3 */}
+            {/* Team Member 2 - MS Kumar (now in center) */}
             <div className="bg-white rounded-xl shadow-lg flex flex-col items-center px-6 py-8 w-full border border-gray-200">
               <img 
                 src={manjot}
@@ -182,6 +168,20 @@ const About = () => {
               
               <p className="text-base text-justify leading-relaxed">
                 MS Kumar is the director of Kumar Generator House, a company with a rich legacy of over 30 years in providing reliable power solutions. With a keen focus on growth, innovation, and sustainability, Manjot leads the company towards achieving excellence in every aspect of its operations. His leadership style emphasizes customer satisfaction, operational efficiency, and long-term business relationships, ensuring that Kumar Generator House remains a trusted name in the industry.
+              </p>
+            </div>
+            {/* Team Member 3 - JS Kumar (now on right) */}
+            <div className="bg-white rounded-xl shadow-lg flex flex-col items-center px-6 py-8 w-full border border-gray-200">
+              <img 
+                src={jagjit}
+                alt="Jagjit Singh Kumar" 
+                className="h-[57vh] object-cover mb-4"
+              />
+              <h3 className="text-xl font-bold uppercase mb-1 text-center">JS KUMAR</h3>
+              <p className="font-semibold text-lg mb-3 text-center">(Director)</p>
+              
+              <p className="text-base text-justify leading-relaxed">
+                JS Kumar is a director at Kumar Generator House, where he plays a pivotal role in overseeing business strategy, operations, and growth initiatives. With a focus on enhancing internal processes and fostering partnerships, He is committed to driving the company's expansion and ensuring the delivery of efficient, high-quality service to clients. His strategic approach and dedication to innovation continue to shape the company's success in the power solutions sector.
               </p>
             </div>
           </div>
