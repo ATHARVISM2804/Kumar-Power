@@ -144,20 +144,6 @@ const Products = () => {
   // Define generator products based on the images
   const dieselGenerators = [
     {
-      id: "200 kVA to 250 kVA",
-      name: "200 kVA to 250 kVA Diesel Generators",
-      image: range1, // Use imported image
-      fuelType: "Diesel",
-      cpcbNorm: "CPCB-IV+",
-      cooling: "Liquid",
-      phase: "Three Phase",
-      ratingCount: 178,
-      rating: 4.7,
-      range: "200 - 250 kVA",
-      category: "diesel",
-      description: "Our range of diesel generators are designed for maximum performance and reliability. Our generators meet the latest CPCB norms and are built for Indian conditions.",
-    },
-    {
       id: "7.5 kVA to 20 kVA",
       name: "7.5 kVA to 20 kVA diesel generators",
       image: DG1, // Use imported image
@@ -196,6 +182,20 @@ const Products = () => {
       ratingCount: 118,
       rating: 4.8,
       range: "82.5 kVA to 160 kVA",
+      category: "diesel",
+      description: "Our range of diesel generators are designed for maximum performance and reliability. Our generators meet the latest CPCB norms and are built for Indian conditions.",
+    },
+    {
+      id: "200 kVA to 250 kVA",
+      name: "200 kVA to 250 kVA Diesel Generators",
+      image: range1, // Use imported image
+      fuelType: "Diesel",
+      cpcbNorm: "CPCB-IV+",
+      cooling: "Liquid",
+      phase: "Three Phase",
+      ratingCount: 178,
+      rating: 4.7,
+      range: "200 - 250 kVA",
       category: "diesel",
       description: "Our range of diesel generators are designed for maximum performance and reliability. Our generators meet the latest CPCB norms and are built for Indian conditions.",
     },
@@ -513,6 +513,11 @@ const Products = () => {
 
     // Sort products based on sort option
     const sortProducts = (products) => {
+      // For diesel generators, always maintain ascending kVA order regardless of sort option
+      if (selectedCategory === 'diesel') {
+        return products; // Return in the predefined ascending order
+      }
+      
       if (sortBy === 'rating') {
         return [...products].sort((a, b) => b.rating - a.rating);
       } else if (sortBy === 'popularity') {

@@ -191,14 +191,6 @@ const Masonry = ({ images }: { images: GalleryImage[] }) => {
               alt={image.alt} 
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <h3 className="text-white font-semibold text-lg">{image.alt}</h3>
-                <p className="text-white/80 text-sm mt-1">
-                  {image.category.charAt(0).toUpperCase() + image.category.slice(1)}
-                </p>
-              </div>
-            </div>
           </motion.div>
         );
       })}
@@ -219,14 +211,6 @@ const SimpleImageGrid = ({ images }: { images: GalleryImage[] }) => {
             alt={image.alt} 
             className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="absolute bottom-0 left-0 right-0 p-4">
-              <h3 className="text-white font-semibold text-lg">{image.alt}</h3>
-              <p className="text-white/80 text-sm mt-1">
-                {image.category.charAt(0).toUpperCase() + image.category.slice(1)}
-              </p>
-            </div>
-          </div>
         </div>
       ))}
     </div>
@@ -234,18 +218,16 @@ const SimpleImageGrid = ({ images }: { images: GalleryImage[] }) => {
 };
 
 const PhotoGallery = () => {
-  const [activeFilter, setActiveFilter] = useState("all");
+  const [activeFilter, setActiveFilter] = useState("installations");
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredImages, setFilteredImages] = useState<GalleryImage[]>([]);
   const [filteredStoryImages, setFilteredStoryImages] = useState<GalleryImage[]>([]);
   const [showAllImages, setShowAllImages] = useState(false);
 
   const filters = [
-    { id: "all", label: "All" },
     { id: "installations", label: "Installations" },
     { id: "events", label: "Events" },
     { id: "Award", label: "Award Ceremony" },
-    
   ];
 
   const galleryImages: GalleryImage[] = [
@@ -260,7 +242,6 @@ const PhotoGallery = () => {
     { id: 102, src: diwali5, alt: "Diwali Party 5", category: "events" },
     { id: 103, src: diwali6, alt: "Diwali Party 6", category: "events" },
     { id: 104, src: diwali7, alt: "Diwali Party 7", category: "events" },
-    { id: 105, src: diwali9, alt: "Diwali Party 9", category: "events" },
     { id: 106, src: diwali24, alt: "Diwali Party 24", category: "events" },
     { id: 107, src: diwali28, alt: "Diwali Party 28", category: "events" },
     { id: 108, src: diwali29, alt: "Diwali Party 29", category: "events" },
@@ -311,7 +292,6 @@ const PhotoGallery = () => {
     { id: 209, src: instal9, alt: "Installation 9", category: "installations" },
     { id: 210, src: instal10, alt: "Installation 10", category: "installations" },
     { id: 211, src: instal11, alt: "Installation 11", category: "installations" },
-    { id: 212, src: instal12, alt: "Installation 12", category: "installations" },
     { id: 213, src: instal13, alt: "Installation 13", category: "installations" },
     { id: 214, src: instal14, alt: "Installation 14", category: "installations" },
     { id: 215, src: instal15, alt: "Installation 15", category: "installations" },
@@ -362,9 +342,9 @@ const PhotoGallery = () => {
     setShowAllImages(false); // Reset see more on filter/search change
     const filterImages = () => {
       let filtered = [...galleryImages];
-      if (activeFilter !== "all") {
-        filtered = filtered.filter(img => img.category === activeFilter);
-      }
+      // Remove the "all" condition since we no longer have it
+      filtered = filtered.filter(img => img.category === activeFilter);
+      
       if (searchQuery) {
         const query = searchQuery.toLowerCase();
         filtered = filtered.filter(
@@ -375,9 +355,8 @@ const PhotoGallery = () => {
 
       // Separately filter story images for the "Real Stories" section
       let filteredStories = [...storyImages];
-      if (activeFilter !== "all") {
-        filteredStories = filteredStories.filter(img => img.category === activeFilter);
-      }
+      filteredStories = filteredStories.filter(img => img.category === activeFilter);
+      
       if (searchQuery) {
         const query = searchQuery.toLowerCase();
         filteredStories = filteredStories.filter(
@@ -471,10 +450,10 @@ const PhotoGallery = () => {
               >
                 <p className="text-white text-lg">No gallery images found matching your filter criteria.</p>
                 <button 
-                  onClick={() => {setActiveFilter('all'); setSearchQuery('');}}
+                  onClick={() => {setActiveFilter('installations'); setSearchQuery('');}}
                   className="mt-4 px-4 py-2 bg-[#2D6FBA] text-white rounded-md hover:bg-[#22548e] transition-colors"
                 >
-                  Show All Images
+                  Show Installation Images
                 </button>
               </motion.div>
             ) : (
