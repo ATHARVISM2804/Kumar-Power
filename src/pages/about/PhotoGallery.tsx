@@ -490,71 +490,6 @@ const PhotoGallery = () => {
         </div>
       </section>
       
-      {/* Real Stories. Real Impact. Section */}
-      <section className="py-10 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <h3 className="text-2xl font-bold text-center mb-8">Real Stories. Real Impact.</h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Always show the 4 story images, no filter applied */}
-            { [
-              {
-                id: 9,
-                src: gal1,
-                alt: "Manufacturing facility",
-                details: {
-                  title: "Behind the Scenes: Manufacturing Excellence",
-                  description: "Take a tour of our state-of-the-art manufacturing facility where precision engineering meets quality craftsmanship.",
-                  location: "@ Kumar Generator House"
-                }
-              },
-              {
-                id: 10,
-                src: gal2,
-                alt: "NTPC Power Plant",
-                details: {
-                  title: "Client Success Story: NTPC Power Plant",
-                  description: "How our generators provided uninterrupted backup power for India's largest power generation facility.",
-                  location: "@ NTPC Limited"
-                }
-              },
-              {
-                id: 11,
-                src: gal3,
-                alt: "Cyclone Relief",
-                details: {
-                  title: "Emergency Response: Cyclone Relief",
-                  description: "Our mobile generator units deployed during natural disasters to provide critical power to emergency services.",
-                  location: "@ Disaster Management Authority"
-                }
-              },
-              {
-                id: 12,
-                src: gal4,
-                alt: "Eco-Friendly Generators",
-                details: {
-                  title: "Innovation Spotlight: Eco-Friendly Generators",
-                  description: "Introducing our new line of environmentally conscious generators with reduced emissions and noise levels.",
-                  location: "@ Green Energy Summit"
-                }
-              }
-            ].map(story => (
-              <div key={story.id} className="relative overflow-hidden rounded-lg group">
-                <img 
-                  src={story.src}
-                  alt={story.alt} 
-                  className="w-full h-64 object-cover"
-                />
-                <div className="p-4 bg-white">
-                  <h4 className="font-bold">{story.details.title}</h4>
-                  <p className="text-sm text-gray-600 mt-1">{story.details.description}</p>
-                  <p className="text-xs text-gray-500 mt-2">{story.details.location}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      
       {/* Experience Power Excellence Section */}
       <section className="py-10 bg-black text-white ">
         <div className="max-w-7xl mx-auto px-6">
@@ -573,7 +508,7 @@ const PhotoGallery = () => {
   download 
   className="border border-white text-white text-sm px-6 py-2 rounded hover:bg-white hover:text-black transition-colors"
 >
-  Download Media Kit
+  Download Company Profile
 </a>
               </div>
             </div>
