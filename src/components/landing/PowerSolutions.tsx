@@ -1,9 +1,19 @@
-import { ArrowRight, X } from "lucide-react";
+import { Download } from "lucide-react";
 import diesel from "@/assets/ps1.png";
 import gas from "@/assets/ps2.png";
 import portable from "@/assets/ps3.png";
 import ups from "@/assets/ps4.png";
 import { Button } from "@/components/ui/button";
+// Import brochures from GeneratorRange
+import optiprime from "../../assets/Brochure/OPTIPRIME- 117,400,500,640,1000,1500 & 2020 KVA.pdf";
+import Cpcb from "@/assets/Brochure/7.5-20 kVA.pdf";
+import cpcb58 from "@/assets/Brochure/25-58.5.pdf";
+import cpcb160 from "@/assets/Brochure/82.5-160.pdf";
+import cpcb250 from "@/assets/Brochure/200-250.pdf";
+import cpcb320 from "@/assets/Brochure/320-750.pdf";
+import cpcb750 from "@/assets/Brochure/750 kVA-1500 kVA.pdf";
+import Gase from "@/assets/Brochure/NEW CATELOG - GAS GENSET.pdf";
+import sential from "@/assets/Brochure/4.Kirloskar powergen_Sentinel series Genset.pdf";
 import allProductsImg from "@/assets/ALL PRODUCTS.png";
 import trust from "@/assets/Seasons (1).png";
 import trust1 from "@/assets/SIS (1).png";
@@ -43,165 +53,119 @@ import Trans1 from "@/assets/transformer/Trans1.png"
 import Trans2 from "@/assets/transformer/trans2.png"
 import Trans3 from "@/assets/transformer/trans3.png"
 
-// Modal for product info
-const ProductModal = ({
-  open,
-  onClose,
-  product,
-}: {
-  open: boolean;
-  onClose: () => void;
-  product: { title: string; desc: string; specs: string[]; img: string } | null;
-}) => {
-  if (!open || !product) return null;
-  return (
-    <AnimatePresence>
-      <motion.div
-        className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.3 }}
-        onClick={onClose}
-      >
-        <motion.div
-          className="bg-white rounded-xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-lg"
-          initial={{ opacity: 0, y: 40, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: -40, scale: 0.95 }}
-          transition={{ type: "spring", damping: 22, stiffness: 300 }}
-          onClick={e => e.stopPropagation()}
-        >
-          <div className="flex justify-between items-center p-4 border-b">
-            <h2 className="text-lg font-bold">{product.title}</h2>
-            <button
-              onClick={onClose}
-              className="p-1 rounded-full hover:bg-gray-100"
-            >
-              <X className="h-5 w-5" />
-            </button>
-          </div>
-          <div className="p-6">
-            <img
-              src={product.img}
-              alt={product.title}
-              className="w-full h-48 object-contain rounded mb-4 bg-gray-100"
-            />
-            <p className="text-base text-gray-800 mb-2">{product.desc}</p>
-            <div className="mt-4">
-              <ul className="list-disc pl-5 text-sm text-gray-700 space-y-2">
-                {product.specs.map((spec, idx) => (
-                  <li key={idx}>{spec}</li>
-                ))}
-                <li>Certified for reliability and safety</li>
-                <li>Suitable for industrial, commercial, and backup use</li>
-                <li>Contact us for detailed specifications and pricing</li>
-                <li>Warranty and after-sales support available</li>
-              </ul>
-            </div>
-            
-          </div>
-        </motion.div>
-      </motion.div>
-    </AnimatePresence>
-  );
-};
+const PSCard = ({ title, desc, specs, img, brochureUrl, hideDownload = false }: { title: string; desc: string; specs: string[]; img: string; brochureUrl: string; hideDownload?: boolean }) => {
+  // Create a sanitized filename from the product title
+  const downloadFileName = title
+    .replace('Kirloskar ', '')
+    .replace(/[^\w\s()-]/g, '')
+    .trim() + ' Brochure.pdf';
 
-const PSCard = ({ title, desc, specs, img, onExplore }: { title: string; desc: string; specs: string[]; img: string; onExplore: () => void }) => (
-  <motion.article 
-    className="bg-white rounded-lg overflow-hidden shadow-md flex flex-col"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: -10 }}
-    transition={{ duration: 0.4 }}
-    whileHover={{ 
-      scale: 1.02, 
-      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" 
-    }}
-  >
-    {/* Increased image container height and image height */}
-    <div className="w-full h-64 p-2 flex items-center justify-center overflow-hidden">
-      <motion.img
-        src={img}
-        alt={title}
-        className="object-contain w-full h-60 translate-y-1"
-        style={{ background: "white" }}
-        whileHover={{ scale: 1.07, rotate: 0.5 }}
-        transition={{ duration: 0.3 }}
-      />
-    </div>
-    <div className="p-6 flex flex-col flex-1">
-      <motion.h3 
-        className="text-xl font-bold mb-2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.1 }}
-      >
-        {title}
-      </motion.h3>
-      <motion.p 
-        className="text-muted-foreground text-sm mb-4"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.2 }}
-      >
-        {desc}
-      </motion.p>
-      <div className="space-y-2 mb-6">
-        {specs.map((spec, index) => (
-          <motion.div 
-            key={spec} 
-            className="flex items-center gap-2"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 + index * 0.1 }}
-          >
-            <motion.span 
-              className="inline-flex items-center justify-center rounded-full bg-[#D6E8FA] h-5 w-5"
-              whileHover={{ scale: 1.2, backgroundColor: "#bfdbfe" }}
+  return (
+    <motion.article 
+      className="bg-white rounded-lg overflow-hidden shadow-md flex flex-col"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      transition={{ duration: 0.4 }}
+      whileHover={{ 
+        scale: 1.02, 
+        boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" 
+      }}
+    >
+      {/* Increased image container height and image height */}
+      <div className="w-full h-64 p-2 flex items-center justify-center overflow-hidden">
+        <motion.img
+          src={img}
+          alt={title}
+          className="object-contain w-full h-60 translate-y-1"
+          style={{ background: "white" }}
+          whileHover={{ scale: 1.07, rotate: 0.5 }}
+          transition={{ duration: 0.3 }}
+        />
+      </div>
+      <div className="p-6 flex flex-col flex-1">
+        <motion.h3 
+          className="text-xl font-bold mb-2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.1 }}
+        >
+          {title}
+        </motion.h3>
+        <motion.p 
+          className="text-muted-foreground text-sm mb-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+        >
+          {desc}
+        </motion.p>
+        <div className="space-y-2 mb-6">
+          {specs.map((spec, index) => (
+            <motion.div 
+              key={spec} 
+              className="flex items-center gap-2"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 + index * 0.1 }}
             >
               <motion.span 
-                className="h-2 w-2 rounded-full bg-[#2D6FBA]" 
-                whileHover={{ scale: 1.3 }}
-              />
-            </motion.span>
-            <span className="text-sm">{spec}</span>
-          </motion.div>
-        ))}
-      </div>
-      <div className="mt-auto">
-        <motion.div
-          whileHover={{ x: 5 }}
-          transition={{ type: "spring", stiffness: 400 }}
-        >
-          <Button className="bg-[#2D6FBA] hover:bg-[#22548e] text-white rounded-md overflow-hidden" onClick={onExplore}>
-            <div className="flex items-center gap-2">
-              Explore More 
-              <motion.div
-                initial={{ x: 0 }}
-                whileHover={{ x: 3 }}
-                transition={{ 
-                  repeat: Infinity, 
-                  repeatType: "reverse", 
-                  duration: 0.6 
-                }}
+                className="inline-flex items-center justify-center rounded-full bg-[#D6E8FA] h-5 w-5"
+                whileHover={{ scale: 1.2, backgroundColor: "#bfdbfe" }}
               >
-                <ArrowRight className="h-4 w-4" />
-              </motion.div>
-            </div>
-          </Button>
-        </motion.div>
+                <motion.span 
+                  className="h-2 w-2 rounded-full bg-[#2D6FBA]" 
+                  whileHover={{ scale: 1.3 }}
+                />
+              </motion.span>
+              <span className="text-sm">{spec}</span>
+            </motion.div>
+          ))}
+        </div>
+        {!hideDownload && (
+          <div className="mt-auto">
+            <motion.div
+              whileHover={{ y: -3 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              className="w-full"
+            >
+              <a 
+                href={brochureUrl} 
+                download={downloadFileName}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full block"
+              >
+                <Button className="bg-[#2D6FBA] hover:bg-[#22548e] text-white rounded-md overflow-hidden w-full group">
+                  <div className="flex items-center justify-center gap-2">
+                    <span>Download Brochure</span>
+                    <motion.div
+                      initial={{ y: 0 }}
+                      whileHover={{ y: -3 }}
+                      transition={{
+                        duration: 0.2,
+                        repeat: Infinity,
+                        repeatType: "reverse",
+                        repeatDelay: 0.2,
+                      }}
+                    >
+                      <Download className="h-4 w-4" />
+                    </motion.div>
+                  </div>
+                </Button>
+              </a>
+            </motion.div>
+          </div>
+        )}
       </div>
-    </div>
-  </motion.article>
-);
+    </motion.article>
+  );
+};
 
 const PowerSolutions = () => {
   const logoRef = useRef<HTMLDivElement>(null);
   const logoContainerRef = useRef<HTMLDivElement>(null);
   const [activeCategory, setActiveCategory] = useState<string>("Optiprime Generators");
-  const [modalOpen, setModalOpen] = useState(false);
-  const [modalProduct, setModalProduct] = useState<{ title: string; desc: string; specs: string[]; img: string } | null>(null);
 
   // Categories for the navigation tabs
   const categories = [
@@ -228,7 +192,8 @@ const PowerSolutions = () => {
           "Application: Industrial, Commercial",
           "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
         ],
-        img: diesel
+        img: diesel,
+        brochureUrl: optiprime
       }
     ],
     "Gas Generators": [
@@ -243,7 +208,8 @@ const PowerSolutions = () => {
           "Application: Industrial, Commercial, Residential",
           "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
         ],
-        img: gas
+        img: gas,
+        brochureUrl: Gase
       }
     ],
     "Portable Generators": [
@@ -257,7 +223,8 @@ const PowerSolutions = () => {
           "Application: Construction, Events, Residential",
           "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
         ],
-        img: portable
+        img: portable,
+        brochureUrl: sential
       }
     ],
     "CPCB4+ Diesel Generator": [
@@ -273,7 +240,8 @@ const PowerSolutions = () => {
           "Application: Residential, Small Commercial",
           "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
         ],
-        img: dg1
+        img: dg1,
+        brochureUrl: Cpcb
       },
       {
         title: "CPCB4+ Diesel Generators(25 kVA - 58.5 kVA)",
@@ -287,7 +255,8 @@ const PowerSolutions = () => {
           "Application: Industrial, Commercial",
           "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
         ],
-        img: dg3
+        img: dg3,
+        brochureUrl: cpcb58
       },
       {
         title: "CPCB4+ Diesel Generators(82.5 kVA - 160 kVA)",
@@ -301,7 +270,8 @@ const PowerSolutions = () => {
           "Application: Industrial, Commercial",
           "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
         ],
-        img: dg2
+        img: dg2,
+        brochureUrl: cpcb160
       },
       {
         title: "CPCB4+ Diesel Generators(200 kVA - 250 kVA)",
@@ -315,7 +285,8 @@ const PowerSolutions = () => {
           "Application: Industrial, Commercial",
           "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
         ],
-        img: diesel
+        img: diesel,
+        brochureUrl: cpcb250
       },
       {
         title: "CPCB4+ Diesel Generators(320 kVA - 750 kVA)",
@@ -329,7 +300,8 @@ const PowerSolutions = () => {
           "Application: Large Industrial, Commercial",
           "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
         ],
-        img: dg2
+        img: dg2,
+        brochureUrl: cpcb320
       },
       {
         title: "CPCB4+ Diesel Generators(750 kVA - 1500 kVA)",
@@ -343,7 +315,8 @@ const PowerSolutions = () => {
           "Application: Heavy Industrial, Commercial Complexes",
           "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
         ],
-        img: dg5
+        img: dg5,
+        brochureUrl: cpcb750
       }
     ],
     Inverters: [
@@ -358,7 +331,8 @@ const PowerSolutions = () => {
           "Type: Pure Sine Wave",
           "Features: Battery Management, LCD Display"
         ],
-        img: ups
+        img: ups,
+        brochureUrl: sential // Default brochure for inverters
       },
       {
         title: "Solar Inverters",
@@ -371,7 +345,8 @@ const PowerSolutions = () => {
           "Type: Solar Hybrid",
           "Features: MPPT, Mobile App"
         ],
-        img: portable
+        img: portable,
+        brochureUrl: sential // Default brochure for inverters
       }
     ],
     "Variable Frequency Drives (VFDs)": [
@@ -386,7 +361,8 @@ const PowerSolutions = () => {
           "Control Type: Vector Control",
           "Protection: IP54"
         ],
-        img: gas
+        img: gas,
+        brochureUrl: sential // Default brochure for VFDs
       },
       {
         title: "HVAC Drives",
@@ -399,7 +375,8 @@ const PowerSolutions = () => {
           "Control Type: Closed Loop",
           "Protection: IP20"
         ],
-        img: diesel
+        img: diesel,
+        brochureUrl: sential // Default brochure for VFDs
       }
     ],
     "Electrical Panels": [
@@ -414,7 +391,8 @@ const PowerSolutions = () => {
       "Application: Synchronization & Backup Power",
      "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
     ],
-    img: Panel6
+    img: Panel6,
+    brochureUrl: sential // Default brochure for panels
   },
   {
     title: "Vacuum Circuit Breaker",
@@ -427,7 +405,8 @@ const PowerSolutions = () => {
       "High Dielectric Strength",
       "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
     ],
-    img: Panel1
+    img: Panel1,
+    brochureUrl: sential // Default brochure for panels
   },
   {
     title: "Panels",
@@ -440,7 +419,8 @@ const PowerSolutions = () => {
       "Indoor/Outdoor Installation",
       "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
     ],
-    img: Panel2
+    img: Panel2,
+    brochureUrl: sential // Default brochure for panels
   },
   {
     title: "Distribution Boxes",
@@ -453,7 +433,8 @@ const PowerSolutions = () => {
       "Wall or Floor Mounted",
       "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
     ],
-    img: Panel7
+    img: Panel7,
+    brochureUrl: sential // Default brochure for panels
   }
     ],
     "Servo Stabilizers": [
@@ -468,7 +449,8 @@ const PowerSolutions = () => {
       "Application: Industrial Plants, HVAC Systems, Medical Equipment",
       "Features: Digital Metering, Overload & Short Circuit Protection"
     ],
-    img: Servo1
+    img: Servo1,
+    brochureUrl: sential // Default brochure for servo stabilizers
   },
   {
     title: "Air Cooled Servo Stabilizers",
@@ -481,7 +463,8 @@ const PowerSolutions = () => {
       "Application: Data Centers, Offices, Laboratories",
       "Features: Digital Display, Fast Response, Overload Protection"
     ],
-    img: Servo2
+    img: Servo2,
+    brochureUrl: sential // Default brochure for servo stabilizers
   }
     ],
     Transformers: [
@@ -496,7 +479,8 @@ const PowerSolutions = () => {
       "Application: Power Distribution, Utilities, Industries",
       "Standards: IS 1180, IEC 60076"
     ],
-    img: Trans1
+    img: Trans1,
+    brochureUrl: sential // Default brochure for transformers
   },
   {
     title: "Power Transformers",
@@ -509,7 +493,8 @@ const PowerSolutions = () => {
       "Application: Transmission, Generation Plants, Substations",
       "Standards: IEC 60076, ANSI"
     ],
-    img: Trans2
+    img: Trans2,
+    brochureUrl: sential // Default brochure for transformers
   },
   {
     title: "Cast Resin Transformers",
@@ -522,7 +507,8 @@ const PowerSolutions = () => {
       "Application: Indoor, Renewable, Commercial Buildings",
       "Standards: IEC 60076-11"
     ],
-    img: Trans3
+    img: Trans3,
+    brochureUrl: sential // Default brochure for transformers
   },
   {
     title: "Unitized Package Substation",
@@ -535,23 +521,18 @@ const PowerSolutions = () => {
       "Application: Industrial, Commercial & Utility",
       "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
     ],
-    img: Panel4
+    img: Panel4,
+    brochureUrl: sential // Default brochure for transformers
   }
     ]
   };
 
-  // Reset filters and filtered products when category changes
+  // Reset filters when category changes
   useEffect(() => {
-    setModalOpen(false);
+    // Component cleanup if needed
   }, [activeCategory]);
 
   // Remove the old GSAP animation logic - replaced with pure CSS
-  
-  // Handler for Explore More button
-  const handleExplore = (product: { title: string; desc: string; specs: string[]; img: string }) => {
-    setModalProduct(product);
-    setModalOpen(true);
-  };
 
   return (
     <section id="solutions" className="py-0">
@@ -664,7 +645,8 @@ const PowerSolutions = () => {
                   desc={product.desc}
                   specs={product.specs}
                   img={product.img}
-                  onExplore={() => handleExplore(product)}
+                  brochureUrl={product.brochureUrl}
+                  hideDownload={["Electrical Panels", "Servo Stabilizers", "Transformers"].includes(activeCategory)}
                 />
               ))}
             </motion.div>
@@ -930,15 +912,8 @@ const PowerSolutions = () => {
         ></motion.div>
       </motion.div>
 
-      {/* Product info modal */}
-      <ProductModal
-        open={modalOpen}
-        onClose={() => setModalOpen(false)}
-        product={modalProduct}
-      />
-
       {/* Updated CSS for scrolling animation */}
-      <style jsx>{`
+      <style>{`
         .logo-scroll {
           animation: scroll-logos 30s linear infinite;
         }
