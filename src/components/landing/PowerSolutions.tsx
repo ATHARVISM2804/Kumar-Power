@@ -545,53 +545,8 @@ const PowerSolutions = () => {
     setModalOpen(false);
   }, [activeCategory]);
 
-  // Scrollable logo marquee effect
-  useEffect(() => {
-    if (!logoRef.current || !logoContainerRef.current) return;
-    
-    // Ensure the container has proper height
-    const firstLogo = logoRef.current.children[0] as HTMLElement;
-    if (firstLogo) {
-      logoContainerRef.current.style.height = `${firstLogo.offsetHeight}px`;
-    }
-
-    // Clone logos for seamless scrolling
-    const originalLogos = logoRef.current.children;
-    const totalWidth = Array.from(originalLogos).reduce(
-      (acc, logo) => acc + (logo as HTMLElement).offsetWidth + 32, // add gap
-      0
-    );
-    
-    // Set initial position for the logos
-    logoRef.current.style.width = `${totalWidth * 2}px`;
-
-    // Clone logos and append them to create the illusion of infinite scrolling
-    Array.from(originalLogos).forEach((logo) => {
-      const clone = logo.cloneNode(true);
-      logoRef.current?.appendChild(clone);
-    });
-
-    // GSAP animation - slower speed
-    gsap.fromTo(
-      logoRef.current,
-      { x: 0 },
-      {
-        x: -totalWidth,
-        duration: 20, // Slower animation (was 15)
-        ease: "linear",
-        repeat: -1,
-        onRepeat: () => {
-          // Reset position to create seamless loop
-          gsap.set(logoRef.current, { x: 0 });
-        }
-      }
-    );
-
-    return () => {
-      gsap.killTweensOf(logoRef.current);
-    };
-  }, []);
-
+  // Remove the old GSAP animation logic - replaced with pure CSS
+  
   // Handler for Explore More button
   const handleExplore = (product: { title: string; desc: string; specs: string[]; img: string }) => {
     setModalProduct(product);
@@ -756,7 +711,7 @@ const PowerSolutions = () => {
         </motion.div>
       </div>
       
-      {/* Trusted By Section */}
+      {/* Members of Associations Section */}
       <motion.div 
         className="container mx-auto mt-10 md:mt-20 mb-10 px-4 md:px-0"
         initial={{ opacity: 0, y: 20 }}
@@ -770,30 +725,186 @@ const PowerSolutions = () => {
           transition={{ duration: 0.6, delay: 1.6 }}
         >
           <h3 className="text-4xl md:text-5xl font-semibold">
-            Trusted Across India's Largest Enterprises
+            Members of Associations
           </h3>
+          <p className="text-gray-600 mt-4 text-lg">
+            Certified and recognized by leading industry organizations for quality and excellence
+          </p>
         </motion.div>
-        <div ref={logoContainerRef} className="overflow-hidden relative h-20">
-          <div 
-            ref={logoRef} 
-            className="flex items-center gap-24 absolute top-0 left-0"
-          >
-            <img src={trust} alt="Honeywell" className="h-20 w-auto" />
-            <img src={trust1} alt="Caritas" className="h-20 w-auto" />
-            <img src={trust2} alt="India" className="h-20 w-auto" />
-            <img src={trust3} alt="Kashyapi" className="h-20 w-auto" />
-            <img src={trust4} alt="Continental" className="h-20 w-auto" />
-            <img src={trust5} alt="STS" className="h-20 w-auto" />
-            <img src={trust6} alt="GMP" className="h-20 w-auto" />
-            <img src={trust7} alt="GMP" className="h-20 w-auto" />
-            <img src={ace} alt="GMP" className="h-20 w-auto" />
-            <img src={claroin} alt="GMP" className="h-20 w-auto" />
-            <img src={addidas} alt="GMP" className="h-20 w-auto" />
-            <img src={GEPL} alt="GMP" className="h-20 w-auto" />
-            <img src={Dps} alt="GMP" className="h-20 w-auto" />
-            <img src={Comed} alt="GMP" className="h-20 w-auto" />
+        
+        {/* Association logos sliding gallery */}
+        <motion.div 
+          className="relative overflow-hidden bg-transparent p-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.8, duration: 0.5 }}
+        >
+          <div className="relative overflow-hidden">
+            <div className="logo-scroll flex items-center gap-12">
+              {/* Original set of association member images */}
+              <motion.div 
+                className="flex-shrink-0 h-24 w-40 flex items-center justify-center p-3"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img
+                  src="https://res.cloudinary.com/dmhabztbf/image/upload/v1762843802/Screenshot_2025-11-11_121853_okz8x7.png"
+                  alt="Association Member"
+                  className="h-full w-full object-contain"
+                />
+              </motion.div>
+              
+              <motion.div 
+                className="flex-shrink-0 h-24 w-40 flex items-center justify-center p-3"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img
+                  src="https://res.cloudinary.com/dmhabztbf/image/upload/v1762843802/Screenshot_2025-11-11_121836_ayhhxd.png"
+                  alt="Association Member"
+                  className="h-full w-full object-contain"
+                />
+              </motion.div>
+              
+              <motion.div 
+                className="flex-shrink-0 h-24 w-40 flex items-center justify-center p-3"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img
+                  src="https://res.cloudinary.com/dmhabztbf/image/upload/v1762843802/Screenshot_2025-11-11_121914_yztxrf.png"
+                  alt="Association Member"
+                  className="h-full w-full object-contain"
+                />
+              </motion.div>
+              
+              <motion.div 
+                className="flex-shrink-0 h-24 w-40 flex items-center justify-center p-3"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img
+                  src="https://res.cloudinary.com/dmhabztbf/image/upload/v1762843802/Screenshot_2025-11-11_121748_ihrukv.png"
+                  alt="Association Member"
+                  className="h-full w-full object-contain"
+                />
+              </motion.div>
+              
+              <motion.div 
+                className="flex-shrink-0 h-24 w-40 flex items-center justify-center p-3"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img
+                  src="https://res.cloudinary.com/dmhabztbf/image/upload/v1762843803/Screenshot_2025-11-11_121726_jic3vb.png"
+                  alt="Association Member"
+                  className="h-full w-full object-contain"
+                />
+              </motion.div>
+              
+              <motion.div 
+                className="flex-shrink-0 h-24 w-40 flex items-center justify-center p-3"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img
+                  src="https://res.cloudinary.com/dmhabztbf/image/upload/v1762843803/Screenshot_2025-11-11_121808_vm8yuc.png"
+                  alt="Association Member"
+                  className="h-full w-full object-contain"
+                />
+              </motion.div>
+
+              {/* Duplicated set for seamless loop */}
+              <motion.div 
+                className="flex-shrink-0 h-24 w-40 flex items-center justify-center p-3"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img
+                  src="https://res.cloudinary.com/dmhabztbf/image/upload/v1762843802/Screenshot_2025-11-11_121853_okz8x7.png"
+                  alt="Association Member"
+                  className="h-full w-full object-contain"
+                />
+              </motion.div>
+              
+              <motion.div 
+                className="flex-shrink-0 h-24 w-40 flex items-center justify-center p-3"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img
+                  src="https://res.cloudinary.com/dmhabztbf/image/upload/v1762843802/Screenshot_2025-11-11_121836_ayhhxd.png"
+                  alt="Association Member"
+                  className="h-full w-full object-contain"
+                />
+              </motion.div>
+              
+              <motion.div 
+                className="flex-shrink-0 h-24 w-40 flex items-center justify-center p-3"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img
+                  src="https://res.cloudinary.com/dmhabztbf/image/upload/v1762843802/Screenshot_2025-11-11_121914_yztxrf.png"
+                  alt="Association Member"
+                  className="h-full w-full object-contain"
+                />
+              </motion.div>
+              
+              <motion.div 
+                className="flex-shrink-0 h-24 w-40 flex items-center justify-center p-3"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img
+                  src="https://res.cloudinary.com/dmhabztbf/image/upload/v1762843802/Screenshot_2025-11-11_121748_ihrukv.png"
+                  alt="Association Member"
+                  className="h-full w-full object-contain"
+                />
+              </motion.div>
+              
+              <motion.div 
+                className="flex-shrink-0 h-24 w-40 flex items-center justify-center p-3"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img
+                  src="https://res.cloudinary.com/dmhabztbf/image/upload/v1762843803/Screenshot_2025-11-11_121726_jic3vb.png"
+                  alt="Association Member"
+                  className="h-full w-full object-contain"
+                />
+              </motion.div>
+              
+              <motion.div 
+                className="flex-shrink-0 h-24 w-40 flex items-center justify-center p-3"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img
+                  src="https://res.cloudinary.com/dmhabztbf/image/upload/v1762843803/Screenshot_2025-11-11_121808_vm8yuc.png"
+                  alt="Association Member"
+                  className="h-full w-full object-contain"
+                />
+              </motion.div>
+            </div>
           </div>
-        </div>
+          
+          {/* Gradient overlays for smooth edge effect */}
+          <div className="absolute top-0 left-0 w-20 h-full bg-gradient-to-r from-white to-transparent pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-20 h-full bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
+        </motion.div>
+        
+        {/* Additional certification info */}
+        <motion.div 
+          className="text-center mt-8 text-gray-600"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2.3, duration: 0.5 }}
+        >
+          <p className="text-sm">
+            Our commitment to quality and excellence is recognized by industry-leading organizations
+          </p>
+        </motion.div>
       </motion.div>
       
       {/* Power in Action Section */}
@@ -825,6 +936,26 @@ const PowerSolutions = () => {
         onClose={() => setModalOpen(false)}
         product={modalProduct}
       />
+
+      {/* Updated CSS for scrolling animation */}
+      <style jsx>{`
+        .logo-scroll {
+          animation: scroll-logos 30s linear infinite;
+        }
+
+        .logo-scroll:hover {
+          animation-play-state: paused;
+        }
+
+        @keyframes scroll-logos {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </section>
   );
 };

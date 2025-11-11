@@ -237,23 +237,7 @@ const Hero = () => {
                 </div>
               </div>
 
-              {/* Associations Section - Optimized for mobile visibility */}
-              <div className="mt-1 md:mt-4 flex flex-col items-center w-full pb-2">
-                <span className="text-white text-xs md:text-base font-semibold mb-1 tracking-wide">
-                  ASSOCIATIONS
-                </span>
-                <div className="flex flex-wrap justify-center gap-1 md:gap-3 px-2">
-                  <div className="bg-white/10 backdrop-blur border border-white/20 rounded-md px-2 md:px-3 py-1">
-                    <span className="text-white text-xs md:text-sm font-medium whitespace-nowrap">Kirloskar Authorized</span>
-                  </div>
-                  <div className="bg-white/10 backdrop-blur border border-white/20 rounded-md px-2 md:px-3 py-1">
-                    <span className="text-white text-xs md:text-sm font-medium whitespace-nowrap">CPCB Certified</span>
-                  </div>
-                  <div className="bg-white/10 backdrop-blur border border-white/20 rounded-md px-2 md:px-3 py-1">
-                    <span className="text-white text-xs md:text-sm font-medium whitespace-nowrap">ISO 9001:2015</span>
-                  </div>
-                </div>
-              </div>
+             
             </div>
           </div>
         )}
