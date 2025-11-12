@@ -404,21 +404,31 @@ const OurClients = () => {
             <div className="flex items-center justify-center">
               <img src={vistara} alt="Vistaar" className="h-20" />
             </div>
-            {/* Row 4 */}
+            {/* Row 6 */}
             <div className="flex items-center justify-center">
-              <img src={ace} alt="Mapple" className="h-20" />
+              <img src={ace} alt="Ace Construction" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={claroin} alt="Coated" className="h-20" />
+              <img src={claroin} alt="Clarion" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={Comed} alt="MBD Group" className="h-20" />
+              <img src={Comed} alt="Comed" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={Dps} alt="Infrastructure" className="h-20" />
+              <img src={Dps} alt="DPS" className="h-20" />
             </div>
             <div className="flex items-center justify-center">
-              <img src={addidas} alt="Raj Foundation" className="h-20" />
+              <img src={addidas} alt="Adidas" className="h-20" />
+            </div>
+            {/* Row 7 - New logos */}
+            <div className="flex items-center justify-center">
+              <img src={GEPL} alt="GEPL" className="h-20" />
+            </div>
+            <div className="flex items-center justify-center">
+              <img src="https://res.cloudinary.com/dmhabztbf/image/upload/v1762928655/5d8a7ffc-390a-42d8-bee8-2a5c353e5d05_abj0u1.jpg" alt="Trusted Partner" className="h-20" />
+            </div>
+            <div className="flex items-center justify-center">
+              <img src="https://res.cloudinary.com/dmhabztbf/image/upload/v1762928656/68724243-11f2-42ec-85dc-69c153744f3c_n1154o.jpg" alt="Trusted Client" className="h-20" />
             </div>
           </div>
         </div>

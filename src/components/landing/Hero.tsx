@@ -191,6 +191,16 @@ const Hero = () => {
                       alt="BuildMaster"
                       className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
                     />
+                    <img
+                      src="https://res.cloudinary.com/dmhabztbf/image/upload/v1762928655/5d8a7ffc-390a-42d8-bee8-2a5c353e5d05_abj0u1.jpg"
+                      alt="Trusted Partner"
+                      className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
+                    />
+                    <img
+                      src="https://res.cloudinary.com/dmhabztbf/image/upload/v1762928656/68724243-11f2-42ec-85dc-69c153744f3c_n1154o.jpg"
+                      alt="Trusted Client"
+                      className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
+                    />
 
                     {/* Duplicate set of logos for continuous animation */}
                     <img
@@ -231,6 +241,16 @@ const Hero = () => {
                     <img
                       src={trust7}
                       alt="BuildMaster"
+                      className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
+                    />
+                    <img
+                      src="https://res.cloudinary.com/dmhabztbf/image/upload/v1762928655/5d8a7ffc-390a-42d8-bee8-2a5c353e5d05_abj0u1.jpg"
+                      alt="Trusted Partner"
+                      className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
+                    />
+                    <img
+                      src="https://res.cloudinary.com/dmhabztbf/image/upload/v1762928656/68724243-11f2-42ec-85dc-69c153744f3c_n1154o.jpg"
+                      alt="Trusted Client"
                       className="h-8 sm:h-10 md:h-14 w-auto object-contain bg-white rounded shadow"
                     />
                   </div>

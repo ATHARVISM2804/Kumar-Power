@@ -371,6 +371,12 @@ const Testimonials = () => {
                 <div className="logo-item">
                   <img src={claroin} alt="CEC" className="max-h-16 w-auto" />
                 </div>
+                <div className="logo-item">
+                  <img src="https://res.cloudinary.com/dmhabztbf/image/upload/v1762928655/5d8a7ffc-390a-42d8-bee8-2a5c353e5d05_abj0u1.jpg" alt="Trusted Partner" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src="https://res.cloudinary.com/dmhabztbf/image/upload/v1762928656/68724243-11f2-42ec-85dc-69c153744f3c_n1154o.jpg" alt="Trusted Client" className="max-h-16 w-auto" />
+                </div>
                 
                 {/* Duplicate logos for continuous loop */}
                 <div className="logo-item">
@@ -414,6 +420,12 @@ const Testimonials = () => {
                 </div>
                 <div className="logo-item">
                   <img src={claroin} alt="CEC" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src="https://res.cloudinary.com/dmhabztbf/image/upload/v1762928655/5d8a7ffc-390a-42d8-bee8-2a5c353e5d05_abj0u1.jpg" alt="Trusted Partner" className="max-h-16 w-auto" />
+                </div>
+                <div className="logo-item">
+                  <img src="https://res.cloudinary.com/dmhabztbf/image/upload/v1762928656/68724243-11f2-42ec-85dc-69c153744f3c_n1154o.jpg" alt="Trusted Client" className="max-h-16 w-auto" />
                 </div>
               </div>
             </div>
