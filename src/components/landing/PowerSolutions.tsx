@@ -165,14 +165,14 @@ const PSCard = ({ title, desc, specs, img, brochureUrl, hideDownload = false }: 
 const PowerSolutions = () => {
   const logoRef = useRef<HTMLDivElement>(null);
   const logoContainerRef = useRef<HTMLDivElement>(null);
-  const [activeCategory, setActiveCategory] = useState<string>("Optiprime Generators");
+  const [activeCategory, setActiveCategory] = useState<string>("CPCB4+ Diesel Generator");
 
-  // Categories for the navigation tabs
+  // Categories for the navigation tabs - CPCB4+ Diesel Generator first
   const categories = [
+    "CPCB4+ Diesel Generator",
     "Optiprime Generators",
     "Gas Generators", 
     "Portable Generators",
-    "CPCB4+ Diesel Generator",
     "Electrical Panels",
     "Servo Stabilizers",
     "Transformers",
