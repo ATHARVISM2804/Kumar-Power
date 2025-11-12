@@ -214,9 +214,9 @@ const InstallationService = () => {
               </div>
               <div className="rounded-lg overflow-hidden shadow-xl">
                 <img 
-                  src={range5} 
-                  alt="Generator installation in progress" 
-                  className="w-full h-auto"
+                  src="https://res.cloudinary.com/dmhabztbf/image/upload/v1762929728/unnamed_gfqjoj.jpg" 
+                  alt="Professional power system installation" 
+                  className="w-full h-64 md:h-80 object-cover"
                 />
               </div>
             </div>
