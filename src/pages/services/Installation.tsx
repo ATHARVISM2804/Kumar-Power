@@ -128,14 +128,6 @@ const InstallationService = () => {
     }
   ];
 
-  // State for selected category
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-
-  // Filtered products based on selected category
-  const filteredProducts = selectedCategory
-    ? installationProducts.filter((product) => product.category === selectedCategory)
-    : installationProducts;
-
   return (
     <div className="min-h-screen bg-background">
       <style jsx global>{`
@@ -393,45 +385,10 @@ const InstallationService = () => {
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
                 Explore our comprehensive range of professional generator installations across industrial, commercial, and residential settings
               </p>
-              
-              <div className="flex flex-wrap gap-4 justify-center mb-10">
-                <Badge
-                  className={`cursor-pointer px-4 py-2 ${
-                    selectedCategory === null ? 'bg-custom-blue text-white' : 'bg-gray-200 text-gray-800'
-                  }`}
-                  onClick={() => setSelectedCategory(null)}
-                >
-                  All Installations
-                </Badge>
-                <Badge
-                  className={`cursor-pointer px-4 py-2 ${
-                    selectedCategory === 'Industrial' ? 'bg-custom-blue text-white' : 'bg-gray-200 text-gray-800'
-                  }`}
-                  onClick={() => setSelectedCategory('Industrial')}
-                >
-                  Industrial
-                </Badge>
-                <Badge
-                  className={`cursor-pointer px-4 py-2 ${
-                    selectedCategory === 'Commercial' ? 'bg-custom-blue text-white' : 'bg-gray-200 text-gray-800'
-                  }`}
-                  onClick={() => setSelectedCategory('Commercial')}
-                >
-                  Commercial
-                </Badge>
-                <Badge
-                  className={`cursor-pointer px-4 py-2 ${
-                    selectedCategory === 'Residential' ? 'bg-custom-blue text-white' : 'bg-gray-200 text-gray-800'
-                  }`}
-                  onClick={() => setSelectedCategory('Residential')}
-                >
-                  Residential
-                </Badge>
-              </div>
             </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {filteredProducts.map((product) => (
+              {installationProducts.map((product) => (
                 <div 
                   key={product.id} 
                   className="h-80 w-full rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
