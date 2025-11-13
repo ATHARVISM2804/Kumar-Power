@@ -127,6 +127,10 @@ import award4 from "@/assets/award 4.png";
 import ps from "@/assets/ps2.png"
 import Portfolio from "@/assets/Brochure/PortfolioProfile.pdf"
 
+// New award images from Cloudinary
+const award5 = "https://res.cloudinary.com/dmhabztbf/image/upload/v1763018711/gallery4_nwutsh_wg8ygw.png";
+const award6 = "https://res.cloudinary.com/dmhabztbf/image/upload/v1763018711/gallery3_dcqffp_geri2t.png";
+
 interface GalleryImage {
   id: number;
   src: string;
@@ -236,6 +240,8 @@ const PhotoGallery = () => {
     { id: 2, src: award2, alt: "Service Recognition Award", category: "Award" },
     { id: 3, src: award3, alt: "Industry Leadership Award", category: "Award" },
     { id: 4, src: award4, alt: "Best Power Solutions Provider", category: "Award" },
+    { id: 5, src: award5, alt: "Kumar Power Industry Recognition", category: "Award" },
+    { id: 6, src: award6, alt: "Kumar Power Achievement Award", category: "Award" },
     
     // Diwali Party images (all in 'events' category)
     { id: 101, src: diwali4, alt: "Diwali Party 4", category: "events" },

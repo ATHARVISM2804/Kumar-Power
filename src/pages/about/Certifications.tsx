@@ -12,56 +12,64 @@ const Certifications = () => {
       description: "Kumar Generator House is our authorised KOEL Green Dealer for sale of KOEL Green Diesel Generating Sets and Chhota Chilli Range of generators",
       issuer: "Authorisation certificate",
       year: "2024",
-      icon: "shield-check"
+      icon: "shield-check",
+      image: "https://res.cloudinary.com/dmhabztbf/image/upload/v1761803079/certificates/certificate_1_m3jcuw.jpg"
     },
     {
       name: "Certificate of Excellance ",
       description: "Environmental Management System certification, demonstrating our commitment to environmental responsibility.",
       issuer: "KOEL Pune",
       year: "2012-2013",
-      icon: "leaf"
+      icon: "leaf",
+      image: "https://res.cloudinary.com/dmhabztbf/image/upload/v1761803079/certificates/certificate_2_d7qhxe.jpg"
     },
     {
       name: "Certification of Highest Growth",
       description: "Presented to M/s Kumar Generator House, Delhi for highest growth & highest nos. of KIRLOSKAR GREEN DG sets sold in FY 2013.",
       issuer: "KOEL-JAKPOWER-KGD Conference, Goa",
       year: "2013",
-      icon: "hard-hat"
+      icon: "hard-hat",
+      image: "https://res.cloudinary.com/dmhabztbf/image/upload/v1761803079/certificates/certificate_3_k8fmnp.jpg"
     },
     {
       name: "Certificate for Highest in MHP generators (2014)",
       description: "Awarded to Kumar Generator House, Delhi for highest volume in MHP generators in FY 14.",
       issuer: "Kirloskar Conference Awards - Pune",
       year: "2014",
-      icon: "award"
+      icon: "award",
+      image: "https://res.cloudinary.com/dmhabztbf/image/upload/v1761803079/certificates/certificate_4_wjx5ly.jpg"
     },
     {
       name: "Certificate for Highest in HHP generators (2014)",
       description: "Awarded to Kumar Generator House, Delhi for highest volume in HHP generators in FY 14.",
       issuer: "Kirloskar Conference Awards - Pune",
       year: "2014",
-      icon: "zap"
+      icon: "zap",
+      image: "https://res.cloudinary.com/dmhabztbf/image/upload/v1761803079/certificates/certificate_5_lqm2tv.jpg"
     },
     {
       name: "Certificate for Highest Sale (2015)",
       description: "Presented to M/s Kumar Generator House, Delhi for highest nos. of KIRLOSKAR GREEN DG sets sold in FY 15.",
       issuer: "KOEL JAKPOWER KGD & SD Conference Awards Rajasthan",
       year: "2015",
-      icon: "globe"
+      icon: "globe",
+      image: "https://res.cloudinary.com/dmhabztbf/image/upload/v1761803079/certificates/certificate_6_p9vkhn.jpg"
     },
     {
       name: "KOEL-JAKPOWER-KGD & SD Conference Awards Gangtok",
       description: "Presented to M/s Kumar Generator House, Delhi for highest nos. of KIRLOSKAR GREEN DG sets sold in FY 18-19.",
       issuer: "KOEL JAKPOWER KGD & SD Conference Awards Gangtok",
       year: "2015",
-      icon: "globe"
+      icon: "globe",
+      image: "https://res.cloudinary.com/dmhabztbf/image/upload/v1761803079/certificates/certificate_7_x2vhnm.jpg"
     },
     {
       name: "KOEL JAKPOWER KGD & SD Conference Awards Rajasthan",
       description: "Presented to M/s Kumar Generator House, Delhi for highest nos. of KIRLOSKAR GREEN DG sets sold in FY 16-17.",
       issuer: "KOEL JAKPOWER KGD & SD Conference Awards Rajasthan",
       year: "2015",
-      icon: "globe"
+      icon: "globe",
+      image: "https://res.cloudinary.com/dmhabztbf/image/upload/v1761803079/certificates/certificate_8_qw7pxd.jpg"
     }
   ];
 
@@ -133,14 +141,23 @@ const Certifications = () => {
                   {certificateSlides[activeIndex].map((certificate, idx) => (
                     <div 
                       key={idx} 
-                      className="bg-gray-900 p-8 rounded-xl shadow-lg overflow-hidden flex flex-col"
+                      className="bg-gray-900 rounded-xl shadow-lg overflow-hidden flex flex-col"
                     >
-                      <h3 className="text-2xl font-bold mb-2 text-center">{certificate.name}</h3>
-                      <span className="bg-[#22548e] text-[#2D6FBA] text-xs px-3 py-1 rounded-full mx-auto mb-3">
-                        Since {certificate.year}
-                      </span>
-                      <p className="text-gray-300 text-base mb-3">{certificate.description}</p>
-                      <p className="text-gray-400 text-sm mt-auto">Issued by: <strong className="text-white">{certificate.issuer}</strong></p>
+                      <div className="h-64 bg-white p-4 flex items-center justify-center">
+                        <img 
+                          src={certificate.image} 
+                          alt={certificate.name}
+                          className="max-h-full max-w-full object-contain"
+                        />
+                      </div>
+                      <div className="p-6 flex flex-col flex-1">
+                        <h3 className="text-xl font-bold mb-2 text-center">{certificate.name}</h3>
+                        <span className="bg-[#22548e] text-[#2D6FBA] text-xs px-3 py-1 rounded-full mx-auto mb-3">
+                          Since {certificate.year}
+                        </span>
+                        <p className="text-gray-300 text-sm mb-3 line-clamp-3">{certificate.description}</p>
+                        <p className="text-gray-400 text-xs mt-auto">Issued by: <strong className="text-white">{certificate.issuer}</strong></p>
+                      </div>
                     </div>
                   ))}
                 </div>
