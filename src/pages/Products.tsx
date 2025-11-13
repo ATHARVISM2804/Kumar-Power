@@ -9,18 +9,20 @@ import { Card } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import hero from "@/assets/Products/HeropBG.png"
-import range1 from "@/assets/Range1.png";
-import range2 from "@/assets/Range2.png";
+import range1 from "@/assets/Products/200CPCB.jpeg";
+import optiprime from "@/assets/Products/OPTIPRIMEGEN.jpeg"
+import range360 from "@/assets/Products/320CPCB.jpeg"
+import range2 from "@/assets/Products/15GAS.jpeg";
 import range3 from "@/assets/Range3.png";
 import range4 from "@/assets/Range4.png";
 import range5 from "@/assets/Range5.png";
-import range6 from "@/assets/Range6.png";
-import DG1 from "@/assets/Kumar Assets/7.5KVA DG.png";
+import range6 from "@/assets/Products/82.5CPCB.jpeg";
+import DG1 from "@/assets/Products/7.5CPCB.jpeg";
 import DG2 from "@/assets/Kumar Assets/320KVa.png";
-import DG3 from "@/assets/Kumar Assets/25kwa dg.png";
+import DG3 from "@/assets/Products/25CPCB.jpeg";
 import DG4 from "@/assets/Kumar Assets/62.5KVA DG.png";
-import DG5 from "@/assets/Kumar Assets/new750.png";
-import port from "@/assets/Kumar Assets/20240820_left side 2.8 with 5.5 kVA.png";
+import DG5 from "@/assets/Products/750CPCB.jpeg";
+import port from "@/assets/Products/2.1PORTABLE.jpeg";
 import panel1 from "@/assets/Panel/Porcelin_clad_vaccum_circuit_breaker 1.png"
 import panel2 from "@/assets/Panel/Panels 1.png"
 import panel3 from "@/assets/Panel/SF6_Circuit_breaker 1.png"
@@ -199,7 +201,7 @@ const Products = () => {
     {
       id: "320 kVA to 750 kVA ",
       name: "320 kVA - 750 kVA Diesel Generators",
-      image: range6, // Use imported image
+      image: range360, // Use imported image
       fuelType: "Diesel",
       cpcbNorm: "CPCB-IV+",
       cooling: "Liquid",
@@ -269,7 +271,7 @@ const Products = () => {
     {
       id: "optiprime-product-1",
       name: "Kirloskar Optiprime Generator",
-      image: range1, // Placeholder image
+      image: optiprime, // Placeholder image
       fuelType: "Diesel",
       cpcbNorm: "CPCB-IV+",
       cooling: "Liquid",
