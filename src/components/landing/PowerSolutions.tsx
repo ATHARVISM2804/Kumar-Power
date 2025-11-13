@@ -405,23 +405,10 @@ const PowerSolutions = () => {
       "High Dielectric Strength",
       "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
     ],
-    img: Panel1,
-    brochureUrl: sential // Default brochure for panels
-  },
-  {
-    title: "Panels",
-    desc: "Customizable electrical control and distribution panels designed for reliable operation in industrial applications.",
-    specs: [
-      "Voltage Rating: Up to 33kV",
-      "Customized Control & Protection",
-      "High Fault Level Endurance",
-      "Application: Power Distribution & Automation",
-      "Indoor/Outdoor Installation",
-      "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
-    ],
     img: Panel2,
     brochureUrl: sential // Default brochure for panels
   },
+
   {
     title: "Distribution Boxes",
     desc: "Sturdy and safe distribution boxes to manage and distribute electrical power efficiently for various installations.",
