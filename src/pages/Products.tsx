@@ -301,48 +301,6 @@ const Products = () => {
     {
       id: "Vacuum Circuit Breaker ",
       name: "Vacuum Circuit Breaker ",
-      image: panel1, // Use imported image
-      fuelType: "N/A",
-      cpcbNorm: "N/A",
-      cooling: "Fan/Natural",
-      phase: "Three Phase",
-      ratingCount: 98,
-      rating: 4.6,
-      range: "Various",
-      category: "electrical",
-      description: "High-quality electrical panels for power distribution, control, and protection of your electrical systems.",
-    },
-    {
-      id: "SF6 circuit breakers  ",
-      name: "SF6 circuit breakers",
-      image: panel3, // Use imported image
-      fuelType: "N/A",
-      cpcbNorm: "N/A",
-      cooling: "Fan/Natural",
-      phase: "Three Phase",
-      ratingCount: 98,
-      rating: 4.6,
-      range: "Various",
-      category: "electrical",
-      description: "High-quality electrical panels for power distribution, control, and protection of your electrical systems.",
-    },
-    {
-      id: "Unitized Package Substation ",
-      name: "Unitized Package Substation",
-      image: panel4, // Use imported image
-      fuelType: "N/A",
-      cpcbNorm: "N/A",
-      cooling: "Fan/Natural",
-      phase: "Three Phase",
-      ratingCount: 98,
-      rating: 4.6,
-      range: "Various",
-      category: "electrical",
-      description: "High-quality electrical panels for power distribution, control, and protection of your electrical systems.",
-    },
-    {
-      id: "Panels",
-      name: "Panels ",
       image: panel2, // Use imported image
       fuelType: "N/A",
       cpcbNorm: "N/A",
@@ -382,7 +340,6 @@ const Products = () => {
       category: "electrical",
       description: "High-quality electrical panels for power distribution, control, and protection of your electrical systems.",
     },
-
   ];
 
   // Define servo stabilizers
@@ -460,6 +417,20 @@ const Products = () => {
       range: "1-10 MVA",
       category: "transformers",
       description: "Durable and efficient transformers designed for various industrial and commercial applications.",
+    },
+    {
+      id: "Unitized Package Substation",
+      name: "Unitized Package Substation",
+      image: panel4, // Use imported image
+      fuelType: "N/A",
+      cpcbNorm: "N/A",
+      cooling: "Oil/Dry",
+      phase: "Three Phase",
+      ratingCount: 98,
+      rating: 4.6,
+      range: "500-5000 kVA",
+      category: "transformers",
+      description: "Complete electrical substation solution with integrated transformer, switchgear, and protection systems.",
     }
   ];
 
