@@ -142,7 +142,7 @@ const Products = () => {
   const dieselGenerators = [
     {
       id: "7.5 kVA to 20 kVA",
-      name: "7.5 kVA to 20 kVA diesel generators",
+      name: "7.5 kVA to 20 kVA Diesel generators",
       image: DG1, // Use imported image
       fuelType: "Diesel",
       cpcbNorm: "CPCB-IV+",
@@ -156,7 +156,7 @@ const Products = () => {
     },
     {
       id: "25 kVA to 58.5 kVA",
-      name: "25 kVA to 58.5 kVA diesel generators",
+      name: "25 kVA to 58.5 kVA Diesel generators",
       image: DG3, // Use imported image
       fuelType: "Diesel",
       cpcbNorm: "CPCB-IV+",
@@ -170,7 +170,7 @@ const Products = () => {
     },
     {
       id: "82.5 kVA to 160 kVA",
-      name: "82.5 kVA to 160 kVA diesel generators",
+      name: "82.5 kVA to 160 kVA Diesel generators",
       image: range6, // Use imported image
       fuelType: "Diesel",
       cpcbNorm: "CPCB-IV+",

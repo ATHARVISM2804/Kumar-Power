@@ -129,7 +129,7 @@ import Portfolio from "@/assets/Brochure/PortfolioProfile.pdf"
 
 // New award images from Cloudinary
 const award5 = "https://res.cloudinary.com/dmhabztbf/image/upload/v1763018711/gallery4_nwutsh_wg8ygw.png";
-const award6 = "https://res.cloudinary.com/dmhabztbf/image/upload_v1763018711/gallery3_dcqffp_geri2t.png";
+const award6 = "https://res.cloudinary.com/dmhabztbf/image/upload/v1763018711/gallery3_dcqffp_geri2t.png";
 
 // New image for Experience section
 const experienceImage = "https://res.cloudinary.com/dmhabztbf/image/upload/v1763019219/Group_9_cc74ol.png";
