@@ -3,6 +3,14 @@ import Footer from "@/components/landing/Footer";
 import SEOJsonLD from "@/components/SEOJsonLD";
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import certi1 from "@/assets/certi1.png";
+import certi2 from "@/assets/certi2.png";
+import certi3 from "@/assets/certi3.png";
+import certi4 from "@/assets/certi4.png";
+import certi5 from "@/assets/certi5.png";
+import certi6 from "@/assets/certi6.png";
+import certi7 from "@/assets/certi7.png";
+import certi8 from "@/assets/certi8.png";
 
 const Certifications = () => {
   // Certificate data for the page
@@ -13,7 +21,7 @@ const Certifications = () => {
       issuer: "Authorisation certificate",
       year: "2024",
       icon: "shield-check",
-      image: "https://res.cloudinary.com/dmhabztbf/image/upload/v1761803079/certificates/certificate_1_m3jcuw.jpg"
+      image: certi1
     },
     {
       name: "Certificate of Excellance ",
@@ -21,7 +29,7 @@ const Certifications = () => {
       issuer: "KOEL Pune",
       year: "2012-2013",
       icon: "leaf",
-      image: "https://res.cloudinary.com/dmhabztbf/image/upload/v1761803079/certificates/certificate_2_d7qhxe.jpg"
+      image: certi2
     },
     {
       name: "Certification of Highest Growth",
@@ -29,7 +37,7 @@ const Certifications = () => {
       issuer: "KOEL-JAKPOWER-KGD Conference, Goa",
       year: "2013",
       icon: "hard-hat",
-      image: "https://res.cloudinary.com/dmhabztbf/image/upload/v1761803079/certificates/certificate_3_k8fmnp.jpg"
+      image: certi3
     },
     {
       name: "Certificate for Highest in MHP generators (2014)",
@@ -37,7 +45,7 @@ const Certifications = () => {
       issuer: "Kirloskar Conference Awards - Pune",
       year: "2014",
       icon: "award",
-      image: "https://res.cloudinary.com/dmhabztbf/image/upload/v1761803079/certificates/certificate_4_wjx5ly.jpg"
+      image: certi4
     },
     {
       name: "Certificate for Highest in HHP generators (2014)",
@@ -45,7 +53,7 @@ const Certifications = () => {
       issuer: "Kirloskar Conference Awards - Pune",
       year: "2014",
       icon: "zap",
-      image: "https://res.cloudinary.com/dmhabztbf/image/upload/v1761803079/certificates/certificate_5_lqm2tv.jpg"
+      image: certi5
     },
     {
       name: "Certificate for Highest Sale (2015)",
@@ -53,7 +61,7 @@ const Certifications = () => {
       issuer: "KOEL JAKPOWER KGD & SD Conference Awards Rajasthan",
       year: "2015",
       icon: "globe",
-      image: "https://res.cloudinary.com/dmhabztbf/image/upload/v1761803079/certificates/certificate_6_p9vkhn.jpg"
+      image: certi6
     },
     {
       name: "KOEL-JAKPOWER-KGD & SD Conference Awards Gangtok",
@@ -61,7 +69,7 @@ const Certifications = () => {
       issuer: "KOEL JAKPOWER KGD & SD Conference Awards Gangtok",
       year: "2015",
       icon: "globe",
-      image: "https://res.cloudinary.com/dmhabztbf/image/upload/v1761803079/certificates/certificate_7_x2vhnm.jpg"
+      image: certi7
     },
     {
       name: "KOEL JAKPOWER KGD & SD Conference Awards Rajasthan",
@@ -69,7 +77,7 @@ const Certifications = () => {
       issuer: "KOEL JAKPOWER KGD & SD Conference Awards Rajasthan",
       year: "2015",
       icon: "globe",
-      image: "https://res.cloudinary.com/dmhabztbf/image/upload/v1761803079/certificates/certificate_8_qw7pxd.jpg"
+      image: certi8
     }
   ];
 
@@ -143,11 +151,11 @@ const Certifications = () => {
                       key={idx} 
                       className="bg-gray-900 rounded-xl shadow-lg overflow-hidden flex flex-col"
                     >
-                      <div className="h-64 bg-white p-4 flex items-center justify-center">
+                      <div className="h-64 flex items-center justify-center overflow-hidden">
                         <img 
                           src={certificate.image} 
                           alt={certificate.name}
-                          className="max-h-full max-w-full object-contain"
+                          className="w-full h-full object-cover"
                         />
                       </div>
                       <div className="p-6 flex flex-col flex-1">
