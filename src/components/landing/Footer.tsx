@@ -106,7 +106,7 @@ const Footer = () => {
                   <div>Landline : <a href="tel:01140191273" className="hover:text-blue-300 transition-colors">011-40191273</a></div>
                 </li>
                 <li>
-                  E : <a href="mailto:kumargeneratorhouse@gmail.com" className="hover:text-blue-300 transition-colors break-all">kumargeneratorhouse@gmail.com</a>
+                  Email : <a href="mailto:kumargeneratorhouse@gmail.com" className="hover:text-blue-300 transition-colors break-all">kumargeneratorhouse@gmail.com</a>
                 </li>
                 <li className="flex gap-6 pt-2">
                   <a href="https://www.facebook.com/kumargenerator/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" 
