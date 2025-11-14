@@ -24,7 +24,7 @@ import DG4 from "@/assets/Kumar Assets/62.5KVA DG.png";
 import DG5 from "@/assets/Products/750CPCB.jpeg";
 import port from "@/assets/Products/2.1PORTABLE.jpeg";
 import panel1 from "@/assets/Panel/Porcelin_clad_vaccum_circuit_breaker 1.png"
-import panel2 from "@/assets/Panel/Panels 1.png"
+import panel2 from "@/assets/Products/Vacuum_circuit_breaker.png"
 import panel3 from "@/assets/Panel/SF6_Circuit_breaker 1.png"
 import panel4 from "@/assets/Panel/Unitised_package_substation 1.png"
 import panel5 from "@/assets/Panel/Vacuum_circuit_breaker 2.png"

@@ -41,7 +41,7 @@ import dg3 from "@/assets/Products/25CPCB.jpeg";
 import dg4 from "@/assets/Products/320CPCB.jpeg";
 import dg5 from "@/assets/Products/750CPCB.jpeg";
 import Panel1 from "@/assets/Panel/Porcelin_clad_vaccum_circuit_breaker 1.png"
-import Panel2 from "@/assets/Panel/Panels 1.png"
+import Panel2 from "@/assets/Products/Vacuum_circuit_breaker.png"
 import Panel3 from "@/assets/Panel/SF6_Circuit_breaker 1.png"
 import Panel4 from "@/assets/Panel/Unitised_package_substation 1.png"
 import Panel5 from "@/assets/Panel/Vacuum_circuit_breaker 2.png"
