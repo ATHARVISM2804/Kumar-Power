@@ -1,7 +1,7 @@
-import diesel from "@/assets/Range1.png";
-import gas from "@/assets/Range2.png";
-import portable from "@/assets/Range3.png";
-import portable1 from "@/assets/Range4.png";
+import diesel from "@/assets/Products/OPTIPRIMEGEN.jpeg";
+import gas from "@/assets/Products/15GAS.jpeg";
+import portable from "@/assets/Products/200CPCB.jpeg";
+import portable1 from "@/assets/Products/2.1PORTABLE.jpeg";
 import portable2 from "@/assets/Range5.png";
 import portable3 from "@/assets/Range6.png";
 import { Button } from "@/components/ui/button";
@@ -9,11 +9,12 @@ import { Download } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import dG1 from "@/assets/Kumar Assets/7.5KVA DG.png";
-import dG2 from "@/assets/Kumar Assets/320KVa.png";
-import dG3 from "@/assets/Kumar Assets/25kwa dg.png";
+import dG1 from "@/assets/Products/7.5CPCB.jpeg";
+import dG2 from "@/assets/Products/82.5CPCB.jpeg";
+import DG320 from "@/assets/Products/320CPCB.jpeg";
+import dG3 from "@/assets/Products/25CPCB.jpeg";
 import dG4 from "@/assets/Kumar Assets/62.5KVA DG.png";
-import dG5 from "@/assets/Kumar Assets/new750.png";
+import dG5 from "@/assets/Products/750CPCB.jpeg";
 import optiprime from "../../assets/Brochure/OPTIPRIME- 117,400,500,640,1000,1500 & 2020 KVA.pdf";
 import Cpcb from "@/assets/Brochure/7.5-20 kVA.pdf";
 import cpcb58 from "@/assets/Brochure/25-58.5.pdf";
@@ -197,7 +198,7 @@ const GeneratorRange = () => {
     },
     {
       title: "Kirloskar CPCB4+ Diesel Generator (320 – 750 kVA)",
-      img: dG2,
+      img: DG320,
       caption: "Durable, high-efficiency backup for industries and campuses.",
       categories: ["CPCB4+ Diesel Generators"],
       brochureUrl: cpcb320,

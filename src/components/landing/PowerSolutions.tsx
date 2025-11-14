@@ -1,7 +1,7 @@
 import { Download } from "lucide-react";
-import diesel from "@/assets/ps1.png";
-import gas from "@/assets/ps2.png";
-import portable from "@/assets/ps3.png";
+import diesel from "@/assets/Products/OPTIPRIMEGEN.jpeg";
+import gas from "@/assets/Products/15GAS.jpeg";
+import portable from "@/assets/Products/2.1PORTABLE.jpeg";
 import ups from "@/assets/ps4.png";
 import { Button } from "@/components/ui/button";
 // Import brochures from GeneratorRange
@@ -34,11 +34,12 @@ import gsap from "gsap";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import React from "react";
-import dg1 from "@/assets/Kumar Assets/7.5KVA DG.png";
-import dg2 from "@/assets/Kumar Assets/320KVa.png";
-import dg3 from "@/assets/Kumar Assets/25kwa dg.png";
-import dg4 from "@/assets/Kumar Assets/62.5KVA DG.png";
-import dg5 from "@/assets/Kumar Assets/new750.png";
+import dg1 from "@/assets/Products/7.5CPCB.jpeg";
+import dg2 from "@/assets/Products/82.5CPCB.jpeg";
+import dg200 from "@/assets/Products/200CPCB.jpeg";
+import dg3 from "@/assets/Products/25CPCB.jpeg";
+import dg4 from "@/assets/Products/320CPCB.jpeg";
+import dg5 from "@/assets/Products/750CPCB.jpeg";
 import Panel1 from "@/assets/Panel/Porcelin_clad_vaccum_circuit_breaker 1.png"
 import Panel2 from "@/assets/Panel/Panels 1.png"
 import Panel3 from "@/assets/Panel/SF6_Circuit_breaker 1.png"
@@ -285,7 +286,7 @@ const PowerSolutions = () => {
           "Application: Industrial, Commercial",
           "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
         ],
-        img: diesel,
+        img: dg200,
         brochureUrl: cpcb250
       },
       {
@@ -300,7 +301,7 @@ const PowerSolutions = () => {
           "Application: Large Industrial, Commercial",
           "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
         ],
-        img: dg2,
+        img: dg4,
         brochureUrl: cpcb320
       },
       {
