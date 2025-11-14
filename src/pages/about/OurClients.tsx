@@ -111,6 +111,110 @@ const OurClients = () => {
 
   // Client data for each category
   const clientCategories = {
+    mallsAndFarms: {
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4V5h12v10z" />
+          <path d="M9 7a1 1 0 112 0v6a1 1 0 11-2 0V7zM7 9a1 1 0 112 0v4a1 1 0 11-2 0V9zM11 9a1 1 0 112 0v4a1 1 0 11-2 0V9z" />
+        </svg>
+      ),
+      title: "Malls/Banquet Halls/Farm & Guest Houses",
+      clients: [
+        "Bridge Green Farm (Farmhouse)",
+        "Mr. Sanjeev Puri & Geeta Puri, Uppal Farms, Bilaspur. (Farmhouse)",
+        "Silver Grand Services (Banquet Hall)",
+        "Ananda Farm (Farmhouse)",
+        "Baghol Hospitality Infra Services (P) Ltd. (Guest House)",
+        "Celebration de grande (Banquet Hall)",
+        "Variety Shopping Centre (Shopping Mall)",
+        "Mr. Pawan, Eden Garden (Farmhouse)",
+        "Saifi Farm (Farm House)",
+        "Mark Mall (Shopping Mall)",
+        "Aashirwad Banquet Hall",
+        "RD FIESTA (Banquet Hall)",
+        "Beauty Green Farm House",
+        "Mr. P.J. Sight, Chattarpur (Farm House)",
+        "Mr. Lalit Dua, Dua Farms (Farm House)",
+        "Farida Begum, Farm No. 7 (Farm House)",
+        "UK Chaudhary, Jona Farm House (Farm House)",
+        "Mr. Karma, Green Beauty Farms (Farm House)",
+        "AMA Guest House (Guest House)",
+        "Saurabh Chopra, Farm House"
+      ]
+    },
+    contractors: {
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path fillRule="evenodd" d="M3 4a2 2 0 012-2h10a2 2 0 012 2v11a2 2 0 01-2 2H5a2 2 0 01-2-2V4zm3 2a1 1 0 000 2h8a1 1 0 100-2H6zm0 4a1 1 0 000 2h8a1 1 0 100-2H6zm0 4a1 1 0 000 2h4a1 1 0 100-2H6z" clipRule="evenodd" />
+        </svg>
+      ),
+      title: "Contractors/Govt Offices",
+      clients: [
+        "National Engineers & Contractors (MES) - Company Clos",
+        "Chauhan Hi-Tech Projects (P) Ltd.",
+        "The Collector, Camp Office, Tiruvannamalai.",
+        "Trishul Enterprises",
+        "JM Associates",
+        "BD Raizada & Co. (MES)",
+        "Ajit Jain & Co. (MES)",
+        "Gupta Engineers & Contactors (MES)",
+        "RS Sharma Contractors (P) Ltd. (MES)",
+        "Globe Civil Projects Pvt.Ltd.",
+        "Dharamraj Contracts (I) (P) Ltd.",
+        "Trilok & Associates",
+        "Ace Pipeline Contracts (P) Ltd.",
+        "Jai Mangla",
+        "Pacific Trade Links (MES)",
+        "Ganjoo & co. (MES)",
+        "Amit Associates (Amit goel) - MES",
+        "Jain Associates (MES)",
+        "Kansal & Company - Construction (MES)",
+        "Virender Construction (MES)",
+        "Yogesh - MR sales (MES)",
+        "Global Enterprises (MES)",
+        "Surjit Ling & Done (MES)"
+      ]
+    },
+    builders: {
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+        </svg>
+      ),
+      title: "Builders",
+      clients: [
+        "Mango Infatech Solutions (P) Ltd.",
+        "LG Builders",
+        "Vikas Buildtech (P) Ltd.",
+        "Surjit Singh & Sons",
+        "SSG Buildcon LLP",
+        "Pal & Paul Builders Ltd",
+        "Piyare Lal Hari Singh Builders (P) Ltd.",
+        "M/s. Property Shopee",
+        "M/s. Ratan Buildtech (P) Ltd.",
+        "Chettinad Property Developers (P) Ltd.",
+        "M/s. Osaaka Realtors (P) Ltd.",
+        "Chopra Promotors",
+        "M/s. Chauhan Associates",
+        "Shomit Finance Ltd.",
+        "Mr. SK Goyal (PLHS Builders)",
+        "UP INFRAESTATE PVT. LTD.",
+        "JS Builders",
+        "PCR Infratech (P) Ltd.",
+        "Auris Developers (P) Ltd.",
+        "Nishtha Builders",
+        "JK BUILDTECH",
+        "Yograj Builders",
+        "Starcity Real Estates (P) Ltd.",
+        "Akrati Technimont Ltd.",
+        "Lamba Builders",
+        "SANSKAR",
+        "Dkrrish Builders (P) Ltd.",
+        "Eco Green Buildtech (P) Ltd.",
+        "Investsmart Solutions (P) Ltd.",
+        "Celina Projects (P) Ltd"
+      ]
+    },
     petrol: {
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -259,7 +363,7 @@ const OurClients = () => {
     banks: {
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
-          <path fillRule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clipRule="evenodd" />
+          <path fillRule="evenodd" d="M4 4a2 2 0 002-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clipRule="evenodd" />
         </svg>
       ),
       title: "Banks",
@@ -298,12 +402,53 @@ const OurClients = () => {
       ),
       title: "Educational Institutions",
       clients: [
-        "National University", "Metropolitan College", "Global Institute of Technology", "Premier Business School",
-        "International Academy of Arts", "Excellence Education Center", "Heritage University", "Progressive Learning Institute",
-        "Innovation Science Academy", "Pinnacle University", "Elite School of Management", "Advanced Research Institute",
-        "Knowledge Hub University", "Future Leaders Academy", "Prestige College", "Universal Learning Center",
-        "Strategic Education Group", "Academic Excellence Institute", "Prime Learning Solutions", "Visionary Education Network",
-        "Scholar's Institute", "Learning Pathways Academy", "Modern Education Systems", "Intellectual Growth Center"
+        "Lamba Book Depot",
+        "Baba Haridass Institute of Nursing Education",
+        "KD Campus (P) ltd.",
+        "Green Tree Education (P) Ltd.",
+        "School of Business Management & Technologies",
+        "IIT College",
+        "Oscar Public School",
+        "Shishu Bharti School",
+        "Lakshay Online Test Centre",
+        "Vikas Publication (P) Ltd",
+        "SDS Institute of Modern Studies",
+        "Akash Institute",
+        "Delhi Technical Campus",
+        "Mount St. Mary's School",
+        "MCPS Junior School",
+        "GRM Public School",
+        "ARMY PUBLIC SCHOOL",
+        "Kelvin Institute",
+        "Modern Child Public Sec. School",
+        "Jagannath Engineering Mgt. Technical Campur",
+        "St. Thomas School",
+        "BK Convent School",
+        "Deshbandhu College",
+        "Vinod Gupta Classes",
+        "The Scholar School",
+        "SOUTH DELHI PUBLIC SCHOOL",
+        "Springdales School",
+        "IIT-INAS PACE EDUCATION",
+        "Crescent School",
+        "Sacred Heart College",
+        "Rai Foundation",
+        "BSC Publications",
+        "IGNOU, Regional Centre, NCT of Delhi",
+        "Educity peda gogy (P) Ltd.",
+        "Shadman English Mediam School",
+        "TINU PUBLIC SCHOOL",
+        "Shree Adhya Educational Books (P) Ltd.",
+        "Mahashay Chunnilal Saraswati Bal Mandir Sr. Sec. School",
+        "Kiran Prakashan (P) Ltd.",
+        "Navyug Public School",
+        "Vishal International School",
+        "St. Lawrence School",
+        "Salwan Public School",
+        "New Bal Bharti Public School",
+        "DPS School",
+        "Baghpat Institute of Education & Technology",
+        "Polish Institute"
       ]
     },
     medical: {
@@ -314,12 +459,37 @@ const OurClients = () => {
       ),
       title: "Medical Facilities",
       clients: [
-        "Metropolitan General Hospital", "Advanced Medical Center", "Wellness Healthcare Group", "Comprehensive Care Hospital",
-        "Premier Medical Institute", "Integrated Health Systems", "Excellence in Healthcare", "Life Care Medical Center",
-        "Modern Medicine Hospital", "Progressive Health Solutions", "Specialized Treatment Center", "Community Care Hospital",
-        "Quality Medical Services", "Innovative Healthcare Group", "Precision Medical Center", "Total Wellness Hospital",
-        "Optimal Health Solutions", "Advanced Diagnostic Center", "Healing Touch Hospital", "Patient First Medical Group",
-        "Superior Healthcare Services", "Caring Hands Medical Center", "Prime Health Institute", "Comprehensive Wellness Center"
+        "Sarvodya Hospital & institute of medical science.",
+        "Dinesh Baghpat Sarvodya Hospital & Institute of medical sciences.",
+        "Galaxy Hospital",
+        "Hi physix Laboratory",
+        "Amit Test & Calibration Centre",
+        "Toasha Vaccines Ltd.",
+        "Alshifa Multispeciality Hospital",
+        "City Medicos",
+        "Vibes Healthcare Ltd.",
+        "Insight Softlabz",
+        "East Delhi Focus Imaging (LLP) (LAB)",
+        "City X Ray & Scan Clinic (P) Ltd.",
+        "General Hospital, Leh",
+        "Patnaiks Laser Eye Institute",
+        "Global Health Line (P) Ltd.",
+        "Khemchand Chugh Arya Samaj Hospital",
+        "Nueclear Healthcare Ltd.",
+        "Akash Hospital",
+        "Arvind Medicare (P) Ltd.",
+        "Tomer Multi Speciality Hospital",
+        "Vardan Clinic",
+        "Sanyasi Ayurveda",
+        "Viviano Healthcare (P) Ltd.",
+        "Sankalp Hospital",
+        "Gandhi Nursing Home",
+        "Dr. Faheem Ahmed, Fatima Child Care Centre, Rampur, UP",
+        "Nature & Nurture Healthcare (P) Ltd.",
+        "Animal Hospital",
+        "Kesar Hospital",
+        "Revive Hospital",
+        "Hi Physix Laboratory India (P) Ltd."
       ]
     },
     construction: {
@@ -330,12 +500,47 @@ const OurClients = () => {
       ),
       title: "Construction",
       clients: [
-        "Precision Builders Inc.", "Metropolitan Construction Group", "Advanced Building Solutions", "Premier Infrastructure Corp.",
-        "Structural Excellence Ltd.", "Elite Construction Services", "Quality Builders Alliance", "Innovative Construction Group",
-        "Landmark Development Corp.", "Mastercraft Construction", "Urban Development Partners", "Foundation Builders Inc.",
-        "Summit Construction Group", "Excellence in Building", "Progressive Construction Solutions", "Reliable Builders Ltd.",
-        "Strategic Construction Partners", "Modern Building Systems", "Prestige Construction Corp.", "Pinnacle Developers",
-        "Heritage Construction Group", "Visionary Builders Inc.", "Superior Building Solutions", "Global Construction Alliance"
+        "Tribeni Construction Ltd.",
+        "Juneja Construction (P) Ltd.",
+        "Jeet Construction Co.",
+        "Rishab Construction Pvt Ltd",
+        "S&P Infrastructure Developers (P) ltd.",
+        "A&T Engg. (P) Ltd.",
+        "Janhavi Construction",
+        "Varindera Construction Ltd.",
+        "Ramacivil India Construction (P) Ltd.",
+        "Starcity Real Estate Pvt. Ltd.",
+        "Chhavi Construction Co.",
+        "Oriental Structural Engineers (P) Ltd.",
+        "ASGI Reality & Infra developers (P) Ltd",
+        "Angelique International Ltd.",
+        "WELCOME CONSTRUCTION CO LTD, CAMROON",
+        "Amranottos infratech Pvt. Ltd.",
+        "Pinnacle Superstructures (P) Ltd.",
+        "Infra 13 (P) Ltd.",
+        "Nirman Enconprojects (P) Ltd.",
+        "KEC International Ltd.",
+        "Shivom Projects (P) Ltd.",
+        "Arvind Construction",
+        "KC Infratech",
+        "Julka Construction",
+        "Anupam Construction",
+        "Windchimes Construction (P) Ltd.",
+        "Gram Bharti Construction",
+        "J.K. Construction & Developers",
+        "Brahma Construction",
+        "Metamorphosis Construction",
+        "Parnika Commercial & Estates (P) Ltd.",
+        "High Tech Profile (P) Ltd.",
+        "Pashupati Effects (P) Ltd.",
+        "CTC Projects Pvt. Ltd.",
+        "Continental Engineering Corporation",
+        "CEC",
+        "E-Homes Infrastructure (P) Ltd",
+        "S. P. SINGLA CONSTRUCTION PVT. LTD.",
+        "Spherical Construction & Interiors",
+        "Dharamraj Construct (1) Pvt. Ltd.",
+        "ATS Township (P) Ltd."
       ]
     },
     spiritual: {
@@ -346,12 +551,30 @@ const OurClients = () => {
       ),
       title: "Spiritual & NGOs",
       clients: [
-        "Global Peace Foundation", "Community Welfare Trust", "Humanitarian Aid Network", "Compassion International",
-        "Children's Welfare Society", "Environmental Conservation Group", "Healthcare for All", "Education Empowerment Trust",
-        "Rural Development Foundation", "Women's Empowerment Initiative", "Clean Water Project", "Disaster Relief Network",
-        "Food Security Alliance", "Community Upliftment Society", "Youth Development Foundation", "Elderly Care Association",
-        "Special Needs Support Group", "Animal Welfare Organization", "Arts & Culture Preservation", "Skill Development Trust",
-        "Sustainable Living Project", "Mental Health Awareness", "Human Rights Foundation", "Social Justice Coalition"
+        "Narayani Tandhandas Deosar Trust, Deosar Mandir, Haryana",
+        "Shiri Sidh Hanuman Mandir, Gurgaon",
+        "Ganga Foundation, Moradabad",
+        "Shri Shiv Durga Mandir, Punjabi Bagh",
+        "Guru Ji Ashram, Ghaziabad",
+        "Dharampal Mehra Charitable Trust, (UP)",
+        "Sulahkul Satsang Mandir, Karnal",
+        "Damian Foundation India (Trust), Qutub Vihar",
+        "Sai Retina Foundation, Dilshad Colony",
+        "Methodist Church, New Delhi.",
+        "St. Thomas Malankara Catholic Church, Uttam Nagar",
+        "Gurudwara Shri Guru Singh Sabha, Old Mahavir Nagar",
+        "DWARKA KALIBARI, Dwarka",
+        "Ganpati Miniral, Gulab Pura",
+        "Sant Nirankari Mandal, Tilak Nagar",
+        "Maa Saheb Dargah, Mehrauli",
+        "Hindu Dharam Sabha Janak Puri,",
+        "Maharaja Sawai Man Singh II Museum Trust, Maharani Bagh",
+        "Swami Sambodh Prakash ji Maharaj, Haridwar",
+        "Manav Mandir Mission Trust, Ashram Ring Road",
+        "Father Wilson, Church, Tahirpur",
+        "GURUDWARA SAHIB, Hari Nagar",
+        "Nutrition Foundation of India, Qutub Institutional Area",
+        "Mahant Dharam Singh Trust, Main Najafgarh Road"
       ]
     },
     society: {
@@ -455,6 +678,76 @@ const OurClients = () => {
         "Doyen Overseas Pvt. Ltd."
       ]
     },
+    manufacturers: {
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fillRule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V3zm1 3h12v9a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm2 2a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+        </svg>
+      ),
+      title: "Manufacturers/Wholesalers/Suppliers",
+      clients: [
+        "Globe Auto Parts (P) Ltd.",
+        "Sonam Furniture",
+        "Modvak Cables (I) (P) Ltd.",
+        "Navnit Blister Packs (P) Ltd.",
+        "KK Lighting India (P) Ltd.",
+        "Suez India (P) Ltd.",
+        "Om Steel Tubes Ltd.",
+        "Vandana Aircraft Services (P) Ltd.",
+        "Ashirwad Oil Engines Ltd.",
+        "Ksheer Dhenu Foods (P) Ltd.",
+        "MRL Tyres Ltd.",
+        "AyurSens Naturals",
+        "ROYAL PAPER IND.",
+        "5 Core Electronics Ltd.",
+        "Harshey India (P) Ltd.",
+        "Volga India Rubber (P) Ltd.",
+        "Indian Scrap Traders",
+        "Malik Seasoning & Spices (P) Ltd.",
+        "LRG Steel Concept (P) Ltd.",
+        "Varmora Granito (P) Ltd.",
+        "Glimps Electronics (P) Ltd.",
+        "Green House & Hestoft Foods (P) Ltd.",
+        "APL Apollo Tubes Ltd.",
+        "KBC Asia & Co. (P) Ltd.",
+        "Wellmake Engineering Company (P) Ltd.",
+        "Relax Technologies (P) Ltd.",
+        "Al badr Seafoods (P) Ltd.",
+        "Bisleri international",
+        "Momspet Apparels (P) Ltd.",
+        "MV Shoecare (P) Ltd.",
+        "Quality materesses (P) Ltd.",
+        "Libra International Ltd.",
+        "Men Moms (P) Ltd.",
+        "Circle E-Retail Pvt. Ltd.",
+        "CRP Metals (P) Ltd.",
+        "Alice Biotech (P) Ltd.",
+        "Craftex India",
+        "Daikin Airconditioning India (P) Ltd.",
+        "Ruchi International",
+        "Mix Power Solutions",
+        "Automation Engineers A.B. Pvt. Ltd.",
+        "Azad Body Builders",
+        "Thermotech Engineering Corporation",
+        "Lloyd Insulation (India) Ltd.",
+        "Marut Techno Tools (P) Ltd.",
+        "Southern Boilers Equipments (P) Ltd.",
+        "CPL Energy India (P) Ltd.",
+        "TESPA TOOLS (P) LTD.",
+        "The Linc Publicity (P) Ltd.",
+        "Bhular India (P) Ltd.",
+        "Trimax Minrals (P) Ltd",
+        "KBM Spices (P) Ltd.",
+        "Ace Mobile Manufacturers (P) Ltd.",
+        "Trodat Marking India (P) Ltd.",
+        "Sardar Frozen Products (P) Ltd.",
+        "Apple Tree Building Maintenance (P) Ltd.",
+        "Gabsons Engineers & Consultants",
+        "Sunrider India (P) Ltd.",
+        "Vaadi Herbals (P) Ltd.",
+        "Divine Seating Collection"
+      ]
+    },
     infrastructure: {
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
@@ -472,6 +765,21 @@ const OurClients = () => {
         "Kashyapi Infrastructure (P) Ltd.",
         "Liza Infrastructure Pvt. Ltd.",
         "Goyala Infra Projects (P) Ltd."
+      ]
+    },
+    beautySalon: {
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zM4 4a2 2 0 012-2h8a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm3 1a1 1 0 000 2h6a1 1 0 100-2H7zm0 4a1 1 0 000 2h6a1 1 0 100-2H7zm0 4a1 1 0 000 2h4a1 1 0 100-2H7z" clipRule="evenodd" />
+        </svg>
+      ),
+      title: "Beauty Salon",
+      clients: [
+        "ADAMO SALOON, Malviya Nagar",
+        "Hair Café Beauty Saloon",
+        "Spa Aqua, GK-I",
+        "Toni & Guy, Model Town",
+        "Suhag Beauty Saloon, Dwarka"
       ]
     },
   };
@@ -713,6 +1021,24 @@ const OurClients = () => {
           {/* Industry Category Tabs */}
           <div className="flex flex-wrap justify-center gap-3 mb-10">
             <TabButton 
+              id="mallsAndFarms" 
+              title="Malls/Banquet Halls/Farm & Guest Houses" 
+              icon={clientCategories.mallsAndFarms.icon} 
+              isActive={activeTab === "mallsAndFarms"} 
+            />
+            <TabButton 
+              id="contractors" 
+              title="Contractors/Govt Offices" 
+              icon={clientCategories.contractors.icon} 
+              isActive={activeTab === "contractors"} 
+            />
+            <TabButton 
+              id="builders" 
+              title="Builders" 
+              icon={clientCategories.builders.icon} 
+              isActive={activeTab === "builders"} 
+            />
+            <TabButton 
               id="petrol" 
               title="Petrol Pump" 
               icon={clientCategories.petrol.icon} 
@@ -765,6 +1091,18 @@ const OurClients = () => {
               title="Infrastructure" 
               icon={clientCategories.infrastructure.icon} 
               isActive={activeTab === "infrastructure"} 
+            />
+            <TabButton 
+              id="manufacturers" 
+              title="Manufacturers/Wholesalers/Suppliers" 
+              icon={clientCategories.manufacturers.icon} 
+              isActive={activeTab === "manufacturers"} 
+            />
+            <TabButton 
+              id="beautySalon" 
+              title="Beauty Salon" 
+              icon={clientCategories.beautySalon.icon} 
+              isActive={activeTab === "beautySalon"} 
             />
             <TabButton 
               id="spiritual" 
