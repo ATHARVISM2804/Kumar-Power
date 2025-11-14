@@ -111,6 +111,28 @@ const OurClients = () => {
 
   // Client data for each category
   const clientCategories = {
+    petrol: {
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 6.707 6.293a1 1 0 00-1.414 1.414L8.586 11 5.293 14.293a1 1 0 001.414 1.414L10 12.414l3.293 3.293a1 1 0 001.414-1.414L11.414 11l3.293-3.293z" clipRule="evenodd" />
+        </svg>
+      ),
+      title: "Petrol Pump",
+      clients: [
+        "Delhi Aviation Fuel Facility (P) Ltd",
+        "JK Filling Station, Bharat Petroleum Pump",
+        "MKR Highway Filling Station, (U.P.)",
+        "Tuli Motors",
+        "Sheetla Filling Station, Rewari.",
+        "Shaheed Anusuya Dhyani Service Station, Hari Nagar",
+        "Yash Filling Station, Najafgarh",
+        "Kartar Kissan Sewa Kendra, Distt. Jhajjar",
+        "Auto Fuel Indian Oil Petrol Pump",
+        "National Service Station",
+        "Bedi Saxena Service Station",
+        "Mangla Petro, Pitampura"
+      ]
+    },
     industries: {
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -119,12 +141,69 @@ const OurClients = () => {
       ),
       title: "Industries",
       clients: [
-        "Acme Industrial Solutions", "Global Manufacturing Inc.", "Precision Engineering Ltd.", "Advanced Materials Corp.",
-        "Integrated Systems Group", "Quantum Industrial Holdings", "Nexus Power Technologies", "Vertex Engineering Solutions",
-        "Pinnacle Industries", "Synergy Manufacturing", "Apex Industrial Systems", "Frontier Engineering Corp.",
-        "Meridian Power Solutions", "Catalyst Industrial Group", "Horizon Engineering", "Paramount Industries",
-        "Elite Engineering Systems", "Dynamic Power Solutions", "Vanguard Industrial Corp.", "Titan Manufacturing Group",
-        "Spectrum Engineering", "Fusion Power Systems", "Summit Industrial Solutions", "Omega Engineering Corp."
+        "Anjani Broadband Solutions (P) Ltd.",
+        "Grapes Digital (P) Ltd.",
+        "Berger Paints (1) Ltd.",
+        "Irisi Global Services (P) Ltd.",
+        "Veolia India (P) Ltd.",
+        "Faction Communication Pvt. Ltd.",
+        "Accord BPO Services (P) Ltd.",
+        "Auto Power Gen. Systems (P) Ltd.",
+        "N.K. Kapur & Co. (P) Ltd.",
+        "Leo Network Power Systems",
+        "Kaks Financial & Management Consultants Pvt. Ltd.",
+        "Unitop International",
+        "Vij Engineers & Consultants Pvt. Ltd.",
+        "Safe & Secure Online Marketing (P) Ltd.",
+        "Capital Business Solutions (P) Ltd.",
+        "Gigatel Networks Private Limited",
+        "Channel One",
+        "Sark EPC Projects Pvt Ltd.",
+        "Comed Chemicals Ltd.",
+        "Orian Automobiles (P) Ltd.",
+        "National Heavy Electric Corporation",
+        "D.S. DUCTOFAB SYSTEMS PVT. LTD.",
+        "Sapieo Software India (P) Ltd.",
+        "HDFC Sales Pvt. Ltd.",
+        "Meraki Sport and Entertainment (P) Ltd.",
+        "LRG Steel Concept (P) Ltd.",
+        "Elite HR Practices (P) Ltd.",
+        "Worldwide Facility Management Services (P) Ltd. (Aroon Aviation)",
+        "Webon Flex Marketing (P) Ltd.",
+        "Uttar Bharat Hydro Power (P) Ltd.",
+        "Divyanshi Power Solution",
+        "World Phone Internet Services (P) Ltd.",
+        "Cyber Group India Pvt. Ltd.",
+        "Seco Industries",
+        "Shubhankr Texfab India",
+        "AJS Software Tech. (P) Ltd.",
+        "Sharad Advertising (P) Ltd.",
+        "KGL Logistics Pvt. Ltd.",
+        "Glaze Trading India Pvt Ltd.",
+        "Sehgal Industries",
+        "Maco Infotech Ltd.",
+        "Tata Chemicals Ltd",
+        "Nirja Publishers & Printers (P) Ltd.",
+        "SIS India Ltd.",
+        "Market X-Cel Data Matrix (P) Ltd.",
+        "Dhanluxmi Agro Industries",
+        "Dreams Hospitality (P) Ltd.",
+        "M+V Marketing & Sales (P) Ltd.",
+        "SKETS Studio (P) Ltd.",
+        "Falcon Force (P) Ltd.",
+        "North East Region Finservices Ltd.",
+        "Hexagramm",
+        "SJVN Ltd., Rampur Hydro Electric Project",
+        "Sandys Hospitality (P) Ltd.",
+        "Moment Expro",
+        "Le-Grand Hospitality (P) Ltd.",
+        "Tirupati Cement",
+        "R.K. Global",
+        "Swagatam Enterprises",
+        "Automation Engineers",
+        "GND India Ltd.",
+        "World Phone internet P. Ltd.",
+        "Concept Communication"
       ]
     },
     retail: {
@@ -136,12 +215,45 @@ const OurClients = () => {
       ),
       title: "Retail Outlets",
       clients: [
-        "Metropolis Retail Group", "Urban Outfitters Ltd.", "Premium Brands Inc.", "Fashion Forward Stores",
-        "Luxury Retail Solutions", "Retail Excellence Corp.", "Designer Outlets Group", "Trendsetter Retail Chain",
-        "Elite Shopping Centers", "Plaza Retail Holdings", "Prime Retail Locations", "Shoppers Paradise Inc.",
-        "Global Retail Alliance", "Retail Innovation Group", "Prestige Stores Ltd.", "Consumer Choice Outlets",
-        "Superior Shopping Experience", "Modern Retail Solutions", "Customer First Retail", "Quality Merchandise Group",
-        "Exclusive Retail Partners", "Retail Success Stories", "Premium Shopping Network", "Ultimate Retail Destinations"
+        "Samir Orange n White",
+        "Delhi Designer Studio",
+        "Numer uno KVC Retail",
+        "ADI Sports (1) (P) Ltd.",
+        "Max Hypermarkets India (P) Ltd.",
+        "Cutecumber Designs Pvt. Ltd.",
+        "Gems Mart Jewellers",
+        "Jindal Agro International",
+        "Aman Hosiery",
+        "Jaydeep Fashion",
+        "Grover Garments",
+        "KS Selection (P) Ltd.",
+        "VS Jeweller",
+        "Shivam Jewellers",
+        "Girdhari Lal & Sons",
+        "Harbans Jwellers",
+        "Atul Jewellers.",
+        "Shery Clothing and Designs (P) Ltd.",
+        "Incense Fashions",
+        "Mohan Lal & Sons",
+        "Nike Showroom",
+        "Anekvarna",
+        "Pritam Jewellers",
+        "Big C",
+        "Bansal Textiles",
+        "Roop Jewellers",
+        "CHEAP-Shoe Store",
+        "AK Fashion",
+        "Sanskriti Apparels",
+        "AG Fashions",
+        "Harbans Jewellers",
+        "Global Mode & Accessories (P) Ltd.",
+        "Kridha Footwear",
+        "Malik Jewellers",
+        "MB Jewellers",
+        "Fineese International Design Pvt. Ltd.",
+        "Rich Trend",
+        "SDS Creations",
+        "Sha Sha Fashion Trendz (P) Ltd."
       ]
     },
     banks: {
@@ -152,12 +264,15 @@ const OurClients = () => {
       ),
       title: "Banks",
       clients: [
-        "National Trust Bank", "Global Finance Corp.", "Premier Banking Solutions", "Secure Investment Bank",
-        "Heritage Financial Group", "Metropolitan Banking Corp.", "Prosperity Financial Services", "Elite Banking Alliance",
-        "Trustworthy Savings & Loans", "Strategic Banking Partners", "Capital Investment Bank", "Legacy Trust Corporation",
-        "Prime Financial Holdings", "Reliable Banking Solutions", "Prestige Investment Group", "Cornerstone Banking",
-        "Pinnacle Financial Services", "Universal Banking Corp.", "Sovereign Trust Bank", "Excel Financial Group",
-        "Foundation Banking Solutions", "Premium Banking Network", "Wealth Management Bank", "Crest Financial Services"
+        "Central Bank of India",
+        "Bank of India, Mahipalpur",
+        "Andhra Bank, Paschim Vihar, New Delhi.",
+        "State Bank Of Patiala",
+        "Kangra Bank, Prahladpur, New Delhi.",
+        "Axis Bank",
+        "Canara Bank, Meerut",
+        "The Karnataka Bank",
+        "Citi Bank, Punjabi Bagh"
       ]
     },
     embassies: {
@@ -168,12 +283,11 @@ const OurClients = () => {
       ),
       title: "Embassies",
       clients: [
-        "Embassy of United Kingdom", "Embassy of France", "Embassy of Germany", "Embassy of Canada",
-        "Embassy of Australia", "Embassy of Japan", "Embassy of Italy", "Embassy of Spain",
-        "Embassy of Russia", "Embassy of Brazil", "Embassy of South Africa", "Embassy of Singapore",
-        "Embassy of Netherlands", "Embassy of Sweden", "Embassy of Switzerland", "Embassy of Norway",
-        "Embassy of Denmark", "Embassy of Finland", "Embassy of Belgium", "Embassy of Austria",
-        "Embassy of Portugal", "Embassy of Ireland", "Embassy of New Zealand", "Embassy of UAE"
+        "Embassy of The Democratic Republic of Congo",
+        "Embassy of the republic of Lithuania",
+        "Sikkim House",
+        "Romania Embassy",
+        "The Embassy of Sultanate of Oman"
       ]
     },
     education: {
@@ -240,22 +354,126 @@ const OurClients = () => {
         "Sustainable Living Project", "Mental Health Awareness", "Human Rights Foundation", "Social Justice Coalition"
       ]
     },
+    society: {
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h4v-4a2 2 0 114 0v4h4a2 2 0 002-2V6a2 2 0 00-2-2H4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clipRule="evenodd" />
+        </svg>
+      ),
+      title: "Society/Apartment",
+      clients: [
+        "Group Housing Society Ltd, Dwarka",
+        "Shiksha Enclave Co-op. Housing Society Ltd",
+        "Adam M2K Projects LLP",
+        "Raison Armour Homes Residents Welfare Association, Ghaziabad",
+        "Jeevan Apartment Residents Assoication, Okhla",
+        "Mangalam Villas Module - Ghaziabad.",
+        "New Jyoti Co-operative Group Housing Society Ltd., Dwarka",
+        "Elders Homes Society, Rohini"
+      ]
+    },
     hospitality: {
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
           <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z" />
         </svg>
       ),
-      title: "Hospitality & Residential",
+      title: "Hospitality & Hotels",
       clients: [
-        "Luxury Grand Hotel", "Metropolitan Resort & Spa", "Premium Suites Collection", "Elite Hospitality Group",
-        "Heritage Hotels & Resorts", "Signature Living Residences", "Comfort Inn & Suites", "Urban Living Apartments",
-        "Executive Accommodation Services", "Prestige Residential Towers", "Grand View Condominiums", "Serene Living Spaces",
-        "Premium Housing Solutions", "Lifestyle Residences Group", "Contemporary Living Spaces", "Panorama Residences",
-        "Exclusive Gated Communities", "Modern Urban Living", "Tranquil Residential Enclaves", "Upscale Housing Development",
-        "Elite Residential Properties", "Prime Location Apartments", "Luxury Living Solutions", "Premium Housing Corporation"
+        "W.G. Hospitality (Restaurant)",
+        "WUSHU Chinese Cuisine (Restaurant)",
+        "Hotel B Continental (Hotel)",
+        "Vivah Residency (Hotel)",
+        "Café Brown Sugar (Restaurant)",
+        "Hotel Corus (Hotel)",
+        "Melody Food Merchant (P) Ltd. (Restaurant)",
+        "Headway Foods & Resturant LLP (Restaurant)",
+        "Karim Restaurant (Restaurant)",
+        "zest Hospitality (P) Ltd (Restaurant)",
+        "Rosedale Inn (P) Ltd. (Hotel)",
+        "Hotel Pluto (Hotel)",
+        "Hotel Runway (Hotel)",
+        "Hotel Singh Empire (Hotel)",
+        "Kwality Dhaba ( Restaurant )",
+        "Hotel USA (Hotel)",
+        "Golden Highway (Restaurant )",
+        "Kalsang Ama café (Restaurant)",
+        "Karat 87 Hotel Pvt. Ltd. (Hotel)",
+        "Hotel Cubic Inn (Hotel)",
+        "Himalayan Splendour Resort (Hotel)",
+        "Darbar Restaurant (Restaurant)",
+        "PRADEEP JI, OYO Hotels, (Hotel)",
+        "THE GRACE HOUSE (Hotel)"
       ]
-    }
+    },
+    cpwd: {
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H6zm1 2a1 1 0 000 2h6a1 1 0 100-2H7zm6 7a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-3 3a1 1 0 100 2h.01a1 1 0 100-2H10zm-4 1a1 1 0 011-1h.01a1 1 0 110 2H7a1 1 0 01-1-1z" clipRule="evenodd" />
+        </svg>
+      ),
+      title: "CPWD & NBCC Projects",
+      clients: [
+        "Education",
+        "Builders",
+        "Jaydeep Fashion",
+        "KS Selection (P) Ltd.",
+        "Shivam Jewellers",
+        "Atul Jewellers.",
+        "Jewellers",
+        "Aman Hosiery",
+        "Grover Garments",
+        "VS Jeweller",
+        "Girdhari Lal & Sons"
+      ]
+    },
+    exporters: {
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+        </svg>
+      ),
+      title: "Exporters",
+      clients: [
+        "PMI Engineering Export (P) Ltd, Chennai",
+        "Bishnu Impex (P) Ltd., Noida",
+        "Grandeur Overseas, Karol Bagh",
+        "Aufa Pakua",
+        "Kangra Export, New Delhi",
+        "AL Global (Export)",
+        "Agni Exports, Gurgaon",
+        "Aditya Enterprises",
+        "Deepeeka Exports (P) Ltd, Meerut",
+        "Swaraj Exports, Noida",
+        "Salman",
+        "Neha Exports",
+        "MANISH (Knott Fashion Studio)",
+        "Exim International",
+        "Mount Meru India (P) Ltd.",
+        "Ramnik Overseas",
+        "Patwal",
+        "Doyen Overseas Pvt. Ltd."
+      ]
+    },
+    infrastructure: {
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M2 4a2 2 0 012-2h12a2 2 0 012 2v1a2 2 0 01-2 2H4a2 2 0 01-2-2V4zM2 10a2 2 0 012-2h12a2 2 0 012 2v1a2 2 0 01-2 2H4a2 2 0 01-2-2v-1zM2 16a2 2 0 012-2h12a2 2 0 012 2v1a2 2 0 01-2 2H4a2 2 0 01-2-2v-1z" />
+        </svg>
+      ),
+      title: "Infrastructure",
+      clients: [
+        "Green Infrastructures (P) Ltd",
+        "Sikka Infrastructure (P) Ltd",
+        "Joule Infrastructure (P) Ltd.",
+        "JPG Infraestate",
+        "Afcons Infrastructure Ltd.",
+        "SAV Infratech (P) Ltd.",
+        "Kashyapi Infrastructure (P) Ltd.",
+        "Liza Infrastructure Pvt. Ltd.",
+        "Goyala Infra Projects (P) Ltd."
+      ]
+    },
   };
 
   // Tab Button Component
@@ -495,6 +713,12 @@ const OurClients = () => {
           {/* Industry Category Tabs */}
           <div className="flex flex-wrap justify-center gap-3 mb-10">
             <TabButton 
+              id="petrol" 
+              title="Petrol Pump" 
+              icon={clientCategories.petrol.icon} 
+              isActive={activeTab === "petrol"} 
+            />
+            <TabButton 
               id="industries" 
               title="Industries" 
               icon={clientCategories.industries.icon} 
@@ -537,14 +761,38 @@ const OurClients = () => {
               isActive={activeTab === "construction"} 
             />
             <TabButton 
+              id="infrastructure" 
+              title="Infrastructure" 
+              icon={clientCategories.infrastructure.icon} 
+              isActive={activeTab === "infrastructure"} 
+            />
+            <TabButton 
               id="spiritual" 
               title="Spiritual & NGOs" 
               icon={clientCategories.spiritual.icon} 
               isActive={activeTab === "spiritual"} 
             />
             <TabButton 
+              id="cpwd" 
+              title="CPWD & NBCC Projects" 
+              icon={clientCategories.cpwd.icon} 
+              isActive={activeTab === "cpwd"} 
+            />
+            <TabButton 
+              id="exporters" 
+              title="Exporters" 
+              icon={clientCategories.exporters.icon} 
+              isActive={activeTab === "exporters"} 
+            />
+            <TabButton 
+              id="society" 
+              title="Society/Apartment" 
+              icon={clientCategories.society.icon} 
+              isActive={activeTab === "society"} 
+            />
+            <TabButton 
               id="hospitality" 
-              title="Hospitality & Residential" 
+              title="Hospitality & Hotels" 
               icon={clientCategories.hospitality.icon} 
               isActive={activeTab === "hospitality"} 
             />
