@@ -101,9 +101,9 @@ const Footer = () => {
                   904, Westend Mall, Janakpuri,<br />New Delhi 110058
                 </li>
                 <li className="space-y-1">
-                  <div>Main : <a href="tel:+919773851767" className="hover:text-blue-300 transition-colors">+91 97738 51767</a></div>
-                  <div>Support : <a href="tel:+919773877796" className="hover:text-blue-300 transition-colors">+91 97738 77796</a></div>
-                  <div>Landline : <a href="tel:01140191273" className="hover:text-blue-300 transition-colors">011-40191273</a></div>
+                  <div>Main : <a href="tel:+919778431767" className="hover:text-blue-300 transition-colors">+91 97784 31767</a></div>
+                  <div>Support : <a href="tel:+919778477796" className="hover:text-blue-300 transition-colors">+91 97784 77796</a></div>
+                  <div>Landline : <a href="tel:01146701273" className="hover:text-blue-300 transition-colors">011-46701273</a></div>
                 </li>
                 <li>
                   Email : <a href="mailto:kumargeneratorhouse@gmail.com" className="hover:text-blue-300 transition-colors break-all">kumargeneratorhouse@gmail.com</a>
