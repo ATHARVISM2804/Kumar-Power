@@ -145,7 +145,7 @@ const Products = () => {
     {
       id: "7.5 kVA to 20 kVA",
       name: "7.5 kVA to 20 kVA Diesel generators",
-      image: DG1, // Use imported image
+      image: DG1, 
       fuelType: "Diesel",
       cpcbNorm: "CPCB-IV+",
       cooling: "Liquid",
@@ -155,11 +155,12 @@ const Products = () => {
       range: "7.5 kVA to 20 kVA",
       category: "diesel",
       description: "Our range of diesel generators are designed for maximum performance and reliability. Our generators meet the latest CPCB norms and are built for Indian conditions.",
+      technicalSpecs: `Engineered specifically for compact power needs, this range utilizes the robust Kirloskar R550 series engines, known for their naturally aspirated design and reliable G2 class mechanical governing. These units are optimized for low-load operations, consuming approximately 2-3 Liters per hour at 75% load, making them highly economical. The silent canopy design ensures noise levels remain below 75 dBA at 1 meter, making these generators the ideal choice for small retail shops, clinics, residential backup, and small offices where silence is as important as power.`
     },
     {
       id: "25 kVA to 58.5 kVA",
       name: "25 kVA to 58.5 kVA Diesel generators",
-      image: DG3, // Use imported image
+      image: DG3,
       fuelType: "Diesel",
       cpcbNorm: "CPCB-IV+",
       cooling: "Liquid",
@@ -169,11 +170,12 @@ const Products = () => {
       range: "25 kVA to 58.5 kVA",
       category: "diesel",
       description: "Our range of diesel generators are designed for maximum performance and reliability. Our generators meet the latest CPCB norms and are built for Indian conditions.",
+      technicalSpecs: `These mid-range workhorses are built for stability and endurance, powered by Kirloskar's liquid-cooled 3R1040 and 4R1040 series engines equipped with heavy-duty radiators. The system integrates advanced anti-vibration mounts to ensure smooth operation and minimal structural stress. Featuring a brushless, single-bearing alternator with IP23 protection and managed by the KG545 Digital Controller, these units offer comprehensive remote monitoring capabilities. They are perfectly suited for restaurants, commercial complexes, and small manufacturing units requiring consistent uptime.`
     },
     {
       id: "82.5 kVA to 160 kVA",
       name: "82.5 kVA to 160 kVA Diesel generators",
-      image: range6, // Use imported image
+      image: range6,
       fuelType: "Diesel",
       cpcbNorm: "CPCB-IV+",
       cooling: "Liquid",
@@ -183,11 +185,12 @@ const Products = () => {
       range: "82.5 kVA to 160 kVA",
       category: "diesel",
       description: "Our range of diesel generators are designed for maximum performance and reliability. Our generators meet the latest CPCB norms and are built for Indian conditions.",
+      technicalSpecs: `Designed for industrial-grade performance, this range utilizes 4 and 6 cylinder inline turbocharged and intercooled engines to handle demanding loads. With G3 Class electronic governing, these generators provide precise frequency regulation and excellent sudden load acceptance, capable of handling 100% block loading. The fuel tanks are sized for 8-10 hours of continuous running, ensuring uninterrupted workflow. These are the preferred power solution for construction sites, medium-scale industries, hospitals, and hotels where power quality cannot be compromised.`
     },
     {
       id: "200 kVA to 250 kVA",
       name: "200 kVA to 250 kVA Diesel Generators",
-      image: range1, // Use imported image
+      image: range1,
       fuelType: "Diesel",
       cpcbNorm: "CPCB-IV+",
       cooling: "Liquid",
@@ -197,11 +200,12 @@ const Products = () => {
       range: "200 - 250 kVA",
       category: "diesel",
       description: "Our range of diesel generators are designed for maximum performance and reliability. Our generators meet the latest CPCB norms and are built for Indian conditions.",
+      technicalSpecs: `This series features high-performance Kirloskar DV Series engines (with V-Type configuration options) that deliver robust power for critical infrastructure. They offer best-in-class fluid efficiency, optimizing both fuel and DEF consumption to lower operational costs. Controlled by an advanced ECU for precise engine management and diagnostics, these units include comprehensive safety protections against Over-speed, Low Lube Oil Pressure (LLOP), and High Water Temperature. They are engineered for large commercial hubs, infrastructure projects, and data centers.`
     },
     {
       id: "320 kVA to 750 kVA ",
       name: "320 kVA - 750 kVA Diesel Generators",
-      image: range360, // Use imported image
+      image: range360,
       fuelType: "Diesel",
       cpcbNorm: "CPCB-IV+",
       cooling: "Liquid",
@@ -211,11 +215,12 @@ const Products = () => {
       range: "320 - 750 kVA",
       category: "diesel",
       description: "Our range of diesel generators are designed for maximum performance and reliability. Our generators meet the latest CPCB norms and are built for Indian conditions.",
+      technicalSpecs: `These heavy-duty powerhouses are designed for 24/7 continuous operations in harsh environments, powered by SL90 and DV Series turbocharged after-cooled engines. The system allows for easy paralleling and synchronization with the grid or other DG sets to create flexible power plants. With GSM/GPRS-enabled controllers for remote monitoring and long service intervals of 500 hours, these generators significantly reduce Opex. They are the standard for heavy engineering industries, malls, mining operations, and large-scale real estate developments.`
     },
     {
       id: "750-1500kva",
       name: "750 kVA - 1500 kVA Diesel Generators",
-      image: DG5, // Use imported image
+      image: DG5,
       fuelType: "Diesel",
       cpcbNorm: "CPCB-IV+",
       cooling: "Liquid",
@@ -225,6 +230,7 @@ const Products = () => {
       range: "750 - 1500 kVA",
       category: "diesel",
       description: "Our range of diesel generators are designed for maximum performance and reliability. Our generators meet the latest CPCB norms and are built for Indian conditions.",
+      technicalSpecs: `Representing the ultimate in power solutions, this range features the legendary K-Series and DV-Series engines known for massive power density within a compact footprint. They utilize full authority electronic engine management systems for peak performance and can be configured with heavy-duty remote radiator options for specialized installations. Designed for absolute reliability in continuous duty cycles, these generators power critical national assets including power plants, mega-infrastructure projects, international airports, and hyperscale data centers.`
     },
   ];
 
@@ -233,7 +239,7 @@ const Products = () => {
     {
       id: "15 kVA to 250 kVA",
       name: "15 kVA to 250 kVA Gas Generators",
-      image: range2, // Use imported image
+      image: range2,
       fuelType: "Natural Gas/CNG",
       cpcbNorm: "CPCB-IV+",
       cooling: "Liquid",
@@ -243,6 +249,7 @@ const Products = () => {
       range: "15 kVA to 250 kVA",
       category: "gas",
       description: "Eco-friendly and efficient, our gas generators provide clean power with lower emissions and reduced operating costs.",
+      technicalSpecs: `Utilizing state-of-the-art gas engine technology, this range offers a greener footprint with extremely low NOx and PM emissions that exceed CPCB norms. The engines employ stoichiometric combustion to ensure high thermal efficiency, resulting in operating costs that are 40-50% lower than comparable diesel gensets. With inherent fuel flexibility (compatible with Natural Gas, CNG, and LPG) and a quieter combustion process, these generators are ideal for urban areas with strict pollution norms, green buildings, and cost-conscious businesses.`
     },
 
   ];
@@ -252,7 +259,7 @@ const Products = () => {
     {
       id: "2.1 kVA to 5 kVA",
       name: "2.1 kVA to 5 kVA Portable Generators",
-      image: port, // Use imported image
+      image: port,
       fuelType: "Gasoline",
       cpcbNorm: "CPCB-IV+",
       cooling: "Air",
@@ -262,6 +269,7 @@ const Products = () => {
       range: "2.1 kVA to 5 kVA",
       category: "portable",
       description: "Compact and versatile generators perfect for homes, small businesses, construction sites, and outdoor events.",
+      technicalSpecs: `These lightweight and mobile power solutions are designed for "on-the-go" reliability. Featuring ergonomic designs with wheels and handles on select models, they offer easy mobility for any user. The units come with options for easy recoil start or electric start and feature copper-wound alternators for stable voltage output. Equipped with circuit breaker protection and oil alert systems to prevent damage, they are ideal for food trucks, camping trips, home backup for lights and fans, and operating small construction tools.`
     },
 
   ];
@@ -271,7 +279,7 @@ const Products = () => {
     {
       id: "optiprime-product-1",
       name: "Kirloskar Optiprime Generator",
-      image: optiprime, // Placeholder image
+      image: optiprime,
       fuelType: "Diesel",
       cpcbNorm: "CPCB-IV+",
       cooling: "Liquid",
@@ -281,6 +289,7 @@ const Products = () => {
       range: "100 kVA",
       category: "optiprime",
       description: "Kirloskar Optiprime series are advanced generators offering superior fuel efficiency and smart monitoring for optimized performance.",
+      technicalSpecs: `The Optiprime series represents the next evolution in generator efficiency, utilizing variable speed and optimized fuel mapping technology. This advanced system delivers significantly better fuel economy at partial loads compared to standard generators, drastically reducing running costs. It comes integrated with an IoT device for real-time health monitoring and predictive maintenance, ensuring maximum uptime. Housed in an enhanced canopy for superior weather protection, the Optiprime is the perfect solution for telecom towers, ATMs, and remote sites with varying load patterns.`
     },
   ];
 
@@ -289,7 +298,7 @@ const Products = () => {
     {
       id: " (AMF) Panels",
       name: " AMF Panels",
-      image: panel6, // Use imported image
+      image: panel6,
       fuelType: "N/A",
       cpcbNorm: "N/A",
       cooling: "Fan/Natural",
@@ -299,11 +308,12 @@ const Products = () => {
       range: "Various",
       category: "electrical",
       description: "High-quality electrical panels for power distribution, control, and protection of your electrical systems.",
+      technicalSpecs: `Our Auto Mains Failure (AMF) panels are engineered for seamless power transition, featuring a microprocessor-based controller that manages automatic start/stop logic with precision. The panels utilize high-quality contactors or motorized breakers for reliable changeover operations. Comprehensive protection logic safeguards the load from voltage fluctuations, phase reversals, and frequency errors. The interface includes clear LED/LCD indications for Mains and DG status, ensuring operators have full visibility of the power system at all times.`
     },
     {
       id: "Vacuum Circuit Breaker ",
       name: "Vacuum Circuit Breaker ",
-      image: panel2, // Use imported image
+      image: panel2,
       fuelType: "N/A",
       cpcbNorm: "N/A",
       cooling: "Fan/Natural",
@@ -313,11 +323,12 @@ const Products = () => {
       range: "Various",
       category: "electrical",
       description: "High-quality electrical panels for power distribution, control, and protection of your electrical systems.",
+      technicalSpecs: `These robust Vacuum Circuit Breaker (VCB) panels are designed for critical High Voltage (HV) protection. They feature high-grade vacuum bottles that ensure efficient arc quenching and extended operational life. Safety is paramount, with mechanical interlocks included to prevent accidental operation during maintenance. The spring-charged mechanism ensures fast closing and opening times for rapid fault clearing. Due to the sealed vacuum technology, these breakers require minimal maintenance, providing a reliable long-term solution for industrial power distribution.`
     },
     {
       id: "Distribution Boxes",
       name: "Distribution Boxes ",
-      image: panel7, // Use imported image
+      image: panel7,
       fuelType: "N/A",
       cpcbNorm: "N/A",
       cooling: "Fan/Natural",
@@ -327,11 +338,12 @@ const Products = () => {
       range: "Various",
       category: "electrical",
       description: "High-quality electrical panels for power distribution, control, and protection of your electrical systems.",
+      technicalSpecs: `Our heavy-duty Power Distribution Boards (PDB) and Main Distribution Boards (MDB) are built to handle complex electrical networks. They feature high-conductivity Electrolytic Grade Aluminum or Copper busbars for efficient power transfer. The enclosures are fabricated from CRCA Sheet steel and powder-coated for superior rust resistance and durability. Available with Ingress Protection ratings of IP42, IP54, or IP65, and offering customized compartment designs for flexible cable entry and exit, these boxes are tailored to meet specific site requirements.`
     },
     {
       id: "Feeder Pillars",
       name: "Feeder Pillars",
-      image: panel8, // Use imported image
+      image: panel8,
       fuelType: "N/A",
       cpcbNorm: "N/A",
       cooling: "Fan/Natural",
@@ -341,6 +353,7 @@ const Products = () => {
       range: "Various",
       category: "electrical",
       description: "High-quality electrical panels for power distribution, control, and protection of your electrical systems.",
+      technicalSpecs: `Designed specifically for outdoor applications, these weatherproof Feeder Pillars provide localized power distribution in harsh environments. They feature a robust double-door, canopy design that effectively withstands rain, dust, and direct sunlight. The plinth-mounted construction ensures stability, while lockable doors and shrouded busbars prevent accidental contact and unauthorized access. These units are the standard choice for street lighting control, township power distribution, and industrial yard electrification.`
     },
   ];
 
@@ -349,7 +362,7 @@ const Products = () => {
     {
       id: "single-phase-servo",
       name: "Oil Cooled Servo Stabilizers",
-      image: servo1, // Use imported image
+      image: servo1,
       fuelType: "N/A",
       cpcbNorm: "N/A",
       cooling: "Air/Oil",
@@ -359,11 +372,12 @@ const Products = () => {
       range: "5-100 kVA",
       category: "servo",
       description: "Reliable servo stabilizers to protect your equipment from voltage fluctuations and ensure consistent power supply.",
+      technicalSpecs: `This range delivers precision voltage correction using advanced oil-immersed technology, making it ideal for heavy-duty cycles. It achieves correction speeds greater than 20V per second with an output voltage regulation accuracy of ±1%. The oil-cooled design ensures superior heat dissipation, extending component life. Built with high-grade variacs (toroidal transformers) and buck-boost transformers, it offers comprehensive protection including low/high voltage cutoffs and overload protection, ensuring total safety for connected equipment.`
     },
     {
       id: "three-phase-servo",
       name: "Air Cooled Servo Stabilizers",
-      image: servo2, // Use imported image
+      image: servo2,
       fuelType: "N/A",
       cpcbNorm: "N/A",
       cooling: "Air/Oil",
@@ -373,7 +387,8 @@ const Products = () => {
       range: "15-500 kVA",
       category: "servo",
       description: "Reliable servo stabilizers to protect your equipment from voltage fluctuations and ensure consistent power supply.",
-    }
+      technicalSpecs: `Designed for indoor applications, these compact air-cooled stabilizers offer >98% efficiency at full load. They feature independent phase control technology, ensuring a balanced output voltage even when the input supply is unbalanced. The unit comes equipped with digital voltmeters and ammeters for easy monitoring of performance parameters. With a low-maintenance air-cooled design that eliminates the need for oil replacement, these stabilizers are a clean and efficient solution for commercial and industrial voltage regulation.`
+    },
   ];
 
   // Define transformers
@@ -381,7 +396,7 @@ const Products = () => {
     {
       id: "distribution-transformer",
       name: "Distribution Transformers",
-      image: trans1, // Use imported image
+      image: trans1,
       fuelType: "N/A",
       cpcbNorm: "N/A",
       cooling: "Oil/Dry",
@@ -391,11 +406,12 @@ const Products = () => {
       range: "100-2500 kVA",
       category: "transformers",
       description: "Durable and efficient transformers designed for various industrial and commercial applications.",
+      technicalSpecs: `These reliable step-down transformers are crafted for utility and industrial use, featuring a core made from CRGO (Cold Rolled Grain Oriented) silicon steel laminations to minimize losses. The windings are constructed from high-quality Electrolytic Copper or Aluminum with robust paper insulation. Utilizing ONAN (Oil Natural Air Natural) cooling and complying with IS 1180 energy efficiency levels, they include an off-circuit tap changer, allowing for precise voltage adjustments to match network requirements.`
     },
     {
       id: "power-transformer",
       name: "Power Transformers",
-      image: trans2, // Use imported image
+      image: trans2,
       fuelType: "N/A",
       cpcbNorm: "N/A",
       cooling: "Oil",
@@ -405,11 +421,12 @@ const Products = () => {
       range: "1-10 MVA",
       category: "transformers",
       description: "Durable and efficient transformers designed for various industrial and commercial applications.",
+      technicalSpecs: `Built for high-capacity transmission and receiving stations, these power transformers are available in capacities up to 10 MVA. They are housed in robust welded steel tanks equipped with radiators for efficient cooling. The units come standard with essential protective accessories including Buchholz relays, Magnetic Oil Level Gauges (MOG), and Winding Temperature Indicators (WTI). Fully type-tested for impulse and short circuit withstand capacity, they ensure stability and reliability in major power grids.`
     },
     {
       id: "Cast Resin Transformers",
       name: "Cast Resin Transformers",
-      image: trans3, // Use imported image
+      image: trans3,
       fuelType: "N/A",
       cpcbNorm: "N/A",
       cooling: "Oil",
@@ -419,11 +436,12 @@ const Products = () => {
       range: "1-10 MVA",
       category: "transformers",
       description: "Durable and efficient transformers designed for various industrial and commercial applications.",
+      technicalSpecs: `These Dry-type Cast Resin Transformers (CRT) are the premier choice for fire-safe applications. The coils are encapsulated in epoxy resin cast under vacuum (Class F/H insulation), making the unit self-extinguishing, non-explosive, and highly fire-resistant. Being virtually maintenance-free with no oil to check or leak, they offer significant operational advantages. They are specifically designed for indoor installations in high-risk areas such as malls, hospitals, commercial basements, and residential towers.`
     },
     {
       id: "Unitized Package Substation",
       name: "Unitized Package Substation",
-      image: panel4, // Use imported image
+      image: panel4,
       fuelType: "N/A",
       cpcbNorm: "N/A",
       cooling: "Oil/Dry",
@@ -433,6 +451,7 @@ const Products = () => {
       range: "500-5000 kVA",
       category: "transformers",
       description: "Complete electrical substation solution with integrated transformer, switchgear, and protection systems.",
+      technicalSpecs: `The Unitized Package Substation (USS) is a compact, space-saving solution that seamlessly integrates a Ring Main Unit (RMU), a Transformer, and a Low Voltage (LV) panel into a single enclosure. Designed as a ready-to-install "plug-and-play" unit, it drastically reduces installation time and complexity. The compartmentalized design ensures maximum operator safety by isolating high-voltage components. With an aesthetic that blends well with urban architecture, it is the ideal choice for modern infrastructure projects.`
     }
   ];
 
@@ -709,7 +728,7 @@ const Products = () => {
                   <option value="large">Large (250+ kVA)</option>
                 </select>
               </div>
-            </div> {/* <-- FIXED: added missing closing angle bracket here */}
+            </div> 
             
             <Button
               variant="outline"
@@ -734,10 +753,10 @@ const Products = () => {
                         <button
                           className={`w-full text-left px-2 py-2 rounded-sm transition text-sm flex items-center justify-between ${
                             selectedCategory === 'diesel' || selectedCategory === 'gas' ||
-                              selectedCategory === 'portable' || selectedCategory === 'optiprime'
+                            selectedCategory === 'portable' || selectedCategory === 'optiprime'
                               ? 'bg-[#2D6FBA]/20 text-white font-medium'
                               : 'text-white hover:bg-gray-800'
-                            }`}
+                          }`}
                           onClick={() => handleCategorySelection(category.id)}
                         >
                           <span>{category.name}</span>
@@ -755,7 +774,7 @@ const Products = () => {
                                       selectedCategory === subcat.id
                                         ? 'bg-[#2D6FBA] text-white font-medium'
                                         : 'hover:bg-[#2D6FBA]/50 text-gray-200'
-                                      }`}
+                                    }`}
                                     onClick={() => handleSubcategorySelection(subcat.id)}
                                   >
                                     {subcat.name}
@@ -772,7 +791,7 @@ const Products = () => {
                           selectedCategory === category.id
                             ? 'bg-[#2D6FBA] text-white font-medium'
                             : 'hover:bg-gray-800 text-gray-300'
-                          }`}
+                        }`}
                         onClick={() => handleCategorySelection(category.id)}
                       >
                         {category.name}
@@ -912,7 +931,7 @@ const Products = () => {
                     <line x1="12" y1="15" x2="12" y2="3" />
                   </svg>
                 Download Bharat Rajptar
-              </Button></a> 
+              </Button></a>  
 
               <a href={Direction76} download="Direction76.pdf">
                 <Button
@@ -1119,82 +1138,10 @@ const Products = () => {
               <div className="mt-4">
                 <h3 className="font-semibold text-base mb-2">Technical Specifications:</h3>
                 <div className="bg-gray-50 rounded-md p-4 text-sm">
-                  {selectedProductForSpecs.category === 'diesel' && (
-                    <>
-                      <p className="mb-3">
-                        Engineered with Kirloskar's robust CPCB IV+ compliant diesel engine technology, this generator delivers exceptional power stability with voltage regulation of ±1% and frequency regulation of ±0.25%. The advanced cooling system maintains optimal operating temperatures even in ambient conditions up to 50°C, while the intelligent AMF control panel provides comprehensive protection against overload, short circuit, and phase imbalance.
-                      </p>
-                      <p>
-                        The unit features a high-capacity fuel tank providing up to 12 hours of continuous operation at 75% load, with fuel consumption optimization technology that reduces diesel usage by up to 15% compared to standard generators. The acoustic enclosure is designed to limit noise levels to 75dB at 1-meter distance, making it suitable for residential and commercial applications. Standard features include remote monitoring capability via GSM/GPRS, auto-start functionality, and a maintenance-free battery system with intelligent charging.
-                      </p>
-                    </>
-                  )}
-                  
-                  {selectedProductForSpecs.category === 'gas' && (
-                    <>
-                      <p className="mb-3">
-                        This state-of-the-art gas generator utilizes Kirloskar's eco-friendly gas engine technology, featuring electronic fuel injection for precise air-fuel ratio control and reduced emissions. The system achieves NOx emissions below 100mg/Nm³, significantly lower than diesel alternatives, while maintaining thermal efficiency of up to 40%. Compatible with multiple fuel types including natural gas, LPG, and biogas, the flexible design includes automatic fuel switchover capability.
-                      </p>
-                      <p>
-                        Advanced heat recovery systems capture waste heat, enabling cogeneration applications with total system efficiency exceeding 85%. The integrated digital control platform provides real-time performance monitoring with predictive maintenance algorithms that identify potential issues before they affect operation. The specially designed catalyst system ensures compliance with the most stringent emission standards while maintaining optimal performance across variable loads from 30% to 100% with minimal efficiency loss.
-                      </p>
-                    </>
-                  )}
-                  
-                  {selectedProductForSpecs.category === 'portable' && (
-                    <>
-                      <p className="mb-3">
-                        This compact portable Portable generator combines lightweight design (under 50kg) with robust power output, featuring Kirloskar's proprietary AVR technology that delivers clean sine wave output with less than 3% THD, making it safe for sensitive electronics. The reinforced tubular frame provides superior protection during transportation, while the ergonomic handle design with anti-vibration grips ensures comfortable portability.
-                      </p>
-                      <p>
-                        The unit incorporates intelligent idle control that automatically adjusts engine speed to match load requirements, reducing fuel consumption by up to 25% during partial load operation. Multiple output sockets including standard 15A, USB ports with fast charging capability, and a dedicated high-current outlet provide versatile power options. The rugged construction features IP23 protection rating against dust and water splashes, with all-terrain wheels designed for easy movement across uneven surfaces.
-                      </p>
-                    </>
-                  )}
-                  
-                  {selectedProductForSpecs.category === 'optiprime' && (
-                    <>
-                      <p className="mb-3">
-                        The Optiprime series represents Kirloskar's latest advancement in generator technology, featuring proprietary variable speed control that dynamically adjusts engine RPM based on load demand, achieving up to 25% fuel savings compared to conventional fixed-speed generators. The integrated IoT platform provides comprehensive remote monitoring and control capabilities, with real-time performance analytics and predictive maintenance scheduling.
-                      </p>
-                      <p>
-                        The advanced combustion system utilizes multi-stage injection technology that optimizes fuel atomization across all load profiles, maintaining emissions well below regulatory requirements while enhancing performance. The smart load management system automatically prioritizes critical equipment during power constraints, ensuring essential operations remain uninterrupted. The modular design enables easy expansion with parallel operation capability for up to 8 units without additional synchronization hardware.
-                      </p>
-                    </>
-                  )}
-                  
-                  {selectedProductForSpecs.category === 'electrical' && (
-                    <>
-                      <p className="mb-3">
-                        This advanced electrical panel features Form 4b separation with CRCA steel construction (minimum 2mm thickness) and IP54 protection class, ensuring complete isolation between functional units for maximum safety during maintenance. The intelligent power management system incorporates digital metering with Class 0.5 accuracy, capable of monitoring over 50 electrical parameters with harmonics analysis up to the 40th order.
-                      </p>
-                      <p>
-                        The arc flash mitigation technology includes ultra-fast detection systems that respond within 4ms to potential arc faults, while the thermal management system utilizes computational fluid dynamics to optimize air flow patterns, reducing hotspots by up to 15°C. All critical components are sourced from tier-1 manufacturers with redundancy built into protection circuits. The modular design allows for future expansion without system downtime, and the integrated power quality analyzers continuously monitor and log events for comprehensive power audits.
-                      </p>
-                    </>
-                  )}
-                  
-                  {selectedProductForSpecs.category === 'servo' && (
-                    <>
-                      <p className="mb-3">
-                        This servo stabilizer utilizes high-precision carbon brush technology with a minimum life of 25,000 service hours, achieving voltage correction speeds of 20V/second with regulation accuracy of ±1% even under severe fluctuation conditions. The wide input voltage range accommodates variations from -40% to +25% of nominal voltage while maintaining stable output, with intelligent buck-boost switching that minimizes stress on servo components.
-                      </p>
-                      <p>
-                        The thermal design incorporates specially formulated insulation materials with Class H temperature rating, enabling continuous operation at ambient temperatures up to 55°C without derating. The digital control system provides comprehensive protection against over/under voltage, overload, and phase reversal with adjustable time delay settings. For critical applications, the stabilizer includes bypass functionality with zero transfer time and a specialized inrush current management system that accommodates loads with high starting current requirements without nuisance tripping.
-                      </p>
-                    </>
-                  )}
-                  
-                  {selectedProductForSpecs.category === 'transformers' && (
-                    <>
-                      <p className="mb-3">
-                        This transformer utilizes premium grain-oriented silicon steel core with step-lap construction technique, reducing core losses by up to 15% compared to conventional designs. The copper windings feature thermally upgraded paper insulation with optimized duct placement for efficient heat dissipation, maintaining winding hotspot temperatures below 98°C even at 110% continuous loading.
-                      </p>
-                      <p>
-                        The hermetically sealed tank design eliminates oxygen contact with insulating oil, extending oil life by up to 35% while the advanced cooling system with directed oil flow technology targets critical hot zones. The comprehensive monitoring package includes fiber optic temperature sensors embedded within windings for real-time thermal profile analysis. Off-circuit tap changers provide ±5% voltage adjustment in 2.5% steps, while superior surge protection withstands lightning impulse voltages up to 95kV. The specially formulated insulating oil contains natural ester compounds for enhanced biodegradability and fire safety with flash point exceeding 300°C.
-                      </p>
-                    </>
-                  )}
+                  {/* We now use the specific technicalSpecs data from the product object instead of generic category blocks */}
+                  <div className="text-sm text-gray-700 whitespace-pre-line leading-relaxed">
+                    {selectedProductForSpecs.technicalSpecs}
+                  </div>
                 </div>
               </div>
 
@@ -1283,7 +1230,7 @@ const Products = () => {
               <Button type="submit" className="bg-[#2D6FBA] hover:bg-[#225488] " disabled={quoteSending}>
                 {quoteSending ? 'Sending...' : 'Send Quote'}
               </Button>
-               <Button variant="outline" onClick={closeQuoteModal}>Cancel</Button>
+                <Button variant="outline" onClick={closeQuoteModal}>Cancel</Button>
              </div>
             {quoteResult && (
               <div className="mt-2"><span className="text-sm text-gray-500">{quoteResult}</span></div>
