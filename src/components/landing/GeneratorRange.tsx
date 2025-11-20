@@ -1,4 +1,4 @@
-import diesel from "@/assets/Products/OPTIPRIMEGEN.jpeg";
+import diesel from "@/assets/Products/OPTIPRIMEGEN.png";
 import gas from "@/assets/Products/15GAS.jpeg";
 import portable from "@/assets/Products/200CPCB.jpeg";
 import portable1 from "@/assets/Products/2.1PORTABLE.jpeg";

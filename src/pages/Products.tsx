@@ -10,7 +10,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import hero from "@/assets/Products/HeropBG.png"
 import range1 from "@/assets/Products/200CPCB.jpeg";
-import optiprime from "@/assets/Products/OPTIPRIMEGEN.jpeg"
+import optiprime from "@/assets/Products/OPTIPRIMEGEN.png";
 import range360 from "@/assets/Products/320CPCB.jpeg"
 import range2 from "@/assets/Products/15GAS.jpeg";
 import range3 from "@/assets/Range3.png";

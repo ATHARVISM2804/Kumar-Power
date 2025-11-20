@@ -1,5 +1,5 @@
 import { Download } from "lucide-react";
-import diesel from "@/assets/Products/OPTIPRIMEGEN.jpeg";
+import diesel from "@/assets/Products/OPTIPRIMEGEN.png";
 import gas from "@/assets/Products/15GAS.jpeg";
 import portable from "@/assets/Products/2.1PORTABLE.jpeg";
 import ups from "@/assets/ps4.png";
