@@ -754,7 +754,7 @@ const Products = () => {
                                     className={`w-full text-left px-3 py-1.5 rounded-sm transition text-sm ${
                                       selectedCategory === subcat.id
                                         ? 'bg-[#2D6FBA] text-white font-medium'
-                                        : 'text-gray-200 hover:bg-[#2D6FBA]/50'
+                                        : 'hover:bg-[#2D6FBA]/50 text-gray-200'
                                       }`}
                                     onClick={() => handleSubcategorySelection(subcat.id)}
                                   >
@@ -883,7 +883,7 @@ const Products = () => {
           </div>
 
           {/* Kumar Power Info */}
-          <div className="mt-8 flex flex-col sm:flex-row sm:items-center justify-between text-xs text-gray-400 border-t border-gray-700 pt-3 gap-2">
+          <div className="mt-8 flex flex-col sm:flex-row sm:items-center justify-between text-xs text-gray-400 pt-3 gap-2">
             <div>
               <span className="font-medium text-[#2D6FBA]">Kumar Power:</span> India's Most Trusted Kirloskar-Certified Generator Brand!
             </div>
@@ -1306,6 +1306,8 @@ const Products = () => {
           }
         `}
       </style>
+
+      <Footer />
     </>
   );
 };
