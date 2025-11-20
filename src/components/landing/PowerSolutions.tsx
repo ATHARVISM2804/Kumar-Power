@@ -780,7 +780,7 @@ const PowerSolutions = () => {
                 transition={{ duration: 0.3 }}
               >
                 <img
-                  src="https://res.cloudinary.com/dmhabztbf/image/upload/v1762843803/Screenshot_2025-11-11_121726_jic3vb.png"
+                  src="https://res.cloudinary.com/dmhabztbf/image/upload/c_crop,w_500/v1762843803/Screenshot_2025-11-11_121726_jic3vb.png"
                   alt="Association Member"
                   className="h-full w-full object-contain"
                 />
