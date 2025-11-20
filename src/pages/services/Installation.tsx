@@ -214,7 +214,7 @@ const InstallationService = () => {
               </div>
               <div className="rounded-lg overflow-hidden shadow-xl">
                 <img 
-                  src="https://res.cloudinary.com/dmhabztbf/image/upload/v1763095664/unnamed_1_auzqlu.jpg" 
+                  src="https://res.cloudinary.com/dmhabztbf/image/upload/v1763629309/Gemini_Generated_Image_9zuhmq9zuhmq9zuh_t4xkv9.png" 
                   alt="Professional power system installation" 
                   className="w-full h-64 md:h-80 object-cover"
                 />
