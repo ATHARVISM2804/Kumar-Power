@@ -423,6 +423,20 @@ const PowerSolutions = () => {
     ],
     img: Panel7,
     brochureUrl: sential // Default brochure for panels
+  },
+  {
+    title: "Feeder Pillars",
+    desc: "Robust outdoor electrical distribution pillars designed for safe and efficient power distribution in various environments.",
+    specs: [
+      "Voltage Rating: Up to 11kV",
+      "Weather Resistant Design",
+      "Anti-Corrosion Treatment",
+      "Application: Street Lighting, Industrial Estates, Housing Projects",
+      "IP54 Protection Rating",
+      "Certification: ISO 9001, CPCB-4+, Kirloskar Authorized"
+    ],
+    img: Panel8,
+    brochureUrl: sential // Default brochure for panels
   }
     ],
     "Servo Stabilizers": [
