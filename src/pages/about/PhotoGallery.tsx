@@ -239,8 +239,7 @@ const PhotoGallery = () => {
 
   const galleryImages: GalleryImage[] = [
     // Award Ceremony images
-    { id: 1, src: award1, alt: "Kumar Power Excellence Award", category: "Award" },
-    { id: 2, src: award2, alt: "Service Recognition Award", category: "Award" },
+    
     { id: 3, src: award3, alt: "Industry Leadership Award", category: "Award" },
     { id: 4, src: award4, alt: "Best Power Solutions Provider", category: "Award" },
     { id: 5, src: award5, alt: "Kumar Power Industry Recognition", category: "Award" },
