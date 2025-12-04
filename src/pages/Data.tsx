@@ -1,11 +1,23 @@
 import React, { useEffect, useState } from "react";
+import Login from "@/components/Login";
 
 const Submissions = () => {
   const [contacts, setContacts] = useState([]);
   const [resumes, setResumes] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
+    // Check if user is already logged in (using sessionStorage)
+    const authStatus = sessionStorage.getItem('isAuthenticated');
+    if (authStatus === 'true') {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!isAuthenticated) return;
+
     const fetchData = async () => {
       try {
         // Fetch contact submissions
@@ -34,7 +46,21 @@ const Submissions = () => {
     };
 
     fetchData();
-  }, []);
+  }, [isAuthenticated]);
+
+  const handleLogin = () => {
+    setIsAuthenticated(true);
+    sessionStorage.setItem('isAuthenticated', 'true');
+  };
+
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+    sessionStorage.removeItem('isAuthenticated');
+  };
+
+  if (!isAuthenticated) {
+    return <Login onLogin={handleLogin} />;
+  }
 
   if (loading) {
     return (
@@ -49,9 +75,17 @@ const Submissions = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-10 px-4">
       <div className="max-w-5xl mx-auto space-y-12">
-        <h1 className="text-3xl font-bold text-center mb-10 text-[#2D6FBA]">
-          📋 Form Submissions
-        </h1>
+        <div className="flex justify-between items-center">
+          <h1 className="text-3xl font-bold text-[#2D6FBA]">
+            📋 Form Submissions
+          </h1>
+          <button
+            onClick={handleLogout}
+            className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg font-medium transition"
+          >
+            Logout
+          </button>
+        </div>
 
         {/* Contact Submissions */}
         <section className="bg-white rounded-xl shadow-lg p-8">
