@@ -23,6 +23,21 @@ const Contact = () => {
     resume: null,
   });
 
+  // Add submission status states
+  const [contactSubmitStatus, setContactSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
+
+  const [resumeSubmitStatus, setResumeSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
+
+  // Add loading states
+  const [isContactSubmitting, setIsContactSubmitting] = useState(false);
+  const [isResumeSubmitting, setIsResumeSubmitting] = useState(false);
+
   // Form handling for main contact form
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -45,6 +60,8 @@ const Contact = () => {
   // Updated contact form submit handler
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setContactSubmitStatus({ type: null, message: '' });
+    setIsContactSubmitting(true); // Start loading
     
     // Get checkbox value
     const callbackCheckbox = document.getElementById('callback') as HTMLInputElement;
@@ -64,7 +81,10 @@ const Contact = () => {
       });
       
       if (response.ok) {
-        alert("Thank you for your message! We'll get back to you soon.");
+        setContactSubmitStatus({
+          type: 'success',
+          message: '✓ Message sent successfully! We\'ll get back to you soon.'
+        });
         setFormData({
           name: "",
           email: "",
@@ -74,18 +94,34 @@ const Contact = () => {
         });
         // Reset checkbox
         if (callbackCheckbox) callbackCheckbox.checked = false;
+        
+        // Clear success message after 5 seconds
+        setTimeout(() => {
+          setContactSubmitStatus({ type: null, message: '' });
+        }, 5000);
       } else {
-        alert("There was an issue submitting your form. Please try again.");
+        setContactSubmitStatus({
+          type: 'error',
+          message: '✗ There was an issue submitting your form. Please try again.'
+        });
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("Network error. Please check your connection and try again.");
+      setContactSubmitStatus({
+        type: 'error',
+        message: '✗ Network error. Please check your connection and try again.'
+      });
+    } finally {
+      setIsContactSubmitting(false); // Stop loading
     }
   };
 
   // Updated resume form submit handler
   const handleResumeSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setResumeSubmitStatus({ type: null, message: '' });
+    setIsResumeSubmitting(true); // Start loading
+    
     const formDataObj = new FormData();
     
     formDataObj.append("form_type", "resume_submission");
@@ -104,7 +140,10 @@ const Contact = () => {
       });
 
       if (response.ok) {
-        alert("Resume submitted successfully! We'll review your application and get back to you.");
+        setResumeSubmitStatus({
+          type: 'success',
+          message: '✓ Resume submitted successfully! We\'ll review your application and get back to you.'
+        });
         setResumeData({
           fullName: "",
           email: "",
@@ -115,12 +154,25 @@ const Contact = () => {
         // Reset file input
         const fileInput = document.getElementById('resume') as HTMLInputElement;
         if (fileInput) fileInput.value = '';
+        
+        // Clear success message after 5 seconds
+        setTimeout(() => {
+          setResumeSubmitStatus({ type: null, message: '' });
+        }, 5000);
       } else {
-        alert("There was an issue submitting your resume. Please try again.");
+        setResumeSubmitStatus({
+          type: 'error',
+          message: '✗ There was an issue submitting your resume. Please try again.'
+        });
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("Network error. Please check your connection and try again.");
+      setResumeSubmitStatus({
+        type: 'error',
+        message: '✗ Network error. Please check your connection and try again.'
+      });
+    } finally {
+      setIsResumeSubmitting(false); // Stop loading
     }
   };
 
@@ -176,6 +228,18 @@ const Contact = () => {
                 <h2 className="text-3xl font-bold text-black mb-2">Get in Touch</h2>
                 <div className="mx-auto w-24 h-1 bg-[#2D6FBA] rounded mb-2"></div>
               </div>
+              
+              {/* Contact Form Success/Error Message */}
+              {contactSubmitStatus.type && (
+                <div className={`mb-6 p-4 rounded-lg ${
+                  contactSubmitStatus.type === 'success' 
+                    ? 'bg-green-50 border border-green-200 text-green-800' 
+                    : 'bg-red-50 border border-red-200 text-red-800'
+                }`}>
+                  <p className="text-sm font-medium">{contactSubmitStatus.message}</p>
+                </div>
+              )}
+              
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
@@ -260,12 +324,25 @@ const Contact = () => {
                   <div className="flex justify-end mt-4">
                     <button
                       type="submit"
-                      className="bg-[#2D6FBA] hover:bg-[#2360a0] text-white font-medium py-3 px-8 rounded-[7px] transition-colors flex items-center"
+                      disabled={isContactSubmitting}
+                      className="bg-[#2D6FBA] hover:bg-[#2360a0] text-white font-medium py-3 px-8 rounded-[7px] transition-colors flex items-center disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Send Secure Message
-                      <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
+                      {isContactSubmitting ? (
+                        <>
+                          <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          Send Secure Message
+                          <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                          </svg>
+                        </>
+                      )}
                     </button>
                   </div>
                 </div>
@@ -381,6 +458,17 @@ const Contact = () => {
                 
                 {/* Right Side: Resume Form - Updated to match image */}
                 <div className="bg-white p-6 rounded-md text-black">
+                  {/* Resume Form Success/Error Message */}
+                  {resumeSubmitStatus.type && (
+                    <div className={`mb-6 p-4 rounded-lg ${
+                      resumeSubmitStatus.type === 'success' 
+                        ? 'bg-green-50 border border-green-200 text-green-800' 
+                        : 'bg-red-50 border border-red-200 text-red-800'
+                    }`}>
+                      <p className="text-sm font-medium">{resumeSubmitStatus.message}</p>
+                    </div>
+                  )}
+                  
                   <form onSubmit={handleResumeSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
@@ -460,9 +548,20 @@ const Contact = () => {
                     
                     <button
                       type="submit"
-                      className="w-full bg-[#2D6FBA] hover:bg-[#2360a0] text-white font-medium py-3 px-4 rounded transition-colors"
+                      disabled={isResumeSubmitting}
+                      className="w-full bg-[#2D6FBA] hover:bg-[#2360a0] text-white font-medium py-3 px-4 rounded transition-colors flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Submit Application
+                      {isResumeSubmitting ? (
+                        <>
+                          <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          Submitting...
+                        </>
+                      ) : (
+                        'Submit Application'
+                      )}
                     </button>
                   </form>
                 </div>
