@@ -45,26 +45,50 @@ const Contact = () => {
   // Updated contact form submit handler
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await fetch("https://kumar-power.onrender.com/api/contact", {
-    // await fetch("http://localhost:5000/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
-    alert("Thank you for your message!");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      department: "",
-      message: "",
-    });
+    
+    // Get checkbox value
+    const callbackCheckbox = document.getElementById('callback') as HTMLInputElement;
+    const callbackValue = callbackCheckbox?.checked || false;
+    
+    const submissionData = {
+      ...formData,
+      form_type: 'contact_inquiry',
+      callback: callbackValue
+    };
+    
+    try {
+      const response = await fetch("https://kumarpower.com/wep-api.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(submissionData),
+      });
+      
+      if (response.ok) {
+        alert("Thank you for your message! We'll get back to you soon.");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          department: "",
+          message: "",
+        });
+        // Reset checkbox
+        if (callbackCheckbox) callbackCheckbox.checked = false;
+      } else {
+        alert("There was an issue submitting your form. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Network error. Please check your connection and try again.");
+    }
   };
 
   // Updated resume form submit handler
   const handleResumeSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const formDataObj = new FormData();
+    
+    formDataObj.append("form_type", "resume_submission");
     formDataObj.append("fullName", resumeData.fullName);
     formDataObj.append("email", resumeData.email);
     formDataObj.append("phone", resumeData.phone);
@@ -73,19 +97,31 @@ const Contact = () => {
       formDataObj.append("resume", resumeData.resume);
     }
 
-    await fetch("https://kumar-power.onrender.com/api/resume", {
-      method: "POST",
-      body: formDataObj,
-    });
+    try {
+      const response = await fetch("https://kumarpower.com/wep-api.php", {
+        method: "POST",
+        body: formDataObj,
+      });
 
-    alert("Resume submitted successfully!");
-    setResumeData({
-      fullName: "",
-      email: "",
-      phone: "",
-      message: "",
-      resume: null,
-    });
+      if (response.ok) {
+        alert("Resume submitted successfully! We'll review your application and get back to you.");
+        setResumeData({
+          fullName: "",
+          email: "",
+          phone: "",
+          message: "",
+          resume: null,
+        });
+        // Reset file input
+        const fileInput = document.getElementById('resume') as HTMLInputElement;
+        if (fileInput) fileInput.value = '';
+      } else {
+        alert("There was an issue submitting your resume. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Network error. Please check your connection and try again.");
+    }
   };
 
   return (
