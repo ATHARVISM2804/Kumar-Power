@@ -29,7 +29,7 @@ const About = () => {
       </div>
       {/* End Hero Section */}
       <section id="about" className="py-8  md:py-12">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center px-4 md:px-0">
+        <div className="container ml-10  grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center px-4 md:px-0">
           {/* Left: Text Content */}
           <div>
             <h2 className="text-4xl md:text-5xl tracking-tighter  mb-10">
@@ -63,7 +63,7 @@ const About = () => {
             </Button>
           </div>
           {/* Right: Team Image */}
-          <div className="flex justify-center">
+          <div className="flex mr-10 justify-center">
             <img
               src={three}
               alt="Kumar Power team"

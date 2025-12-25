@@ -82,14 +82,19 @@ const Footer = () => {
             <div className="space-y-3">
               <h4 className="font-bold text-white text-lg">Useful Links</h4>
               <ul className="grid grid-cols-2 sm:grid-cols-1 gap-2 text-sm text-white/90">
-                <li><a href="#home" className="hover:text-blue-300 transition-colors">Home</a></li>
+                <li><a href="/" className="hover:text-blue-300 transition-colors">Home</a></li>
                 <li><a href="/about/OurProfile" className="hover:text-blue-300 transition-colors">About us</a></li>
                 <li><a href="/about/OurClients" className="hover:text-blue-300 transition-colors">Our Clients</a></li>
-                <li><a href="/installation" className="hover:text-blue-300 transition-colors">Installation</a></li>
+                <li><a href="/about/PhotoGallery" className="hover:text-blue-300 transition-colors">Photo Gallery</a></li>
                 <li><a href="/about/Testimonials" className="hover:text-blue-300 transition-colors">Testimonials</a></li>
                 <li><a href="/about/Certifications" className="hover:text-blue-300 transition-colors">Certifications</a></li>
+                <li><a href="/products" className="hover:text-blue-300 transition-colors">Products</a></li>
+                <li><a href="/installation" className="hover:text-blue-300 transition-colors">Installation</a></li>
+                <li><a href="/services/annual-maintenance" className="hover:text-blue-300 transition-colors">Annual Maintenance</a></li>
+                <li><a href="/services/repair-overhaul" className="hover:text-blue-300 transition-colors">Repair & Overhaul</a></li>
+                <li><a href="/services/emergency-support" className="hover:text-blue-300 transition-colors">Emergency Support</a></li>
+                <li><a href="/our-clients" className="hover:text-blue-300 transition-colors">Value Clients</a></li>
                 <li><a href="/contact" className="hover:text-blue-300 transition-colors">Contact Us</a></li>
-                <li><a href="#blogs" className="hover:text-blue-300 transition-colors">Blog</a></li>
               </ul>
             </div>
 

@@ -100,10 +100,10 @@ const About = () => {
             </div>
             {/* 2012 - ISO Certification */}
             <div className="relative grid md:grid-cols-2 gap-6 items-center mb-16">
-              <div className="text-black p-6 rounded-lg flex flex-col items-start md:items-start">
+              <div className="text-white  p-6 rounded-lg flex flex-col items-start md:items-start">
                 <span className="inline-block px-3 py-1 bg-black text-white text-sm font-medium rounded-md mb-4">2012</span>
                 <h3 className="text-xl font-bold mb-3">ISO Certification</h3>
-                <p>Achieved ISO 9001:2015 certification, validating our commitment to quality management systems.</p>
+                <p className="text-white">Achieved ISO 9001:2015 certification, validating our commitment to quality management systems.</p>
                 <div className="w-16 h-1 bg-zinc-600 mt-4 self-start"></div>
               </div>
               <div>
